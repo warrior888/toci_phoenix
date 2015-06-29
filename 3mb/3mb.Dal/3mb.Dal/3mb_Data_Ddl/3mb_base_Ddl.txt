@@ -1,0 +1,12 @@
+﻿create table users (
+	id serial primary key,
+	name text,
+	email text,
+	cell_phone varchar(20),
+	guid text
+);
+
+create table privilege (
+	id serial primary key,
+	name text
+);

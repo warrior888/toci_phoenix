@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A7951807-F924-4108-A63B-253CE3F5B045}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Toci.Utilities</RootNamespace>
+    <AssemblyName>Toci.Utilities</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Code7248.word_reader">
+      <HintPath>..\Libraries\Code7248.word_reader.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\Libraries\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Puma.Net">
+      <HintPath>..\Libraries\Puma.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Tesseract, Version=2.3.0.0, Culture=neutral, PublicKeyToken=ebeb3d86bef60cbe, processorArchitecture=MSIL">
+      <HintPath>packages\Tesseract.2.3.0.0\lib\net45\Tesseract.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Communication\MediaTypes\EmailCommunicationMedia.cs" />
+    <Compile Include="Communication\MediaTypes\Sms.cs" />
+    <Compile Include="Communication\EmailMessage.cs" />
+    <Compile Include="Communication\MessageTypes\ShortNotification.cs" />
+    <Compile Include="Communication\EmailMessageAttachment.cs" />
+    <Compile Include="Document\DocumentParsers\CSV\CsvParser.cs" />
+    <Compile Include="Document\DocumentParsers\DocumentInterpreterFactory.cs" />
+    <Compile Include="Document\DocumentParsers\DocumentResource.cs" />
+    <Compile Include="Document\DocumentParsers\DOC\DocParser.cs" />
+    <Compile Include="Document\DocumentParsers\ThirdParty\Tesseract\TesseractOcrParser.cs" />
+    <Compile Include="Document\DocumentParsers\ThirdParty\Puma\PumaOcrHelpers.cs" />
+    <Compile Include="Document\DocumentParsers\ThirdParty\Puma\PumaOcrParser.cs" />
+    <Compile Include="Document\DocumentParsers\PDF\PdfParser.cs" />
+    <Compile Include="Generator\DatabaseModelGenerator\DefaultModelTemplateProvider.cs" />
+    <Compile Include="Generator\DatabaseModelGenerator\DbDdlParser\SqlDdlEntryParser.cs" />
+    <Compile Include="Generator\DatabaseModelGenerator\DbDdlParser\SqlDdlParser.cs" />
+    <Compile Include="Generator\DatabaseModelGenerator\TociDbModelGenerator.cs" />
+    <Compile Include="Generator\DatabaseModelGenerator\TociDbModelsGenerator.cs" />
+    <Compile Include="Privileges\PrivilegesGroups\PrivilegesGroup.cs" />
+    <Compile Include="Privileges\Privileges\Privilege.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Toci.Utilities.Abstraction\Toci.Utilities.Abstraction.csproj">
+      <Project>{3f7c2517-390a-40bf-a1fc-3f5dfae8bdf2}</Project>
+      <Name>Toci.Utilities.Abstraction</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Toci.Utilities.Interfaces\Toci.Utilities.Interfaces\Toci.Utilities.Interfaces.csproj">
+      <Project>{c3976ac9-39a5-4b47-8a67-33f021a4cdc3}</Project>
+      <Name>Toci.Utilities.Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Document\DocumentRecognizers\OCR\" />
+    <Folder Include="Document\DocumentRecognizers\PDF\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Document\DocumentParsers\DOC\Sample\sample3.xml" />
+    <Content Include="Document\DocumentParsers\OCR\img\ex1.jpg" />
+    <Content Include="Document\DocumentParsers\OCR\img\ex10.jpg" />
+    <Content Include="Document\DocumentParsers\OCR\img\ex2.gif" />
+    <Content Include="Document\DocumentParsers\OCR\img\ex3.jpg" />
+    <Content Include="Document\DocumentParsers\OCR\img\ex4.png" />
+    <Content Include="Document\DocumentParsers\OCR\img\ex5.png" />
+    <Content Include="Document\DocumentParsers\OCR\img\ex6.jpg" />
+    <Content Include="Document\DocumentParsers\OCR\img\ex7.jpg" />
+    <Content Include="Document\DocumentParsers\OCR\img\ex8.jpg" />
+    <Content Include="Document\DocumentParsers\OCR\img\ex9.jpg" />
+    <Content Include="x64\liblept168.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x64\libtesseract302.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\liblept168.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\libtesseract302.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Document\DocumentParsers\CSV\Sample\sample1.csv" />
+    <None Include="Document\DocumentParsers\CSV\Sample\sample2.csv" />
+    <None Include="Document\DocumentParsers\DOC\Sample\sample1.doc" />
+    <None Include="Document\DocumentParsers\DOC\Sample\sample2.docx" />
+    <None Include="Document\DocumentParsers\DOC\Sample\sample4.odt" />
+    <None Include="Document\DocumentParsers\PDF\data\sample.pdf" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
