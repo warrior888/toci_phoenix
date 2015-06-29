@@ -1,0 +1,78 @@
+﻿using System.Collections.Generic;
+using Autofac;
+using Autofac.Core;
+using Toci.Db.Clients;
+using Toci.Db.ClusterAccess;
+using Toci.Db.DbVirtualization.PostgreSqlQuery;
+using Toci.Db.Interfaces;
+using Toci.Utilities.Document.DocumentParsers;
+using Toci.Utilities.Document.DocumentParsers.OCR;
+using Toci.Utilities.Interfaces;
+using Toci.Utilities.Interfaces.Document.DocumentParse;
+using _3mb.Bll.Interfaces.User;
+using _3mb.Bll.User;
+
+namespace _3mb.Bll.Essential
+{
+    public class AutofacContainer
+    {
+        private static AutofacContainer _instance;
+        private IContainer _container;
+
+        private AutofacContainer()
+        {
+            
+        }
+
+        public static AutofacContainer GetContainer()
+        {
+            return _instance ?? (_instance = new AutofacContainer());
+        }
+
+        private IContainer CreateConfiguration()
+        {
+            var builder = new ContainerBuilder();
+            builder.RegisterType<DbHandle>().As<IDbHandle>();
+            builder.RegisterType<PostgreSqlClient>().As<IDbClient>();
+
+            builder.RegisterType<PostgreSqlSelect>().As<ISelect>();
+            builder.RegisterType<PostgreSqlInsert>().As<IInsert>();
+            builder.RegisterType<PostgreSqlUpdate>().As<IUpdate>();
+            builder.RegisterType<PostgreSqlDelete>().As<IDelete>();
+
+            builder.RegisterType<DocumentResource>().As<IDocumentResource>();
+            builder.RegisterType<PumaOcrParser>().As<IDocumentInterpreter>();
+
+            builder.RegisterType<UserLogic>().As<IUserLogic>();
+            
+            
+
+            return builder.Build();
+        }
+
+        public TService Resolve<TService>(params object[] parameters)
+        {
+            if (_container == null)
+            {
+                _container = CreateConfiguration();
+            }
+
+            using (var scope = _container.BeginLifetimeScope())
+            {
+                List<Parameter> afParams = new List<Parameter>();
+                int i = 0;
+
+                if (parameters.Length > 0)
+                {
+                    foreach (var parameter in parameters)
+                    {
+                        afParams.Add(new PositionalParameter(i, parameter));
+                        i++;
+                    }
+                }
+
+                return scope.Resolve<TService>(afParams);
+            }
+        }
+    }
+}
