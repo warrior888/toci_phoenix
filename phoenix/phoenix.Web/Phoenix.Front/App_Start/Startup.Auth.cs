@@ -55,8 +55,8 @@ namespace Phoenix.Front
             //   consumerSecret: "");
 
             app.UseFacebookAuthentication(
-               appId: "",
-               appSecret: "");
+               appId: "400100716843155",
+               appSecret: "984ec1d87c4d7a65b42a2836cc269be2");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
