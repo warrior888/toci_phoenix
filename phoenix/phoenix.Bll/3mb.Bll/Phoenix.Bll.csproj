@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{02E87EFF-1F75-4627-9AD8-8720AFA5CFA1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>_3mb.Bll</RootNamespace>
+    <AssemblyName>3mb.Bll</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\..\3mb.Dal\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Essential\AutofacContainer.cs" />
+    <Compile Include="Essential\AutofacDependencyResolver.cs" />
+    <Compile Include="Essential\BllDbLogic.cs" />
+    <Compile Include="Essential\DependencyResolverFactory.cs" />
+    <Compile Include="I18n\TranslationPhrases.cs" />
+    <Compile Include="Localization\LocalizationLogic.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User\UserLogic.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Toci.Db\Toci.Db.csproj">
+      <Project>{e45ea1c2-f40c-4903-94c3-30a885a71d33}</Project>
+      <Name>Toci.Db</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Toci.Utilities.Abstraction\Toci.Utilities.Abstraction.csproj">
+      <Project>{3f7c2517-390a-40bf-a1fc-3f5dfae8bdf2}</Project>
+      <Name>Toci.Utilities.Abstraction</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Toci.Utilities.Common\Toci.Utilities.Common.csproj">
+      <Project>{aa84d501-0707-40d3-aed8-f4884e7f0fb2}</Project>
+      <Name>Toci.Utilities.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Toci.Utilities.Interfaces\Toci.Utilities.Interfaces\Toci.Utilities.Interfaces.csproj">
+      <Project>{c3976ac9-39a5-4b47-8a67-33f021a4cdc3}</Project>
+      <Name>Toci.Utilities.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Toci.Utilities\Toci.Utilities.csproj">
+      <Project>{a7951807-f924-4108-a63b-253ce3f5b045}</Project>
+      <Name>Toci.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\3mb.Bll.Interfaces\3mb.Bll.Interfaces\Phoenix.Bll.Interfaces.csproj">
+      <Project>{471d3f60-27a8-402d-8599-952ec3a2985b}</Project>
+      <Name>Phoenix.Bll.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\3mb.Dal\3mb.Dal\Phoenix.Dal.csproj">
+      <Project>{71e30224-522b-4925-9f5e-280ace8d6292}</Project>
+      <Name>Phoenix.Dal</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
