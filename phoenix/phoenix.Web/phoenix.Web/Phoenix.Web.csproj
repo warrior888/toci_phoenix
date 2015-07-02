@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_3mb.Web</RootNamespace>
-    <AssemblyName>3mb.Web</AssemblyName>
+    <RootNamespace>Phoenix.Web</RootNamespace>
+    <AssemblyName>Phoenix.Web</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -71,11 +71,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\3mb.Bll.Interfaces\3mb.Bll.Interfaces\Phoenix.Bll.Interfaces.csproj">
+    <ProjectReference Include="..\..\Phoenix.Bll.Interfaces\Phoenix.Bll.Interfaces\Phoenix.Bll.Interfaces.csproj">
       <Project>{471d3f60-27a8-402d-8599-952ec3a2985b}</Project>
       <Name>Phoenix.Bll.Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\3mb.Bll\3mb.Bll\Phoenix.Bll.csproj">
+    <ProjectReference Include="..\..\Phoenix.Bll\Phoenix.Bll\Phoenix.Bll.csproj">
       <Project>{02e87eff-1f75-4627-9ad8-8720afa5cfa1}</Project>
       <Name>Phoenix.Bll</Name>
     </ProjectReference>

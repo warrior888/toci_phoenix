@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phoenix.Dal", "3mb.Dal\Phoenix.Dal.csproj", "{71E30224-522B-4925-9F5E-280ACE8D6292}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phoenix.Dal", "Phoenix.Dal\Phoenix.Dal.csproj", "{71E30224-522B-4925-9F5E-280ACE8D6292}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Toci", "Toci", "{2E476FCB-E518-40C7-928E-007F0C67FB65}"
 EndProject
@@ -15,19 +15,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.Utilities.Abstraction"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.Db", "..\..\Toci.Db\Toci.Db.csproj", "{E45EA1C2-F40C-4903-94C3-30A885A71D33}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phoenix.Bll", "..\3mb.Bll\3mb.Bll\Phoenix.Bll.csproj", "{02E87EFF-1F75-4627-9AD8-8720AFA5CFA1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phoenix.Bll", "..\Phoenix.Bll\Phoenix.Bll\Phoenix.Bll.csproj", "{02E87EFF-1F75-4627-9AD8-8720AFA5CFA1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phoenix.Integration.Test", "..\3mb.Test\3mb.Integration.Test\Phoenix.Integration.Test.csproj", "{A2E8D8A8-E4B3-427E-9443-858DC950F88A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phoenix.Integration.Test", "..\Phoenix.Test\Phoenix.Integration.Test\Phoenix.Integration.Test.csproj", "{A2E8D8A8-E4B3-427E-9443-858DC950F88A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phoenix.Bll.Interfaces", "..\3mb.Bll.Interfaces\3mb.Bll.Interfaces\Phoenix.Bll.Interfaces.csproj", "{471D3F60-27A8-402D-8599-952EC3A2985B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phoenix.Bll.Interfaces", "..\Phoenix.Bll.Interfaces\Phoenix.Bll.Interfaces\Phoenix.Bll.Interfaces.csproj", "{471D3F60-27A8-402D-8599-952EC3A2985B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.Utilities", "..\..\Toci.Utilities\Toci.Utilities.csproj", "{A7951807-F924-4108-A63B-253CE3F5B045}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{1B19D82D-05D8-43F1-8928-3D267448330D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phoenix.Front", "..\3mb.Web\Phoenix.Front\Phoenix.Front.csproj", "{0C1A4599-49F9-426E-89AB-8D6FA60ECA69}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phoenix.Front", "..\Phoenix.Web\Phoenix.Front\Phoenix.Front.csproj", "{0C1A4599-49F9-426E-89AB-8D6FA60ECA69}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phoenix.Web", "..\3mb.Web\3mb.Web\Phoenix.Web.csproj", "{219B7DED-7492-4EE4-88E9-FD92FDD83DD0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phoenix.Web", "..\Phoenix.Web\Phoenix.Web\Phoenix.Web.csproj", "{219B7DED-7492-4EE4-88E9-FD92FDD83DD0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

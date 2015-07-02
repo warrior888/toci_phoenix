@@ -90,11 +90,11 @@
       <Project>{471d3f60-27a8-402d-8599-952ec3a2985b}</Project>
       <Name>Phoenix.Bll.Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Phoenix.Bll\3mb.Bll\Phoenix.Bll.csproj">
+    <ProjectReference Include="..\..\Phoenix.Bll\Phoenix.Bll\Phoenix.Bll.csproj">
       <Project>{02e87eff-1f75-4627-9ad8-8720afa5cfa1}</Project>
       <Name>Phoenix.Bll</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Phoenix.Dal\3mb.Dal\Phoenix.Dal.csproj">
+    <ProjectReference Include="..\..\Phoenix.Dal\Phoenix.Dal\Phoenix.Dal.csproj">
       <Project>{71e30224-522b-4925-9f5e-280ace8d6292}</Project>
       <Name>Phoenix.Dal</Name>
     </ProjectReference>
