@@ -10,7 +10,7 @@ namespace _3mb.Bll.Interfaces.FinancialOperations.Order
         // IPurchase GetPurchase(); for IsApproved == true
         decimal Price { get; }
 
-        I3MbUser User { get; }
+        IPhoenixUser User { get; }
 
         bool IsApproved();
     }

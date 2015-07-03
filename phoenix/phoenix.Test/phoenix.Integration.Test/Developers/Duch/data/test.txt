@@ -1,69 +1,105 @@
-﻿create table language (
+﻿create table roles ( 
 	id serial primary key,
-	name varchar(50) not null
+	name text
 );
 
-create table i18n (
-	id serial primary key,
-	id_language integer references language(id),
-	name varchar(100) not null, -- _name dla jez 1 -> imie, 2 -> name
-	content text
-);
 
-create table contact_type (
-	id serial primary key,
-	name varchar(50) not null
-);
+create table users (
 
-create table geographic_region ( 
 	id serial primary key,
-	id_geographic_region_parent integer references geographic_region(id), 
-	name varchar(100) not null,
-	coordinates varchar(100)
-);
-
-create table privilege ( 
-	id serial primary key,
-	name varchar(50) not null
-);
-
-create table position (
-	id serial primary key,
-	name varchar(50) not null,
-	min_monthly_salary decimal,
-	max_monthly_salary decimal
-);
-
-create table threemb_user (
-	id serial primary key,
-	id_threemb_user_parent integer references threemb_user(id), 
-	login varchar(32),
+	id_roles integer references roles(id) not null,
+	login text,
 	password varchar(32),
-	name varchar(50) not null,
-	surname varchar(100) not null,
-	guid varchar(36) ,
-	postal_code varchar(10),
-	street varchar(100),
-	id_geographic_region integer references geographic_region(id)
+	email text,
+	nick text,
+	name text,
+	surname text
+	
 );
 
-create table threemb_user_position (
+create table developers_list (
+
 	id serial primary key,
-	id_threemb_user integer references threemb_user(id) not null,
-	id_position integer references position(id) not null
+	id_users integer references users(id) not null,
+	score double
+	
+); 
+
+create table portfolio (
+	id serial primary key,
+	project_name text
 );
 
-create table contact (
+create table users_portfolio (
 	id serial primary key,
-	id_threemb_user integer references threemb_user(id) not null,
-	id_contact_type integer references contact_type(id) not null,
-	content varchar(100) not null
+	id_users integer references users(id) not null,
+	id_portfolio integer references portfolio(id) not null
+);
+
+create table skills_technologies (
+	id serial primary key,
+	tech_name text
+);
+
+create table developers_skills (
+	id serial primary key,
+	id_users integer references users(id) not null,
+	id_skills_technologies integer references skills_technologies(id) not null
 );
 
 
-
-create table user_priviliege (
+create table courses_list (
 	id serial primary key,
-	id_threemb_user integer references threemb_user(id),
-	id_privilege integer references privilege(id)
+	course_name text
+);
+
+create table course_trainers (
+	id serial primary key,
+	id_courses_list integer references courses_list(id) not null,
+	id_users integer references users(id) not null
+);
+
+create table course_technologies (
+	id serial primary key,
+	id_courses_list integer references courses_list(id) not null,
+	id_skills_technologies integer references skills_technologies(id) not null
+);
+
+create table course_calendar (
+	id serial primary key,
+	id_courses_list integer references courses_list(id) not null,
+	hours integer,
+	session_date timestamp,
+	agenda text
+);
+
+create table course_participants (
+	id serial primary key,
+	id_courses_list integer references courses_list(id) not null,
+	id_users integer references users(id) not null
+);
+
+create table course_registration (
+	id serial primary key,
+	id_roles integer references roles(id) not null,
+	login text,
+	password varchar(32),
+	email text,
+	nick text,
+	name text,
+	surname text
+);
+
+create table chosen_course_registration (
+	id serial primary key,
+	id_course_registration integer references course_registration(id) not null,
+	id_courses_list integer references courses_list(id) not null
+);
+
+
+create table course_references (
+	id serial primary key,
+	id_courses_list integer references courses_list(id) not null,
+	id_users integer references users(id) not null,
+	references_text text
 );

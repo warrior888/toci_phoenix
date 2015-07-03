@@ -1,12 +1,12 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Phoenix.Bll.User;
 using Toci.Db.ClusterAccess;
 using Toci.Db.Interfaces;
 using Toci.Utilities.Interfaces.DependencyResolve;
 using Toci.Utilities.Interfaces.DesignPatterns;
 using _3mb.Bll.Essential;
 using _3mb.Bll.Interfaces.User;
-using _3mb.Bll.User;
 
 namespace _3mb.Integration.Test.Developers.Warrior.DependencyResolve
 {

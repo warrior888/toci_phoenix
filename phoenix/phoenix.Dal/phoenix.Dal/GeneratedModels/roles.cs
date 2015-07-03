@@ -1,15 +1,27 @@
-
 using Toci.Db.DbVirtualization;
 using Toci.Db.Interfaces;
 
-namespace _3mb.Dal.User
+namespace Phoenix.Dal.GeneratedModels
 {
-    public class Privilege : Model
+    public class roles : Model
     {
-        public Privilege() : base("privilege")
+        public roles() : base("roles")
         {
         }
-
+         
+        public const string ID = "id";
+        public System.Int32 id
+            {
+                get
+                {
+                     return (System.Int32) Fields[ID].GetValue();
+                }
+                set
+                {
+                    SetValue(ID, value);
+                }
+            }
+         
         public const string NAME = "name";
         public System.String name
             {
@@ -22,10 +34,11 @@ namespace _3mb.Dal.User
                     SetValue(NAME, value);
                 }
             }
+        
 
         protected override IModel GetInstance()
         {
-            return  new Privilege();
+            return new roles();
         }
     }
 }

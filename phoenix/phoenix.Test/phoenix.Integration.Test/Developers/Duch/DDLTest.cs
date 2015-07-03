@@ -18,7 +18,7 @@ namespace _3mb.Integration.Test.Developers.Duch
 
             var template = new DefaultModelTemplateProvider
             {
-                NamespaceName = "_3mb.Dal.GeneratedModels",
+                NamespaceName = "Phoenix.Dal.GeneratedModels",
                 Parents = "Model",
                 Usings = string.Format("{0}{1}{2}", "Toci.Db.DbVirtualization", newline, "Toci.Db.Interfaces")
             };
@@ -31,7 +31,7 @@ namespace _3mb.Integration.Test.Developers.Duch
             modelsGenerator.GenerateModels(
                 @"..\..\Developers\Duch\data\test.txt",
                // @"..\..\Developers\Duch\destination",
-                @"..\..\..\..\3mb.Dal\3mb.Dal\GeneratedModels",
+                @"..\..\..\..\phoenix.Dal\Phoenix.Dal\GeneratedModels",
                 ";", ",");
         }
     }

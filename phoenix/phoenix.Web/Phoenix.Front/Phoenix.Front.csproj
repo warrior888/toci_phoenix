@@ -161,6 +161,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\WarriorTestController.cs" />
     <Compile Include="DbAccess\User\PhoenixUserStore.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -235,10 +236,21 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\WarriorTest\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Phoenix.Bll.Interfaces\Phoenix.Bll.Interfaces\Phoenix.Bll.Interfaces.csproj">
+      <Project>{471d3f60-27a8-402d-8599-952ec3a2985b}</Project>
+      <Name>Phoenix.Bll.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Phoenix.Bll\Phoenix.Bll\Phoenix.Bll.csproj">
+      <Project>{02e87eff-1f75-4627-9ad8-8720afa5cfa1}</Project>
+      <Name>Phoenix.Bll</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -39,9 +39,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GeneratedModels\chosen_course_registration.cs" />
+    <Compile Include="GeneratedModels\courses_list.cs" />
+    <Compile Include="GeneratedModels\course_calendar.cs" />
+    <Compile Include="GeneratedModels\course_participants.cs" />
+    <Compile Include="GeneratedModels\course_references.cs" />
+    <Compile Include="GeneratedModels\course_registration.cs" />
+    <Compile Include="GeneratedModels\course_technologies.cs" />
+    <Compile Include="GeneratedModels\course_trainers.cs" />
+    <Compile Include="GeneratedModels\developers_list.cs" />
+    <Compile Include="GeneratedModels\developers_skills.cs" />
+    <Compile Include="GeneratedModels\portfolio.cs" />
+    <Compile Include="GeneratedModels\roles.cs" />
+    <Compile Include="GeneratedModels\skills_technologies.cs" />
+    <Compile Include="GeneratedModels\users.cs" />
+    <Compile Include="GeneratedModels\users_portfolio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="User\Privilege.cs" />
-    <Compile Include="User\Users.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Toci.Db\Toci.Db.csproj">
@@ -49,9 +62,7 @@
       <Name>Toci.Db</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Documents\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

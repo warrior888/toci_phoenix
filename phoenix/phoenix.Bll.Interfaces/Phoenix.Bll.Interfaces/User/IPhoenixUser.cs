@@ -2,7 +2,7 @@
 
 namespace _3mb.Bll.Interfaces.User
 {
-    public interface I3MbUser : IUser
+    public interface IPhoenixUser : IUser
     {
          // decyzja ?
     }

@@ -49,6 +49,10 @@
     <Compile Include="Abstraction\Logic.cs" />
     <Compile Include="Abstraction\LogPriority.cs" />
     <Compile Include="Abstraction\LogSaver.cs" />
+    <Compile Include="BusinessModels\IDeveloperListBusinessModel.cs" />
+    <Compile Include="BusinessModels\IPortfolioBusinessModel.cs" />
+    <Compile Include="BusinessModels\ISkillBusinessModel.cs" />
+    <Compile Include="DevelopersList\IDeveloperListLogic.cs" />
     <Compile Include="Document\DocumentType.cs" />
     <Compile Include="Document\I3MbDocument.cs" />
     <Compile Include="FinancialOperations\Contractor\IContractor.cs" />
@@ -65,7 +69,7 @@
     <Compile Include="Localization\ILocalizationLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User\ClassificationLevel.cs" />
-    <Compile Include="User\I3MbUser.cs" />
+    <Compile Include="User\IPhoenixUser.cs" />
     <Compile Include="User\IUserLogic.cs" />
   </ItemGroup>
   <ItemGroup>

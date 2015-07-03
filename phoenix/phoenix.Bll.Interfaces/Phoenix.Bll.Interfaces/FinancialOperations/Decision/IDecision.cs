@@ -7,7 +7,7 @@ namespace _3mb.Bll.Interfaces.FinancialOperations.Decision
 {
     public interface IDecision
     {
-        I3MbUser Requestor { get; }
+        IPhoenixUser Requestor { get; }
 
         IRequirement Requirement { get; } // ?
 

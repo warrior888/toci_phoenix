@@ -22,7 +22,7 @@ namespace Toci.Utilities.Generator.DatabaseModelGenerator.DbDdlParser
         protected override string ExtractCoreDdl(string ddl)
         {
             int startPosition = ddl.ToUpper().IndexOf(_leftParenthesis) + _shiftValue; ;
-            int endPosition = ddl.ToUpper().IndexOf(_rightParenthesis);
+            int endPosition = ddl.ToUpper().LastIndexOf(_rightParenthesis);
            
                 var splittedString = (ddl.Substring(startPosition, endPosition - startPosition).Trim()).Split(_delimiter);
 

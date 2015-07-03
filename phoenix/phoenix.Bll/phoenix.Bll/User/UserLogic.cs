@@ -1,9 +1,8 @@
 ﻿using Toci.Utilities.Interfaces.Document.DocumentParse;
-using Toci.Utilities.Interfaces.User;
 using _3mb.Bll.Essential;
 using _3mb.Bll.Interfaces.User;
 
-namespace _3mb.Bll.User
+namespace Phoenix.Bll.User
 {
     public class UserLogic : BllDbLogic, IUserLogic
     {
