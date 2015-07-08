@@ -1,7 +1,4 @@
-﻿using System;
-using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Toci.Utilities.Abstraction.Communication.Factories;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Toci.Utilities.Communication;
 using Toci.Utilities.Communication.MediaTypes;
 using Toci.Utilities.Interfaces.Communication;
@@ -9,7 +6,7 @@ using Toci.Utilities.Interfaces.Communication.CommunicationMedia;
 using Toci.Utilities.Interfaces.Communication.CommunicationMessages;
 using Toci.Utilities.Interfaces.User;
 
-namespace _3mb.Integration.Test.Developers.Mg
+namespace Phoenix.Integration.Test.Developers.Mg
 {
     [TestClass]
     public class Communication

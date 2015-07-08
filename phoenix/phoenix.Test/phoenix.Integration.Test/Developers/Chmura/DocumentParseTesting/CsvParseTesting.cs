@@ -2,7 +2,7 @@
 using Toci.Utilities.Document.DocumentParsers;
 using Toci.Utilities.Document.DocumentParsers.CSV;
 
-namespace _3mb.Integration.Test.Developers.Chmura.DocumentParseTesting
+namespace Phoenix.Integration.Test.Developers.Chmura.DocumentParseTesting
 {
     [TestClass]
     public class CsvParseTesting

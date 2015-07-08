@@ -2,7 +2,7 @@
 using Toci.Utilities.Document.DocumentParsers;
 using Toci.Utilities.Document.DocumentParsers.DOC;
 
-namespace _3mb.Integration.Test.Developers.Chmura.DocumentParseTesting
+namespace Phoenix.Integration.Test.Developers.Chmura.DocumentParseTesting
 {
     [TestClass]
     public class DocParseTesting

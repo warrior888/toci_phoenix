@@ -1,12 +1,11 @@
-﻿using Puma.Net;
-using System.Drawing;
+﻿using System.Drawing;
 using System.IO;
 using System.Text;
+using Puma.Net;
 using Toci.Utilities.Abstraction.Document;
 using Toci.Utilities.Interfaces;
 
-
-namespace Toci.Utilities.Document.DocumentParsers.OCR
+namespace Toci.Utilities.Document.DocumentParsers.ThirdParty.Puma
 {
     public class PumaOcrParser : DocumentInterpreter
     {

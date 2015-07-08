@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Toci.Utilities.Generator.DatabaseModelGenerator;
 using Toci.Utilities.Generator.DatabaseModelGenerator.DbDdlParser;
 
-namespace _3mb.Integration.Test.Developers.Duch
+namespace Phoenix.Integration.Test.Developers.Duch
 {
     [TestClass]
     public class DdlTest

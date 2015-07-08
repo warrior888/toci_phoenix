@@ -5,10 +5,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Toci.Db.Clients;
 using Toci.Db.ClusterAccess;
 using Toci.Db.DbVirtualization.MsSqlQuery;
-using Toci.Db.DbVirtualization.PostgreSqlQuery;
-using Toci.Utilities.Test.Developers.Casanova;
 
-namespace _3mb.Integration.Test.Developers.Casanova
+namespace Phoenix.Integration.Test.Developers.Casanova.DbTesting
 {
     [TestClass]
     public class MsSQLTesting

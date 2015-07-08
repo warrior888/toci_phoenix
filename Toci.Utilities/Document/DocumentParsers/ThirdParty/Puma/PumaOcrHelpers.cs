@@ -1,8 +1,7 @@
 ﻿using System.Drawing;
 using System.Drawing.Drawing2D;
 
-
-namespace Toci.Utilities.Document.DocumentParsers.OCR
+namespace Toci.Utilities.Document.DocumentParsers.ThirdParty.Puma
 {
     public class PumaOcrHelpers
     {

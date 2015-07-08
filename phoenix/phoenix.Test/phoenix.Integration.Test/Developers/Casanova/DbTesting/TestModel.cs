@@ -1,8 +1,7 @@
-﻿using System.ComponentModel;
-using Toci.Db.DbVirtualization;
+﻿using Toci.Db.DbVirtualization;
 using Toci.Db.Interfaces;
 
-namespace Toci.Utilities.Test.Developers.Casanova
+namespace Phoenix.Integration.Test.Developers.Casanova.DbTesting
 {
     class TestModel : Model
     {

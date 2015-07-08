@@ -5,7 +5,7 @@ using Toci.Utilities.Interfaces.Communication.CommunicationMedia;
 using Toci.Utilities.Interfaces.User;
 using Toci.Utilities.Interfaces.User.Privileges;
 
-namespace _3mb.Integration.Test.Developers.Mg
+namespace Phoenix.Integration.Test.Developers.Mg
 {
     class MgUser : IUser
     {

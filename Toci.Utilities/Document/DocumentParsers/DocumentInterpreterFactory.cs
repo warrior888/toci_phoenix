@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using Toci.Utilities.Document.DocumentParsers.OCR;
 using Toci.Utilities.Document.DocumentParsers.PDF;
 using Toci.Utilities.Document.DocumentParsers.DOC;
+using Toci.Utilities.Document.DocumentParsers.ThirdParty.Puma;
 using Toci.Utilities.Interfaces.Document.DocumentParse;
 
 namespace Toci.Utilities.Document.DocumentParsers

@@ -7,7 +7,7 @@ using Toci.Db.ClusterAccess;
 using Toci.Db.DbVirtualization.PostgreSqlQuery;
 using Toci.Db.Interfaces;
 using Toci.Utilities.Document.DocumentParsers;
-using Toci.Utilities.Document.DocumentParsers.OCR;
+using Toci.Utilities.Document.DocumentParsers.ThirdParty.Puma;
 using Toci.Utilities.Interfaces;
 using Toci.Utilities.Interfaces.Document.DocumentParse;
 using _3mb.Bll.Interfaces.User;

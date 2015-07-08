@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net.Mime;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Toci.Utilities.Abstraction.Communication;
-using Toci.Utilities.Abstraction.Communication.Factories;
 using Toci.Utilities.Interfaces.Communication;
-using Toci.Utilities.Interfaces.Communication.CommunicationMessages;
 
-namespace _3mb.Integration.Test.Developers.Dysq.SupportedAttachments
+namespace Phoenix.Integration.Test.Developers.Dysq.SupportedAttachments
 {
     public class DocAttachment : MessageAttachment
     {

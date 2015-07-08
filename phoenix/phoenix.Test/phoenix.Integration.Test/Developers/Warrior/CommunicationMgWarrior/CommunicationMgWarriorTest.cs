@@ -1,9 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Phoenix.Integration.Test.Developers.Mg;
 using Toci.Utilities.Communication;
 using Toci.Utilities.Communication.MediaTypes;
-using _3mb.Integration.Test.Developers.Mg;
 
-namespace _3mb.Integration.Test.Developers.Warrior.CommunicationMgWarrior
+namespace Phoenix.Integration.Test.Developers.Warrior.CommunicationMgWarrior
 {
     [TestClass]
     public class CommunicationMgWarriorTest

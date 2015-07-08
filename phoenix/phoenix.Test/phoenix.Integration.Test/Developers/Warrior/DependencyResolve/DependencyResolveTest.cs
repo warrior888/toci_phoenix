@@ -1,14 +1,12 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Phoenix.Bll.User;
 using Toci.Db.ClusterAccess;
-using Toci.Db.Interfaces;
 using Toci.Utilities.Interfaces.DependencyResolve;
 using Toci.Utilities.Interfaces.DesignPatterns;
 using _3mb.Bll.Essential;
 using _3mb.Bll.Interfaces.User;
 
-namespace _3mb.Integration.Test.Developers.Warrior.DependencyResolve
+namespace Phoenix.Integration.Test.Developers.Warrior.DependencyResolve
 {
     [TestClass]
     public class DependencyResolveTest
