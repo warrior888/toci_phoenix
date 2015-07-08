@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Phoenix.Bll.DevelopersList;
-using Phoenix.Bll.Interfaces.DevelopersList;
+using Phoenix.Bll.Interfaces.Logic.DevelopersList;
 
 namespace Phoenix.Front.Controllers
 {

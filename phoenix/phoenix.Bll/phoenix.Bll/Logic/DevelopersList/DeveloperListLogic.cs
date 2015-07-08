@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
-using Phoenix.Bll.Interfaces.BusinessModels;
-using Phoenix.Bll.Interfaces.DevelopersList;
-using Toci.Db.Interfaces;
+using Phoenix.Bll.Interfaces.BusinessModels.DevelopersList;
+using Phoenix.Bll.Interfaces.Logic.DevelopersList;
 
-namespace Phoenix.Bll.DevelopersList
+namespace Phoenix.Bll.Logic.DevelopersList
 {
     public class DeveloperListLogic : DbLogic, IDeveloperListLogic
     {

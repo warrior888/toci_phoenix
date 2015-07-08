@@ -49,10 +49,11 @@
     <Compile Include="Abstraction\Logic.cs" />
     <Compile Include="Abstraction\LogPriority.cs" />
     <Compile Include="Abstraction\LogSaver.cs" />
-    <Compile Include="BusinessModels\IDeveloperListBusinessModel.cs" />
-    <Compile Include="BusinessModels\IPortfolioBusinessModel.cs" />
-    <Compile Include="BusinessModels\ISkillBusinessModel.cs" />
-    <Compile Include="DevelopersList\IDeveloperListLogic.cs" />
+    <Compile Include="BusinessModels\DevelopersList\IDeveloperListBusinessModel.cs" />
+    <Compile Include="BusinessModels\DevelopersList\IPortfolioBusinessModel.cs" />
+    <Compile Include="BusinessModels\DevelopersList\ISkillBusinessModel.cs" />
+    <Compile Include="Logic\CoursesList\ICoursesListLogic.cs" />
+    <Compile Include="Logic\DevelopersList\IDeveloperListLogic.cs" />
     <Compile Include="Document\DocumentType.cs" />
     <Compile Include="Document\I3MbDocument.cs" />
     <Compile Include="FinancialOperations\Contractor\IContractor.cs" />
@@ -81,6 +82,9 @@
       <Project>{c3976ac9-39a5-4b47-8a67-33f021a4cdc3}</Project>
       <Name>Toci.Utilities.Interfaces</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BusinessModels\CoursesList\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

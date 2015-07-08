@@ -1,4 +1,4 @@
-﻿namespace Phoenix.Bll.Interfaces.BusinessModels
+﻿namespace Phoenix.Bll.Interfaces.BusinessModels.DevelopersList
 {
     public interface ISkillBusinessModel
     {

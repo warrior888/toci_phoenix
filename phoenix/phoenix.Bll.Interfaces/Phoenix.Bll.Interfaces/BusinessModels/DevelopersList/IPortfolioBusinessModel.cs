@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Phoenix.Bll.Interfaces.BusinessModels
+namespace Phoenix.Bll.Interfaces.BusinessModels.DevelopersList
 {
     public interface IPortfolioBusinessModel
     {

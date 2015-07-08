@@ -42,9 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BusinessModels\PortfolioBusinessModel.cs" />
+    <Compile Include="BusinessModels\DevelopersList\PortfolioBusinessModel.cs" />
     <Compile Include="DbLogic.cs" />
-    <Compile Include="DevelopersList\DeveloperListLogic.cs" />
+    <Compile Include="Logic\DevelopersList\DeveloperListLogic.cs" />
     <Compile Include="Essential\AutofacContainer.cs" />
     <Compile Include="Essential\AutofacDependencyResolver.cs" />
     <Compile Include="Essential\BllDbLogic.cs" />
@@ -87,7 +87,10 @@
       <Name>Phoenix.Dal</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="BusinessModels\CoursesList\" />
+    <Folder Include="Logic\CoursesList\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
