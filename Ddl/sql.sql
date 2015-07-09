@@ -1,3 +1,4 @@
+drop table course_references_comments;
 drop table course_references;
 
 drop table chosen_course_registration;
@@ -42,8 +43,7 @@ create table developers_list (
 
 	id serial primary key,
 	id_users integer references users(id) not null,
-	score double
-	
+	score float
 ); 
 
 create table portfolio (
@@ -129,4 +129,12 @@ create table course_references (
 	id_courses_list integer references courses_list(id) not null,
 	id_users integer references users(id) not null,
 	references_text text
+	
+);
+
+create table course_references_comments (
+	id serial primary key,
+	id_course_references integer references course_references(id) not null,
+	id_users integer references users(id) not null,
+	comment_text text
 );
