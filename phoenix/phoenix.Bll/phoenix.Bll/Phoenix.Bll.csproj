@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="BusinessModels\DevelopersList\PortfolioBusinessModel.cs" />
     <Compile Include="DbLogic.cs" />
+    <Compile Include="Logic\CourseRegistration\CourseRegistrationLogic.cs" />
     <Compile Include="Logic\DevelopersList\DeveloperListLogic.cs" />
     <Compile Include="Essential\AutofacContainer.cs" />
     <Compile Include="Essential\AutofacDependencyResolver.cs" />
