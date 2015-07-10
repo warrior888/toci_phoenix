@@ -7,15 +7,15 @@ using _3mb.Bll.Interfaces.User;
 
 namespace Phoenix.Bll.Interfaces.BusinessModels.CoursesList
 {
-    public interface ICoursesListBusinessModel
+    public interface ICoursesListBuisnessModel
     {
         int CoursLength { get; set; }
         DateTime CourseStartDate { get; set; }
         string CourseAgenda { get; set; }
 
         IEnumerable<string> CourseTechnologies { get; set; }
-        IEnumerable<DateTime> CourseSessions { get; set; }
-
+        IEnumerable<ICourseSessionsBuisnessModel> CourseSessions { get; set; }
+        IEnumerable<IPhoenixUser> CourseParticipants { get; set; } 
         IEnumerable<IPhoenixUser> CourseTrainers { get; set; } 
 
     }

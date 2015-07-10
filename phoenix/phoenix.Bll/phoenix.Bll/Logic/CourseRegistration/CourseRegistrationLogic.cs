@@ -30,7 +30,7 @@ namespace Phoenix.Bll.Logic.CourseRegistration
             throw new NotImplementedException();
         }
 
-        public IEnumerable<ICoursesListBusinessModel> GetParticipantChoosedCourses(int participantId)
+        public IEnumerable<ICoursesListBuisnessModel> GetParticipantChoosedCourses(int participantId)
         {
             throw new NotImplementedException();
         }

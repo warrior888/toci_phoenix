@@ -8,7 +8,7 @@ namespace Phoenix.Bll.Interfaces.BusinessModels.CourseRegistration
 {
     public interface IChosenCourseRegistrationBusinessModel
     {
-        ICoursesListBusinessModel CourseInfo { get; set; }
+        ICoursesListBuisnessModel CourseInfo { get; set; }
 
     }
 }

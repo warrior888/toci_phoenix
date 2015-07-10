@@ -15,7 +15,7 @@ namespace Phoenix.Bll.Interfaces.Logic.CourseRegistration
 
         IEnumerable<IChosenCourseRegistrationBusinessModel> GetRegisteredUsers(int courseId);
 
-        IEnumerable<ICoursesListBusinessModel> GetParticipantChoosedCourses(int participantId);
+        IEnumerable<ICoursesListBuisnessModel> GetParticipantChoosedCourses(int participantId);
 
 
     
