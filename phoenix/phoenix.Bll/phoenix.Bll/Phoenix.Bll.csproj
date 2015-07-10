@@ -88,7 +88,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="BusinessModels\CourseReferences\" />
     <Folder Include="BusinessModels\CoursesList\" />
+    <Folder Include="Logic\CourseReferences\" />
     <Folder Include="Logic\CoursesList\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
