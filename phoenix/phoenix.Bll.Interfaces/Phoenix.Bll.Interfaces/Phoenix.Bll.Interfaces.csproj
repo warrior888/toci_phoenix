@@ -51,7 +51,9 @@
     <Compile Include="Abstraction\LogSaver.cs" />
     <Compile Include="BusinessModels\CourseReferences\ICourseReferencesBusinessModel.cs" />
     <Compile Include="BusinessModels\CourseReferences\ICourseReferencesCommentBusinessModel.cs" />
-    <Compile Include="BusinessModels\CoursesList\ICoursesListBusinessModel.cs" />
+    <Compile Include="BusinessModels\CoursesList\ICalendarBuisnessModel.cs" />
+    <Compile Include="BusinessModels\CoursesList\ICourseSessionsBuisnessModel.cs" />
+    <Compile Include="BusinessModels\CoursesList\ICoursesListBuisnessModel.cs" />
     <Compile Include="BusinessModels\CourseRegistration\IChosenCourseRegistrationBusinessModel.cs" />
     <Compile Include="BusinessModels\CourseRegistration\ICourseRegistrationBusinessModel.cs" />
     <Compile Include="BusinessModels\DevelopersList\IDeveloperListBusinessModel.cs" />
