@@ -25,8 +25,10 @@ namespace Phoenix.Bll.Interfaces.Logic.CoursesList
 
         IEnumerable<IPhoenixUser> GetCourseUsers(ICoursesListBuisnessModel course);
         bool AddUserToCourse(IPhoenixUser user);
-        bool DeleteUserFromCourse(IPhoenixUser user)
+        bool DeleteUserFromCourse(IPhoenixUser user);
 
+        bool GetFromThirdyPartyCalendar();
+        bool SaveToThirdPartyCalendar(ICoursesListBuisnessModel course);
 
 
 

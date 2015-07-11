@@ -9,6 +9,7 @@ namespace Phoenix.Bll.Interfaces.BusinessModels.CoursesList
 {
     public interface ICoursesListBuisnessModel
     {
+        int CourseId { get; set; }
         int CoursLength { get; set; }
         DateTime CourseStartDate { get; set; }
         string CourseAgenda { get; set; }

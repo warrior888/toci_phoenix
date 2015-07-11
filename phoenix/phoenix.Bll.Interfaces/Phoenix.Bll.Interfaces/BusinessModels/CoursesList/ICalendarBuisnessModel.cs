@@ -8,8 +8,8 @@ namespace Phoenix.Bll.Interfaces.BusinessModels.CoursesList
 {
     interface ICalendarBuisnessModel
     {
-        ICoursesListBuisnessModel Course { get; set; }
-
+        IEnumerable<ICoursesListBuisnessModel> CoursesList { get; set; }
+        
         
     }
 }
