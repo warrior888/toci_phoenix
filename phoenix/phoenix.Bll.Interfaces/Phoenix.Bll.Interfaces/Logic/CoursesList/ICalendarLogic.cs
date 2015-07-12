@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Phoenix.Bll.Interfaces.Logic.CoursesList
 {
-    interface ICalendarLogic
+    public interface ICalendarLogic
     {
         ICoursesListBuisnessModel GetCourseById(IEnumerable<ICoursesListBuisnessModel> courseList, int courseId);
         ICoursesListBuisnessModel GetCourseByTechnologies(IEnumerable<ICoursesListBuisnessModel> courseList, string coursTechnologies);

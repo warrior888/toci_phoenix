@@ -6,7 +6,7 @@ namespace Phoenix.Bll.Interfaces.Logic.CoursesList
     public interface ICoursesListLogic : IDbLogic
     {
         bool AddSession(ICourseSessionsBuisnessModel session);
-        bool EditSession(ICourseSessionsBuisnessModel session);
+        //bool EditSession(ICourseSessionsBuisnessModel session);
         bool DeleteSession(ICourseSessionsBuisnessModel session);
 
         bool SetCourseStart(ICoursesListBuisnessModel course);
@@ -16,8 +16,7 @@ namespace Phoenix.Bll.Interfaces.Logic.CoursesList
         
         IEnumerable<IPhoenixUser> GetCourseTrainers(ICoursesListBuisnessModel course);
         bool AddTrainerToCourse(IPhoenixUser user);
-        bool DeleteTrainerFromCourse(IPhoenixUser user);
-        
+        bool DeleteTrainerFromCourse(IPhoenixUser user);                                     
         
         bool AddCourseTechnologie(string technologie, ICoursesListBuisnessModel course);
         bool EditCourseTechnologie(ICoursesListBuisnessModel course);

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Phoenix.Bll.Interfaces.BusinessModels.CoursesList
 {
-    interface ICourseSessionsBuisnessModel
+    public interface ICourseSessionsBuisnessModel
     {
         string SessionName { get; set; }
         double SessionCount { get; set; }

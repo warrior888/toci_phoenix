@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace Phoenix.Bll.Interfaces.BusinessModels.CoursesList
 {
-    interface ICalendarBuisnessModel
+    public interface ICalendarBuisnessModel
     {
-        IEnumerable<ICoursesListBuisnessModel> CoursesList { get; set; }
-        
+        IEnumerable<ICoursesListBuisnessModel> CoursesList { get; set; }        
         
     }
 }
