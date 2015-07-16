@@ -1,4 +1,6 @@
 ﻿using _3mb.Bll.Interfaces.User;
+using Google.Apis.Calendar.v3;
+using Google.Apis.Services;
 using Phoenix.Bll.Interfaces.BusinessModels.CoursesList;
 using System.Collections.Generic;
 namespace Phoenix.Bll.Interfaces.Logic.CoursesList
@@ -26,10 +28,8 @@ namespace Phoenix.Bll.Interfaces.Logic.CoursesList
         bool AddUserToCourse(IPhoenixUser user);
         bool DeleteUserFromCourse(IPhoenixUser user);
 
-        bool GetFromThirdyPartyCalendar();
+        bool GetFromThirdyPartyCalendar(IPhoenixUser user);
         bool SaveToThirdPartyCalendar(ICoursesListBuisnessModel course);
-
-
 
          // nasz i course list busines model GetFromThirdPartyCalendar();
 
