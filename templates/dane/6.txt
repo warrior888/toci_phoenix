@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9">
+    </div>
+    <div class="col-sm-3">
+      <h1>ORGANIZATORZY</h1>
+    </div>
+  </div>
+  	<div class="row">
+		<div class="col-sm-6">
+			<div class="image-container">
+				<img src="dane/Vazco.png">
+				</br>
+				<center><b>Vazco</b></center>
+<p>Dynamicznie rozwijaj¹ca siê firma, dzia³aj¹ca we Wroc³awiu od 2008 roku, zajmuj¹ca siê budow¹ customowych portali w technologii Meteor dla klientów z ca³ego œwiata.</p>
+
+			</div>
+		</div>
+		<div class="col-sm-6">
+			<div class="image-container">
+				<img src="dane/Bartek.png">
+				<center><b>Bart³omiej Zapart</b></center>
+<p>programista JavaScript, C# i PHP z dziesiêcioletnim doœwiadczeniem komercyjnym w roli programisty m.in. w GG Network czy Microsoft.</p>
+
+
+			</div>
+		</div>
+	</div>
+</div>
