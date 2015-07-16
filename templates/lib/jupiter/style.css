@@ -17,7 +17,7 @@ width:100%;
 
 
 #main{
-background-image: url('../bg.jpg');
+background-image: url('../../bg.jpg');
     background-size: cover;
 min-height: 100%;
 min-width: 100%;

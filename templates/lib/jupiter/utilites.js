@@ -1,6 +1,7 @@
 /**
  * Created by Mateusz on 2015-07-16.
  */
+
 function RegisterClick(elementId, callback) {
 
     $(elementId).click(callback);

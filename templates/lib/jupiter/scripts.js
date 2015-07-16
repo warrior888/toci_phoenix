@@ -20,7 +20,7 @@ function setSize(){
 
 function AboutLinkClick() {
 
-    var html = GetHtmlByAjax("data/2.html");
+    var html = GetHtmlByAjax("dane/2.html");
 
-    PutHtmlToContainer("#aboutClick", html);
+    PutHtmlToContainer("about", html);
 }
