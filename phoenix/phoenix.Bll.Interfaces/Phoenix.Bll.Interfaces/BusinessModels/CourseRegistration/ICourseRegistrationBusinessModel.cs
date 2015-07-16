@@ -14,6 +14,6 @@ namespace Phoenix.Bll.Interfaces.BusinessModels.CourseRegistration
         string Name { get; set; }
         string Surname { get; set; }
 
-        IEnumerable<IChosenCourseRegistrationBusinessModel> ChosenCoures { get; set; }
+        IEnumerable<IChosenCourseRegistrationBusinessModel> ChosenCourses { get; set; }
     }
 }
