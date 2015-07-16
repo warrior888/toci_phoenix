@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+
+    <script src="lib/jquery-2.1.4.min.js"></script>
+    <script src="lib/bootstrap.min.js"></script>
+    <script src="lib/scripts.js"></script>
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/style.css">
+    <meta http-equiv="Content-type" content="text/html; charset=ISO-8859-2" />
+</head>
+<body>
+
+<nav class="navbar-fixed-top">
+
+<ul>
+    <li>O kursie</li>
+    <li>Jak to działa?</li>
+    <li>Organizatorzy</li>
+    <li>FAQ</li>
+    <li>Aplikuj</li>
+
+</ul>
+</nav>
+<div id="cont" class="container-fluid">
+    <div id="row" class="row">
+        <div id="main" class="col-xs-12">
+
+
+            <div id="info">
+                <h1>
+
+                    Darmowy kurs programowania w JavaScript i Meteor
+                </h1>
+                <br> <br>
+
+                <h2>Termin: 20 lipca</h2>
+                <br> <br>
+                <button id="getMoreButton" class="btn btn-success">Dowiedz się więcej</button>
+            </div>
+            <div>
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
+
+<script>
+
+$(document).ready(function (){
+
+    $("#getMoreButton").click(function(){
+       var data =  sendAJAX("http://localhost/dane/1.txt",insertHTMLbyId);
+        console.log(data);
+
+
+
+    });
+
+})
+
+
+
+
+   /* window.onload= function(){
+
+        $.ajax({
+            type: "POST",
+            url: "http://localhost/dane.txt",
+
+          success: function(dane){
+              alert(dane);
+            }
+
+        });
+    }*/
+</script>
+
+</body>
+</html>
