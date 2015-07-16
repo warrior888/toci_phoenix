@@ -1,0 +1,6 @@
+<h3>Oferujemy:</h3>
+<ul>
+<li>intensywny darmowy kurs przygotowuj¹cy do pracy programisty,</li>
+<li>dla najlepszych p³atne sta¿e oraz pracê, w technologii Meteor</li>
+<li>opracowanie œcie¿ki indywidualnego rozwoju zawodowego</li>
+</ul>

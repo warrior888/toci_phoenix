@@ -1,0 +1,2 @@
+<center><h3>Meteor JS</h3><center>
+<p>Drugi etap kursu dotycz¹cy technologii Meteor JS. Zostanie zrealizowany <b>przez firmê Vazco</b>, póŸniejszego pracodawcê najlepszych uczestników.</p> 

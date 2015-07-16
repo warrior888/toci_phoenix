@@ -1,0 +1,7 @@
+<center><h3>METEOR JS</h3></center>
+<ul>
+<li>super nowoczesna technologia</li>
+<li>rozwi¹zanie full-stack</li>
+<li>komunikacja real-time</li>
+<li>reaktywnoœæ, responsywnoœæ</li>
+</ul>
