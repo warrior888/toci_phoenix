@@ -27,7 +27,7 @@
         <div id="main" class="col-xs-12">
 
 
-            <div id="info">
+            <div id="title" class="viewport">
                 <h1>
 
                     Darmowy kurs programowania w JavaScript i Meteor
@@ -38,7 +38,36 @@
                 <br> <br>
                 <button id="getMoreButton" class="btn btn-success">Dowiedz siê wiêcej</button>
             </div>
-            <div>
+            <div id="about" class="viewport">
+
+
+            </div>
+            <div id="about2" class="viewport">
+
+
+            </div>
+
+            <div id="how-it-works" class="viewport">
+
+
+            </div>
+
+            <div id="organiser" class="viewport">
+
+
+            </div>
+
+            <div id="how-to-apply" class="viewport">
+
+
+        </div>
+
+            <div id="faq" class="viewport">
+
+
+            </div>
+
+            <div id="contact" class="viewport">
 
 
             </div>
@@ -51,19 +80,21 @@
 
 <script>
 
+
+    window.onresize =   setSize;
 $(document).ready(function (){
 
+
     $("#getMoreButton").click(function(){
-       var data =  sendAJAX("http://localhost/dane/1.txt",insertHTMLbyId);
+       var data =  sendAJAX("http://localhost/meteor/dane/1.txt",insertHTMLbyId);
         console.log(data);
 
 
 
     });
 
+
 })
-
-
 
 
    /* window.onload= function(){
