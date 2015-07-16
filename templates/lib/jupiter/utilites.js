@@ -1,30 +1,6 @@
 /**
  * Created by Mateusz on 2015-07-16.
  */
-
-
-function sendAJAX(url, callback, elementIDToReplace) {
-
-    if (!elementIDToReplace) {
-        elementIDToReplace = "info";
-    }
-    $.ajax({
-        type: "GET",
-        url: url,
-
-        success: function (data) {
-
-            callback(data, elementIDToReplace);
-        }
-
-    });
-
-}
-
-function insertHTMLbyId(data, id) {
-    $("#" + id).html(data);
-}
-
 function RegisterClick(elementId, callback) {
 
     $(elementId).click(callback);
@@ -32,9 +8,15 @@ function RegisterClick(elementId, callback) {
 
 function GetHtmlByAjax(url) {
 
-
+    $.ajax({
+        type: "GET",
+        url: url,
+        success: function (data) {
+            return data;
+        }
+    });
 }
 
 function PutHtmlToContainer(containerId, html) {
-
+    $("#" + containerId).html(html);
 }
