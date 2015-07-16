@@ -57,9 +57,13 @@ nav li{
 
 div.image-container {
     padding: 10px;
-	text-align:center;
+    text-align: center;
+}
 
 .viewport{
 
 
+}
+.navbar-fixed-top li a {
+    color:#FFFFFF;
 }
