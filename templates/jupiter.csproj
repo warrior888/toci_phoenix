@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{00000000-0000-0000-0000-000000000000}</ProjectGuid>
+    <ProjectGuid>{7E6061B5-081A-4002-BC50-F623092B28AD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <NoStandardLibraries>false</NoStandardLibraries>
     <AssemblyName>ClassLibrary</AssemblyName>
@@ -27,6 +27,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>jupiter</RootNamespace>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
@@ -35,6 +38,130 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".idea\misc.xml" />
+    <Content Include=".idea\modules.xml" />
+    <Content Include=".idea\vcs.xml" />
+    <Content Include=".idea\workspace.xml" />
+    <Content Include="bg.jpg" />
+    <Content Include="bootstrap-3.3.5-dist\css\bootstrap-theme.css" />
+    <Content Include="bootstrap-3.3.5-dist\css\bootstrap-theme.min.css" />
+    <Content Include="bootstrap-3.3.5-dist\css\bootstrap.css" />
+    <Content Include="bootstrap-3.3.5-dist\css\bootstrap.min.css" />
+    <Content Include="bootstrap-3.3.5-dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="bootstrap-3.3.5-dist\js\bootstrap.js" />
+    <Content Include="bootstrap-3.3.5-dist\js\bootstrap.min.js" />
+    <Content Include="bootstrap-3.3.5-dist\js\npm.js" />
+    <Content Include="dane.txt" />
+    <Content Include="dane\1-1.jpg" />
+    <Content Include="dane\1-2.jpg" />
+    <Content Include="dane\1.txt" />
+    <Content Include="dane\2-1-OKursie.txt" />
+    <Content Include="dane\2-1.jpg" />
+    <Content Include="dane\2-2.jpg" />
+    <Content Include="dane\2.txt" />
+    <Content Include="dane\3-1JavaScript.txt" />
+    <Content Include="dane\3-2MeteorJS.txt" />
+    <Content Include="dane\3-3Zalety.txt" />
+    <Content Include="dane\4-1Vasco.txt" />
+    <Content Include="dane\4-2Oferujemy.txt" />
+    <Content Include="dane\4-3Oczekujemy.txt" />
+    <Content Include="dane\5-1EtapI.txt" />
+    <Content Include="dane\5-2EtapII.txt" />
+    <Content Include="dane\5-3.txt" />
+    <Content Include="dane\6-1Vazco.txt" />
+    <Content Include="dane\6-2Bartek.txt" />
+    <Content Include="dane\Bartek.png" />
+    <Content Include="dane\JavaScript.png" />
+    <Content Include="dane\Meteor.png" />
+    <Content Include="dane\vazco.jpg" />
+    <Content Include="dane\Vazco.png" />
+    <Content Include="index.html" />
+    <Content Include="lib\bootstrap.min.css" />
+    <Content Include="lib\bootstrap.min.js" />
+    <Content Include="lib\functions.js" />
+    <Content Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\gulpfile.js" />
+    <Content Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\lib\jquery.waypoints.js" />
+    <Content Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\lib\jquery.waypoints.min.js" />
+    <Content Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\lib\noframework.waypoints.js" />
+    <Content Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\lib\noframework.waypoints.min.js" />
+    <Content Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\lib\shortcuts\infinite.js" />
+    <Content Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\lib\shortcuts\infinite.min.js" />
+    <Content Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\lib\shortcuts\inview.js" />
+    <Content Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\lib\shortcuts\inview.min.js" />
+    <Content Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\lib\shortcuts\sticky.js" />
+    <Content Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\lib\shortcuts\sticky.min.js" />
+    <Content Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\lib\waypoints.debug.js" />
+    <Content Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\lib\zepto.waypoints.js" />
+    <Content Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\lib\zepto.waypoints.min.js" />
+    <Content Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\licenses.txt" />
+    <Content Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\src\adapters\jquery-zepto-fn-extension.js" />
+    <Content Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\src\adapters\jquery.js" />
+    <Content Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\src\adapters\noframework.js" />
+    <Content Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\src\adapters\zepto.js" />
+    <Content Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\src\context.js" />
+    <Content Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\src\debug.js" />
+    <Content Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\src\group.js" />
+    <Content Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\src\shortcuts\infinite.js" />
+    <Content Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\src\shortcuts\inview.js" />
+    <Content Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\src\shortcuts\sticky.js" />
+    <Content Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\src\waypoint.js" />
+    <Content Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\test\adapter-fn-spec.js" />
+    <Content Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\test\context-spec.js" />
+    <Content Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\test\debug-spec.js" />
+    <Content Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\test\fixtures\infinite.html" />
+    <Content Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\test\fixtures\standard.html" />
+    <Content Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\test\fixtures\sticky.html" />
+    <Content Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\test\group-spec.js" />
+    <Content Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\test\infinite-spec.js" />
+    <Content Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\test\inview-spec.js" />
+    <Content Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\test\lib\coffee-script.js" />
+    <Content Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\test\lib\jasmine-html.js" />
+    <Content Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\test\lib\jasmine-jquery.js" />
+    <Content Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\test\lib\jasmine.css" />
+    <Content Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\test\lib\jasmine.js" />
+    <Content Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\test\lib\require.js" />
+    <Content Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\test\lib\testloader.js" />
+    <Content Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\test\settings.js" />
+    <Content Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\test\sticky-spec.js" />
+    <Content Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\test\waypoint-spec.js" />
+    <Content Include="lib\jquery-2.1.4.min.js" />
+    <Content Include="lib\jquery.waypoints.js" />
+    <Content Include="lib\jquery.waypoints.min.js" />
+    <Content Include="lib\jupiter\register.js" />
+    <Content Include="lib\jupiter\scripts.js" />
+    <Content Include="lib\shortcuts\infinite.js" />
+    <Content Include="lib\shortcuts\infinite.min.js" />
+    <Content Include="lib\shortcuts\inview.js" />
+    <Content Include="lib\shortcuts\inview.min.js" />
+    <Content Include="lib\shortcuts\sticky.js" />
+    <Content Include="lib\shortcuts\sticky.min.js" />
+    <Content Include="lib\sticky.js" />
+    <Content Include="lib\sticky.min.js" />
+    <Content Include="lib\jupiter\style.css" />
+    <Content Include="lib\jupiter\utilites.js" />
+    <Content Include="scroll.html" />
+    <Content Include="temp.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".idea\.name" />
+    <None Include=".idea\www.iml" />
+    <None Include="bootstrap-3.3.5-dist\css\bootstrap-theme.css.map" />
+    <None Include="bootstrap-3.3.5-dist\css\bootstrap.css.map" />
+    <None Include="bootstrap-3.3.5-dist\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="bootstrap-3.3.5-dist\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="bootstrap-3.3.5-dist\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="bootstrap-3.3.5-dist\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\.eslintrc" />
+    <None Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\.gitignore" />
+    <None Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\.travis.yml" />
+    <None Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\bower.json" />
+    <None Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\CHANGELOG.md" />
+    <None Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\CONTRIBUTING.md" />
+    <None Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\package.json" />
+    <None Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\README.md" />
+    <None Include="lib\imakewebthings-waypoints-3.1.1-0-g13ae054\imakewebthings-waypoints-13ae054\testem.json" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
   <ProjectExtensions>
