@@ -45,6 +45,20 @@ nav li{
    padding:150px;
 }
 
+.centeredText{
+	text-align: center;
+	font-size: 18px;
+}
+
+.grayBackgroung{
+	background-color:#E0E0D6;
+	padding:10px;
+}
+
+div.image-container {
+    padding: 10px;
+	text-align:center;
+
 .viewport{
 
 
