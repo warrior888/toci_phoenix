@@ -17,7 +17,7 @@ width:100%;
 
 
 #main{
-background-image: url('../bg.jpg');
+background-image: url('../../bg.jpg');
     background-size: cover;
 min-height: 100%;
 min-width: 100%;
@@ -45,7 +45,25 @@ nav li{
    padding:150px;
 }
 
+.centeredText{
+	text-align: center;
+	font-size: 18px;
+}
+
+.grayBackgroung{
+	background-color:#E0E0D6;
+	padding:10px;
+}
+
+div.image-container {
+    padding: 10px;
+    text-align: center;
+}
+
 .viewport{
 
 
+}
+.navbar-fixed-top li a {
+    color:#FFFFFF;
 }

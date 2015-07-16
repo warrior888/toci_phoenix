@@ -1,1 +1,38 @@
-nowe dane
+<div class="container">
+		<div class="grayBackgroung">
+  <div class="row">
+    <div class="col-sm-9">
+    </div>
+    <div class="col-sm-3">
+      <h1>O KURSIE</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-1">
+    </div>
+    <div class="col-sm-10">
+      <p class="centeredText">Pasjonujesz siê najnowszymi technologiami IT? Chcia³byœ dowiedzieæ siê jak pracuje programista w profesjonalnym zespole? A mo¿e ju¿ programujesz ale interesuje Ciê inwestycja w technologiê o wzrastaj¹cej popularnoœci i popycie na rynku pracy? 
+Ta oferta jest dla Ciebie!</p>
+<div class="col-sm-1">
+	</div>
+    </div>
+    </div>
+	</div>
+	
+	<div class="row">
+		<div class="col-sm-6">
+			<div class="image-container">
+				<img src="dane/2-1.jpg">
+				</br>
+				<a class="btn btn-success" href="https://docs.google.com/document/d/1T5TUKZe_htNUfvXrzXByVjLTT-DH55oE2RE1CL1Ijj8/edit">AGENDA</a>
+			</div>
+		</div>
+		<div class="col-sm-6">
+			<div class="image-container">
+				<img src="dane/2-2.jpg">
+				
+				<a class="btn btn-success" href="https://docs.google.com/document/d/1T5TUKZe_htNUfvXrzXByVjLTT-DH55oE2RE1CL1Ijj8/edit">AGENDA</a>
+			</div>
+		</div>
+	</div>
+</div>
