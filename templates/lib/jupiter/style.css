@@ -59,11 +59,15 @@ nav li{
 }
 
 .grayBackgroung{
-	background-color:#E0E0D6;
-	padding:10px;
-    margin: 0 10%;
+    background-color: rgb(220, 220, 220);
     color:black;
+    padding: 20px;
+}
 
+.whiteBackground{
+    background-color: rgb(255, 255, 255);
+    color:black;
+    padding: 20px;
 }
 
 div.image-container {
