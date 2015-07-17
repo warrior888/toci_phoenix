@@ -1,6 +1,6 @@
 ﻿namespace Shark
 {
-    partial class Form1
+    partial class MainMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -39,14 +39,15 @@
             this.newClient.TabIndex = 0;
             this.newClient.Text = "Nowy klient";
             this.newClient.UseVisualStyleBackColor = true;
+            this.newClient.Click += new System.EventHandler(this.newClient_Click);
             // 
-            // Form1
+            // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(613, 442);
             this.Controls.Add(this.newClient);
-            this.Name = "Form1";
+            this.Name = "MainMenu";
             this.Text = "Shark";
             this.ResumeLayout(false);
 
