@@ -69,6 +69,8 @@ nav li{
 div.image-container {
     padding: 10px;
     text-align: center;
+    display:block;
+    margin:0 auto;
 
     
 }
