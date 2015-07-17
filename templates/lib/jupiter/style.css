@@ -2,8 +2,12 @@ html,body {
 color:white;
 height:100%;
 width:100%;
-    overflow-x: hidden;
-    overflow-y: hidden;
+background-image: url('../../bg.jpg');
+background-size: cover;
+width: 100%;
+height: 100%;
+background-repeat: no-repeat;
+background-attachment: fixed;
 
 }
 #title h2 {
@@ -23,12 +27,7 @@ ul, li {
 }
 
 #main{
-background-image: url('../../bg.jpg');
-background-size: cover;
-width: 100%;
-height: 100%;
-background-repeat: no-repeat;
-background-attachment: fixed;
+
 
 }
 
@@ -51,10 +50,10 @@ nav li{
 
 #content{
    background-color: rgba(200, 200, 200, 0.2);
-   margin: 4% 10%;
+   margin: 0% 10%;
    min-height: 90%;
    text-align: center;
-   padding:150px;
+   padding:50px;
 }
 
 .centeredText{
@@ -68,19 +67,24 @@ nav li{
     padding: 20px;
 }
 
+.grayerBackgroung{
+    background-color: rgb(200, 200, 200);
+    color:black;
+    padding: 20px;
+}
+
 .whiteBackground{
     background-color: rgb(255, 255, 255);
     color:black;
     padding: 20px;
-}
+    }
 
 div.image-container {
     padding: 10px;
     text-align: center;
     display:block;
     margin:0 auto;
-
-    
+    width:100%;
 }
 
 

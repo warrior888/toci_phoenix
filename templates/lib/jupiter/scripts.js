@@ -46,3 +46,8 @@ function ContactLinkClick() {
 
     GetHtmlByAjax("dane/contact.html", insertHTML);
 }
+
+function About2Click() {
+
+    GetHtmlByAjax("dane/about2.html", insertHTML);
+}
