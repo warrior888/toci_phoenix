@@ -18,10 +18,30 @@ function setSize(){
 
 function AboutLinkClick() {
 
-    GetHtmlByAjax("dane/2.html", function (data) { PutHtmlToContainer("about", data); });   
+    GetHtmlByAjax("dane/about.html", function (data) { PutHtmlToContainer("about", data); });   
 }
 
 function HowItWorksLinkClick() {
 
-    GetHtmlByAjax("?", function (data) { PutHtmlToContainer("how-it-works", data); });
+    GetHtmlByAjax("dane/how-it-works.html", function (data) { PutHtmlToContainer("how-it-works", data); });
+}
+
+function OrganisersLinkClick() {
+
+    GetHtmlByAjax("dane/organisers.html", function (data) { PutHtmlToContainer("organisers", data); });
+}
+
+function FAQLinkClick() {
+
+    GetHtmlByAjax("dane/faq.html", function (data) { PutHtmlToContainer("faq", data); });
+}
+
+function ApplyLinkClick() {
+
+    GetHtmlByAjax("dane/apply.html", function (data) { PutHtmlToContainer("apply", data); });
+}
+
+function ContactLinkClick() {
+
+    GetHtmlByAjax("dane/contact.html", function (data) { PutHtmlToContainer("contact", data); });
 }

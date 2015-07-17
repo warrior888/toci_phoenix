@@ -7,14 +7,13 @@ width:100%;
 #cont,#row{
 height:100%;
 width:100%;
+margin:0;
+padding:0;
 }
 
-#row,#cont{
-
-    margin:0;
-    padding:0;
+ul, li {
+    list-style-position: inside;
 }
-
 
 #main{
 background-image: url('../../bg.jpg');
@@ -53,17 +52,19 @@ nav li{
 .grayBackgroung{
 	background-color:#E0E0D6;
 	padding:10px;
+    margin: 0 10%;
+    color:black;
+
 }
 
 div.image-container {
     padding: 10px;
     text-align: center;
+
+    
 }
 
-.viewport{
 
-
-}
 .navbar-fixed-top li a {
     color:#FFFFFF;
 }

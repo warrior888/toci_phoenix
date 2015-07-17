@@ -44,7 +44,8 @@ function setSize(){
 
 }
 
-function writeHTML(elementID){
-    $(elementID).click(function(){
-        var data =  sendAJAX("http://localhost/meteor/dane/1.txt",insertHTMLbyId);
-    }
+function writeHTML(elementID) {
+    $(elementID).click(function() {
+        var data = sendAJAX("http://localhost/meteor/dane/1.txt", insertHTMLbyId);
+    })
+}
