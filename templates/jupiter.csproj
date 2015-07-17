@@ -55,8 +55,10 @@
     <Content Include="bootstrap-3.3.5-dist\js\npm.js" />
     <Content Include="dane.txt" />
     <Content Include="dane\about.html" />
+    <Content Include="dane\about2.html" />
     <Content Include="dane\apply.html" />
     <Content Include="dane\Bartek.png" />
+    <Content Include="dane\contact.html" />
     <Content Include="dane\faq.html" />
     <Content Include="dane\how-it-works.html" />
     <Content Include="dane\javascript-logo.jpg" />

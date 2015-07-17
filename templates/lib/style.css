@@ -7,14 +7,9 @@ width:100%;
 #cont,#row{
 height:100%;
 width:100%;
+margin:0;
+padding:0;
 }
-
-#row,#cont{
-
-    margin:0;
-    padding:0;
-}
-
 
 #main{
 background-image: url('../bg.jpg');
