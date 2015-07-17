@@ -60,7 +60,7 @@
     <Content Include="dane\2-1-OKursie.txt" />
     <Content Include="dane\2-1.jpg" />
     <Content Include="dane\2-2.jpg" />
-    <Content Include="dane\2.txt" />
+    <Content Include="dane\2.html" />
     <Content Include="dane\3-1JavaScript.txt" />
     <Content Include="dane\3-2MeteorJS.txt" />
     <Content Include="dane\3-3Zalety.txt" />

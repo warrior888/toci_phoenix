@@ -16,11 +16,12 @@ function setSize(){
 
 }
 
-
-
 function AboutLinkClick() {
 
-    var html = GetHtmlByAjax("dane/2.html");
+    GetHtmlByAjax("dane/2.html", function (data) { PutHtmlToContainer("about", data); });   
+}
 
-    PutHtmlToContainer("about", html);
+function HowItWorksLinkClick() {
+
+    GetHtmlByAjax("?", function (data) { PutHtmlToContainer("how-it-works", data); });
 }
