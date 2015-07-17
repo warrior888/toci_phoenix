@@ -8,6 +8,7 @@ width:100%;
 }
 #title h2 {
     font-family : 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    float:left;
 }
 
 #cont,#row{
@@ -85,4 +86,5 @@ div.image-container {
 
 .navbar-fixed-top li a {
     color:#FFFFFF;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
