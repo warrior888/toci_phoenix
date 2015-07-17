@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Shark
 {
-    public partial class Form1 : Form
+    public partial class MainMenu : Form
     {
-        public Form1()
+        public MainMenu()
         {
             InitializeComponent();
+        }
+
+        private void newClient_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
