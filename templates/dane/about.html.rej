@@ -1,0 +1,9 @@
+diff a/templates/dane/about.html b/templates/dane/about.html	(rejected hunks)
+@@ -1,4 +0,6 @@
+-
++﻿<head>
++<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
++</head>
+ 
+ <div class="row">
+     <div class="col-xs-2">
