@@ -114,6 +114,8 @@
     <None Include="process-newsletter.php" />
     <None Include="process-teacher.php" />
     <None Include="server\apply.php" />
+    <None Include="server\class.phpmailer.php" />
+    <None Include="server\class.smtp.php" />
     <None Include="server\confirm.php" />
     <None Include="server\contact.php" />
     <None Include="server\Db.php" />
