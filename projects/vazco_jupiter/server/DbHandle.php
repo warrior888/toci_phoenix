@@ -7,12 +7,17 @@
         {
             $this->dontUseEnc = $dontUseEnc;
         }
+
+	
         
         public function dbConnect()
         {
             if (!isset($this->database))
-            {
-                $this->database = pg_pconnect($this->con_str);
+	    {
+		    //podane dane tylko dla testu czy bedzie w stanie sie polaczyc
+		    //wczesniej tutaj byla zmienna con_str
+		    //trzeba wstawic dane serwer koncowego
+                $this->database = pg_pconnect("host=localhost password=aaa111 dbname=applicants");
                 if (!$this->dontUseEnc)
                     pg_set_client_encoding ($this->database, 'LATIN2');
             }
