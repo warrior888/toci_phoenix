@@ -18,6 +18,11 @@ namespace Phoenix.Integration.Test.Developers.TypowyAdam
             try
             {
                 // Sign text
+                /*
+                 * Generowanie certyfikatu z kluczem prywatnym, zapisuje się w magazynie certyfikatów w folderze "osobiste" lub "personal"(StoreName.My)
+                 makecert -r -pe -n "CN=TestCertyfikatu" -e 01/01/2050 -sky signature -ss my c:\TestCertyfikatu.cer
+                 
+                 */
                 byte[] signature = Sign("Test", "CN=KolejnyTestSIG");
 
                 // Verify signature. Testcert.cer corresponds to "cn=my cert subject"
