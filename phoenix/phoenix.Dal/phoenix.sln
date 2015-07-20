@@ -29,6 +29,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phoenix.Front", "..\Phoenix
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phoenix.Web", "..\Phoenix.Web\Phoenix.Web\Phoenix.Web.csproj", "{219B7DED-7492-4EE4-88E9-FD92FDD83DD0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Vazco", "Vazco", "{21360DC1-EEE4-41FC-A49C-8973ECAC9BC6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.DigitalSignature", "..\vazco\Toci.DigitalSignature\Toci.DigitalSignature.csproj", "{CE9A63D1-D277-4828-BF68-211DB483B483}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -79,6 +83,10 @@ Global
 		{219B7DED-7492-4EE4-88E9-FD92FDD83DD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{219B7DED-7492-4EE4-88E9-FD92FDD83DD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{219B7DED-7492-4EE4-88E9-FD92FDD83DD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE9A63D1-D277-4828-BF68-211DB483B483}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE9A63D1-D277-4828-BF68-211DB483B483}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE9A63D1-D277-4828-BF68-211DB483B483}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE9A63D1-D277-4828-BF68-211DB483B483}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -91,5 +99,6 @@ Global
 		{A7951807-F924-4108-A63B-253CE3F5B045} = {2E476FCB-E518-40C7-928E-007F0C67FB65}
 		{0C1A4599-49F9-426E-89AB-8D6FA60ECA69} = {1B19D82D-05D8-43F1-8928-3D267448330D}
 		{219B7DED-7492-4EE4-88E9-FD92FDD83DD0} = {1B19D82D-05D8-43F1-8928-3D267448330D}
+		{CE9A63D1-D277-4828-BF68-211DB483B483} = {21360DC1-EEE4-41FC-A49C-8973ECAC9BC6}
 	EndGlobalSection
 EndGlobal
