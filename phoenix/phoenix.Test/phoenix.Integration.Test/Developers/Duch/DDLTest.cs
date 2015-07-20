@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Toci.Utilities.Generator.DatabaseModelGenerator;
 using Toci.Utilities.Generator.DatabaseModelGenerator.DbDdlParser;
@@ -33,6 +35,17 @@ namespace Phoenix.Integration.Test.Developers.Duch
                // @"..\..\Developers\Duch\destination",
                 @"..\..\..\..\phoenix.Dal\Phoenix.Dal\GeneratedModels",
                 ";", ",");
+        }
+
+        [TestMethod]
+        public void TestMethod2()
+        {
+            var abc = new X509Certificate2();
+            //abc.GetKeyAlgorithmParametersString()
+            SHA1 aaa = new SHA1Cng();
+            //aaa.ComputeHash()
+            //CryptoConfig.MapNameToOID(Oid.)
+            var abccc = HashAlgorithm.Create();
         }
     }
 }
