@@ -33,3 +33,8 @@ function About2Click() {
 
     GetHtmlByAjax("dane/about2.html", insertHTML,"centralContent");
 }
+
+function MoreButtonClick() {
+
+    GetHtmlByAjax("dane/aboutCourse.html", insertHTML,"centralContent");
+}

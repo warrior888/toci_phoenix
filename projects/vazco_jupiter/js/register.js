@@ -8,6 +8,7 @@
     RegisterClick('applyClick', ApplyLinkClick);
     RegisterClick('contactClick', ContactLinkClick);
     RegisterClick('about2Click', About2Click);
-    
+    RegisterClick('moreButtonClick', MoreButtonClick);
+
 
 }
