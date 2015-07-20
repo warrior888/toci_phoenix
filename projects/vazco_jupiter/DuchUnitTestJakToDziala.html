@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -77,7 +77,7 @@
 							</li>
 							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog<b class="caret"></b></a>
 								<ul class="dropdown-menu">
-									<li><a href="blog-list-full-width.html">Blog List - Full Width</a></li>
+									<li class="active"><a href="blog-list-full-width.html">Blog List - Full Width</a></li>
 									<li><a href="blog-list-left-sidebar.html">Blog List - Left Sidebar</a></li>
 									<li><a href="blog-list-right-sidebar.html">Blog List - Right Sidebar</a></li>
 									<li class="divider"></li>
@@ -96,7 +96,7 @@
 									<li><a href="gallery-4-columns.html">4 Columns Gallery</a></li>
 								</ul>
 							</li>
-							<li class="active"><a href="contact.html">Contact</a></li>
+							<li><a href="contact.html">Contact</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -108,13 +108,13 @@
 		<!-- ========== HEADER END ========== -->
 
 		<!-- ========== TITLE START ========== -->
-
+<div id="bodyContent">
 		<div class="title">
 			<div class="title-image"></div>
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-12 text-center">
-						Kontakt
+						Jak to działa?
 					</div>
 				</div>
 			</div>
@@ -122,226 +122,89 @@
 
 		<!-- ========== TITLE END ========== -->
 
-		<!-- ========== MAP START ========== -->
-
-		<!-- Google Map Script -->
-		<!--<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDoRMxiPsqJ9SUuaK1KsCAjd3gqnecjlBw&amp;sensor=false"></script>
-		<script type="text/javascript">
-
-			function initialize() {
-
-				// Create an array of styles.
-				var styles = [
-					{
-						"featureType": "water",
-						"stylers": [
-							{ "hue": "#89909a" },
-							{ "lightness": 60 }
-						]
-					},{
-						featureType: "road",
-						elementType: "geometry",
-						stylers: [
-							{ lightness: 50 },
-							{ visibility: "simplified" }
-						]
-					},{
-						featureType: "road",
-						elementType: "labels",
-						stylers: [
-							{ visibility: "off" }
-						]
-					}
-				];
-
-				// Create a new StyledMapType object, passing it the array of styles,
-				// as well as the name to be displayed on the map type control.
-				var styledMap = new google.maps.StyledMapType(styles,
-				{name: "Styled Map"});
-
-
-							var mapOptions = {
-								scrollwheel: false,
-								zoom: 12,
-								center: new google.maps.LatLng(34.087522, -118.380155),
-				mapTypeControlOptions: {
-				  mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
-				}
-				}
-				var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-
-				//Associate the styled map with the MapTypeId and set it to display.
-				map.mapTypes.set('map_style', styledMap);
-				map.setMapTypeId('map_style');
-
-				setMarkers(map, places);
-			}
-
-			var places = [
-				['<b>Smartway Learning Centre</b><br>8699 Santa Monica Blvd<br>Los Angeles<br>CA 90069-4109', 34.087522, -118.380155, 1]
-			];
-
-			function setMarkers(map, locations) {
-				// Add markers to the map
-				var image = {
-					url: 'images/marker.png',
-					// This marker is 40 pixels wide by 42 pixels tall.
-					size: new google.maps.Size(40, 42),
-					// The origin for this image is 0,0.
-					origin: new google.maps.Point(0,0),
-					// The anchor for this image is the base of the pin at 20,42.
-					anchor: new google.maps.Point(15, 42)
-				};
-
-					var infowindow = new google.maps.InfoWindow();
-
-					var marker, i;
-					var markers = new Array();
-
-					for (var i = 0; i < locations.length; i++) {
-						var place = locations[i];
-						var myLatLng = new google.maps.LatLng(place[1], place[2], place[3]);
-						var marker = new google.maps.Marker({
-							position: myLatLng,
-							map: map,
-							icon: image,
-							title: place[0],
-							zIndex: place[3],
-							animation: google.maps.Animation.DROP
-						});
-
-						markers.push(marker);
-
-						google.maps.event.addListener(marker, 'click', (function(marker, i) {
-							return function() {
-								infowindow.setContent(locations[i][0]);
-								infowindow.open(map, marker);
-							}
-						})(marker, i));
-					}
-			}
-
-			google.maps.event.addDomListener(window, 'load', initialize);
-		</script>
-
-		<div id="map-canvas"></div>-->
-
-		<!-- ========== MAP END ========== -->
-
 		<!-- ========== CONTENT START ========== -->
 
-		<!--<section id="content">
+		<section id="content">
 			<div class="container">
-				<div class="row">
-					<div class="col-sm-5">
-						<div class="row">
-							<div class="col-xs-12">
-								<h1>Contact Details</h1>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-lg-2 col-xs-3">
-								<i class="fa fa-map-marker fa-5x primary-color"></i>
-							</div>
-							<div class="col-lg-10 col-xs-9">
-								<h3 class="no-margin">Address</h3>
-								Smartway Learning Centre<br>
-								8699 Santa Monica Blvd<br>
-								Los Angeles, CA 90069-4109
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-xs-12">
-								<hr>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-lg-2 col-xs-3">
-								<i class="fa fa-phone fa-5x primary-color"></i>
-							</div>
-							<div class="col-lg-10 col-xs-9">
-								<h3 class="no-margin">Phone &amp; Fax</h3>
-								Phone: <a href="tel:1800123456">1800-123-456</a><br>
-								Fax: <a href="tel:1800123456">1800-123-456</a>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-xs-12">
-								<hr>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-lg-2 col-xs-3">
-								<i class="fa fa-envelope fa-4x primary-color"></i>
-							</div>
-							<div class="col-lg-10 col-xs-9">
-								<h3 class="no-margin">Email</h3>
-								Email: <a href="mailto:info@smartway.com">info@smartway.com</a><br>
-								Email: <a href="mailto:courses@smartway.com">courses@smartway.com</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-7">
-						<p>&nbsp;</p>
-						<img src="http://placehold.it/700x454.jpg" alt="" class="img-responsive" />
-					</div>
-				</div>
-			</div>
-		</section>-->
 
+
+					<div class="post row" data-scroll-reveal>
+						<div class="col-md-4">
+							<a href="#"><img src="images/jaktodzialaJS.jpg" alt="" class="img-responsive" /></a>
+							
+						</div>
+						<div class="col-md-8">
+							<h3><a href="#">Etap I: Javascript</a></h3>
+							<div class="meta">
+								<span><i class="fa fa-user"></i><a href="#">Bartłomiej Zapart</a></span>
+								<span><i class="fa fa-tags"></i><a href="#">Online</a>, <a href="#">Video</a></span>
+								
+							</div>
+							<p class="intro">	Etap pierwszy to poznanie lub utrwalenie wiedzy o technologii JavaScript.<br>
+												Wykłady będą rowadzone w cyklu co 4 dni w godzinach popołudniowych po 5 godzin.<br>
+												Prelegentem tej części kursu jest <b>Bartłomiej Zapart</b>.<br>
+							
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<hr>
+						</div>
+					</div>
+
+					<div class="post row" data-scroll-reveal>
+						<div class="col-md-4">
+							<a href="#"><img src="images/jaktodzialaM.jpg" alt="" class="img-responsive" /></a>
+							
+						</div>
+						<div class="col-md-8">
+							<h3><a href="#">Etap II: Meteor js</a></h3>
+							<div class="meta">
+								<span><i class="fa fa-user"></i><a href="#">Vazco</a></span>
+								<span><i class="fa fa-tags"></i><a href="#">Online</a>, <a href="#">Video</a></span>
+								
+							</div>
+							<p class="intro">Drugi etap kursu dotyczący technologii Meteor JS zostanie zrealizowany przez firmę <b>Vazco</b>,<br>
+											późniejszego pracodawcę najlepszych uczestników.<br>
+							
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<hr>
+						</div>
+					</div>
+					
+					<div class="aftertext">
+						<div class="row">
+							<div class="col-sm-12 text-center">
+								<b>Kurs jest prowadzony online</b>, nagrywany i udostępniany do ponownego odtworzenia, 
+								dodatkowo uczestnicy będą pracować na wspólnym repozytorium kodu i 
+								tworzyć na nim zadania po każdej sesji kursu a nawet symulowane mikro projekty przygotowujące 
+								uczestników do pracy programisty w rzeczywistych warunkach.<br><br>
+								Dodatkowo uczestnicy kursu zostaną zaproszeni na sesje wykładowe o bazach danych, jako bonus 
+								za uczestnictwo w szkoleniu.
+							</div>
+						</div>
+					</div>
+			</div>
+		</section>
+</div>
 		<!-- ========== CONTENT END ========== -->
 
-		<!-- ========== CONTACT FORM START ========== -->
+		<!-- ========== FEATURED POSTS START ========== -->
 
-        <section id="contact" class="alt-background">
-            <div class="container">
-                <!--<div class="row">
-                    <div class="col-sm-12 text-center">
-                        <h2>Kontakt</h2>
-                    </div>
-                </div>-->
-                <form role="form" name="contact-form" id="contact-form" action="contact.php">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="form-group" id="contact-name-group">
-                                <label for="contact-input-name">Imię i Nazwisko</label>
-                                <input type="text" class="form-control" id="contact-input-name" placeholder="Wprowadź Twoje imię i nazwisko">
-                            </div>
-                            <div class="form-group" id="contact-email-group">
-                                <label for="contact-input-email">Email</label>
-                                <input type="email" class="form-control" id="contact-input-email" placeholder="Wprowadź Twój email">
-                            </div>
-                            <div class="form-group" id="contact-subject-group">
-                                <label for="contact-input-subject">Temat</label>
-                                <input type="text" class="form-control" id="contact-input-subject" placeholder="Wprowadź temat">
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="form-group" id="contact-message-group">
-                                <label for="contact-input-message">Wiadomość</label>
-                                <textarea class="form-control" id="contact-input-message" rows="8"></textarea>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12 text-center">
-                            <button type="submit" class="btn btn-primary">Wyślij</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </section>
-
-		<!-- ========== CONTACT FORM END ========== -->
+		
+		<!-- ========== FEATURED POSTS END ========== -->
 
 		<!-- ========== LINKS START ========== -->
 
-		<!--<div id="links">
+		<div id="links">
 			<div class="container">
-				<div class="row">-->
+				<div class="row">
 
 					<!-- ==== QUICK LINKS START == -->
-					<!--<div class="col-sm-3">
+					<div class="col-sm-3">
 						<h3>Quick Links</h3>
 						<nav>
 							<ul>
@@ -353,11 +216,11 @@
 								<li><a href="#"><i class="fa fa-angle-right"></i>Terms &amp; Conditions</a></li>
 							</ul>
 						</nav>
-					</div>-->
+					</div>
 					<!-- ==== QUICK LINKS END == -->
 
 					<!-- ==== LATEST COURSES START == -->
-					<!--<div class="col-sm-3">
+					<div class="col-sm-3">
 						<h3>Latest Courses</h3>
 						<ul>
 							<li>
@@ -376,11 +239,11 @@
 								<p class="author"><a href="teachers-profile.html">by John Doe</a></p>
 							</li>
 						</ul>
-					</div>-->
+					</div>
 					<!-- ==== LATEST COURSES END == -->
 
 					<!-- ==== POPULAR COURSES START == -->
-					<!--<div class="col-sm-3">
+					<div class="col-sm-3">
 						<h3>Popular Courses</h3>
 						<ul>
 							<li>
@@ -399,11 +262,11 @@
 								<p class="author"><a href="teachers-profile.html">by John Doe</a></p>
 							</li>
 						</ul>
-					</div>-->
+					</div>
 					<!-- ==== POPULAR COURSES END == -->
 
 					<!-- ==== LATEST COMMENTS START == -->
-					<!--<div class="col-sm-3">
+					<div class="col-sm-3">
 						<h3>Latest Comments</h3>
 						<ul>
 							<li>
@@ -415,12 +278,12 @@
 								<p class="author"><a href="blog-article-right-sidebar.html">by John Doe</a></p>
 							</li>
 						</ul>
-					</div>-->
+					</div>
 					<!-- ==== LATEST COMMENTS END == -->
 
-				<!--</div>
+				</div>
 			</div>
-		</div>-->
+		</div>
 
 		<!-- ========== LINKS END ========== -->
 
