@@ -25,6 +25,5 @@ $askerMailAddress= $_POST['contact-input-mail'];
 $askerSubject= $_POST['contact-input-subject'];
 $askerMessage= $_POST['contact-input-message'];
 
-$mail=new Mail($askerName,$askerMailAddress,$askerSubject,$askerMessage);
-
-//ew. wyslanie maila 
+$send=new MailSend();
+$send->WyslijMail($askerSubject,$askerMessage,$askerMailAddress,$askerMailAddress);
