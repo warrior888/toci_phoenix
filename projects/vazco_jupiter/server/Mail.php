@@ -89,4 +89,17 @@
             return $result;
         }        
     }
-?>
+class Mail{
+	public $mailAddress;
+	public $name;
+	public $subject;
+	public $message;
+
+	function __construct($askerEmailAddress,$askerName,$askerSubject,$askerMessage){
+		$this->mailAddress=$askerEmailAddress;
+		$this->name=$askerName;
+		$this->subject=$askerSubject;
+		$this->message=$askerMessage;
+	}
+
+}	
