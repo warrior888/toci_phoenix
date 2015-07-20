@@ -4,6 +4,15 @@ require_once 'DbHandle.php';
 
 	class Db
 	{
+		private $DbHandle;
+
+		public function Db()
+		{
+			$this->DbHandle=new DbHandle();
+			$this->DbHandle->dbConnect();
+		}
+
+
 		public function Save($table, $items)
 		{
 			//generate insert
