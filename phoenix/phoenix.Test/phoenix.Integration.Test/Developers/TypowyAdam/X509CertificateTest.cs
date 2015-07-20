@@ -11,6 +11,31 @@ namespace Phoenix.Integration.Test.Developers.TypowyAdam
     [TestClass]
     public class X509CertificateTest
     {
+        [TestMethod]
+        public void TestMethod1()
+        {
+            // Usage sample
+            try
+            {
+                // Sign text
+                byte[] signature = Sign("Test", "CN=KolejnyTestSIG");
+
+                // Verify signature. Testcert.cer corresponds to "cn=my cert subject"
+                if (Verify("Test", signature, @"C:\KolejnyTestSIG.cer"))
+                {
+                    Debug.WriteLine("Signature verified");
+                }
+                else
+                {
+                    Debug.WriteLine("ERROR: Signature not valid!");
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("EXCEPTION: " + ex.Message);
+            }
+            // Console.ReadKey();
+        }
         static byte[] Sign(string text, string certSubject)
         {
             // Access Personal (MY) certificate store of current user
@@ -26,6 +51,7 @@ namespace Phoenix.Integration.Test.Developers.TypowyAdam
                     // We found it. 
                     // Get its associated CSP and private key
                     csp = (RSACryptoServiceProvider)cert.PrivateKey;
+                    break;
                 }
             }
             if (csp == null)
@@ -63,30 +89,7 @@ namespace Phoenix.Integration.Test.Developers.TypowyAdam
             // Verify the signature with the hash
             return csp.VerifyHash(hash, CryptoConfig.MapNameToOID("SHA1"), signature);
         }
-        [TestMethod]
-        static void Main(string[] args)
-        {
-            // Usage sample
-            try
-            {
-                // Sign text
-                byte[] signature = Sign("Test", "cn=AddTrust External CA Root");
 
-                // Verify signature. Testcert.cer corresponds to "cn=my cert subject"
-                if (Verify("Test", signature, @"C:\certyfikat.der"))
-                {
-                    Debug.WriteLine("Signature verified");
-                }
-                else
-                {
-                    Debug.WriteLine("ERROR: Signature not valid!");
-                }
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine("EXCEPTION: " + ex.Message);
-            }
-           // Console.ReadKey();
-        }
+
     }
 }
