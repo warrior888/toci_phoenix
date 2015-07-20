@@ -41,7 +41,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="about.html" />
-    <Content Include="aboutCourse.html" />
     <Content Include="blog-article-full-width.html" />
     <Content Include="blog-article-left-sidebar.html" />
     <Content Include="blog-article-right-sidebar.html" />
