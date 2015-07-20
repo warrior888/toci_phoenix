@@ -15,12 +15,14 @@
 		<!--[if lt IE 9]>
 		<script src="js/html5shiv.js"></script>
 		<script src="js/respond.min.js"></script>
+
+
+
 		<![endif]-->
 
 	</head>
 	<body id="homepage">
 
-		<div id="home"></div>
 
 		<!-- ========== HEADER START ========== -->
 
@@ -52,53 +54,18 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a href="index.html" class="navbar-brand"><img src="images/logo.png" alt="Smartway - HTML Template" class="img-responsive logo" /></a>
+						<a href="index.html" class="navbar-brand"><img src="images/meteor-logo-small.png" alt="Smartway - HTML Template" class="img-responsive logo" /></a>
 					</div>
 					<nav class="navbar-collapse collapse">
 						<ul class="nav navbar-nav navbar-right">
-							<li class="active"><a href="index.html">Home</a></li>
-							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Courses<b class="caret"></b></a>
-								<ul class="dropdown-menu">
-									<li><a href="courses-list-left-sidebar.html">Courses List - Left Sidebar</a></li>
-									<li><a href="courses-list-right-sidebar.html">Courses List - Right Sidebar</a></li>
-									<li class="divider"></li>
-									<li><a href="courses-details-left-sidebar.html">Course Details - Left Sidebar</a></li>
-									<li><a href="courses-details-right-sidebar.html">Course Details - Right Sidebar</a></li>
-									<li class="divider"></li>
-									<li><a href="upcoming-exams-grid.html">Upcoming Exams - Grid</a></li>
-									<li><a href="upcoming-exams-left-sidebar.html">Upcoming Exams - Left Sidebar</a></li>
-									<li><a href="upcoming-exams-right-sidebar.html">Upcoming Exams - Right Sidebar</a></li>
-								</ul>
-							</li>
-							<li><a href="about.html">About</a></li>
-							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Teachers<b class="caret"></b></a>
-								<ul class="dropdown-menu">
-									<li><a href="teachers-list.html">Teachers List</a></li>
-									<li><a href="teachers-profile.html">Teacher's Profile</a></li>
-								</ul>
-							</li>
-							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog<b class="caret"></b></a>
-								<ul class="dropdown-menu">
-									<li><a href="blog-list-full-width.html">Blog List - Full Width</a></li>
-									<li><a href="blog-list-left-sidebar.html">Blog List - Left Sidebar</a></li>
-									<li><a href="blog-list-right-sidebar.html">Blog List - Right Sidebar</a></li>
-									<li class="divider"></li>
-									<li><a href="blog-masonry-2-columns.html">Blog Masonry - 2 Columns</a></li>
-									<li><a href="blog-masonry-3-columns.html">Blog Masonry - 3 Columns</a></li>
-									<li><a href="blog-masonry-4-columns.html">Blog Masonry - 4 Columns</a></li>
-									<li class="divider"></li>
-									<li><a href="blog-article-full-width.html">Blog Article - Full Width</a></li>
-									<li><a href="blog-article-left-sidebar.html">Blog Article - Left Sidebar</a></li>
-									<li><a href="blog-article-right-sidebar.html">Blog Article - Right Sidebar</a></li>
-								</ul>
-							</li>
-							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Gallery<b class="caret"></b></a>
-								<ul class="dropdown-menu">
-									<li><a href="gallery-3-columns.html">3 Columns Gallery</a></li>
-									<li><a href="gallery-4-columns.html">4 Columns Gallery</a></li>
-								</ul>
-							</li>
-							<li><a href="contact.html">Contact</a></li>
+							<li><a id="homeClick" href="index.html">Home</a></li>
+							<li><a id="aboutClick" href="#">O kursie</a></li>
+							<li><a id="howItWorksClick" href="#">Jak to działa?</a></li>
+							<li><a id="organisersClick" href="#">Organizatorzy</a></li>
+							<li><a id="faqClick" href="#">FAQ</a></li>
+							<li><a id="applyClick" href="#">Aplikuj</a></li>
+							<li><a id="contactClick" href="#">Kontakt</a></li>
+
 						</ul>
 					</nav>
 				</div>
@@ -729,6 +696,7 @@
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="js/jquery-1.11.1.min.js"></script>
 
+
 		<!-- Bootstrap Plugins -->
 		<script src="js/bootstrap.min.js"></script>
 
@@ -766,6 +734,21 @@
 
 		<!-- jQuery Settings -->
 		<script src="js/settings.js"></script>
+
+
+
+		<script src="js/scripts.js"></script>
+		<script src="js/utilites.js"></script>
+		<script src="js/register.js"></script>
+
+		<script>
+			$(document).ready(function () {
+
+				RegisterAll();
+
+			})
+
+		</script>
 
 	</body>
 </html>
