@@ -81,6 +81,7 @@ a (hover):				#81a27b (darker green)
 /* 1. GLOBAL STYLES
 -------------------------------------------------------------------*/
 
+
 body {
 	overflow-x: hidden;
 	padding-top: 118px;
@@ -1398,3 +1399,6 @@ footer {
 		}
 
 	}
+/* 10 FAQ Elements
+	-------------------------------------------------------------------*/
+	@media (max-width: 480px) {

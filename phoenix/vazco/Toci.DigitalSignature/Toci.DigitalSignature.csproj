@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\CertificateParsers.cs" />
     <Compile Include="DigitalSignHandlers\Sign.cs" />
     <Compile Include="DigitalSignHandlers\Verify.cs" />
     <Compile Include="Interfaces\ISign.cs" />
