@@ -12,8 +12,10 @@ namespace Toci.DigitalSignature.DigitalSignHandlers
 
         public virtual byte[] SignFile(byte[] inputFile, X509Certificate2 certificate)
         {
+            if ( (inputFile.Equals(null)  || !certificate.HasPrivateKey)) return default(byte[]);
+
             var algorithmName = certificate.SignatureAlgorithm.FriendlyName.Replace(crypthoAlgorithm, String.Empty).ToUpper();
-            RSACryptoServiceProvider privateKey = (RSACryptoServiceProvider) certificate.PrivateKey;
+            var privateKey = (RSACryptoServiceProvider) certificate.PrivateKey;
             byte[] hash = HashAlgorithm.Create(algorithmName).ComputeHash(inputFile);
             return privateKey.SignHash(hash, CryptoConfig.MapNameToOID(algorithmName));
             

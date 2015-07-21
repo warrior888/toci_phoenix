@@ -15,16 +15,17 @@ function GetHtmlByAjax(url, callback, idToReplace) {
 }
 
 function insertHTML(html,containerId) {
+    PutHtmlToContainer(html,containerId);
     $("#" + containerId).html(html);
 }
 
-/*function PutHtmlToContainer(containerId, elementId, html) {
-    $("#" + containerId).fadeOut(300);
-    setTimeout(function () {
-        $("#" + containerId).html(html);
-    }, 300);
-    $("#" + containerId).fadeIn(300);
-}*/
+function PutHtmlToContainer(html,containerId) {
+    //  $("#" + containerId).fadeOut(300);
+    // setTimeout(function () {
+    //     $("#" + containerId).html(html);
+    // }, 300);
+    //  $("#" + containerId).fadeIn(300);
+}
 
 
 
