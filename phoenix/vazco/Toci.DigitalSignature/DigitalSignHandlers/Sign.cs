@@ -15,6 +15,7 @@ namespace Toci.DigitalSignature.DigitalSignHandlers
 
         public static string CertificateToString(X509Certificate2 certificate)
         {
+
             using (MemoryStream ms = new MemoryStream())
             {
                 new BinaryFormatter().Serialize(ms, certificate);
@@ -48,14 +49,9 @@ namespace Toci.DigitalSignature.DigitalSignHandlers
         {
             X509Certificate2 certificate = StringToCertifcate(base64String);
 
-            if ((inputFile.Equals(null) || !certificate.HasPrivateKey)) return default(byte[]);
 
-            var algorithmName = certificate.SignatureAlgorithm.FriendlyName;//Replace(crypthoAlgorithm, String.Empty);
             
-            var privateKey = (RSACryptoServiceProvider)certificate.PrivateKey;
-            byte[] hash = HashAlgorithm.Create("SHA1").ComputeHash(inputFile);
-            
-            return privateKey.SignHash(hash, CryptoConfig.MapNameToOID("SHA1"));
+            return SignFile(inputFile, certificate);
 
         }
     }
