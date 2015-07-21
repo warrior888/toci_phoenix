@@ -63,7 +63,7 @@ namespace Phoenix.Integration.Test.Developers.TypowyAdam
             {
                 throw new Exception("No valid cert was found");
             }
-            
+
             // Hash the data
             SHA1Managed sha1 = new SHA1Managed();
             UnicodeEncoding encoding = new UnicodeEncoding();
