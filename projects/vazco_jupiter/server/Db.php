@@ -4,7 +4,7 @@ require_once 'DbHandle.php';
 
 	class Db
 	{
-		private $DbHandle;
+		public $DbHandle;
 
 		public function Db()
 		{
