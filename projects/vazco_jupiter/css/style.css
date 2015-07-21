@@ -203,13 +203,16 @@ iframe {
 
 /* 2. HEADER
 -------------------------------------------------------------------*/
-
+#centralContent
+{
+    z-index:1000;
+}
 header {
 	left: 0;
 	position: absolute;
 	top: 0;
 	width: 100%;
-	z-index: 1000;
+	z-index: -1000;
 }
 
 	header .nav .open > a,
@@ -221,6 +224,7 @@ header {
 
 	.fixed {
 		position: fixed;
+        background: none;
 		top: -35px;
 	}
 
@@ -279,13 +283,16 @@ header {
 		padding-right: 10px;
 		text-transform: uppercase;
 	}
+        .nav > li > a:link {              
+            outline: none;
+        }
 
 	#homepage .navbar-default {
 		background: url(../images/header.png) repeat-x top;
 		
 		/* Transparent CSS gradient doesn't work in IE9 and below. */
 
-		/* Remove this line if you want to use CSS gradient in stead of background image
+		/* Remove this line if you want to use CSS gradient in stead of background image */
 
 		background: -moz-linear-gradient(top,  rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
 		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.5)), color-stop(100%,rgba(0,0,0,0)));
@@ -295,17 +302,18 @@ header {
 		background: linear-gradient(to bottom,  rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 100%);
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80000000', endColorstr='#00000000',GradientType=0 );
 
-		Remove this line if you want to use CSS gradient in stead of background image */
+		/*Remove this line if you want to use CSS gradient in stead of background image */
 		
 		border: 0;
 		display: block;
 		min-height: 200px;
 	}
-
+   }
 	#homepage .fixed .navbar-default {
 		background: #373a3e;
-		min-height: 85px;
+		min-height: 75px;
 	}
+
 
 	.navbar-nav .dropdown-menu {
 		background: #2c2f33;

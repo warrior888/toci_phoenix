@@ -110,17 +110,17 @@ jQuery(document).ready(function($){
 	}
 
 	function updateSelectedCategory() {
-		faqsSections.each(function(){
-			var actual = $(this),
+	    faqsSections.each(function () {
+	        var actual = $(this),
 				margin = parseInt($('.cd-faq-title').eq(1).css('marginTop').replace('px', '')),
-				activeCategory = $('.cd-faq-categories a[href="#'+actual.attr('id')+'"]'),
+				activeCategory = $('.cd-faq-categories a[href="#' + actual.attr('id') + '"]'),
 				topSection = (activeCategory.parent('li').is(':first-child')) ? 0 : Math.round(actual.offset().top);
-			
-			if ( ( topSection - 20 <= $(window).scrollTop() ) && ( Math.round(actual.offset().top) + actual.height() + margin - 20 > $(window).scrollTop() ) ) {
-				activeCategory.addClass('selected');
-			}else {
-				activeCategory.removeClass('selected');
-			}
-		});
+
+	        if ((topSection - 20 <= $(window).scrollTop()) && (Math.round(actual.offset().top) + actual.height() + margin - 20 > $(window).scrollTop())) {
+	            activeCategory.addClass('selected');
+	        } else {
+	            activeCategory.removeClass('selected');
+	        }
+	    });
 	}
 });
