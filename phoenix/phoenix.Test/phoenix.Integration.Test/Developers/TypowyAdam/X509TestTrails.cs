@@ -52,7 +52,7 @@ namespace Phoenix.Integration.Test.Developers.TypowyAdam
                     X509Certificate2 cert = new X509Certificate2(path);
                     if (cert.Subject.Contains(dictionaryEntity.Key))
                     {
-                        Debug.Print(cert.Subject + " " + (verifyProvider.VerifyFile(Encoding.ASCII.GetBytes(testMaterial), dictionaryEntity.Value, Verify.CertificateToString(cert)) ? "TAK" : "NIE"));
+                        Debug.Print(cert.Subject + " " + (verifyProvider.VerifyFile(Encoding.ASCII.GetBytes(testMaterial), dictionaryEntity.Value, verifyProvider.CertificateToString(cert)) ? "TAK" : "NIE"));
                     }
                 }
             }

@@ -10,6 +10,8 @@ namespace Toci.DigitalSignature.DigitalSignHandlers
     public class Sign: ISign
     {
         protected const string crypthoAlgorithm = "RSA";
+        protected const string secureHashAlgorithm1 = "sha1";
+        protected const string messageDigestAlgorithm5 = "md5";
 
         public virtual byte[] SignFile(byte[] inputFile, X509Certificate2 certificate)
         {
@@ -17,14 +19,24 @@ namespace Toci.DigitalSignature.DigitalSignHandlers
 
             var algorithmName = certificate.SignatureAlgorithm.FriendlyName.Replace(crypthoAlgorithm, String.Empty);
             var privateKey = (RSACryptoServiceProvider) certificate.PrivateKey;
-            if (!algorithmName.Contains("sha1") || !algorithmName.Contains("md5"))
+
+            if (!algorithmName.Contains(secureHashAlgorithm1) || !algorithmName.Contains(messageDigestAlgorithm5))
             {
                 RSACryptoServiceProvider privateKey1 = new RSACryptoServiceProvider();
                 privateKey1.ImportParameters(privateKey.ExportParameters(true));
                 privateKey = privateKey1;
             }
-            byte[] hash = HashAlgorithm.Create(algorithmName).ComputeHash(inputFile);
-            return privateKey.SignHash(hash, CryptoConfig.MapNameToOID(algorithmName));
+
+            try
+            {
+                byte[] hash = HashAlgorithm.Create(algorithmName).ComputeHash(inputFile);
+                return privateKey.SignHash(hash, CryptoConfig.MapNameToOID(algorithmName));
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Invalid algorithm method");
+            }
+            
         }
     }
 }
