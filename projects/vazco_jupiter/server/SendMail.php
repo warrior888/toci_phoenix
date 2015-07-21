@@ -26,13 +26,10 @@ class MailSender{
 	{
 
 		$this->mail->Subject=$subject;
-		$this->mail->Body="Przesłał: ".$senderData." <".$senderEmail."><br><br>".$message;
+		$this->mail->Body="Przesłał: ".$senderData.", mail: ".$senderEmail." <br/ ><br />".$message;
 		$this->mail->AddAddress("tociszkolenia@gmail.com");
+		$this->mail->SetFrom($senderEmail);
 
-		if(!$this->mail->Send())
-			echo "Mailer Error: " . $mail->ErrorInfo;
-		else
-			echo "Message has been sent";
-		
+		return $this->mail->Send();
 	}
 }

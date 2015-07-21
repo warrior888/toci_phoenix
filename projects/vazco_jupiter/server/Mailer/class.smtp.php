@@ -933,7 +933,7 @@ class SMTP
      */
     public function client_send($data)
     {
-        $this->edebug("CLIENT -> SERVER: $data", self::DEBUG_CLIENT);
+       // $this->edebug("CLIENT -> SERVER: $data", self::DEBUG_CLIENT);
         return fwrite($this->smtp_conn, $data);
     }
 
