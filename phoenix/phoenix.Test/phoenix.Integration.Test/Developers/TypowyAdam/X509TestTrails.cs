@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
@@ -33,11 +34,12 @@ namespace Phoenix.Integration.Test.Developers.TypowyAdam
 
                 }
             }
+            VerifyTest();
         }
 
-        [TestMethod]
-        public void VerifyTest(byte[] verifyHash)
+        public void VerifyTest()
         {
+            
             X509Store my = new X509Store(StoreName.My, StoreLocation.CurrentUser);
             my.Open(OpenFlags.ReadOnly);
             RSACryptoServiceProvider csp = null;
@@ -50,7 +52,7 @@ namespace Phoenix.Integration.Test.Developers.TypowyAdam
                     X509Certificate2 cert = new X509Certificate2(path);
                     if (cert.Subject.Contains(dictionaryEntity.Key))
                     {
-                        verifyProvider.VerifyFile(Encoding.ASCII.GetBytes(testMaterial), dictionaryEntity.Value, cert);
+                        Debug.Print(cert.Subject + " "+(verifyProvider.VerifyFile(Encoding.ASCII.GetBytes(testMaterial), dictionaryEntity.Value, cert) ? "TAK": "NIE"));
                     }
                 }
 

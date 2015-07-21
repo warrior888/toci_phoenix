@@ -17,7 +17,7 @@
 		    //podane dane tylko dla testu czy bedzie w stanie sie polaczyc
 		    //wczesniej tutaj byla zmienna con_str
 		    //trzeba wstawic dane serwer koncowego
-                $this->database = pg_pconnect("host=46.101.236.160 user=toci password=aaa111 dbname=toci");
+                $this->database = pg_pconnect("host=localhost password=aaa111 dbname=applicants");
                 if (!$this->dontUseEnc)
                     pg_set_client_encoding ($this->database, 'LATIN2');
             }
@@ -32,7 +32,7 @@
             //$h = fopen('/var/www/html/eena/devel/query', 'a');
             //fputs($h, $query."\n");  
             //echo $query."<br>";
- 	    //$this->trySaveAuditLog($query);
+            $this->trySaveAuditLog($query);
             //$time = microtime(true);
             set_error_handler(array($this, 'errorHandler'), E_WARNING);
             $this->currentQuery = $query;
@@ -218,7 +218,7 @@
             }
         }
         
-        public function trySaveAuditLog($query) {
+        private function trySaveAuditLog($query) {
             
             if (stripos($query, 'insert') !== false || stripos($query, 'update') !== false || stripos($query, 'delete') !== false)
             {
@@ -241,5 +241,5 @@
             }
         }
     }
-	
+	*/
 
