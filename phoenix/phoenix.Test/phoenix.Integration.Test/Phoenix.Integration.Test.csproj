@@ -119,6 +119,7 @@
     <Compile Include="Developers\Dysq\SupportedAttachments\SupportedAttachmentsTest.cs" />
     <Compile Include="Developers\Mg\CommunicationTests.cs" />
     <Compile Include="Developers\Mg\mg_user.cs" />
+    <Compile Include="Developers\TypowyAdam\X509TestTrails.cs" />
     <Compile Include="Developers\TypowyAdam\X509CertificateTest.cs" />
     <Compile Include="Developers\Warrior\CommunicationMgWarrior\CommunicationMgWarriorTest.cs" />
     <Compile Include="Developers\Warrior\DependencyResolve\DependencyResolveTest.cs" />
