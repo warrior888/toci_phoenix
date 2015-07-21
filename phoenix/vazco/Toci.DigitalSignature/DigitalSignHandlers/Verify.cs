@@ -14,9 +14,9 @@ namespace Toci.DigitalSignature.DigitalSignHandlers
             if (inputFile.Equals(null) || signature == null) return false;
             var algorithmName = certificate.SignatureAlgorithm.FriendlyName.Replace(crypthoAlgorithm, String.Empty).ToUpper();
             var publicKey = (RSACryptoServiceProvider)certificate.PublicKey.Key;
-            
             byte[] hash = HashAlgorithm.Create(algorithmName).ComputeHash(inputFile);
             return publicKey.VerifyHash(hash, CryptoConfig.MapNameToOID(algorithmName), signature);
+    
         }
     }
 }

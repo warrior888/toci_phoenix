@@ -55,8 +55,6 @@ namespace Phoenix.Integration.Test.Developers.TypowyAdam
                         Debug.Print(cert.Subject + " "+(verifyProvider.VerifyFile(Encoding.ASCII.GetBytes(testMaterial), dictionaryEntity.Value, cert) ? "TAK": "NIE"));
                     }
                 }
-
-                
             }
 
         }
