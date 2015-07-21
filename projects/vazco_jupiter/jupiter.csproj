@@ -56,7 +56,6 @@
     <Content Include="courses-list-left-sidebar.html" />
     <Content Include="courses-list-right-sidebar.html" />
     <Content Include="css\animate.css" />
-    <Content Include="css\faq_style.css" />
     <Content Include="css\font-awesome.min.css" />
     <Content Include="css\jquery.fancybox.css" />
     <Content Include="css\magic-bootstrap.css" />
@@ -65,12 +64,6 @@
     <Content Include="css\school-icons.css" />
     <Content Include="css\style.css" />
     <Content Include="css\superslides.css" />
-    <Content Include="dane\aboutCourse.html" />
-    <Content Include="dane\apply.html" />
-    <Content Include="dane\contact.html" />
-    <Content Include="dane\faq.html" />
-    <Content Include="dane\howItWorks.html" />
-    <Content Include="dane\organisers.html" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\school-education.svg" />
     <Content Include="gallery-3-columns.html" />

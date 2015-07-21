@@ -1,7 +1,5 @@
 ﻿
-		<!-- ========== CONTENT END ========== -->
-
-		<!-- ========== CONTACT FORM START ========== -->
+<div id="contact-section">
         <div class="title">
             <div class="title-image"></div>
             <div class="container">
@@ -19,26 +17,26 @@
                         <h2>Kontakt</h2>
                     </div>
                 </div>-->
-                <form role="form" name="contact-form" id="contact-form" action="server/contact.php" method="post">
+                <form role="form" name="contact-form" id="contact-form" action="server/contact.php">
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group" id="contact-name-group">
                                 <label for="contact-input-name">Imię i Nazwisko</label>
-                                <input type="text" class="form-control" id="contact-input-name" name="contact-input-name" placeholder="Wprowadź Twoje imię i nazwisko">
+                                <input type="text" class="form-control" id="contact-input-name" placeholder="Wprowadź Twoje imię i nazwisko">
                             </div>
                             <div class="form-group" id="contact-email-group">
                                 <label for="contact-input-email">Email</label>
-                                <input type="email" class="form-control" id="contact-input-email" name="contact-input-email" placeholder="Wprowadź Twój email">
+                                <input type="email" class="form-control" id="contact-input-email" placeholder="Wprowadź Twój email">
                             </div>
                             <div class="form-group" id="contact-subject-group">
                                 <label for="contact-input-subject">Temat</label>
-                                <input type="text" class="form-control" id="contact-input-subject" name="contact-input-subject" placeholder="Wprowadź temat">
+                                <input type="text" class="form-control" id="contact-input-subject" placeholder="Wprowadź temat">
                             </div>
                         </div>
                         <div class="col-sm-6">
-                            <div class="form-group" id="contact-message-group" nae="contact-message-group">
+                            <div class="form-group" id="contact-message-group">
                                 <label for="contact-input-message">Wiadomość</label>
-                                <textarea class="form-control" id="contact-input-message" name="contact-input-message" rows="8"></textarea>
+                                <textarea class="form-control" id="contact-input-message" rows="8"></textarea>
                             </div>
                         </div>
                     </div>
@@ -50,3 +48,4 @@
                 </form>
             </div>
         </section>
+</div>

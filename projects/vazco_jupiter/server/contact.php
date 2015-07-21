@@ -1,6 +1,6 @@
 ﻿<?php
 
-require_once "Mail.php";
+require_once "SendMail.php";
 
 /* Nazwy z formularza:
  * contact-input-name - imie 
