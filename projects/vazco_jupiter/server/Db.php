@@ -1,4 +1,5 @@
-﻿<?php
+﻿
+<?php
 
 require_once 'DbHandle.php';
 
@@ -17,8 +18,8 @@ require_once 'DbHandle.php';
 		{
 			//generate insert
 			//DbHandle Query
-			$insert = 'insert into '.$table. " (".implode(',',array_keys($items)).") values (".implode(',',array_values($items)).")";
+			$insert = 'insert into '.$table. " (".implode(',',array_keys($items)).") values ('".implode('\',\'',array_values($items))."')";
 
-			$this->DbHandle->Query($query);
+			$this->DbHandle->Query($insert);
 		}
 	}
