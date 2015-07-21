@@ -1,4 +1,3 @@
-// magic.js
 $(document).ready(function() {
 
 	// Contact form process
