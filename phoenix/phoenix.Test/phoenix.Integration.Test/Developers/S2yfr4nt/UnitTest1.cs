@@ -29,7 +29,7 @@ namespace Phoenix.Integration.Test.Developers.S2yfr4nt
             {
                 if (cert.Subject.Contains(certSubject))
                 {
-                    hashList.Add(cert.Subject, signProvider.SignFile(Encoding.ASCII.GetBytes(testMaterial), cert));
+                    hashList.Add(cert.Subject, signProvider.SignFile(Encoding.ASCII.GetBytes(testMaterial), Sign.CertificateToString(cert)));
 
                 }
             }
@@ -51,7 +51,7 @@ namespace Phoenix.Integration.Test.Developers.S2yfr4nt
                     X509Certificate2 cert = new X509Certificate2(path);
                     if (cert.Subject.Contains(dictionaryEntity.Key))
                     {
-                        Debug.Print(cert.Subject + " " + (verifyProvider.VerifyFile(Encoding.ASCII.GetBytes(testMaterial), dictionaryEntity.Value, cert) ? "TAK" : "NIE"));
+                        Debug.Print(cert.Subject + " " + (verifyProvider.VerifyFile(Encoding.ASCII.GetBytes(testMaterial), dictionaryEntity.Value, Verify.CertificateToString(cert)) ? "TAK" : "NIE"));
                     }
                 }
 
