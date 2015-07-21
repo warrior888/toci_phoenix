@@ -159,6 +159,10 @@
       <Project>{71e30224-522b-4925-9f5e-280ace8d6292}</Project>
       <Name>Phoenix.Dal</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\vazco\Toci.DigitalSignature\Toci.DigitalSignature.csproj">
+      <Project>{ce9a63d1-d277-4828-bf68-211db483b483}</Project>
+      <Name>Toci.DigitalSignature</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Developers\Duch\destination\" />
