@@ -7,13 +7,13 @@
         const SEND_PORT = 587;
         protected $mail;
         
-        protected $uzytkownik_uw = 'tociszkolenia@gmail.com';
-        protected $haslo = 'T0CIszkolenia';
-        protected $komp_wys_ip = 'smtp.gmail.com';
+        protected $uzytkownik_uw = 'eena.21mail';
+        protected $haslo = 'ikBN59X2';
+        protected $komp_wys_ip = '21mail.pl';
         protected $mailer = 'smtp';
         protected $charset = 'iso-8859-2';
         protected $smtpauth = true;
-        protected $mail_firmowy = 'tociszkolenia@gmail.com';      
+        protected $mail_firmowy = 'info@eena.pl';      
         protected $recipients = array();
         protected $debug = false;
         
