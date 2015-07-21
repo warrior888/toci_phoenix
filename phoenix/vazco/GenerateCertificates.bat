@@ -6,3 +6,4 @@ makecert -a sha384 -r -pe -n "CN=CertyfikatTestowy04" -e 01/01/2050 -sky signatu
 makecert -a shA512 -r -pe -n "CN=CertyfikatTestowy05" -e 01/01/2050 -sky signature -ss my C:\CertTest\CertyfikatTestowy05.cer
 makecert -a SHA1 -r -n "CN=CertyfikatTestowy06" -e 01/01/2050 -sky signature -ss my C:\CertTest\CertyfikatTestowy06.cer
 makecert -a sha256 -r -pe -r -n  "CN=CertyfikatTestowy07" -e 01/01/2050 -sky signature -ss my C:\CertTest\CertyfikatTestowy07.cer
+makecert -a MD5 -r -n "CN=CertyfikatTestowy08" -e 01/01/2050 -sky signature -ss my C:\CertTest\CertyfikatTestowy08.cer
