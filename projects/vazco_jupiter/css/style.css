@@ -82,10 +82,10 @@ a (hover):				#81a27b (darker green)
 -------------------------------------------------------------------*/
 
 
-body {
+/* body {
 	overflow-x: hidden;
 	padding-top: 118px;
-}
+} */
 
 h1,h2,h3,h4,h5,h6 {
 	text-transform: uppercase;
@@ -308,7 +308,7 @@ header {
 		display: block;
 		min-height: 200px;
 	}
-   }
+
 	#homepage .fixed .navbar-default {
 		background: #373a3e;
 		min-height: 75px;
@@ -1409,4 +1409,4 @@ footer {
 	}
 /* 10 FAQ Elements
 	-------------------------------------------------------------------*/
-	@media (max-width: 480px) {
+	@media (max-width: 480px) {}
