@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Security;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -25,7 +26,10 @@ namespace Phoenix.Integration.Test.Developers.TypowyAdam
             my.Open(OpenFlags.ReadOnly);
             RSACryptoServiceProvider csp = null;
             Sign signProvider = new Sign();
-            
+            var newtest = File.ReadAllBytes(@"C:\CertTest\TestPrywatnegoKlucza.pfx");
+            //work in progress
+          //  var test = signProvider.PfxFileToCertificate(newtest, new SecureString());
+          //  signProvider.SignFile(Encoding.ASCII.GetBytes(testMaterial), signProvider.CertificateToBase64(test));
             foreach (X509Certificate2 cert in my.Certificates)
             {
                 if (cert.Subject.Contains(certSubject))
