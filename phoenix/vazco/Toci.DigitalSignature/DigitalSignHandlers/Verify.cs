@@ -31,7 +31,7 @@ namespace Toci.DigitalSignature.DigitalSignHandlers
 
         public bool VerifyFile(byte[] inputFile, byte[] signature, string base64String)
         {
-            X509Certificate2 certificate = ByteArrayToCertificate(base64String);
+            X509Certificate2 certificate = Base64ToCertificate(base64String);
 
 
             return VerifyFile(inputFile, signature, certificate);

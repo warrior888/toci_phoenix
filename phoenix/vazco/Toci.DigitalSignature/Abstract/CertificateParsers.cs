@@ -15,10 +15,9 @@ namespace Toci.DigitalSignature.Abstract
             builder.AppendLine("-----BEGIN CERTIFICATE-----");
             builder.AppendLine(Convert.ToBase64String(certificate.Export(X509ContentType.SerializedCert), Base64FormattingOptions.InsertLineBreaks));
             builder.AppendLine("-----END CERTIFICATE-----");
-            
             return Convert.ToBase64String(Encoding.UTF8.GetBytes(builder.ToString()));
         }
-        public virtual X509Certificate2 ByteArrayToCertificate(string base64String)
+        public virtual X509Certificate2 Base64ToCertificate(string base64String)
         {
             byte[] bytes = Convert.FromBase64String(base64String);
             return new X509Certificate2(bytes);
