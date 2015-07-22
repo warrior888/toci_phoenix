@@ -41,7 +41,7 @@ namespace Toci.DigitalSignature.DigitalSignHandlers
 
         public virtual byte[] SignFile(byte[] inputFile, string base64String)
         {
-            return SignFile(inputFile, ByteArrayToCertificate(base64String));
+            return SignFile(inputFile, Base64ToCertificate(base64String));
         }
     }
 }
