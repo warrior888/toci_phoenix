@@ -299,20 +299,20 @@ header {
 		background: -webkit-linear-gradient(top,  rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 100%);
 		background: -o-linear-gradient(top,  rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 100%);
 		background: -ms-linear-gradient(top,  rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 100%);
-		background: linear-gradient(to bottom,  rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 100%);
+		background: linear-gradient(to bottom,  rgba(0,0,0,0.6) 0%,rgba(0,0,0,0) 100%);
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80000000', endColorstr='#00000000',GradientType=0 );
 
 		/*Remove this line if you want to use CSS gradient in stead of background image */
-		
+
 		border: 0;
 		display: block;
 		/*min-height: 200px;*/
 	}
 
-	#homepage .fixed .navbar-default {
+	#homepage .fixed .navbar-default  {
 		/*62BDB9 8fb488*/
-		background: #62BDB9;
-		height: 50px;
+		max-height: 50px;
+
 	}
 
 
