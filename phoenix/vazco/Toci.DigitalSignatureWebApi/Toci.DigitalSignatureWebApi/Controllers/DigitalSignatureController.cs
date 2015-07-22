@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Security;
+using System.Text;
 using System.Web;
 using System.Web.Http;
 using System.Web.UI.WebControls;
@@ -16,14 +17,19 @@ namespace Toci.DigitalSignatureWebApi.Controllers
     public class DigitalSignatureController : ApiController
     {
         [HttpPost]
-        public byte[] GetPfxFile(HttpPostedFile file)
+        [Route("api/DigitalSignatureController/GetPfxFile")]
+        public byte[] GetPfxFile(string content, HttpPostedFile file, string password)
         {
             if (file == null || file.ContentLength < 1) return new byte[0];
 
             var reader = new BinaryReader(file.InputStream);
             var result = Convert.ToBase64String(reader.ReadBytes(file.ContentLength));
-
-            return ExecuteSignMethod(result,/*nie wiem jak tu przekazać inne parametry*/ new SecureString(), new byte[0]);
+            var securepass = new SecureString();
+            foreach (var c in password.ToCharArray())
+            {
+                securepass.AppendChar(c);
+            }
+            return ExecuteSignMethod(result, securepass, Encoding.ASCII.GetBytes(content));
         }
 
         public byte[] ExecuteSignMethod(string base64String, SecureString password, byte[] content)
@@ -32,7 +38,6 @@ namespace Toci.DigitalSignatureWebApi.Controllers
             var cert = signatureProvider.PfxFileToCertificate(base64String, password);
             return signatureProvider.SignFile(content, cert);
         }
-
-
+        
     }
 }
