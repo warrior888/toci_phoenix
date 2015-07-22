@@ -23,7 +23,7 @@ namespace Toci.DigitalSignature.DigitalSignHandlers
                 byte[] hash = HashAlgorithm.Create(algorithmName).ComputeHash(inputFile);
                 return publicKey.VerifyHash(hash, CryptoConfig.MapNameToOID(algorithmName), signature);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw new Exception("Invalid algorithm method");
             }
@@ -31,7 +31,7 @@ namespace Toci.DigitalSignature.DigitalSignHandlers
 
         public bool VerifyFile(byte[] inputFile, byte[] signature, string base64String)
         {
-            X509Certificate2 certificate = StringToCertifcate(base64String);
+            X509Certificate2 certificate = ByteArrayToCertificate(base64String);
 
 
             return VerifyFile(inputFile, signature, certificate);
