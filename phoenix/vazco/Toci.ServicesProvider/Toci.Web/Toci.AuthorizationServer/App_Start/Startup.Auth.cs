@@ -57,9 +57,9 @@ namespace Toci.AuthorizationServer
             
         
 
-        app.UseMicrosoftAccountAuthentication(
-           clientId: "",
-           clientSecret: "");
+        //app.UseMicrosoftAccountAuthentication(
+        //   clientId: "",
+        //   clientSecret: "");
 
         //app.UseTwitterAuthentication(
         //   consumerKey: "",
