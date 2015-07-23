@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNet.Identity;
+﻿using System.Threading.Tasks;
+using Microsoft.AspNet.Identity;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Infrastructure;
 using Microsoft.Owin.Security.OAuth;
@@ -21,10 +22,10 @@ namespace Toci.AuthorizationServer.Objects
                     // Authorization server provider which controls the lifecycle of Authorization Server
                     Provider = new OAuthAuthorizationServerProvider
                     {
-    //                    OnValidateClientRedirectUri = ;//TODO Metoda do porównania usera z zapisanym klientem
-    //                    OnValidateClientAuthentication = ;
-    //                    OnGrantResourceOwnerCredentials = ;
-    //                    OnGrantClientCredentials = ;
+                       // OnValidateClientRedirectUri =  ;//TODO Metoda do porównania usera z zapisanym klientem
+                        //                    OnValidateClientAuthentication = ;
+                        //                    OnGrantResourceOwnerCredentials = ;
+                        //                    OnGrantClientCredentials = ;
                     },
 
                     // Authorization code provider which creates and receives authorization code
@@ -44,7 +45,8 @@ namespace Toci.AuthorizationServer.Objects
             
         }
 
-        public OAuthAuthorizationServerOptions ReturnServerOptions() {return ServerOptions;}
         protected OAuthAuthorizationServerOptions ServerOptions;
+        public OAuthAuthorizationServerOptions ReturnServerOptions() {return ServerOptions;}
+        
     }
 }
