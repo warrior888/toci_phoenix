@@ -20,6 +20,6 @@ require_once 'DbHandle.php';
 			//DbHandle Query
 			$insert = 'insert into '.$table. " (".implode(',',array_keys($items)).") values ('".implode('\',\'',array_values($items))."')";
 
-			$this->DbHandle->Query($insert);
+			return $this->DbHandle->Query($insert);
 		}
 	}
