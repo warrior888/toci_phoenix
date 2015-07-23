@@ -1,4 +1,9 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Collections.Concurrent;
+using System.Linq;
+using System.Security.Claims;
+using System.Security.Principal;
+using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Infrastructure;
@@ -22,24 +27,24 @@ namespace Toci.AuthorizationServer.Objects
                     // Authorization server provider which controls the lifecycle of Authorization Server
                     Provider = new OAuthAuthorizationServerProvider
                     {
-                       // OnValidateClientRedirectUri =  ;//TODO Metoda do porównania usera z zapisanym klientem
-                        //                    OnValidateClientAuthentication = ;
-                        //                    OnGrantResourceOwnerCredentials = ;
-                        //                    OnGrantClientCredentials = ;
+                        OnValidateClientRedirectUri = ValidateClientRedirectUri,//TODO Metoda do porównania usera z zapisanym klientem
+                        OnValidateClientAuthentication = ValidateClientAuthentication,
+                        OnGrantResourceOwnerCredentials = GrantResourceOwnerCredentials,
+                        OnGrantClientCredentials = GrantClientCredetails
                     },
 
                     // Authorization code provider which creates and receives authorization code
                     AuthorizationCodeProvider = new AuthenticationTokenProvider
                     {
-    //                    OnCreate = ;
-    //                    OnReceive = ;
+                          OnCreate = CreateAuthenticationCode,
+                          OnReceive = ReceiveAuthenticationCode
                     },
 
                     // Refresh token provider which creates and receives referesh token
                     RefreshTokenProvider = new AuthenticationTokenProvider
                     {
-    //                    OnCreate = ;
-    //                    OnReceive = ;
+                          OnCreate = CreateRefreshToken,
+                          OnReceive = ReceiveRefreshToken
                     }
                 };
             
@@ -47,6 +52,75 @@ namespace Toci.AuthorizationServer.Objects
 
         protected OAuthAuthorizationServerOptions ServerOptions;
         public OAuthAuthorizationServerOptions ReturnServerOptions() {return ServerOptions;}
+        private Task ValidateClientRedirectUri(OAuthValidateClientRedirectUriContext context)
+        {
+            if (context.ClientId == Client.Id)
+            {
+                context.Validated(Client.RedirectUrl);
+            }
         
+            return Task.FromResult(0);
+        }
+
+        private Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
+        {
+            string clientId;
+            string clientSecret;
+            if (context.TryGetBasicCredentials(out clientId, out clientSecret) ||
+                context.TryGetFormCredentials(out clientId, out clientSecret))
+            {
+                if (clientId == Client.Id && clientSecret == Client.Secret)
+                {
+                    context.Validated();
+                }
+            }
+            return Task.FromResult(0);
+        }
+
+        private Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
+        {
+            var identity = new ClaimsIdentity(new GenericIdentity(context.UserName, OAuthDefaults.AuthenticationType), context.Scope.Select(x => new Claim("urn:oauth:scope", x)));
+
+            context.Validated(identity);
+
+            return Task.FromResult(0);
+        }
+
+        private Task GrantClientCredetails(OAuthGrantClientCredentialsContext context)
+        {
+            var identity = new ClaimsIdentity(new GenericIdentity(context.ClientId, OAuthDefaults.AuthenticationType), context.Scope.Select(x => new Claim("urn:oauth:scope", x)));
+
+            context.Validated(identity);
+
+            return Task.FromResult(0);
+        }
+
+        private readonly ConcurrentDictionary<string, string> _authenticationCodes =
+            new ConcurrentDictionary<string, string>(StringComparer.Ordinal);
+
+        private void CreateAuthenticationCode(AuthenticationTokenCreateContext context)
+        {
+            context.SetToken(Guid.NewGuid().ToString("n") + Guid.NewGuid().ToString("n"));
+            _authenticationCodes[context.Token] = context.SerializeTicket();
+        }
+
+        private void ReceiveAuthenticationCode(AuthenticationTokenReceiveContext context)
+        {
+            string value;
+            if (_authenticationCodes.TryRemove(context.Token, out value))
+            {
+                context.DeserializeTicket(value);
+            }
+        }
+
+        private void CreateRefreshToken(AuthenticationTokenCreateContext context)
+        {
+            context.SetToken(context.SerializeTicket());
+        }
+
+        private void ReceiveRefreshToken(AuthenticationTokenReceiveContext context)
+        {
+            context.DeserializeTicket(context.Token);
+        }
     }
 }

@@ -29,6 +29,7 @@ namespace Toci.AuthorizationServer
             // Configure the sign in cookie
             app.UseCookieAuthentication(new CookieAuthenticationOptions
             {
+                //AuthenticationMode = AuthenticationMode.Passive,
                 AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
                 LoginPath = new PathString(Paths.LoginPath),
                 LogoutPath = new PathString(Paths.LogoutPath),
@@ -56,9 +57,9 @@ namespace Toci.AuthorizationServer
             
         
 
-        //app.UseMicrosoftAccountAuthentication(
-        //    clientId: "",
-        //    clientSecret: "");
+        app.UseMicrosoftAccountAuthentication(
+           clientId: "",
+           clientSecret: "");
 
         //app.UseTwitterAuthentication(
         //   consumerKey: "",
