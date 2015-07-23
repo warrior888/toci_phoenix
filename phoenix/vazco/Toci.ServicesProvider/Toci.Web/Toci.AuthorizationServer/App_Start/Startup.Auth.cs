@@ -1,11 +1,16 @@
 ﻿using System;
+using System.IO;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
+using Microsoft.Owin.Security.Infrastructure;
+using Microsoft.Owin.Security.OAuth;
 using Owin;
 using Toci.AuthorizationServer.Models;
+using Toci.AuthorizationServer.Objects;
+using Toci.AuthorizationServer.Utilities;
 
 namespace Toci.AuthorizationServer
 {
@@ -25,7 +30,8 @@ namespace Toci.AuthorizationServer
             app.UseCookieAuthentication(new CookieAuthenticationOptions
             {
                 AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
-                LoginPath = new PathString("/Account/Login"),
+                LoginPath = new PathString(Paths.LoginPath),
+                LogoutPath = new PathString(Paths.LogoutPath),
                 Provider = new CookieAuthenticationProvider
                 {
                     // Enables the application to validate the security stamp when the user logs in.
@@ -46,23 +52,27 @@ namespace Toci.AuthorizationServer
             app.UseTwoFactorRememberBrowserCookie(DefaultAuthenticationTypes.TwoFactorRememberBrowserCookie);
 
             // Uncomment the following lines to enable logging in with third party login providers
-            //app.UseMicrosoftAccountAuthentication(
-            //    clientId: "",
-            //    clientSecret: "");
+            app.UseOAuthAuthorizationServer(new AuthorizationServerOptions().ReturnServerOptions());
+            
+        
 
-            //app.UseTwitterAuthentication(
-            //   consumerKey: "",
-            //   consumerSecret: "");
+        //app.UseMicrosoftAccountAuthentication(
+        //    clientId: "",
+        //    clientSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+        //app.UseTwitterAuthentication(
+        //   consumerKey: "",
+        //   consumerSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
-        }
+        //app.UseFacebookAuthentication(
+        //   appId: "",
+        //   appSecret: "");
+
+        //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+        //{
+        //    ClientId = "",
+        //    ClientSecret = ""
+        //});
     }
+}
 }
