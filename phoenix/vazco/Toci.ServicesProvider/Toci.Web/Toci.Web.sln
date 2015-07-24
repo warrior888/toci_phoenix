@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.AuthorizationServer", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBAccessResourceServer", "DBAccessResourceServer\DBAccessResourceServer.csproj", "{D99E10F6-2DE4-4D98-9D70-CFE31FF4E61C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.AuthorizationClient", "Toci.AuthorizationClient\Toci.AuthorizationClient.csproj", "{D3EA1921-CBA8-48D7-A95B-355BFF48BDE3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D99E10F6-2DE4-4D98-9D70-CFE31FF4E61C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D99E10F6-2DE4-4D98-9D70-CFE31FF4E61C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D99E10F6-2DE4-4D98-9D70-CFE31FF4E61C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3EA1921-CBA8-48D7-A95B-355BFF48BDE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3EA1921-CBA8-48D7-A95B-355BFF48BDE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3EA1921-CBA8-48D7-A95B-355BFF48BDE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3EA1921-CBA8-48D7-A95B-355BFF48BDE3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

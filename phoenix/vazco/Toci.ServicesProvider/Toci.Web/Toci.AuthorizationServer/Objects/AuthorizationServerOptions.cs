@@ -22,7 +22,7 @@ namespace Toci.AuthorizationServer.Objects
                     TokenEndpointPath = new PathString(Paths.TokenPath),
                     ApplicationCanDisplayErrors = true,
                     AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
-                    AllowInsecureHttp = false,
+                    AllowInsecureHttp = true,
 
                     // Authorization server provider which controls the lifecycle of Authorization Server
                     Provider = new OAuthAuthorizationServerProvider
@@ -52,7 +52,7 @@ namespace Toci.AuthorizationServer.Objects
 
         protected OAuthAuthorizationServerOptions ServerOptions;
         public OAuthAuthorizationServerOptions ReturnServerOptions() {return ServerOptions;}
-        private Task ValidateClientRedirectUri(OAuthValidateClientRedirectUriContext context)
+        public Task ValidateClientRedirectUri(OAuthValidateClientRedirectUriContext context)
         {
             if (context.ClientId == Client.Id)
             {
@@ -62,7 +62,7 @@ namespace Toci.AuthorizationServer.Objects
             return Task.FromResult(0);
         }
 
-        private Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
+        public Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
         {
             string clientId;
             string clientSecret;
@@ -77,7 +77,7 @@ namespace Toci.AuthorizationServer.Objects
             return Task.FromResult(0);
         }
 
-        private Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
+        public Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
             var identity = new ClaimsIdentity(new GenericIdentity(context.UserName, OAuthDefaults.AuthenticationType), context.Scope.Select(x => new Claim("urn:oauth:scope", x)));
 
@@ -86,7 +86,7 @@ namespace Toci.AuthorizationServer.Objects
             return Task.FromResult(0);
         }
 
-        private Task GrantClientCredetails(OAuthGrantClientCredentialsContext context)
+        public Task GrantClientCredetails(OAuthGrantClientCredentialsContext context)
         {
             var identity = new ClaimsIdentity(new GenericIdentity(context.ClientId, OAuthDefaults.AuthenticationType), context.Scope.Select(x => new Claim("urn:oauth:scope", x)));
 
@@ -95,16 +95,16 @@ namespace Toci.AuthorizationServer.Objects
             return Task.FromResult(0);
         }
 
-        private readonly ConcurrentDictionary<string, string> _authenticationCodes =
+        public readonly ConcurrentDictionary<string, string> _authenticationCodes =
             new ConcurrentDictionary<string, string>(StringComparer.Ordinal);
 
-        private void CreateAuthenticationCode(AuthenticationTokenCreateContext context)
+        public void CreateAuthenticationCode(AuthenticationTokenCreateContext context)
         {
             context.SetToken(Guid.NewGuid().ToString("n") + Guid.NewGuid().ToString("n"));
             _authenticationCodes[context.Token] = context.SerializeTicket();
         }
 
-        private void ReceiveAuthenticationCode(AuthenticationTokenReceiveContext context)
+        public void ReceiveAuthenticationCode(AuthenticationTokenReceiveContext context)
         {
             string value;
             if (_authenticationCodes.TryRemove(context.Token, out value))
@@ -113,12 +113,12 @@ namespace Toci.AuthorizationServer.Objects
             }
         }
 
-        private void CreateRefreshToken(AuthenticationTokenCreateContext context)
+        public void CreateRefreshToken(AuthenticationTokenCreateContext context)
         {
             context.SetToken(context.SerializeTicket());
         }
 
-        private void ReceiveRefreshToken(AuthenticationTokenReceiveContext context)
+        public void ReceiveRefreshToken(AuthenticationTokenReceiveContext context)
         {
             context.DeserializeTicket(context.Token);
         }
