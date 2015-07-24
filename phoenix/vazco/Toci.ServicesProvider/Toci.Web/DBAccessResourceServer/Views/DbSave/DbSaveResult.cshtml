@@ -1,0 +1,19 @@
+﻿
+@model DBAccessResourceServer.Models.DbModel
+
+
+@{
+    ViewBag.Title = "DbSaveResult";
+}
+
+<h2>Saved!</h2>
+
+@using (Html.BeginForm("savecontent", "SaveDbContent", FormMethod.Get))
+{
+    @Html.Label(@Model.data)<br />
+    @Html.Label(@Model.nick)<br />
+    @Html.Label(@Model.addingTime.ToString())<br/>
+    
+    
+    <input type="Submit" value="Wroć" />
+}

@@ -1,0 +1,19 @@
+﻿
+@model DBAccessResourceServer.Models.DbModel
+
+
+@{
+    ViewBag.Title = "LoadContent";
+}
+
+<h2>Loaded!</h2>
+
+@using (Html.BeginForm("Index", "DbHub", FormMethod.Get))
+{
+    @Html.Label(@Model.data)<br />
+    @Html.Label(@Model.nick)<br />
+    @Html.Label(@Model.addingTime.ToString())<br />
+
+
+    <input type="Submit" value="Wroć" />
+}
