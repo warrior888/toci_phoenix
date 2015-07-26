@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -9,9 +9,11 @@
 		<!--<link rel="shortcut icon" href="images/favicon.png">-->
 
 		<!-- Main Stylesheet -->
+      
 		<link href="css/faq-style.css" rel="stylesheet">
 		<link href="css/style.css" rel="stylesheet">
-
+       <link href='http://fonts.googleapis.com/css?family=Exo&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Just+Me+Again+Down+Here&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
 		<!-- HTML5 shiv and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
@@ -73,34 +75,44 @@
 		<!-- ========== BANNER START ========== -->
 
 		<div id="slides">
-			<!--<div class="slides-container"> -->
-
+			<div class="slides-container">
 				<img src="images/background.jpg" class="img-responsive" alt="home background" />
+                <img src="images/background.jpg" class="img-responsive" alt="home background" />
+                <img src="images/background.jpg" class="img-responsive" alt="home background" />
 
 				<!--<img src="http://placehold.it/1600x900.jpg" alt="" />
       		  <img src="http://placehold.it/1600x900.jpg" alt="" />-->
 			</div>
-
-		<div id="welcome-text" class="text-center">
-			<h1 style="font-size:40px; text-transform: none;">Darmowy kurs programowania w JavaScript i Meteor</h1>
-			<h2 style="text-transform: none;">Termin: 20 Lipca</h2>
-
-			<br/>
-			<!-- <a class="btn btn-primary page-scroll" href="#about-section" id="moreButtonClick">Dowiedz się więcej</a>-->
+            <div class="tint"></div>
+            <div class="slider-offers text-center">
+				<ul>
+					<li>
+                        <div id="welcome-text" class="text-center">
+						<h1 style="font-size:40px; text-transform: none;">Darmowy kurs programowania w JavaScript i Meteor</h1>
+                            <h2 style="text-transform: none;">Termin: 20 Lipca System</h2>		</div>			
+					</li>
+						<li>
+                        <div id="welcome-text" class="text-center">
+						<h1 style="font-size:40px; text-transform: none;">Darmowy kurs programowania w JavaScript i Meteor</h1>
+                            <h2 style="text-transform: none;">Termin: 20 Lipca System</h2>		</div>			
+					</li>
+							<li>
+                        <div id="welcome-text" class="text-center">
+						<h1 style="font-size:40px; text-transform: none;">Darmowy kurs programowania w JavaScript i Meteor</h1>
+                            <h2 style="text-transform: none;">Termin: 20 Lipca System</h2>		</div>			
+					</li>
+				</ul>
 			</div>
-
-
 
 			<!-- SLIDER OFFERS START -->
 
 			<!-- SLIDER OFFERS END -->
 
-		</div>
 
 		<a class="arrow page-scroll" href="#about-section">
 			<i class="fa fa-arrow-down fa-2x"></i>
 		</a>
-
+</div>
 		<!-- ========== BANNER END ========== -->
 
 		<!-- ========== WELCOME START ========== -->
@@ -224,10 +236,10 @@
 				</div>
 <br/>
 				<div class="row text-center">
-					<div class="col-sm-6" data-scroll-reveal>
+					<div id="etapy" class="col-sm-6" data-scroll-reveal>
 
-<h2 class="greenTemplateColor" style="margin:10px;">I Etap</h2>
-						<h3 class="blackColor" style="margin:10px;">JavaScript</h3>
+<h2 class="greenTemplateColor">I Etap</h2>
+						<h3 class="blackColor">JavaScript</h3>
 						<p>
 							Etap pierwszy to poznanie lub utrwalenie wiedzy o technologii JavaScript. Wykłady będą prowadzone w cyklu co 4 dni w godzinach popołudniowych po 5 godzin. Prelegentem tej części kursu jest Bartłomiej Zapart.
 						</p>
@@ -251,9 +263,9 @@
 
 					<div class="row text-center">
 
-				<div id="drugi-etap" class="col-sm-offset-6 col-sm-6" data-scroll-reveal>
-					<h2 class="greenTemplateColor" style="margin:10px;">II Etap</h2>
-					<h3 class="blackColor" style="margin:10px;">Meteor JS</h3>
+				<div id="etapy" class="col-sm-offset-6 col-sm-6" data-scroll-reveal>
+					<h2 class="greenTemplateColor">II Etap</h2>
+					<h3 class="blackColor" style="">Meteor JS</h3>
 					<p>
 						Drugi etap kursu dotyczący technologii Meteor JS. Zostanie zrealizowany przez firmę Vazco, późniejszego pracodawcę najlepszych uczestników.
 					</p>
@@ -674,7 +686,7 @@
 		<!-- Scroll Reveal Plugin -->
 		<script src="js/scrollReveal.js"></script>
 
-	
+
 		<!-- jQuery Settings -->
 		<script src="js/settings.js"></script>
 
@@ -687,8 +699,9 @@
 
 
 	<script src="js/utils.js"></script>
-	    <script src="js/applyValid.js"></script>
-        <script src="js/contactValid.js"></script>
+    
+    contact-section
+
 	<script>
 		window.onresize =changeArrowOnResize;
 

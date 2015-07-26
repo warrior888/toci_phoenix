@@ -5,8 +5,9 @@
 @import url("animate.css");
 @import url("jquery.fancybox.css");
 @import url("animate.css");
-@import url("http://fonts.googleapis.com/css?family=Lato:400,900,400italic,900italic.css");
-@import url("font-awesome.min.css");
+@import url("http://fonts.googleapis.com/css?family=Lato:400,900,400italic,900italic.css");*/
+
+@import url("font-awesome.min.css");*/
 @import url("school-icons.css");
 
 /*------------------------------------------------------------------
@@ -81,11 +82,13 @@ a (hover):				#81a27b (darker green)
 /* 1. GLOBAL STYLES
 -------------------------------------------------------------------*/
 
-@font-face {
+/*@font-face {
 	font-family: Arrows;
+    
 	src: url('../fonts/PeaxWebdesignarrows.ttf');
+    font-family: 'Bree Serif', sans-serif;
 }
-
+*/
 
 #welcome-text{
 	position:absolute;
@@ -110,6 +113,7 @@ text-transform: none;
 .headers {
 
 	font-size: 40px;
+    font-family: 'Just Me Again Down Here', sans-serif;
 }
 
 .whiteColor {
@@ -147,6 +151,7 @@ color: rgba(137,144,154,0.97);
 body {
 	overflow-x: hidden;
 	padding-top: 118px;
+    font-family: 'Exo', sans-serif;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -262,7 +267,12 @@ iframe {
 	position: relative;
 	top: -2px;
 }
-
+a:link {              
+            outline: none;
+        }
+p {
+    font-size: 20px;
+}
 /* 2. HEADER
 -------------------------------------------------------------------*/
 
@@ -310,6 +320,7 @@ header {
 
 		.tools a {
 			color: #777;
+            font-size: 14px;
 		}
 
 		.tools a:hover {
@@ -340,6 +351,7 @@ header {
 		padding-left: 10px;
 		padding-right: 10px;
 		text-transform: uppercase;
+        font-size: 18px;
 	}
 
 	#homepage .navbar-default {
@@ -1461,3 +1473,35 @@ footer {
 		}
 
 	}
+
+#howItWorks-section h3{
+    font-size: 18px;
+}
+#howItWorks-section ul li{
+    font-size: 16px;
+}
+
+#etapy h2{
+    margin:10px;
+}
+#etapy h3{
+    margin:10px;
+    font-size:22px;
+    font-family: 'Just Me Again Down Here', sans-serif;
+}
+
+
+#organisers-section h3{
+    font-size: 22px;
+}
+
+#contact-section label{
+    font-size: 18px;
+}
+
+#about-section h3{
+    font-size: 18px;
+}
+#about-section ul li{
+    font-size: 16px;
+}
