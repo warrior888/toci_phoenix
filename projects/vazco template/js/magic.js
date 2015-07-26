@@ -28,7 +28,7 @@ $(document).ready(function() {
 			.done(function(data) {
 
 				// log data to the console so we can see
-				//console.log(data); 
+				console.log(data); 
 
 				// here we will handle errors and validation messages
 				if ( ! data.success) {

@@ -1,4 +1,3 @@
-// magic.js
 $(document).ready(function() {
 
 	// Contact form process
@@ -10,16 +9,16 @@ $(document).ready(function() {
 		// get the form data
 		// there are many ways to get this data using jQuery (you can use the class or id also)
 		var formData = {
-			'input-name' 	        : $('input#contact-input-name').val(),
-			'input-email' 	    	: $('input#contact-input-email').val(),
-			'input-subject' 	    : $('input#contact-input-subject').val(),
-			'input-message' 		: $('textarea#contact-input-message').val()
+		    'contact-input-name': $('input#contact-input-name').val(),
+		    'contact-input-mail': $('input#contact-input-email').val(),
+		    'contact-input-subject': $('input#contact-input-subject').val(),
+		    'contact-input-message': $('textarea#contact-input-message').val()
 		};
 
 		// process the form
 		$.ajax({
 			type 		: 'POST', // define the type of HTTP verb we want to use (POST for our form)
-			url 		: 'process-contact.php', // the url where we want to POST
+			url         : 'server/contact.php', // the url where we want to POST
 			data 		: formData, // our data object
 			dataType 	: 'json', // what type of data do we expect back from the server
 			encode 		: true
@@ -28,10 +27,10 @@ $(document).ready(function() {
 			.done(function(data) {
 
 				// log data to the console so we can see
-				//console.log(data); 
+			    //console.log(data, data.result);
 
 				// here we will handle errors and validation messages
-				if ( ! data.success) {
+				if ( ! data.result) {
 					
 					// handle errors for name ---------------
 					if (data.errors.name) {
@@ -65,6 +64,10 @@ $(document).ready(function() {
 					// usually after form submission, you'll want to redirect
 					// window.location = '/thank-you'; // redirect a user to another page
 
+				    $('input#contact-input-name').val('');
+				    $('input#contact-input-email').val('');
+				    $('input#contact-input-subject').val('');
+				    $('textarea#contact-input-message').val('');
 				}
 			})
 
