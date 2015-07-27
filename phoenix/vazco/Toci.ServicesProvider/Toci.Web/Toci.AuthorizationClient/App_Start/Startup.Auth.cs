@@ -1,9 +1,13 @@
 ﻿using System;
+using System.Net;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
+using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
+using Microsoft.Owin.Security.Infrastructure;
+using Microsoft.Owin.Security.OAuth;
 using Owin;
 using Toci.AuthorizationClient.Models;
 
@@ -45,7 +49,24 @@ namespace Toci.AuthorizationClient
             // This is similar to the RememberMe option when you log in.
             app.UseTwoFactorRememberBrowserCookie(DefaultAuthenticationTypes.TwoFactorRememberBrowserCookie);
 
-            
+            //myślę że to spełni funkcjonalność klienta
+            app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions()
+            {
+                Description = new AuthenticationDescription() { Caption = "TociOAuthAuthorizationServer", AuthenticationType = "TociOAuthAuthorizationServer" },
+                AuthenticationType = "TociOAuthAuthorizationServer",
+                AccessTokenProvider = new AuthenticationTokenProvider()
+                {
+                    
+                },
+               
+                Provider = new OAuthBearerAuthenticationProvider()
+                {
+                 //   OnValidateIdentity = ;
+//                    OnApplyChallenge = delegat;
+//                    OnRequestToken = delegat;               
+                }
+               
+            });
             // Uncomment the following lines to enable logging in with third party login providers
             //app.UseMicrosoftAccountAuthentication(
             //    clientId: "",
@@ -56,8 +77,8 @@ namespace Toci.AuthorizationClient
             //   consumerSecret: "");
 
             //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            //   appId: "1469468426698430",
+            //   appSecret: "8f508435a5992e539e2afac5bb8eba6f");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
