@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net;
+using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
@@ -56,14 +57,29 @@ namespace Toci.AuthorizationClient
                 AuthenticationType = "TociOAuthAuthorizationServer",
                 AccessTokenProvider = new AuthenticationTokenProvider()
                 {
-                    
+                    OnCreate = create,
+                    OnReceive = receive,
+                    OnCreateAsync = CreateAsync,
+                    OnReceiveAsync = ReceiveAsync
                 },
                
                 Provider = new OAuthBearerAuthenticationProvider()
                 {
-                 //   OnValidateIdentity = ;
-//                    OnApplyChallenge = delegat;
-//                    OnRequestToken = delegat;               
+                    OnValidateIdentity = ValidateIdentity,
+                    OnApplyChallenge = ApplyChallenge,
+                    OnRequestToken = context =>
+                    {
+                        if (context.Request.Path.Value.StartsWith("/TestHub"))
+                        {
+                            string bearerToken = context.Request.Query.Get("bearer_token");
+                            if (bearerToken != null)
+                            {
+                                string[] authorization = new string[] { "bearer " + bearerToken };
+                                context.Request.Headers.Add("Authorization", authorization);
+                            }
+                        }
+                        return Task.FromResult(context);
+                    } ,               
                 }
                
             });
@@ -85,6 +101,46 @@ namespace Toci.AuthorizationClient
             //    ClientId = "",
             //    ClientSecret = ""
             //});
+
+        }
+        public static Action<AuthenticationTokenCreateContext> create = new Action<AuthenticationTokenCreateContext>(c =>
+        {
+            c.SetToken(c.SerializeTicket());
+        });
+
+        public static Action<AuthenticationTokenReceiveContext> receive = new Action<AuthenticationTokenReceiveContext>(c =>
+        {
+            c.DeserializeTicket(c.Token);
+            c.OwinContext.Environment["Properties"] = c.Ticket.Properties;
+        });
+        public static async System.Threading.Tasks.Task CreateAsync(AuthenticationTokenCreateContext context)
+        {
+            context.SetToken(context.SerializeTicket());
+        }
+
+        public static async System.Threading.Tasks.Task ReceiveAsync(AuthenticationTokenReceiveContext context)
+        {
+            context.DeserializeTicket(context.Token);
+        }
+
+        public static Task ApplyChallenge(OAuthChallengeContext context)
+        {
+            context.Response.Redirect("/Account/Login");
+            return Task.FromResult<object>(null);
+        }
+
+        //public static Task RequestToken(OAuthRequestTokenContext context)
+        //{
+        //    string token = context.Request.Cookies[0];
+        //    if (!string.IsNullOrEmpty(token))
+        //    {
+        //        context.Token = token;
+        //    }
+        //    return Task.FromResult<object>(null);
+        //}
+        public static Task ValidateIdentity(OAuthValidateIdentityContext context)
+        {
+            return Task.FromResult<object>(null);
         }
     }
 }
