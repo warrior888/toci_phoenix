@@ -11,7 +11,12 @@ using Microsoft.Owin.Security.Infrastructure;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
 using Toci.AuthorizationClient.Models;
-
+/// <summary>
+/// generalnie zrobiliśmy łączenie z bazą danych z DbHandle, szyfrujemy i do niej wrzucamy, przy wyciąganiu deszyfrowaniu
+/// na tym zatrzymaliśmy się jak kosa na kamieniu i nic konkretnego nie umiemy popchnąć, myślę że na tym etapie
+/// to dalej sami nie przejdziemy, bo tu trzeba kogoś z wiedzą o budowie aplikacji klient-server a nie kogoś kto w zeszły piątek 
+/// dowiadywał się co to MVC :) 
+/// </summary>
 namespace Toci.AuthorizationClient
 {
     public partial class Startup
@@ -50,7 +55,7 @@ namespace Toci.AuthorizationClient
             // This is similar to the RememberMe option when you log in.
             app.UseTwoFactorRememberBrowserCookie(DefaultAuthenticationTypes.TwoFactorRememberBrowserCookie);
 
-            //myślę że to spełni funkcjonalność klienta
+            //myślę że to spełni funkcjonalność klienta - tworzy Bearer token
             app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions()
             {
                 Description = new AuthenticationDescription() { Caption = "TociOAuthAuthorizationServer", AuthenticationType = "TociOAuthAuthorizationServer" },
@@ -69,12 +74,15 @@ namespace Toci.AuthorizationClient
                     OnApplyChallenge = ApplyChallenge,
                     OnRequestToken = context =>
                     {
+                        ///tutaj jest tworzone zapytanie do serwera autentykującego - na razie dodaje sam barer token, oraz na sucho clintId i  secret
+                       ///Czemu to ze sobą nie chce działać - my nie doszliśmy do tego. Ile ludzi tyle różnych implementacji, ale nikt nie pochwalił się nigdzie
+                       /// integracją serwera z entity frameworkiem, albo klienta który jest custumowy i ma swój serwer i jest bardziej rozwinięty niż aplikacja w cmd...
                         if (context.Request.Path.Value.StartsWith("https://localhost:44300/OAuth/"))
                         {
                             string bearerToken = context.Request.Query.Get("bearer_token");
                             if (bearerToken != null)
                             {
-                                string[] authorization = new string[] { "bearer " + bearerToken };
+                                string[] authorization = new string[] { "bearer " + bearerToken, "clientId 1", "clientSecret 2" };
                                 context.Request.Headers.Add("Authorize", authorization);
                             }
                         }
@@ -91,10 +99,12 @@ namespace Toci.AuthorizationClient
             //app.UseTwitterAuthentication(
             //   consumerKey: "",
             //   consumerSecret: "");
-
-            //app.UseFacebookAuthentication(
-            //   appId: "1469468426698430",
-            //   appSecret: "8f508435a5992e539e2afac5bb8eba6f");
+            ///dla testów dodałem logowanie przez facebooka - można sobie prześledzić co robi externalLogin- on po wykonaniu zbiera dane które otrzymał z serwera
+            /// i na ich podstawie już odwołuje się do DbContext i tworzy nowego użytkownika na ich podstawie...
+            
+            app.UseFacebookAuthentication(
+               appId: "1469468426698430",
+               appSecret: "8f508435a5992e539e2afac5bb8eba6f");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
