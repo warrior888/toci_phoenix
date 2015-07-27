@@ -155,3 +155,5 @@ $RECYCLE.BIN/
 phoenix/phoenix.Dal/.vs/config/applicationhost.config
 /.idea/
 phoenix/vazco/Toci.ServicesProvider/Toci.Web/Toci.AuthorizationServer/App_Data/aspnet-Toci.AuthorizationServer-20150723121056.mdf
+phoenix/vazco/Toci.ServicesProvider/Toci.Web/Toci.AuthorizationClient/App_Data/aspnet-Toci.AuthorizationClient-20150724093535.mdf
+phoenix/vazco/Toci.ServicesProvider/Toci.Web/Toci.AuthorizationClient/App_Data/aspnet-Toci.AuthorizationClient-20150724093535_log.ldf

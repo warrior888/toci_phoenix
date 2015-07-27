@@ -67,11 +67,11 @@ namespace Toci.AuthorizationServer
             app.UseTwoFactorRememberBrowserCookie(DefaultAuthenticationTypes.TwoFactorRememberBrowserCookie);
             
             // Uncomment the following lines to enable logging in with third party login providers
-            app.UseOAuthAuthorizationServer(new OAuthAuthorizationServerOptions());
+            //app.UseOAuthAuthorizationServer(new OAuthAuthorizationServerOptions());
             app.UseOAuthAuthorizationServer(new OAuthAuthorizationServerOptions()
             {
 
-                Description   = new AuthenticationDescription() {Caption = "OurOAuth2Server"},
+                Description   = new AuthenticationDescription() {Caption = "OAuth2AuthorizationServer", AuthenticationType = "OAuth2AuthorizationServer" },
                 AuthorizeEndpointPath = new PathString(Paths.AuthorizePath), //ścieżki
                 TokenEndpointPath = new PathString(Paths.TokenPath),
                 ApplicationCanDisplayErrors = true,
@@ -81,7 +81,7 @@ namespace Toci.AuthorizationServer
                 // Authorization server provider which controls the lifecycle of Authorization Server
                 Provider = new OAuthAuthorizationServerProvider
                 {
-                    OnValidateClientRedirectUri = ValidateClientRedirectUri,//TODO Metoda do porównania usera z zapisanym klientem
+                    OnValidateClientRedirectUri = ValidateClientRedirectUri,
                     OnValidateClientAuthentication = ValidateClientAuthentication,
                     OnGrantResourceOwnerCredentials = GrantResourceOwnerCredentials,
                     OnGrantClientCredentials = GrantClientCredetails
