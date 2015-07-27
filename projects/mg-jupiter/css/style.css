@@ -111,7 +111,6 @@ text-transform: none;
 
 
 .headers {
-
 	font-size: 40px;
     font-family: 'Just Me Again Down Here', sans-serif;
 }
@@ -1498,6 +1497,27 @@ footer {
 
 #contact-section label{
     font-size: 18px;
+}
+
+#contact-section{   
+    /* background-color: rgba(114,98,83,0.97);*/   
+   
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 1;       
+    background: linear-gradient(to bottom, rgba(255,255,255,0.1) 0%,rgba(255,255,255,0.1) 100%), url("../images/contact.png");
+    background-color: rgba(114,98,83,0.97);
+    opacity: 1; 
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
 }
 
 #about-section h3{

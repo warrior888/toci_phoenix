@@ -1,9 +1,14 @@
 ﻿using System;
+using System.Net;
+using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
+using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
+using Microsoft.Owin.Security.Infrastructure;
+using Microsoft.Owin.Security.OAuth;
 using Owin;
 using Toci.AuthorizationClient.Models;
 
@@ -45,7 +50,39 @@ namespace Toci.AuthorizationClient
             // This is similar to the RememberMe option when you log in.
             app.UseTwoFactorRememberBrowserCookie(DefaultAuthenticationTypes.TwoFactorRememberBrowserCookie);
 
-            
+            //myślę że to spełni funkcjonalność klienta
+            app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions()
+            {
+                Description = new AuthenticationDescription() { Caption = "TociOAuthAuthorizationServer", AuthenticationType = "TociOAuthAuthorizationServer" },
+                AuthenticationType = "TociOAuthAuthorizationServer",
+                AccessTokenProvider = new AuthenticationTokenProvider()
+                {
+                    OnCreate = create,
+                    OnReceive = receive,
+                    OnCreateAsync = CreateAsync,
+                    OnReceiveAsync = ReceiveAsync
+                },
+               
+                Provider = new OAuthBearerAuthenticationProvider()
+                {
+                    OnValidateIdentity = ValidateIdentity,
+                    OnApplyChallenge = ApplyChallenge,
+                    OnRequestToken = context =>
+                    {
+                        if (context.Request.Path.Value.StartsWith("https://localhost:44300/OAuth/"))
+                        {
+                            string bearerToken = context.Request.Query.Get("bearer_token");
+                            if (bearerToken != null)
+                            {
+                                string[] authorization = new string[] { "bearer " + bearerToken };
+                                context.Request.Headers.Add("Authorize", authorization);
+                            }
+                        }
+                        return Task.FromResult(context);
+                    } ,               
+                }
+               
+            });
             // Uncomment the following lines to enable logging in with third party login providers
             //app.UseMicrosoftAccountAuthentication(
             //    clientId: "",
@@ -56,14 +93,54 @@ namespace Toci.AuthorizationClient
             //   consumerSecret: "");
 
             //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            //   appId: "1469468426698430",
+            //   appSecret: "8f508435a5992e539e2afac5bb8eba6f");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
             //    ClientId = "",
             //    ClientSecret = ""
             //});
+
+        }
+        public static Action<AuthenticationTokenCreateContext> create = new Action<AuthenticationTokenCreateContext>(c =>
+        {
+            c.SetToken(c.SerializeTicket());
+        });
+
+        public static Action<AuthenticationTokenReceiveContext> receive = new Action<AuthenticationTokenReceiveContext>(c =>
+        {
+            c.DeserializeTicket(c.Token);
+            c.OwinContext.Environment["Properties"] = c.Ticket.Properties;
+        });
+        public static async System.Threading.Tasks.Task CreateAsync(AuthenticationTokenCreateContext context)
+        {
+            context.SetToken(context.SerializeTicket());
+        }
+
+        public static async System.Threading.Tasks.Task ReceiveAsync(AuthenticationTokenReceiveContext context)
+        {
+            context.DeserializeTicket(context.Token);
+        }
+
+        public static Task ApplyChallenge(OAuthChallengeContext context)
+        {
+            context.Response.Redirect("/Account/Login");
+            return Task.FromResult<object>(null);
+        }
+
+        //public static Task RequestToken(OAuthRequestTokenContext context)
+        //{
+        //    string token = context.Request.Cookies[0];
+        //    if (!string.IsNullOrEmpty(token))
+        //    {
+        //        context.Token = token;
+        //    }
+        //    return Task.FromResult<object>(null);
+        //}
+        public static Task ValidateIdentity(OAuthValidateIdentityContext context)
+        {
+            return Task.FromResult<object>(null);
         }
     }
 }
