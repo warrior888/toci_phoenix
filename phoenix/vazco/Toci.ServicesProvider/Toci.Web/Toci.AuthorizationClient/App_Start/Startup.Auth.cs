@@ -69,13 +69,13 @@ namespace Toci.AuthorizationClient
                     OnApplyChallenge = ApplyChallenge,
                     OnRequestToken = context =>
                     {
-                        if (context.Request.Path.Value.StartsWith("/TestHub"))
+                        if (context.Request.Path.Value.StartsWith("https://localhost:44300/OAuth/"))
                         {
                             string bearerToken = context.Request.Query.Get("bearer_token");
                             if (bearerToken != null)
                             {
                                 string[] authorization = new string[] { "bearer " + bearerToken };
-                                context.Request.Headers.Add("Authorization", authorization);
+                                context.Request.Headers.Add("Authorize", authorization);
                             }
                         }
                         return Task.FromResult(context);
