@@ -122,9 +122,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AddInModel.cs" />
+    <Compile Include="Models\DbConnect.cs" />
     <Compile Include="Models\DbModel.cs" />
-    <Compile Include="Models\EntryDataModel.cs" />
-    <Compile Include="Models\OutgoingDataModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

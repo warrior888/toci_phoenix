@@ -7,9 +7,9 @@
 
 <h2>SaveContent</h2>
 
-@using (Html.BeginForm("dbsaveresult", "dbsave", FormMethod.Get))
+@using (Html.BeginForm("dbsaveresult", "dbsave", FormMethod.Post))
 {
-    @Html.TextAreaFor(item => item.data, new { placeholder = "Tekst" })
+    @Html.TextAreaFor(item => item.data, new { placeholder = "Tekst", style="width: 90%;max-width: 90%;height: 25%;" })
     <br />    
   
     
