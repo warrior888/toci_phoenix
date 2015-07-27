@@ -1,5 +1,5 @@
 ﻿
-@model DBAccessResourceServer.Models.DbModel
+@model List<DBAccessResourceServer.Models.DbModel>
 
 
 @{
@@ -10,9 +10,15 @@
 
 @using (Html.BeginForm("Index", "DbHub", FormMethod.Get))
 {
-    @Html.Label(@Model.data)<br />
-    @Html.Label(@Model.nick)<br />
-    @Html.Label(@Model.addingTime.ToString())<br />
+    foreach (var item in Model)
+    {
+        <div>
+        @Html.Label(item.data)<br/>
+        @Html.Label(item.nick)<br/>
+        @Html.Label(item.addingTime.ToString())<br/>
+        <hr/>
+        </div>
+    }
 
 
     <input type="Submit" value="Wroć" />
