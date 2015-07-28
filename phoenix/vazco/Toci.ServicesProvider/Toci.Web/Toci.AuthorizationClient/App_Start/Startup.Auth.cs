@@ -6,6 +6,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
+using Microsoft.Owin.Security.Facebook;
 using Microsoft.Owin.Security.Google;
 using Microsoft.Owin.Security.Infrastructure;
 using Microsoft.Owin.Security.OAuth;
@@ -54,43 +55,70 @@ namespace Toci.AuthorizationClient
             // Once you check this option, your second step of verification during the login process will be remembered on the device where you logged in from.
             // This is similar to the RememberMe option when you log in.
             app.UseTwoFactorRememberBrowserCookie(DefaultAuthenticationTypes.TwoFactorRememberBrowserCookie);
+            //IOAuthAuthorizationServerProvider
+
+            //FacebookAuthenticationMiddleware
+
+            app.Use(typeof(FacebookAuthenticationMiddleware), app, new FacebookAuthenticationOptions()
+            {
+                TokenEndpoint = "/OAuth/Token",
+                //Provider = 
+                Caption = "a to co za kapszyn",
+                //AuthenticationMode = 
+                AuthenticationType = "TociOAuth",
+                AppId = "1",
+                AppSecret = "2",
+                AuthorizationEndpoint = "https://localhost:44300/OAuth/Authorize",
+                Description = new AuthenticationDescription() { Caption = "nasz kapszyn", AuthenticationType = "TociOAuth"}
+                
+            });
+
+            //AuthenticationHandler
+//            app.UseOAuthAuthorizationServer(new OAuthAuthorizationServerOptions()
+//            {
+//                
+//                AuthorizeEndpointPath = "/",
+//                //TokenEndpointPath = 
+//                //Provider = 
+//            });
 
             //myślę że to spełni funkcjonalność klienta - tworzy Bearer token
-            app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions()
-            {
-                Description = new AuthenticationDescription() { Caption = "TociOAuthAuthorizationServer", AuthenticationType = "TociOAuthAuthorizationServer" },
-                AuthenticationType = "TociOAuthAuthorizationServer",
-                AccessTokenProvider = new AuthenticationTokenProvider()
-                {
-                    OnCreate = create,
-                    OnReceive = receive,
-                    OnCreateAsync = CreateAsync,
-                    OnReceiveAsync = ReceiveAsync
-                },
-               
-                Provider = new OAuthBearerAuthenticationProvider()
-                {
-                    OnValidateIdentity = ValidateIdentity,
-                    OnApplyChallenge = ApplyChallenge,
-                    OnRequestToken = context =>
-                    {
-                        ///tutaj jest tworzone zapytanie do serwera autentykującego - na razie dodaje sam barer token, oraz na sucho clintId i  secret
-                       ///Czemu to ze sobą nie chce działać - my nie doszliśmy do tego. Ile ludzi tyle różnych implementacji, ale nikt nie pochwalił się nigdzie
-                       /// integracją serwera z entity frameworkiem, albo klienta który jest custumowy i ma swój serwer i jest bardziej rozwinięty niż aplikacja w cmd...
-                        if (context.Request.Path.Value.StartsWith("https://localhost:44300/OAuth/"))
-                        {
-                            string bearerToken = context.Request.Query.Get("bearer_token");
-                            if (bearerToken != null)
-                            {
-                                string[] authorization = new string[] { "bearer " + bearerToken, "clientId 1", "clientSecret 2" };
-                                context.Request.Headers.Add("Authorize", authorization);
-                            }
-                        }
-                        return Task.FromResult(context);
-                    } ,               
-                }
-               
-            });
+//            app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions()
+//            {
+//                Description = new AuthenticationDescription() { Caption = "TociOAuthAuthorizationServer", AuthenticationType = "TociOAuthAuthorizationServer" },
+//                AuthenticationType = "TociOAuthAuthorizationServer",
+//                AccessTokenProvider = new AuthenticationTokenProvider()
+//                {
+//                    OnCreate = create,
+//                    OnReceive = receive,
+//                    OnCreateAsync = CreateAsync,
+//                    OnReceiveAsync = ReceiveAsync
+//                },
+//               
+//                Provider = new OAuthBearerAuthenticationProvider()
+//                {
+//                    
+//                    OnValidateIdentity = ValidateIdentity,
+//                    OnApplyChallenge = ApplyChallenge,
+//                    OnRequestToken = context =>
+//                    {
+//                        ///tutaj jest tworzone zapytanie do serwera autentykującego - na razie dodaje sam barer token, oraz na sucho clintId i  secret
+//                       ///Czemu to ze sobą nie chce działać - my nie doszliśmy do tego. Ile ludzi tyle różnych implementacji, ale nikt nie pochwalił się nigdzie
+//                       /// integracją serwera z entity frameworkiem, albo klienta który jest custumowy i ma swój serwer i jest bardziej rozwinięty niż aplikacja w cmd...
+//                        if (context.Request.Path.Value.StartsWith("https://localhost:44300/OAuth/"))
+//                        {
+//                            string bearerToken = context.Request.Query.Get("bearer_token");
+//                            if (bearerToken != null)
+//                            {
+//                                string[] authorization = new string[] { "bearer " + bearerToken, "clientId 1", "clientSecret 2" };
+//                                context.Request.Headers.Add("Authorize", authorization);
+//                            }
+//                        }
+//                        return Task.FromResult(context);
+//                    } ,               
+//                }
+//               
+//            });
             // Uncomment the following lines to enable logging in with third party login providers
             //app.UseMicrosoftAccountAuthentication(
             //    clientId: "",
