@@ -6,6 +6,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using Toci.Client.Models;
+using Toci.Provider;
 
 namespace Toci.Client
 {
@@ -54,10 +55,12 @@ namespace Toci.Client
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
-
+            //            app.UseFacebookAuthentication(
+            //               appId: "",
+            //               appSecret: "");
+            app.UseTociAuthentication(
+                           appId: "1469468426698430",
+                           appSecret: "8f508435a5992e539e2afac5bb8eba6f");
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
             //    ClientId = "",
