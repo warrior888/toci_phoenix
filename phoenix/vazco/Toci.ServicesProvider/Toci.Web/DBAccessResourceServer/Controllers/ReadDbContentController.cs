@@ -21,7 +21,6 @@ namespace DBAccessResourceServer.Controllers
 
             var dbh = DbConnect.Connect();
             var itemModel = new AddInModel(TableName);
-           
             itemModel.SetGwiazdka();
 
             var dataset = DbUtils.EncryptDbModels(DbUtils.GetLastArrayFromDb(dbh, itemModel));

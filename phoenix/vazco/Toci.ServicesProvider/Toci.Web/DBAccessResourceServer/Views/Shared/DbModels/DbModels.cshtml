@@ -1,0 +1,12 @@
+﻿
+@model List<DBAccessResourceServer.Models.DbModel>
+
+@foreach (var item in Model)
+    {
+        <div>
+            @Html.Label(item.data)<br />
+            @Html.Label(item.nick)<br />
+            @Html.Label(item.addingTime.ToString())<br />
+            <hr />
+        </div>
+    }
