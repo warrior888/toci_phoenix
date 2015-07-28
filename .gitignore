@@ -10,7 +10,7 @@
 
 [Dd]ebug/
 [Rr]elease/
-build/
+#build/
 [Bb]in/
 [Oo]bj/
 
