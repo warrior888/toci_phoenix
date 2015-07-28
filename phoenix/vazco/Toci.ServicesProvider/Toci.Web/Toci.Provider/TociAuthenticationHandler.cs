@@ -1,6 +1,4 @@
-﻿// Copyright (c) Microsoft Open Technologies, Inc. All rights reserved. See License.txt in the project root for license information.
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Net.Http;
@@ -13,7 +11,6 @@ using Microsoft.Owin.Helpers;
 using Microsoft.Owin.Infrastructure;
 using Microsoft.Owin.Logging;
 using Microsoft.Owin.Security;
-using Microsoft.Owin.Security.Facebook;
 using Microsoft.Owin.Security.Infrastructure;
 using Newtonsoft.Json.Linq;
 
@@ -80,13 +77,13 @@ namespace Toci.Provider
 
                 string requestPrefix = Request.Scheme + "://" + Request.Host;
                 string redirectUri = requestPrefix + Request.PathBase + Options.CallbackPath;
-
+                //czy ten grand_type miałby być authorization_code?
                 string tokenRequest = "grant_type=authorization_code" +
                     "&code=" + Uri.EscapeDataString(code) +
                     "&redirect_uri=" + Uri.EscapeDataString(redirectUri) +
                     "&client_id=" + Uri.EscapeDataString(Options.AppId) +
                     "&client_secret=" + Uri.EscapeDataString(Options.AppSecret);
-
+                //wysyłamy tokenRequest pod TokenEndPoint - ciekawi mnie czemu mamy dołączyć do środka AppSecret
                 HttpResponseMessage tokenResponse = await _httpClient.GetAsync(Options.TokenEndpoint + "?" + tokenRequest, Request.CallCancelled);
                 tokenResponse.EnsureSuccessStatusCode();
                 string text = await tokenResponse.Content.ReadAsStringAsync();
@@ -94,9 +91,10 @@ namespace Toci.Provider
 
                 string accessToken = form["access_token"];
                 string expires = form["expires"];
+                //a tutaj wysyłamy nie zaszyfrowany accesstoken?
                 string graphAddress = Options.UserInformationEndpoint + "?access_token=" + Uri.EscapeDataString(accessToken);
                 if (Options.SendAppSecretProof)
-                {
+                {//Tutaj wysyłamy zaszyfrowany secretID access token  
                     graphAddress += "&appsecret_proof=" + GenerateAppSecretProof(accessToken);
                 }
 
@@ -122,7 +120,7 @@ namespace Toci.Provider
                 {
                     context.Identity.AddClaim(new Claim(ClaimTypes.Email, context.Email, XmlSchemaString, Options.AuthenticationType));
                 }
-                if (!string.IsNullOrEmpty(context.Name))
+                if (!string.IsNullOrEmpty(context.Name))//ten claim musiał by być zmieniony
                 {
                     context.Identity.AddClaim(new Claim("urn:facebook:name", context.Name, XmlSchemaString, Options.AuthenticationType));
 
@@ -132,7 +130,7 @@ namespace Toci.Provider
                         context.Identity.AddClaim(new Claim(ClaimsIdentity.DefaultNameClaimType, context.Name, XmlSchemaString, Options.AuthenticationType));
                     }
                 }
-                if (!string.IsNullOrEmpty(context.Link))
+                if (!string.IsNullOrEmpty(context.Link)) //ten claim musiał by być uwalony
                 {
                     context.Identity.AddClaim(new Claim("urn:facebook:link", context.Link, XmlSchemaString, Options.AuthenticationType));
                 }
@@ -181,6 +179,9 @@ namespace Toci.Provider
                     properties.RedirectUri = currentUri;
                 }
 
+
+                //co robi to correlationID?
+                //MSDN: Gets or sets the message identifier used by acknowledgment, report, and response messages to reference the original message.
                 // OAuth2 10.12 CSRF
                 GenerateCorrelationId(properties);
 
@@ -189,8 +190,7 @@ namespace Toci.Provider
 
                 string state = Options.StateDataFormat.Protect(properties);
 
-                string authorizationEndpoint =
-                    Options.AuthorizationEndpoint +
+                string authorizationEndpoint =Options.AuthorizationEndpoint +
                         "?response_type=code" +
                         "&client_id=" + Uri.EscapeDataString(Options.AppId) +
                         "&redirect_uri=" + Uri.EscapeDataString(redirectUri) +
