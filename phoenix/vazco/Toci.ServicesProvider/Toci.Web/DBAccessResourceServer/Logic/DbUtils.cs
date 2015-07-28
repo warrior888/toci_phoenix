@@ -32,7 +32,32 @@ namespace DBAccessResourceServer.Logic
                 item.data = Crypting.DecryptStringAES(item.data, sharedSecret.secret);
             }
 
-             return list;
+            
+            return SortListByTime(list);
+        }
+
+         private static string GetUserNick()
+         {
+             //TODO get user nick
+             return "JanuszIT";
+         }
+
+         public static void DecryptModel(this DbModel model)
+         {
+             model.data = Crypting.EncryptStringAES(model.data, sharedSecret.secret);
+             
+         }
+
+         public static void FillAddInModel(this AddInModel itemModel,DbModel model)
+         {
+            itemModel.SetNick(DbUtils.GetUserNick());
+            itemModel.SetData(model.data);
+            itemModel.SetTime(DateTime.Now);
+        }
+
+         private static List<DbModel> SortListByTime(List<DbModel> list)
+         {
+             return list.OrderByDescending(x => x.addingTime).ToList();
          }
     }
 }

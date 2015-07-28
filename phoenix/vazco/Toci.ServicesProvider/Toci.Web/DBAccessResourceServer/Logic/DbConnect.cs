@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using Toci.Db.Clients;
+﻿using Toci.Db.Clients;
 using Toci.Db.ClusterAccess;
 using Toci.Db.DbVirtualization.MsSqlQuery;
 
-namespace DBAccessResourceServer.Models
+namespace DBAccessResourceServer.Logic
 {
     static class DbConnect
     {

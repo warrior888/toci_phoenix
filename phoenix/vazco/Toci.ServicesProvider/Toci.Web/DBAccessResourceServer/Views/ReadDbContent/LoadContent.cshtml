@@ -10,16 +10,7 @@
 
 @using (Html.BeginForm("Index", "DbHub", FormMethod.Get))
 {
-    foreach (var item in Model)
-    {
-        <div>
-        @Html.Label(item.data)<br/>
-        @Html.Label(item.nick)<br/>
-        @Html.Label(item.addingTime.ToString())<br/>
-        <hr/>
-        </div>
-    }
-
+    @Html.Partial("DbModels/DbModels",Model)
 
     <input type="Submit" value="Wroć" />
 }

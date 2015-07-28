@@ -6,6 +6,11 @@ namespace DBAccessResourceServer.Models
 {
     public class AddInModel : Model
     {
+        private const string DataTableName = "data" ;
+        private const string TimeTableName = "addingTime";
+        private const string NickTableName = "name" ;
+        private const string Star = "*" ;
+
         public AddInModel(string tableName) : base(tableName)
         {
         }
@@ -21,21 +26,21 @@ namespace DBAccessResourceServer.Models
 
         public void SetData(string data)
         {
-            SetValue("data", data);
+            SetValue(DataTableName, data);
         }
 
         public void SetTime(DateTime time)
         {
-            SetValue("addingTime", time);
+            SetValue(TimeTableName, time);
         }
 
         public  void SetNick(string nick)
         {
-            SetValue("name", nick);
+            SetValue(NickTableName, nick);
         }
         public void SetGwiazdka()
         {
-            SetValue("*", "*");
+            SetValue(Star, Star);
         }
 
     }

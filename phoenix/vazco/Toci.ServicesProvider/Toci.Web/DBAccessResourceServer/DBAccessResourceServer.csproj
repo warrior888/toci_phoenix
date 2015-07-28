@@ -122,9 +122,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Logic\DbConnect.cs" />
     <Compile Include="Logic\DbUtils.cs" />
     <Compile Include="Models\AddInModel.cs" />
-    <Compile Include="Models\DbConnect.cs" />
     <Compile Include="Models\DbModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -141,6 +141,7 @@
     <Content Include="Views\SaveDbContent\SaveContent.cshtml" />
     <Content Include="Views\DbSave\DbSaveResult.cshtml" />
     <Content Include="Views\DbHub\Index.cshtml" />
+    <Content Include="Views\Shared\DbModels\DbModels.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
