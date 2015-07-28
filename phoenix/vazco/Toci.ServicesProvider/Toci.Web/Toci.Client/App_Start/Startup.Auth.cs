@@ -2,7 +2,9 @@
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
+using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
+using Microsoft.Owin.Security.Facebook;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using Toci.Client.Models;
@@ -44,7 +46,24 @@ namespace Toci.Client
             // Once you check this option, your second step of verification during the login process will be remembered on the device where you logged in from.
             // This is similar to the RememberMe option when you log in.
             app.UseTwoFactorRememberBrowserCookie(DefaultAuthenticationTypes.TwoFactorRememberBrowserCookie);
+            
+            app.Use(typeof(FacebookAuthenticationMiddleware), app, new FacebookAuthenticationOptions()
+            {
+                TokenEndpoint = "https://localhost:44300/OAuth/Token",
+                //Provider = 
+                Caption = "a to co za kapszyn",
+                //AuthenticationMode = 
+                AuthenticationType = "TociOAuth",
+                AppId = "1",
+                AppSecret = "2",
+                AuthorizationEndpoint = "https://localhost:44300/OAuth/Authorize",
+                Description = new AuthenticationDescription() { Caption = "nasz kapszyn", AuthenticationType = "TociOAuth" }
+            });
 
+
+            app.UseFacebookAuthentication(
+               appId: "1469468426698430",
+               appSecret: "8f508435a5992e539e2afac5bb8eba6f");
             // Uncomment the following lines to enable logging in with third party login providers
             //app.UseMicrosoftAccountAuthentication(
             //    clientId: "",
