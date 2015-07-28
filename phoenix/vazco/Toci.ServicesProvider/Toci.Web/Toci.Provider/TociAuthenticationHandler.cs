@@ -183,6 +183,7 @@ namespace Toci.Provider
                 //co robi to correlationID?
                 //MSDN: Gets or sets the message identifier used by acknowledgment, report, and response messages to reference the original message.
                 // OAuth2 10.12 CSRF
+                //z tego co tu widzę to correlationID jest dołączane do ciacha
                 GenerateCorrelationId(properties);
 
                 // comma separated
