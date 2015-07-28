@@ -122,6 +122,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Logic\DbUtils.cs" />
     <Compile Include="Models\AddInModel.cs" />
     <Compile Include="Models\DbConnect.cs" />
     <Compile Include="Models\DbModel.cs" />
