@@ -18,7 +18,8 @@ namespace Toci.Tests
             var secretHash = generateSecret.GetSecret();
             var sectetText = tociCrypting.EncryptStringAES(testtexttocrypt, testpass, secretHash);
             Debug.Print("Encrypted data is: {0}", sectetText);
-            var nonSecretText = tociCrypting.DecryptStringAES(sectetText, testpass, secretHash);
+            var tociCrypting2 = new TociCrypting();
+            var nonSecretText = tociCrypting2.DecryptStringAES(sectetText, testpass, secretHash);
             Assert.AreEqual(testtexttocrypt, nonSecretText);
         }
     }
