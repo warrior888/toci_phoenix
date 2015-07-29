@@ -1,8 +1,16 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
+    $('#apply-form').submit(function (event) {
+        SubmitForm(FormDecorator(this.id, 'server/apply.php'), event);
+    });
+
+    //raczej nie potrzebne
+
+    /*
     // Contact form process
     $('#apply-form').submit(function(event) {
 
+        //chyba nie potrzebne
         $('.form-group').removeClass('has-error'); // remove the error class
         $('.help-block').remove(); // remove the error text
 
@@ -26,45 +34,17 @@ $(document).ready(function() {
             // using the done promise callback
             .done(function(data) {
 
-                // log data to the console so we can see
-               // console.log(data, data.result);
+               // ALL GOOD! just show the success message!
+               $('#apply-form').append('<div class="alert alert-success">' + data.message + '</div>');
 
-                // here we will handle errors and validation messages
-                if (! data.result) {
+               // usually after form submission, you'll want to redirect
+               // window.location = '/thank-you'; // redirect a user to another page
 
-                    if (data.errors.name) {
-                        $('#applicant-name-group').addClass('has-error'); // add the error class to show red input
-                        $('#applicant-name-group label').append('<span class="help-block">' + data.errors.name + '</span>'); // add the actual error message under our input
-                    }
-
-                    if (data.errors.surname) {
-                        $('#applicant-surname-group').addClass('has-error'); // add the error class to show red input
-                        $('#applicant-surname-group label').append('<span class="help-block">' + data.errors.surname + '</span>'); // add the actual error message under our input
-                    }
-
-                    if (data.errors.email) {
-                        $('#applicant-email-group').addClass('has-error'); // add the error class to show red input
-                        $('#applicant-email-group label').append('<span class="help-block">' + data.errors.email + '</span>'); // add the actual error message under our input
-                    }
-
-                    if (data.errors.phone) {
-                        $('#applicant-phone-group').addClass('has-error'); // add the error class to show red input
-                        $('#applicant-phone-group label').append('<span class="help-block">' + data.errors.phone + '</span>'); // add the actual error message under our input
-                    }
-
-                } else {
-
-                    // ALL GOOD! just show the success message!
-                    $('#apply-form').append('<div class="alert alert-success">' + data.message + '</div>');
-
-                    // usually after form submission, you'll want to redirect
-                    // window.location = '/thank-you'; // redirect a user to another page
-
-                    $('input#applicantName').val('');
-                    $('input#applicantSurname').val('');
-                    $('input#applicantEmail').val('');
-                    $('input#applicantPhone').val('');
-                }
+               $('input#applicantName').val('');
+               $('input#applicantSurname').val('');
+               $('input#applicantEmail').val('');
+               $('input#applicantPhone').val('');
+      
             })
 
             // using the fail promise callback
@@ -78,4 +58,85 @@ $(document).ready(function() {
         // stop the form from submitting the normal way and refreshing the page
         event.preventDefault();
     });
+    */
 });
+
+/* ************************************************************ */
+
+function FormDecorator(formId, destination) {
+
+    this.formId = formId;
+    this.destination = destination;
+
+    function getFormData() {
+        var values = $('#' + formId).serialize();
+        return values;
+    }
+
+    function successAction(data) {
+        $('#' + formId).append('<div class="alert alert-success">' + data.message + '</div>');
+        $('#' + formId).find(':input').each(function () {
+            $(this).val('');
+        }
+        );
+    }
+
+    function failAction(data) {
+        //to na pewno bedzie inaczej wygladac;)
+        console.log(data);
+    }
+
+    return {
+        getFormData: getFormData,
+        successAction: successAction,
+        failAction: failAction
+    };
+}
+
+function SubmitForm(form, event) {
+    $.ajax({
+        type: 'POST', // define the type of HTTP verb we want to use (POST for our form)
+        url: form.destination, // the url where we want to POST
+        data: form.getFormData(), // our data object
+        dataType: 'json', // what type of data do we expect back from the server
+        encode: true
+    })
+        .done(form.successAction(data))
+        .fail(form.failAction(data));
+    event.preventDefault();
+}
+
+
+//na razie nie potrzebne
+/* ************************************************************ */
+/*var applyForm = function () {
+    this.destination = 'server/apply.php';
+
+
+}
+
+/* ************************************************************ #1#
+
+var newsletterForm = function() {
+    this.destination = 'process-newsletter.php';
+
+    
+}
+
+/* ************************************************************ #1#
+
+var teacherForm = function() {
+    this.destination = 'process-teacher.php';
+
+   
+}
+
+/* ************************************************************ #1#
+
+var contactForm = function () {
+    this.destination = 'server/contact.php';
+
+    
+}
+
+/* ************************************************************ #1#*/
