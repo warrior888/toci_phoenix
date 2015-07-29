@@ -8,7 +8,7 @@ using Toci.Db.DbVirtualization;
 
 namespace Toci.DbImportantStuff.Logic
 {
-    public class DbUtils
+    public static class DbUtils
     {
         static GenerateSecret GenerateSecret = new GenerateSecret("8a32d4v723s");
         private static List<object[]> GetTableContent(DbHandle dbh, Model model)
