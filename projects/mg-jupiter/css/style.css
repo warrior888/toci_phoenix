@@ -1491,10 +1491,10 @@ footer {
     font-size: 16px;
 }
 
-#etapy h2{
+.etapy h2{
     margin:10px;
 }
-#etapy h3{
+.etapy h3{
     margin:10px;
     font-size:22px;
     font-family: 'Verdana', sans-serif;
