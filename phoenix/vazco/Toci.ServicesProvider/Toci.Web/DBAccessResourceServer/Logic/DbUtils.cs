@@ -29,7 +29,7 @@ namespace DBAccessResourceServer.Logic
          {
             foreach (var item in list)
             {
-                item.data = Crypting.DecryptStringAES(item.data, sharedSecret.secret);
+                item.data = new TociCrypting().DecryptStringAES(item.data, "8a32d4v723s");
             }
 
             
@@ -44,7 +44,7 @@ namespace DBAccessResourceServer.Logic
 
          public static void DecryptModel(this DbModel model)
          {
-             model.data = Crypting.EncryptStringAES(model.data, sharedSecret.secret);
+             model.data = new TociCrypting().EncryptStringAES(model.data, "8a32d4v723s");
              
          }
 

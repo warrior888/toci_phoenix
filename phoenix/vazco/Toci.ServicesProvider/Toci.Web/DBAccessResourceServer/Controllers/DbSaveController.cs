@@ -28,9 +28,9 @@ namespace DBAccessResourceServer.Controllers
             itemModel.FillAddInModel(model);
             dbh.InsertData(itemModel);
 
-
+            
             //mock to delete
-            model.nick = "Romuald test decrypt(testToDelete) : " + Crypting.DecryptStringAES(model.data, sharedSecret.secret);
+            model.nick = "Romuald test decrypt(testToDelete) : " + new TociCrypting().DecryptStringAES(model.data, "8a32d4v723s");
             //endof
             return View(model);
         }
