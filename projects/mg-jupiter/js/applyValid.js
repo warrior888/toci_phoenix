@@ -1,12 +1,13 @@
 $(document).ready(function () {
 
-    $('#apply-form').submit(function (event) {
-        SubmitForm(FormDecorator(this.id, 'server/apply.php'), event);
-    });
+//    $('#apply-form').submit(function (event) {
+//        SubmitForm(FormDecorator(this.id, 'server/apply.php'), event);
+//        event.preventDefault();
+//    });
 
     //raczej nie potrzebne
 
-    /*
+    
     // Contact form process
     $('#apply-form').submit(function(event) {
 
@@ -25,26 +26,40 @@ $(document).ready(function () {
 
         // process the form
         $.ajax({
-                type: 'POST', // define the type of HTTP verb we want to use (POST for our form)
-                url: 'server/apply.php', // the url where we want to POST
-                data: formData, // our data object
-                dataType: 'json', // what type of data do we expect back from the server
-                encode: true
-            })
+            type: 'POST', // define the type of HTTP verb we want to use (POST for our form)
+            url: 'server/apply.php', // the url where we want to POST
+            data: formData, // our data object
+            dataType: 'json', // what type of data do we expect back from the server
+            encode: true
+        })
             // using the done promise callback
             .done(function(data) {
 
-               // ALL GOOD! just show the success message!
-               $('#apply-form').append('<div class="alert alert-success">' + data.message + '</div>');
+                console.log('ajax sie wywolal', data);
 
-               // usually after form submission, you'll want to redirect
-               // window.location = '/thank-you'; // redirect a user to another page
+                var jsonMessage = (data);
 
-               $('input#applicantName').val('');
-               $('input#applicantSurname').val('');
-               $('input#applicantEmail').val('');
-               $('input#applicantPhone').val('');
-      
+                console.log('debugowanie', data, jsonMessage);
+
+                if (jsonMessage.result == true)
+                //var secondOption = JSON.parse()
+                // ALL GOOD! just show the success message!
+                {
+                    $('#apply-form').append('<div class="alert alert-success">' + data.message + '</div>');
+
+                    // usually after form submission, you'll want to redirect
+                    // window.location = '/thank-you'; // redirect a user to another page
+
+                    $('input#applicantName').val('');
+                    $('input#applicantSurname').val('');
+                    $('input#applicantEmail').val('');
+                    $('input#applicantPhone').val('');
+                } else {
+                    $('#apply-form').append('<div class="alert alert-success">nie udalo sie</div>');
+                }
+
+
+
             })
 
             // using the fail promise callback
@@ -58,7 +73,7 @@ $(document).ready(function () {
         // stop the form from submitting the normal way and refreshing the page
         event.preventDefault();
     });
-    */
+    
 });
 
 /* ************************************************************ */
@@ -103,6 +118,7 @@ function SubmitForm(form, event) {
     })
         .done(form.successAction(data))
         .fail(form.failAction(data));
+
     event.preventDefault();
 }
 

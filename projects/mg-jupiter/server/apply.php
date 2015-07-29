@@ -1,5 +1,5 @@
 ﻿<?php
-
+ob_start();
 require_once "Db.php";
 
 /* Nazwy z formularza: narazie sa inne,
@@ -35,6 +35,9 @@ else{
     $json['result']=true;
 }
 
-//ob_clean();
+ob_clean();
+//if (isset($_SERVER['HHTP_X_XML']))
 echo json_encode($json);
+//else
+//header();
 

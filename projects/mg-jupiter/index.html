@@ -456,7 +456,7 @@
 
 							<div class="form-group" id="applicant-name-group">
 								<div class="input-group">
-                                    <input type="text" class="form-control" name="applicantName" id="applicantName" placeholder="Imię" required pattern="^[A-Za-ząćęłńóśźżĄĘŁŃÓŚŹŻ]{3,}$">
+                                    <input type="text" class="form-control" data-validate-other-field-if="CustomSurnameValidator" data-other-field-id="applicantSurname" name="applicantName" id="applicantName" placeholder="Imię" required pattern="^[A-Za-ząćęłńóśźżĄĘŁŃÓŚŹŻ]{3,}$">
 									<div class="input-group-addon"><i class="fa fa-user"></i>
 									</div>
 								</div>
@@ -670,7 +670,8 @@
 		<script src="js/faq/main.js"></script>
         <script src="js/applyvalid.js"></script>
         <script src="js/contactvalid.js"></script>
-	<script src="js/utils.js"></script>
+	    <script src="js/utils.js"></script>
+        <script src="js/training3.js"></script>
     
     
 
