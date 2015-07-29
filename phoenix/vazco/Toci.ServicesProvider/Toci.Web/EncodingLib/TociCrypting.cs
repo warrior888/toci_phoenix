@@ -16,13 +16,14 @@ namespace EncodingLib
             _salt = new byte[32];
             Array.Copy(bytes, 0, _salt, 0, 32);
         }
-        public string EncryptStringAES(string plainText, string sharedSecret)
+        public string EncryptStringAES(string plainText, string sharedSecret, string base64String)
         {
             if (string.IsNullOrEmpty(plainText))
                 throw new ArgumentNullException("plainText");
             if (string.IsNullOrEmpty(sharedSecret))
                 throw new ArgumentNullException("sharedSecret");
             
+            AssignSalt(base64String);
             string outStr = null;                       // Encrypted string to return
             RijndaelManaged aesAlg = null;              // RijndaelManaged object used to encrypt the data.
 
@@ -72,13 +73,13 @@ namespace EncodingLib
         /// </summary>
         /// <param name="cipherText">The text to decrypt.</param>
         /// <param name="sharedSecret">A password used to generate a key for decryption.</param>
-        public string DecryptStringAES(string cipherText, string sharedSecret)
+        public string DecryptStringAES(string cipherText, string sharedSecret, string base64String)
         {
             if (string.IsNullOrEmpty(cipherText))
                 throw new ArgumentNullException("cipherText");
             if (string.IsNullOrEmpty(sharedSecret))
                 throw new ArgumentNullException("sharedSecret");
-
+            AssignSalt(base64String);
             // Declare the RijndaelManaged object
             // used to decrypt the data.
             RijndaelManaged aesAlg = null;
