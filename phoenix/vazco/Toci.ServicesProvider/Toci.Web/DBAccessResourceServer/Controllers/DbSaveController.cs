@@ -17,20 +17,27 @@ namespace DBAccessResourceServer.Controllers
         // GET: DbSave
         //TODO pobranie nicku usera && custom key do szyfrowania
 
-        private const string TableName = "LolTable";
+        private const string TableName = "LolTableMaster";
+        private const string LogTableName = "LolTable";
 
         public ActionResult DbSaveResult(DbModel model)
         {
+            var LogModel = new AddInModel(LogTableName);
             var itemModel = new AddInModel(TableName);
             var dbh = DbConnect.Connect();
 
+
             model.DecryptModel();
-            itemModel.FillAddInModel(model);
-            dbh.InsertData(itemModel);
+            itemModel.AddIsWhere("id", "1", true);
+
+            LogModel.FillAddInModel(model);
+            itemModel.SetData(model.data);
+            dbh.UpdateData(itemModel);
+            dbh.InsertData(LogModel);
 
 
             //mock to delete
-            model.nick = "Romuald test decrypt(testToDelete) : " + Crypting.DecryptStringAES(model.data, sharedSecret.secret);
+            //model.nick = "Romuald test decrypt(testToDelete) : " + Crypting.DecryptStringAES(model.data, sharedSecret.secret);
             //endof
             return View(model);
         }

@@ -9,7 +9,7 @@
 
 @using (Html.BeginForm("dbsaveresult", "dbsave", FormMethod.Post))
 {
-    @Html.TextAreaFor(item => item.data, new { placeholder = "Tekst", style="width: 90%;max-width: 90%;height: 25%;" })
+    @Html.TextAreaFor(item => item.data, new { placeholder = Model.data, style="width: 90%;max-width: 90%;height: 25%;" })
     <br />    
   
     

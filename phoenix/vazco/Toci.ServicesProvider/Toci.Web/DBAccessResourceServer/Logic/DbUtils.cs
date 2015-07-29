@@ -10,19 +10,41 @@ namespace DBAccessResourceServer.Logic
 {
      static class DbUtils
     {
-        public static List<DbModel> GetLastArrayFromDb(DbHandle dbh, Model model)
+        private static List<object[]> GetTableContent(DbHandle dbh, Model model)
         {
             var dataSet = dbh.GetData(model);
             var tables = dataSet.Tables;
-            var tmpList = new List<DbModel>();
+            var tmpList = new List<object[]>();
             var rows = tables[tables.Count - 1].Rows;
             if (rows.Count == 0) return null;
             for (var i = 0; i <= rows.Count - 1; i++)
             {
-                var tmp = rows[i].ItemArray.ToList();
-                tmpList.Add(new DbModel { addingTime = (DateTime)tmp[2], data = (string)tmp[0], nick = (string)tmp[1] });
+                var tmp = rows[i].ItemArray;
+                tmpList.Add(tmp);
             }
             return tmpList;
+        }
+
+         public static List<DbModel> GetDbModelList(DbHandle dbh, Model model)
+         {
+             var list = GetTableContent(dbh, model);
+             var resultList = new List<DbModel>();
+             foreach (var item in list)
+             {
+                 resultList.Add(new DbModel { addingTime = (DateTime)item[2], data = (string)item[0], nick = (string)item[1] });
+             }
+             return resultList;
+         }
+        ///TODO od poparwy
+         public static List<DbModel> GetPlainText(DbHandle dbh, Model model)
+         {
+            var list = GetTableContent(dbh, model);
+            var resultList = new List<DbModel>();
+            foreach (var item in list)
+            {
+                resultList.Add(new DbModel {  data = (string)item[0] });
+            }
+            return resultList;
         }
 
          public static List<DbModel> EncryptDbModels(List<DbModel> list)

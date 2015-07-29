@@ -8,11 +8,9 @@
 
 <h2>Saved!</h2>
 
-@using (Html.BeginForm("savecontent", "SaveDbContent", FormMethod.Get))
+@using (Html.BeginForm("Index", "DbHub", FormMethod.Get))
 {
-    @Html.Label(@Model.data)<br />
-    @Html.Label(@Model.nick)<br />
-    @Html.Label(@Model.addingTime.ToString())<br/>
+   
     
     
     <input type="Submit" value="Wroć" />
