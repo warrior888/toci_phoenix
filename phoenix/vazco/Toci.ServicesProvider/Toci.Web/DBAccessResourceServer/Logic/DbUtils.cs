@@ -10,7 +10,7 @@ namespace DBAccessResourceServer.Logic
 {
      static class DbUtils
     {
-        static GenerateSecred GenerateSecret = new GenerateSecred("8a32d4v723s");
+        static GenerateSecret GenerateSecret = new GenerateSecret("8a32d4v723s");
         private static List<object[]> GetTableContent(DbHandle dbh, Model model)
         {
             var dataSet = dbh.GetData(model);
