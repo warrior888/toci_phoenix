@@ -82,15 +82,14 @@ a (hover):				#81a27b (darker green)
 /* 1. GLOBAL STYLES
 -------------------------------------------------------------------*/
 
-/*@font-face {
+@font-face {
 	font-family: Arrows;
     
 	src: url('../fonts/PeaxWebdesignarrows.ttf');
-    font-family: 'Bree Serif', sans-serif;
-}
-*/
 
-#welcome-text{
+}
+
+.welcome-text{
 	position:absolute;
 	bottom:40%;
 	margin-left: auto;
@@ -98,6 +97,17 @@ a (hover):				#81a27b (darker green)
 	left: 0;
 	right: 0;
 
+
+}
+
+.inline-block{
+	display:inline-block;
+
+}
+
+.inline{
+
+	display:inline;
 }
 
 .text-transform-none{
