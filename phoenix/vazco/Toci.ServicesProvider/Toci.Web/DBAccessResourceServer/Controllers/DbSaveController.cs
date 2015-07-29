@@ -27,7 +27,7 @@ namespace DBAccessResourceServer.Controllers
             var dbh = DbConnect.Connect();
 
 
-            model.DecryptModel();
+            model.EncryptModel();
             itemModel.AddIsWhere("id", "1", true);
 
             LogModel.FillAddInModel(model);
