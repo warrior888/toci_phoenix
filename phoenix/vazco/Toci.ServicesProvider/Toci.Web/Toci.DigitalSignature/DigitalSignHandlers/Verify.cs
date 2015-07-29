@@ -29,12 +29,19 @@ namespace Toci.DigitalSignature.DigitalSignHandlers
             }
         }
 
-        public bool VerifyFile(byte[] inputFile, byte[] signature, string base64String)
+        public bool VerifyFile(byte[] inputFile, byte[] signature, string base64SCertyficate)
         {
-            X509Certificate2 certificate = Base64ToCertificate(base64String);
+            X509Certificate2 certificate = Base64ToCertificate(base64SCertyficate);
 
 
             return VerifyFile(inputFile, signature, certificate);
         }
+
+        public bool VerifyFile(string base64InputFile, string base64Signature, string base64SCertyficate)
+        {
+            X509Certificate2 certificate = Base64ToCertificate(base64SCertyficate);
+            return VerifyFile(Convert.FromBase64String(base64InputFile), Convert.FromBase64String(base64Signature), certificate);
+        }
+
     }
 }
