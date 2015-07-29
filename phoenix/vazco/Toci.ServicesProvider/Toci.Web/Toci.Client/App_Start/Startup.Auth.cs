@@ -77,9 +77,15 @@ namespace Toci.Client
             //            app.UseFacebookAuthentication(
             //               appId: "",
             //               appSecret: "");
+
+            //app.UseTociAuthentication(
+            //               appId: "1469468426698430",
+            //               appSecret: "8f508435a5992e539e2afac5bb8eba6f");
+
             app.UseTociAuthentication(
                            appId: "1",
                            appSecret: "2");
+
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
             //    ClientId = "",
