@@ -8,18 +8,18 @@ using Microsoft.Win32.SafeHandles;
 
 namespace EncodingLib
 {
-    public class GenerateSecred
+    public class GenerateSecret
     {
         private byte[] _salt;
         private byte[] _hash;
         private byte[] _hashBytes = new byte[64];
 
-        private GenerateSecred()
+        private GenerateSecret()
         {
             new RNGCryptoServiceProvider().GetBytes(_salt = new byte[32]);
         }
 
-        public GenerateSecred(string password) : this()
+        public GenerateSecret(string password) : this()
         {
             var pbkdf2 = new Rfc2898DeriveBytes(password, _salt, 10000);
             _hash = pbkdf2.GetBytes(32);
