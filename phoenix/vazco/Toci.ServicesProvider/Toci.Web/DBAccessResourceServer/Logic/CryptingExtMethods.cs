@@ -7,7 +7,7 @@ namespace DBAccessResourceServer.Logic
 {
     public static class CryptingExtMethods
     {
-        static readonly GenerateSecred GenerateSecret = new GenerateSecred(TemporarySecret);
+        static readonly GenerateSecret GenerateSecret = new GenerateSecret(TemporarySecret);
         private const string TemporarySecret = "8a32d4v723s";
 
         public static void EncryptModel(this DbModel model)
