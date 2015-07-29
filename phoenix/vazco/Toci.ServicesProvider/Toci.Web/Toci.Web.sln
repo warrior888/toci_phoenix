@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.Tests", "Toci.Tests\To
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.DbImportantStuff", "Toci.DbImportantStuff\Toci.DbImportantStuff.csproj", "{EBEFB5A2-666B-4771-9D23-4704BB5C7BE4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.CredentialsApi", "Toci.CredentialsApi\Toci.CredentialsApi.csproj", "{94F9065B-FB80-403E-BB72-5AB6F4567E4A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{EBEFB5A2-666B-4771-9D23-4704BB5C7BE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EBEFB5A2-666B-4771-9D23-4704BB5C7BE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EBEFB5A2-666B-4771-9D23-4704BB5C7BE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94F9065B-FB80-403E-BB72-5AB6F4567E4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94F9065B-FB80-403E-BB72-5AB6F4567E4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94F9065B-FB80-403E-BB72-5AB6F4567E4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94F9065B-FB80-403E-BB72-5AB6F4567E4A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
