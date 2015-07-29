@@ -14,7 +14,7 @@ namespace DBAccessResourceServer.Logic
         {
 
             var hash = GenerateSecret.GetSecret();
-            model.data = new TociCrypting().EncryptStringAES(model.data, TemporarySecret, hash);
+            model.data = new TociCrypting().EncryptStringAes(model.data, TemporarySecret, hash);
             model.hash = hash;
 
         }
@@ -23,7 +23,7 @@ namespace DBAccessResourceServer.Logic
 
             foreach (var item in list)
             {
-                item.data = new TociCrypting().DecryptStringAES(item.data, TemporarySecret, item.hash);
+                item.data = new TociCrypting().DecryptStringAes(item.data, TemporarySecret, item.hash);
             }
 
         }

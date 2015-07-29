@@ -10,13 +10,13 @@ namespace EncodingLib
         private  byte[] _salt;
 
 
-        protected void AssignSalt(string base64String)
+        private void AssignSalt(string base64String)
         {
             byte[] bytes = Convert.FromBase64String(base64String);
             _salt = new byte[32];
             Array.Copy(bytes, 0, _salt, 0, 32);
         }
-        public string EncryptStringAES(string plainText, string sharedSecret, string base64String)
+        public string EncryptStringAes(string plainText, string sharedSecret, string base64String)
         {
             if (string.IsNullOrEmpty(plainText))
                 throw new ArgumentNullException("plainText");
@@ -29,20 +29,20 @@ namespace EncodingLib
 
             try
             {
-                Rfc2898DeriveBytes key = new Rfc2898DeriveBytes(sharedSecret, _salt,1000);
+                var key = new Rfc2898DeriveBytes(sharedSecret, _salt,1000);
 
                 aesAlg = new RijndaelManaged();
                 aesAlg.Key = key.GetBytes(aesAlg.KeySize / 8);
 
-                ICryptoTransform encryptor = aesAlg.CreateEncryptor(aesAlg.Key, aesAlg.IV);
+                var encryptor = aesAlg.CreateEncryptor(aesAlg.Key, aesAlg.IV);
 
-                using (MemoryStream msEncrypt = new MemoryStream())
+                using (var msEncrypt = new MemoryStream())
                 {
                     msEncrypt.Write(BitConverter.GetBytes(aesAlg.IV.Length), 0, sizeof(int));
                     msEncrypt.Write(aesAlg.IV, 0, aesAlg.IV.Length);
-                    using (CryptoStream csEncrypt = new CryptoStream(msEncrypt, encryptor, CryptoStreamMode.Write))
+                    using (var csEncrypt = new CryptoStream(msEncrypt, encryptor, CryptoStreamMode.Write))
                     {
-                        using (StreamWriter swEncrypt = new StreamWriter(csEncrypt))
+                        using (var swEncrypt = new StreamWriter(csEncrypt))
                         {
                             swEncrypt.Write(plainText);
                         }
@@ -59,7 +59,7 @@ namespace EncodingLib
         }
 
 
-        public string DecryptStringAES(string cipherText, string sharedSecret, string base64String)
+        public string DecryptStringAes(string cipherText, string sharedSecret, string base64String)
         {
             if (string.IsNullOrEmpty(cipherText))
                 throw new ArgumentNullException("cipherText");
@@ -76,14 +76,14 @@ namespace EncodingLib
                 Rfc2898DeriveBytes key = new Rfc2898DeriveBytes(sharedSecret, _salt,1000);
              
                 byte[] bytes = Convert.FromBase64String(cipherText);
-                using (MemoryStream msDecrypt = new MemoryStream(bytes))
+                using (var msDecrypt = new MemoryStream(bytes))
                 {
                     aesAlg = new RijndaelManaged();
                     aesAlg.Key = key.GetBytes(aesAlg.KeySize / 8);
                     // Get the initialization vector from the encrypted stream
                     aesAlg.IV = ReadByteArray(msDecrypt);
-                    ICryptoTransform decryptor = aesAlg.CreateDecryptor(aesAlg.Key, aesAlg.IV);
-                    using (CryptoStream csDecrypt = new CryptoStream(msDecrypt, decryptor, CryptoStreamMode.Read))
+                    var decryptor = aesAlg.CreateDecryptor(aesAlg.Key, aesAlg.IV);
+                    using (var csDecrypt = new CryptoStream(msDecrypt, decryptor, CryptoStreamMode.Read))
                     {
                         using (StreamReader srDecrypt = new StreamReader(csDecrypt))
                             plaintext = srDecrypt.ReadToEnd();
@@ -102,7 +102,7 @@ namespace EncodingLib
 
         private byte[] ReadByteArray(Stream s)
         {
-            byte[] rawLength = new byte[sizeof(int)];
+            var rawLength = new byte[sizeof(int)];
             if (s.Read(rawLength, 0, rawLength.Length) != rawLength.Length)
             {
                 throw new SystemException("Stream did not contain properly formatted byte array");
