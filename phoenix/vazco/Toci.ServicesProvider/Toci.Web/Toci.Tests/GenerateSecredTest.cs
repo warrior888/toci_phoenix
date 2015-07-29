@@ -11,7 +11,7 @@ namespace Toci.Tests
         [TestMethod]
         public void TestMethod1()
         {
-            var test = new GenerateSecred(testSecret);
+            var test = new GenerateSecret(testSecret);
             var hash = test.GetSecret();
             var verifyTest = new VerifySecret(hash, testSecret);
             var verifyResult = verifyTest.Verification();

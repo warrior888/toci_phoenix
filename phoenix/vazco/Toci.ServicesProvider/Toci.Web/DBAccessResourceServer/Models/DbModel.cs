@@ -11,5 +11,6 @@ namespace DBAccessResourceServer.Models
         public DateTime addingTime { get; set; }
         [Required]
         public string data { get; set; }
+        public string hash { get; set; }
     }
 }

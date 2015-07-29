@@ -9,6 +9,7 @@ namespace DBAccessResourceServer.Models
         private const string DataTableName = "data" ;
         private const string TimeTableName = "addingTime";
         private const string NickTableName = "name" ;
+        private const string HashTableName = "hash" ;
         private const string Star = "*" ;
 
         public AddInModel(string tableName) : base(tableName)
@@ -37,6 +38,10 @@ namespace DBAccessResourceServer.Models
         public  void SetNick(string nick)
         {
             SetValue(NickTableName, nick);
+        }
+        public void SetHash(string hash)
+        {
+            SetValue(HashTableName, hash);
         }
         public void SetGwiazdka()
         {
