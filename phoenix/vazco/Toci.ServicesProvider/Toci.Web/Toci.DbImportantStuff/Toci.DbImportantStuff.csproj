@@ -64,6 +64,9 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="Toci.Db">
+      <HintPath>..\resources\Toci.Db.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Web.Razor">
@@ -94,9 +97,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DbHubController.cs" />
+    <Compile Include="Controllers\DbSaveController.cs" />
+    <Compile Include="Controllers\ReadDbContentController.cs" />
+    <Compile Include="Controllers\SaveDbContentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Logic\DbConnect.cs" />
+    <Compile Include="Logic\DbUtils.cs" />
+    <Compile Include="Models\AddInModel.cs" />
+    <Compile Include="Models\DbModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -111,8 +122,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EncodingLib\EncodingLib.csproj">
+      <Project>{44D0C538-5D19-409A-8F30-2519339FC818}</Project>
+      <Name>EncodingLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
