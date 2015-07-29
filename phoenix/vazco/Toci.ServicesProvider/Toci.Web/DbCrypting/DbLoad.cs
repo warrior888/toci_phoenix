@@ -14,10 +14,10 @@ namespace DBAccessResourceServer.Models
             var dbh = DbConnect.Connect();
             var itemModel = new AddInModel(TableName);
             itemModel.SetGwiazdka();
-            var ModelListGenerator = new GenerateDbModelList<AddInModel, DbHandle>();
+            var modelListGenerator = new GenerateDbModelList<AddInModel, DbHandle>();
 
 
-            var DbModelList = ModelListGenerator.GetDbModelList(itemModel, dbh);
+            var DbModelList = modelListGenerator.GetDbModelList(itemModel, dbh);
             DbModelList.DDecryptDbModels();
 
 
