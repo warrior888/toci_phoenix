@@ -19,9 +19,9 @@ namespace Toci.DigitalSignature.Abstract
             return Convert.ToBase64String(Encoding.UTF8.GetBytes(builder.ToString()));
         }
 
-        public virtual X509Certificate2 Base64ToCertificate(string base64String)
+        public virtual X509Certificate2 Base64ToCertificate(string base64Certyficate)
         {
-            byte[] bytes = Convert.FromBase64String(base64String);
+            byte[] bytes = Convert.FromBase64String(base64Certyficate);
             return new X509Certificate2(bytes);
         }
 
@@ -29,10 +29,10 @@ namespace Toci.DigitalSignature.Abstract
         {
             return new X509Certificate2(pfxBytes, password, X509KeyStorageFlags.Exportable);
         }
-        public virtual X509Certificate2 PfxFileToCertificate(string base64String, SecureString password)
+        public virtual X509Certificate2 PfxFileToCertificate(string base64Certyficate, SecureString password)
         {
             
-            byte[] pfxBytes = Convert.FromBase64String(base64String);
+            byte[] pfxBytes = Convert.FromBase64String(base64Certyficate);
             return PfxFileToCertificate(pfxBytes, password);
         }
     }

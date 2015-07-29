@@ -13,7 +13,14 @@ namespace EncodingLib
         private byte[] _salt;
         private byte[] _hash;
         private byte[] _hashBytes = new byte[64];
-        
+        private const int iterationCount = 10000;
+        private const int sourceIndex = 0;
+        private const int destinationIndex = 0;
+        private const int destinationOffset = 32;
+        private const int copyLength = 32;
+        private const int saltLength = 32;
+        private const int hashLength = 32;
+
         private GenerateSecret()
         {
             new RNGCryptoServiceProvider().GetBytes(_salt = new byte[32]);
@@ -21,21 +28,21 @@ namespace EncodingLib
 
         public GenerateSecret(string password) : this()
         {
-            var pbkdf2 = new Rfc2898DeriveBytes(password, _salt, 10000);
-            _hash = pbkdf2.GetBytes(32);
-            Array.Copy(_salt, 0, _hashBytes, 0, 32);
-            Array.Copy(_hash, 0, _hashBytes, 32, 32);
+            var pbkdf2 = new Rfc2898DeriveBytes(password, _salt, iterationCount);
+            _hash = pbkdf2.GetBytes(hashLength);
+            Array.Copy(_salt, sourceIndex, _hashBytes, destinationIndex, copyLength);
+            Array.Copy(_hash, sourceIndex, _hashBytes, destinationOffset, copyLength);
         }
 
         public GenerateSecret(string password, byte[] salt) //czy to w ogóle jest potrzebne?
         {
-            _salt = new byte[32];
-            _hash = new byte[32];
-            Array.Copy(salt, 0, _salt, 0, salt.Length<32?salt.Length:32);
-            var pbkdf2 = new Rfc2898DeriveBytes(password, _salt, 10000);
-            _hash = pbkdf2.GetBytes(32);
-            Array.Copy(_salt, 0, _hashBytes, 0, 32);
-            Array.Copy(_hash, 0, _hashBytes, 32, 32);
+            _salt = new byte[saltLength];
+            _hash = new byte[hashLength];
+            Array.Copy(salt, sourceIndex, _salt, destinationIndex, salt.Length<saltLength?salt.Length:saltLength);
+            var pbkdf2 = new Rfc2898DeriveBytes(password, _salt, iterationCount);
+            _hash = pbkdf2.GetBytes(hashLength);
+            Array.Copy(_salt, sourceIndex, _hashBytes, destinationIndex, copyLength);
+            Array.Copy(_hash, sourceIndex, _hashBytes, destinationOffset, copyLength);
         }
 
         public string GetSecret()

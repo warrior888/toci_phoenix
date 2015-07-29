@@ -8,13 +8,21 @@ namespace EncodingLib
     public  class TociCrypting
     {
         private  byte[] _salt;
+        private const int iterationCount = 1000;
+        private const int divider = 8;
+        private const int offset = 0;
+        private const int startIndex = 0;
+        private const int sourceIndex = 0;
+        private const int destinationIndex = 0;
+        private const int copyLength = 32;
+        private const int saltLength = 32;
 
 
         private void AssignSalt(string base64String)
         {
             byte[] bytes = Convert.FromBase64String(base64String);
-            _salt = new byte[32];
-            Array.Copy(bytes, 0, _salt, 0, 32);
+            _salt = new byte[saltLength];
+            Array.Copy(bytes, sourceIndex, _salt, destinationIndex, copyLength);
         }
         public string EncryptStringAes(string plainText, string sharedSecret, string base64String)
         {
@@ -29,17 +37,17 @@ namespace EncodingLib
 
             try
             {
-                var key = new Rfc2898DeriveBytes(sharedSecret, _salt,1000);
+                var key = new Rfc2898DeriveBytes(sharedSecret, _salt, iterationCount);
 
                 aesAlg = new RijndaelManaged();
-                aesAlg.Key = key.GetBytes(aesAlg.KeySize / 8);
+                aesAlg.Key = key.GetBytes(aesAlg.KeySize / divider);
 
                 var encryptor = aesAlg.CreateEncryptor(aesAlg.Key, aesAlg.IV);
 
                 using (var msEncrypt = new MemoryStream())
                 {
-                    msEncrypt.Write(BitConverter.GetBytes(aesAlg.IV.Length), 0, sizeof(int));
-                    msEncrypt.Write(aesAlg.IV, 0, aesAlg.IV.Length);
+                    msEncrypt.Write(BitConverter.GetBytes(aesAlg.IV.Length), offset, sizeof(int));
+                    msEncrypt.Write(aesAlg.IV, offset, aesAlg.IV.Length);
                     using (var csEncrypt = new CryptoStream(msEncrypt, encryptor, CryptoStreamMode.Write))
                     {
                         using (var swEncrypt = new StreamWriter(csEncrypt))
@@ -73,13 +81,13 @@ namespace EncodingLib
 
             try
             {
-                Rfc2898DeriveBytes key = new Rfc2898DeriveBytes(sharedSecret, _salt,1000);
+                Rfc2898DeriveBytes key = new Rfc2898DeriveBytes(sharedSecret, _salt, iterationCount);
              
                 byte[] bytes = Convert.FromBase64String(cipherText);
                 using (var msDecrypt = new MemoryStream(bytes))
                 {
                     aesAlg = new RijndaelManaged();
-                    aesAlg.Key = key.GetBytes(aesAlg.KeySize / 8);
+                    aesAlg.Key = key.GetBytes(aesAlg.KeySize / divider);
                     // Get the initialization vector from the encrypted stream
                     aesAlg.IV = ReadByteArray(msDecrypt);
                     var decryptor = aesAlg.CreateDecryptor(aesAlg.Key, aesAlg.IV);
@@ -103,13 +111,13 @@ namespace EncodingLib
         private byte[] ReadByteArray(Stream s)
         {
             var rawLength = new byte[sizeof(int)];
-            if (s.Read(rawLength, 0, rawLength.Length) != rawLength.Length)
+            if (s.Read(rawLength, offset, rawLength.Length) != rawLength.Length)
             {
                 throw new SystemException("Stream did not contain properly formatted byte array");
             }
 
-            byte[] buffer = new byte[BitConverter.ToInt32(rawLength, 0)];
-            if (s.Read(buffer, 0, buffer.Length) != buffer.Length)
+            byte[] buffer = new byte[BitConverter.ToInt32(rawLength, startIndex)];
+            if (s.Read(buffer, offset, buffer.Length) != buffer.Length)
             {
                 throw new SystemException("Did not read byte array properly");
             }
