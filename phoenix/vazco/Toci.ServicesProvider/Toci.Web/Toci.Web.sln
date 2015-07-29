@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.Client", "Toci.Client\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.Tests", "Toci.Tests\Toci.Tests.csproj", "{F2800038-82FE-47B4-BCDE-9BF9A314F0B7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.DbImportantStuff", "Toci.DbImportantStuff\Toci.DbImportantStuff.csproj", "{EBEFB5A2-666B-4771-9D23-4704BB5C7BE4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{F2800038-82FE-47B4-BCDE-9BF9A314F0B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2800038-82FE-47B4-BCDE-9BF9A314F0B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2800038-82FE-47B4-BCDE-9BF9A314F0B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBEFB5A2-666B-4771-9D23-4704BB5C7BE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBEFB5A2-666B-4771-9D23-4704BB5C7BE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBEFB5A2-666B-4771-9D23-4704BB5C7BE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBEFB5A2-666B-4771-9D23-4704BB5C7BE4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
