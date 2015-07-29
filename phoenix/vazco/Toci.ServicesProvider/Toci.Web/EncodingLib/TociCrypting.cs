@@ -5,23 +5,25 @@ using System.Text;
 
 namespace EncodingLib
 {
-    public static class Crypting
+    public  class TociCrypting
     {
-        private static byte[] _salt = Encoding.ASCII.GetBytes("o6806642kbM7c5");
+        private  byte[] _salt;
 
-        /// <summary>
-        /// Encrypt the given string using AES.  The string can be decrypted using 
-        /// DecryptStringAES().  The sharedSecret parameters must match.
-        /// </summary>
-        /// <param name="plainText">The text to encrypt.</param>
-        /// <param name="sharedSecret">A password used to generate a key for encryption.</param>
-        public static string EncryptStringAES(string plainText, string sharedSecret)
+
+        public void AssignSalt(string base64String)
+        {
+            byte[] bytes = Convert.FromBase64String(base64String);
+            _salt = new byte[32];
+            Array.Copy(bytes, 0, _salt, 0, 32);
+        }
+        public string EncryptStringAES(string plainText, string sharedSecret, string base64String)
         {
             if (string.IsNullOrEmpty(plainText))
                 throw new ArgumentNullException("plainText");
             if (string.IsNullOrEmpty(sharedSecret))
                 throw new ArgumentNullException("sharedSecret");
-
+            
+            AssignSalt(base64String);
             string outStr = null;                       // Encrypted string to return
             RijndaelManaged aesAlg = null;              // RijndaelManaged object used to encrypt the data.
 
@@ -71,13 +73,13 @@ namespace EncodingLib
         /// </summary>
         /// <param name="cipherText">The text to decrypt.</param>
         /// <param name="sharedSecret">A password used to generate a key for decryption.</param>
-        public static string DecryptStringAES(string cipherText, string sharedSecret)
+        public string DecryptStringAES(string cipherText, string sharedSecret, string base64String)
         {
             if (string.IsNullOrEmpty(cipherText))
                 throw new ArgumentNullException("cipherText");
             if (string.IsNullOrEmpty(sharedSecret))
                 throw new ArgumentNullException("sharedSecret");
-
+            AssignSalt(base64String);
             // Declare the RijndaelManaged object
             // used to decrypt the data.
             RijndaelManaged aesAlg = null;
@@ -123,7 +125,7 @@ namespace EncodingLib
             return plaintext;
         }
 
-        private static byte[] ReadByteArray(Stream s)
+        private byte[] ReadByteArray(Stream s)
         {
             byte[] rawLength = new byte[sizeof(int)];
             if (s.Read(rawLength, 0, rawLength.Length) != rawLength.Length)

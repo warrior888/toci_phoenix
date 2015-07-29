@@ -48,7 +48,7 @@ namespace Toci.Client
             // This is similar to the RememberMe option when you log in.
             app.UseTwoFactorRememberBrowserCookie(DefaultAuthenticationTypes.TwoFactorRememberBrowserCookie);
             
-            app.Use(typeof(FacebookAuthenticationMiddleware), app, new FacebookAuthenticationOptions()
+        /*    app.Use(typeof(FacebookAuthenticationMiddleware), app, new FacebookAuthenticationOptions()
             {
                 TokenEndpoint = "https://localhost:44300/OAuth/Token",
                 //Provider = 
@@ -61,7 +61,7 @@ namespace Toci.Client
                 Description = new AuthenticationDescription() { Caption = "nasz kapszyn", AuthenticationType = "TociOAuth" }
             });
 
-
+    */
             app.UseFacebookAuthentication(
                appId: "1469468426698430",
                appSecret: "8f508435a5992e539e2afac5bb8eba6f");
@@ -78,8 +78,8 @@ namespace Toci.Client
             //               appId: "",
             //               appSecret: "");
             app.UseTociAuthentication(
-                           appId: "1469468426698430",
-                           appSecret: "8f508435a5992e539e2afac5bb8eba6f");
+                           appId: "1",
+                           appSecret: "2");
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
             //    ClientId = "",
