@@ -1,10 +1,4 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: Microsoft.Owin.Security.Facebook.FacebookAuthenticatedContext
-// Assembly: Microsoft.Owin.Security.Facebook, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
-// MVID: 6EF4399B-2BF0-4696-962B-7896F8D7BE13
-// Assembly location: C:\Users\Adam\Documents\toci_phoenix\phoenix\vazco\Toci.ServicesProvider\Toci.Web\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll
-
-using Microsoft.Owin;
+﻿using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Provider;
 using Newtonsoft.Json.Linq;
@@ -77,7 +71,7 @@ namespace Toci.Provider
         public AuthenticationProperties Properties { get; set; }
 
         /// <summary>
-        /// Initializes a <see cref="T:Microsoft.Owin.Security.Facebook.FacebookAuthenticatedContext"/>
+        /// Initializes a <see cref="T:TociAuthenticatedContext"/>
         /// </summary>
         /// <param name="context">The OWIN environment</param><param name="user">The JSON-serialized user</param><param name="accessToken">Facebook Access token</param><param name="expires">Seconds until expiration</param>
         public TociAuthenticatedContext(IOwinContext context, JObject user, string accessToken, string expires)
@@ -90,8 +84,8 @@ namespace Toci.Provider
                 this.ExpiresIn = new TimeSpan?(TimeSpan.FromSeconds((double)result));
             this.Id = TociAuthenticatedContext.TryGetValue(user, "id");
             this.Name = TociAuthenticatedContext.TryGetValue(user, "name");
-            this.Link = TociAuthenticatedContext.TryGetValue(user, "link");
-            this.UserName = TociAuthenticatedContext.TryGetValue(user, "username");
+            this.Link = TociAuthenticatedContext.TryGetValue(user, "link"); //do wycięcia
+            this.UserName = TociAuthenticatedContext.TryGetValue(user, "username"); //do dodania w logowaniu
             this.Email = TociAuthenticatedContext.TryGetValue(user, "email");
         }
 

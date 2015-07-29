@@ -4,6 +4,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{A50629D0-ECAE-4D94-9C78-9FAEDC1ADE39}</ProjectGuid>
+    <ProjectGuid>{A50629D0-ECAE-4D94-9C78-9FAEDC1ADE39}</ProjectGuid>
     <OutputType>Library</OutputType>
     <NoStandardLibraries>false</NoStandardLibraries>
     <AssemblyName>ClassLibrary</AssemblyName>
@@ -53,6 +54,7 @@
     <Content Include="css\superslides.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\school-education.svg" />
+    <Content Include="images\.net logo.png" />
     <Content Include="images\arrow-down.png" />
     <Content Include="images\arrow-left.png" />
     <Content Include="images\arrow-right.png" />
@@ -70,6 +72,12 @@
     <Content Include="images\logo.png" />
     <Content Include="images\meteor-logo-small.jpg" />
     <Content Include="images\meteor-logo.jpg" />
+    <Content Include="images\logo-c#-asp-net_0.jpg" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\meteor-logo-small.jpg" />
+    <Content Include="images\meteor-logo.jpg" />
+    <Content Include="images\PHP-logo small.png" />
+    <Content Include="images\PHP-logo.BIG.png" />
     <Content Include="images\slide1.jpg" />
     <Content Include="images\slide2.jpg" />
     <Content Include="images\slide3.jpg" />

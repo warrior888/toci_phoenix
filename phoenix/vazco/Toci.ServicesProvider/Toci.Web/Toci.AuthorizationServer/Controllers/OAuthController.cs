@@ -19,11 +19,11 @@ namespace Toci.AuthorizationServer.Controllers
             }
 
             var authentication = HttpContext.GetOwinContext().Authentication;
-            var ticket = authentication.AuthenticateAsync("OAuth2AuthorizationServer").Result;
+            var ticket = authentication.AuthenticateAsync("Aplication").Result;
             var identity = ticket != null ? ticket.Identity : null;
             if (identity == null)
             {
-                authentication.Challenge("OAuth2AuthorizationServer");
+                authentication.Challenge("Aplication");
                 return new HttpUnauthorizedResult();
             }
 
@@ -42,13 +42,18 @@ namespace Toci.AuthorizationServer.Controllers
                 }
                 if (!string.IsNullOrEmpty(Request.Form.Get("submit.Login")))
                 {
-                    authentication.SignOut("OAuth2AuthorizationServer");
-                    authentication.Challenge("OAuth2AuthorizationServer");
+                    authentication.SignOut("Aplication");
+                    authentication.Challenge("Aplication");
                     return new HttpUnauthorizedResult();
                 }
             }
 
             return View();
+        }
+        [Route("OAuth/Token")]
+        public ActionResult Token()
+        {
+            return null;
         }
     }
 }

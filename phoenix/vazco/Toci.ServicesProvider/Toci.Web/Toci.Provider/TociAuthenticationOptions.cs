@@ -1,17 +1,15 @@
-﻿// Copyright (c) Microsoft Open Technologies, Inc. All rights reserved. See License.txt in the project root for license information.
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Net.Http;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using Microsoft.Owin.Security.Facebook;
+
 
 namespace Toci.Provider
 {
     /// <summary>
-    /// Configuration options for <see cref="FacebookAuthenticationMiddleware"/>
+    /// Configuration options for <see cref="TociAuthenticationMiddleware"/>
     /// </summary>
     public class TociAuthenticationOptions : AuthenticationOptions
     {

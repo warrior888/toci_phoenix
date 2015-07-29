@@ -1,10 +1,4 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: Microsoft.Owin.Security.Facebook.IFacebookAuthenticationProvider
-// Assembly: Microsoft.Owin.Security.Facebook, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
-// MVID: 6EF4399B-2BF0-4696-962B-7896F8D7BE13
-// Assembly location: C:\Users\Adam\Documents\toci_phoenix\phoenix\vazco\Toci.ServicesProvider\Toci.Web\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll
-
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 
 namespace Toci.Provider
