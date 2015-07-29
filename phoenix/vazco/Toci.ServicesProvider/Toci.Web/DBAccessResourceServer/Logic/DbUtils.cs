@@ -10,6 +10,7 @@ namespace DBAccessResourceServer.Logic
 {
      static class DbUtils
     {
+        static GenerateSecred GenerateSecret = new GenerateSecred("8a32d4v723s");
         private static List<object[]> GetTableContent(DbHandle dbh, Model model)
         {
             var dataSet = dbh.GetData(model);
@@ -49,7 +50,6 @@ namespace DBAccessResourceServer.Logic
 
          public static List<DbModel> EncryptDbModels(List<DbModel> list)
          {
-             var GenerateSecret = new GenerateSecred("8a32d4v723s");
 
             foreach (var item in list)
             {
@@ -68,7 +68,7 @@ namespace DBAccessResourceServer.Logic
 
          public static void DecryptModel(this DbModel model)
          {
-            var GenerateSecret = new GenerateSecred("8a32d4v723s");
+            
 
             model.data = new TociCrypting().EncryptStringAES(model.data, "8a32d4v723s", GenerateSecret.GetSecret());
              
