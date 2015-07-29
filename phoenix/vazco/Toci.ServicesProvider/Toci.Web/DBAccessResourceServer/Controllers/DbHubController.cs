@@ -8,7 +8,7 @@ namespace DBAccessResourceServer.Controllers
 {
     public class DbHubController : Controller
     {
-        // GET: DbHub
+        
         public ActionResult Index()
         {
             return View();

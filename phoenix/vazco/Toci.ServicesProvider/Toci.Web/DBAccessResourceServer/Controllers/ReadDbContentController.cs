@@ -23,7 +23,7 @@ namespace DBAccessResourceServer.Controllers
             var itemModel = new AddInModel(TableName);
             itemModel.SetGwiazdka();
 
-            var dataset = DbUtils.EncryptDbModels(DbUtils.GetLastArrayFromDb(dbh, itemModel));
+            var dataset = DbUtils.EncryptDbModels(DbUtils.GetDbModelList(dbh, itemModel));
 
 
 
