@@ -3,8 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A50629D0-ECAE-4D94-9C78-9FAEDC1ADE39}</ProjectGuid>
-    <ProjectGuid>{A50629D0-ECAE-4D94-9C78-9FAEDC1ADE39}</ProjectGuid>
+    <ProjectGuid>{808DC54D-3977-413E-8354-E9156ECD4C6B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <NoStandardLibraries>false</NoStandardLibraries>
     <AssemblyName>ClassLibrary</AssemblyName>
@@ -38,10 +37,6 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include=".idea\misc.xml" />
-    <Content Include=".idea\modules.xml" />
-    <Content Include=".idea\vcs.xml" />
-    <Content Include=".idea\workspace.xml" />
     <Content Include="css\animate.css" />
     <Content Include="css\faq-style.css" />
     <Content Include="css\font-awesome.min.css" />
@@ -55,32 +50,49 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\school-education.svg" />
     <Content Include="images\.net logo.png" />
+    <Content Include="images\3d_php-logo.jpg" />
     <Content Include="images\arrow-down.png" />
     <Content Include="images\arrow-left.png" />
     <Content Include="images\arrow-right.png" />
     <Content Include="images\Bartek.png" />
+    <Content Include="images\companies arrows\left-down.jpg" />
+    <Content Include="images\companies arrows\left.jpg" />
+    <Content Include="images\companies arrows\right-down.jpg" />
+    <Content Include="images\companies arrows\right-up.jpg" />
+    <Content Include="images\companies arrows\right.jpg" />
     <Content Include="images\contact.png" />
+    <Content Include="images\dots-line-small.png" />
+    <Content Include="images\dots-line.png" />
     <Content Include="images\fancybox_loading%402x.gif" />
     <Content Include="images\fancybox_loading.gif" />
     <Content Include="images\fancybox_overlay.png" />
     <Content Include="images\fancybox_sprite%402x.png" />
     <Content Include="images\fancybox_sprite.png" />
+    <Content Include="images\gg-logo-small.png" />
+    <Content Include="images\GG.png" />
     <Content Include="images\header.png" />
     <Content Include="images\javascript-logo-bez-napisu.jpg" />
     <Content Include="images\layout_propozycja\layoutpsd 960x3000.jpg" />
     <Content Include="images\logo%402x.png" />
-    <Content Include="images\logo.png" />
-    <Content Include="images\meteor-logo-small.jpg" />
-    <Content Include="images\meteor-logo.jpg" />
     <Content Include="images\logo-c#-asp-net_0.jpg" />
     <Content Include="images\logo.png" />
     <Content Include="images\meteor-logo-small.jpg" />
     <Content Include="images\meteor-logo.jpg" />
+    <Content Include="images\microsoft-logo.png" />
+    <Content Include="images\ms-logo-small.png" />
+    <Content Include="images\MSFT_logo_png.png" />
     <Content Include="images\PHP-logo small.png" />
     <Content Include="images\PHP-logo.BIG.png" />
+    <Content Include="images\power-media-logo.jpg" />
     <Content Include="images\slide1.jpg" />
     <Content Include="images\slide2.jpg" />
     <Content Include="images\slide3.jpg" />
+    <Content Include="images\SMT-logo.png" />
+    <Content Include="images\sygnity-logo.jpg" />
+    <Content Include="images\toci.jpg" />
+    <Content Include="images\unit4-business-software-logo.png" />
+    <Content Include="images\unit4-logo-small.png" />
+    <Content Include="images\unit4-logo_partner-page_b.png" />
     <Content Include="images\Vazco.png" />
     <Content Include="images\vazco_bez_tla-small.png" />
     <Content Include="index.html" />
@@ -108,10 +120,11 @@
     <Content Include="js\scrollReveal.js" />
     <Content Include="js\settings.js" />
     <Content Include="js\utils.js" />
+    <Content Include="opisy.html" />
+    <Content Include="organizatorzy-robocza.html" />
+    <Content Include="sln\jupiter.sln" />
   </ItemGroup>
   <ItemGroup>
-    <None Include=".idea\.name" />
-    <None Include=".idea\mg-jupiter.iml" />
     <None Include="fonts\fontawesome-webfont.eot" />
     <None Include="fonts\fontawesome-webfont.ttf" />
     <None Include="fonts\fontawesome-webfont.woff" />
