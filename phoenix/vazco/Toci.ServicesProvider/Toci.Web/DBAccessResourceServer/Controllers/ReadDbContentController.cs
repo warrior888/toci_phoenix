@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -22,13 +23,15 @@ namespace DBAccessResourceServer.Controllers
             var dbh = DbConnect.Connect();
             var itemModel = new AddInModel(TableName);
             itemModel.SetGwiazdka();
+            var ModelListGenerator = new GenerateDbModelList<AddInModel,DbHandle>();
 
-            var dataset = DbUtils.GetDbModelList(dbh, itemModel);
-            dataset.DDecryptDbModels();
+
+            var DbModelList = ModelListGenerator.GetDbModelList(itemModel, dbh);
+            DbModelList.DDecryptDbModels();
             
 
 
-            return View(DbUtils.SortListByTime(dataset));
+            return View(DbUtils.SortListByTime(DbModelList));
         }
         
     }

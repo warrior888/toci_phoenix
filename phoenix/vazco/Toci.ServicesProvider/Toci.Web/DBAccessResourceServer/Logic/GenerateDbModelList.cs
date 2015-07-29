@@ -30,7 +30,7 @@ namespace DBAccessResourceServer.Logic
             var list = GetTableContent(model, dbhandle);
             foreach (var item in list)
             {
-                dbModelList.Add(new DbModel { addingTime = (DateTime)item[2], data = (string)item[0], nick = (string)item[1] });
+                dbModelList.Add(new DbModel { addingTime = (DateTime)item[2], data = (string)item[0], nick = (string)item[1], hash = (string)item[3] });
             }
             return dbModelList;
         }
