@@ -23,12 +23,13 @@ namespace DBAccessResourceServer.Controllers
             var itemModel = new AddInModel(TableName);
             itemModel.SetGwiazdka();
 
-            var dataset = DbUtils.EncryptDbModels(DbUtils.GetDbModelList(dbh, itemModel));
+            var dataset = DbUtils.GetDbModelList(dbh, itemModel);
+            dataset.DDecryptDbModels();
+            
 
 
-
-            return View(dataset);
+            return View(DbUtils.SortListByTime(dataset));
         }
         
     }
-}
+}   
