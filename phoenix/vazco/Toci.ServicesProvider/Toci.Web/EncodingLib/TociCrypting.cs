@@ -10,7 +10,7 @@ namespace EncodingLib
         private  byte[] _salt;
 
 
-        public void AssignSalt(string base64String)
+        protected void AssignSalt(string base64String)
         {
             byte[] bytes = Convert.FromBase64String(base64String);
             _salt = new byte[32];
@@ -30,7 +30,7 @@ namespace EncodingLib
             try
             {
                 // generate the key from the shared secret and the salt
-                Rfc2898DeriveBytes key = new Rfc2898DeriveBytes(sharedSecret, _salt);
+                Rfc2898DeriveBytes key = new Rfc2898DeriveBytes(sharedSecret, _salt,1000);
 
                 // Create a RijndaelManaged object
                 aesAlg = new RijndaelManaged();
@@ -91,7 +91,7 @@ namespace EncodingLib
             try
             {
                 // generate the key from the shared secret and the salt
-                Rfc2898DeriveBytes key = new Rfc2898DeriveBytes(sharedSecret, _salt);
+                Rfc2898DeriveBytes key = new Rfc2898DeriveBytes(sharedSecret, _salt,1000);
 
                 // Create the streams used for decryption.                
                 byte[] bytes = Convert.FromBase64String(cipherText);

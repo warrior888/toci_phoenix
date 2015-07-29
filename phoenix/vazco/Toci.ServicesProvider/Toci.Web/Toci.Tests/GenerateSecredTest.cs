@@ -13,8 +13,12 @@ namespace Toci.Tests
         {
             var test = new GenerateSecred(testSecret);
             var hash = test.GetSecret();
-            var verifyTest = new VerifySecret(hash, testSecret+"b");
+            var verifyTest = new VerifySecret(hash, testSecret);
             var verifyResult = verifyTest.Verification();
+            Assert.IsTrue(verifyResult);
+            var verifyTest2 = new VerifySecret(hash, "TajneHasl");
+            var verifyResult2 = verifyTest2.Verification();
+            Assert.IsFalse(verifyResult2);
         }
     }
 }
