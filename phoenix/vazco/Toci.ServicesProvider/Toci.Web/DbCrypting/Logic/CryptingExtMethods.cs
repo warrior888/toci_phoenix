@@ -1,29 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
-using DBAccessResourceServer.Models;
 using EncodingLib;
 
-namespace DBAccessResourceServer.Logic
+namespace DbCrypting.Logic
 {
     public static class CryptingExtMethods
     {
-        static readonly GenerateSecret GenerateSecret = new GenerateSecret(TemporarySecret);
-        private const string TemporarySecret = "8a32d4v723s";
+        
 
-        public static void EncryptModel(this DbModel model)
+        public static void EncryptModel(this DbModel model, string secret)
         {
-
+            var GenerateSecret = new GenerateSecret(secret);
             var hash = GenerateSecret.GetSecret();
-            model.data = new TociCrypting().EncryptStringAes(model.data, TemporarySecret, hash);
+            model.data = new TociCrypting().EncryptStringAes(model.data, secret, hash);
             model.hash = hash;
 
         }
-        public static void DDecryptDbModels(this List<DbModel> list)
+        public static void DecryptDbModels(this List<DbModel> list,string secret)
         {
 
             foreach (var item in list)
             {
-                item.data = new TociCrypting().DecryptStringAes(item.data, TemporarySecret, item.hash);
+                item.data = new TociCrypting().DecryptStringAes(item.data, secret, item.hash);
             }
 
         }

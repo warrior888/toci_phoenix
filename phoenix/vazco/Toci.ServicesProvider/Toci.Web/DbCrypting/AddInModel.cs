@@ -2,7 +2,7 @@
 using Toci.Db.DbVirtualization;
 using Toci.Db.Interfaces;
 
-namespace DBAccessResourceServer.Models
+namespace DbCrypting
 {
     public class AddInModel : Model
     {

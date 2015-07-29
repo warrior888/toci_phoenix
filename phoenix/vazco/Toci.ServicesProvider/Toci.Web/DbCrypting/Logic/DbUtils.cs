@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using DBAccessResourceServer.Models;
-using EncodingLib;
-using Toci.Db.ClusterAccess;
-using Toci.Db.DbVirtualization;
 
-namespace DBAccessResourceServer.Logic
+namespace DbCrypting.Logic
 {
      static class DbUtils
     {

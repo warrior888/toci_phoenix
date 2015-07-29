@@ -1,24 +1,32 @@
 ﻿using System.Collections.Generic;
-using DBAccessResourceServer.Logic;
+using DbCrypting.Config;
+using DbCrypting.Logic;
 using Toci.Db.ClusterAccess;
 
-namespace DBAccessResourceServer.Models
+namespace DbCrypting
 {
     public class DbLoad
     {
-        private const string TableName = "LolTable";
+        private readonly string _tableName;
+        private readonly string _temporarySecret;
+
+        public DbLoad()
+        {
+            _tableName = LoadConfig.TableName;
+            _temporarySecret = LoadConfig.TemporarySecret;
+        }
 
         public List<DbModel> Load()
         {
 
             var dbh = DbConnect.Connect();
-            var itemModel = new AddInModel(TableName);
+            var itemModel = new AddInModel(_tableName);
             itemModel.SetGwiazdka();
             var modelListGenerator = new GenerateDbModelList<AddInModel, DbHandle>();
 
 
             var DbModelList = modelListGenerator.GetDbModelList(itemModel, dbh);
-            DbModelList.DDecryptDbModels();
+            DbModelList.DecryptDbModels(_temporarySecret);
 
 
 

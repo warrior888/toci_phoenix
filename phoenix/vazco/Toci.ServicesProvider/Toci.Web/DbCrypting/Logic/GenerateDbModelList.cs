@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using DBAccessResourceServer.Models;
 using Toci.Db.Interfaces;
 
-namespace DBAccessResourceServer.Logic
+namespace DbCrypting.Logic
 {
     public class GenerateDbModelList<T1, T2> where T1: IModel where T2: IDbHandle
     {

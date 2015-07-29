@@ -1,15 +1,24 @@
-﻿using Toci.Db.Clients;
+﻿using DbCrypting.Config;
+using Toci.Db.Clients;
 using Toci.Db.ClusterAccess;
 using Toci.Db.DbVirtualization.MsSqlQuery;
 
-namespace DBAccessResourceServer.Logic
+namespace DbCrypting.Logic
 {
     static class DbConnect
     {
-        private const string login = "sa";
-        private const string secret = "KurwaKurwa";
-        private const string address = "localhost";
-        private const string dataBaseName = "TestBase";
+        private static readonly string login;
+        private static readonly string secret;
+        private static readonly string address;
+        private static readonly string dataBaseName;
+
+        static DbConnect()
+        {
+            login = LoadConfig.login;
+            secret = LoadConfig.secret;
+            address = LoadConfig.address;
+            dataBaseName = LoadConfig.dataBaseName;
+        }
 
         public static DbHandle Connect()
         {

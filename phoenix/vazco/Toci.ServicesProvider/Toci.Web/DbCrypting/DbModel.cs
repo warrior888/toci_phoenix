@@ -1,7 +1,6 @@
 ﻿using System;
 
-
-namespace DBAccessResourceServer.Models
+namespace DbCrypting
 {
     public class DbModel
     {
