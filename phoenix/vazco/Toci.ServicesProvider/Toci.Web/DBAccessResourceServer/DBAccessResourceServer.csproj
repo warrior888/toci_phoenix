@@ -124,6 +124,7 @@
     </Compile>
     <Compile Include="Logic\DbConnect.cs" />
     <Compile Include="Logic\DbUtils.cs" />
+    <Compile Include="Logic\GenerateDbModelList.cs" />
     <Compile Include="Models\AddInModel.cs" />
     <Compile Include="Models\DbModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
