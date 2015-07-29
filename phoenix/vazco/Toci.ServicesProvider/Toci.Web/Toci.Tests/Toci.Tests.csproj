@@ -56,8 +56,13 @@
     <Compile Include="GenerateSecredTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="EncryptionTest.cs" />
+    <Compile Include="DbCryptingTest.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DbCrypting\DbCrypting.csproj">
+      <Project>{b8730ca1-13e6-4d51-a436-da4a8a7d4062}</Project>
+      <Name>DbCrypting</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EncodingLib\EncodingLib.csproj">
       <Project>{44d0c538-5d19-409a-8f30-2519339fc818}</Project>
       <Name>EncodingLib</Name>

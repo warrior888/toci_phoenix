@@ -21,7 +21,7 @@ namespace DBAccessResourceServer.Controllers
             /*var dbh = DbConnect.Connect();
             var itemModel = new AddInModel(TableName);
             itemModel.SetGwiazdka();
-            var dataset = DbUtils.EncryptDbModels(DbUtils.GetPlainText(dbh, itemModel));*/
+            var dataset = DbUtils.DDecryptDbModels(DbUtils.GetPlainText(dbh, itemModel));*/
             model.data = "DUPA";// dataset[0].data;
 
 

@@ -14,11 +14,12 @@ namespace Toci.Tests
         public void TestMethod1()
         {
             var tociCrypting = new TociCrypting();
-            var generateSecret = new GenerateSecred(testpass);
+            var generateSecret = new GenerateSecret(testpass);
             var secretHash = generateSecret.GetSecret();
-            var sectetText = tociCrypting.EncryptStringAES(testtexttocrypt, testpass, secretHash);
+            var sectetText = tociCrypting.EncryptStringAes(testtexttocrypt, testpass, secretHash);
             Debug.Print("Encrypted data is: {0}", sectetText);
-            var nonSecretText = tociCrypting.DecryptStringAES(sectetText, testpass, secretHash);
+            var tociCrypting2 = new TociCrypting();
+            var nonSecretText = tociCrypting2.DecryptStringAes(sectetText, testpass, secretHash);
             Assert.AreEqual(testtexttocrypt, nonSecretText);
         }
     }
