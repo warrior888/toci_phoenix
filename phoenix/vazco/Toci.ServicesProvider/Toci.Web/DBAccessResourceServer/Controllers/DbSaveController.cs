@@ -17,7 +17,7 @@ namespace DBAccessResourceServer.Controllers
         // GET: DbSave
         //TODO pobranie nicku usera && custom key do szyfrowania
 
-        private const string TableName = "LolTableMaster";
+        private const string TableName = "";
         private const string LogTableName = "LolTable";
 
         public ActionResult DbSaveResult(DbModel model)
