@@ -32,8 +32,12 @@ namespace Toci.Client.OauthProvider
             Wedle fidlera i httpRequestera gdy pukniemy do vazco poniższym getem to przeniesie nas na ich stronę aby się zalogować,
             a gdy jesteśmy zalogowani to poprosi o kliknięcie "use that account" - gdy klikniemy to serwer vazco to on w nasz redirect_uri pyka z kodem autoryzacyjnym
             np GET /_oauth/vazco?code=d656e81af3cb37b23e9bb0bfa8b272fba5cfad12 <<taka ścieżka dlatego, że to jest ten demonstracyjny link
-            więc aby odebrać ten kod należało by ustawić sobie kontroler na httpGET i w nim odebrać kod. Miałem nadzieję, że jakoś uda się odpalić taką wersję, jeszcze trochę będe 
+            więc aby odebrać ten kod należało by ustawić sobie kontroler na httpGET i w nim odebrać kod(sądziłem że ten janusz
+            autentykacji sobie sam z tym poradzi i bedzie to zbędne).
+            Miałem nadzieję, że jakoś uda się odpalić taką wersję, jeszcze trochę będe 
             pisał - może zrobię to w ten sposób.
+            mimo to poniższy kod na 99% jest dobry - pukamy po kod, a z kodem pukamy po token, gdy mamy token to wysyłamy request z tokenem i claimsami - w odpowiedzi otrzymujemy te claimsy i możemy ich użyć
+            do dalszego obrabiania - czy to zapisania użytkownika(chyba najlepsza opcja) czy czegokolwiek innego.
             */
             //pukamy do serwera w GECIE po to aby dostać kod autoryzacyjny
             HttpResponseMessage responseCode = await _httpClient.GetAsync(String.Format("{0}?response_type=code&client_id={1}&redirect_uri={2}",Options.AuthorizationEndpoint, Options.AppId,Options.CallBack));
