@@ -1,79 +1,8 @@
 $(document).ready(function () {
 
-//    $('#apply-form').submit(function (event) {
-//        SubmitForm(FormDecorator(this.id, 'server/apply.php'), event);
-//        event.preventDefault();
-//    });
-
-    //raczej nie potrzebne
-
-    
-    // Contact form process
-    $('#apply-form').submit(function(event) {
-
-        //chyba nie potrzebne
-        $('.form-group').removeClass('has-error'); // remove the error class
-        $('.help-block').remove(); // remove the error text
-
-        // get the form data
-        // there are many ways to get this data using jQuery (you can use the class or id also)
-        var formData = {
-            'applicantName': $('input#applicantName').val(),
-            'applicantSurname': $('input#applicantSurname').val(),
-            'applicantEmail': $('input#applicantEmail').val(),
-            'applicantPhone': $('input#applicantPhone').val()
-        };
-
-        // process the form
-        $.ajax({
-            type: 'POST', // define the type of HTTP verb we want to use (POST for our form)
-            url: 'server/apply.php', // the url where we want to POST
-            data: formData, // our data object
-            dataType: 'json', // what type of data do we expect back from the server
-            encode: true
-        })
-            // using the done promise callback
-            .done(function(data) {
-
-                console.log('ajax sie wywolal', data);
-
-                var jsonMessage = (data);
-
-                console.log('debugowanie', data, jsonMessage);
-
-                if (jsonMessage.result == true)
-                //var secondOption = JSON.parse()
-                // ALL GOOD! just show the success message!
-                {
-                    $('#apply-form').append('<div class="alert alert-success">' + data.message + '</div>');
-
-                    // usually after form submission, you'll want to redirect
-                    // window.location = '/thank-you'; // redirect a user to another page
-
-                    $('input#applicantName').val('');
-                    $('input#applicantSurname').val('');
-                    $('input#applicantEmail').val('');
-                    $('input#applicantPhone').val('');
-                } else {
-                    $('#apply-form').append('<div class="alert alert-success">nie udalo sie</div>');
-                }
-
-
-
-            })
-
-            // using the fail promise callback
-            .fail(function(data) {
-
-                // show any errors
-                // best to remove for production
-                console.log(data);
-            });
-
-        // stop the form from submitting the normal way and refreshing the page
-        event.preventDefault();
-    });
-    
+    $('#apply-form').submit(function (event) {
+        SubmitForm(FormDecorator(this.id, 'server/apply.php'), event);
+    });    
 });
 
 /* ************************************************************ */
@@ -85,41 +14,66 @@ function FormDecorator(formId, destination) {
 
     function getFormData() {
         var values = $('#' + formId).serialize();
+        console.log('wartosci serializowane: ', values);
         return values;
     }
 
-    function successAction(data) {
+    function callbackAction(data) {
         $('#' + formId).append('<div class="alert alert-success">' + data.message + '</div>');
         $('#' + formId).find(':input').each(function () {
             $(this).val('');
-        }
-        );
+        });
     }
 
-    function failAction(data) {
-        //to na pewno bedzie inaczej wygladac;)
-        console.log(data);
-    }
+    //trzeba podgrac styl, tak zeby napis wyswietlil sie w czerwonej ramce
+    /*function failAction(data) {
+        $('#' + formId).append('<div class="alert alert-success">' + data.message + '</div>');
+        $('#' + formId).find(':input').each(function () {
+            $(this).val('');
+        });
+    }*/
 
     return {
         getFormData: getFormData,
-        successAction: successAction,
-        failAction: failAction
+        callbackAction: callbackAction,
+        destination: destination
     };
 }
 
 function SubmitForm(form, event) {
+    console.log(form);
     $.ajax({
-        type: 'POST', // define the type of HTTP verb we want to use (POST for our form)
-        url: form.destination, // the url where we want to POST
-        data: form.getFormData(), // our data object
-        dataType: 'json', // what type of data do we expect back from the server
-        encode: true
-    })
-        .done(form.successAction(data))
-        .fail(form.failAction(data));
+            type: 'POST', 
+            url: form.destination, 
+            data: form.getFormData(),
+            dataType: 'json', 
+            encode: true
+        })
+        .done(function (data) {
+            if (data.result === true) {
+                form.callbackAction(data);
+            }
+        })
+         .fail(function(data) {
+             form.callbackAction(data);
+         });
 
     event.preventDefault();
+}
+
+function CustomEmailPrompterForApllyForm(fieldsId, referenceInput) {
+
+    var applicantNameValue = $('#' + fieldsId['applicantNameId']).val();
+    var applicantSurnameValue = $('#' + fieldsId['applicantSurnameId']).val();
+
+    SetEmailPrompPlaceholder(referenceInput, applicantNameValue, applicantSurnameValue);
+}
+
+
+function SetEmailPrompPlaceholder(inputFormEmail, senderName, senderSurname) {
+    if (senderName + senderSurname !== '') {
+        inputFormEmail.attr('placeholder', senderName + '.' + senderSurname + '@example.com');
+    }
 }
 
 

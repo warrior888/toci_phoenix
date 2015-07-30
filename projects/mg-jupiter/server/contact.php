@@ -1,5 +1,12 @@
 ﻿<?php
 
+$json['message']="wiadomosc zostala wyslana";
+    $json['result']=true;
+
+	echo json_encode($json);
+
+	exit;
+
 require_once "SendMail.php";
 
 //var_dump($_POST);

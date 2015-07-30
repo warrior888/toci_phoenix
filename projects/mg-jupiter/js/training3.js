@@ -1,4 +1,6 @@
 ﻿
+//raczej nie training3 ;)
+
 //window.addEventListener('DOMContentLoaded', )
 
 $(document).ready(RegistarAllOnLoad);
@@ -9,36 +11,35 @@ $(document).ready(RegistarAllOnLoad);
 //data-validate-other-field-if
 
 var validationCallbacks = {
-    'CustomSurnameValidator': CustomSurnameValidator
+    'CustomEmailPrompterForApllyForm': CustomEmailPrompterForApllyForm,
+    'CustomEmailPrompterForContactForm': CustomEmailPrompterForContactForm
 };
+
+var validationInputs = {
+    'applicantFullName': { 'applicantNameId': 'applicantName', 'applicantSurnameId': 'applicantSurname' },
+
+}
+
 
 function ValidateOtherFieldForField(inputFieldId) {
 
-    var input = $('#' + inputFieldId);
+    var referenceInput = $('#' + inputFieldId);
 
-    var otherFieldCallback = input.attr('data-validate-other-field-if');
-    var otherFieldId = input.attr('data-other-field-id');
+    var otherFieldCallback = referenceInput.attr('data-validate-other-field-if');
+    var otherFieldsId = referenceInput.attr('data-other-field-id');
 
-    console.log('edt', otherFieldCallback);
-
-    validationCallbacks[otherFieldCallback](otherFieldId, input.val());
+    var inputs = GenerateInputsId(otherFieldsId);
+    validationCallbacks[otherFieldCallback](inputs, referenceInput);
 }
 
+//to sie powinno inaczej nazywac
+function GenerateInputsId(otherFieldsId) {
+    var inputs = validationInputs[otherFieldsId];
+    return inputs == undefined ? otherFieldsId : inputs;
+}
 
 function RegistarAllOnLoad() {
-    //console.log('tr 3 ready loaded');
 
-    $('#applicantName').blur(function (ev) { ValidateOtherFieldForField('applicantName'); }); //ValidateOtherFieldForField
-
-}
-
-function CustomSurnameValidator(fieldId, referenceValue) {
-    
-    if (referenceValue === 'bartek') { // == 2 === '2'
-        if ($('#' + fieldId).val() == 'zapart') {
-            console.log('potencjlanie ładny komunikat');
-        } else {
-            $('#' + fieldId).val('');
-        }
-    }
+    $('#applicantEmail').focus(function () { ValidateOtherFieldForField('applicantEmail'); });
+    $('#contact-input-email').focus(function () { ValidateOtherFieldForField('contact-input-email'); });
 }
