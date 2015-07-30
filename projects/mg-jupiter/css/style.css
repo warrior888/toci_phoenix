@@ -9,6 +9,7 @@
 
 @import url("font-awesome.min.css");
 @import url("school-icons.css");
+@import url("iframe-rwd.css");
 
 /*------------------------------------------------------------------
 
@@ -87,6 +88,16 @@ a (hover):				#81a27b (darker green)
     
 	src: url('../fonts/PeaxWebdesignarrows.ttf');
 
+}
+
+
+#video-carousel .item{
+	margin: 3px;
+}
+#video-carousel .item img{
+	display: block;
+	width: 100%;
+	height: auto;
 }
 
 .welcome-text{
