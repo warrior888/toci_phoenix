@@ -12,7 +12,6 @@ namespace Toci.Client.OauthProvider
 {
     public class VazcoAuthenticationMiddleware : AuthenticationMiddleware<VazcoAuthenticationOptions>
     {
-        private readonly ILogger _logger;
         private readonly HttpClient _httpClient;
 
         public VazcoAuthenticationMiddleware(OwinMiddleware next, IAppBuilder app, VazcoAuthenticationOptions options) : base(next, options)
@@ -33,7 +32,7 @@ namespace Toci.Client.OauthProvider
 
         protected override AuthenticationHandler<VazcoAuthenticationOptions> CreateHandler()
         {
-            return new VazcoAuthenticationHandler(_httpClient, _logger);
+            return new VazcoAuthenticationHandler(_httpClient);
         }
     }
 }
