@@ -16,7 +16,7 @@ namespace Toci.Client.OauthProvider
             AppId = appId;
             AppSecret = appSecret;
             Caption = authenticationType;
-            CallBack = ("/signin-vazco");
+            CallBack = ("http://localhost:13188/oauth/authentication");
             AuthenticationMode = AuthenticationMode.Passive;
             BackchannelTimeout = TimeSpan.FromSeconds(60);
             AuthorizationEndpoint = "http://oauth.stg.vazco.eu/oauth2/authorize";

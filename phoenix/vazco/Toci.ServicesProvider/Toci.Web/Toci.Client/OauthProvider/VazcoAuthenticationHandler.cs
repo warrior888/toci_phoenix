@@ -36,7 +36,8 @@ namespace Toci.Client.OauthProvider
             autentykacji sobie sam z tym poradzi i bedzie to zbędne).
             Miałem nadzieję, że jakoś uda się odpalić taką wersję, jeszcze trochę będe 
             pisał - może zrobię to w ten sposób.
-            mimo to poniższy kod na 99% jest dobry - pukamy po kod, a z kodem pukamy po token, gdy mamy token to wysyłamy request z tokenem i claimsami - w odpowiedzi otrzymujemy te claimsy i możemy ich użyć
+            mimo to poniższy kod na 99% jest dobry - pukamy po kod, a z kodem pukamy po token, gdy mamy token to wysyłamy request z tokenem 
+            i claimsami - w odpowiedzi otrzymujemy te claimsy i możemy ich użyć
             do dalszego obrabiania - czy to zapisania użytkownika(chyba najlepsza opcja) czy czegokolwiek innego.
             */
             //pukamy do serwera w GECIE po to aby dostać kod autoryzacyjny
