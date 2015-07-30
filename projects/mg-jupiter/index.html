@@ -12,8 +12,16 @@
       
 		<link href="css/faq-style.css" rel="stylesheet">
 		<link href="css/style.css" rel="stylesheet">
+
+
+		<link href="css/owl.carousel.min.css" rel="stylesheet">
+		<link href="css/owl.theme.default.min.css" rel="stylesheet">
+
+
        <link href='http://fonts.googleapis.com/css?family=Exo&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Just+Me+Again+Down+Here&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+
 
 		<!-- HTML5 shiv and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
@@ -59,6 +67,7 @@
 							<li><a class="page-scroll" id="aboutClick" href="#about-section">O kursie</a></li>
 							<li><a class="page-scroll" id="howItWorksClick" href="#howItWorks-section">Jak to działa?</a></li>
 							<li><a class="page-scroll" id="organisersClick" href="#organisers-section">Organizatorzy</a></li>
+							<li><a class="page-scroll" id="videoClick" href="#video-section">Video</a></li>
 							<li><a class="page-scroll" id="faqClick" href="#faq-section">FAQ</a></li>
 							<li><a class="page-scroll" id="applyClick" href="#apply-section">Aplikuj</a></li>
 							<li><a class="page-scroll" id="contactClick" href="#contact-section">Kontakt</a></li>
@@ -280,7 +289,7 @@
 										</li>
 
 										<li>
-											<b>SQL></b>
+											<b>SQL</b>
 											<ul>
 
 												<li>CRUD, DDL, DML</li>
@@ -586,6 +595,84 @@
 		</section>
 
 		<!-- ========== REVIEWS START ========== -->
+
+
+		<!-- VIDEO SECTION-->
+		<section id="video-section" class="alt-background">
+
+
+			<div class="container">
+				<div class="row text-center">
+					<div class="col-sm-12 text-center" data-scroll-reveal>
+						<h2 class="blackColor headers">Video</h2>
+					</div>
+					<br/>
+				</div>
+
+				<!-- OWL CAROUSEL START -->
+
+				<div class="row">
+					<div id="video-carousel" class="owl-carousel">
+
+						<div class="item">
+							<iframe width="350" height="197" src="https://www.youtube.com/embed/lTRyFbfn09U" frameborder="0" allowfullscreen></iframe>
+							<div class="description">
+								<h3>Podstawy PHP</h3>
+								<p>Elementare podstawy PHP stanowiące wprowadzenie do zagadnienia programowania.</p>
+
+							</div>
+						</div>
+
+						<div class="item">
+							<iframe width="350" height="197" src="https://www.youtube.com/embed/pq5t7JFFGOU" frameborder="0" allowfullscreen></iframe>
+							<div class="description">
+								<h3>Podstawy obiektowości część 1</h3>
+								<p>Wprowadzenie do programowania obiektowego w C# - klasa, obiekt, statyczność.</p>
+
+							</div>
+						</div>
+
+						<div class="item">
+							<iframe width="350" height="197" src="https://www.youtube.com/embed/QmTPgz9isHo" frameborder="0" allowfullscreen></iframe>
+							<div class="description">
+								<h3>Podstawy obiektowości część 2</h3>
+								<p>Wprowadzenie do programowania obiektowego w C# - modyfikatory dostępu.</p>
+
+							</div>
+						</div>
+
+						<div class="item">
+							<img src="http://placehold.it/600x400.jpg" alt="" class="img-responsive" />
+							<div class="description">
+								<h3>Daniel Roberts</h3>
+								<p>Non ipsum vulputate condimentum eu id tellus. Praesent commodo arcu quis rhoncus porttitor.</p>
+
+							</div>
+						</div>
+
+						<div class="item">
+							<img src="http://placehold.it/600x400.jpg" alt="" class="img-responsive" />
+							<div class="description">
+								<h3>Charles Turner</h3>
+								<p>Non ipsum vulputate condimentum eu id tellus. Praesent commodo arcu quis rhoncus porttitor.</p>
+
+							</div>
+						</div>
+
+					</div>
+					<!-- OWL CAROUSEL END -->
+
+					<div id="dots"></div>
+				</div>
+			</div>
+		</section>
+
+
+
+		<!--/ VIDEO SECTION-->
+
+
+
 
 		<section id="faq-section" class="backgroundGreenTemplate">
 
@@ -909,13 +996,10 @@
         <script src="js/contactvalid.js"></script>
 	    <script src="js/utils.js"></script>
         <script src="js/training3.js"></script>
+
+        <script src="js/DocumentReady.js"></script>
+
     
-    
 
-	<script>
-		window.onresize =changeArrowOnResize;
-
-
-	</script>
 	</body>
 </html>
