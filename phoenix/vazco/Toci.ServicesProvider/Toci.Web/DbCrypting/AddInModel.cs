@@ -6,10 +6,10 @@ namespace DbCrypting
 {
     public class AddInModel : Model
     {
-        private const string DataTableName = "data" ;
-        private const string TimeTableName = "addingTime";
-        private const string NickTableName = "name" ;
-        private const string HashTableName = "hash" ;
+        private const string DataColumnName = "data" ;
+        private const string TimeColumnName = "addingTime";
+        private const string NickColumnName = "name" ;
+        private const string HashColumnName = "hash" ;
         private const string Star = "*" ;
 
         public AddInModel(string tableName) : base(tableName)
@@ -27,21 +27,21 @@ namespace DbCrypting
 
         public void SetData(string data)
         {
-            SetValue(DataTableName, data);
+            SetValue(DataColumnName, data);
         }
 
         public void SetTime(DateTime time)
         {
-            SetValue(TimeTableName, time);
+            SetValue(TimeColumnName, time);
         }
 
         public  void SetNick(string nick)
         {
-            SetValue(NickTableName, nick);
+            SetValue(NickColumnName, nick);
         }
         public void SetHash(string hash)
         {
-            SetValue(HashTableName, hash);
+            SetValue(HashColumnName, hash);
         }
         public void SetGwiazdka()
         {
