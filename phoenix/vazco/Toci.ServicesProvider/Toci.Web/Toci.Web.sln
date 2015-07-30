@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.AuthorizationServer", "Toci.AuthorizationServer\Toci.AuthorizationServer.csproj", "{B6A7D2CA-61C5-4017-B80D-6AEB9E6E76CA}"
 EndProject
@@ -20,6 +20,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.DigitalSignatureApi", "Toci.DigitalSignatureApi\Toci.DigitalSignatureApi.csproj", "{214C5B36-0358-4091-8008-CA6251852922}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbCredentials", "DbCredentials\DbCredentials.csproj", "{C4549253-A41F-4EFF-B32E-4A22EF6BEC6B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.Client", "Toci.Client\Toci.Client.csproj", "{F36634DF-B233-48AC-9A26-2C33C08870B0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{C4549253-A41F-4EFF-B32E-4A22EF6BEC6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4549253-A41F-4EFF-B32E-4A22EF6BEC6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4549253-A41F-4EFF-B32E-4A22EF6BEC6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F36634DF-B233-48AC-9A26-2C33C08870B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F36634DF-B233-48AC-9A26-2C33C08870B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F36634DF-B233-48AC-9A26-2C33C08870B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F36634DF-B233-48AC-9A26-2C33C08870B0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
