@@ -90,6 +90,16 @@ a (hover):				#81a27b (darker green)
 
 }
 
+
+#video-carousel .item{
+	margin: 3px;
+}
+#video-carousel .item img{
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
 .welcome-text{
 	position:absolute;
 	bottom:40%;
