@@ -2,7 +2,11 @@ $(document).ready(function () {
 
     $('#apply-form').submit(function (event) {
         SubmitForm(FormDecorator(this.id, 'server/apply.php'), event);
-    });    
+    });
+
+    $('#contact-form').submit(function (event) {
+        SubmitForm(FormDecorator(this.id, 'server/contact.php'), event);
+    });
 });
 
 /* ************************************************************ */

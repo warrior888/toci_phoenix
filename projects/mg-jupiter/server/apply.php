@@ -1,10 +1,5 @@
 ﻿<?php
-	$json['message']="Zapisano aplikacje w bazie danych";
-    $json['result']=true;
 
-	echo json_encode($json);
-
-	exit;
 ob_start();
 require_once "Db.php";
 
