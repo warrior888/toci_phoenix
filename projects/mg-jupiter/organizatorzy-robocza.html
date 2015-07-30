@@ -35,7 +35,7 @@
         <div class="container">
             <ul class="pull-left">
                 <li><a href="tel:1800123456"><i class="fa fa-phone"></i><span style="color:white;">570-751-507</span></a></li>
-                <li><a href="mailto:info@smartway.com"><i class="fa fa-envelope"></i><span style="color:white;">tociszkolenia@gmail.com</span></a></li>
+                <li><a href="mailto:tociszkolenia@gmail.com"><i class="fa fa-envelope"></i><span style="color:white;">tociszkolenia@gmail.com</span></a></li>
             </ul>
 
         </div>
@@ -51,7 +51,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="index.html" class="navbar-brand"><img src="images/logo.png" alt="{TOCI} szkolenia programowania" class="img-responsive logo" /></a>
+                <img src="images/toci-logo.png" alt="{TOCI} szkolenia programowania" class="img-responsive logo" />
             </div>
             <nav class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -103,7 +103,7 @@
             <li>
                 <div id="welcome-text" class="text-center">
                     <h3>Od zera do programisty</h3>
-                    <h4>Wejdź w wiat programowania i zdobądź zawód</h4>
+                    <h4>Wejdź w świat programowania i zdobądź dobrze płatny zawód</h4>
                     <p><a class="btn btn-primary page-scroll" id="coursesHomeClick" href="#about-section">NASZE KURSY</a></p>
                 </div>
             </li>
@@ -151,10 +151,165 @@
                     <li>duże zapotrzebowanie na rynku pracy</li>
                 </ul>
                 <br/>
-                <a class="btn btn-primary" style="margin-left:40px;" target="_blank" href="https://docs.google.com/document/d/1T5TUKZe_htNUfvXrzXByVjLTT-DH55oE2RE1CL1Ijj8/edit">AGENDA</a>
+
+
+                <button type="button" style="margin-left:40px;" class="btn btn-primary" data-toggle="modal" data-target="#c-sharp-modal">AGENDA</button>
+
+
             </div>
+
+
+            <!--MODAL C#-->
+            <div id="c-sharp-modal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">X</button>
+                            <h4 class="modal-title">Agenda C#</h4>
+                        </div>
+                        <div class="modal-body" style="font-size: large;">
+
+                            <ol>
+                                <li>
+                                    <b>Fundamentals</b>
+                                    <ul>
+                                        <li>Pojecie klasy, obiektu, statyczność vs instancja</li>
+                                        <li>Kwalifikatory dostępu do klasy, obiektu, ich zachowanie</li>
+                                        <li>Dziedziczenie i kwalifikatory dostępu</li>
+                                        <li>Abstract, virtual, override, sealed, new</li>
+                                        <li>Typy referencyjne i wartościowe, wzorzec projektowy chain of responsibility</li>
+                                        <li>Interfejsy</li>
+                                        <li>Przeciążenia</li>
+                                        <li>Dziedziczenie vs kompozycja</li>
+                                        <li>Delegaty, lambda, generics</li>
+                                        <li>Extension methods</li>
+                                        <li>Using, idisposable</li>
+                                        <li>Struct i enum</li>
+
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <b>Framework</b>
+                                    <ul>
+                                        <li>String operations</li>
+                                        <li>Interfaces – ilist, ienumerable, idisposable, ICloneable</li>
+                                        <li>IO</li>
+                                        <li>Collections, arrays etc</li>
+                                        <li>Delegaty</li>
+                                        <li>Dictionary, other Generics</li>
+                                        <li>LINQ</li>
+                                        <li>Tpl, Async, Await, Taskfactory</li>
+                                        <li>Atrybuty</li>
+                                        <li>Xml</li>
+                                        <li>Refleksja</li>
+                                    </ul>
+                                </li>
+
+                                <li>
+
+                                    <b>Wzorce projektowe</b>
+
+                                    <ul>
+
+                                        <li>SOLID</li>
+                                        <li>Singleton</li>
+                                        <li>Polimorfizm</li>
+                                        <li>Strategia</li>
+                                        <li>Fabryka</li>
+                                        <li>Łańcuch zależności</li>
+                                        <li>Wstrzykiwanie zależności</li>
+                                        <li>MVC, web api, WCF</li>
+                                        <li>TDD(nunit, mock, stub)</li>
+
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <b>MVC</b>
+
+                                    <ul>
+                                        <li>Protokół http</li>
+                                        <li>Model</li>
+                                        <li>Widok</li>
+                                        <li>Kontroler</li>
+                                        <li>Komunikacja</li>
+                                        <li>Routing</li>
+                                        <li>Razor vs aspx</li>
+                                        <li>Grid</li>
+                                        <li>Security</li>
+                                        <li>Web api</li>
+                                        <li>Wiele innych</li>
+                                    </ul>
+
+                                </li>
+
+                                <li>
+                                    <b>	Windows Service</b>
+                                </li>
+                                <li>
+                                    <b>WCF</b>
+                                    <ul>
+                                        <li>Contract</li>
+                                        <li>Proxy</li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <b>DB</b>
+                                    <ul>
+                                        <li>Clustering</li>
+                                        <li>Sharding</li>
+                                        <li>Polimorficzny db access</li>
+                                        <li>Entity framework</li>
+                                        <li>Own db generic operability</li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <b>JavaScript</b>
+                                    <ul>
+                                        <li>JSON</li>
+                                        <li>Jquery (+ ewentualnie inne, wyższe frameworki, ale to na sam koniec)</li>
+                                        <li>Prototypowe dziedziczenie</li>
+                                        <li>Progressive enhancement</li>
+                                        <li>Operacje na domie</li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <b>SQL></b>
+                                    <ul>
+
+                                        <li>CRUD, DDL, DML</li>
+                                        <li>Joins</li>
+                                        <li>No SQL (memcache, tyrant)</li>
+                                        <li>Join vs sharding</li>
+                                        <li>Efficiency</li>
+                                        <li>Sphinx</li>
+                                    </ul>
+                                </li>
+
+                            </ol>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Zamknij</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- /MODAL C#-->
+
+
+
+
+
             <div class="col-sm-6" data-scroll-reveal>
-                <img src="images/3d_php-logo.jpg" class="img-responsive" alt="MeteorJS logo"/>
+                <img src="images/3d_php-logo.jpg" class="img-responsive" alt="PHP logo"/>
                 <h3 class="text-transform-none">Cechy:</h3>
                 <ul data-scroll-reveal>
                     <li>język skryptowy, działający po stronie serwera</li>
@@ -169,8 +324,84 @@
                     <li>umożliwia również tworzenie rozbudowanych i zaawansowanych aplikacji</li>
                 </ul>
                 <br/>
-                <a class="btn btn-primary" style="margin-left:40px" target="_blank" href="https://docs.google.com/document/d/1T5TUKZe_htNUfvXrzXByVjLTT-DH55oE2RE1CL1Ijj8/edit">AGENDA</a>
+                <button type="button" style="margin-left:40px;" class="btn btn-primary" data-toggle="modal" data-target="#php-modal">AGENDA</button>
             </div>
+
+            <!-- MODAL PHP-->
+
+            <div id="php-modal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">X</button>
+                            <h4 class="modal-title">Agenda PHP</h4>
+                        </div>
+                        <div class="modal-body" style="font-size: large;">
+
+                            <ol>
+                                <li>
+                                    Fundamentals
+                                    <ul>
+                                        <li>Pojęcie zmiennej</li>
+                                        <li>Typy danych, tablice</li>
+                                        <li>Operatory</li>
+                                        <li>Instrukcje warunkowe</li>
+                                        <li>Pętle</li>
+                                        <li>Algorytmika</li>
+                                        <li>Funkcje</li>
+                                        <li>Programowanie strukturalne, zasięg zmiennych</li>
+                                        <li>Require, zawieranie plików</li>
+                                        <li>Funkcje biblioteczne PHP – przegląd</li>
+                                        <li>Operacje na plikach/katalogach</li>
+                                    </ul>
+                                </li>
+
+                                <li>
+
+                                    Obiektowość (wariant powstania mocniejszej grupy)
+
+                                    <ul>
+                                        <li>Pojęcie klasy</li>
+                                        <li>Obiekt</li>
+                                        <li>Modyfikatory dostępu</li>
+                                        <li>Statyczność</li>
+                                        <li>Interfejsy</li>
+                                        <li>Klasy abstrakcyjne</li>
+                                        <li>Konstruktory</li>
+                                        <li>Dziedziczenie</li>
+                                        <li>Przesłonienie, sposób na przeciążenie w PHP</li>
+                                        <li>Polimorfizm</li>
+                                        <li>Typy referencyjne</li>
+                                        <li>Kompozycja, enkapsulacja</li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    PHP jako język budowania stron internetowych
+
+
+                                </li>
+
+
+                            </ol>
+
+
+
+
+
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Zamknij</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- /MODAL PHP-->
         </div>
         <br/><br/>
         <br/><br/>
@@ -182,7 +413,7 @@
         </div>
     </div>
 </section>
-<!-- ========== WELCOME END ========== -->
+
 
 <!-- ========== RECENT COURSES START ========== -->
 
@@ -561,7 +792,7 @@
                 <h3>O nas</h3>
                 <div class="row">
                     <div class="col-sm-5" data-scroll-reveal>
-                        <p><img src="images/logo.png" alt="" class="img-responsive" /></p>
+                        <p><img src="images/toci-logo.png" alt="" class="img-responsive" /></p>
                     </div>
                     <div class="col-sm-7" data-scroll-reveal>
                         <p>
@@ -588,9 +819,15 @@
                 </div>
 
             </div>
+        </div>
+            <div class="row iframe-rwd" data-scroll-reveal>
+
+                <iframe  src="https://www.google.com/maps/embed/v1/place?q=Niemodli%C5%84ska%2020%2C%20Opole%2C%20Poland&key=AIzaSyCiWbba2SAlu0jxLJDKQ9sbukBxzUfFRtg" allowfullscreen></iframe>
+
+            </div>
             <!-- ==== CONTACT END == -->
 
-        </div>
+
     </div>
 </div>
 
