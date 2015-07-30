@@ -100,6 +100,8 @@
     <Content Include="js\bootstrap-progressbar.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\contactValid.js" />
+    <Content Include="js\DocumentReady.js" />
+    <Content Include="js\faq\FormUtils.js" />
     <Content Include="js\faq\main.js" />
     <Content Include="js\html5shiv.js" />
     <Content Include="js\imagesloaded.pkgd.min.js" />
@@ -119,6 +121,7 @@
     <Content Include="js\scrolling-nav.js" />
     <Content Include="js\scrollReveal.js" />
     <Content Include="js\settings.js" />
+    <Content Include="js\training3.js" />
     <Content Include="js\utils.js" />
     <Content Include="opisy.html" />
     <Content Include="organizatorzy-robocza.html" />

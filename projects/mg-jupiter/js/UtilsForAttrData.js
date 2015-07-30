@@ -1,25 +1,18 @@
-﻿
-//raczej nie training3 ;)
-
-//window.addEventListener('DOMContentLoaded', )
-
-$(document).ready(RegistarAllOnLoad);
-
-//data-validate-surname-if
+﻿$(document).ready(RegistarAllOnLoad);
 
 
-//data-validate-other-field-if
 
 var validationCallbacks = {
     'CustomEmailPrompterForApllyForm': CustomEmailPrompterForApllyForm,
     'CustomEmailPrompterForContactForm': CustomEmailPrompterForContactForm
 };
 
-var validationInputs = {
+var validationElements = {
     'applicantFullName': { 'applicantNameId': 'applicantName', 'applicantSurnameId': 'applicantSurname' },
 
 }
 
+/* ************************************************************ */
 
 function ValidateOtherFieldForField(inputFieldId) {
 
@@ -28,14 +21,14 @@ function ValidateOtherFieldForField(inputFieldId) {
     var otherFieldCallback = referenceInput.attr('data-validate-other-field-if');
     var otherFieldsId = referenceInput.attr('data-other-field-id');
 
-    var inputs = GenerateInputsId(otherFieldsId);
+    var inputs = GenerateElementsId(otherFieldsId);
     validationCallbacks[otherFieldCallback](inputs, referenceInput);
 }
 
-//to sie powinno inaczej nazywac
-function GenerateInputsId(otherFieldsId) {
-    var inputs = validationInputs[otherFieldsId];
-    return inputs == undefined ? otherFieldsId : inputs;
+
+function GenerateElementsId(otherFieldsId) {
+    var elements = validationElements[otherFieldsId];
+    return elements == undefined ? otherFieldsId : elements;
 }
 
 function RegistarAllOnLoad() {
