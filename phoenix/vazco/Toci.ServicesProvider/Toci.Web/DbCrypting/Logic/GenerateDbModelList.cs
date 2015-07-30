@@ -6,14 +6,14 @@ namespace DbCrypting.Logic
 {
     public class GenerateDbModelList<T1, T2> where T1: IModel where T2: IDbHandle
     {
-
+        private const int lackOfRows = 0;
         private List<object[]> GetTableContent(T1 model, T2 dbhandle)
         {
             var objectList = new List<object[]>();
             var dataSet = dbhandle.GetData(model);
             var tables = dataSet.Tables;
             var rows = tables[tables.Count - 1].Rows;
-            if (rows.Count == 0) return null;
+            if (rows.Count == lackOfRows) return null;
             for (var i = 0; i <= rows.Count - 1; i++)
             {
                 var tmp = rows[i].ItemArray;
