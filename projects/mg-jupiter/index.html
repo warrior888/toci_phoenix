@@ -790,7 +790,7 @@
 
 					<div class="form-group" id="applicant-name-group">
 						<div class="input-group">
-							<input type="text" class="form-control" data-validate-other-field-if="CustomSurnameValidator" data-other-field-id="applicantSurname" name="applicantName" id="applicantName" placeholder="Imię" required pattern="^[A-Za-ząćęłńóśźżĄĘŁŃÓŚŹŻ]{3,}$">
+							<input type="text" class="form-control" name="applicantName" id="applicantName" placeholder="Imię" required pattern="^[A-Za-ząćęłńóśźżĄĘŁŃÓŚŹŻ]{3,}$">
 							<div class="input-group-addon"><i class="fa fa-user"></i>
 							</div>
 						</div>
@@ -804,7 +804,7 @@
 					</div>
 					<div class="form-group" id="applicant-email-group">
 						<div class="input-group">
-							<input type="email" class="form-control" name="applicantEmail" id="applicantEmail" placeholder="Email">
+                            <input type="email" class="form-control" data-validate-other-field-if="CustomEmailPrompterForApllyForm" data-other-field-id="applicantFullName" name="applicantEmail" id="applicantEmail" placeholder="Email">
 							<div class="input-group-addon"><i class="fa fa-envelope"></i></div>
 						</div>
 					</div>
@@ -843,21 +843,21 @@
 						<div class="col-sm-6">
 							<div class="form-group" id="contact-name-group">
 								<label for="contact-input-name">Imię i Nazwisko</label>
-								<input type="text" class="form-control" id="contact-input-name" placeholder="Wprowadź Twoje imię i nazwisko" required pattern="^[A-za-ząćęłńóśźżĄĘŁŃÓŚŹŻ -]{6,}$">
+                                <input type="text" class="form-control" id="contact-input-name" name="contact-input-name" placeholder="Wprowadź Twoje imię i nazwisko" required pattern="^[A-za-ząćęłńóśźżĄĘŁŃÓŚŹŻ -]{6,}$">
 							</div>
 							<div class="form-group" id="contact-email-group">
 								<label for="contact-input-email">Email</label>
-								<input type="email" class="form-control" id="contact-input-email" placeholder="Wprowadź Twój email">
+                                <input type="email" class="form-control" data-validate-other-field-if="CustomEmailPrompterForContactForm" data-other-field-id="contact-input-name" id="contact-input-email" name="contact-input-email" placeholder="Wprowadź Twój email">
 							</div>
 							<div class="form-group" id="contact-subject-group">
 								<label for="contact-input-subject">Temat</label>
-								<input type="text" class="form-control" id="contact-input-subject" placeholder="Wprowadź temat">
+                                <input type="text" class="form-control" id="contact-input-subject" name="contact-input-subject" placeholder="Wprowadź temat">
 							</div>
 						</div>
 						<div class="col-sm-6">
 							<div class="form-group" id="contact-message-group">
 								<label for="contact-input-message">Wiadomość</label>
-								<textarea class="form-control" id="contact-input-message" rows="8"></textarea>
+                                <textarea class="form-control" id="contact-input-message" name="contact-input-message" rows="8"></textarea>
 							</div>
 						</div>
 					</div>
