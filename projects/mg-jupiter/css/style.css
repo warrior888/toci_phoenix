@@ -13,15 +13,7 @@
 
 /*------------------------------------------------------------------
 
-[Master Stylesheet]
 
-Project:			Smartway - Learning & Courses HTML Template
-Version:			1.0
-Last change:		20/10/2014
-Author:				Coffeecream Themes
-Assigned to:		Marcin Banaszek
-
-------------------------------------------------------------------
 
 [Color codes]
 
@@ -45,41 +37,6 @@ a (hover):				#81a27b (darker green)
 
 ------------------------------------------------------------------
 
-[Table of contents]
-
-1. Global Styles
-2. Header
-	2.1. Tools
-	2.2. Navigation
-3. Title
-4. Home Page Banner
-	4.1. Slider Offers
-5. Content
-	5.1. Sidebar
-	5.2. Blog
-	5.3. Carousels
-	5.4. Masonry
-	5.5. Courses
-	5.6. Gallery
-	5.7. Map
-	5.8. Teachers
-	5.9. Upcoming Exams
-	5.10. Progress Bars
-	5.11. Reviews
-	5.12. Search Box
-	5.13. Newsletter
-	5.14. Services
-	5.15. Responsive Video Wrapper
-6. Links
-7. Prefooter
-8. Footer
-9. Mobile Styles
-	9.1. Regular Tablets
-	9.2. Small Tablets
-	9.3. Smartphones
-
--------------------------------------------------------------------*/
-
 /* 1. GLOBAL STYLES
 -------------------------------------------------------------------*/
 
@@ -91,8 +48,10 @@ a (hover):				#81a27b (darker green)
 }
 
 
-#video-carousel .item{
-	margin: 3px;
+
+#video-carousel .item, h3{
+	margin: 10px;
+font-size:20px;
 }
 #video-carousel .item img{
 	display: block;
@@ -160,7 +119,7 @@ color: rgba(137,144,154,0.97);
 
 .backgroundGreenTemplate{
 
-	background-color:rgba(143,96,136,0.97);
+    background-color: rgba(143, 130, 136, 0.97);
 }
 
 .yellowColorTemplate{
@@ -717,83 +676,94 @@ header {
 	/* 5.3. CAROUSELS
 	-------------------------------------------------------------------*/
 
-	.carousel-title {
-		margin-left: 35px;
-		margin-right: 35px;
-		position: relative;
-		z-index: 100;
-	}
+#video-carousel .item{
+	margin: 3px;
+}
+#video-carousel .item img{
+	display: block;
+	width: 100%;
+	height: auto;
+}
 
-		.carousel-title a {
-			display: block;
-			font-size: 13px;
-			font-weight: normal;
-			line-height: 1.74em;
-			text-transform: none;
-		}
 
-	.owl-carousel .item {
-		background: #fff;
-	}
+	/*.carousel-title {*/
+		/*margin-left: 35px;*/
+		/*margin-right: 35px;*/
+		/*position: relative;*/
+		/*z-index: 100;*/
+	/*}*/
 
-		.owl-carousel .item h3 {
-			margin: 30px 30px 0;
-		}
+		/*.carousel-title a {*/
+			/*display: block;*/
+			/*font-size: 13px;*/
+			/*font-weight: normal;*/
+			/*line-height: 1.74em;*/
+			/*text-transform: none;*/
+		/*}*/
 
-		.owl-carousel .item h3 a {
-			color: #222;
-		}
+	/*.owl-carousel .item {*/
+		/*background: #fff;*/
+	/*}*/
 
-		.owl-carousel .item h3 a:hover {
-			text-decoration: underline;
-		}
 
-		.owl-carousel .item .meta {
-			color: #bbb;
-			display: block;
-			padding: 0 30px 30px;
-		}
+		/*.owl-carousel .item h3 {*/
+			/*margin: 30px 30px 0;*/
+		/*}*/
 
-			.owl-carousel .item .meta p {
-				margin: 0;
-			}
+		/*.owl-carousel .item h3 a {*/
+			/*color: #222;*/
+		/*}*/
 
-			.owl-carousel .item .meta .fa-star {
-				color: #fbcd53;
-			}
+		/*.owl-carousel .item h3 a:hover {*/
+			/*text-decoration: underline;*/
+		/*}*/
 
-		.owl-carousel .item .price {
-			background: rgba(0,0,0,0.8);
-			border-radius: 0 0 4px 4px;
-			color: #fff;
-			display: block;
-			font-size: 1.5em;
-			padding: 30px 15px;
-			position: absolute;
-			right: 30px;
-			top: 0;
-		}
+		/*.owl-carousel .item .meta {*/
+			/*color: #bbb;*/
+			/*display: block;*/
+			/*padding: 0 30px 30px;*/
+		/*}*/
 
-	.owl-theme .owl-controls {
-		margin: 0 !important;
-		padding: 0;
-		position: absolute;
-		top: -80px;
-		width: 100%;
-	}
+			/*.owl-carousel .item .meta p {*/
+				/*margin: 0;*/
+			/*}*/
 
-		.owl-theme .owl-controls .owl-nav [class*=owl-] {
-			font-size: 14px !important;
-			margin: 0 !important;
-		}
+			/*.owl-carousel .item .meta .fa-star {*/
+				/*color: #fbcd53;*/
+			/*}*/
 
-		.owl-theme .owl-controls .owl-nav .owl-prev {
-			float: left;
-		}
+		/*.owl-carousel .item .price {*/
+			/*background: rgba(0,0,0,0.8);*/
+			/*border-radius: 0 0 4px 4px;*/
+			/*color: #fff;*/
+			/*display: block;*/
+			/*font-size: 1.5em;*/
+			/*padding: 30px 15px;*/
+			/*position: absolute;*/
+			/*right: 30px;*/
+			/*top: 0;*/
+		/*}*/
 
-		.owl-theme .owl-controls .owl-nav .owl-next {
-			float: right;
-		}
+	/*.owl-theme .owl-controls {*/
+		/*margin: 0 !important;*/
+		/*padding: 0;*/
+		/*position: absolute;*/
+		/*top: -80px;*/
+		/*width: 100%;*/
+	/*}*/
+
+		/*.owl-theme .owl-controls .owl-nav [class*=owl-] {*/
+			/*font-size: 14px !important;*/
+			/*margin: 0 !important;*/
+		/*}*/
+
+		/*.owl-theme .owl-controls .owl-nav .owl-prev {*/
+			/*float: left;*/
+		/*}*/
+
+		/*.owl-theme .owl-controls .owl-nav .owl-next {*/
+			/*float: right;*/
+		/*}*/
 
 	/* 5.4. MASONRY
 	-------------------------------------------------------------------*/
@@ -1529,8 +1499,10 @@ footer {
     height: 100%;
     z-index: 1;
     opacity: 1;       
-    background: linear-gradient(to bottom, rgba(255,255,255,0.1) 0%,rgba(255,255,255,0.1) 100%), url("../images/contact.png");
-    background-color: rgba(114,98,83,0.97);
+    background:  url("../images/contact.png");
+	background-attachment: fixed;
+
+
     opacity: 1; 
     background-repeat: no-repeat;
     background-position: 50% 0;
