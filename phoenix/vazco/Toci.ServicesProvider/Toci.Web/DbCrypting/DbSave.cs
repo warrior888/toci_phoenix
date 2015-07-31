@@ -7,6 +7,8 @@ namespace DbCrypting
     {
         private readonly string _tableName;
         private readonly string _temporarySecret;
+        private const string TimeColumnName = "addingTime";
+        private const string NickColumnName = "name";
         private const string IdColumnName = "id";
 
         public DbSave()
@@ -32,9 +34,14 @@ namespace DbCrypting
         {
             var query = new QueryModel(_tableName);
             var dbh = DbConnect.Connect();
+
             model.EncryptModel(_temporarySecret);
-            query.FillAddInModel(model);
-            query.AddIsWhere(IdColumnName,model.id,true);
+            
+            query.SetData(model.data);
+            query.SetHash(model.hash);
+
+            query.AddIsWhere(TimeColumnName, model.addingTime, true);
+            query.AddIsWhere(NickColumnName, model.nick, true);
             dbh.UpdateData(query);
 
         }
