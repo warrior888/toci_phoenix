@@ -51,7 +51,7 @@ function initMap(){
     var marker = new google.maps.Marker({
         position: new google.maps.LatLng(50.6672560, 17.9048559),
         map: map,
-        title: 'Snazzy!'
+        title: 'Toci !'
     });
 
 
