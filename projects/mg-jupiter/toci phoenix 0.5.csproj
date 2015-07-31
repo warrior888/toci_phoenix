@@ -142,6 +142,7 @@
     <None Include="server\contact.php" />
     <None Include="server\Db.php" />
     <None Include="server\DbHandle.php" />
+    <None Include="server\MailConfirm.php" />
     <None Include="server\Mailer\.scrutinizer.yml" />
     <None Include="server\Mailer\.travis.yml" />
     <None Include="server\Mailer\class.phpmailer.php" />
