@@ -9,12 +9,12 @@ namespace DbCredentials.Logic.DbModels
         public int ScopeID { get; set; }
         public string ProjectName { get; set; }
         public string ProjectData { get; set; }
-        
+
         protected const string tableName = "Projects";
-        private const string projectIDColumnName = "ProjectID";
-        private const string scopeIDColumnName = "ScopeID";
-        private const string projectNameColumnName = "ProjectName";
-        private const string projectDataColumnName = "ProjectData";
+        protected const int projectIdPosition = 0;
+        protected const int scopeIdPosition = 1;
+        protected const int projectNamePosition = 2;
+        protected const int projectDataPosition = 3;
 
 
         public DbProjectsModel() : base(tableName)
@@ -26,25 +26,15 @@ namespace DbCredentials.Logic.DbModels
             return this;
         }
 
-        public void SetProjectID(int projectID)
+        public override DbModel FillPropertis(object[] item)
         {
-            SetValue(projectIDColumnName, projectID);
+            return new DbProjectsModel
+            {
+                ProjectID = (int) item[projectIdPosition],
+                ScopeID = (int) item[scopeIdPosition],
+                ProjectName = (string) item[projectNamePosition],
+                ProjectData = (string) item[projectDataPosition]
+            };
         }
-
-        public void SetScopeID(int scopeID)
-        {
-            SetValue(scopeIDColumnName, scopeID);
-        }
-
-        public void SetProjectName(string projectName)
-        {
-            SetValue(projectNameColumnName, projectName);
-        }
-
-        public void SetProjectData(string projectData)
-        {
-            SetValue(projectDataColumnName, projectData);
-        }
-
     }
 }
