@@ -87,8 +87,12 @@
     <Content Include="images\slide1.jpg" />
     <Content Include="images\slide2.jpg" />
     <Content Include="images\slide3.jpg" />
+    <Content Include="images\slider1.jpg" />
+    <Content Include="images\slider2.jpg" />
+    <Content Include="images\slider3.jpg" />
     <Content Include="images\SMT-logo.png" />
     <Content Include="images\sygnity-logo.jpg" />
+    <Content Include="images\toci-logo.png" />
     <Content Include="images\toci.jpg" />
     <Content Include="images\unit4-business-software-logo.png" />
     <Content Include="images\unit4-logo-small.png" />
