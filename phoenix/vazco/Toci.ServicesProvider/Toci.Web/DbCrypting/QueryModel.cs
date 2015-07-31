@@ -43,7 +43,7 @@ namespace DbCrypting
         {
             SetValue(HashColumnName, hash);
         }
-        public void SetGwiazdka()
+        public void SetAll()
         {
             SetValue(Star, Star);
         }

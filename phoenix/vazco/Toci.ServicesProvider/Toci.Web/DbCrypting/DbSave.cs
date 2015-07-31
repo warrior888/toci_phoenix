@@ -7,6 +7,7 @@ namespace DbCrypting
     {
         private readonly string _tableName;
         private readonly string _temporarySecret;
+        private const string IdColumnName = "id";
 
         public DbSave()
         {
@@ -16,15 +17,35 @@ namespace DbCrypting
 
         public void Save(DbModel model)
         {
-            var LogModel = new QueryModel(_tableName);
+            var query = new QueryModel(_tableName);
             var dbh = DbConnect.Connect();
 
 
             model.EncryptModel(_temporarySecret);
-            LogModel.FillAddInModel(model);
-            dbh.InsertData(LogModel);
+            query.FillAddInModel(model);
+            dbh.InsertData(query);
 
 
         }
+
+        public void Update(DbModel model)
+        {
+            var query = new QueryModel(_tableName);
+            var dbh = DbConnect.Connect();
+            model.EncryptModel(_temporarySecret);
+            query.FillAddInModel(model);
+            query.AddIsWhere(IdColumnName,model.id,true);
+            dbh.UpdateData(query);
+
+        }
+
+        public void Delete(DbModel model)
+        {
+            var query = new QueryModel(_tableName);
+            var dbh = DbConnect.Connect();
+            query.AddIsWhere(IdColumnName, model.id, true);
+            dbh.DeleteData(query);
+        }
+
     }
 }

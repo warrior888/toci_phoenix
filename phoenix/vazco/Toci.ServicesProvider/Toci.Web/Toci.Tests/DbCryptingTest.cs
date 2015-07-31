@@ -12,7 +12,7 @@ namespace Toci.Tests
         {
             var dbSave = new DbSave();
             var dbLoad = new DbLoad();
-            const string testString = "Rabarbarrrr";
+            const string testString = "Test text";
 
 
             var model = new DbModel() {data = testString};
@@ -20,6 +20,20 @@ namespace Toci.Tests
             dbSave.Save(model);
             var result = dbLoad.Load();
             Assert.AreEqual(testString,result[0].data);
+        }
+
+        [TestMethod]
+        public void DeleteTest()
+        {
+            var dbSave = new DbSave();
+            var dbLoad = new DbLoad();
+            const string testString = "Test text";
+
+
+            var model = new DbModel() { id = 2 };
+
+            dbSave.Delete(model);
+
         }
     }
 }

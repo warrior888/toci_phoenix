@@ -21,16 +21,16 @@ namespace DbCrypting
 
             var dbh = DbConnect.Connect();
             var itemModel = new QueryModel(_tableName);
-            itemModel.SetGwiazdka();
+            itemModel.SetAll();
             var modelListGenerator = new GenerateDbModelList<QueryModel, DbHandle>();
 
 
-            var DbModelList = modelListGenerator.GetDbModelList(itemModel, dbh);
-            DbModelList.DecryptDbModels(_temporarySecret);
+            var dbModelList = modelListGenerator.GetDbModelList(itemModel, dbh);
+            dbModelList.DecryptDbModels(_temporarySecret);
 
 
 
-            return DbUtils.SortListByTime(DbModelList);
+            return DbUtils.SortListByTime(dbModelList);
         }
     }
 }
