@@ -258,17 +258,18 @@ $(document).ready(function(){
 	 * Gmaps JS for Google Maps
 	 * @usedPlugins gmaps,gmaps sensor
 	 * @usedAt      Contact page
+	 * 50.669487, 17.873844)
 	 */
 	if($('#map').length > 0){
 		var map = new GMaps({
 			div: '#map',
-			lat: -12.043333,
-			lng: -77.028333
+			lat: 50.669487,
+			lng: 17.873844
 		});
 		map.addMarker({
-			lat: -12.043333,
-			lng: -77.028333,
-			title: 'MetCreative Office'
+			lat: 50.669487,
+			lng: 17.873844,
+			title: 'SLS Consulting'
 		});
 
 		if($('.met_contact_map_box').length > 0){
