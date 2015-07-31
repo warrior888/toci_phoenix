@@ -10,17 +10,30 @@ require_once "Db.php";
  * applicantPhone
  */
 
+if(!(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && !empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest')) {
+    die("Zablokowano nie-ajax");
+}
+
+if(!(isset($_POST['applicantName'])&&
+    isset($_POST['applicantSurname'])&&
+    isset($_POST['applicantEmail'])&&
+    isset($_POST['applicantPhone'])
+))
+{
+    die("Brak wszystkich danych"); // brak wszystkich dnaych
+}
+
 $applicant['name'] = $_POST['applicantName'];
 $applicant['surname'] = $_POST['applicantSurname'];
 $applicant['email'] = $_POST['applicantEmail'];
 $applicant['phone'] = $_POST['applicantPhone'];
-$dbTable='applicants';
-
+$applicant['mailConfirmed']=false;
 
 $db=new Db();
 
-$result=$db->Save($dbTable,$applicant);
 
+$dbTable='applicants';
+$result=$db->Save($dbTable,$applicant);
 
 //$db->save zwraca wiadomość od postrgresa zamiast boola przy poprawnym zapisaniu
 //dane trzeba skompletować w ten sposób innaczej będzie miało to wpływ na zapytanie ajaxowske z jsa
@@ -37,8 +50,7 @@ else{
 }
 
 ob_clean();
-//if (isset($_SERVER['HHTP_X_XML']))
+
 echo json_encode($json);
-//else
-//header();
+
 
