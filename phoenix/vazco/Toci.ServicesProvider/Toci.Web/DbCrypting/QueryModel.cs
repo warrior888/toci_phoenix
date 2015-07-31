@@ -4,7 +4,7 @@ using Toci.Db.Interfaces;
 
 namespace DbCrypting
 {
-    public class AddInModel : Model
+    public class QueryModel : Model
     {
         private const string DataColumnName = "data" ;
         private const string TimeColumnName = "addingTime";
@@ -12,7 +12,7 @@ namespace DbCrypting
         private const string HashColumnName = "hash" ;
         private const string Star = "*" ;
 
-        public AddInModel(string tableName) : base(tableName)
+        public QueryModel(string tableName) : base(tableName)
         {
         }
 

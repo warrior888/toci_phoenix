@@ -16,7 +16,7 @@ namespace DbCrypting
 
         public void Save(DbModel model)
         {
-            var LogModel = new AddInModel(_tableName);
+            var LogModel = new QueryModel(_tableName);
             var dbh = DbConnect.Connect();
 
 

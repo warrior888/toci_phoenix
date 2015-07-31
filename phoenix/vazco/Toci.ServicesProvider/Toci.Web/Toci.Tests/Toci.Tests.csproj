@@ -60,6 +60,10 @@
     <Compile Include="GetCertyficateInBase64.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DbCredentials\DbCredentials.csproj">
+      <Project>{c4549253-a41f-4eff-b32e-4a22ef6bec6b}</Project>
+      <Name>DbCredentials</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DbCrypting\DbCrypting.csproj">
       <Project>{b8730ca1-13e6-4d51-a436-da4a8a7d4062}</Project>
       <Name>DbCrypting</Name>

@@ -20,9 +20,9 @@ namespace DbCrypting
         {
 
             var dbh = DbConnect.Connect();
-            var itemModel = new AddInModel(_tableName);
+            var itemModel = new QueryModel(_tableName);
             itemModel.SetGwiazdka();
-            var modelListGenerator = new GenerateDbModelList<AddInModel, DbHandle>();
+            var modelListGenerator = new GenerateDbModelList<QueryModel, DbHandle>();
 
 
             var DbModelList = modelListGenerator.GetDbModelList(itemModel, dbh);
