@@ -5,7 +5,7 @@ function FormDecorator(formId, destination) {
     this.formId = formId;
     this.destination = destination;
 
-    var answerContainer = document.createElement('div');
+    var answerContainer = $("<div>");
     $(answerContainer).attr('id', 'answerContainer');
 
 
@@ -16,8 +16,6 @@ function FormDecorator(formId, destination) {
         $(answerContainer).append(''+message)
                           .addClass(divClass);
 
-
-        //$('#' + formId).append('<div class="' + divClass + '">' + message + '</div>');
         $('#' + formId).find(':input').each(function () {
             $(this).val('');
         });
@@ -59,11 +57,11 @@ function SubmitForm(form, event) {
             if (data.result === true) {
                 form.successAction(data);
             } else {
-                form.successAction(data);
+                form.failAction(data);
             }
         })
          .fail(function (data) {
-             form.successAction(data);
+             form.failAction(data);
          });
 
     event.preventDefault();
