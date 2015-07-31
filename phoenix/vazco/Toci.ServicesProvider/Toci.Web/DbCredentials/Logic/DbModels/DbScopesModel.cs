@@ -3,12 +3,15 @@ using Toci.Db.Interfaces;
 
 namespace DbCredentials.Logic.DbModels
 {
-    public class DbScopesModel: Model
+    public class DbScopesModel: DbModel
     {
         public int ScopeID { get; set; }
         public string ScopeName { get; set; }
-        private const string star = "*";
+
         protected const string tableName = "Scopes";
+        private const string scopeIDColumnName = "ScopeID";
+        private const string scopeNameColumnName = "ScopeName";
+
 
         public DbScopesModel(string tableName) : base(tableName)
         {
@@ -16,7 +19,17 @@ namespace DbCredentials.Logic.DbModels
 
         protected override IModel GetInstance()
         {
-            throw new System.NotImplementedException();
+            return this;
         }
+        public void SetScopeID(int scopeID)
+        {
+            SetValue(scopeIDColumnName, scopeID);
+        }
+
+        public void SetScopeName(string scopeName)
+        {
+            SetValue(scopeNameColumnName, scopeName);
+        }
+
     }
 }
