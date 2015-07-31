@@ -23,6 +23,9 @@ die("Brak wszystkich danych"); // brak wszystkich dnaych
 
 $askerName = $_POST['contact-input-name'];
 $askerMailAddress= $_POST['contact-input-mail'];
+
+//???
+
 $askerSubject= $_POST['contact-input-subject'];
 $askerMessage= $_POST['contact-input-message'];
 
