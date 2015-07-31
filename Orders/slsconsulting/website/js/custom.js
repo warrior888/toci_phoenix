@@ -284,7 +284,7 @@ $(document).ready(function(){
 	 * @usedPlugins jquery
 	 * @usedAt      Contact Page
 	 */
-	$('.met_contact_form').bind('submit', function(){
+/*	$('.met_contact_form').bind('submit', function(){
 		var form    = $(this);
 		var me      = $(this).children('input[type=submit]');
 
@@ -304,7 +304,7 @@ $(document).ready(function(){
 			}
 		});
 		return false;
-	});
+	});*/
 
 	/**
 	 * Blog List Iframe Sizing
