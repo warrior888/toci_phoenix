@@ -68,6 +68,8 @@
 	<script src="js/scrolling-nav.js"></script>
 	<script src="js/jquery.easing.min.js"></script>
 
+	<script src="js/animatedLoadPage.js"></script>
+
 
 	<style id="colorChanges" type="text/css"></style>
 </head>
@@ -77,7 +79,7 @@
 <header class="met_content">
 	<div class="row-fluid">
 		<div class="span12">
-			<a href="index.html" class="met_logo met_logo_loading"><img src="img/logo.png" height="44" alt="" /></a>
+			<a href="index.html" class="met_logo met_logo_loading"><img src="img/sls-logo-small.jpg" height="44" alt="" /></a>
 			<aside class="clearfix">
 				<a href="http://www.facebook.com/" target="_blank" class="met_color3 met_color_transition"><i class="icon-facebook"></i></a>
 				<a href="http://www.twitter.com/" target="_blank" class="met_color3 met_color_transition"><i class="icon-twitter"></i></a>
@@ -97,10 +99,10 @@
 				<button class="met_bgcolor met_bgcolor_transition2">MENU</button>
 				<ul class="dl-menu met_bgcolor7">
 					<li>
-						<a href="index.html">Home</a>
+						<a href="#home-section">Do góry</a>
 					</li>
-					<li><a href="about.html">About Us</a></li>
-					<li><a href="services.html">Services</a></li>
+					<li><a href="#about-section" class="page-scroll">O nas</a></li>
+					<li><a href="#services-section">Usługi</a></li>
 					<li>
 						<a href="#">Features</a>
 						<ul class="dl-submenu">
@@ -155,9 +157,9 @@
 	<!-- Menu -->
 <nav class="met_content met_main_nav met_bgcolor3 clearfix navbar" data-fixed="1">
 	<ul>
-		<li class="met_bgcolor_transition2"><a href="index.html" class="met_menu_home"><i class="icon-home"></i></a></li>
+		<li class="met_bgcolor_transition2"><a href="#home-section" class="met_menu_home page-scroll"><i class="icon-home"></i></a></li>
 		<li class="met_bgcolor_transition2"><a href="#about-section" class="page-scroll">O nas</a></li>
-		<li class="met_bgcolor_transition2"><a href="services.html">Services</a></li>
+		<li class="met_bgcolor_transition2"><a href="#services-section" class="page-scroll">Usługi</a></li>
 		<li class="met_bgcolor_transition2">
 			<a href="#">Features</a>
 			<ul>
@@ -199,7 +201,7 @@
 			</ul>
 		</li>
 		<li class="met_bgcolor_transition2"><a href="gallery.html">Gallery</a></li>
-		<li class="met_bgcolor_transition2"><a href="contact.html">Contact</a></li>
+		<li class="met_bgcolor_transition2"><a href="#contact-section" class="page-scroll">Kontakt</a></li>
 	</ul>
 
 	<div class="pull-right met_bgcolor met_menu_search_wrapper">
@@ -210,7 +212,399 @@
 	</div>
 </nav>
 	<!-- Menu Ends  -->
+	<!-- Home -->
+	<section id="home-section">
 
+		<div class="met_content">
+			<div class="row-fluid">
+				<div class="span12">
+					<div class="met_slider_wrap">
+						<div class="met_slider clearfix">
+
+							<div class="met_slider_item clearfix">
+								<div class="met_slider_item_preview"><a href="index.html"><img src="photos/slider/1.jpg" alt=""></a></div>
+								<article class="met_slider_item_caption met_bgcolor4 met_color2">
+									<div>
+										<h2 class="met_title_stack">RESPONSIVE DESIGN</h2>
+										<h3 class="met_title_stack met_bold_one">BUY NOW</h3>
+										<br>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+										<br>
+										<a href="#" class="met_bgcolor met_button">ALL POSTS</a>
+									</div>
+								</article>
+							</div>
+
+							<div class="met_slider_item clearfix">
+								<div class="met_slider_item_preview"><a href="index.html"><img src="photos/slider/2.jpg" alt=""></a></div>
+								<article class="met_slider_item_caption met_bgcolor4 met_color2">
+									<div>
+										<h2 class="met_title_stack">FIVE STAR SUPPORT</h2>
+										<h3 class="met_title_stack met_bold_one">BUY NOW</h3>
+										<br>
+										<p>Sed sollicitudin metus enim, quis scelerisque mauris facilisis at. In vel laoreet nulla, sed semper enim. Cras sodales sapien.</p>
+										<br>
+										<p>In dolor pretium volutpat. Aenean purus dui, dictum non porta in, tincidunt nec dolor. In ornare luctus arcu, a hendrerit velit.</p>
+										<br>
+										<a href="#" class="met_bgcolor met_button">ALL POSTS</a>
+									</div>
+								</article>
+							</div>
+
+							<div class="met_slider_item clearfix">
+								<div class="met_slider_item_preview"><a href="index.html"><img src="photos/slider/3.jpg" alt=""></a></div>
+								<article class="met_slider_item_caption met_bgcolor4 met_color2">
+									<div>
+										<h2 class="met_title_stack">HAPPY CUSTOMERS</h2>
+										<h3 class="met_title_stack met_bold_one">BUY NOW</h3>
+										<br>
+										<p>Mauris gravida vulputate ligula, ut sagittis libero consequat nec. Morbi mi sapien, viverra non interdum rutrum, viverra et massa. Suspendisse potenti. Vivamus orci nibh, egestas ac adipiscing id, tempus in justo. Duis blandit volutpat nunc nec dictum. Sed eget lectus sed est condimentum ultricies ut quis nunc. Aliquam mollis interdum condimentum.</p>
+										<br>
+										<a href="#" class="met_bgcolor met_button">ALL POSTS</a>
+									</div>
+								</article>
+							</div>
+
+						</div>
+						<a href="#" class="met_slider_nav_prev met_bgcolor met_bgcolor_transition2 met_color2"><i class="icon-chevron-left"></i></a>
+						<a href="#" class="met_slider_nav_next met_bgcolor met_bgcolor_transition2 met_color2"><i class="icon-chevron-right"></i></a>
+						<div class="met_slider_overlay"></div>
+					</div>
+				</div>
+			</div><!-- Slider Ends  -->
+
+			<div class="row-fluid">
+				<div class="span6">
+					<div class="met_img_with_text clearfix">
+						<div class="met_img_with_text_preview">
+							<img src="photos/imgWithText/1.jpg" alt="">
+							<div class="met_img_with_text_overlay met_bgcolor5_trans">
+								<a href="photos/lightBoxImages/1.jpg" rel="lb_01" class="met_portfolio_item_lb met_bgcolor5 met_color2"><i class="icon-search"></i></a>
+							</div>
+
+							<div class="lightbox-images">
+								<a rel="lb_01" href="photos/lightBoxImages/2.jpg"></a>
+								<a rel="lb_01" href="photos/lightBoxImages/3.jpg"></a>
+							</div>
+						</div>
+						<article class="met_bgcolor5 met_color2">
+							<div>
+								<h2 class="met_title_stack">MARKETING SOURCES</h2>
+								<h3 class="met_title_stack met_bold_one">START NOW</h3>
+								<br>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+							</div>
+						</article>
+					</div>
+				</div>
+				<div class="span6">
+					<div class="met_img_with_text clearfix">
+						<div class="met_img_with_text_preview">
+							<img src="photos/imgWithText/2.jpg" alt="">
+							<div class="met_img_with_text_overlay met_bgcolor6_trans">
+								<a href="photos/lightBoxImages/1.jpg" rel="lb_02" class="met_bgcolor6 met_color2"><i class="icon-search"></i></a>
+							</div>
+
+							<div class="lightbox-images">
+								<a rel="lb_02" href="photos/lightBoxImages/2.jpg"></a>
+								<a rel="lb_02" href="photos/lightBoxImages/3.jpg"></a>
+							</div>
+						</div>
+						<article class="met_bgcolor6 met_color2">
+							<div>
+								<h2 class="met_title_stack">BRANDING</h2>
+								<h3 class="met_title_stack met_bold_one">START NOW</h3>
+								<br>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+							</div>
+						</article>
+					</div>
+				</div>
+			</div><!-- Image with Texts Ends  -->
+
+			<div class="row-fluid">
+				<div class="span6">
+					<div class="met_icon_tabs">
+						<nav class="met_bgcolor5 clearfix">
+							<a href="#tab_html5" class="met_active_tab"><i class="icon-html5"></i></a>
+							<a href="#tab_css3"><i class="icon-css3"></i></a>
+							<a href="#tab_responsive"><i class="icon-resize-small"></i></a>
+							<a href="#tab_documentation"><i class="icon-question"></i></a>
+							<a href="#tab_support"><i class="icon-group"></i></a>
+						</nav>
+						<div class="met_icon_tabs_descrs">
+							<article id="tab_html5" class="met_open_tab">
+								<h2 class="met_bold_one">CODED WITH HTML5</h2>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris .
+									<br><br>
+									At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia distinctio.  Nam libero tempore, cum soluta nobis est eligendi optio voluptas assumenda est, omnis dolor repellendus.
+								</p>
+							</article>
+							<article id="tab_css3">
+								<h2 class="met_bold_one">LATEST CSS3 TECH</h2>
+								<p>Sed arcu mi, hendrerit eget nunc vel, pretium euismod purus. Praesent lobortis id purus id egestas.
+									<br><br>
+									Integer id malesuada sapien, id faucibus enim. Vestibulum laoreet eros odio, at consectetur odio viverra quis. Curabitur nec nulla eu libero porttitor dictum. Nullam nec diam eu dolor hendrerit tempor. Nulla sed nunc ligula. Ut vel ipsum tellus. In imperdiet enim vel eros fringilla, a dignissim augue tristique. Cras aliquam aliquet sem in molestie. Phasellus euismod odio luctus libero auctor volutpat. Donec consequat nulla sed sem rhoncus, nec ornare libero lobortis. Pellentesque ac ultrices nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at sem eros. Proin fringilla arcu vitae ligula vulputate blandit.
+								</p>
+							</article>
+							<article id="tab_responsive">
+								<h2 class="met_bold_one">COMPATIBLE WITH PHONES/TABLETS</h2>
+								<p>Aenean interdum, neque vel interdum accumsan, nunc est viverra mi, vel molestie libero tellus eget quam. Integer condimentum, tellus vitae volutpat aliquam, turpis leo condimentum massa, sit amet vehicula turpis diam eget lorem. In velit metus, porta sed justo ut, dapibus porta odio. Aenean at lectus vel purus interdum vestibulum. Sed semper mauris eget orci ultricies, eget convallis sem feugiat. In hac habitasse platea dictumst. Vivamus semper tincidunt feugiat. Aliquam erat volutpat.
+									<br><br>
+									Nullam viverra turpis vitae suscipit sodales. Phasellus eu fringilla felis, vel congue mauris.
+								</p>
+							</article>
+							<article id="tab_documentation">
+								<h2 class="met_bold_one">DOCUMENTATION INCLUDED</h2>
+								<p>Vivamus congue augue at enim iaculis tincidunt. Nam libero odio, fermentum eget gravida eu, aliquet vel enim. Quisque hendrerit ornare faucibus. Quisque in erat vitae orci pulvinar tincidunt. Etiam posuere odio sit amet orci consectetur vehicula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque id consectetur nulla.
+									<br><br>
+									Sed eu bibendum lectus. Ut augue ante, bibendum sed diam placerat, eleifend hendrerit orci. Aliquam nunc augue, malesuada vel placerat non, accumsan ultrices turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus cursus euismod purus vel aliquet. Quisque ac vulputate libero. Ut a sem nec magna aliquet dictum.
+								</p>
+							</article>
+							<article id="tab_support">
+								<h2 class="met_bold_one">LIFETIME SUPPORT</h2>
+								<p>Sed sit amet dapibus orci. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent sit amet euismod eros. Morbi at libero tortor. Vivamus venenatis elementum sem. Maecenas eros leo, gravida auctor ipsum quis, pellentesque tempus nisl.
+									<br><br>
+									Donec auctor turpis erat, a feugiat nibh mattis egestas. Duis scelerisque vulputate imperdiet. Mauris diam nisl, pulvinar at urna et, rhoncus egestas nisl. Donec tortor urna, ullamcorper id consectetur sed, pharetra ut sem. Nulla sit amet augue odio.
+								</p>
+							</article>
+						</div>
+					</div>
+				</div><!-- Tab Content Ends -->
+				<!-- <div class="span3">
+              <h2 class="met_bold_one met_title_with_pager met_clear_margin_top clearfix">
+                  LATEST POSTS
+                  <nav class="met_latest_posts_pages"></nav>
+              </h2>
+
+              <div class="met_latest_posts clearfix">
+                  <div class="met_latest_posts_block">
+                      <div class="met_latest_posts_item clearfix">
+                          <a href="#" class="met_latest_post_image"><img src="photos/latestPosts/1.jpg" alt=""></a>
+                          <a href="#" class="met_latest_post_title">Company Profile</a>
+                          <p class="met_latest_post_descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do.</p>
+                      </div>
+                      <div class="met_latest_posts_item clearfix">
+                          <a href="#" class="met_latest_post_image"><img src="photos/latestPosts/2.jpg" alt=""></a>
+                          <a href="#" class="met_latest_post_title">Stock Running</a>
+                          <p class="met_latest_post_descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do.</p>
+                      </div>
+                      <div class="met_latest_posts_item clearfix">
+                          <a href="#" class="met_latest_post_image"><img src="photos/latestPosts/3.jpg" alt=""></a>
+                          <a href="#" class="met_latest_post_title">Tiffany Shines Rebourn</a>
+                          <p class="met_latest_post_descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do.</p>
+                      </div>
+                      <div class="met_latest_posts_item clearfix">
+                          <a href="#" class="met_latest_post_image"><img src="photos/latestPosts/4.jpg" alt=""></a>
+                          <a href="#" class="met_latest_post_title">My Protests Paid</a>
+                          <p class="met_latest_post_descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do.</p>
+                      </div>
+                  </div>
+                  <div class="met_latest_posts_block">
+                      <div class="met_latest_posts_item clearfix">
+                          <a href="#" class="met_latest_post_image"><img src="photos/latestPosts/1.jpg" alt=""></a>
+                          <a href="#" class="met_latest_post_title">Company Profile</a>
+                          <p class="met_latest_post_descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do.</p>
+                      </div>
+                      <div class="met_latest_posts_item clearfix">
+                          <a href="#" class="met_latest_post_image"><img src="photos/latestPosts/2.jpg" alt=""></a>
+                          <a href="#" class="met_latest_post_title">Stock Running</a>
+                          <p class="met_latest_post_descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do.</p>
+                      </div>
+                      <div class="met_latest_posts_item clearfix">
+                          <a href="#" class="met_latest_post_image"><img src="photos/latestPosts/3.jpg" alt=""></a>
+                          <a href="#" class="met_latest_post_title">Tiffany Shines Rebourn</a>
+                          <p class="met_latest_post_descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do.</p>
+                      </div>
+                      <div class="met_latest_posts_item clearfix">
+                          <a href="#" class="met_latest_post_image"><img src="photos/latestPosts/4.jpg" alt=""></a>
+                          <a href="#" class="met_latest_post_title">My Protests Paid</a>
+                          <p class="met_latest_post_descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do.</p>
+                      </div>
+                  </div>
+              </div>
+              <a href="blog.html" class="met_bgcolor met_button pull-right">ALL POSTS</a>
+          </div> -->
+				<div class="span3">
+					<div class="met_twitter_widget met_color2 met_bgcolor clearfix">
+						<h2 class="met_title_stack">LATEST</h2>
+						<h3 class="met_title_stack met_bold_one">TWEETS</h3>
+
+						<div class="met_twitter_wrapper">
+							<div class="met_twitter_item clearfix">
+								<i class="icon-twitter"></i>
+								<p>
+									MetCreative proudly presents brand new CACOON Theme
+									<br>
+									<b>#MetCreative</b>
+								</p>
+							</div>
+
+							<div class="met_twitter_item clearfix">
+								<i class="icon-twitter"></i>
+								<p>
+									Wordpress version of the Kabubu Theme is on the way, it will be available approximately in 10 days
+									<br>
+									<b>#MetCreative</b>
+								</p>
+							</div>
+
+							<div class="met_twitter_item clearfix">
+								<i class="icon-twitter"></i>
+								<p>
+									Condoma is now on Wordpress, see our portfolio for it.
+									<br>
+									<b>#MetCreative</b>
+								</p>
+							</div>
+
+							<div class="met_twitter_item clearfix">
+								<i class="icon-twitter"></i>
+								<p>
+									Check out The Wetro : http://themeforest.net/item/the-wetro-creative-wordpress-theme/4635357
+									<br>
+									<b>#MetCreative</b>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div><!-- Twitter Ticker Ends -->
+				<div class="span3">
+					<h2 class="met_bold_one met_title_with_pager met_clear_margin_top clearfix">
+						RECENT WORKS
+						<nav class="met_recent_works_pages"></nav>
+					</h2>
+
+					<div class="met_recent_works clearfix">
+						<div class="met_recent_work_item">
+							<a href="portfolio_detail.html" class="met_recent_work_image"><img src="photos/recentWorks/1.jpg" alt=""></a>
+							<div class="met_recent_work_overbox met_bgcolor">
+								<a href="portfolio_detail.html">
+									<span class="met_color2">GROUP WORK</span>
+									<i class="icon-plus met_color2"></i>
+								</a>
+							</div>
+						</div>
+						<div class="met_recent_work_item">
+							<a href="portfolio_detail.html" class="met_recent_work_image"><img src="photos/recentWorks/2.jpg" alt=""></a>
+							<div class="met_recent_work_overbox met_bgcolor">
+								<a href="portfolio_detail.html">
+									<span class="met_color2">KIND SERVICE</span>
+									<i class="icon-plus met_color2"></i>
+								</a>
+							</div>
+						</div>
+						<div class="met_recent_work_item">
+							<a href="portfolio_detail.html" class="met_recent_work_image"><img src="photos/recentWorks/3.jpg" alt=""></a>
+							<div class="met_recent_work_overbox met_bgcolor">
+								<a href="portfolio_detail.html">
+									<span class="met_color2">STATICS</span>
+									<i class="icon-plus met_color2"></i>
+								</a>
+							</div>
+						</div>
+						<div class="met_recent_work_item">
+							<a href="portfolio_detail.html" class="met_recent_work_image"><img src="photos/recentWorks/1.jpg" alt=""></a>
+							<div class="met_recent_work_overbox met_bgcolor">
+								<a href="portfolio_detail.html">
+									<span class="met_color2">GROUP WORK</span>
+									<i class="icon-plus met_color2"></i>
+								</a>
+							</div>
+						</div>
+						<div class="met_recent_work_item">
+							<a href="portfolio_detail.html" class="met_recent_work_image"><img src="photos/recentWorks/2.jpg" alt=""></a>
+							<div class="met_recent_work_overbox met_bgcolor">
+								<a href="portfolio_detail.html">
+									<span class="met_color2">KIND SERVICE</span>
+									<i class="icon-plus met_color2"></i>
+								</a>
+							</div>
+						</div>
+						<div class="met_recent_work_item">
+							<a href="portfolio_detail.html" class="met_recent_work_image"><img src="photos/recentWorks/3.jpg" alt=""></a>
+							<div class="met_recent_work_overbox met_bgcolor">
+								<a href="portfolio_detail.html">
+									<span class="met_color2">STATICS</span>
+									<i class="icon-plus met_color2"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row-fluid">
+				<div class="span2">
+					<div class="met_dated_blog_posts">
+						<span class="met_date">29</span>
+						<span class="met_month">MAY</span>
+						<article>
+							<h3>GOOD IDEA</h3>
+							<p>Duis aute irure dolor inserar reprehenderit in voluptate velit esse cillum dolore eu fugiat  pariatur relased. </p>
+							<a href="blog_detail.html" class="met_read_more met_color">read more</a>
+						</article>
+					</div>
+				</div>
+				<div class="span2">
+					<div class="met_dated_blog_posts">
+						<span class="met_date">28</span>
+						<span class="met_month">MAY</span>
+						<article>
+							<h3>AWESOME DESIGN</h3>
+							<p>Duis aute irure dolor inserar reprehenderit in voluptate velit esse cillum dolore eu fugiat  pariatur relased. </p>
+							<a href="blog_detail.html" class="met_read_more met_color">read more</a>
+						</article>
+					</div>
+				</div>
+				<div class="span2">
+					<div class="met_dated_blog_posts">
+						<span class="met_date">27</span>
+						<span class="met_month">MAY</span>
+						<article>
+							<h3>PERFECT PIXELS</h3>
+							<p>Duis aute irure dolor inserar reprehenderit in voluptate velit esse cillum dolore eu fugiat  pariatur relased. </p>
+							<a href="blog_detail.html" class="met_read_more met_color">read more</a>
+						</article>
+					</div>
+				</div>
+				<div class="span2">
+					<div class="met_dated_blog_posts">
+						<span class="met_date">26</span>
+						<span class="met_month">MAY</span>
+						<article>
+							<h3>UNIQUE COLORS</h3>
+							<p>Duis aute irure dolor inserar reprehenderit in voluptate velit esse cillum dolore eu fugiat  pariatur relased. </p>
+							<a href="blog_detail.html" class="met_read_more met_color">read more</a>
+						</article>
+					</div>
+				</div>
+				<div class="span2">
+					<div class="met_dated_blog_posts">
+						<span class="met_date">25</span>
+						<span class="met_month">MAY</span>
+						<article>
+							<h3>EASY EDITABLE</h3>
+							<p>Duis aute irure dolor inserar reprehenderit in voluptate velit esse cillum dolore eu fugiat  pariatur relased. </p>
+							<a href="blog_detail.html" class="met_read_more met_color">read more</a>
+						</article>
+					</div>
+				</div>
+				<div class="span2">
+					<div class="met_dated_blog_posts">
+						<span class="met_date">24</span>
+						<span class="met_month">MAY</span>
+						<article>
+							<h3>LAYERED PSD</h3>
+							<p>Duis aute irure dolor inserar reprehenderit in voluptate velit esse cillum dolore eu fugiat  pariatur relased.</p>
+							<a href="blog_detail.html" class="met_read_more met_color">read more</a>
+						</article>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Home ends-->
 
 	<!-- ABOUT -->
 
@@ -241,7 +635,9 @@
 									Nieocenioną zaletą jest bogate doświadczenie członków zarządu firmy, co bez wątpliwie przekłada się na jakość świadczonych przez nas usług.
 									Z dużą dbałością oraz zaangażowaniem przykładamy się do każdego przedsięwzięcia. Wszystkich klientów tratujemy indywidualnie i wyjątkowo, z poszanowaniem ich wartości.
 									Podążamy za potrzebami naszych partnerów. To one są dla nas najważniejsze zaraz obok zadowolenia klientów.
-									<br>
+									<br><br>
+
+								<h1 class="met_bold_one">Twoje potrzeby naszym priorytetem !</h1>
 							</div>
 						</div>
 					</div>
@@ -252,9 +648,263 @@
 
 	<!-- ABOUT ENDS -->
 
+<!-- Services -->
+	<section id="services-section">
+		<div id="servicesTest" class="met_content">
+			<div class="row-fluid">
+				<div class="span12">
+					<div class="met_page_header met_bgcolor5 clearfix">
+						<h1 class="met_bgcolor met_color2">USŁUGI</h1>
+						<h2 class="met_color2">Co możemy dla Ciebie zrobić?</h2>
+
+						<ul>
+							<li><a href="index.html" class="met_color2">Home</a></li>
+							<li class="met_color2">Usługi</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="row-fluid met_portfolio_row">
+				<div class="span4 clearfix">
+
+					<div class="met_portfolio_item_preview_wrap clearfix">
+						<img src="photos/portfolioList/1.jpg" alt=""/>
+						<div class="met_portfolio_item_overlay met_bgcolor6_trans">
+							<a id='test' > Rozwiń </a>
+						</div>
+
+						<div class="lightbox-images">
+							<a rel="lb_04" href="photos/lightBoxImages/2.jpg"></a>
+							<a rel="lb_04" href="photos/lightBoxImages/3.jpg"></a>
+						</div>
+					</div>
+
+					<div class="met_portfolio_item_details clearfix">
+						<div class="met_portfolio_item_descr met_bgcolor3">
+							<div class="met_color2">
+								<a href="portfolio_detail.html"><h3 class="met_color2 met_bold_one met_color_transition">IMAGE PREVIEW</h3></a>
+								<p>You can use an image to show in this page of portfolio detail. There are other options too!</p>
+							</div>
+						</div>
+						<!--	<div class="met_portfolio_item_share met_color2 met_bgcolor">
+                                <span>SHARE</span>
+                                <div class="met_portfolio_item_socials">
+                                    <div>
+                                        <a class="met_color2" title="Share This on Facebook" target="_blank" href="http://www.facebook.com/sharer.php?u=http://metcreative.com/demo/demo_cacoon/blog_detail.html"><i class="icon-facebook"></i></a>
+                                        <a class="met_color2" title="Tweet This on Twitter" target="_blank" href="http://twitter.com/home?status=Get Cacoon Now - http://metcreative.com/demo/demo_cacoon/blog_detail.html"><i class="icon-twitter"></i></a>
+                                        <a class="met_color2" title="Share This on Google+" target="_blank" href="https://plus.google.com/share?url=http://metcreative.com/demo/demo_cacoon/blog_detail.html"><i class="icon-google-plus"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        --></div>
+				</div>
+				<div class="span4 clearfix">
+					<iframe class="met_portfolio_item_preview" src="http://player.vimeo.com/video/67658001?byline=0&amp;portrait=0&amp;badge=0&amp;color=18adb6" width="570" height="300" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+					<div class="met_portfolio_item_details clearfix">
+						<div class="met_portfolio_item_descr met_bgcolor3">
+							<div class="met_color2">
+								<a href="portfolio_detail.html"><h3 class="met_color2 met_bold_one met_color_transition">VIMEO PREVIEW</h3></a>
+								<p>You can use any iframe video code like this one. Vimeo and Youtube are most popular ones.</p>
+							</div>
+						</div>
+						<div class="met_portfolio_item_share met_color2 met_bgcolor">
+							<span>SHARE</span>
+							<div class="met_portfolio_item_socials">
+								<div>
+									<a class="met_color2" title="Share This on Facebook" target="_blank" href="http://www.facebook.com/sharer.php?u=http://metcreative.com/demo/demo_cacoon/blog_detail.html"><i class="icon-facebook"></i></a>
+									<a class="met_color2" title="Tweet This on Twitter" target="_blank" href="http://twitter.com/home?status=Get Cacoon Now - http://metcreative.com/demo/demo_cacoon/blog_detail.html"><i class="icon-twitter"></i></a>
+									<a class="met_color2" title="Share This on Google+" target="_blank" href="https://plus.google.com/share?url=http://metcreative.com/demo/demo_cacoon/blog_detail.html"><i class="icon-google-plus"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="span4 clearfix">
+					<iframe class="met_portfolio_item_preview" width="570" height="300" src="http://www.youtube.com/embed/gPzELz6_wzU?rel=0&wmode=opaque" frameborder="0" allowfullscreen></iframe>
+					<div class="met_portfolio_item_details clearfix">
+						<div class="met_portfolio_item_descr met_bgcolor3">
+							<div class="met_color2">
+								<a href="portfolio_detail.html"><h3 class="met_color2 met_bold_one met_color_transition">YOUTUBE PREVIEW</h3></a>
+								<p>You can use any iframe video code like this one. Vimeo and Youtube are most popular ones.</p>
+							</div>
+						</div>
+						<div class="met_portfolio_item_share met_color2 met_bgcolor">
+							<span>SHARE</span>
+							<div class="met_portfolio_item_socials">
+								<div>
+									<a class="met_color2" title="Share This on Facebook" target="_blank" href="http://www.facebook.com/sharer.php?u=http://metcreative.com/demo/demo_cacoon/blog_detail.html"><i class="icon-facebook"></i></a>
+									<a class="met_color2" title="Tweet This on Twitter" target="_blank" href="http://twitter.com/home?status=Get Cacoon Now - http://metcreative.com/demo/demo_cacoon/blog_detail.html"><i class="icon-twitter"></i></a>
+									<a class="met_color2" title="Share This on Google+" target="_blank" href="https://plus.google.com/share?url=http://metcreative.com/demo/demo_cacoon/blog_detail.html"><i class="icon-google-plus"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="span4 clearfix">
+					<div class="met_portfolio_item_preview">
+						<div class="met_portfolio_item_slider_wrap clearfix">
+							<div class="met_portfolio_item_slider">
+								<a href="portfolio_detail.html"><img src="photos/portfolioList/2.jpg" alt=""/></a>
+								<a href="portfolio_detail.html"><img src="photos/portfolioList/3.jpg" alt=""/></a>
+							</div>
+							<a href="#" class="met_portfolio_item_slider_nav_prev"><i class="icon-chevron-left"></i></a>
+							<a href="#" class="met_portfolio_item_slider_nav_next"><i class="icon-chevron-right"></i></a>
+						</div>
+					</div>
+					<div class="met_portfolio_item_details clearfix">
+						<div class="met_portfolio_item_descr met_bgcolor3">
+							<div class="met_color2">
+								<a href="portfolio_detail.html"><h3 class="met_color2 met_bold_one met_color_transition">SLIDER PREVIEW</h3></a>
+								<p>You may have more than 1 picture of your project, you can use them like on this box.</p>
+							</div>
+						</div>
+						<div class="met_portfolio_item_share met_color2 met_bgcolor">
+							<span>SHARE</span>
+							<div class="met_portfolio_item_socials">
+								<div>
+									<a class="met_color2" title="Share This on Facebook" target="_blank" href="http://www.facebook.com/sharer.php?u=http://metcreative.com/demo/demo_cacoon/blog_detail.html"><i class="icon-facebook"></i></a>
+									<a class="met_color2" title="Tweet This on Twitter" target="_blank" href="http://twitter.com/home?status=Get Cacoon Now - http://metcreative.com/demo/demo_cacoon/blog_detail.html"><i class="icon-twitter"></i></a>
+									<a class="met_color2" title="Share This on Google+" target="_blank" href="https://plus.google.com/share?url=http://metcreative.com/demo/demo_cacoon/blog_detail.html"><i class="icon-google-plus"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="span4 clearfix">
+
+					<div class="met_portfolio_item_preview_wrap clearfix">
+						<a href="portfolio_detail.html" class="met_portfolio_item_preview"><img src="photos/portfolioList/4.jpg" alt=""/></a>
+						<div class="met_portfolio_item_overlay met_bgcolor6_trans">
+							<a href="photos/lightBoxImages/1.jpg" rel="lb_05" class="met_bgcolor met_color2 met_bgcolor_transition2"><i class="icon-film"></i></a>
+							<a href="portfolio_detail.html" class="met_bgcolor met_color2 met_bgcolor_transition2"><i class="icon-link"></i></a>
+						</div>
+
+						<div class="lightbox-images">
+							<a rel="lb_05" href="photos/lightBoxImages/2.jpg"></a>
+							<a rel="lb_05" href="photos/lightBoxImages/3.jpg"></a>
+						</div>
+					</div>
+
+					<div class="met_portfolio_item_details clearfix">
+						<div class="met_portfolio_item_descr met_bgcolor3">
+							<div class="met_color2">
+								<a href="portfolio_detail.html"><h3 class="met_color2 met_bold_one met_color_transition">IMAGE PREVIEW</h3></a>
+								<p>You can use an image to show in this page of portfolio detail. There are other options too!</p>
+							</div>
+						</div>
+						<div class="met_portfolio_item_share met_color2 met_bgcolor">
+							<span>SHARE</span>
+							<div class="met_portfolio_item_socials">
+								<div>
+									<a class="met_color2" title="Share This on Facebook" target="_blank" href="http://www.facebook.com/sharer.php?u=http://metcreative.com/demo/demo_cacoon/blog_detail.html"><i class="icon-facebook"></i></a>
+									<a class="met_color2" title="Tweet This on Twitter" target="_blank" href="http://twitter.com/home?status=Get Cacoon Now - http://metcreative.com/demo/demo_cacoon/blog_detail.html"><i class="icon-twitter"></i></a>
+									<a class="met_color2" title="Share This on Google+" target="_blank" href="https://plus.google.com/share?url=http://metcreative.com/demo/demo_cacoon/blog_detail.html"><i class="icon-google-plus"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="span4 clearfix">
+
+					<div class="met_portfolio_item_preview_wrap clearfix">
+						<a href="portfolio_detail.html" class="met_portfolio_item_preview"><img src="photos/portfolioList/5.jpg" alt=""/></a>
+						<div class="met_portfolio_item_overlay met_bgcolor6_trans">
+							<a href="photos/lightBoxImages/1.jpg" rel="lb_06" class="met_bgcolor met_color2 met_bgcolor_transition2"><i class="icon-film"></i></a>
+							<a href="portfolio_detail.html" class="met_bgcolor met_color2 met_bgcolor_transition2"><i class="icon-link"></i></a>
+						</div>
+
+						<div class="lightbox-images">
+							<a rel="lb_06" href="photos/lightBoxImages/2.jpg"></a>
+							<a rel="lb_06" href="photos/lightBoxImages/3.jpg"></a>
+						</div>
+					</div>
+
+					<div class="met_portfolio_item_details clearfix">
+						<div class="met_portfolio_item_descr met_bgcolor3">
+							<div class="met_color2">
+								<a href="portfolio_detail.html"><h3 class="met_color2 met_bold_one met_color_transition">IMAGE PREVIEW</h3></a>
+								<p>You can use an image to show in this page of portfolio detail. There are other options too!</p>
+							</div>
+						</div>
+						<div class="met_portfolio_item_share met_color2 met_bgcolor">
+							<span>SHARE</span>
+							<div class="met_portfolio_item_socials">
+								<div>
+									<a class="met_color2" title="Share This on Facebook" target="_blank" href="http://www.facebook.com/sharer.php?u=http://metcreative.com/demo/demo_cacoon/blog_detail.html"><i class="icon-facebook"></i></a>
+									<a class="met_color2" title="Tweet This on Twitter" target="_blank" href="http://twitter.com/home?status=Get Cacoon Now - http://metcreative.com/demo/demo_cacoon/blog_detail.html"><i class="icon-twitter"></i></a>
+									<a class="met_color2" title="Share This on Google+" target="_blank" href="https://plus.google.com/share?url=http://metcreative.com/demo/demo_cacoon/blog_detail.html"><i class="icon-google-plus"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</section>
+<!-- Services end -->
+
+	<!-- Contact -->
+	<section id="contact-section">
+
+		<div class="met_content">
+			<div class="row-fluid">
+				<div class="span12">
+					<div class="met_page_header met_bgcolor5 clearfix">
+						<h1 class="met_bgcolor met_color2">KONTAKT</h1>
+						<h2 class="met_color2">Twoje potrzeby naszym priorytetem !</h2>
+
+						<ul>
+							<li><a href="index.html" class="met_color2">Home</a></li>
+							<li class="met_color2">Kontakt</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="row-fluid">
+				<div class="span12">
+					<div id="map"></div>
+					<div class="met_contact_map_box met_bgcolor3 met_color2">
+						<div class="met_contact_info">
+							<h3 class="met_bold_one met_color">KONTAKT</h3>
+							<i class="icon-phone"></i> <span>Telefon</span>: 530-666-782<br>
+							<i class="icon-envelope"></i><span>E-mail</span>:<br>
+							<i class="icon-map-marker"></i> <span>Adres </span> : Wspólna 9/206<br>
+							<i class=""></i> <span></span><span>45-837 Opole</span><br>
 
 
+						</div>
 
+						<div class="met_contact_socials clearfix">
+							<h3 class="met_bold_one met_color">STAY IN TOUCH</h3>
+							<a class="met_color2 met_color_transition" target="_blank" href="http://www.facebook.com/sharer.php?u=http://metcreative.com/demo/cndm/blog_detail.html"><i class="icon-facebook"></i></a>
+							<a class="met_color2 met_color_transition" target="_blank" href="http://twitter.com/home?status=Get Condoma Now - http://metcreative.com/demo/cndm/blog_detail.html"><i class="icon-twitter"></i></a>
+							<a class="met_color2 met_color_transition" href="javascript:void((function(){var e=document.createElement('script'); e.setAttribute('type','text/javascript'); e.setAttribute('charset','UTF-8'); e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)})());"><i class="icon-pinterest"></i></a>
+							<a class="met_color2 met_color_transition" target="_blank" href="https://plus.google.com/share?url=http://metcreative.com/demo/cndm/blog_detail.html"><i class="icon-google-plus"></i></a>
+							<a class="met_color2 met_color_transition" href="#"><i class="icon-rss"></i></a>
+						</div>
+
+						<div class="met_contact_form">
+							<h3 class="met_bold_one met_color">CONTACT FORM</h3>
+							<form method="post" action="?" class="met_contact_form clearfix">
+								<input type="text" name="NameSurname" required="" placeholder="* Name and Surname">
+								<input type="email" name="EMail" required="" placeholder="* E-Mail">
+								<textarea name="Message" required="" placeholder="* Message"></textarea>
+								<div class="met_contact_thank_you">We've received your message.
+									<br>Thank you!</div>
+								<input type="submit" value="SEND" class="met_bgcolor met_color2">
+							</form>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</section>
+	<!-- Contact ends -->
 <!--Footer-->
 
 <div class="met_twitter_ticker_wrap met_bgcolor">
@@ -277,8 +927,8 @@
 	<div class="met_content">
 		<div class="row-fluid">
 			<div class="span4">
-				<h3 class="met_color2">GET IN TOUCH</h3>
-				<span class="met_color2">Lorem ipsum dolor sit amet, consectetur adipisicing</span>
+				<h3 class="met_color2">ODWIEDŹ NAS W INTERNECIE</h3>
+				<br>
 				<div class="met_footer_social_icons">
 					<a class="met_color2 met_color_transition" target="_blank" href="http://www.facebook.com/"><i class="icon-facebook"></i></a>
 					<a class="met_color2 met_color_transition" target="_blank" href="http://twitter.com/"><i class="icon-twitter"></i></a>
@@ -289,20 +939,20 @@
 			</div>
 			<div class="span8">
 				<ul class="met_footer_menu">
-					<li><a class="met_color2" href="index.html">Home</a></li>
-					<li><a class="met_color2" href="aboutus.html">About Us</a></li>
+					<li><a class="met_color2" href="index.html">Strona główna</a></li>
+					<li><a class="met_color2 page-scroll" href="#about-section">O nas</a></li>
 					<li><a class="met_color2" href="portfolio.html">Portfolio</a></li>
-					<li><a class="met_color2" href="services.html">Services</a></li>
+					<li><a class="met_color2" href="services.html">Usługi</a></li>
 					<li><a class="met_color2" href="404.html">404</a></li>
-					<li><a class="met_color2" href="blog.html">Blog</a></li>
+					<li><a class="met_color2" href="blog.html">Kontakt</a></li>
 				</ul>
 				<select class="met_responsive_nav">
-					<option value="index.php">Home</option>
-					<option value="aboutus.php">About Us</option>
+					<option value="index.php">Strona główna</option>
+					<option value="#about-section">O nas</option>
 					<option value="portfolio.php">Portfolio</option>
-					<option value="services.php">Services</option>
+					<option value="services.php">Usługi</option>
 					<option value="404.php">404</option>
-					<option value="blog.php">Blog</option>
+					<option value="blog.php">Kontakt</option>
 				</select>
 			</div>
 		</div>

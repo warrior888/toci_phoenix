@@ -49,7 +49,7 @@
 	General
  ------------------------------*/
 .met_color {
-	color : #18ADB5;
+	color : #FFBA54;
 }
 
 .met_color2 {
@@ -61,7 +61,8 @@
 }
 
 .met_bgcolor {
-	background-color : #18ADB5;
+	background-color :  #FFBA54;
+	//#FFCC66;
 }
 
 .met_bgcolor2 {
@@ -154,7 +155,7 @@
 }
 
 .met_page_wrapper {
-	background-color : #FFFFFF;
+	background-color : #CECECE;
 	overflow         : hidden;
 	position         : relative;
 	z-index          : 3;
@@ -2174,7 +2175,7 @@ footer > .met_content {
 
 .met_portfolio_item_descr {
 	float : left;
-	width : 75%;
+	width : 100%;
 }
 
 .met_portfolio_item_descr div {
