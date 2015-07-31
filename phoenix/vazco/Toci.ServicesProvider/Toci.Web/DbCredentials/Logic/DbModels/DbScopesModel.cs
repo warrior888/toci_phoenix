@@ -9,11 +9,11 @@ namespace DbCredentials.Logic.DbModels
         public string ScopeName { get; set; }
 
         protected const string tableName = "Scopes";
-        private const string scopeIDColumnName = "ScopeID";
-        private const string scopeNameColumnName = "ScopeName";
+        protected const int scopeIdPosition = 0;
+        protected const int scopeNamePosition = 1;
 
 
-        public DbScopesModel(string tableName) : base(tableName)
+        public DbScopesModel() : base(tableName)
         {
         }
 
@@ -21,15 +21,15 @@ namespace DbCredentials.Logic.DbModels
         {
             return this;
         }
-        public void SetScopeID(int scopeID)
-        {
-            SetValue(scopeIDColumnName, scopeID);
-        }
 
-        public void SetScopeName(string scopeName)
-        {
-            SetValue(scopeNameColumnName, scopeName);
-        }
 
+        public override DbModel FillPropertis(object[] item)
+        {
+            return new DbScopesModel
+            {
+                ScopeID = (int)item[scopeIdPosition],
+                ScopeName = (string)item[scopeNamePosition]
+            };
+        }
     }
 }

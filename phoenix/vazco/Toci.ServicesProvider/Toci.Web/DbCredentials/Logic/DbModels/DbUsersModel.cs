@@ -9,12 +9,12 @@ namespace DbCredentials.Logic.DbModels
         public int ScopeID { get; set; }
         public string UserLogin { get; set; }
         public string UserPassword { get; set; }
-        
+
         protected const string tableName = "Users";
-        private const string userIDColumnName = "UserID";
-        private const string scopeIDColumnName = "ScopeID";
-        private const string userLoginColumnName = "UserLogin";
-        private const string userPasswordColumnName = "UserPassword";
+        protected const int userIdPosition = 0;
+        protected const int scopeIdPosition = 1;
+        protected const int userLoginPosition = 2;
+        protected const int userPasswordPosition = 3;
 
         public DbUsersModel() : base(tableName)
         {
@@ -25,25 +25,15 @@ namespace DbCredentials.Logic.DbModels
             return this;
         }
 
-        public void SetUserID(int userID)
+        public override DbModel FillPropertis(object[] item)
         {
-            SetValue(userIDColumnName, userID);
+            return new DbUsersModel
+            {
+                UserID = (int) item[userIdPosition],
+                ScopeID = (int) item[scopeIdPosition],
+                UserLogin = (string) item[userLoginPosition],
+                UserPassword = (string) item[userPasswordPosition]
+            };
         }
-
-        public void SetScopeID(int scopeID)
-        {
-            SetValue(scopeIDColumnName, scopeID);
-        }
-
-        public void SetUserLogin(string userLogin)
-        {
-            SetValue(userLoginColumnName, userLogin);
-        }
-
-        public void SetUserPassword(string userPassword)
-        {
-            SetValue(userPasswordColumnName, userPassword);
-        }
-
     }
 }

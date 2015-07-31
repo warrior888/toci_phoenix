@@ -1,4 +1,5 @@
-﻿using DbCredentials.Config;
+﻿using System.Collections.Generic;
+using DbCredentials.Config;
 using Toci.Db.DbVirtualization;
 using Toci.Db.Interfaces;
 
@@ -11,11 +12,12 @@ namespace DbCredentials.Logic.DbModels
         public int ProjectID { get; set; }
 
         protected const string tableName = "ProjectAccess";
-        private const string accessIDColumnName = "AccessID";
-        private const string userIDColumnName = "UserID";
-        private const string projectIDColumnName = "ProjectID";
+        protected const int accessIdPosition = 0;
+        protected const int userIdPosition = 1;
+        protected const int projectIdPosition = 2;
+        
 
-        public DbProjectAccessModel() : base(tableName)
+        public DbProjectAccessModel(): base(tableName)
         {
         }
 
@@ -24,21 +26,14 @@ namespace DbCredentials.Logic.DbModels
             return this;
         }
 
-        public void SetAccessID(int accessID)
+        public override DbModel FillPropertis(object[] item)
         {
-            SetValue(accessIDColumnName, accessID);
+            return new DbProjectAccessModel 
+            {
+                AccessID = (int) item[accessIdPosition], 
+                UserID = (int)item[userIdPosition], 
+                ProjectID = (int)item[projectIdPosition]
+            };
         }
-
-        public void SetUserID(int userID)
-        {
-            SetValue(userIDColumnName, userID);
-        }
-
-        public void SetProjectID(int projectID)
-        {
-            SetValue(projectIDColumnName, projectID);
-        }
-
-        
     }
 }
