@@ -14,5 +14,4 @@ function CustomEmailPrompterForContactForm(fieldsId, referenceInput) {
     var surname = senderFullName[1];
 
     SetEmailPrompPlaceholder(referenceInput, name, surname);
-
 }

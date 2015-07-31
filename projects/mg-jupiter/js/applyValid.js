@@ -15,9 +15,3 @@ function CustomEmailPrompterForApllyForm(fieldsId, referenceInput) {
     SetEmailPrompPlaceholder(referenceInput, applicantNameValue, applicantSurnameValue);
 }
 
-
-function SetEmailPrompPlaceholder(inputFormEmail, senderName, senderSurname) {
-    if (senderName + senderSurname !== '') {
-        inputFormEmail.attr('placeholder', senderName + '.' + senderSurname + '@example.com');
-    }
-}

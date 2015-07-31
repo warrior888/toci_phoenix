@@ -1,34 +1,50 @@
-﻿function FormDecorator(formId, destination) {
+﻿
+
+function FormDecorator(formId, destination) {
 
     this.formId = formId;
     this.destination = destination;
+
+    var answerContainer = document.createElement('div');
+    $(answerContainer).attr('id', 'answerContainer');
+
+
+    function callbackAction(divClass, message) {
+        if (!$('#' + formId).find('#answerContainer').length) {
+            $('#' + formId).append(answerContainer);
+        }
+        $(answerContainer).append(''+message)
+                          .addClass(divClass);
+
+
+        //$('#' + formId).append('<div class="' + divClass + '">' + message + '</div>');
+        $('#' + formId).find(':input').each(function () {
+            $(this).val('');
+        });
+    }
 
     function getFormData() {
         var values = $('#' + formId).serialize();
         return values;
     }
 
-    function callbackAction(data) {
-        $('#' + formId).append('<div class="alert alert-success">' + data.message + '</div>');
-        $('#' + formId).find(':input').each(function () {
-            $(this).val('');
-        });
+    function successAction(data) {
+        callbackAction('alert alert-success', data.message);
     }
 
-    //trzeba podgrac styl, tak zeby napis wyswietlil sie w czerwonej ramce
-    /*function failAction(data) {
-        $('#' + formId).append('<div class="alert alert-success">' + data.message + '</div>');
-        $('#' + formId).find(':input').each(function () {
-            $(this).val('');
-        });
-    }*/
+    function failAction(data) {
+        callbackAction('alert alert-danger', data.message);
+    }
 
     return {
         getFormData: getFormData,
-        callbackAction: callbackAction,
+        successAction: successAction,
+        failAction : failAction,
         destination: destination
     };
 }
+
+/* ************************************************************ */
 
 function SubmitForm(form, event) {
     console.log(form);
@@ -41,11 +57,13 @@ function SubmitForm(form, event) {
     })
         .done(function (data) {
             if (data.result === true) {
-                form.callbackAction(data);
+                form.successAction(data);
+            } else {
+                form.successAction(data);
             }
         })
          .fail(function (data) {
-             form.callbackAction(data);
+             form.successAction(data);
          });
 
     event.preventDefault();
