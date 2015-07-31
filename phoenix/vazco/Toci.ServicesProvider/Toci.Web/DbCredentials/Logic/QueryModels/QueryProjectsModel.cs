@@ -6,10 +6,10 @@ namespace DbCredentials.Logic.QueryModels
     public class QueryProjectsModel: QueryModel
     {
         protected const string tableName = "Projects";
-        private const string projectIDColumnName = "ProjectID";
-        private const string scopeIDColumnName = "ScopeID";
-        private const string projectNameColumnName = "ProjectName";
-        private const string projectDataColumnName = "ProjectData";
+        protected const string projectIDColumnName = "ProjectID";
+        protected const string scopeIDColumnName = "ScopeID";
+        protected const string projectNameColumnName = "ProjectName";
+        protected const string projectDataColumnName = "ProjectData";
 
         public QueryProjectsModel() : base(tableName)
         {

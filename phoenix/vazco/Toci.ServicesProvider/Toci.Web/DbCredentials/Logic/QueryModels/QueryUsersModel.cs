@@ -6,10 +6,10 @@ namespace DbCredentials.Logic.QueryModels
     public class QueryUsersModel: QueryModel
     {
         protected const string tableName = "Users";
-        private const string userIDColumnName = "UserID";
-        private const string scopeIDColumnName = "ScopeID";
-        private const string userLoginColumnName = "UserLogin";
-        private const string userPasswordColumnName = "UserPassword";
+        protected const string userIDColumnName = "UserID";
+        protected const string scopeIDColumnName = "ScopeID";
+        protected const string userLoginColumnName = "UserLogin";
+        protected const string userPasswordColumnName = "UserPassword";
 
         public QueryUsersModel(): base(tableName)
         {

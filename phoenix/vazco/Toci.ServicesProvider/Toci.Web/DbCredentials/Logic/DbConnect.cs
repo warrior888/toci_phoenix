@@ -14,10 +14,10 @@ namespace DbCredentials.Logic
 
         static DbConnect()
         {
-            login = LoadConfig.address;
-            secret = LoadConfig.secret;
-            address = LoadConfig.address;
-            dataBaseName = LoadConfig.dataBaseName;
+            login = DbConfig.address;
+            secret = DbConfig.secret;
+            address = DbConfig.address;
+            dataBaseName = DbConfig.dataBaseName;
         }
 
         public static DbHandle Connect()

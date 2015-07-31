@@ -6,9 +6,9 @@ namespace DbCredentials.Logic.QueryModels
     public class QueryProjectAccessModel: QueryModel
     {
         protected const string tableName = "ProjectAccess";
-        private const string accessIDColumnName = "AccessID";
-        private const string userIDColumnName = "UserID";
-        private const string projectIDColumnName = "ProjectID";
+        protected const string accessIDColumnName = "AccessID";
+        protected const string userIDColumnName = "UserID";
+        protected const string projectIDColumnName = "ProjectID";
 
         public QueryProjectAccessModel() : base(tableName)
         {

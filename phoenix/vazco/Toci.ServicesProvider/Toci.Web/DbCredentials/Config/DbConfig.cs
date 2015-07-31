@@ -1,6 +1,6 @@
 ﻿namespace DbCredentials.Config
 {
-    public static class LoadConfig
+    public static class DbConfig
     {
         public static string dataBaseName = "ImportantStuffDB";
         public static string login = "sa";

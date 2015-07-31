@@ -6,8 +6,8 @@ namespace DbCredentials.Logic.QueryModels
     public class QueryScopesModel: QueryModel
     {
         protected const string tableName = "Scopes";
-        private const string scopeIDColumnName = "ScopeID";
-        private const string scopeNameColumnName = "ScopeName";
+        protected const string scopeIDColumnName = "ScopeID";
+        protected const string scopeNameColumnName = "ScopeName";
         
         public QueryScopesModel() : base(tableName)
         {
