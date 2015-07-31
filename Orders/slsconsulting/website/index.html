@@ -71,6 +71,10 @@
 	<script src="js/servicesLoading.js"></script>
 	<script src="js/init.js"></script>
 
+	<script src="js/form-utils.js"></script>
+	<script src="js/contact-form.js"></script>
+	<script src="js/UtilsForAttrData.js"></script>
+
 
 	<style id="colorChanges" type="text/css"></style>
 </head>
@@ -632,9 +636,9 @@
 
 						<div class="met_contact_form">
 							<h3 class="met_bold_one met_color">NAPISZ DO NAS</h3>
-							<form method="post" action="?" class="met_contact_form clearfix">
-								<input type="text" name="NameSurname" required="" placeholder="* Imię i nazwisko">
-								<input type="email" name="EMail" required="" placeholder="* Adres e-Mail">
+							<form id="contact-form" method="post" action="?" class="met_contact_form clearfix">
+								<input id="NameSurname" type="text" name="NameSurname" required="" pattern="^[A-za-ząćęłńóśźżĄĘŁŃÓŚŹŻ -]{6,}$" placeholder="* Imię i nazwisko">
+								<input id="contact-input-email" type="email" data-validate-other-field-if="CustomEmailPrompterForContactForm" data-other-field-id="NameSurname" name="EMail" required="" placeholder="* Adres e-Mail">
 								<textarea name="Message" required="" placeholder="* Wiadomość"></textarea>
 								<div class="met_contact_thank_you">Otrzymaliśmy Twoją wiadomość.
 									<br>Dziękujemy!</div>
