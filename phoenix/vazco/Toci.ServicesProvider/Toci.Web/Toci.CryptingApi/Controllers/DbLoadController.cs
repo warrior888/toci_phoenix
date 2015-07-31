@@ -10,13 +10,14 @@ namespace Toci.CryptingApi.Controllers
 {
     public class DbLoadController : ApiController
     {
+        private const string empty = "";
         [Route("api/models/load")]
         [HttpGet]
-        public IEnumerable<DbModel> LoadDbModels(string name="")
+        public IEnumerable<DbModel> LoadDbModels(string name=empty)
         {
             var load = new DbLoad();
 
-            return name != "" ? load.Load().Where(x => x.nick == name) : load.Load();
+            return name != empty ? load.Load().Where(x => x.nick == name) : load.Load();
         }
 
     }

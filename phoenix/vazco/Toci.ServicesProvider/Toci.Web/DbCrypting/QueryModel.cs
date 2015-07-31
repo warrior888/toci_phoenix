@@ -27,21 +27,25 @@ namespace DbCrypting
 
         public void SetData(string data)
         {
-            SetValue(DataColumnName, data);
+            //SetValue(DataColumnName, data);
+            AddIsWhere(DataColumnName,data,false);
         }
 
         public void SetTime(DateTime time)
         {
-            SetValue(TimeColumnName, time);
+            //SetValue(TimeColumnName, time);
+            AddIsWhere(TimeColumnName,time,false);
         }
 
         public  void SetNick(string nick)
         {
-            SetValue(NickColumnName, nick);
+            //SetValue(NickColumnName, nick);
+            AddIsWhere(NickColumnName,nick,false);
         }
         public void SetHash(string hash)
         {
-            SetValue(HashColumnName, hash);
+            //SetValue(HashColumnName, hash);
+            AddIsWhere(HashColumnName,hash,false);
         }
         public void SetAll()
         {
