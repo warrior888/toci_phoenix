@@ -19,7 +19,7 @@ require_once 'SendMail.php';
 		public function sendConfirmationMail($applicant)
 		{
 			$signature=$this->CreateSignature($applicant['email']);
-			$confirmLink="http://www.toci.com.pl/confirm.php?signature=$signature";
+			$confirmLink="http://www.toci.com.pl/server/confirm.php?signature=$signature";
 			$subject="Potwierdzenie udziału w szkoleniu TOCI";
 			$message="co tam mordo, łap linka <br>".$confirmLink;
 

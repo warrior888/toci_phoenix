@@ -1,4 +1,15 @@
-﻿<?php
+﻿<link href="../css/style.css" rel="stylesheet">
+
+<style>
+
+	body {
+		margin: 0;
+		padding: 0;
+	}g
+
+</style>
+
+<?php
 
 require_once "Db.php";
 
@@ -9,15 +20,15 @@ require_once "Db.php";
 		$result=$db->Get("applicants","mailconfirmed, signature"," signature='$signature'");
 		$array=pg_fetch_array($result);
 
-		echo "<pre>";
-		var_dump($array);
 
 		if($array["mailconfirmed"]=="f")
 		{
 			$db->Set("applicants","mailconfirmed=true","signature='".pg_escape_string($signature)."'");
-			echo "<br><br>Mail zostal potweirdzony";
+			echo '<div id="answerContainer" class="alert alert-success">Zapisano aplikacje w bazie danych</div>';
 		}
+
 		else{
-			echo "<br><br>ten link aktywacyjny zostal juz wykorzystany";
+			echo '<div id="answerContainer" class="alert alert-danger">Podany link aktywacyjny zostal juz wykrozystany</div>';
 		}
 	}
+
