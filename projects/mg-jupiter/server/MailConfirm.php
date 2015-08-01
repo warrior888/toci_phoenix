@@ -1,17 +1,37 @@
 ﻿<?php
 
+require_once 'Db.php';
+require_once 'SendMail.php';
+
 	class MailConfirm 
 	{
-		$salt = 'fnduwoghwoghweoghwghwdiguohwergo';
+		public $db;
+		public $mailer;
+
+		public function __construct()
+		{
+			$this->db=new Db();
+			$this->mailer=new MailSender();
+			$this->salt1="sdretf";
+			$this->salt2="54fsds";
+		}
+
+		public function sendConfirmationMail($applicant)
+		{
+			$signature=$this->CreateSignature($applicant['email']);
+			$confirmLink="http://www.toci.com.pl/confirm.php?signature=$signature";
+			$subject="Potwierdzenie udziału w szkoleniu TOCI";
+			$message="co tam mordo, łap linka <br>".$confirmLink;
+
+			$result=$this->mailer->SendMail($subject,$message,$applicant['email'],$applicant['name']);
+
+			return $result?$signature:false;
+
+		}
 
 		public function CreateSignature($mail)
 		{
-			$signature = md5($mail.$this->salt.date('h:i:s'));
-
-			// save to db signature
-			//generate link confirm.php?signature=$signature
-
-			// wsylac na $mail
+			return md5($this->salt1.$mail.$this->salt2.microtime(true));
 		}
 
 		public function Verify($sign)

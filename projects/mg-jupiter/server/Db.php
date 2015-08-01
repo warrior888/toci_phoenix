@@ -5,7 +5,7 @@ require_once 'DbHandle.php';
 
 	class Db
 	{
-		private $DbHandle;
+		public $DbHandle;
 
 		public function Db()
 		{
@@ -22,4 +22,15 @@ require_once 'DbHandle.php';
 
 			return $this->DbHandle->Query($insert);
 		}
+
+		public function Get($table,$items,$where){
+			$query="select $items from $table where $where";
+			return $this->DbHandle->Query($query);
+		}
+
+		public function Set($table,$set,$where){
+			$query="update $table set $set where $where";
+			return $this->DbHandle->Query($query);
+		}
+
 	}

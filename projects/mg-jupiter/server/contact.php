@@ -27,10 +27,13 @@ if(!MailAddressValidator::checkMail($askerMailAddress))
 
 $askerName = $_POST['contact-input-name'];
 $askerSubject= $_POST['contact-input-subject'];
-$askerMessage= $_POST['contact-input-message'];
+
+$askerMessage= "Przesłał: ".$askerName.", mail: ".$_POST['contact-input-message']." <br/ ><br />".$_POST['contact-input-message'];
+
+
 
 $mail=new MailSender();
-$result = $mail->SendMail($askerSubject,$askerMessage,$askerMailAddress,$askerName);
+$result = $mail->SendMail($askerSubject,$askerMessage,"tociszkolenia@gmail.com",$askerName);
 
 $message = $result ? 'Mail wysłano pomyślnie.' : 'Wystąpił błąd przy próbie wysłania maila.';
 
