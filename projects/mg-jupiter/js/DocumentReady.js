@@ -7,7 +7,7 @@ $(document).ready(function()
     $("#video-carousel").owlCarousel(
         {
             autoPlay: 3000,
-            lazyLoad : true,
+
             responsive: {
 
                 0: {
