@@ -1,9 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "toci phoenix 0.5", "toci phoenix 0.5.csproj", "{808DC54D-3977-413E-8354-E9156ECD4C6B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.Db", "..\..\Toci.Db\Toci.Db.csproj", "{E45EA1C2-F40C-4903-94C3-30A885A71D33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pentagram", "pentagram\Pentagram\Pentagram.csproj", "{D682FD2B-A5BB-40DF-901D-6180215D961F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.Pentagram.Logic", "pentagram\Toci.Pentagram.Logic\Toci.Pentagram.Logic.csproj", "{F8382E60-8D02-4228-AADA-68ED88FAF9D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.Utilities", "..\..\Toci.Utilities\Toci.Utilities.csproj", "{A7951807-F924-4108-A63B-253CE3F5B045}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +23,22 @@ Global
 		{808DC54D-3977-413E-8354-E9156ECD4C6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{808DC54D-3977-413E-8354-E9156ECD4C6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{808DC54D-3977-413E-8354-E9156ECD4C6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E45EA1C2-F40C-4903-94C3-30A885A71D33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E45EA1C2-F40C-4903-94C3-30A885A71D33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E45EA1C2-F40C-4903-94C3-30A885A71D33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E45EA1C2-F40C-4903-94C3-30A885A71D33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D682FD2B-A5BB-40DF-901D-6180215D961F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D682FD2B-A5BB-40DF-901D-6180215D961F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D682FD2B-A5BB-40DF-901D-6180215D961F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D682FD2B-A5BB-40DF-901D-6180215D961F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8382E60-8D02-4228-AADA-68ED88FAF9D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8382E60-8D02-4228-AADA-68ED88FAF9D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8382E60-8D02-4228-AADA-68ED88FAF9D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8382E60-8D02-4228-AADA-68ED88FAF9D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7951807-F924-4108-A63B-253CE3F5B045}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7951807-F924-4108-A63B-253CE3F5B045}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7951807-F924-4108-A63B-253CE3F5B045}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7951807-F924-4108-A63B-253CE3F5B045}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
