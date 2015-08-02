@@ -80,93 +80,93 @@
 
 		// ====================================================================
 
-		// Carousels
-
-		$("#featured-posts .owl-carousel").owlCarousel({
-			items: 3,
-			margin: 30,
-			loop: true,
-			dots: false,
-			autoplay: true,
-			autoplaySpeed: 1500,
-			nav: true,
-			navText: ['<a class="btn btn-primary"><i class="fa fa-caret-left"></i></a>','<a class="btn btn-primary"><i class="fa fa-caret-right"></i></a>'],
-			responsive:{
-				0:{
-					items:1
-				},
-				767:{
-					items:2
-				},
-				991:{
-					items:3
-				}
-			}
-		});
-
-		$("#featured-teachers .owl-carousel").owlCarousel({
-			items: 4,
-			margin: 30,
-			loop: true,
-			dots: false,
-			autoplay: true,
-			autoplaySpeed: 1500,
-			nav: true,
-			navText: ['<a class="btn btn-primary"><i class="fa fa-caret-left"></i></a>','<a class="btn btn-primary"><i class="fa fa-caret-right"></i></a>'],
-			responsive:{
-				0:{
-					items:1
-				},
-				481:{
-					items:2
-				},
-				767:{
-					items:3
-				},
-				991:{
-					items:4
-				}
-			}
-		});
-
-		$("#recent-posts .owl-carousel").owlCarousel({
-			items: 2,
-			margin: 30,
-			loop: true,
-			dots: false,
-			autoplay: true,
-			autoplaySpeed: 1500,
-			nav: true,
-			navText: ['<a class="btn btn-primary"><i class="fa fa-caret-left"></i></a>','<a class="btn btn-primary"><i class="fa fa-caret-right"></i></a>'],
-			responsive:{
-				0:{
-					items:1
-				},
-				767:{
-					items:2
-				}
-			}
-		});
-
-		$("#teachers-reviews .owl-carousel").owlCarousel({
-			animateOut: 'slideOutDown',
-			animateIn: 'flipInX',
-			items: 1,
-			loop: true,
-			autoplay: true,
-			dots: false,
-			smartSpeed:450
-		});
-
-		$("#about-reviews .owl-carousel").owlCarousel({
-			animateOut: 'slideOutDown',
-			animateIn: 'flipInX',
-			items: 1,
-			loop: true,
-			autoplay: true,
-			dots: false,
-			smartSpeed:450
-		});
+		//// Carousels
+        //
+		//$("#featured-posts .owl-carousel").owlCarousel({
+		//	items: 3,
+		//	margin: 30,
+		//	loop: true,
+		//	dots: false,
+		//	autoplay: true,
+		//	autoplaySpeed: 1500,
+		//	nav: true,
+		//	navText: ['<a class="btn btn-primary"><i class="fa fa-caret-left"></i></a>','<a class="btn btn-primary"><i class="fa fa-caret-right"></i></a>'],
+		//	responsive:{
+		//		0:{
+		//			items:1
+		//		},
+		//		767:{
+		//			items:2
+		//		},
+		//		991:{
+		//			items:3
+		//		}
+		//	}
+		//});
+        //
+		//$("#featured-teachers .owl-carousel").owlCarousel({
+		//	items: 4,
+		//	margin: 30,
+		//	loop: true,
+		//	dots: false,
+		//	autoplay: true,
+		//	autoplaySpeed: 1500,
+		//	nav: true,
+		//	navText: ['<a class="btn btn-primary"><i class="fa fa-caret-left"></i></a>','<a class="btn btn-primary"><i class="fa fa-caret-right"></i></a>'],
+		//	responsive:{
+		//		0:{
+		//			items:1
+		//		},
+		//		481:{
+		//			items:2
+		//		},
+		//		767:{
+		//			items:3
+		//		},
+		//		991:{
+		//			items:4
+		//		}
+		//	}
+		//});
+        //
+		//$("#recent-posts .owl-carousel").owlCarousel({
+		//	items: 2,
+		//	margin: 30,
+		//	loop: true,
+		//	dots: false,
+		//	autoplay: true,
+		//	autoplaySpeed: 1500,
+		//	nav: true,
+		//	navText: ['<a class="btn btn-primary"><i class="fa fa-caret-left"></i></a>','<a class="btn btn-primary"><i class="fa fa-caret-right"></i></a>'],
+		//	responsive:{
+		//		0:{
+		//			items:1
+		//		},
+		//		767:{
+		//			items:2
+		//		}
+		//	}
+		//});
+        //
+		//$("#teachers-reviews .owl-carousel").owlCarousel({
+		//	animateOut: 'slideOutDown',
+		//	animateIn: 'flipInX',
+		//	items: 1,
+		//	loop: true,
+		//	autoplay: true,
+		//	dots: false,
+		//	smartSpeed:450
+		//});
+        //
+		//$("#about-reviews .owl-carousel").owlCarousel({
+		//	animateOut: 'slideOutDown',
+		//	animateIn: 'flipInX',
+		//	items: 1,
+		//	loop: true,
+		//	autoplay: true,
+		//	dots: false,
+		//	smartSpeed:450
+		//});
 
 		// ====================================================================
 
