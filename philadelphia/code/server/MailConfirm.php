@@ -18,14 +18,17 @@ require_once 'SendMail.php';
 
 		public function sendConfirmationMail($applicant)
 		{
+			$serverUrl = 'www.toci.com.pl';
+			$serverUrl = 'localhost';
+			
 			$signature=$this->CreateSignature($applicant['email']);
-			$confirmLink="http://www.toci.com.pl/server/confirm.php?signature=$signature";
-			$subject="Potwierdzenie udziału w szkoleniu TOCI";
-			$message="co tam mordo, łap linka <br>".$confirmLink;
+			$confirmLink="http://".$serverUrl."/server/confirm.php?signature=$signature";
+			$subject="Potwierdzenie woli uczestnictwa w szkoleniu TOCI";
+			$message="Aby potwierdzić swoj adres e-mail kliknij w poniższy odnośnik. Wiadomość została wygenerowana automatycznie, nie ma konieczności odpowiadania na nią. <br>".$confirmLink;
 
 			$result=$this->mailer->SendMail($subject,$message,$applicant['email'],$applicant['name']);
 
-			return $result?$signature:false;
+			return $result ? $signature : false;
 
 		}
 

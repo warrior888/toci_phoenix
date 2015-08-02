@@ -28,7 +28,7 @@ class MailSender{
 		$this->mail->Subject=$subject;
 		$this->mail->Body=$message;
 		$this->mail->AddAddress($senderEmail);
-		//$this->mail->SetFrom($senderEmail);
+		$this->mail->SetFrom($senderEmail);
 
 		return $this->mail->Send();
 	}

@@ -1,25 +1,34 @@
 ﻿
+var elementsStyles = {
+    'bootstrapGreenRedStyle' : {'whenSuccess' : 'alert alert-success',
+                                'whenFailed' : 'alert alert-danger'}
+};
+
+elementsStyles.get
+
+var answerContainers = {
+    'apply-form' : {'style' : elementsStyles['bootstrapGreenRedStyle'],
+                    'id' : 'answerContainer_unique44567'},
+    'contact-form' : {'style' : elementsStyles['bootstrapGreenRedStyle'],
+                      'id' : 'answerContainer_unique44568'}
+};
+
+answerContainers.getStyleForAnswer = function(elementId,style){
+    return answerContainers[elementId]['style'][style];
+}
+
+answerContainers.getContainerId = function(elementId){
+    return answerContainers[elementId]['id'];
+}
+
+/* ************************************************************ */
 
 function FormDecorator(formId, destination) {
 
     this.formId = formId;
     this.destination = destination;
+    var answerContainer;
 
-    var answerContainer = $("<div>");
-    $(answerContainer).attr('id', 'answerContainer');
-
-
-    function callbackAction(divClass, message) {
-        if (!$('#' + formId).find('#answerContainer').length) {
-            $('#' + formId).append(answerContainer);
-        }
-        $(answerContainer).append(''+message)
-                          .addClass(divClass);
-
-        $('#' + formId).find(':input').each(function () {
-            $(this).val('');
-        });
-    }
 
     function getFormData() {
         var values = $('#' + formId).serialize();
@@ -27,11 +36,33 @@ function FormDecorator(formId, destination) {
     }
 
     function successAction(data) {
-        callbackAction('alert alert-success', data.message);
+        callbackAction(answerContainers.getStyleForAnswer(formId,'whenSuccess'), data.message);
     }
 
     function failAction(data) {
-        callbackAction('alert alert-danger', data.message);
+        callbackAction(answerContainers.getStyleForAnswer(formId,'whenFailed'), data.message);
+    }
+
+    function clearInputs(){
+        $('#' + formId).find(':input').each(function () {
+            $(this).val('');
+        });
+    }
+    function appendAnswerContainer(containerId) {
+        answerContainer = $("<div>", {
+            id: containerId
+        });
+        $('#' + formId).append(answerContainer);
+    }
+
+    function callbackAction(divClass, message) {
+        var containerId = answerContainers.getContainerId(formId);
+        if (!$('#' + formId).find('#' + containerId).length) {
+            appendAnswerContainer(containerId);
+        }
+        $(answerContainer).append(''+message)
+            .addClass(divClass);
+        clearInputs();
     }
 
     return {
@@ -45,7 +76,6 @@ function FormDecorator(formId, destination) {
 /* ************************************************************ */
 
 function SubmitForm(form, event) {
-    console.log(form);
     $.ajax({
         type: 'POST',
         url: form.destination,

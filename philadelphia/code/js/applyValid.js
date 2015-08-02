@@ -7,11 +7,7 @@ $(document).ready(function () {
 
 /* ************************************************************ */
 
-function CustomEmailPrompterForApllyForm(fieldsId, referenceInput) {
-
-    var applicantNameValue = $('#' + fieldsId['applicantNameId']).val();
-    var applicantSurnameValue = $('#' + fieldsId['applicantSurnameId']).val();
-
-    SetEmailPrompPlaceholder(referenceInput, applicantNameValue, applicantSurnameValue);
+function CustomEmailPrompterForApllyForm(fieldsValues, referenceInput) {
+    SetEmailPrompPlaceholder(referenceInput, fieldsValues['applicantNameId'], fieldsValues['applicantSurnameId']);
 }
 

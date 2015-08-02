@@ -7,7 +7,7 @@ require_once "MailAddressValidator.php";
 
 
 if(!(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && !empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest')) {
-    die("Zablokowano nie-ajax");
+    die("Niepoprawne żądanie. ");
 }
 
 if(!(isset($_POST['applicantName'])&&
@@ -16,7 +16,7 @@ if(!(isset($_POST['applicantName'])&&
     isset($_POST['applicantPhone'])
 ))
 {
-    die("Brak wszystkich danych"); // brak wszystkich dnaych
+    die("Brak wszystkich danych"); 
 }
 
 $applicant['email'] = $_POST['applicantEmail'];
@@ -44,11 +44,11 @@ $json=array();
 
 if ($result==false)
 {
-    $json['message']="Wystąpił błąd przy próbie zapisania:".pg_last_error($db->DbHandle->database);
+    $json['message']="Wystąpił nieoczekiwany błąd przy próbie zapisania."; //.pg_last_error($db->DbHandle->database);
     $json['result']=false;
 }
 else{
-    $json['message']="Przeczytaj maila aby potwierdzić rejestracje";
+    $json['message']="Na podany adres e-mail wysłano wiadomość. Aby potwierdzić rejestrację należy postąpić zgodnie z instrukcjami w wiadomości.";
     $json['result']=true;
 }
 

@@ -17,7 +17,7 @@ require_once 'DbHandle.php';
 		public function Save($table, $items)
 		{
 			//generate insert
-			//DbHandle Query
+			//DbHandle Query                  //kol1, kol2
 			$insert = 'insert into '.$table. " (".implode(',',array_keys($items)).") values ('".implode('\',\'',array_values($items))."')";
 
 			return $this->DbHandle->Query($insert);
@@ -29,6 +29,7 @@ require_once 'DbHandle.php';
 		}
 
 		public function Set($table,$set,$where){
+
 			$query="update $table set $set where $where";
 			return $this->DbHandle->Query($query);
 		}

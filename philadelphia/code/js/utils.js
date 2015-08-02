@@ -36,7 +36,7 @@ function turnLoaderOff(){
 
     var loaderCSS = {
         "visibility":"hidden",
-        "height": "0px",
+        "height": "0",
         "margin":"0"
     };
 
@@ -59,16 +59,6 @@ function initMap(){
         // The latitude and longitude to center the map (always required)
         center: new google.maps.LatLng(50.6672560, 17.9048559),
         disableDefaultUI: true,
-
-        // How you would like to style the map.
-        // This is where you would paste any style found on Snazzy Maps.
-
-        //szary
-        //styles: [{"stylers":[{"hue":"#ff1a00"},{"invert_lightness":true},{"saturation":-100},{"lightness":50},{"gamma":0.5}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#767C84"}]}]
-
-        //niebieski
-        //styles: [{"featureType":"all","elementType":"all","stylers":[{"invert_lightness":true},{"saturation":10},{"lightness":30},{"gamma":0.5},{"hue":"#435158"}]}]
-
 
         //jasny szary
         styles: [{"featureType":"landscape","stylers":[{"saturation":-100},{"lightness":45},{"visibility":"on"}]},{"featureType":"poi","stylers":[{"saturation":-100},{"lightness":35},{"visibility":"simplified"}]},{"featureType":"road.highway","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"road.arterial","stylers":[{"saturation":-100},{"lightness":30},{"visibility":"on"}]},{"featureType":"road.local","stylers":[{"saturation":-100},{"lightness":40},{"visibility":"on"}]},{"featureType":"transit","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":-25},{"saturation":-100}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]}]
