@@ -21,10 +21,17 @@ if(!(isset($_POST['applicantName'])&&
 
 $applicant['email'] = $_POST['applicantEmail'];
 
+$json=array();
 
 if(!MailAddressValidator::checkMail($applicant['email']))
 {
-    die("Podany email:".$applicant['email']." jest nieprawidłowy");
+    $json['message'] = "Podany email: ".htmlentities($applicant['email'])." jest nieprawidłowy.";
+    $json['result']=false;
+    
+    ob_clean();
+    
+    echo json_encode($json);
+    die();
 }
 
 
@@ -39,8 +46,6 @@ $db=new Db();
 
 $dbTable='applicants';
 $result=$db->Save($dbTable,$applicant);
-
-$json=array();
 
 if ($result==false)
 {

@@ -37,6 +37,7 @@ function FormDecorator(formId, destination) {
 
     function successAction(data) {
         callbackAction(answerContainers.getStyleForAnswer(formId,'whenSuccess'), data.message);
+        clearInputs();
     }
 
     function failAction(data) {
@@ -62,7 +63,7 @@ function FormDecorator(formId, destination) {
         }
         $(answerContainer).append(''+message)
             .addClass(divClass);
-        clearInputs();
+        
     }
 
     return {
