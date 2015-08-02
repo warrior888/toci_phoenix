@@ -8,6 +8,6 @@ namespace Toci.Db.Interfaces
 {
     public interface IDbCluster
     {
-        IDbClient GetClient(string id, IDbSharding sharding); // 84080818074
+        IDbClient GetClient(string id, IDbSharding sharding);
     }
 }
