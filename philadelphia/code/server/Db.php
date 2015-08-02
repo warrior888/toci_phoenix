@@ -28,8 +28,8 @@ require_once 'DbHandle.php';
 
 		public function Get($table,$items,$where){
 			
-			$items = pg_escape_string($items);
-			$where = pg_escape_string($where);
+			//$items = pg_escape_string($items);
+			//$where = pg_escape_string($where);
 			
 			$query="select $items from $table where $where";
 			return $this->DbHandle->Query($query);
