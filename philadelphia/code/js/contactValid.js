@@ -6,9 +6,9 @@ $(document).ready(function() {
 });
 
 
-function CustomEmailPrompterForContactForm(fieldsId, referenceInput) {
+function CustomEmailPrompterForContactForm(fieldValue, referenceInput) {
 
-    var senderFullName = $('#' + fieldsId).val().split(' ');
+    var senderFullName = fieldValue.split(' ');
 
     var name = senderFullName[0];
     var surname = senderFullName[1];

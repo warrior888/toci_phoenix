@@ -6,8 +6,10 @@ $(document).ready(function()
 {
     $("#video-carousel").owlCarousel(
         {
-            autoPlay: 3000,
-
+            loop: true,
+            autoplay: true,
+            autoplaySpeed: 1500,
+            autoplayHoverPause: true,
             responsive: {
 
                 0: {

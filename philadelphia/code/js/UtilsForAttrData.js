@@ -10,7 +10,7 @@ var validationCallbacks = {
 var validationElements = {
     'applicantFullName': { 'applicantNameId': 'applicantName', 'applicantSurnameId': 'applicantSurname' }
 
-}
+};
 
 /* ************************************************************ */
 
@@ -21,14 +21,22 @@ function ValidateOtherFieldForField(inputFieldId) {
     var otherFieldCallback = referenceInput.attr('data-validate-other-field-if');
     var otherFieldsId = referenceInput.attr('data-other-field-id');
 
-    var elementsValues = GenerateElementsId(otherFieldsId);
+    var elementsValues = GenerateElementsValues(otherFieldsId);
     validationCallbacks[otherFieldCallback](elementsValues, referenceInput);
 }
 
 
-function GenerateElementsId(otherFieldsId) {
+function GenerateElementsValues(otherFieldsId){
     var elements = validationElements[otherFieldsId];
-    return elements == undefined ? otherFieldsId : elements;
+    return elements == undefined ? $('#'+otherFieldsId).val() : GenerateValues(elements);
+}
+
+function GenerateValues(elementsId) {
+    var values = {};
+    for(elementId in elementsId){
+        values[elementId] = $('#' + elementsId[elementId]).val();
+    }
+    return values;
 }
 
 

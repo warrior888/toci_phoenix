@@ -1,6 +1,8 @@
 ﻿
 <?php
 
+	require_once 'config.php';
+	
 	class DbHandle 
 	{
 	//postgres lub nie
@@ -10,12 +12,23 @@
             $this->dontUseEnc = $dontUseEnc;
         }
 
+		public function Escape($items)
+		{
+			foreach($items as $key => $value)
+			{
+				$items[$key] = pg_escape_string($this->database, $value);
+			}
+			
+			return $items;
+		}
+		
         public function dbConnect()
         {
             if (!isset($this->database))
 	    {
 		    //podane dane tylko dla testu czy bedzie w stanie sie polaczyc
-	            $this->database = pg_pconnect("host=46.101.236.160 user=toci password=aaa111 dbname=toci");
+	            //$this->database = pg_pconnect("host=46.101.236.160 user=toci password=aaa111 dbname=toci");
+	            $this->database = pg_pconnect(CONNECTION_STRING);
                 if (!$this->dontUseEnc)
                     pg_set_client_encoding ($this->database, 'LATIN2');
             }
@@ -51,5 +64,5 @@
             {
                 return null;
             }
-	}
+		}
 	}

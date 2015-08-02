@@ -15,6 +15,8 @@ require_once "Db.php";
 
 	if (isset($_GET['signature']))
 	{
+		ob_start();
+		
 		$db=new Db();
 		$signature=$_GET['signature'];
 		$result=$db->Get("applicants","mailconfirmed, signature"," signature='$signature'");
@@ -24,11 +26,15 @@ require_once "Db.php";
 		if($array["mailconfirmed"]=="f")
 		{
 			$db->Set("applicants","mailconfirmed=true","signature='".pg_escape_string($signature)."'");
-			echo '<div id="answerContainer" class="alert alert-success">Zapisano aplikacje w bazie danych</div>';
+			$komunikat = '<div id="answerContainer" class="alert alert-success">Zapisano aplikację w bazie danych.</div>';
 		}
-
-		else{
-			echo '<div id="answerContainer" class="alert alert-danger">Podany link aktywacyjny zostal juz wykrozystany</div>';
+		else
+		{
+			$komunikat = '<div id="answerContainer" class="alert alert-danger">Podany link aktywacyjny został juz wykorzystany.</div>';
 		}
+		
+		ob_clean();
+		
+		echo $komunikat;
 	}
 
