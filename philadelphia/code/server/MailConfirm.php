@@ -19,7 +19,7 @@ require_once 'SendMail.php';
 		public function sendConfirmationMail($applicant)
 		{
 			$serverUrl = 'www.toci.com.pl';
-			$serverUrl = 'localhost';
+			//$serverUrl = 'localhost';
 			
 			$signature=$this->CreateSignature($applicant['email']);
 			$confirmLink="http://".$serverUrl."/server/confirm.php?signature=$signature";
