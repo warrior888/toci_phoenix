@@ -1,0 +1,15 @@
+﻿{
+	"Captcha" : "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP4z8BQDwAEgAF/posBPQAAAABJRU5ErkJggg==",   
+	"Questions": [
+        "Pytanie 1",
+        "Pytanie 2"
+	],
+	"RegistrationId": "asd675fdg",
+	"Inputs" : [],
+    "User" :  {
+        "FirstName" : "",
+        "LastName":  "",
+        "Email":  "",
+        "PhoneNumber" : ""
+    }
+}
