@@ -1,10 +1,7 @@
-﻿
-var elementsStyles = {
+﻿var elementsStyles = {
     'bootstrapGreenRedStyle' : {'whenSuccess' : 'alert alert-success',
                                 'whenFailed' : 'alert alert-danger'}
 };
-
-elementsStyles.get
 
 var answerContainers = {
     'apply-form' : {'style' : elementsStyles['bootstrapGreenRedStyle'],
@@ -27,7 +24,6 @@ function FormDecorator(formId, destination) {
 
     this.formId = formId;
     this.destination = destination;
-    var answerContainer;
 
 
     function getFormData() {
@@ -50,20 +46,17 @@ function FormDecorator(formId, destination) {
         });
     }
     function appendAnswerContainer(containerId) {
-        answerContainer = $("<div>", {
+        $('#' + formId).append($("<div>", {
             id: containerId
-        });
-        $('#' + formId).append(answerContainer);
+        }));
     }
 
     function callbackAction(divClass, message) {
-        var containerId = answerContainers.getContainerId(formId);
-        if (!$('#' + formId).find('#' + containerId).length) {
-            appendAnswerContainer(containerId);
+        var answerContainerId = answerContainers.getContainerId(formId);
+        if (!$('#' + formId).find('#' + answerContainerId).length) {
+            appendAnswerContainer(answerContainerId);
         }
-        $(answerContainer).append(''+message)
-            .addClass(divClass);
-        
+        $('#' + answerContainerId).removeClass().addClass(divClass).text(''+message);
     }
 
     return {
