@@ -34,7 +34,7 @@ namespace Toci.Client.Controllers
         [Route("/oauth/authentication")]
         public async Task<ViewResult> Authentication(string code)
         {
-            var client = new HttpClient();
+            var requestClient = new HttpClient();
 
             var Params = new Dictionary<string,string>()
                 {
@@ -45,16 +45,22 @@ namespace Toci.Client.Controllers
                     {"redirect_uri", "http://localhost:13188/oauth/authentication" }
                 };
             var content = new FormUrlEncodedContent(Params);
-            var response = await client.PostAsync("http://oauth.stg.vazco.eu/oauth2/token", content);
+            var response = await requestClient.PostAsync("http://oauth.stg.vazco.eu/oauth2/token", content);
 
             var responseString = await response.Content.ReadAsStringAsync();
-            VazcoTokenModel responseToken = new VazcoTokenModel();
+
 
             var jsonToken = (JObject)JsonConvert.DeserializeObject(responseString);
-            responseToken = (VazcoTokenModel)jsonToken.ToObject(typeof (VazcoTokenModel));
-
+            var responseToken = (VazcoTokenModel)jsonToken.ToObject(typeof (VazcoTokenModel));
+            var identityClient = new HttpClient();
+            identityClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + responseToken.access_token);
+            HttpResponseMessage identity = await identityClient.GetAsync("http://oauth.stg.vazco.eu/oauth2/getIdentity");
+            var readContent = identity.Content.ReadAsStringAsync();
+            var jsonIdentity = (JObject) JsonConvert.DeserializeObject(readContent.Result);
+            var responseIdentity = (VazcoIdentityModel)jsonIdentity.ToObject(typeof(VazcoIdentityModel));
+            
             return View(responseToken);
-
+            
         }
 
 
