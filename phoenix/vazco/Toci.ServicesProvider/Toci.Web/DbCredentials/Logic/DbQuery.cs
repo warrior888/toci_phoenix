@@ -50,7 +50,7 @@ namespace DbCredentials.Logic
 
 
 
-            return DbUtils.SortListById(dbModelList);
+            return (dbModelList);
         }
 
         //public void Update(DbModel model, string tableName)
