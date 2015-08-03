@@ -44,7 +44,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddInModel.cs" />
+    <Compile Include="QueryModel.cs" />
     <Compile Include="Config\LoadConfig.cs" />
     <Compile Include="DbLoad.cs" />
     <Compile Include="DbModel.cs" />

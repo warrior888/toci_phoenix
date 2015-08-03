@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Toci.Client.Models;
+using Toci.Client.OauthProvider;
 
 namespace Toci.Client.Controllers
 {
@@ -272,7 +273,7 @@ namespace Toci.Client.Controllers
         }
 
         //
-        // POST: /Account/ExternalLogin
+        // POST: /Account/loginLogin
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
