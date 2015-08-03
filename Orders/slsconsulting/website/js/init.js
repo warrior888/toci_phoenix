@@ -1,3 +1,3 @@
 $( document ).ready(function() {
-    $('#servicesContainer').load('services.html');
-});
+          $('#servicesContainer').load('services.html');
+  });

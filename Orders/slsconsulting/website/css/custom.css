@@ -177,7 +177,8 @@
 }
 
 .met_content {
-	width    : 1170px;
+	//width: 1170px;
+	width    : 90%;
 	margin   : 0 auto;
 	position : relative;
 	z-index  : 3;

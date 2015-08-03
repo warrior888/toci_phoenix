@@ -6,7 +6,7 @@ $( document ).ready(function() {
 
 function AppendOnClick(actionTrgId, containerId, fileName) {
     $('#'+ actionTrgId).on("click", function(e){
-        e.preventDefault();
-        $('#'+containerId).hide().load(fileName).fadeIn(3000);
+            e.preventDefault();
+            $('#'+containerId).hide().load(fileName).fadeIn(1500);
     });
 }
