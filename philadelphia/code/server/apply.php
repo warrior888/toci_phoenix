@@ -41,6 +41,7 @@ $applicant['phone'] = $_POST['applicantPhone'];
 $mailConf=new MailConfirm();
 $applicant['mailconfirmed']="false";
 $applicant['signature']=$mailConf->sendConfirmationMail($applicant);
+$applicant['chosencourse'] = $_POST['applicantChosenCourse'];
 $db=new Db();
 
 
