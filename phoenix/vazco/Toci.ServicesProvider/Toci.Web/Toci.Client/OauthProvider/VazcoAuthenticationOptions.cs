@@ -17,6 +17,7 @@ namespace Toci.Client.OauthProvider
             AppSecret = appSecret;
             Caption = authenticationType;
             CallBack = ("http://localhost:13188/oauth/authentication");
+            //CallBack = ("http://localhost:13188/Account/ExternalLoginCallback");
             AuthenticationMode = AuthenticationMode.Passive;
             BackchannelTimeout = TimeSpan.FromSeconds(60);
             AuthorizationEndpoint = "http://oauth.stg.vazco.eu/oauth2/authorize";
