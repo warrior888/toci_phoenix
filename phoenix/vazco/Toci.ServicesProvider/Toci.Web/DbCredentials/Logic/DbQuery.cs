@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using DbCredentials.Logic.DbModels;
 using DbCredentials.Logic.QueryModels;
 using DbCrypting.Logic;
 using Toci.Db.ClusterAccess;
@@ -15,6 +16,14 @@ namespace DbCredentials.Logic
             {"Scopes", () => new QueryScopesModel()},
             {"Users", () => new QueryUsersModel()},
         };
+        
+        protected Dictionary<string, Func<DbModel>> DbModelDictionary = new Dictionary<string, Func<DbModel>>
+        {
+            {"ProjectAccess", () => new DbProjectAccessModel()},
+            {"Projects", () => new DbProjectsModel()},
+            {"Scopes", () => new DbScopesModel()},
+            {"Users", () => new DbUsersModel()},
+        };
 
         public void Save(DbModel model, string tableName)
         {
@@ -29,27 +38,27 @@ namespace DbCredentials.Logic
 
         }
 
-        //public List<DbModel> Load(string tableName)
-        //{
+        public List<DbModel> Load(string tableName)
+        {
 
-        //    var dbh = DbConnect.Connect();
+            var dbHandle = DbConnect.Connect();
+            var query = QueryModelDictionary[tableName]();
+            query.SetAll();
+
+            var dbModelList = DbModelDictionary[tableName]().GetDbModelList(query, dbHandle);
+            //dbModelList.DecryptDbModels(_temporarySecret);
+
+
+
+            return DbUtils.SortListById(dbModelList);
+        }
+
+        //public void Update(DbModel model, string tableName)
+        //{
         //    var query = QueryModelDictionary[tableName]();
-        //    query.SetAll();
-
-        //    var dbModelList = modelListGenerator.GetDbModelList(query, dbh);
-        //    //dbModelList.DecryptDbModels(_temporarySecret);
-
-
-
-        //    return DbUtils.SortListByTime(dbModelList);
-        //}
-
-        //public void Update(DbModel model)
-        //{
-        //    var query = new QueryModel(_tableName);
         //    var dbh = DbConnect.Connect();
 
-        //    model.EncryptModel(_temporarySecret);
+        //    //model.EncryptModel(_temporarySecret);
 
         //    query.SetData(model.data);
         //    query.SetHash(model.hash);
@@ -60,11 +69,11 @@ namespace DbCredentials.Logic
 
         //}
 
-        //public void Delete(DbModel model)
+        //public void Delete(DbModel model, string tableName)
         //{
-        //    var query = new QueryModel(_tableName);
+        //    var query = QueryModelDictionary[tableName]();
         //    var dbh = DbConnect.Connect();
-        //    query.AddIsWhere(IdColumnName, model.id, true);
+        //    query.AddIsWhere(IdColumnName, model.Id, true);
         //    dbh.DeleteData(query);
         //}
 
