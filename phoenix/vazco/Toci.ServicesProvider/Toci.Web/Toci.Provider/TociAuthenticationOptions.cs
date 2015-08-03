@@ -22,7 +22,7 @@ namespace Toci.Provider
             : base(Constants.DefaultAuthenticationType)
         {
             Caption = Constants.DefaultAuthenticationType;
-            CallbackPath = new PathString("/signin-facebook");
+            CallbackPath = new PathString("/Account/ExternalLoginCallback");
             AuthenticationMode = AuthenticationMode.Passive;
             Scope = new List<string>();
             BackchannelTimeout = TimeSpan.FromSeconds(60);
