@@ -1,7 +1,10 @@
-﻿var elementsStyles = {
+﻿
+var elementsStyles = {
     'bootstrapGreenRedStyle' : {'whenSuccess' : 'alert alert-success',
                                 'whenFailed' : 'alert alert-danger'}
 };
+
+elementsStyles.get
 
 var answerContainers = {
     'apply-form' : {'style' : elementsStyles['bootstrapGreenRedStyle'],
@@ -24,6 +27,7 @@ function FormDecorator(formId, destination) {
 
     this.formId = formId;
     this.destination = destination;
+    var answerContainer;
 
 
     function getFormData() {
@@ -46,17 +50,20 @@ function FormDecorator(formId, destination) {
         });
     }
     function appendAnswerContainer(containerId) {
-        $('#' + formId).append($("<div>", {
+        answerContainer = $("<div>", {
             id: containerId
-        }));
+        });
+        $('#' + formId).append(answerContainer);
     }
 
     function callbackAction(divClass, message) {
-        var answerContainerId = answerContainers.getContainerId(formId);
-        if (!$('#' + formId).find('#' + answerContainerId).length) {
-            appendAnswerContainer(answerContainerId);
+        var containerId = answerContainers.getContainerId(formId);
+        if (!$('#' + formId).find('#' + containerId).length) {
+            appendAnswerContainer(containerId);
         }
-        $('#' + answerContainerId).removeClass().addClass(divClass).text(''+message);
+        $(answerContainer).append(''+message)
+            .addClass(divClass);
+        
     }
 
     return {
@@ -69,7 +76,9 @@ function FormDecorator(formId, destination) {
 
 /* ************************************************************ */
 
-function SubmitForm(form, event) {
+function SubmitForm(form, event,buttonHandler) {
+
+
     $.ajax({
         type: 'POST',
         url: form.destination,
@@ -86,7 +95,15 @@ function SubmitForm(form, event) {
         })
          .fail(function (data) {
              form.failAction(data);
-         });
+         }).complete(function(){
+
+          setTimeout(function(){buttonHandler.stop();},2000);
+
+
+        })
+
+    ;
 
     event.preventDefault();
 }
+
