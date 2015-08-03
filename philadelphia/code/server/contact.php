@@ -28,7 +28,7 @@ if(!MailAddressValidator::checkMail($askerMailAddress))
 $askerName = $_POST['contact-input-name'];
 $askerSubject= $_POST['contact-input-subject'];
 
-$askerMessage= "Przesłał: ".$askerName.", mail: ".$_POST['contact-input-message']." <br/ ><br />".$_POST['contact-input-message'];
+$askerMessage= "Przesłał: ".$askerName.", mail: ".$askerMailAddress." <br/ ><br />".$_POST['contact-input-message'];
 
 
 
