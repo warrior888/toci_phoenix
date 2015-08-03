@@ -29,44 +29,44 @@ namespace DbCredentials.Logic
 
         }
 
-        public List<DbModel> Load(string tableName)
-        {
+        //public List<DbModel> Load(string tableName)
+        //{
 
-            var dbh = DbConnect.Connect();
-            var query = QueryModelDictionary[tableName]();
-            query.SetAll();
+        //    var dbh = DbConnect.Connect();
+        //    var query = QueryModelDictionary[tableName]();
+        //    query.SetAll();
 
-            var dbModelList = modelListGenerator.GetDbModelList(query, dbh);
-            //dbModelList.DecryptDbModels(_temporarySecret);
+        //    var dbModelList = modelListGenerator.GetDbModelList(query, dbh);
+        //    //dbModelList.DecryptDbModels(_temporarySecret);
 
 
 
-            return DbUtils.SortListByTime(dbModelList);
-        }
+        //    return DbUtils.SortListByTime(dbModelList);
+        //}
 
-        public void Update(DbModel model)
-        {
-            var query = new QueryModel(_tableName);
-            var dbh = DbConnect.Connect();
+        //public void Update(DbModel model)
+        //{
+        //    var query = new QueryModel(_tableName);
+        //    var dbh = DbConnect.Connect();
 
-            model.EncryptModel(_temporarySecret);
+        //    model.EncryptModel(_temporarySecret);
 
-            query.SetData(model.data);
-            query.SetHash(model.hash);
+        //    query.SetData(model.data);
+        //    query.SetHash(model.hash);
 
-            query.AddIsWhere(TimeColumnName, model.addingTime, true);
-            query.AddIsWhere(NickColumnName, model.nick, true);
-            dbh.UpdateData(query);
+        //    query.AddIsWhere(TimeColumnName, model.addingTime, true);
+        //    query.AddIsWhere(NickColumnName, model.nick, true);
+        //    dbh.UpdateData(query);
 
-        }
+        //}
 
-        public void Delete(DbModel model)
-        {
-            var query = new QueryModel(_tableName);
-            var dbh = DbConnect.Connect();
-            query.AddIsWhere(IdColumnName, model.id, true);
-            dbh.DeleteData(query);
-        }
+        //public void Delete(DbModel model)
+        //{
+        //    var query = new QueryModel(_tableName);
+        //    var dbh = DbConnect.Connect();
+        //    query.AddIsWhere(IdColumnName, model.id, true);
+        //    dbh.DeleteData(query);
+        //}
 
         
     }
