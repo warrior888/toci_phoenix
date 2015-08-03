@@ -1,7 +1,9 @@
 $(document).ready(function() {
 
     $('#contact-form').submit(function(event) {
-        SubmitForm(FormDecorator(this.id, 'server/contact.php'), event);
+		 var buttonHandler = Ladda.create( document.querySelector( '#contactButton' ));
+        buttonHandler.start();
+        SubmitForm(FormDecorator(this.id, 'server/contact.php'), event,buttonHandler);
     });
 });
 
