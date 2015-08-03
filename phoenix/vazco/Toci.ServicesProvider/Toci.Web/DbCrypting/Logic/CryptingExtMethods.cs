@@ -25,7 +25,7 @@ namespace DbCrypting.Logic
             }
 
         }
-        public static void FillAddInModel(this AddInModel itemModel, DbModel model)
+        public static void FillAddInModel(this QueryModel itemModel, DbModel model)
         {
             itemModel.SetNick(DbUtils.GetUserNick());
             itemModel.SetData(model.data);

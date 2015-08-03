@@ -2,11 +2,14 @@
 {
     public static class LoadConfig
     {
-        public const string TableName = "LolTable";
-        public const string TemporarySecret = "8a32d4v723s";
+        public const string DataBaseName = "master";
+        public const string TableName = "VazcoTestTable";
+
         public const string login = "sa";
-        public const string secret = "KurwaKurwa";
-        public const string address = "localhost";
-        public const string dataBaseName = "TestBase";
+        public const string secret = "Rabarbar12";
+        public const string address = "RYUU\\SQLEXPRESS";
+
+        public const string TemporarySecret = "8a32d4v723s";
+
     }
 }
