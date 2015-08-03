@@ -14,10 +14,10 @@ namespace Toci.Tests
             const string testString = "Test text";
 
 
-            DbProjectsModel model = new DbProjectsModel{ ProjectID = 1, ProjectData = "kupczon", ScopeID = 1, ProjectName = "Tralala"};
+            DbScopesModel model = new DbScopesModel { ScopeID = 1, ScopeName = "Tralala" };
 
-            dbQuery.Save(model, "Projects");
-            var result = dbQuery.Load("Projects");
+            dbQuery.Save(model, "Scopes");
+            var result = dbQuery.Load("Scopes");
             //Assert.AreEqual(testString, r);
         }
     }
