@@ -177,6 +177,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\VazcoTokenModel.cs" />
     <Compile Include="OauthProvider\VazcoAuthenticationExtensions.cs" />
     <Compile Include="OauthProvider\VazcoAuthenticationHandler.cs" />
     <Compile Include="OauthProvider\VazcoAuthenticationMiddleware.cs" />
