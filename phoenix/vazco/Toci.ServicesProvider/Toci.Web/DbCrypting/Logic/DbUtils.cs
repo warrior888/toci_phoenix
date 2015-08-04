@@ -18,5 +18,9 @@ namespace DbCrypting.Logic
          {
              return list.OrderByDescending(x => x.addingTime).ToList();
          }
+        public static List<VazcoTable> SortListByTime(List<VazcoTable> list)
+        {
+            return list.OrderByDescending(x => x.addingTime).ToList();
+        }
     }
 }

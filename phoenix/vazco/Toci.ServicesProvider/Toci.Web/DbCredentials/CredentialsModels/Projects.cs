@@ -9,8 +9,8 @@ namespace DbCredentials.CredentialsModels
         {
         }
          
-        public const string PROJECTID = "ProjectID";
-        public System.Int32 ProjectID
+        public const string PROJECTID = "projectid";
+        public System.Int32 projectid
             {
                 get
                 {
@@ -22,8 +22,8 @@ namespace DbCredentials.CredentialsModels
                 }
             }
          
-        public const string SCOPEID = "ScopeID";
-        public System.Int32 ScopeID
+        public const string SCOPEID = "scopeid";
+        public System.Int32 scopeid
             {
                 get
                 {
@@ -35,8 +35,8 @@ namespace DbCredentials.CredentialsModels
                 }
             }
          
-        public const string PROJECTNAME = "ProjectName";
-        public System.String ProjectName
+        public const string PROJECTNAME = "projectname";
+        public System.String projectname
             {
                 get
                 {
@@ -48,8 +48,8 @@ namespace DbCredentials.CredentialsModels
                 }
             }
          
-        public const string PROJECTDATA = "ProjectData";
-        public System.String ProjectData
+        public const string PROJECTDATA = "projectdata";
+        public System.String projectdata
             {
                 get
                 {

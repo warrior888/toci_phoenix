@@ -54,12 +54,17 @@
     <Compile Include="Logic\DbUtils.cs" />
     <Compile Include="Logic\GenerateDbModelList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VazcoDb\DbOperations.cs" />
+    <Compile Include="VazcoDb\VazcoTable.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EncodingLib\EncodingLib.csproj">
       <Project>{44d0c538-5d19-409a-8f30-2519339fc818}</Project>
       <Name>EncodingLib</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="VazcoDb\template.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

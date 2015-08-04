@@ -10,15 +10,14 @@ namespace Toci.Tests
         [TestMethod]
         public void TestMethod1()
         {
-            var dbSave = new DbSave();
-            var dbLoad = new DbLoad();
+            var dbOperator = new DbOperations();
             const string testString = "Test text";
 
+            var model = new VazcoTable {data = testString};
 
-            var model = new DbModel() {data = testString};
+            dbOperator.Save(model);
 
-            dbSave.Save(model);
-            var result = dbLoad.Load();
+            var result = dbOperator.Load();
             Assert.AreEqual(testString,result[0].data);
         }
 

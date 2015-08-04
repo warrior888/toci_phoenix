@@ -1,4 +1,5 @@
 ﻿using System;
+using DbCrypting.Config;
 using Toci.Db.DbVirtualization;
 using Toci.Db.Interfaces;
 
@@ -11,8 +12,10 @@ namespace DbCrypting
         private const string NickColumnName = "name" ;
         private const string HashColumnName = "hash" ;
         private const string Star = "*" ;
+        private static string _tableName  = LoadConfig.TableName;
 
-        public QueryModel(string tableName) : base(tableName)
+
+        public QueryModel() : base(_tableName)
         {
         }
 

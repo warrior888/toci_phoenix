@@ -9,8 +9,8 @@ namespace DbCredentials.CredentialsModels
         {
         }
          
-        public const string USERID = "UserID";
-        public System.Int32 UserID
+        public const string USERID = "userid";
+        public System.Int32 userid
             {
                 get
                 {
@@ -22,8 +22,8 @@ namespace DbCredentials.CredentialsModels
                 }
             }
          
-        public const string SCOPEID = "ScopeID";
-        public System.Int32 ScopeID
+        public const string SCOPEID = "scopeid";
+        public System.Int32 scopeid
             {
                 get
                 {
@@ -35,8 +35,8 @@ namespace DbCredentials.CredentialsModels
                 }
             }
          
-        public const string USERLOGIN = "UserLogin";
-        public System.String UserLogin
+        public const string USERLOGIN = "userlogin";
+        public System.String userlogin
             {
                 get
                 {
@@ -48,8 +48,8 @@ namespace DbCredentials.CredentialsModels
                 }
             }
          
-        public const string USERPASSWORD = "UserPassword";
-        public System.String UserPassword
+        public const string USERPASSWORD = "userpassword";
+        public System.String userpassword
             {
                 get
                 {
