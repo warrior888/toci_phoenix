@@ -1,7 +1,7 @@
 ﻿using System;
 using DbCredentials.CredentialsModels;
 using DbCredentials.Logic;
-using DbCredentials.Logic.DbModels;
+
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Toci.Utilities.Generator.DatabaseModelGenerator;
 using Toci.Utilities.Generator.DatabaseModelGenerator.DbDdlParser;

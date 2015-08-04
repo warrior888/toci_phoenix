@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using DbCredentials.CredentialsModels;
-using DbCredentials.Logic.DbModels;
-using DbCredentials.Logic.QueryModels;
 using DbCrypting.Logic;
 using Toci.Db.ClusterAccess;
 using Toci.Db.DbVirtualization;
