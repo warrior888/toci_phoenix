@@ -15,22 +15,35 @@ $(function() {
 
 
     $('a.page-scroll').bind('click', function(event) {
+
+        event.preventDefault();
+
         var $anchor = $(this);
         var docOffset = $(window).scrollTop();
         var sectionOffset;
 
-        console.log(docOffset);
-        if (docOffset >= 270) {
-            sectionOffset = navHeight + navSectionOffset;
-        } else {
-            sectionOffset = navHeight + navSectionOffset + 90; //rozkminic: jak wyci¹gn¹æ tê liczbê?
-        }
-        console.log(sectionOffset);
-        $('html, body').stop().animate({
-            scrollTop: ($($anchor.attr('href')).offset().top - sectionOffset)
+        var destSection = '#' + $($anchor.attr('href')).attr('id');
+
+        console.log('============================ ',ContentLoader.iterator);
+        ContentLoader.OnClickLoading(destSection);
+
+        setTimeout(function(){
+            //console.log('Scrolling-nav: ', ContentLoader.iterator);
+            if (docOffset >= 270) {
+                sectionOffset = navHeight + navSectionOffset;
+            } else {
+                sectionOffset = navHeight + navSectionOffset + 90; //rozkminic: jak wyci¹gn¹æ tê liczbê?
+            }
+            //  console.log(sectionOffset);
+            $('html, body').stop().animate({
+                scrollTop: ($($anchor.attr('href')).offset().top - sectionOffset)
             }, 1500, 'easeInOutExpo');
-        event.preventDefault();
-    });
+            event.preventDefault();
+        }, 1000);
+        });
+
+
+
 });
 
 
