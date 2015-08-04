@@ -1,9 +1,9 @@
 <?php
 
-require_once '../DbWhere.php';
+require_once '../PgQuery.php';
 require_once '../Interfaces/IDbSelect.php';
 
-class DbSelect extends DbWhere implements IDbSelect {
+class DbSelect extends PgQuery implements IDbSelect {
 
     protected $format = 'SELECT ';
 

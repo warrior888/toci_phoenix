@@ -13,16 +13,19 @@ if(!(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && !empty($_SERVER['HTTP_X_REQUEST
 if(!(isset($_POST['applicantName'])&&
     isset($_POST['applicantSurname'])&&
     isset($_POST['applicantEmail'])&&
-    isset($_POST['applicantPhone'])
+    isset($_POST['applicantPhone'])&&
+    isset($_POST['chosencourse'])
 ))
 {
     die("Brak wszystkich danych"); 
 }
 
-$applicant['email'] = $_POST['applicantEmail'];
+
 
 $json=array();
 
+//walidacja maila
+$applicant['email'] = $_POST['applicantEmail'];
 if(!MailAddressValidator::checkMail($applicant['email']))
 {
     $json['message'] = "Podany email: ".htmlentities($applicant['email'])." jest nieprawidłowy.";

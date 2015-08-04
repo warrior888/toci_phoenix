@@ -4,7 +4,7 @@ require_once('PgDelete.php');
 require_once('PgInsert.php');
 require_once('PgSelect.php');
 require_once('PgUpdate.php');
-require_once('PgQyert.php');
+require_once('PgQuery.php');
 
 class PgModel extends Model {
 
@@ -16,7 +16,4 @@ class PgModel extends Model {
                 new PgUpdate(), 
                 new PgQuery());
     }
-
 }
-
-$pgModel = new PgModel();

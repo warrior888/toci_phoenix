@@ -1,9 +1,9 @@
 <?php
 
-require_once '../DbWhere.php';
+require_once '../PgQuery.php';
 require_once '../Interfaces/IDbDelete.php';
 
-class PgDelete extends DbWhere implements IDbDelete {
+class PgDelete extends PgQuery implements IDbDelete {
 
     protected $format = 'DELETE FROM ';
 

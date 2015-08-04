@@ -20,3 +20,5 @@ class PgHandle {
     }
 
 }
+
+new PgHandle();

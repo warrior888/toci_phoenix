@@ -1,9 +1,9 @@
 <?php
 
-require_once '../DbWhere.php';
+require_once '../PgQuery.php';
 require_once '../Interfaces/IDbUpdate';
 
-class PbUpdate extends DbWhere implements IDbUpdate {
+class PbUpdate extends PgQuery implements IDbUpdate {
 
     protected $format = 'UPDATE ';
 
