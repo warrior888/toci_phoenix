@@ -65,6 +65,10 @@
     <Compile Include="GetCertyficateInBase64.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Toci.Utilities\Toci.Utilities.csproj">
+      <Project>{a7951807-f924-4108-a63b-253ce3f5b045}</Project>
+      <Name>Toci.Utilities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DbCredentials\DbCredentials.csproj">
       <Project>{c4549253-a41f-4eff-b32e-4a22ef6bec6b}</Project>
       <Name>DbCredentials</Name>
