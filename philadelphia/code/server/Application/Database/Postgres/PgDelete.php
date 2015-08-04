@@ -1,6 +1,6 @@
 <?php
 
-require_once '../PgQuery.php';
+require_once 'PgQuery.php';
 require_once '../Interfaces/IDbDelete.php';
 
 class PgDelete extends PgQuery implements IDbDelete {

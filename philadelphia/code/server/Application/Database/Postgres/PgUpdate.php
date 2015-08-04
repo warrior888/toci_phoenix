@@ -1,9 +1,9 @@
 <?php
 
-require_once '../PgQuery.php';
-require_once '../Interfaces/IDbUpdate';
+require_once 'PgQuery.php';
+require_once '../Interfaces/IDbUpdate.php';
 
-class PbUpdate extends PgQuery implements IDbUpdate {
+class PgUpdate extends PgQuery implements IDbUpdate {
 
     protected $format = 'UPDATE ';
 

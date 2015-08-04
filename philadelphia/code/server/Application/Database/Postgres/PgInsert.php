@@ -1,7 +1,7 @@
 <?php
 
 require_once '../Interfaces/IDbInsert.php';
-require_once '../PgQuery.php';
+require_once 'PgQuery.php';
 
 class PgInsert extends PgQuery implements IDbInsert {
 

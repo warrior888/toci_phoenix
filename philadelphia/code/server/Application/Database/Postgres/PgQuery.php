@@ -1,6 +1,6 @@
 <?php
 
-class PgQuery {
+abstract class PgQuery {
 
     protected function CreateWhereStatement($where) {
         $query = ' WHERE ';
