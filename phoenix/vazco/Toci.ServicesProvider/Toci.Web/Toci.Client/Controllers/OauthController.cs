@@ -63,17 +63,29 @@ namespace Toci.Client.Controllers
 
 
             //tworzenie nowego użytkownika oraz logowanie go do aplikacji
-            var userManager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            /*var userManager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
             ApplicationUser user = new ApplicationUser() {Id = responseModel.Identity.id, UserName = responseModel.Identity.email, Email = responseModel.Identity.email };
             var makeUser =await userManager.CreateAsync(user);
             
             var SignInManager = HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
-            await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+            await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);*/
 
             
 
 
             return View(responseModel); 
+        }
+
+        //[HttpPost]
+        public async Task<ActionResult> Register(VazcoResponseModel model)
+        {
+            var userManager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            ApplicationUser user = new ApplicationUser() { Id = model.Identity.id, UserName = model.Identity.email, Email = model.Identity.email };
+            var makeUser = await userManager.CreateAsync(user);
+
+            var SignInManager = HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
+            await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+            return null;
         }
     }
 }
