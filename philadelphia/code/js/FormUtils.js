@@ -50,13 +50,20 @@ function FormDecorator(formId, destination) {
             id: containerId
         }));
     }
- 
+
+    function showAnswerContainer(container,divClass, message){
+        container.removeClass().addClass(divClass).text(''+message).show();
+        setTimeout(function() {
+            container.hide();
+        }, 5000);
+    }
+
     function callbackAction(divClass, message) {
         var answerContainerId = answerContainers.getContainerId(formId);
         if (!$('#' + formId).find('#' + answerContainerId).length) {
             appendAnswerContainer(answerContainerId);
         }
-        $('#' + answerContainerId).removeClass().addClass(divClass).text(''+message);
+        showAnswerContainer($('#' + answerContainerId),divClass,message);
     }
  
     return {
@@ -70,6 +77,7 @@ function FormDecorator(formId, destination) {
 /* ************************************************************ */
  
 function SubmitForm(form, event,buttonHandler) {
+
     $.ajax({
         type: 'POST',
         url: form.destination,
@@ -86,7 +94,8 @@ function SubmitForm(form, event,buttonHandler) {
         })
          .fail(function (data) {
              form.failAction(data);
-         }).complete(function(){
+         })
+        .complete(function(){
 
           buttonHandler.stop();
 
