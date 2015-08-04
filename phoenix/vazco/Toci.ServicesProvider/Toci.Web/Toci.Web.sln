@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.AuthorizationServer", "Toci.AuthorizationServer\Toci.AuthorizationServer.csproj", "{B6A7D2CA-61C5-4017-B80D-6AEB9E6E76CA}"
 EndProject
@@ -28,10 +28,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.Utilities", "..\..\..\..\Toci.Utilities\Toci.Utilities.csproj", "{A7951807-F924-4108-A63B-253CE3F5B045}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.Db", "..\..\..\..\Toci.Db\Toci.Db.csproj", "{E45EA1C2-F40C-4903-94C3-30A885A71D33}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.Utilities.Abstraction", "..\..\..\..\Toci.Utilities.Abstraction\Toci.Utilities.Abstraction.csproj", "{3F7C2517-390A-40BF-A1FC-3F5DFAE8BDF2}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.Utilities.Interfaces", "..\..\..\..\Toci.Utilities.Interfaces\Toci.Utilities.Interfaces\Toci.Utilities.Interfaces.csproj", "{C3976AC9-39A5-4B47-8A67-33F021A4CDC3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -91,14 +87,6 @@ Global
 		{E45EA1C2-F40C-4903-94C3-30A885A71D33}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E45EA1C2-F40C-4903-94C3-30A885A71D33}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E45EA1C2-F40C-4903-94C3-30A885A71D33}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3F7C2517-390A-40BF-A1FC-3F5DFAE8BDF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3F7C2517-390A-40BF-A1FC-3F5DFAE8BDF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3F7C2517-390A-40BF-A1FC-3F5DFAE8BDF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3F7C2517-390A-40BF-A1FC-3F5DFAE8BDF2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C3976AC9-39A5-4B47-8A67-33F021A4CDC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C3976AC9-39A5-4B47-8A67-33F021A4CDC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C3976AC9-39A5-4B47-8A67-33F021A4CDC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C3976AC9-39A5-4B47-8A67-33F021A4CDC3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
