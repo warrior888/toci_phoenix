@@ -11,7 +11,8 @@ $(window).scroll(function() {
 $(function() {
 
     var navHeight = $("#navigation-bar").outerHeight();
-    var navSectionOffset = 25;
+    var navSectionOffset = 0;
+
 
     $('a.page-scroll').bind('click', function(event) {
         var $anchor = $(this);
