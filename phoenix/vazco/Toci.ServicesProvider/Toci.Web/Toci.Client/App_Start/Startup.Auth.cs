@@ -46,10 +46,10 @@ namespace Toci.Client
             // This is similar to the RememberMe option when you log in.
             app.UseTwoFactorRememberBrowserCookie(DefaultAuthenticationTypes.TwoFactorRememberBrowserCookie);
 
-            app.UseFacebookAuthentication(
+            /*app.UseFacebookAuthentication(
                appId: "1469468426698430",
                appSecret: "8f508435a5992e539e2afac5bb8eba6f");
-            app.UseVazcoAuthentication(appId: "1", appSecret: "2");
+            app.UseVazcoAuthentication(appId: "1", appSecret: "2");*/
 
         }
     }

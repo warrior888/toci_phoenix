@@ -7,6 +7,8 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Helpers;
 using Newtonsoft.Json;
@@ -35,7 +37,7 @@ namespace Toci.Client.Controllers
         public async Task<ViewResult> Authentication(string code)
         {
             var requestClient = new HttpClient();
-
+            var responseModel = new VazcoResponseModel();
             var Params = new Dictionary<string,string>()
                 {
                     {"grant_type", "authorization_code" },
@@ -51,18 +53,27 @@ namespace Toci.Client.Controllers
 
 
             var jsonToken = (JObject)JsonConvert.DeserializeObject(responseString);
-            var responseToken = (VazcoTokenModel)jsonToken.ToObject(typeof (VazcoTokenModel));
+            responseModel.Token = (VazcoTokenModel)jsonToken.ToObject(typeof (VazcoTokenModel));
             var identityClient = new HttpClient();
-            identityClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + responseToken.access_token);
+            identityClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + responseModel.Token.access_token);
             HttpResponseMessage identity = await identityClient.GetAsync("http://oauth.stg.vazco.eu/oauth2/getIdentity");
             var readContent = identity.Content.ReadAsStringAsync();
             var jsonIdentity = (JObject) JsonConvert.DeserializeObject(readContent.Result);
-            var responseIdentity = (VazcoIdentityModel)jsonIdentity.ToObject(typeof(VazcoIdentityModel));
+            responseModel.Identity = (VazcoIdentityModel)jsonIdentity.ToObject(typeof(VazcoIdentityModel));
+
+
+            //tworzenie nowego użytkownika oraz logowanie go do aplikacji
+            var userManager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            ApplicationUser user = new ApplicationUser() {Id = responseModel.Identity.id, UserName = responseModel.Identity.email, Email = responseModel.Identity.email };
+            var makeUser =await userManager.CreateAsync(user);
             
-            return View(responseToken);
+            var SignInManager = HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
+            await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+
             
+
+
+            return View(responseModel); 
         }
-
-
     }
 }

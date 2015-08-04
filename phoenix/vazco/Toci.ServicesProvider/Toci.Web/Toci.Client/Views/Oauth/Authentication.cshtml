@@ -1,10 +1,16 @@
-﻿@model Toci.Client.Models.VazcoTokenModel
+﻿@model Toci.Client.Models.VazcoResponseModel
 @{
-    ViewBag.Title = "VazcoOauthResponse";
+    ViewBag.Title = "Vazco Oauth Response";
 }
 <h4>@ViewBag.Title</h4>
+<h5>Token data:</h5>
 <ul>
-    <li>Token type: @Model.token_type</li>
-    <li>Received token: @Model.access_token</li>
-    <li>Expires in: @Model.expires_in</li>
+    <li>Token type: @Model.Token.token_type</li>
+    <li>Received token: @Model.Token.access_token</li>
+    <li>Expires in: @Model.Token.expires_in</li>
+</ul>
+<h5>User data:</h5>
+<ul>
+    <li>Id: @Model.Identity.id</li>
+    <li>Email: @Model.Identity.email</li>
 </ul>
