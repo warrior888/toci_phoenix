@@ -50,5 +50,23 @@ namespace DbCrypting.Logic
             }
             return dbModelList;
         }
+        public List<VazcoTable> GetVazcoList(T1 model, T2 dbhandle)
+        {
+            var vazcoList = new List<VazcoTable>();
+
+            var list = GetTableContent(model, dbhandle);
+            foreach (var item in list)
+            {
+                vazcoList.Add(new VazcoTable
+                {
+                    addingTime = (DateTime)item[timePosition],
+                    data = (string)item[dataPosition],
+                    name = (string)item[nickPosition],
+                    hash = (string)item[hashPosition],
+                    id = (int)item[idPosition]
+                });
+            }
+            return vazcoList;
+        }
     }
 }

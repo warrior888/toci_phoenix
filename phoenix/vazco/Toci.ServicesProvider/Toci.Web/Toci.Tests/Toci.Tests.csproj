@@ -69,6 +69,7 @@
     <Compile Include="EncryptionTest.cs" />
     <Compile Include="DbCryptingTest.cs" />
     <Compile Include="GetCertyficateInBase64.cs" />
+    <Compile Include="ModelGeneratorTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\..\Toci.Utilities\Toci.Utilities.csproj">

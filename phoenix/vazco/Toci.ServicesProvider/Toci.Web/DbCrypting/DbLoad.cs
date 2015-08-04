@@ -7,12 +7,10 @@ namespace DbCrypting
 {
     public class DbLoad
     {
-        private readonly string _tableName;
         private readonly string _temporarySecret;
 
         public DbLoad()
         {
-            _tableName = LoadConfig.TableName;
             _temporarySecret = LoadConfig.TemporarySecret;
         }
 
@@ -20,7 +18,7 @@ namespace DbCrypting
         {
 
             var dbh = DbConnect.Connect();
-            var itemModel = new QueryModel(_tableName);
+            var itemModel = new QueryModel();
             itemModel.SetAll();
             var modelListGenerator = new GenerateDbModelList<QueryModel, DbHandle>();
 
