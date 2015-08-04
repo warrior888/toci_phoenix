@@ -41,6 +41,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\resources\Toci.Db.dll</HintPath>
     </Reference>
+    <Reference Include="Toci.Utilities.Abstraction">
+      <HintPath>..\..\..\..\..\Toci.Utilities.Abstraction\bin\Debug\Toci.Utilities.Abstraction.dll</HintPath>
+    </Reference>
+    <Reference Include="Toci.Utilities.Interfaces">
+      <HintPath>..\..\..\..\..\Toci.Utilities.Abstraction\bin\Debug\Toci.Utilities.Interfaces.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -65,6 +71,10 @@
     <Compile Include="GetCertyficateInBase64.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Toci.Utilities\Toci.Utilities.csproj">
+      <Project>{a7951807-f924-4108-a63b-253ce3f5b045}</Project>
+      <Name>Toci.Utilities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DbCredentials\DbCredentials.csproj">
       <Project>{c4549253-a41f-4eff-b32e-4a22ef6bec6b}</Project>
       <Name>DbCredentials</Name>
