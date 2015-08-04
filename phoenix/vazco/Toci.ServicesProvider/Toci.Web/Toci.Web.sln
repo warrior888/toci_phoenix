@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.AuthorizationServer", "Toci.AuthorizationServer\Toci.AuthorizationServer.csproj", "{B6A7D2CA-61C5-4017-B80D-6AEB9E6E76CA}"
 EndProject
@@ -36,6 +36,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.Utilities.Common", "..\..\..\..\Toci.Utilities.Common\Toci.Utilities.Common.csproj", "{AA84D501-0707-40D3-AED8-F4884E7F0FB2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Toci", "Toci", "{5377D369-C559-4980-96AC-D5BB738E5910}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.CryptingFrontDemo", "Toci.CryptingFrontDemo\Toci.CryptingFrontDemo.csproj", "{ED2AD3D7-C4E5-45C9-B5B1-C95FF562AB97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.DigitalSignatureFrontDemo", "Toci.DigitalSignatureFrontDemo\Toci.DigitalSignatureFrontDemo.csproj", "{77CEE5BA-D7B7-4C2F-8466-7B97D74AC9FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -107,15 +111,23 @@ Global
 		{AA84D501-0707-40D3-AED8-F4884E7F0FB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA84D501-0707-40D3-AED8-F4884E7F0FB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA84D501-0707-40D3-AED8-F4884E7F0FB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED2AD3D7-C4E5-45C9-B5B1-C95FF562AB97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED2AD3D7-C4E5-45C9-B5B1-C95FF562AB97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED2AD3D7-C4E5-45C9-B5B1-C95FF562AB97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED2AD3D7-C4E5-45C9-B5B1-C95FF562AB97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77CEE5BA-D7B7-4C2F-8466-7B97D74AC9FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77CEE5BA-D7B7-4C2F-8466-7B97D74AC9FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77CEE5BA-D7B7-4C2F-8466-7B97D74AC9FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77CEE5BA-D7B7-4C2F-8466-7B97D74AC9FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{A7951807-F924-4108-A63B-253CE3F5B045} = {5377D369-C559-4980-96AC-D5BB738E5910}
-		{3F7C2517-390A-40BF-A1FC-3F5DFAE8BDF2} = {5377D369-C559-4980-96AC-D5BB738E5910}
-		{AA84D501-0707-40D3-AED8-F4884E7F0FB2} = {5377D369-C559-4980-96AC-D5BB738E5910}
-		{C3976AC9-39A5-4B47-8A67-33F021A4CDC3} = {5377D369-C559-4980-96AC-D5BB738E5910}
 		{E45EA1C2-F40C-4903-94C3-30A885A71D33} = {5377D369-C559-4980-96AC-D5BB738E5910}
+		{3F7C2517-390A-40BF-A1FC-3F5DFAE8BDF2} = {5377D369-C559-4980-96AC-D5BB738E5910}
+		{C3976AC9-39A5-4B47-8A67-33F021A4CDC3} = {5377D369-C559-4980-96AC-D5BB738E5910}
+		{AA84D501-0707-40D3-AED8-F4884E7F0FB2} = {5377D369-C559-4980-96AC-D5BB738E5910}
 	EndGlobalSection
 EndGlobal
