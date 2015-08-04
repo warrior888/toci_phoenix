@@ -1,6 +1,6 @@
 $( document ).ready(function() {
-    AppendOnClick('car-rentals', 'servicesContainer', 'car-renting.html');
-    AppendOnClick('return', 'servicesContainer', 'services.html')
+    AppendOnClick('car-rentals', 'servicesContainer', 'server/Content/car-renting.html');
+    AppendOnClick('return', 'servicesContainer', 'server/Content/services.html')
 });
 
 

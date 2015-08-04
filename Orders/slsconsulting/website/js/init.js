@@ -1,3 +1,4 @@
-$( document ).ready(function() {
-          $('#suppa-wrappa').load('services.html');
-  });
+$(document).ready(function() {
+    $('#home-section').load('server/content/home.html');
+    ScrollAjaxHandler();
+});
