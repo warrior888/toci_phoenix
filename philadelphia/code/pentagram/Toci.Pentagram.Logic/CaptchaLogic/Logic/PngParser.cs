@@ -36,7 +36,7 @@ namespace Toci.Pentagram.Logic.CaptchaLogic.Logic
                 (
                 //8- standardowa ilsoc znakow w tab
                 (thelongesWord.Length + tabsInLongestWord * 8) * FontSize,
-                stream.Count(x => x == '\n') * font.Height
+                (stream.Count(x => x == '\n')+1) * font.Height
 
 
                 );
