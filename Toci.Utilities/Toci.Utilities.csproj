@@ -147,6 +147,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Document\DocumentParsers\Base64\" />
     <Folder Include="Document\DocumentRecognizers\OCR\" />
     <Folder Include="Document\DocumentRecognizers\PDF\" />
   </ItemGroup>
