@@ -33,7 +33,7 @@ namespace Toci.Tests
 
             var template = new DefaultModelTemplateProvider
             {
-                NamespaceName = "Phoenix.Dal.GeneratedModels",
+                NamespaceName = "DbCredentials.CredentialsModels",
                 Parents = "Model",
                 Usings = string.Format("{0}{1}{2}", "Toci.Db.DbVirtualization", newline, "Toci.Db.Interfaces")
             };
@@ -44,10 +44,9 @@ namespace Toci.Tests
             var modelsGenerator = new TociDbModelsGenerator(new TociDbModelGenerator(new SqlDdlParser(new SqlDdlEntryParser()), template));
 
             modelsGenerator.GenerateModels(
-                @"..\..\Developers\Duch\data\test.txt",
+                @"..\..\..\DbCredentials\Config\DataBase.txt",
                 // @"..\..\Developers\Duch\destination",
-                @"..\..\..\..\phoenix.Dal\Phoenix.Dal\GeneratedModels",
-                ";", ",");
+                @"..\..\..\DbCredentials\CredentialsModels",";", ",");
         }
     }
 }
