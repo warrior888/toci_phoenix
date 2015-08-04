@@ -3,9 +3,9 @@ using Toci.Db.Interfaces;
 
 namespace DbCredentials.CredentialsModels
 {
-    public class ProjectAcces : Model
+    public class ProjectAccess : Model
     {
-        public ProjectAcces() : base("ProjectAcces")
+        public ProjectAccess() : base("ProjectAccess")
         {
         }
          
@@ -51,7 +51,7 @@ namespace DbCredentials.CredentialsModels
 
         protected override IModel GetInstance()
         {
-            return new ProjectAcces();
+            return new ProjectAccess();
         }
     }
 }

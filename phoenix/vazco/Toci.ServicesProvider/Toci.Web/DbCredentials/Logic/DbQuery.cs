@@ -1,82 +1,45 @@
 ﻿using System;
 using System.Collections.Generic;
+using DbCredentials.CredentialsModels;
 using DbCredentials.Logic.DbModels;
 using DbCredentials.Logic.QueryModels;
 using DbCrypting.Logic;
 using Toci.Db.ClusterAccess;
+using Toci.Db.DbVirtualization;
+using Toci.Db.Interfaces;
 
 namespace DbCredentials.Logic
 {
     public class DbQuery
     {
-        protected Dictionary<string, Func<QueryModel>> QueryModelDictionary = new Dictionary<string, Func<QueryModel>>
+        private DbHandle dbHandle;
+
+        public DbQuery()
         {
-            {"ProjectAccess", () => new QueryProjectAccessModel()},
-            {"Projects", () => new QueryProjectsModel()},
-            {"Scopes", () => new QueryScopesModel()},
-            {"Users", () => new QueryUsersModel()},
-        };
-        
-        protected Dictionary<string, Func<DbModel>> DbModelDictionary = new Dictionary<string, Func<DbModel>>
-        {
-            {"ProjectAccess", () => new DbProjectAccessModel()},
-            {"Projects", () => new DbProjectsModel()},
-            {"Scopes", () => new DbScopesModel()},
-            {"Users", () => new DbUsersModel()},
-        };
-
-        public void Save(DbModel model, string tableName)
-        {
-            
-            var query = QueryModelDictionary[tableName]();
-            var dbh = DbConnect.Connect();
-
-            //model.EncryptModel(_temporarySecret);
-            query.FillAddInModel(model);
-            dbh.InsertData(query);
-
-
+            dbHandle = DbConnect.Connect();
         }
 
-        public List<DbModel> Load(string tableName)
+
+        public int Save(Model model)
         {
-
-            var dbHandle = DbConnect.Connect();
-            var query = QueryModelDictionary[tableName]();
-            query.SetAll();
-
-            var dbModelList = DbModelDictionary[tableName]().GetDbModelList(query, dbHandle);
-            //dbModelList.DecryptDbModels(_temporarySecret);
-
-
-
-            return (dbModelList);
+            return dbHandle.InsertData(model);
         }
 
-        //public void Update(DbModel model, string tableName)
-        //{
-        //    var query = QueryModelDictionary[tableName]();
-        //    var dbh = DbConnect.Connect();
+        public List<IModel> Load(Model model)
+        {
+            var dataSet = dbHandle.GetData(model);
+            return model.GetDataRowsList(dataSet);
+        }
 
-        //    //model.EncryptModel(_temporarySecret);
+        public int Update(Model model)
+        {
+            return dbHandle.UpdateData(model);
+        }
 
-        //    query.SetData(model.data);
-        //    query.SetHash(model.hash);
-
-        //    query.AddIsWhere(TimeColumnName, model.addingTime, true);
-        //    query.AddIsWhere(NickColumnName, model.nick, true);
-        //    dbh.UpdateData(query);
-
-        //}
-
-        //public void Delete(DbModel model, string tableName)
-        //{
-        //    var query = QueryModelDictionary[tableName]();
-        //    var dbh = DbConnect.Connect();
-        //    query.AddIsWhere(IdColumnName, model.Id, true);
-        //    dbh.DeleteData(query);
-        //}
-
+        public int Delete(Model model)
+        {
+            return dbHandle.DeleteData(model);
+        }
         
     }
 }

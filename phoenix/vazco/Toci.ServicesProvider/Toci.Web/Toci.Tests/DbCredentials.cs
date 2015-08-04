@@ -1,4 +1,5 @@
 ﻿using System;
+using DbCredentials.CredentialsModels;
 using DbCredentials.Logic;
 using DbCredentials.Logic.DbModels;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -17,10 +18,19 @@ namespace Toci.Tests
            // const string testString = "Test text";
 
 
-            DbScopesModel model = new DbScopesModel { ScopeID = 1, ScopeName = "Tralala" };
+            Scopes model = new Scopes
+            {
+                scopeid = 1, 
+                scopename = "Tralala"
+            };
 
-            dbQuery.Save(model, "Scopes");
-            var result = dbQuery.Load("Scopes");
+            dbQuery.Delete(model);
+            Scopes anothermodel = new Scopes
+            {
+                
+            };
+            var result = dbQuery.Load(anothermodel).ToArray();
+            //var anotherresult = dbQuery.Load(anothermodel).ToArray();
             //Assert.AreEqual(testString, r);
         }
 
