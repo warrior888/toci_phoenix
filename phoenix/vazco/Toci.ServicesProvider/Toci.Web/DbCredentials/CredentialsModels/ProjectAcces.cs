@@ -9,8 +9,8 @@ namespace DbCredentials.CredentialsModels
         {
         }
          
-        public const string ACCESSID = "AccessID";
-        public System.Int32 AccessID
+        public const string ACCESSID = "accessid";
+        public System.Int32 accessid
             {
                 get
                 {
@@ -22,8 +22,8 @@ namespace DbCredentials.CredentialsModels
                 }
             }
          
-        public const string USERID = "UserID";
-        public System.Int32 UserID
+        public const string USERID = "userid";
+        public System.Int32 userid
             {
                 get
                 {
@@ -35,8 +35,8 @@ namespace DbCredentials.CredentialsModels
                 }
             }
          
-        public const string PROJECTID = "ProjectID";
-        public System.Int32 ProjectID
+        public const string PROJECTID = "projectid";
+        public System.Int32 projectid
             {
                 get
                 {

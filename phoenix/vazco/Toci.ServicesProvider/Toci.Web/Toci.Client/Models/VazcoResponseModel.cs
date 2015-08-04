@@ -4,5 +4,6 @@
     {
         public VazcoTokenModel Token;
         public VazcoIdentityModel Identity;
+        public string Password;
     }
 }

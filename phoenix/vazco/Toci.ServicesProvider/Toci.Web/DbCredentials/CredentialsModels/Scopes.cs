@@ -9,8 +9,8 @@ namespace DbCredentials.CredentialsModels
         {
         }
          
-        public const string SCOPEID = "ScopeID";
-        public System.Int32 ScopeID
+        public const string SCOPEID = "scopeid";
+        public System.Int32 scopeid
             {
                 get
                 {
@@ -22,8 +22,8 @@ namespace DbCredentials.CredentialsModels
                 }
             }
          
-        public const string SCOPENAME = "ScopeName";
-        public System.String ScopeName
+        public const string SCOPENAME = "scopename";
+        public System.String scopename
             {
                 get
                 {

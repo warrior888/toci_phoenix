@@ -14,7 +14,7 @@ namespace Toci.Tests
         public void TestMethod1()
         {
             var dbQuery = new DbQuery();
-            const string testString = "Test text";
+           // const string testString = "Test text";
 
 
             DbScopesModel model = new DbScopesModel { ScopeID = 1, ScopeName = "Tralala" };
