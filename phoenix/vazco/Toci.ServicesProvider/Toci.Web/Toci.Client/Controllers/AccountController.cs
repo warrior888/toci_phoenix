@@ -56,10 +56,10 @@ namespace Toci.Client.Controllers
         //
         // GET: /Account/Login
         [AllowAnonymous]
-        public ActionResult Login(string returnUrl)
+        public ActionResult Login(string returnUrl, LoginViewModel model)
         {
             ViewBag.ReturnUrl = returnUrl;
-            return View();
+            return View(model);
         }
 
         //
@@ -399,9 +399,9 @@ namespace Toci.Client.Controllers
         //
         // GET: /Account/ExternalLoginFailure
         [AllowAnonymous]
-        public ActionResult ExternalLoginFailure()
+        public ActionResult ExternalLoginFailure(string errormsg)
         {
-            return View();
+            return View(errormsg);
         }
 
         protected override void Dispose(bool disposing)

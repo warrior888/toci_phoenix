@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -34,7 +35,7 @@ namespace Toci.Client.Controllers
         // GET: Oauth
         //[HttpPost]
         [Route("/oauth/authentication")]
-        public async Task<ViewResult> Authentication(string code)
+        public async Task<RedirectToRouteResult> Authentication(string code)
         {
             var requestClient = new HttpClient();
             var responseModel = new VazcoResponseModel();
@@ -60,32 +61,65 @@ namespace Toci.Client.Controllers
             var readContent = identity.Content.ReadAsStringAsync();
             var jsonIdentity = (JObject) JsonConvert.DeserializeObject(readContent.Result);
             responseModel.Identity = (VazcoIdentityModel)jsonIdentity.ToObject(typeof(VazcoIdentityModel));
+            //^^ na tym etapie mamy informacje o użytkowniku 
+            //Skaczemy albo do strony logowania albo do rejestracji nowego konta
+            if (await IsRegistred(responseModel.Identity.id))
+            {
+                return RedirectToAction("Login", "Account", new LoginViewModel() { Email =responseModel.Identity.email });
+            }
+            return RedirectToAction("RegisterForm", responseModel);
 
-
-            //tworzenie nowego użytkownika oraz logowanie go do aplikacji
-            /*var userManager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
-            ApplicationUser user = new ApplicationUser() {Id = responseModel.Identity.id, UserName = responseModel.Identity.email, Email = responseModel.Identity.email };
-            var makeUser =await userManager.CreateAsync(user);
-            
-            var SignInManager = HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
-            await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);*/
-
-            
-
-
-            return View(responseModel); 
         }
 
-        //[HttpPost]
-        public async Task<ActionResult> Register(VazcoResponseModel model)
+        public ViewResult RegisterForm(VazcoResponseModel model)
+        {
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> Register(string id, string email, string password)
+        {
+
+            var userManager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            /*var result = await userManager.FindByIdAsync(id);
+            if (result != null)
+            {
+                return RedirectToAction("Login", "Account", new LoginViewModel() {Email = email});
+            }*/
+            ApplicationUser user = new ApplicationUser() { Id = id, UserName = email, Email = email }; //do uzupełnienia jeśli dojdą nowe claimsy
+            //var signInManager = HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
+            var makeUser = await userManager.CreateAsync(user, password);
+            if (makeUser.Succeeded)
+            {
+                // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
+                await SignIn(user.UserName, password);
+
+                return RedirectToAction("Index", "Home");
+            }
+            return RedirectToAction("ExternalLoginFailure", "Account", makeUser.Errors.First());
+        }
+
+        
+        private async Task<bool> SignIn(string userName, string password)
+        {
+            var signInManager = HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
+            try
+            {
+                await signInManager.PasswordSignInAsync(userName, password, false, false);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        private async Task<bool> IsRegistred(string id)
         {
             var userManager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
-            ApplicationUser user = new ApplicationUser() { Id = model.Identity.id, UserName = model.Identity.email, Email = model.Identity.email };
-            var makeUser = await userManager.CreateAsync(user);
-
-            var SignInManager = HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
-            await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
-            return null;
+            var result = await userManager.FindByIdAsync(id);
+            return result != null;
         }
+
     }
 }
