@@ -137,16 +137,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Toci.Utilities.Abstraction\Toci.Utilities.Abstraction.csproj">
-      <Project>{3f7c2517-390a-40bf-a1fc-3f5dfae8bdf2}</Project>
-      <Name>Toci.Utilities.Abstraction</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Toci.Utilities.Interfaces\Toci.Utilities.Interfaces\Toci.Utilities.Interfaces.csproj">
-      <Project>{c3976ac9-39a5-4b47-8a67-33f021a4cdc3}</Project>
-      <Name>Toci.Utilities.Interfaces</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Document\DocumentRecognizers\OCR\" />
     <Folder Include="Document\DocumentRecognizers\PDF\" />
   </ItemGroup>
@@ -184,6 +174,16 @@
     <None Include="Document\DocumentParsers\DOC\Sample\sample4.odt" />
     <None Include="Document\DocumentParsers\PDF\data\sample.pdf" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Toci.Utilities.Abstraction\Toci.Utilities.Abstraction.csproj">
+      <Project>{3f7c2517-390a-40bf-a1fc-3f5dfae8bdf2}</Project>
+      <Name>Toci.Utilities.Abstraction</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Toci.Utilities.Interfaces\Toci.Utilities.Interfaces\Toci.Utilities.Interfaces.csproj">
+      <Project>{c3976ac9-39a5-4b47-8a67-33f021a4cdc3}</Project>
+      <Name>Toci.Utilities.Interfaces</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\phoenix\phoenix.Dal\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\phoenix\phoenix.Dal\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />

@@ -41,6 +41,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\resources\Toci.Db.dll</HintPath>
     </Reference>
+    <Reference Include="Toci.Utilities.Abstraction">
+      <HintPath>..\..\..\..\..\Toci.Utilities.Abstraction\bin\Debug\Toci.Utilities.Abstraction.dll</HintPath>
+    </Reference>
+    <Reference Include="Toci.Utilities.Interfaces">
+      <HintPath>..\..\..\..\..\Toci.Utilities.Abstraction\bin\Debug\Toci.Utilities.Interfaces.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
