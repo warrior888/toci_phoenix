@@ -9,7 +9,6 @@
 
 @import url("font-awesome.min.css");
 @import url("school-icons.css");
-@import url("iframe-rwd.css");
 
 /*------------------------------------------------------------------
 
@@ -56,7 +55,9 @@ a (hover):				#81a27b (darker green)
 }
 
 
-
+* {
+	 font-family: 'Exo', sans-serif;
+ }
 
 body {
     /*ukryte zanim strona siê za³aduje*/
