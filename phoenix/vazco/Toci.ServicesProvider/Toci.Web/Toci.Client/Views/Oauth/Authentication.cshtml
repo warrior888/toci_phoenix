@@ -1,8 +1,10 @@
-﻿@model dynamic
-
+﻿@model Toci.Client.Models.VazcoTokenModel
 @{
-    ViewBag.Title = "title";
-    Layout = "_Layout";
+    ViewBag.Title = "VazcoOauthResponse";
 }
-
-<h2>title</h2>
+<h4>@ViewBag.Title</h4>
+<ul>
+    <li>Token type: @Model.token_type</li>
+    <li>Received token: @Model.access_token</li>
+    <li>Expires in: @Model.expires_in</li>
+</ul>
