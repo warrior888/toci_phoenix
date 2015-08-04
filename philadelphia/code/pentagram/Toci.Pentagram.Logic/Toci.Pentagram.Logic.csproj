@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DbLogic\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Mock\QuestionMock.json" />
