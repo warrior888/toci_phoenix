@@ -2,8 +2,11 @@
 {
     public class VazcoResponseModel
     {
-        public VazcoTokenModel Token;
-        public VazcoIdentityModel Identity;
-        public string Password;
+        public string token_type;
+        public string access_token;
+        public string expires_in;
+        public string id;
+        public string email;
+        public string password;
     }
 }

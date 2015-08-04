@@ -38,7 +38,6 @@ namespace Toci.Client.Controllers
         public async Task<RedirectToRouteResult> Authentication(string code)
         {
             var requestClient = new HttpClient();
-            var responseModel = new VazcoResponseModel();
             var Params = new Dictionary<string,string>()
                 {
                     {"grant_type", "authorization_code" },
@@ -54,25 +53,34 @@ namespace Toci.Client.Controllers
 
 
             var jsonToken = (JObject)JsonConvert.DeserializeObject(responseString);
-            responseModel.Token = (VazcoTokenModel)jsonToken.ToObject(typeof (VazcoTokenModel));
+            var token = (VazcoTokenModel)jsonToken.ToObject(typeof (VazcoTokenModel));
             var identityClient = new HttpClient();
-            identityClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + responseModel.Token.access_token);
-            HttpResponseMessage identity = await identityClient.GetAsync("http://oauth.stg.vazco.eu/oauth2/getIdentity");
-            var readContent = identity.Content.ReadAsStringAsync();
-            var jsonIdentity = (JObject) JsonConvert.DeserializeObject(readContent.Result);
-            responseModel.Identity = (VazcoIdentityModel)jsonIdentity.ToObject(typeof(VazcoIdentityModel));
+            identityClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + token.access_token);
+            HttpResponseMessage identityResponseMessage = await identityClient.GetAsync("http://oauth.stg.vazco.eu/oauth2/getIdentity");
+            var readContent = await identityResponseMessage.Content.ReadAsStringAsync();
+            var jsonIdentity = (JObject) JsonConvert.DeserializeObject(readContent);
+            var identity = (VazcoIdentityModel)jsonIdentity.ToObject(typeof(VazcoIdentityModel));
             //^^ na tym etapie mamy informacje o użytkowniku 
             //Skaczemy albo do strony logowania albo do rejestracji nowego konta
-            if (await IsRegistred(responseModel.Identity.id))
+            if (await IsRegistred(identity.id))
             {
-                return RedirectToAction("Login", "Account", new LoginViewModel() { Email =responseModel.Identity.email });
+                return RedirectToAction("Login", "Account", new LoginViewModel() { Email =identity.email });
             }
-            return RedirectToAction("RegisterForm", responseModel);
+            var responseModel = ConvertToResponseModel(identity, token);
+            TempData["responseModel"] = responseModel;
+            return RedirectToAction("RegisterForm");
 
         }
 
-        public ViewResult RegisterForm(VazcoResponseModel model)
+
+        public VazcoResponseModel ConvertToResponseModel(VazcoIdentityModel identity, VazcoTokenModel token)
         {
+            return new VazcoResponseModel() {id = identity.id, email = identity.email, access_token = token.access_token, token_type = token.token_type, expires_in = token.expires_in};
+        }
+        [HttpGet]
+        public ViewResult RegisterForm()
+        {
+            var model = TempData["responseModel"];
             return View(model);
         }
 
@@ -99,7 +107,7 @@ namespace Toci.Client.Controllers
             return RedirectToAction("ExternalLoginFailure", "Account", makeUser.Errors.First());
         }
 
-        
+        //
         private async Task<bool> SignIn(string userName, string password)
         {
             var signInManager = HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
