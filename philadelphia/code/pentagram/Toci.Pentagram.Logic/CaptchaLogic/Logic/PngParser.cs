@@ -29,8 +29,8 @@ namespace Toci.Pentagram.Logic.CaptchaLogic.Logic
         {
        
             string[] a = stream.Split(separators, StringSplitOptions.None);
-            string thelongesWord = a.OrderByDescending(s => 8 * s.Count(x => x == '\t') + s.Count(x => x != '\t')).
-                 First();
+            string thelongesWord = a.OrderByDescending(s => 8 * s.Count(x => x == '\t') + s.Count(x => x != '\t'))
+                . First();
             int tabsInLongestWord = thelongesWord.Count(x => x == '\t');
             Bitmap image = new Bitmap
                 (
