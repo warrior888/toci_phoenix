@@ -1,12 +1,15 @@
-﻿namespace Toci.Client.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Toci.Client.Models
 {
     public class VazcoResponseModel
     {
-        public string token_type;
-        public string access_token;
-        public string expires_in;
-        public string id;
-        public string email;
-        public string password;
+        public string token_type { get; set; }
+        public string access_token { get; set; }
+        public string expires_in { get; set; }
+        public string id { get; set; }
+        public string email { get; set; }
+
+        public string password { get; set; }
     }
 }
