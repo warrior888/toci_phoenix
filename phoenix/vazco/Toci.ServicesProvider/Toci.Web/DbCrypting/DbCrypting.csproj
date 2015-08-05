@@ -39,9 +39,6 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="Toci.Db">
-      <HintPath>..\resources\Toci.Db.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="QueryModel.cs" />
@@ -58,6 +55,10 @@
     <Compile Include="VazcoDb\VazcoTable.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Toci.Db\Toci.Db.csproj">
+      <Project>{e45ea1c2-f40c-4903-94c3-30a885a71d33}</Project>
+      <Name>Toci.Db</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EncodingLib\EncodingLib.csproj">
       <Project>{44d0c538-5d19-409a-8f30-2519339fc818}</Project>
       <Name>EncodingLib</Name>

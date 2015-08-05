@@ -11,11 +11,11 @@ namespace Toci.CryptingApi.Controllers
     public class DbUpdateController : ApiController
     {
         [Route("api/models/update")]
-        [HttpGet]
-        public string DeleteFromDb([FromUri] DbModel model)
+        [HttpPost]
+        public string DeleteFromDb([FromBody]string password, [FromBody]VazcoTable model)
         {
             var update = new DbSave();
-            update.Update(model);
+           // update.Update(model);
 
             return "Updated!";
         }
