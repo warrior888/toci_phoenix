@@ -1,5 +1,5 @@
 var ContentLoader = {
-    iterator: 0,
+    iterator: 1,
 
     sectionId: [
         '#home-section',

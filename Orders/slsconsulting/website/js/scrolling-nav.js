@@ -24,22 +24,20 @@ $(function() {
 
         var destSection = '#' + $($anchor.attr('href')).attr('id');
 
-        console.log('============================ ',ContentLoader.iterator);
         ContentLoader.OnClickLoading(destSection);
 
-        setTimeout(function(){
-            //console.log('Scrolling-nav: ', ContentLoader.iterator);
-            if (docOffset >= 270) {
-                sectionOffset = navHeight + navSectionOffset;
-            } else {
-                sectionOffset = navHeight + navSectionOffset + 90; //rozkminic: jak wyci¹gn¹æ tê liczbê?
-            }
-            //  console.log(sectionOffset);
-            $('html, body').stop().animate({
-                scrollTop: ($($anchor.attr('href')).offset().top - sectionOffset)
-            }, 1500, 'easeInOutExpo');
+
+        if (docOffset >= 270) {
+            sectionOffset = navHeight + navSectionOffset;
+        } else {
+            sectionOffset = navHeight + navSectionOffset + 90; //rozkminic: jak wyci¹gn¹æ tê liczbê?
+        }
+
+        $('html, body').stop().animate({
+            scrollTop: ($($anchor.attr('href')).offset().top - sectionOffset)
+        }, 1500, 'easeInOutExpo');
             event.preventDefault();
-        }, 1000);
+
         });
 
 
