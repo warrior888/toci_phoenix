@@ -1,5 +1,6 @@
 ﻿using System;
 using DbCrypting;
+using DbCrypting.VazcoDb;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Toci.Tests
@@ -63,7 +64,7 @@ namespace Toci.Tests
             var result2 = dbo.Load();
 
 
-            Assert.AreEqual(updatedString, result[0].data);
+            Assert.AreEqual(updatedString, result2[0].data);
 
 
         }

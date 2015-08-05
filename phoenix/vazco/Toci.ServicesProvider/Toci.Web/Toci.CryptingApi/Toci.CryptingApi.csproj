@@ -109,6 +109,10 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Toci.Db\Toci.Db.csproj">
+      <Project>{E45EA1C2-F40C-4903-94C3-30A885A71D33}</Project>
+      <Name>Toci.Db</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DbCrypting\DbCrypting.csproj">
       <Project>{b8730ca1-13e6-4d51-a436-da4a8a7d4062}</Project>
       <Name>DbCrypting</Name>

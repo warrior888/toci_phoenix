@@ -11,11 +11,12 @@ namespace Toci.CryptingApi.Controllers
     public class DbDeleteController : ApiController
     {
         [Route("api/models/delete")]
-        [HttpGet]
-        public string DeleteFromDb([FromUri] DbModel model)
+        [HttpPost]
+        
+        public string DeleteFromDb([FromBody]string password,[FromBody]VazcoTable model)
         {
             var delete = new DbSave();
-            delete.Delete(model);
+           // delete.Delete(model);
 
             return "Deleted!";
         }

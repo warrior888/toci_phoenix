@@ -12,8 +12,8 @@ namespace Toci.CryptingApi.Controllers
     {
         private const string empty = "";
         [Route("api/models/load")]
-        [HttpGet]
-        public IEnumerable<DbModel> LoadDbModels(string name=empty)
+        [HttpPost]
+        public IEnumerable<DbModel> LoadDbModels([FromBody]string password,[FromBody]string name=empty)
         {
             var load = new DbLoad();
 

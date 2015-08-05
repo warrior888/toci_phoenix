@@ -11,11 +11,11 @@ namespace Toci.CryptingApi.Controllers
     public class DbSaveController : ApiController
     {
         [Route("api/models/save")]
-        [HttpGet]
-        public string SaveToDb([FromUri] DbModel model)
+        [HttpPost]
+        public string SaveToDb([FromBody]string password, [FromBody]VazcoTable model)
         {
             var save = new DbSave();
-            save.Save(model);
+            ///save.Save(model);
 
             return "Saved!";
         }

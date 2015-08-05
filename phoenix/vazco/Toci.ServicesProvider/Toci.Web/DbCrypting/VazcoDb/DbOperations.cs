@@ -3,20 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using DbCrypting.Config;
 using DbCrypting.Logic;
-using Toci.Db.ClusterAccess;
-using Toci.Db.DbVirtualization;
 
-namespace DbCrypting
+namespace DbCrypting.VazcoDb
 {
     public class DbOperations
     {
         private const string IdColumnName = "id";
-        private readonly string _tableName;
+        
         private readonly string _temporarySecret;
 
         public DbOperations()
         {
-            _tableName = LoadConfig.TableName;
+            
             _temporarySecret = LoadConfig.TemporarySecret;
         }
 
