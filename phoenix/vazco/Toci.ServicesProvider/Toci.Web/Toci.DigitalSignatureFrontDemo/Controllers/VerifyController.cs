@@ -9,7 +9,7 @@ namespace Toci.DigitalSignatureFrontDemo.Controllers
     public class VerifyController : Controller
     {
         // GET: Verify
-        public ActionResult Verify()
+        public ActionResult Index()
         {
             return View();
         }

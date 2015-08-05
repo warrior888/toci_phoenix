@@ -1,15 +1,7 @@
 ﻿@model dynamic
 
 @{
-    ViewBag.Title = "Sign";
+    ViewBag.Title = "Data fingerprint";
 }
 
 <h2>@ViewBag.Title</h2>
-
-@using (Html.BeginForm("Sign", "Sign", FormMethod.Post, new { enctype = "multipart/form-data" }))
-{
-   
-    <input type="file" name="FileUpload" />
-    <input type="submit" name="Submit" id="Submit" value="Upload" />
-}
-
