@@ -5,6 +5,8 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using DbCrypting;
+using DbCrypting.VazcoDb;
+using Toci.CryptingApi.Models;
 
 namespace Toci.CryptingApi.Controllers
 {
@@ -12,12 +14,19 @@ namespace Toci.CryptingApi.Controllers
     {
         [Route("api/models/save")]
         [HttpPost]
-        public string SaveToDb([FromBody]string password, [FromBody]VazcoTable model)
+        public string SaveToDb(BodyModel model)///[FromBody]string dataString, [FromBody]string password)
         {
-            var save = new DbSave();
-            ///save.Save(model);
+            try
+            {
+                var dbo = new DbOperations(model.password);
+                dbo.Save(new VazcoTable {data = model.data});
 
-            return "Saved!";
+                return "Saved!";
+            }
+            catch (Exception)
+            {
+                return "Invalid Password!";
+            }
         }
     }
 }
