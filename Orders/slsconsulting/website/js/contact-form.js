@@ -1,5 +1,4 @@
 $(document).ready(function() {
-	console.log('rejestruje');
     $('#contact-form').submit(function(event) {
         SubmitForm(FormDecorator(this.id, 'server/contact.php'), event);
     });

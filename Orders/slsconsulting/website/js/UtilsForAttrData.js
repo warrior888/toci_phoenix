@@ -6,7 +6,7 @@ var validationCallbacks = {
     'CustomEmailPrompterForContactForm': CustomEmailPrompterForContactForm
 };
 
-var validationElements = {}
+var validationElements = {};
 
 /* ************************************************************ */
 
@@ -16,7 +16,6 @@ function ValidateOtherFieldForField(inputFieldId) {
 
     var otherFieldCallback = referenceInput.attr('data-validate-other-field-if');
     var otherFieldsId = referenceInput.attr('data-other-field-id');
-
     var elementsValues = GenerateElementsId(otherFieldsId);
     validationCallbacks[otherFieldCallback](elementsValues, referenceInput);
 }
@@ -32,8 +31,8 @@ function GenerateElementsId(otherFieldsId) {
 
 function RegistarAllOnLoad() {
 
-    $('#contact-input-email').focus(function () { ValidateOtherFieldForField('contact-input-email'); });
-    $('#contact-input-email').blur(function () { $('#' + this.id).attr('placeholder', 'Email'); });
+    $('#met_contact_email').focus(function () { ValidateOtherFieldForField('met_contact_email'); });
+    $('#met_contact_email').blur(function () { $('#' + this.id).attr('placeholder', 'Email'); });
 }
 
 /* ************************************************************ */

@@ -73,7 +73,6 @@
 	<script src="js/servicesLoading.js"></script>
 	<script src="js/onScrollDynamicLoading.js"></script>
 
-
 	<script src="js/form-utils.js"></script>
 	<script src="js/contact-form.js"></script>
 	<script src="js/UtilsForAttrData.js"></script>
@@ -259,13 +258,15 @@
 						<h3 class="met_bold_one met_color">Napisz do nas</h3>
 						<form id = "contact-form" name method="post" action="#" class="met_contact_form met_comment_form">
 							<div class="met_long_container clearfix">
-								<input type="text" name="Name" required="" class="met_input_text" id="met_contact_name" placeholder="* Imię">
+								<input type="text" name="met_full_name" required="" class="met_input_text" id="met_full_name" placeholder="* Imię i Nazwisko"
+									   pattern="^[A-za-ząćęłńóśźżĄĘŁŃÓŚŹŻ -]{6,}$">
 							</div>
 							<div class="met_long_container clearfix">
-								<input type="email" name="Mail" required="" class="met_input_text" id="met_contact_email" placeholder="* Email">
+								<input type="email" name="Mail" required="" class="met_input_text" id="met_contact_email" placeholder="* Email"
+									   data-validate-other-field-if="CustomEmailPrompterForContactForm" data-other-field-id="met_full_name">
 							</div>
 							<div class="met_long_container clearfix">
-								<input type="text" name="Subject" required="" class="met_input_text" id="met_contact_email" placeholder="* temat">
+								<input type="text" name="Subject" required="" class="met_input_text" id="met_subject" placeholder="* temat">
 							</div>
 							<div class="met_long_container clearfix">
 								<textarea name="Message" required="" class="met_textarea" id="met_contact_textarea" placeholder="* wiadomość"></textarea>
