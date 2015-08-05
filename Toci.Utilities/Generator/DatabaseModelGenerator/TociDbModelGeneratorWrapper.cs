@@ -6,7 +6,7 @@ namespace Toci.Utilities.Generator.DatabaseModelGenerator
     public class TociDbModelGeneratorWrapper
     {
         private const string DdlItemsSeparator = ",";
-
+        /// <summary>Generates a class *.cs, speicfied by the WrpaperModel</summary>
         public void GenerateModel(WrapperModel model)
         {
             const string colon = ";";
