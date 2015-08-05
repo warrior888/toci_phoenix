@@ -20,16 +20,34 @@ namespace Toci.Tests
 
             Scopes model = new Scopes
             {
-                scopeid = 1, 
-                scopename = "Tralala"
+                //scopeid = 2,
+                scopename = "Tralalaasfdsaf"
             };
+            var rresult = dbQuery.Load(model, Scopes.SCOPEID);
+           // model.SetWhere(Scopes.SCOPEID);
+            dbQuery.Save(model);
+            model.scopeid = 2;
+            model.scopename = "kupczon";
+            dbQuery.Update(model, Scopes.SCOPEID);
+            
+            var result = dbQuery.Load(model);
+            model.scopeid = 1;
+            model.scopename = "kupczon";
+            dbQuery.Update(model, Scopes.SCOPEID);
+            result = dbQuery.Load(model);
 
-            dbQuery.Delete(model);
-            Scopes anothermodel = new Scopes
+
+            Projects prmodel = new Projects
             {
-                
+                projectname = "dads",
+                scopeid = 1,
+                projectdata = "dsagfsgdh"
             };
-            var result = dbQuery.Load(anothermodel).ToArray();
+            dbQuery.Save(prmodel);
+            prmodel.scopeid = 2;
+            prmodel.projectdata = "FSDSGSG";
+            dbQuery.Update(prmodel,Projects.PROJECTID);
+            result = dbQuery.Load(prmodel);
             //var anotherresult = dbQuery.Load(anothermodel).ToArray();
             //Assert.AreEqual(testString, r);
         }

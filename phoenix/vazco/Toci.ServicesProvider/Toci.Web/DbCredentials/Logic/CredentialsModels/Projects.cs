@@ -60,6 +60,18 @@ namespace DbCredentials.CredentialsModels
                     SetValue(PROJECTDATA, value);
                 }
             }
+        public const string HASH = "hash";
+        public System.String hash
+        {
+            get
+            {
+                return (System.String)Fields[HASH].GetValue();
+            }
+            set
+            {
+                SetValue(HASH, value);
+            }
+        }
         
 
         protected override IModel GetInstance()
