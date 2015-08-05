@@ -10,6 +10,7 @@ namespace DbCrypting
 {
     public class DbOperations
     {
+        private const string IdColumnName = "id";
         private readonly string _tableName;
         private readonly string _temporarySecret;
 
@@ -41,18 +42,32 @@ namespace DbCrypting
                 addingTime = default(DateTime),
                 hash = null
             };
-            var res = dbh.GetData(itemModel);
-            var res2 = itemModel.GetDataRowsList(res);
-            var vazcoEntityList = res2.Cast<VazcoTable>().ToList();
+
+            var vazcoDataRows = itemModel.GetDataRowsList(dbh.GetData(itemModel));
+            var vazcoEntityList = vazcoDataRows.Cast<VazcoTable>().ToList();
 
 
            
             vazcoEntityList.DecryptDbModels(_temporarySecret);
-
-
-
             return DbUtils.SortListByTime(vazcoEntityList);
         }
 
+        public void Delete(VazcoTable model)
+        {
+            var dbh = DbConnect.Connect();
+            model.SetWhere(IdColumnName);
+            
+            dbh.DeleteData(model);
+        }
+        public void Update(VazcoTable model)
+        {
+            var dbh = DbConnect.Connect();
+
+            model.EncryptModel(_temporarySecret);
+            model.SetWhere(IdColumnName);
+            model.SetPrimaryKey(IdColumnName);
+
+            dbh.UpdateData(model);
+        }
     }
 }
