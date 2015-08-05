@@ -16,10 +16,10 @@ namespace Toci.Tests
 
             var model = new VazcoTable {data = testString};
 
-            //dbOperator.Save(model);
+            dbOperator.Save(model);
 
             var result = dbOperator.Load();
-            //Assert.AreEqual(testString,result[0].data);
+            Assert.AreEqual(testString,result[0].data);
         }
 
         [TestMethod]

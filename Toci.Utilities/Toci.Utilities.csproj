@@ -131,7 +131,9 @@
     <Compile Include="Generator\DatabaseModelGenerator\DbDdlParser\SqlDdlEntryParser.cs" />
     <Compile Include="Generator\DatabaseModelGenerator\DbDdlParser\SqlDdlParser.cs" />
     <Compile Include="Generator\DatabaseModelGenerator\TociDbModelGenerator.cs" />
+    <Compile Include="Generator\DatabaseModelGenerator\TociDbModelGeneratorWrapper.cs" />
     <Compile Include="Generator\DatabaseModelGenerator\TociDbModelsGenerator.cs" />
+    <Compile Include="Generator\DatabaseModelGenerator\WrapperModel.cs" />
     <Compile Include="Privileges\PrivilegesGroups\PrivilegesGroup.cs" />
     <Compile Include="Privileges\Privileges\Privilege.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
