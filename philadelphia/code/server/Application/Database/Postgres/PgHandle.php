@@ -28,6 +28,7 @@ class PgHandle implements IDbHandle {
 
     public function RunQuery($query)
     {
+        $query=pg_escape_string($query);
         return pg_query($this->connection,$query);
     }
 
