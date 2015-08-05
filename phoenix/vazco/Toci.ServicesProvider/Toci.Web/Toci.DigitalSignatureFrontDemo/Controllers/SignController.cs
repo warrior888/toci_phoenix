@@ -6,12 +6,12 @@ using System.Web.Mvc;
 
 namespace Toci.DigitalSignatureFrontDemo.Controllers
 {
-    public class HomeController : Controller
+    public class SignController : Controller
     {
-        public ActionResult Index()
+        // GET: Sign
+        public ActionResult Sign()
         {
             return View();
         }
-
     }
 }
