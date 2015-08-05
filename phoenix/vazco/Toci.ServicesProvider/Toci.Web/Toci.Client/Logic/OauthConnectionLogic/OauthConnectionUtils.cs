@@ -25,7 +25,7 @@ namespace Toci.Client.Logic.OauthConnectionLogic
         public async Task<VazcoTokenModel> GetOauthToken(string code)
         {
             var requestClient = new HttpClient();
-            var Params = new Dictionary<string, string>()
+            var Params = new Dictionary<string, string>
             {
                 {Constants.GrantType, Constants.AuthorizationCode},
                 {Constants.AccessCode, code},
