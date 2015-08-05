@@ -1,6 +1,6 @@
 <?php
 
-interface IDbQuery {
+interface IDbHandle {
 
     public function RunQuery($query);
     

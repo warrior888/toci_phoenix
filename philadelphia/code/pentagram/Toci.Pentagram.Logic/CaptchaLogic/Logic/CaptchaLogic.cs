@@ -15,8 +15,9 @@ namespace Toci.Pentagram.Logic.CaptchaLogic.Logic
 	{
 		public override string ConvertToBase64(string codeSnippet)
 		{
-			// TODO: implement
-			return "";
+		    return ConvertfromMs(DrawImage(codeSnippet));
+		    // TODO: implement
+		    //return "";
 		}
 
 
@@ -32,7 +33,11 @@ namespace Toci.Pentagram.Logic.CaptchaLogic.Logic
 	        return ms;
 	    }
 
-        string ConvertToBase64()
+	    private string ConvertfromMs(MemoryStream stream)
+	    {
+	      //  byte[] imageByte = stream.ToArray();
+	        return Convert.ToBase64String(stream.ToArray());
+	    }
 
 
 		// TODO: string codeSnippet -> png

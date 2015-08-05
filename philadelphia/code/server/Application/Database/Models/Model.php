@@ -5,7 +5,7 @@ require_once('../Interfaces/IDbInsert.php');
 require_once('../Interfaces/IDbSelect.php');
 require_once('../Interfaces/IDbUpdate.php');
 
-require_once('../DbWhere.php');
+require_once('../Postgres/PgQuery.php');
 
 abstract class Model {
 
@@ -13,20 +13,22 @@ abstract class Model {
     public $dbInsert;
     public $dbSelect;
     public $dbUpdate;
-    public $dbQuery;
+    public $dbHandle;
 
     public function __construct(
-            $deleteInstance, 
-            $insertInstance, 
-            $selectInstance, 
-            $updateInstance,
-            $queryInstance) {
+        $deleteInstance,
+        $insertInstance,
+        $selectInstance,
+        $updateInstance,
+        $databaseHandle
+    ) {
         $this->dbDelete = $this->DbDeleteInstance($deleteInstance);
         $this->dbInsert = $this->DbInsertInstance($insertInstance);
         $this->dbSelect = $this->DbSelectInstance($selectInstance);
         $this->dbUpdate = $this->DbUpdateInstance($updateInstance);
-        $this->dbQuery = $this->DbQueryInstance($queryInstance);
+        $this->dbHandle = $this->DbHandleInstance($databaseHandle);
     }
+
 
     protected static function DbDeleteInstance(IDbDelete $object) {
         return $object;
@@ -47,5 +49,9 @@ abstract class Model {
     protected static function DbQueryInstance(IDbQuery $object) {
         return $object;
     }
+    protected static function DbHandleInstance(IDbHandle $object) {
+        return $object;
+    }
+    
 
 }

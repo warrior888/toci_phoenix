@@ -17,7 +17,7 @@ namespace DbCrypting.Logic
             login = LoadConfig.login;
             secret = LoadConfig.secret;
             address = LoadConfig.address;
-            dataBaseName = LoadConfig.dataBaseName;
+            dataBaseName = LoadConfig.DataBaseName;
         }
 
         public static DbHandle Connect()

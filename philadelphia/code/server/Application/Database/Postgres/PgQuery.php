@@ -1,17 +1,15 @@
 <?php
 
-require_once '../Interfaces/IDbQuery.php';
-require_once 'PgHandle.php';
+abstract class PgQuery {
 
-class PgQuery extends PgHandle implements IDbQuery {
+    protected function CreateWhereStatement($where) {
+        $query = ' WHERE ';
 
-    public function __construct() {
-        parent::__construct();
-    }
+        foreach ($where as $column => $row) {
+            $query.= "$column = '$row'" . " AND ";
+        }
+        $result = rtrim($query, 'AND ');
 
-    public function RunQuery($query) {
-        $result = pg_query($this->connection, $query);
-        parent::__destruct();
         return $result;
     }
 

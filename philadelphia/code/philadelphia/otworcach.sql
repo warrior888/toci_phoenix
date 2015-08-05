@@ -1,3 +1,12 @@
+---altery
+
+alter table applicants add column chosencourse text;
+
+-----
+
+
+
+
 ---select * from testsresultsview;
 
 --select * from applicationtests;

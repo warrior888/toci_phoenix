@@ -1,0 +1,10 @@
+﻿@model Toci.Client.Models.VazcoTokenModel
+@{
+    ViewBag.Title = "VazcoOauthResponse";
+}
+<h4>@ViewBag.Title</h4>
+<ul>
+    <li>Token type: @Model.token_type</li>
+    <li>Received token: @Model.access_token</li>
+    <li>Expires in: @Model.expires_in</li>
+</ul>

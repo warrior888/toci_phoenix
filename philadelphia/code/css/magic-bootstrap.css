@@ -265,7 +265,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: Lato;
+  /*font-family: Lato;*/
   font-size: 13px;
   line-height: 1.71428;
   color: #777777;
@@ -354,7 +354,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: Lato;
+  /*font-family: Lato;*/
   font-weight: 400;
   line-height: 1.1;
   color: #222222;
