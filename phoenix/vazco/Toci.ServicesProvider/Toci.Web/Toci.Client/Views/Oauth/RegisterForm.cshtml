@@ -6,18 +6,18 @@
 <h4>@ViewBag.Title</h4>
 <h5>Token data:</h5>
 <ul>
-    <li>Token type: @Model.Token.token_type</li>
-    <li>Received token: @Model.Token.access_token</li>
-    <li>Expires in: @Model.Token.expires_in</li>
+    <li>Token type: @Model.token_type</li>
+    <li>Received token: @Model.access_token</li>
+    <li>Expires in: @Model.expires_in</li>
 </ul>
 <h5>User data:</h5>
 <ul>
-    <li>Id: @Model.Identity.id</li>
-    <li>Email: @Model.Identity.email</li>
+    <li>Id: @Model.id</li>
+    <li>Email: @Model.email</li>
 </ul>
 
 <!-- TODO FORMULARZ POWINIEN UZUPEŁNIĆ MODEL O HASŁO I POWINNO SIĘ DAĆ GO PRZEKAZAĆ DO REGISTERA-->
-@using (Html.BeginForm("register", "Oauth",new {id=Model.Identity.id, email=Model.Identity.email}, FormMethod.Post))
+@using (Html.BeginForm("register", "Oauth",new {id=Model.id, email=Model.email}, FormMethod.Post))
 {
     @Html.AntiForgeryToken()
     <fieldset>
@@ -26,7 +26,7 @@
         <!--To działa... ale nie umiem przekazać całego modelu, ciulate rozwiązanie, ale muszę zrobić rejestrację z hasłem więc fuck it -->
 
         <div class="col-md-6">
-            @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+            @Html.PasswordFor(model => model.password, new { @class = "form-control" })
         </div>
     
         <p>
