@@ -1,0 +1,30 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "Sign a file";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Upload", "Sign", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{//TODO wczytywanie oprócz pliku jeszcze txt
+    @Html.AntiForgeryToken()
+    <fieldset>
+        <legend>Upload a pfx certyficate with private key</legend>
+        <div class="editor-field">
+            @Html.TextBox("file", "", new {accept = ".pfx", type = "file", @class = "btn btn-default"})
+        </div>
+        <br/>
+        <legend>Pass data to sign</legend>
+        <div class="editor-field">
+            @Html.TextBox("text", "", new {@class = "form-control" })
+        </div>
+        <br/>
+        
+        <div class="editor-field">
+             <input type="submit" value="Upload" class="btn btn-default"/>
+        </div>
+    </fieldset> 
+}
+
+

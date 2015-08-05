@@ -37,10 +37,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="Toci.Db, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\resources\Toci.Db.dll</HintPath>
-    </Reference>
     <Reference Include="Toci.Utilities.Abstraction">
       <HintPath>..\..\..\..\..\Toci.Utilities.Abstraction\bin\Debug\Toci.Utilities.Abstraction.dll</HintPath>
     </Reference>
@@ -72,6 +68,10 @@
     <Compile Include="ModelGeneratorTest.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Toci.Db\Toci.Db.csproj">
+      <Project>{e45ea1c2-f40c-4903-94c3-30a885a71d33}</Project>
+      <Name>Toci.Db</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\..\..\Toci.Utilities\Toci.Utilities.csproj">
       <Project>{a7951807-f924-4108-a63b-253ce3f5b045}</Project>
       <Name>Toci.Utilities</Name>
@@ -92,6 +92,9 @@
       <Project>{ce9a63d1-d277-4828-bf68-211db483b483}</Project>
       <Name>Toci.DigitalSignature</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="res\wrapper.txt" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

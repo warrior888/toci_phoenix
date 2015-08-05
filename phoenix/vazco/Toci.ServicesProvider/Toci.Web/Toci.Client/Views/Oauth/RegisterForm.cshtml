@@ -22,12 +22,9 @@
     @Html.AntiForgeryToken()
     <fieldset>
         <legend>Pass password</legend>
-
-        <!--To działa... ale nie umiem przekazać całego modelu, ciulate rozwiązanie, ale muszę zrobić rejestrację z hasłem więc fuck it -->
-
         <div class="col-md-6">
-            @Html.PasswordFor(model => model.password, new { @class = "form-control" })
-        </div>
+            @Html.PasswordFor(model => model.password, new {@title= "Password must contain one big letter, digit, special sign and at least 6 characters", @align = "left", @pattern = @"(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}", @class = "form-control" })
+         </div>
     
         <p>
             <input type="submit" class="btn btn-default" value="Create account" model="@Model" />

@@ -13,6 +13,7 @@ namespace Toci.Db.DbVirtualization
         protected T FieldValue;
         protected bool FieldIsWhere;
         protected SelectClause Clause;
+        protected bool FieldIsPrimaryKey;
 
         public DbField(string columnName)
         {
@@ -54,6 +55,11 @@ namespace Toci.Db.DbVirtualization
             return FieldIsWhere;
         }
 
+        public bool IsPrimaryKey()
+        {
+            return FieldIsPrimaryKey;
+        }
+
         public SelectClause GetSelectClause()
         {
             return Clause;
@@ -68,7 +74,10 @@ namespace Toci.Db.DbVirtualization
         {
             FieldIsWhere = isWhere;
         }
-
+        public void SetPrimary(bool isPrimary)
+        {
+            FieldIsPrimaryKey = isPrimary;
+        }
         public void SetSelectClause(SelectClause clause)
         {
             this.Clause = clause;
