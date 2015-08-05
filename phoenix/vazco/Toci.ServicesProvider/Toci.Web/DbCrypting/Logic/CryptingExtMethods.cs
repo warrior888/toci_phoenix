@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using EncodingLib;
 using Toci.Db.DbVirtualization;
 
@@ -7,6 +8,7 @@ namespace DbCrypting.Logic
 {
     public static class CryptingExtMethods
     {
+        private const string InvalidPassword = "Invalid password!";
 
 
         public static void EncryptModel(this VazcoTable model, string secret)
@@ -23,40 +25,16 @@ namespace DbCrypting.Logic
 
             foreach (var item in list)
             {
-                item.data = new TociCrypting().DecryptStringAes(item.data, secret, item.hash);
+                var validatePassword = new VerifySecret(item.hash,secret);
+                item.data = validatePassword.Verification() ? new TociCrypting().DecryptStringAes(item.data, secret, item.hash) : InvalidPassword;
             }
-
         }
-        public static void FillAddInModel(this VazcoTable itemModel)//, DbModel model)
+        public static void FillAddInModel(this VazcoTable itemModel)
         {
             itemModel.name = DbUtils.GetUserNick();
-            //itemModel.data =        model.data;
             itemModel.addingTime = DateTime.Now;
-            // itemModel.hash =        model.hash;
         }
-        /// <summary>
-        /// to delete \/
-        /// </summary>
-        /// <param name="model"></param>
-        /// <param name="secret"></param>
-        public static void EncryptModel(this DbModel model, string secret)
-        {
-
-            var GenerateSecret = new GenerateSecret(secret);
-            var hash = GenerateSecret.GetSecret();
-            model.data = new TociCrypting().EncryptStringAes(model.data, secret, hash);
-            model.hash = hash;
-
-        }
-        public static void DecryptDbModels(this List<DbModel> list, string secret)
-        {
-
-            foreach (var item in list)
-            {
-                item.data = new TociCrypting().DecryptStringAes(item.data, secret, item.hash);
-            }
-
-        }
+       
        
     }
 }

@@ -12,10 +12,11 @@ namespace DbCrypting.VazcoDb
         
         private readonly string _temporarySecret;
 
-        public DbOperations()
+        public DbOperations(string password)
         {
-            
-            _temporarySecret = LoadConfig.TemporarySecret;
+
+            _temporarySecret = password;
+
         }
 
 
@@ -64,6 +65,7 @@ namespace DbCrypting.VazcoDb
             model.EncryptModel(_temporarySecret);
             model.SetWhere(IdColumnName);
             model.SetPrimaryKey(IdColumnName);
+            model.addingTime = DateTime.Now;
 
             dbh.UpdateData(model);
         }
