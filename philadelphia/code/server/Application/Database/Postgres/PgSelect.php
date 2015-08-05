@@ -13,7 +13,7 @@ class PgSelect extends PgQuery implements IDbSelect {
         $format .= ' FROM ' . $table;
 
         if ($where) {
-            $this->format .= $this->CreateWhereStatement($where);
+            $format .= $this->CreateWhereStatement($where);
         }
 
         $result = $format . ';';

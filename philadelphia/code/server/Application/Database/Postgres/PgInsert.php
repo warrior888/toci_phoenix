@@ -9,7 +9,7 @@ class PgInsert extends PgQuery implements IDbInsert {
 
     public function Insert($table, $data, $where = false) {
 
-        $query = 'INSERT INTO';
+        $query = 'INSERT INTO ';
         $query.= $table . ' (' . implode(',', array_keys($data)) . ') ';
         $query.= " VALUES ('" . implode("' , '", array_values($data)) . "')";
 
@@ -18,9 +18,9 @@ class PgInsert extends PgQuery implements IDbInsert {
             $query .= $this->CreateWhereStatement($where);
         }
         
-        $result = $this->format . ';';
+        $query .= ';';
         
-        return $this->$result;
+        return $query;
     }
 
 }

@@ -18,6 +18,10 @@ class PgHandle implements IDbHandle {
         pg_close($this->connection);
     }
 
+    public function CloseConnection() {
+        return pg_close($this->connection);
+    }
+
     protected function Connect() {
         return pg_connect($this->connectionString);
     }
@@ -26,5 +30,7 @@ class PgHandle implements IDbHandle {
     {
         return pg_query($this->connection,$query);
     }
+
+
 }
 

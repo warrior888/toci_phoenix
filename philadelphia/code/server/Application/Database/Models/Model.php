@@ -9,11 +9,11 @@ require_once(__DIR__.'/../Postgres/PgQuery.php');
 
 abstract class Model {
 
-    public $dbDelete;
-    public $dbInsert;
-    public $dbSelect;
-    public $dbUpdate;
-    public $dbHandle;
+    protected $dbDelete;
+    protected $dbInsert;
+    protected $dbSelect;
+    protected $dbUpdate;
+    protected $dbHandle;
 
     public function __construct(
         $deleteInstance,

@@ -5,20 +5,20 @@ require_once __DIR__.'/../Interfaces/IDbDelete.php';
 
 class PgDelete extends PgQuery implements IDbDelete {
 
-    protected $format = 'DELETE FROM ';
+
 
     public function Delete($table, $where = false) {
 
-        $this->format .= $table;
+        $format = 'DELETE FROM ';
+        $format .= $table;
 
         if ($where) {
-            $this->format = $this->CreateWhereStatement($where);
+            $format .= $this->CreateWhereStatement($where);
         }
-        $result = $this->format;
 
-        $result.=';';
+        $format.=';';
 
-        return $result;
+        return $format;
     }
 
 }
