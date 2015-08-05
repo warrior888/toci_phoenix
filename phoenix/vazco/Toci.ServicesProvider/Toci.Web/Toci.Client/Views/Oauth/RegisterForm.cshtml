@@ -24,9 +24,15 @@
         <legend>Pass password</legend>
 
         <!--To działa... ale nie umiem przekazać całego modelu, ciulate rozwiązanie, ale muszę zrobić rejestrację z hasłem więc fuck it -->
-
+            @* REGEX DO HASŁA
+            ((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{6,20}) ??
+            *@
         <div class="col-md-6">
-            @Html.PasswordFor(model => model.password, new { @class = "form-control" })
+            @Html.PasswordFor(model => model.password, new {@title= "Password must contain one big letter, digit, special sign and at least 6 characters", @align = "left", @pattern = @"(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}", @class = "form-control" })
+            
+           @* @Html.ValidationMessageFor(model => model.password, "Password must contain one big letter, digit, special sign and at least 6 characters", new { @class = "text-danger" })
+        *@
+
         </div>
     
         <p>

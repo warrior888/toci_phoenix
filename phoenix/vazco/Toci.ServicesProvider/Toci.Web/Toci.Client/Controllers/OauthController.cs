@@ -26,8 +26,8 @@ namespace Toci.Client.Controllers
         {
             string VazcoAuthUri =
                 string.Format(
-                    "{0}?response_type={1}&client_id={2}&redirect_uri={3}", Constants.VazcoAuthorizeUri, Constants.AccessCode, Constants.AppId, Constants.LocalAuthenticationUri); 
-
+                    "{0}?response_type={1}&client_id={2}&redirect_uri={3}", 
+                    Constants.VazcoAuthorizeUri, Constants.AccessCode, Constants.AppId, Constants.LocalAuthenticationUri); 
             return Redirect(VazcoAuthUri);
         }
 
@@ -40,7 +40,6 @@ namespace Toci.Client.Controllers
             {
                 return RedirectToAction("Login", "Account", new LoginViewModel() { Email = responseModel.email });
             }
-
             TempData["responseModel"] = responseModel; //TODO czy da się to wypieprzyć?
             return RedirectToAction("RegisterForm");
         }
