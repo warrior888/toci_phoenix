@@ -783,7 +783,8 @@ function stickyHeaderSize(){
  * @usedAt      global, dom ready, window resize
  */
 function logo_vertical_middle(){
-	var topSpace = Math.floor(Math.abs((150 - $('.met_logo img').attr('height')) / 2));
+	//var topSpace = Math.floor(Math.abs((100 - $('.met_logo img').attr('height')) / 2));     tak bylo wczesniej
+	var topSpace = Math.floor(Math.abs(( $('.met_logo img').attr('height')) / 4));
 
 	$('.met_logo img').css({'margin-top': topSpace+'px'});
 
