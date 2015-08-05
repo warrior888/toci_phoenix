@@ -1,6 +1,6 @@
 <?php
 
-	$json['message']="Zapisano aplikacje w bazie danych";
+	$json['message']="Mail został wysłany pomyślnie";
     $json['result']=true;
 
 	echo json_encode($json);
