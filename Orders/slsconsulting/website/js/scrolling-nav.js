@@ -24,7 +24,7 @@ $(function() {
 
         var destSection = '#' + $($anchor.attr('href')).attr('id');
 
-        ContentLoader.OnClickLoading(destSection);
+        //ContentLoader.OnClickLoading(destSection);      AJAX feature
 
 
         if (docOffset >= 270) {
