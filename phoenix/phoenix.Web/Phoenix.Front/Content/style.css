@@ -42,6 +42,21 @@
 
 /* Repeatable Patterns
 -------------------------------------------------------------- */
+
+
+#mapa{
+
+	height:300px;
+	padding:0;
+    margin-top: 25px;
+}
+
+#top-logo {
+
+    height: 42px;
+
+}
+
 *,
 *:before,
 *:after {
@@ -318,11 +333,12 @@ input[type="color"],
 	font-size: 14px;	
 	top: 0;
 	color: #656565;
+    background: rgba(0, 0, 0, 0.1);
 }
 
 #header {
 	background: #fff;
-	top: 50px;
+	top: 60px;
 	z-index: 99999;
 }
 
