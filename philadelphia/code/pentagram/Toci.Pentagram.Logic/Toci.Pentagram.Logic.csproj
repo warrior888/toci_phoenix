@@ -44,6 +44,8 @@
     <Compile Include="CaptchaLogic\Abstract\ImageData.cs" />
     <Compile Include="CaptchaLogic\Logic\CaptchaLogic.cs" />
     <Compile Include="CaptchaLogic\Logic\PngParser.cs" />
+    <Compile Include="Models\RegistrationTask.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,20 +1,21 @@
 <?php
 
 require_once '../Interfaces/IDbInsert.php';
-require_once '../DbWhere.php';
+require_once 'PgQuery.php';
 
-class PgInsert extends DbWhere implements IDbInsert {
+class PgInsert extends PgQuery implements IDbInsert {
 
     protected $dbWhere;
-    protected $format = 'INSERT INTO';
 
     public function Insert($table, $data, $where = false) {
-        $this->format .= $table . ' (' . implode(',', array_keys($data)) . ') ';
-        $this->format .= " VALUES ('" . implode("' , '", array_values($data)) . "')";
+
+        $query = 'INSERT INTO';
+        $query.= $table . ' (' . implode(',', array_keys($data)) . ') ';
+        $query.= " VALUES ('" . implode("' , '", array_values($data)) . "')";
 
 
         if ($where) {
-            $this->format .= $this->CreateWhereStatement($where);
+            $query .= $this->CreateWhereStatement($where);
         }
         
         $result = $this->format . ';';

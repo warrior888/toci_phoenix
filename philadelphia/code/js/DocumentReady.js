@@ -21,6 +21,28 @@ $(document).ready(function()
             }
         }
     );
+
+    $("#developers-carousel").owlCarousel(
+        {
+            loop: true,
+            autoplay: true,
+            autoplaySpeed: 1500,
+            autoplayHoverPause: true,
+            responsive: {
+
+                0: {
+                    items: 2
+                },
+                760: {
+                    items: 3
+                }
+            }
+        }
+    );
+
+
+
+
     window.onresize =changeArrowOnResize;
 
 

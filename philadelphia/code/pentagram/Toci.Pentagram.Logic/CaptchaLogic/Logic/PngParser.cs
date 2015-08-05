@@ -29,14 +29,14 @@ namespace Toci.Pentagram.Logic.CaptchaLogic.Logic
         {
        
             string[] a = stream.Split(separators, StringSplitOptions.None);
-            string thelongesWord = a.OrderByDescending(s => 8 * s.Count(x => x == '\t') + s.Count(x => x != '\t')).
-                 First();
+            string thelongesWord = a.OrderByDescending(s => 8 * s.Count(x => x == '\t') + s.Count(x => x != '\t'))
+                . First();
             int tabsInLongestWord = thelongesWord.Count(x => x == '\t');
             Bitmap image = new Bitmap
                 (
                 //8- standardowa ilsoc znakow w tab
                 (thelongesWord.Length + tabsInLongestWord * 8) * FontSize,
-                stream.Count(x => x == '\n') * font.Height
+                (stream.Count(x => x == '\n')+1) * font.Height
 
 
                 );

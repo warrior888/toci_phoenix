@@ -1,5 +1,5 @@
 <?php
 
 interface IDbSelect {
-    public function Select ($data , $table, $where = false);
+    public function Select ($table ,$data , $where = false);
 }
