@@ -13,4 +13,7 @@ abstract class PgQuery {
         return $result;
     }
 
+    protected function EscapeQuery($query){
+        return pg_escape_string($query);
+    }
 }

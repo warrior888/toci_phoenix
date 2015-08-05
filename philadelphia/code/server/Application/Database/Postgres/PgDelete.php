@@ -1,7 +1,7 @@
 <?php
 
-require_once 'PgQuery.php';
-require_once '../Interfaces/IDbDelete.php';
+require_once __DIR__.'/PgQuery.php';
+require_once __DIR__.'/../Interfaces/IDbDelete.php';
 
 class PgDelete extends PgQuery implements IDbDelete {
 

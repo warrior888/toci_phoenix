@@ -1,7 +1,7 @@
 <?php
 
-require_once 'PgQuery.php';
-require_once '../Interfaces/IDbSelect.php';
+require_once __DIR__.'/PgQuery.php';
+require_once __DIR__.'/../Interfaces/IDbSelect.php';
 
 class PgSelect extends PgQuery implements IDbSelect {
 

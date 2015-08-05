@@ -14,7 +14,7 @@ class ApplicantManager extends PgModel{
     public $table="applicants";
 
     public function SaveApplicant($applicant){
-        $this->dbInsert->Insert($this->table,$applicant);
+        return $this->dbInsert->Insert($this->table,$applicant);
     }
 
     public function GetApplicants($select,$where=false){

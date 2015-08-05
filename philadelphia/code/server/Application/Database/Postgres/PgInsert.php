@@ -1,7 +1,7 @@
 <?php
 
-require_once '../Interfaces/IDbInsert.php';
-require_once 'PgQuery.php';
+require_once __DIR__.'/../Interfaces/IDbInsert.php';
+require_once __DIR__.'/PgQuery.php';
 
 class PgInsert extends PgQuery implements IDbInsert {
 
@@ -20,7 +20,7 @@ class PgInsert extends PgQuery implements IDbInsert {
         
         $result = $this->format . ';';
         
-        return $result;
+        return $this->$result;
     }
 
 }

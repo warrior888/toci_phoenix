@@ -14,7 +14,7 @@ if(!(isset($_POST['applicantName'])&&
     isset($_POST['applicantSurname'])&&
     isset($_POST['applicantEmail'])&&
     isset($_POST['applicantPhone'])&&
-    isset($_POST['chosencourse'])
+    isset($_POST['applicantChosenCourse'])
 ))
 {
     die("Brak wszystkich danych"); 
@@ -37,11 +37,10 @@ if(!MailAddressValidator::checkMail($applicant['email']))
     die();
 }
 
-
+$mailConf=new MailConfirm();
 $applicant['name'] = $_POST['applicantName'];
 $applicant['surname'] = $_POST['applicantSurname'];
 $applicant['phone'] = $_POST['applicantPhone'];
-$mailConf=new MailConfirm();
 $applicant['mailconfirmed']="false";
 $applicant['signature']=$mailConf->sendConfirmationMail($applicant);
 $applicant['chosencourse'] = $_POST['applicantChosenCourse'];

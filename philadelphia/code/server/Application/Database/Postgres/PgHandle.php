@@ -1,6 +1,6 @@
 <?php
 
-require_once "../Interfaces/IDbHandle.php";
+require_once __DIR__."/../Interfaces/IDbHandle.php";
 
 class PgHandle implements IDbHandle {
 
@@ -8,8 +8,8 @@ class PgHandle implements IDbHandle {
     private $connection;
 
     public function __construct() {
-        require '../../config.php';
-        $this->connectionString = "host=46.101.222.238 user=postgres password=q1 dbname=postgres";
+        require __DIR__.'/../../config.php';
+        $this->connectionString = $config['connection_string'];
         $this->connection = $this->Connect();
 
     }
@@ -28,4 +28,3 @@ class PgHandle implements IDbHandle {
     }
 }
 
-new PgHandle();

@@ -1,11 +1,11 @@
 <?php
 
-require_once('../Interfaces/IDbDelete.php');
-require_once('../Interfaces/IDbInsert.php');
-require_once('../Interfaces/IDbSelect.php');
-require_once('../Interfaces/IDbUpdate.php');
+require_once(__DIR__.'/../Interfaces/IDbDelete.php');
+require_once(__DIR__.'/../Interfaces/IDbInsert.php');
+require_once(__DIR__.'/../Interfaces/IDbSelect.php');
+require_once(__DIR__.'/../Interfaces/IDbUpdate.php');
 
-require_once('../Postgres/PgQuery.php');
+require_once(__DIR__.'/../Postgres/PgQuery.php');
 
 abstract class Model {
 

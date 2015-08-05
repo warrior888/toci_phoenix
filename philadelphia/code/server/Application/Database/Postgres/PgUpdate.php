@@ -1,7 +1,7 @@
 <?php
 
-require_once 'PgQuery.php';
-require_once '../Interfaces/IDbUpdate.php';
+require_once __DIR__.'/PgQuery.php';
+require_once __DIR__.'/../Interfaces/IDbUpdate.php';
 
 class PgUpdate extends PgQuery implements IDbUpdate {
 
