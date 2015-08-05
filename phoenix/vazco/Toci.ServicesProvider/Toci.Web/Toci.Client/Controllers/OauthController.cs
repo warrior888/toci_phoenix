@@ -21,25 +21,11 @@ namespace Toci.Client.Controllers
 {
     public class OauthController : Controller
     {
-        private const string AccessCode = "code";
-        private const string RedirectUri = "redirect_uri";
-        private const string ClientSecret = "client_secret";
-        private const string ClientId = "client_id";
-        private const string GrantType = "grant_type";
-        private const string AuthorizationCode = "authorization_code";
-        private const string VazcoAuthorizeUri = "http://oauth.stg.vazco.eu/oauth2/authorize";
-        private const string LocalAuthenticationUri = "http://localhost:13188/oauth/authentication";
-        private const string AppId = "testoauth";
-        private const string AppSecret = "testoauth";
-        private const string VazcoGetIdentityUri = "http://oauth.stg.vazco.eu/oauth2/getIdentity";
-        private const string VazcoTokenUri = "http://oauth.stg.vazco.eu/oauth2/token";
-
         public ActionResult Index()
         {
             string VazcoAuthUri =
                 string.Format(
-                    "{0}?response_type={1}&client_id={2}&redirect_uri={3}", VazcoAuthorizeUri,
-                    AccessCode, AppId, LocalAuthenticationUri); 
+                    "{0}?response_type={1}&client_id={2}&redirect_uri={3}", Constants.VazcoAuthorizeUri, Constants.AccessCode, Constants.AppId, Constants.LocalAuthenticationUri); 
 
             return Redirect(VazcoAuthUri);
         }
@@ -72,14 +58,14 @@ namespace Toci.Client.Controllers
             var requestClient = new HttpClient();
             var Params = new Dictionary<string, string>()
             {
-                {GrantType, AuthorizationCode},
-                {AccessCode, code},
-                {ClientId, AppId},
-                {ClientSecret, AppSecret},
-                {RedirectUri, LocalAuthenticationUri}
+                {Constants.GrantType, Constants.AuthorizationCode},
+                {Constants.AccessCode, code},
+                {Constants.ClientId, Constants.AppId},
+                {Constants.ClientSecret, Constants.AppSecret},
+                {Constants.RedirectUri, Constants.LocalAuthenticationUri}
             };
             var content = new FormUrlEncodedContent(Params);
-            var response = await requestClient.PostAsync(VazcoTokenUri, content);
+            var response = await requestClient.PostAsync(Constants.VazcoTokenUri, content);
             var responseString = await response.Content.ReadAsStringAsync();
             var jsonToken = (JObject) JsonConvert.DeserializeObject(responseString);
             var token = (VazcoTokenModel) jsonToken.ToObject(typeof (VazcoTokenModel));
@@ -91,7 +77,7 @@ namespace Toci.Client.Controllers
             var identityClient = new HttpClient();
             identityClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + token.access_token);
             HttpResponseMessage identityResponseMessage =
-                await identityClient.GetAsync(VazcoGetIdentityUri);
+                await identityClient.GetAsync(Constants.VazcoGetIdentityUri);
             var readContent = await identityResponseMessage.Content.ReadAsStringAsync();
             var jsonIdentity = (JObject) JsonConvert.DeserializeObject(readContent);
             var identity = (VazcoIdentityModel) jsonIdentity.ToObject(typeof (VazcoIdentityModel));
@@ -138,7 +124,6 @@ namespace Toci.Client.Controllers
 
         }
 
-        
 
         private async Task<bool> SignIn(string userName, string password)
         {
