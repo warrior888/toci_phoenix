@@ -419,7 +419,9 @@
     <Content Include="images\toci.png" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\datepicker.js" />
+    <Content Include="Scripts\DocumentReady.js" />
     <Content Include="Scripts\gmap3.min.js" />
+    <Content Include="Scripts\GoogleMaps.js" />
     <Content Include="Scripts\html5shiv.js" />
     <Content Include="Scripts\imagesloaded.min.js" />
     <Content Include="Scripts\jquery-countTo.js" />
@@ -427,6 +429,7 @@
     <Content Include="Scripts\jquery.bxslider.js" />
     <Content Include="Scripts\jquery.cookie.js" />
     <Content Include="Scripts\jquery.easing.js" />
+    <Content Include="Scripts\jquery.easing.min.js" />
     <Content Include="Scripts\jquery.easypiechart.min.js" />
     <Content Include="Scripts\jquery.fitvids.js" />
     <Content Include="Scripts\jquery.flexslider-min.js" />
@@ -452,6 +455,7 @@
     <Content Include="Scripts\owl.carousel.js" />
     <Content Include="Scripts\parallax.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\scrolling-nav.js" />
     <Content Include="Scripts\select.js" />
     <Content Include="Scripts\smoothscroll.js" />
     <Content Include="Scripts\switcher.js" />

@@ -24,7 +24,14 @@ namespace Phoenix.Front
                         "~/Scripts/smoothscroll.js",                         
                         "~/Scripts/gmap3.min.js",
                         "~/Scripts/jquery.tweet.min.js",
-                        "~/Scripts/main.js"
+                        "~/Scripts/main.js",
+                        "~/Scripts/GoogleMaps.js",
+                        "~/Scripts/DocumentReady.js",
+                         "~/Scripts/scrolling-nav.js",
+                         "~/Scripts/jquery.easing.min.js"
+                        
+                
+
                         ));
 
            /* bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
