@@ -7,16 +7,10 @@ class PgSelect extends PgQuery implements IDbSelect {
 
 
     public function Select($table ,$data , $where = false) {
-        $format = 'SELECT ';
 
-        $format .= $data;
-        $format .= ' FROM ' . $table;
+        $query = 'SELECT '.$data.' FROM ' . $table. $this->CreateWhereStatement($where);
 
-        if ($where) {
-            $format .= $this->CreateWhereStatement($where);
-        }
-
-        $result = $format . ';';
+        $result = $query . ';';
 
         return $result;
     }

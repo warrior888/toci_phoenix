@@ -5,7 +5,6 @@ require_once __DIR__.'/../Interfaces/IDbUpdate.php';
 
 class PgUpdate extends PgQuery implements IDbUpdate {
 
-    protected $format = 'UPDATE ';
 
     public function RenderQuery($table, $elements) {
         $query = sprintf($this->format, $table, implode(', ', array_keys($elements)), implode('\', \'', array_values($elements)));
@@ -13,28 +12,33 @@ class PgUpdate extends PgQuery implements IDbUpdate {
     }
 
     public function Update($table, $data, $where = false) {
-        $this->format .= $table;
-        $this->format .= $this->CreateSetStatement($data);
+        $query = 'UPDATE ';
+
+        $query .= $table;
+        $query .= $this->CreateSetStatement($data);
 
         if ($where) {
-            $this->format = $this->CreateWhereStatement($where);
+            $query .= $this->CreateWhereStatement($where);
         }
 
-        $result = $this->format . ';';
+        $result = $query . ';';
 
         return $result;
     }
 
     public function CreateSetStatement($data) {
 
-        $setStatement = 'SET ';
+        $setStatement = ' SET ';
 
-        foreach ($data as $column => $row) {
-            $setStatement .= $column . ' = ' . "'$row',";
+        if(is_array($data)) {
+            foreach ($data as $column => $row) {
+                $setStatement .= $column . ' = ' . "'$row',";
+            }
+            $result = rtrim($setStatement, ',');
+        }else{
+            $setStatement .=$data;
         }
-        $result = rtrim($setStatement, ',');
-
-        return $result;
+        return $setStatement;
     }
 
 }

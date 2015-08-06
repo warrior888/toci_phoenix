@@ -4,6 +4,7 @@ abstract class PgQuery {
 
     protected function CreateWhereStatement($where)
     {
+        if($where){
         $query = ' WHERE ';
 
         if (is_array($where)) {
@@ -15,10 +16,18 @@ abstract class PgQuery {
         } else {
             $result=" ".$query." ".$where;
         }
-        return $result;
+        return $result;}
     }
 
-    protected function EscapeQuery($query){
-        return pg_escape_string($query);
+
+    protected function Escape($items)
+    {
+        foreach($items as $key => $value)
+        {
+            $items[$key] = pg_escape_string($value);
+        }
+
+        return $items;
     }
+
 }

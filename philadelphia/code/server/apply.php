@@ -4,7 +4,7 @@ ob_start();
 require_once "Db.php";
 require_once 'MailConfirm.php';
 require_once "MailAddressValidator.php";
-
+require_once 'Application/Database/ApplicationManager.php';
 
 if(!(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && !empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest')) {
     die("Niepoprawne żądanie. ");
@@ -44,11 +44,11 @@ $applicant['phone'] = $_POST['applicantPhone'];
 $applicant['mailconfirmed']="false";
 $applicant['signature']=$mailConf->sendConfirmationMail($applicant);
 $applicant['chosencourse'] = $_POST['applicantChosenCourse'];
-$db=new Db();
+
+$manager=new ApplicantManager();
 
 
-$dbTable='applicants';
-$result=$db->Save($dbTable,$applicant);
+$result=$manager->SaveApplicant($applicant);
 
 if ($result==false)
 {

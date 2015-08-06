@@ -47,12 +47,21 @@ class ApplicantManager extends PgModel{
         }
     }
 
+    public function UpdateApplicants($set,$where){
+        if($this->cache) {
+            $this->cache->flush();
+        }
+        $query=$this->dbUpdate->Update($this->table,$set,$where);
+        return $this->dbHandle->RunQuery($query);
+    }
+
+
     public function DeleteApplicant($where){
         $query=$this->dbDelete->Delete($this->table,$where);
         $result=$this->dbHandle->RunQuery($query);
-        if($this->cache)
+        if($this->cache) {
             $this->cache->flush();
-
+        }
         return  $result;
     }
 
