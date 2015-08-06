@@ -181,9 +181,11 @@
     <Compile Include="Logic\OauthConnectionLogic\OauthConnectionUtils.cs" />
     <Compile Include="Logic\UserRoleHandler.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AdminModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Interfaces\IModelBase.cs" />
+    <Compile Include="Models\UserModel.cs" />
     <Compile Include="Models\VazcoIdentityModel.cs" />
     <Compile Include="Models\VazcoResponseModel.cs" />
     <Compile Include="Models\VazcoTokenModel.cs" />
