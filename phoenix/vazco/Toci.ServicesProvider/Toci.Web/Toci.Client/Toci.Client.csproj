@@ -175,6 +175,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Logic\AccountControllerLogic\AccountControllerHelper.cs" />
     <Compile Include="Logic\ChallengeResult.cs" />
     <Compile Include="Logic\OauthConnectionLogic\OauthConnectionUtils.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
