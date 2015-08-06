@@ -44,7 +44,7 @@ $(document).ready(function(){
 			mousescrollstep: 35,
 			cursorwidth: 10,
 			cursorborder: '1px solid #7E8A96',
-			cursorcolor: '#18ADB6',
+			cursorcolor: '#FFBA54',
 			cursorborderradius: 10,
 			autohidemode: false,
 			cursoropacitymin: 0.1,
