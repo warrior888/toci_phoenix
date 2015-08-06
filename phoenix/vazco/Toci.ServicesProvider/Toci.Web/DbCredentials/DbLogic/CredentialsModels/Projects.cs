@@ -1,3 +1,4 @@
+using System;
 using Toci.Db.DbVirtualization;
 using Toci.Db.Interfaces;
 
@@ -7,6 +8,11 @@ namespace DbCredentials.DbLogic.CredentialsModels
     {
         public Projects() : base("Projects")
         {
+            projectname = null;
+            projectauthor = null;
+            projectdata = null;
+            modificationdate = default(DateTime);
+            hash = null;
         }
          
         public const string PROJECTID = "projectid";
@@ -47,7 +53,20 @@ namespace DbCredentials.DbLogic.CredentialsModels
                     SetValue(PROJECTNAME, value);
                 }
             }
-         
+
+        public const string PROJECTAUTHOR = "projectauthor";
+        public System.String projectauthor
+        {
+            get
+            {
+                return (System.String)Fields[PROJECTAUTHOR].GetValue();
+            }
+            set
+            {
+                SetValue(PROJECTAUTHOR, value);
+            }
+        }
+
         public const string PROJECTDATA = "projectdata";
         public System.String projectdata
             {
@@ -60,6 +79,20 @@ namespace DbCredentials.DbLogic.CredentialsModels
                     SetValue(PROJECTDATA, value);
                 }
             }
+
+        public const string MODIFICATIONDATE = "modificationdate";
+        public System.DateTime modificationdate
+        {
+            get
+            {
+                return (System.DateTime)Fields[MODIFICATIONDATE].GetValue();
+            }
+            set
+            {
+                SetValue(MODIFICATIONDATE, value);
+            }
+        }
+
         public const string HASH = "hash";
         public System.String hash
         {
