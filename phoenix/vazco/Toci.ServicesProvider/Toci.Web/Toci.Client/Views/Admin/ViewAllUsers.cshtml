@@ -47,7 +47,7 @@
                         }
                             <tr>
                                 <td>
-                                    <div style="display: inline-flex">
+                                    
                                         @*<input type="button" class="btn btn-success" value="add" />
     <input placeholder="add role" class="form-control" style="fit-position: left"/>*@
 
@@ -58,13 +58,13 @@
                                            
                                             <fieldset>
                                                     @Html.Hidden("userId", user.id)
-                                                    @Html.TextBox("roleName")
-                                                    <input type="submit" class="btn btn-success" value="Add role"/>
-                                               
+                                                <div style="display: inline-flex">
+                                                    @Html.TextBox("roleName", null, new { @class = "form-control" })<input type="submit" class="btn btn-success btn-sm" value="Add role" />
+                                                </div>
                                             </fieldset>
                                         }
 
-                                    </div>
+                                   
                                 </td>
                             </tr>
                         </tbody>
