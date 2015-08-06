@@ -66,7 +66,7 @@ namespace Toci.Client.Controllers
                 //RETURN x.succeeded? jedna metoda : druga metoda
                 return RedirectToAction("Index", "Home");
             }
-            return RedirectToAction("ExternalLoginFailure", "Account", makeUser.Errors.First());
+            return RedirectToAction("ExternalLoginFailure", "Account", new {errormsg = makeUser.Errors.First()});
         }
 
     }
