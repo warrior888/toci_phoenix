@@ -1,52 +1,39 @@
 <?php
 
-	$json['message']="Mail został wysłany pomyślnie";
-    $json['result']=true;
-
-	echo json_encode($json);
-
-	exit;
-
 require_once "SendMail.php";
 require_once "MailAddressValidator.php";
 
-/* Nazwy z formularza:
- * contact-input-name - imie 
- * contact-input-mail - mail
- * contact-input-subject - temat
- * contact-input-message - wiadomosc
- */
+
+//blokowanie nie ajaxa
+if(!(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && !empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest')) {
+    die("Niepoprawny request");
+}
 
 //sprawdzenie czy dane istnieja
-if(!(isset($_POST['contact-input-name'])&&
-isset($_POST['contact-input-email'])&&
-isset($_POST['contact-input-subject'])&&
-isset($_POST['contact-input-message'])
-))
-{
-die("Brak wszystkich danych"); // brak wszystkich dnaych
+if(!(isset($_POST['met_full_name'])&&
+    isset($_POST['Mail'])&&
+    isset($_POST['Subject'])&&
+    isset($_POST['Message']))) {
+    die("Brak wszystkich danych"); // brak wszystkich dnaych
 }
 
 
-$askerMailAddress= $_POST['contact-input-email'];
+$askerMailAddress= $_POST['Mail'];
 
 if(!MailAddressValidator::checkMail($askerMailAddress))
 {
     die("Podany email:".$askerMailAddress." jest nieprawidłowy");
 }
 
-//sprawdzenie czy request jest ajaxowy
-if(!(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && !empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest'))
-{
-    die("Zablokowano ajax");
-}
+$askerName = $_POST['met_full_name'];
+$askerSubject= $_POST['Subject'];
 
-$askerName = $_POST['contact-input-name'];
-$askerSubject= $_POST['contact-input-subject'];
-$askerMessage= $_POST['contact-input-message'];
+$askerMessage= "Przesłał: ".$askerName.", mail: ".$askerMailAddress." <br/ ><br />".$_POST['Message'];
+
+
 
 $mail=new MailSender();
-$result = $mail->SendMail($askerSubject,$askerMessage,$askerMailAddress,$askerName);
+$result = $mail->SendMail($askerSubject,$askerMessage,"tociszkolenia@gmail.com",$askerName);
 
 $message = $result ? 'Mail wysłano pomyślnie.' : 'Wystąpił błąd przy próbie wysłania maila.';
 

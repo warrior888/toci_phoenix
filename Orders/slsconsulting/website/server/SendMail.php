@@ -1,6 +1,6 @@
 <?php
-require (__DIR__.'/Mailer/PHPMailerAutoload.php');
-
+require_once (__DIR__.'/Mailer/PHPMailerAutoload.php');
+require_once(__DIR__.'/config.php');
 
 class MailSender{
 
