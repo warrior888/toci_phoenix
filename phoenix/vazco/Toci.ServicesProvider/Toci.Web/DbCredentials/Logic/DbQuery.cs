@@ -11,7 +11,7 @@ namespace DbCredentials.Logic
     public class DbQuery
     {
         private DbHandle dbHandle;
-        private const string IdColumnName = "id";
+        private const string IdColumnName = "projectsid";
         public DbQuery()
         {
             dbHandle = DbConnect.Connect();
@@ -37,7 +37,7 @@ namespace DbCredentials.Logic
         {
             model.SetWhere(columnName);
             
-            if (columnName.Contains(IdColumnName))
+            if (columnName.ToLower().Equals(IdColumnName))
             {
                 model.SetPrimaryKey(columnName);
             }
@@ -77,7 +77,11 @@ namespace DbCredentials.Logic
             {
                 return listOfModels.DecryptModels();
             }
-            return listOfModels;
+            else
+            {
+                return listOfModels;
+            }
+            
         }
     }
 }
