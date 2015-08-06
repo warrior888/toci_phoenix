@@ -1,7 +1,10 @@
 $(document).ready(function() {
    // $('#home-section').load('server/content/home.html');
    // $('#about-section').load('server/content/about.html');
-    $('#servicesContainer').load('server/content/services.html');
+    $("#services-slider").owlCarousel();
+    $('#servicesContainer').load('server/content/services-slider.html');
+
+
 
     //ContentLoader.ScrollHandler();  AJAX feature
 
