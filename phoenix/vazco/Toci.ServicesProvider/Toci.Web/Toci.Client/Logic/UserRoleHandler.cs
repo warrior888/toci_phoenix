@@ -36,11 +36,11 @@ namespace Toci.Client.Logic
             if (user != null && roleManager.RoleExists(roleName))
             {
                 await userManager.AddToRoleAsync(userId, roleName);
-                return true;
+                return userManager.IsInRole(userId, roleName);
             }
             return false;
         }
 
-
+        
     }
 }
