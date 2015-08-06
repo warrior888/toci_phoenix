@@ -34,41 +34,30 @@
                 <td>@user.id</td>
                 <td>@user.email</td>
                 <td>
-                    <table class="table table-bordered ">
-                        <tbody>
+                    <ul>
                         @foreach (var role in user.UserRoleList)
                         {
-                            <tr>
-                                @*<input type="button"class="btn btn-danger" value="delete" />*@
-                                <td>@role @Html.ActionLink("Delete", "RemoveRole", new {roleName=@role, userId=@user.id}, new { @class = "btn btn-danger btn-sm " })</td>
 
-                            </tr>
+                            <li>@role @Html.ActionLink("Delete", "RemoveRole", new { roleName = @role, userId = @user.id }, new { @class = "btn btn-danger btn-sm " })</li>
+                            <br/>
+
 
                         }
-                            <tr>
-                                <td>
-                                    
-                                        @*<input type="button" class="btn btn-success" value="add" />
-    <input placeholder="add role" class="form-control" style="fit-position: left"/>*@
+                        @using (Html.BeginForm("AddRole", "Admin", new { }, FormMethod.Post))
+                        {
 
-                                        @*@Html.TextBox("value", null, new {@class="form-control"}) @Html.ActionLink("Add role", "AddRole", new {roleName=value, userId = @user.id }, new { @class = "btn btn-success btn-sm " })
-                                    *@
-                                        @using (Html.BeginForm("AddRole","Admin", new {  }, FormMethod.Post))
-                                        {
-                                           
-                                            <fieldset>
-                                                    @Html.Hidden("userId", user.id)
-                                                <div style="display: inline-flex">
-                                                    @Html.TextBox("roleName", null, new { @class = "form-control" })<input type="submit" class="btn btn-success btn-sm" value="Add role" />
-                                                </div>
-                                            </fieldset>
-                                        }
+                            <fieldset>
+                                @Html.Hidden("userId", user.id)
+                                <li>
+                                    <div style="display: inline-flex">
+                                        @Html.TextBox("roleName", null, new { @class = "form-control" })<input type="submit" class="btn btn-success btn-sm" value="Add role" />
+                                    </div>
+                                </li>
+                            </fieldset>
+                        }
 
-                                   
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    </ul>
+
                 </td>
             </tr>
         }
