@@ -5,6 +5,11 @@ namespace Toci.Client.Models
 {
     public class AdminModel
     {
-        public IEnumerable<UserModel> UserDataList;
+        public AdminModel()
+        {
+            UserDataList = new List<UserModel>(); 
+        }
+
+        public IEnumerable<UserModel> UserDataList { get; set; }
     }
 }
