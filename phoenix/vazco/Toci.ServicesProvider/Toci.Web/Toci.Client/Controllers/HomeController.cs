@@ -17,6 +17,9 @@ namespace Toci.Client.Controllers
         {
             return View();
         }
+
+
+        //dodane po to aby podnieść usera do admina - domyślnie oczywiźcie nie będzie takiej metody
         //http://localhost:13188/home/signadminrole?user=nirvana007@onet.pl
         [HttpGet]
         public async Task<RedirectToRouteResult> SignAdminRole(string user)
