@@ -5,7 +5,7 @@
     ViewBag.Title = "Admin Panel";
 }
 <h4>@ViewBag.Title</h4>
-@{
+@*@{
     foreach (var user in @Model.UserDataList)
     {
         <p>@user.id</p>
@@ -17,5 +17,51 @@
         }
         <br />
     }
+*@
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Email</th>
+        <th>Roles</th>
+    </tr>
+    </thead>
+    <tbody>
+    @{
+        foreach (var user in Model.UserDataList)
+        {
+            <tr>
+                <td>@user.id</td>
+                <td>@user.email</td>
+                <td>
+                    <table class="table table-bordered ">
+                        <tbody>
+                        @foreach (var role in user.UserRoleList)
+                        {
+                            <tr>
+                                <td>@role <input type="button"class="btn btn-danger" value="delete" /></td>
 
-}
+                            </tr>
+
+                        }
+                            <tr>
+                                <td>
+                                    <div style="display: inline-flex">
+                                        <input placeholder="add role" class="form-control" style="fit-position:left" /> <input type="button" class="btn btn-success" value="add" />
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        }
+    }
+    </tbody>
+    <!--Add footer for totals-->
+</table>
+
+
+
+
+
