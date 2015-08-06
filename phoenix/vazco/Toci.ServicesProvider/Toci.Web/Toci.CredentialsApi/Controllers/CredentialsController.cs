@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using Toci.CredentialsApi.Models;
 
 namespace Toci.CredentialsApi.Controllers
 {
@@ -12,7 +13,7 @@ namespace Toci.CredentialsApi.Controllers
         [Route("Credentials/Save")]
         ///[HttpPost]
         [HttpGet]
-        public void SaveCredentials(string data)
+        public void SaveCredentials(DbEntryModel model)
         {
             
         }
