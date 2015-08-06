@@ -19,7 +19,7 @@ $askerMessage= "Przesłał: ".$askerName.", mail: ".$askerMailAddress." <br/ ><b
 
 
 $mail=new MailSender();
-$result = $mail->SendMail($askerSubject,$askerMessage,"tociszkolenia@gmail.com",$askerName);
+$result = $mail->SendMail($askerSubject,$askerMessage,$askerMailAddress,$askerName);
 
 $message = $result ? 'Mail wysłano pomyślnie.' : 'Wystąpił błąd przy próbie wysłania maila.';
 

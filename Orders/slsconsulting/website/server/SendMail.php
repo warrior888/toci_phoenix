@@ -2,6 +2,7 @@
 require_once (__DIR__.'/Mailer/PHPMailerAutoload.php');
 require_once(__DIR__.'/config.php');
 
+
 class MailSender{
 
 	public $mail;
@@ -10,24 +11,24 @@ class MailSender{
 	{
 		$this->mail=new PHPMailer();
 		$this->mail->isSMTP();
-		$this->mail->SMTPDebug = 1; // debugging: 1 = errors and messages, 2 = messages only
-		$this->mail->SMTPAuth = true; // authentication enabled
-		$this->mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for GMail		
-		$this->mail->Host = "smtp.gmail.com";
-		$this->mail->Port = 465; // or 587
-		$this->mail->IsHTML(true);
-		$this->mail->Username = 'tociszkolenia@gmail.com';
-		$this->mail->Password = 'T0CIszkolenia';
+		$this->mail->SMTPDebug = SMTPDebug; // debugging: 1 = errors and messages, 2 = messages only
+		$this->mail->SMTPAuth = SMTPAuth; // authentication enabled
+		$this->mail->SMTPSecure = SMTPSecure; // secure transfer enabled REQUIRED for GMail
+		$this->mail->Host = Host;
+		$this->mail->Port = Port; // or 587
+		$this->mail->IsHTML(IsHTML);
+		$this->mail->Username = Username;
+		$this->mail->Password = Password;
 		//$this->mail->SetFrom("example@gmail.com");
 		//$this->mail->Subject = "Test";
 	}
 
-	public function SendMail($subject, $message, $senderEmail, $senderData=null)
+	public function SendMail($subject, $message, $senderEmail)
 	{
 
 		$this->mail->Subject=$subject;
 		$this->mail->Body=$message;
-		$this->mail->AddAddress($senderEmail);
+		$this->mail->AddAddress(SenderEmail);
 		$this->mail->SetFrom($senderEmail);
 
 		return $this->mail->Send();
