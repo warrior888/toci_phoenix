@@ -39,7 +39,8 @@
                         @foreach (var role in user.UserRoleList)
                         {
                             <tr>
-                                <td>@role <input type="button"class="btn btn-danger" value="delete" /></td>
+                                @*<input type="button"class="btn btn-danger" value="delete" />*@
+                                <td>@role @Html.ActionLink("Delete", "RemoveRole", new {roleName=@role, userId=@user.id}, new { @class = "btn btn-danger btn-sm " })</td>
 
                             </tr>
 
@@ -47,7 +48,22 @@
                             <tr>
                                 <td>
                                     <div style="display: inline-flex">
-                                        <input placeholder="add role" class="form-control" style="fit-position:left" /> <input type="button" class="btn btn-success" value="add" />
+                                        @*<input type="button" class="btn btn-success" value="add" />
+    <input placeholder="add role" class="form-control" style="fit-position: left"/>*@
+
+                                        @*@Html.TextBox("value", null, new {@class="form-control"}) @Html.ActionLink("Add role", "AddRole", new {roleName=value, userId = @user.id }, new { @class = "btn btn-success btn-sm " })
+                                    *@
+                                        @using (Html.BeginForm("AddRole","Admin", new {  }, FormMethod.Post))
+                                        {
+                                           
+                                            <fieldset>
+                                                    @Html.Hidden("userId", user.id)
+                                                    @Html.TextBox("roleName")
+                                                    <input type="submit" class="btn btn-success" value="Add role"/>
+                                               
+                                            </fieldset>
+                                        }
+
                                     </div>
                                 </td>
                             </tr>

@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
+using Toci.Client.Logic;
 using Toci.Client.Models;
 
 namespace Toci.Client.Controllers
@@ -46,6 +48,26 @@ namespace Toci.Client.Controllers
             }
             adminModel.UserDataList = adminModelList;
             return adminModel;
+        }
+
+        
+        public RedirectToRouteResult RemoveRole(string roleName, string userId)
+        {
+            var userManager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            userManager.RemoveFromRole(userId, roleName);
+            return RedirectToAction("ViewAllUsers");
+        }
+
+
+        [HttpPost]
+        public async Task<RedirectToRouteResult> AddRole(string roleName, string userId)
+        {
+            UserRoleHandler roleHandler = new UserRoleHandler();
+            var context = new ApplicationDbContext();
+            await roleHandler.AddNewUserRole(context, roleName);
+            await roleHandler.AddRoleToUser(context, userId, roleName);
+
+            return RedirectToAction("ViewAllUsers");
         }
       
     }
