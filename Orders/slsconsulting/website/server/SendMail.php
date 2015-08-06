@@ -19,8 +19,6 @@ class MailSender{
 		$this->mail->IsHTML(IsHTML);
 		$this->mail->Username = Username;
 		$this->mail->Password = Password;
-		//$this->mail->SetFrom("example@gmail.com");
-		//$this->mail->Subject = "Test";
 	}
 
 	public function SendMail($subject, $message, $senderEmail)
@@ -28,7 +26,7 @@ class MailSender{
 
 		$this->mail->Subject=$subject;
 		$this->mail->Body=$message;
-		$this->mail->AddAddress(SenderEmail);
+		$this->mail->AddAddress(SendFromEmail);
 		$this->mail->SetFrom($senderEmail);
 
 		return $this->mail->Send();

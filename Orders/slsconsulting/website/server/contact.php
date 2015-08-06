@@ -33,7 +33,7 @@ $askerMessage= "Przesłał: ".$askerName.", mail: ".$askerMailAddress." <br/ ><b
 
 
 $mail=new MailSender();
-$result = $mail->SendMail($askerSubject,$askerMessage,"tociszkolenia@gmail.com");
+$result = $mail->SendMail($askerSubject,$askerMessage,$askerMailAddress);
 
 $message = $result ? 'Mail wysłano pomyślnie.' : 'Wystąpił błąd przy próbie wysłania maila.';
 

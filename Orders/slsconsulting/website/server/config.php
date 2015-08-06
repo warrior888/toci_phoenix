@@ -9,5 +9,5 @@ define("Port", 465); // or 587
 define("IsHTML",true);
 
 define("Username", 'tociszkolenia@gmail.com');
-define("SenderEmail", 'tociszkolenia@gmail.com');
+define("SendFromEmail", 'tociszkolenia@gmail.com');
 define("Password", 'T0CIszkolenia');
