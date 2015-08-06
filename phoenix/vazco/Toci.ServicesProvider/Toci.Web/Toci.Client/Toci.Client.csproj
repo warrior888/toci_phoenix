@@ -178,6 +178,7 @@
     <Compile Include="Logic\AccountControllerLogic\AccountControllerHelper.cs" />
     <Compile Include="Logic\ChallengeResult.cs" />
     <Compile Include="Logic\OauthConnectionLogic\OauthConnectionUtils.cs" />
+    <Compile Include="Logic\UserRoleHandler.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
