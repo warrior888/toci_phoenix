@@ -14,7 +14,7 @@ namespace Toci.CryptingApi.Controllers
     {
         [Route("api/models/save")]
         [HttpPost]
-        public string SaveToDb(BodyModel model)///[FromBody]string dataString, [FromBody]string password)
+        public string SaveToDb(BodyModel model)
         {
             try
             {
@@ -25,7 +25,7 @@ namespace Toci.CryptingApi.Controllers
             }
             catch (Exception)
             {
-                return "Invalid Password!";
+                return "Bad Request!";
             }
         }
     }
