@@ -1,0 +1,21 @@
+﻿@using Toci.Client.Models
+@model AdminModel
+    
+@{
+    ViewBag.Title = "Admin Panel";
+}
+<h4>@ViewBag.Title</h4>
+@{
+    foreach (var user in @Model.UserDataList)
+    {
+        <p>@user.id</p>
+        <p>@user.email</p>
+        foreach (var role in user.UserRoleList)
+        {
+            <p>@role</p>
+
+        }
+        <br />
+    }
+
+}

@@ -15,7 +15,12 @@ namespace Toci.Client.Controllers
     public class AdminController : Controller
     {
         // GET: Admin
+
         public ActionResult Index()
+        {
+            return View();
+        }
+        public ActionResult ViewAllUsers()
         {
             var context = new ApplicationDbContext();
             var userManager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
