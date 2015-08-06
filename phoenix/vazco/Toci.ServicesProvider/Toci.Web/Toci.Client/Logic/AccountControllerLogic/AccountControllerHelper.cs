@@ -14,8 +14,8 @@ namespace Toci.Client.Logic.AccountControllerLogic
 {
     public abstract class AccountControllerHelper : Controller
     {
-        private ApplicationSignInManager _signInManager;
-        private ApplicationUserManager _userManager;
+        protected ApplicationSignInManager _signInManager;
+        protected ApplicationUserManager _userManager;
 
         #region Properties
         public ApplicationSignInManager SignInManager
@@ -44,11 +44,12 @@ namespace Toci.Client.Logic.AccountControllerLogic
         #endregion
 
         #region Constructors
-        public AccountControllerHelper()
+
+        protected AccountControllerHelper()
         {
         }
 
-        public AccountControllerHelper(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
+        protected AccountControllerHelper(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
         {
             UserManager = userManager;
             SignInManager = signInManager;

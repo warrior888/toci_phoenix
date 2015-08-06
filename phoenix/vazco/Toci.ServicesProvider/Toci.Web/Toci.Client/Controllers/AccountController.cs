@@ -1,8 +1,6 @@
 ﻿using System.Threading.Tasks;
-using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Toci.Client.Logic;
 using Toci.Client.Logic.AccountControllerLogic;
@@ -13,34 +11,6 @@ namespace Toci.Client.Controllers
     [Authorize]
     public class AccountController : AccountControllerHelper
     {
-        private ApplicationSignInManager _signInManager;
-        private ApplicationUserManager _userManager;
-
-        #region Properties
-        public ApplicationSignInManager SignInManager
-        {
-            get
-            {
-                return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
-            }
-            private set
-            {
-                _signInManager = value;
-            }
-        }
-
-        public ApplicationUserManager UserManager
-        {
-            get
-            {
-                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
-            }
-            private set
-            {
-                _userManager = value;
-            }
-        }
-        #endregion
 
         #region Constructors
         public AccountController()
@@ -48,9 +18,8 @@ namespace Toci.Client.Controllers
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
+            : base (userManager, signInManager)
         {
-            UserManager = userManager;
-            SignInManager = signInManager;
         }
         #endregion
 
