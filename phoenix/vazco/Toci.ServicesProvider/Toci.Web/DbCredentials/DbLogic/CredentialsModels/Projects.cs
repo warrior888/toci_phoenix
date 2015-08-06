@@ -1,7 +1,7 @@
 using Toci.Db.DbVirtualization;
 using Toci.Db.Interfaces;
 
-namespace DbCredentials.CredentialsModels
+namespace DbCredentials.DbLogic.CredentialsModels
 {
     public class Projects : Model
     {

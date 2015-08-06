@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using EncodingLib;
 using System.IO;
 using System.Linq;
 using System.Security;
 using System.Security.Cryptography;
 using DbCredentials.Certificate;
-using DbCredentials.CredentialsModels;
+using DbCredentials.DbLogic.CredentialsModels;
+using EncodingLib;
 using Toci.Db.DbVirtualization;
 using Toci.Db.Interfaces;
 using Toci.DigitalSignature.DigitalSignHandlers;
 
-namespace DbCredentials.Logic
+namespace DbCredentials.DbLogic
 {
     public static class CredentialsExtMethods
     {
