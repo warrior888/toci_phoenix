@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Net.NetworkInformation;
-using DbCredentials.CredentialsModels;
-using DbCredentials.Logic;
-
+using DbCredentials.DbLogic;
+using DbCredentials.DbLogic.CredentialsModels;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Toci.Utilities.Generator.DatabaseModelGenerator;
 using Toci.Utilities.Generator.DatabaseModelGenerator.DbDdlParser;
@@ -69,10 +68,10 @@ namespace Toci.Tests
                 scopeid = 1,
                 projectdata = "dsagfsgdh",
                 hash=null,
-                projectid = 1
+                projectid = 2
             };
-            
-            var result = dbQuery.Load(model, Projects.PROJECTID);
+
+            var result = dbQuery.Load(model); //, Projects.PROJECTID);
 
 
 
@@ -84,13 +83,13 @@ namespace Toci.Tests
         {
             Projects model = new Projects
             {
-                projectname = "dads",
+                projectname = "daadfsafgsdbds",
                 scopeid = 1,
                 projectdata = "dsagfsgdh",
                 //hash = null,
-                //projectid = 1
+                projectid = 2
             };
-            var result = dbQuery.Update(model, Projects.SCOPEID);
+            var result = dbQuery.Update(model, Projects.PROJECTID);
         }
 
         [TestMethod]

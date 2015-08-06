@@ -1,17 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using DbCredentials.CredentialsModels;
 using Toci.Db.ClusterAccess;
 using Toci.Db.DbVirtualization;
 using Toci.Db.Interfaces;
 
-namespace DbCredentials.Logic
+namespace DbCredentials.DbLogic
 {
     public class DbQuery
     {
         private DbHandle dbHandle;
-        private const string IdColumnName = "projectsid";
+        private const string IdColumnName = "projectid";
+
+        protected Dictionary<string,Func<string, bool>> primaryKeys = new Dictionary<string, Func<string, bool>>
+        {
+            {"Projects", columnName => columnName.ToLower().Equals("projectid")},
+            {"Scopes", columnName => columnName.ToLower().Equals("scopeid")},
+        };
+
+
         public DbQuery()
         {
             dbHandle = DbConnect.Connect();
@@ -35,11 +41,11 @@ namespace DbCredentials.Logic
         
         public List<IModel> Load(Model model, string columnName)
         {
-            model.SetWhere(columnName);
+            model.SetWhere(columnName.ToLower());
             
-            if (columnName.ToLower().Equals(IdColumnName))
+            if (primaryKeys[model.GetTableName()](columnName))
             {
-                model.SetPrimaryKey(columnName);
+                model.SetPrimaryKey(columnName.ToLower());
             }
 
             return Load(model);
@@ -47,12 +53,13 @@ namespace DbCredentials.Logic
 
         public int Update(Model model, string columnName)
         {
-            model.SetWhere(columnName);
+            model.SetWhere(columnName.ToLower());
 
-            if (columnName.Contains(IdColumnName))
+            if (primaryKeys[model.GetTableName()](columnName))
             {
-                model.SetPrimaryKey(columnName);
+                model.SetPrimaryKey(columnName.ToLower());
             }
+
             Encrypt(model);
             return dbHandle.UpdateData(model);
         }

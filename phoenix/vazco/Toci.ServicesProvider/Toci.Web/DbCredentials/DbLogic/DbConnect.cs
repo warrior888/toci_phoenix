@@ -3,7 +3,7 @@ using Toci.Db.Clients;
 using Toci.Db.ClusterAccess;
 using Toci.Db.DbVirtualization.MsSqlQuery;
 
-namespace DbCredentials.Logic
+namespace DbCredentials.DbLogic
 {
     public class DbConnect
     {
