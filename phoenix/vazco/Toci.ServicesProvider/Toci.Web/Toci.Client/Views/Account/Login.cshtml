@@ -5,7 +5,14 @@
 }
 
 <h2>@ViewBag.Title.</h2>
-<p>@Model.Email</p>
+<p>@{
+       if (Model.Email != null)
+       {
+           <div>
+               Hello @Model.Email
+           </div>
+       }
+   }</p>
 <div class="row">
     <div class="col-md-8">
         <section id="loginForm">

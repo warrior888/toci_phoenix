@@ -249,7 +249,6 @@ namespace Toci.Client.Controllers
                         return RedirectToLocal(returnUrl);
                     }
                 }
-
                 AddErrors(result);
             }
 
@@ -272,7 +271,9 @@ namespace Toci.Client.Controllers
         [AllowAnonymous]
         public ActionResult ExternalLoginFailure(string errormsg)
         {
-            return View(errormsg);
+            ViewBag.ErrorMsg = errormsg;
+
+            return View();
         }
 
         protected override void Dispose(bool disposing)
