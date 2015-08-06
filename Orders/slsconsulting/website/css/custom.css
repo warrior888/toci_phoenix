@@ -122,7 +122,7 @@
 }
 
 .met_bgcolor_transition:hover {
-	background-color : #18ADB5;
+	background-color : #FFBA54;
 }
 
 .met_bgcolor_transition2:hover {
@@ -155,7 +155,8 @@
 }
 
 .met_page_wrapper {
-	background-color : #CECECE;
+	//background-color : #CECECE;
+	background-image : url("../img/bgpatterns/binding_light.png");
 	overflow         : hidden;
 	position         : relative;
 	z-index          : 3;
