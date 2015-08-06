@@ -26,7 +26,7 @@ namespace Toci.CryptingApi.Controllers
             }
             catch (Exception)
             {
-                return "Invalid Password!";
+                return "Bad Request!";
             }
         }
     }

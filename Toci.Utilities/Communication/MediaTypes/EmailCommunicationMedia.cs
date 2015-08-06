@@ -59,7 +59,7 @@ namespace Toci.Utilities.Communication.MediaTypes
                 {
                     smtpServer.Send(mail);
                 }
-                catch (Exception e) 
+                catch (Exception ) 
                 {
                    // e.Message.ToString();
                     return false;

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net.NetworkInformation;
 using DbCredentials.CredentialsModels;
 using DbCredentials.Logic;
 
@@ -11,16 +12,18 @@ namespace Toci.Tests
     [TestClass]
     public class DbCredentials
     {
+        DbQuery dbQuery = new DbQuery();
         [TestMethod]
         public void TestMethod1()
         {
-            var dbQuery = new DbQuery();
-            // const string testString = "Test text";
-
+           //dbQuery = new DbQuery();
+           // const string testString = "Test text";
+           // Projects projmodel = new Projects();
+           // var rreesult = dbQuery.Load(projmodel);
 
             Scopes model = new Scopes
             {
-                //scopeid = 2,
+               // scopeid = 2,
                 scopename = "Tralalaasfdsaf"
             };
             var rresult = dbQuery.Load(model, Scopes.SCOPEID);
@@ -34,8 +37,10 @@ namespace Toci.Tests
             model.scopeid = 1;
             model.scopename = "kupczon";
             dbQuery.Update(model, Scopes.SCOPEID);
+            model = new Scopes();
+            model.scopename = null;
             result = dbQuery.Load(model);
-
+            ////////////////////////////////////////////
 
             Projects prmodel = new Projects
             {
@@ -44,14 +49,63 @@ namespace Toci.Tests
                 projectdata = "dsagfsgdh"
             };
             dbQuery.Save(prmodel);
+            prmodel.projectid = 1;
             prmodel.scopeid = 2;
             prmodel.projectdata = "FSDSGSG";
             dbQuery.Update(prmodel,Projects.PROJECTID);
+            result = dbQuery.Load(prmodel);
+            prmodel = new Projects();
             result = dbQuery.Load(prmodel);
             //var anotherresult = dbQuery.Load(anothermodel).ToArray();
             //Assert.AreEqual(testString, r);
         }
 
+        [TestMethod]
+        public void Save()
+        {
+            Projects model = new Projects
+            {
+                projectname = "dads",
+                scopeid = 1,
+                projectdata = "dsagfsgdh",
+                hash=null,
+                projectid = 1
+            };
+            
+            var result = dbQuery.Load(model, Projects.PROJECTID);
+
+
+
+
+        }
+
+        [TestMethod]
+        public void Update()
+        {
+            Projects model = new Projects
+            {
+                projectname = "dads",
+                scopeid = 1,
+                projectdata = "dsagfsgdh",
+                //hash = null,
+                //projectid = 1
+            };
+            var result = dbQuery.Update(model, Projects.SCOPEID);
+        }
+
+        [TestMethod]
+        public void Delete()
+        {
+            Projects model = new Projects
+            {
+               // projectname = "dads",
+                //scopeid = 1,
+                //projectdata = "dsagfsgdh",
+                //hash = null,
+                projectid = 1
+            };
+            var result = dbQuery.Delete(model, Projects.PROJECTID);
+        }
         [TestMethod]
         public void TestMethod2()
         {
