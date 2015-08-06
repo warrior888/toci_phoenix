@@ -18,9 +18,15 @@ namespace Toci.Client.Controllers
 
         public ActionResult Index()
         {
+
             return View();
         }
         public ActionResult ViewAllUsers()
+        {
+            return View(GetAllUsers());
+        }
+
+        public AdminModel GetAllUsers()
         {
             var context = new ApplicationDbContext();
             var userManager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
@@ -39,7 +45,7 @@ namespace Toci.Client.Controllers
                 adminModelList.Add(userModel);
             }
             adminModel.UserDataList = adminModelList;
-            return View(adminModel);
+            return adminModel;
         }
       
     }
