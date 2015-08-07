@@ -13,3 +13,5 @@ https://vimeo.com/69313963 filmik, jakaœ reklamówka, do dupy
 https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_understanding_web_server_oauth_flow.htm <- OAuth flow, detailed
 https://tools.ietf.org/googleresults?cx=011177064926444307064%3Arsqif7nmmi0&q=oauth+2.0&sa=Google+Search&cof=FORID%3A9 <- even moreeeeee
 https://onedrive.live.com/?id=9383445C4B298E4E%2130645&cid=9383445C4B298E4E&group=0&parId=root&authkey=%21ALsACR-puMf5qVE&action=locate <- sampleprojects
+https://msdn.microsoft.com/en-us/library/microsoft.owin.security.oauth.oauthauthorizationserveroptions.oauthauthorizationserveroptions%28v=vs.113%29.aspx#M:Microsoft.Owin.Security.OAuth.OAuthAuthorizationServerOptions
+https://msdn.microsoft.com/en-US/library/microsoft.owin.security.oauth.oauthauthorizationserverprovider%28v=vs.113%29.aspx
