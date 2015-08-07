@@ -5,19 +5,7 @@
     ViewBag.Title = "Admin Panel";
 }
 <h4>@ViewBag.Title</h4>
-@*@{
-    foreach (var user in @Model.UserDataList)
-    {
-        <p>@user.id</p>
-        <p>@user.email</p>
-        foreach (var role in user.UserRoleList)
-        {
-            <p>@role</p>
 
-        }
-        <br />
-    }
-*@
 <table class="table table-bordered">
     <thead>
     <tr>
@@ -34,7 +22,7 @@
                 <td>@user.id</td>
                 <td>@user.email</td>
                 <td>
-                    <ul>
+                    <ul class="list-unstyled">
                         @foreach (var role in user.UserRoleList)
                         {
 
@@ -50,7 +38,7 @@
                                 @Html.Hidden("userId", user.id)
                                 <li>
                                     <div style="display: inline-flex">
-                                        @Html.TextBox("roleName", null, new { @class = "form-control" })<input type="submit" class="btn btn-success btn-sm" value="Add role" />
+                                        @Html.TextBox("roleName", null, new { @class = "form-control" })  <input type="submit" class="btn btn-success btn-sm" value="Add role" />
                                     </div>
                                 </li>
                             </fieldset>
@@ -63,7 +51,6 @@
         }
     }
     </tbody>
-    <!--Add footer for totals-->
 </table>
 
 
