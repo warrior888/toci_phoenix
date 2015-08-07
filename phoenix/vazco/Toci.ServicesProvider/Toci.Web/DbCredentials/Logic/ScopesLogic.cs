@@ -11,14 +11,15 @@ namespace DbCredentials.Logic
         private const bool exist = true;
         DbQuery dbQuery = new DbQuery();
 
-        public bool AddProject(Scopes model)
+        public bool AddScope(Scopes model)
+        { 
+            return IsScopeExist(model)||dbQuery.Save(model) != notSaved;
+        }
+
+        public bool IsScopeExist(Scopes model)
         {
             var list = dbQuery.Load(model).Cast<Scopes>().ToList();
-            if (list.Any(item => item.scopename.Equals(model.scopename)))
-            {
-                return exist;
-            }
-            return dbQuery.Save(model) != notSaved;
+            return list.Any(item => item.scopename.Equals(model.scopename));
         }
     }
 }

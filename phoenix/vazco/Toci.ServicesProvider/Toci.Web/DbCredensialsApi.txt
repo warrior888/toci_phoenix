@@ -1,10 +1,11 @@
-Dodawanie projektu:
+v Dodawanie projektu:
 	- ProjectData
 	- ProjectName
 	- Scope
 	
-	waliduje czy projektName istnieje	
+v	waliduje czy projektName istnieje	
 	zwraca success albo fail
+
 Wyci¹ganie projektu:
 	- ProjectName
 	- Lista scopeów u¿ytkownika który pyta o zasób

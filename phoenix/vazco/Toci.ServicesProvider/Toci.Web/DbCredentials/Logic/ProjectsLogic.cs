@@ -13,12 +13,13 @@ namespace DbCredentials.Logic
 
         public bool AddProject(Projects model)
         {
+            return IsProjectExist(model) || dbQuery.Save(model) != notSaved;
+        }
+
+        public bool IsProjectExist(Projects model)
+        {
             var list = dbQuery.Load(model).Cast<Projects>().ToList();
-            if (list.Any(item => item.projectname.Equals(model.projectname)))
-            {
-                throw new Exception("Project exist");
-            }
-            return dbQuery.Save(model) != notSaved;
+            return list.Any(item => item.projectname.Equals(model.projectname));
         }
     }
 }
