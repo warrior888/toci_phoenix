@@ -26,5 +26,11 @@ namespace Toci.CryptingFrontDemo.Controllers
 
             return View();
         }
+        public ActionResult Load()
+        {
+            
+
+            return View();
+        }
     }
 }
