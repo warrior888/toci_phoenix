@@ -1,5 +1,5 @@
 <?php
-
+require_once(__DIR__.'/../Models/Model.php');
 require_once('PgDelete.php');
 require_once('PgInsert.php');
 require_once('PgSelect.php');
