@@ -45,9 +45,10 @@
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400" />
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300" />
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:700" />
+
 	<![endif]-->
 	<!--[if lte IE 8]><script src="js/lte-ie9.js"></script><![endif]-->
-
+	<link rel="stylesheet" href="css/navbar.css" />
 
 	<!-- Scripts -->
 	<script src="js/jquery.js"></script>
@@ -87,6 +88,8 @@
 
 
 	<style id="colorChanges" type="text/css"></style>
+
+
 </head>
 <body class="clearfix" data-smooth-scrolling="1">
 <div class="met_page_wrapper" >
@@ -95,7 +98,7 @@
 	<div class="row-fluid">
 		<div class="span12">
 			<!-- logo_vertical_middle() w custom.js -->
-			<a href="index.html" class="met_logo met_logo_loading"><img src="img/Logo%20prosto.png" height="44"  alt="SLS Consulting" /></a>
+			<a href="index.html" class="met_logo met_logo_loading"><img src="img/Logo%20prosto.png" height="44" style="float:left;" alt="SLS Consulting" /></a>
 			<aside class="clearfix">
 				<a href="https://www.facebook.com/pages/SLS-Consulting-Sp-z-oo/1559732964286084" target="_blank" class="met_color3 met_color_transition"><i class="icon-facebook"></i></a>
 			</aside>
@@ -104,31 +107,42 @@
 	</div>
 </header>
 
-	<div id="dl-menu" class="navbar navbar-fixed-top dl-menuwrapper" style="z-index: 99999" >
-		<button class="met_bgcolor met_bgcolor_transition2">MENU</button>
-		<ul class="dl-menu met_bgcolor7">
-			<li>
-				<a href="#home-section">Do góry</a>
-			</li>
-			<li><a href="#about-section" class="page-scroll">O nas</a></li>
-			<li><a href="#services-section" class="page-scroll">Usługi</a></li>
-			<li><a href="#contact-section" class="page-scroll">Kontakt</a></li>
+
+	<nav id="navigation-bar" style="z-index: 999; height:60px; margin-bottom:30px; " class="met_content  met_bgcolor3 clearfix navbar-fixed-top" data-fixed="1">
+
+		<div id="menu">
+
+
+		<ul>
+			<li class="met_bgcolor_transition2"><a href="#home-section" class="met_menu_home page-scroll"><i class="icon-home"></i></a></li>
+			<li class="met_bgcolor_transition2"><a href="#about-section" class="page-scroll">O nas</a></li>
+			<li class="met_bgcolor_transition2"><a href="#services-section" class="page-scroll">Usługi</a></li>
+			<li class="met_bgcolor_transition2"><a href="#contact-section" class="page-scroll">Kontakt</a></li>
 		</ul>
-	</div><!-- /dl-menuwrapper -->
-	<!-- Header Ends  -->
-
-	<!-- Menu -->
-<nav id="navigation-bar" class="met_content met_main_nav met_bgcolor3 clearfix navbar" data-fixed="1">
-	<ul>
-		<li class="met_bgcolor_transition2"><a href="#home-section" class="met_menu_home page-scroll"><i class="icon-home"></i></a></li>
-		<li class="met_bgcolor_transition2"><a href="#about-section" class="page-scroll">O nas</a></li>
-		<li class="met_bgcolor_transition2"><a href="#services-section" class="page-scroll">Usługi</a></li>
-		<li class="met_bgcolor_transition2"><a href="#contact-section" class="page-scroll">Kontakt</a></li>
-	</ul>
+		</div>
 
 
-</nav>
-	<!-- Menu Ends  -->
+		<button id="menu-button" class="" type="button" href="onet.pl">
+			<div id="spans">
+				<span>___</span>
+				<span>___</span>
+				<span>___</span>
+			</div>
+
+		</button>
+
+		<div id="collapsed-menu" class="met_content  met_bgcolor3 clearfix" style="display:none;">
+			<ul>
+				<li class="met_bgcolor_transition2"><a href="#home-section" class="met_menu_home page-scroll"><i class="icon-home"></i></a></li>
+				<li class="met_bgcolor_transition2"><a href="#about-section" class="page-scroll">O nas</a></li>
+				<li class="met_bgcolor_transition2"><a href="#services-section" class="page-scroll">Usługi</a></li>
+				<li class="met_bgcolor_transition2"><a href="#contact-section" class="page-scroll">Kontakt</a></li>
+			</ul>
+
+		</div>
+
+	</nav>
+
 
 	<!-- Home -->
 	<!-- Home -->
@@ -150,8 +164,8 @@
 							<div class="met_text_block">
 								<h2 class="met_bold_one">Szanowni Państwo !</h2>
 								Witamy serdecznie na stronie internetowej Firmy Usługowo-Handlowej SLS Consulting Sp. z o.o.
-								Znajdziecie tu Państwo informacje o Nas, o naszych aktualnych projektach oraz całą ofertę usług
-								jakie świadczymy. Wszelkie propozycje współpracy , bądź uwagi prosimy kierować poprzez maila bądź nr telefonu zawarty
+								znajdziecie tu Państwo informacje o Nas, o naszych aktualnych projektach oraz całą ofertę usług
+								jakie świadczymy. Wszelkie propozycje współpracy , bądź uwagi prosimy kierować poprzez maila lub nr telefonu zawarty
 								w zakładce Kontakt.
 								<br><br>
 
