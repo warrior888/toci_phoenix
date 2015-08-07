@@ -15,3 +15,7 @@ https://tools.ietf.org/googleresults?cx=011177064926444307064%3Arsqif7nmmi0&q=oa
 https://onedrive.live.com/?id=9383445C4B298E4E%2130645&cid=9383445C4B298E4E&group=0&parId=root&authkey=%21ALsACR-puMf5qVE&action=locate <- sampleprojects
 https://msdn.microsoft.com/en-us/library/microsoft.owin.security.oauth.oauthauthorizationserveroptions.oauthauthorizationserveroptions%28v=vs.113%29.aspx#M:Microsoft.Owin.Security.OAuth.OAuthAuthorizationServerOptions
 https://msdn.microsoft.com/en-US/library/microsoft.owin.security.oauth.oauthauthorizationserverprovider%28v=vs.113%29.aspx
+http://brockallen.com/2014/01/09/a-primer-on-external-login-providers-social-logins-with-owinkatana-authentication-middleware/
+http://brockallen.com/2013/10/24/a-primer-on-owin-cookie-authentication-middleware-for-the-asp-net-developer/
+http://stackoverflow.com/questions/25845420/mvc-5-application-implement-oauth-authorization-code-flow
+

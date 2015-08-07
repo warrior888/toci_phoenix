@@ -10,6 +10,7 @@ namespace Toci.AuthorizationServer.Controllers
     public class OAuthController : Controller
     {
         // GET: OAuth
+        //[Authorize]/*dafuq to robi... want to know*/
         [Route("OAuth/Authorize")]
         public ActionResult Authorize()
         {
@@ -49,11 +50,6 @@ namespace Toci.AuthorizationServer.Controllers
             }
 
             return View();
-        }
-        [Route("OAuth/Token")]
-        public ActionResult Token()
-        {
-            return null;
         }
     }
 }

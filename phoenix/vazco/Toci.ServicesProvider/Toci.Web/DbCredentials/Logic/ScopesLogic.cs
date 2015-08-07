@@ -37,8 +37,8 @@ namespace DbCredentials.Logic
             }
 
             //list.Any(item => item.scopename.Equals(model.scopename) model.scopeid = item.scopeid);
-            //return model; 
-                
+            return model; 
+                 
         }
     }
 }

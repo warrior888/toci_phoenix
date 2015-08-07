@@ -24,9 +24,9 @@ namespace Toci.CredentialsApi.Models
                     scopename = model.scopeName,
                 };
                 ScopesLogic scopesLogic = new ScopesLogic();
-                scopesLogic.IsScopeExist(scmodel)? ;
-
-                var list dbQuery.Load(scmodel,"scopename");
+               // scopesLogic.IsScopeExist(scmodel)? ;
+               //tu się wypierdala Szyfrant
+               // var list dbQuery.Load(scmodel,"scopename");
                 Projects prmodel = new Projects
                 {
                     projectname = model.projectName,
