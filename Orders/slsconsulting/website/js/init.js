@@ -4,7 +4,7 @@ $(document).ready(function() {
     //$("#services-slider").owlCarousel();
 
 
-    $('#servicesContainer').load('server/content/services.html');
+    //$('#servicesContainer').load('server/content/services.html');
 
 
 

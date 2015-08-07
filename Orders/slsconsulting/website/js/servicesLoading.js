@@ -1,39 +1,39 @@
-
+﻿
 var subjects = {
-    'car-rentals'  : 'import/export',
-    'car-rentals1': 'sprzedaz samochodow',
-    'car-rentals2' : 'wypozyczalnia samochodow',
-    'car-rentals3' : 'sprzet rolniczy',
-    'car-rentals4' : 'transport miedzynarodowy',
-    'car-rentals5' : 'warzywa/owoce',
-    'car-rentals6' : 'dzial IT',
-    'car-rentals7' : 'domki caloroczne'
+    'import-export'  : 'Import/export',
+    'car-sale': 'Sprzedaż samochodów',
+    'car-rentals' : 'Wypożyczalnia samochodów',
+    'agricultural' : 'Sprzęt rolniczy',
+    'intl-transport' : 'Transport międzynarodowy',
+    'vegetables' : 'Warzywa/owoce',
+    'it-section' : 'Dział IT',
+    'holiday-homes' : 'Domki całoroczne'
 };
 
 
 $( document ).ready(function() {
-    AppendOnClick2('car-rentals', 'servicesContainer', 'server/Content/car-renting.html');
+    AppendOnClick2('import-export');
     //AppendOnClick('return', 'servicesContainer', 'server/Content/services.html');
 
-    AppendOnClick2('car-rentals1', 'servicesContainer', 'server/Content/car-renting.html');
+    AppendOnClick2('car-sale');
     //AppendOnClick('return', 'servicesContainer', 'server/Content/services.html');
 
-    AppendOnClick2('car-rentals2', 'servicesContainer', 'server/Content/car-renting.html');
+    AppendOnClick2('car-rentals');
     //AppendOnClick('return', 'servicesContainer', 'server/Content/services.html');
 
-    AppendOnClick2('car-rentals3', 'servicesContainer', 'server/Content/car-renting.html');
+    AppendOnClick2('it-section');
     //AppendOnClick('return', 'servicesContainer', 'server/Content/services.html');
 
-    AppendOnClick2('car-rentals4', 'servicesContainer', 'server/Content/car-renting.html');
+    AppendOnClick2('intl-transport');
     //AppendOnClick('return', 'servicesContainer', 'server/Content/services.html');
 
-    AppendOnClick2('car-rentals5', 'servicesContainer', 'server/Content/car-renting.html');
+    AppendOnClick2('vegetables');
     //AppendOnClick('return', 'servicesContainer', 'server/Content/services.html');
 
-    AppendOnClick2('car-rentals6', 'servicesContainer', 'server/Content/car-renting.html');
+    AppendOnClick2('agricultural');
     //AppendOnClick('return', 'servicesContainer', 'server/Content/services.html');
 
-    AppendOnClick2('car-rentals7', 'servicesContainer', 'server/Content/car-renting.html');
+    AppendOnClick2('holiday-homes');
     //AppendOnClick('return', 'servicesContainer', 'server/Content/services.html');
 });
 
@@ -45,8 +45,8 @@ function AppendOnClick(actionTrgId, containerId, fileName) {
     });
 }
 
-function AppendOnClick2(actionTrgId, containerId, fileName) {
-    $('#'+ actionTrgId).on("click", function(e){
+function AppendOnClick2(actionTrgId) {
+    $('#'+ actionTrgId).on("click", function(){
         $('#met_subject').val(subjects[actionTrgId]);
     });
 }
