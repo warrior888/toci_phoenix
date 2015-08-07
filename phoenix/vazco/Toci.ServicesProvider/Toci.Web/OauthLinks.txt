@@ -10,3 +10,4 @@ https://aaronparecki.com/articles/2012/07/29/1/oauth2-simplified <- to jest te¿ 
 http://www.tugberkugurlu.com/archive/simple-oauth-server-implementing-a-simple-oauth-server-with-katana-oauth-authorization-server-components-part-1 <- tut seems legit
 http://blog.mszcool.com/index.php/2013/12/asp-net-4-5-1-webapi-general-integration-with-oauth2-and-oauth-authentication-servers/ <- te¿ fajnie napisane
 https://vimeo.com/69313963 filmik, jakaœ reklamówka, do dupy
+https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_understanding_web_server_oauth_flow.htm <- OAuth flow, detailed
