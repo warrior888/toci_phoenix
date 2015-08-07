@@ -12,7 +12,7 @@ namespace Toci.CredentialsApi.Controllers
     public class ProjectsSaveController : ApiController
     {
 
-        [Route("Projects/Save")]
+        [Route("Save/Project")]
         //[HttpPost]
         [HttpPost]
         public int SaveProjects(Model model)
