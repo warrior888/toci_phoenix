@@ -62,20 +62,39 @@ namespace Toci.Tests
         [TestMethod]
         public void Save()
         {
+            Scopes scmodel = new Scopes
+            {
+                scopename = "admin2"
+            };
+            var sth = dbQuery.Save(scmodel);
+
             Projects model = new Projects
             {
-                projectname = "dads",
+                projectname = "22222dads",
                 scopeid = 1,
-                projectdata = "dsagfsgdh",
-                hash=null,
-                projectid = 2
+                projectdata = "22222dsagfsgdh",
+                projectauthor = "22222s2yfr4nt",
+               // modificationdate = 
+                //projectid = 2
+            };
+            
+            var result = dbQuery.Save(model); //, Projects.PROJECTID);
+        }
+
+        [TestMethod]
+        public void Load()
+        {
+            Projects model = new Projects
+            {
+                //projectname = "dads",
+                //scopeid = 1,
+                //projectdata = "dsagfsgdh",
+                //projectauthor = "s2yfr4nt",
+                // modificationdate = 
+                //projectid = 2
             };
 
             var result = dbQuery.Load(model); //, Projects.PROJECTID);
-
-
-
-
         }
 
         [TestMethod]
@@ -87,6 +106,7 @@ namespace Toci.Tests
                 scopeid = 1,
                 projectdata = "dsagfsgdh",
                 //hash = null,
+                projectauthor = "22222s2yfr4nt",
                 projectid = 2
             };
             var result = dbQuery.Update(model, Projects.PROJECTID);
@@ -101,7 +121,7 @@ namespace Toci.Tests
                 //scopeid = 1,
                 //projectdata = "dsagfsgdh",
                 //hash = null,
-                projectid = 1
+                projectid = 2
             };
             var result = dbQuery.Delete(model, Projects.PROJECTID);
         }

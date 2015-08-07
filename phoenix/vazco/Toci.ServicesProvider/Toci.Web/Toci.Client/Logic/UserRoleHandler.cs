@@ -24,7 +24,7 @@ namespace Toci.Client.Logic
             return roleManager.RoleExists(roleName);
         }
 
-        public async Task<bool> AddRoleToUser(DbContext context, string userName, string roleName)
+        public async Task<bool> AddRoleToUser(DbContext context, string userId, string roleName)
         {
 
             var roleStore = new RoleStore<IdentityRole>(context);
@@ -32,7 +32,7 @@ namespace Toci.Client.Logic
 
             var userStore = new UserStore<ApplicationUser>(context);
             var userManager = new UserManager<ApplicationUser>(userStore);
-            var user = await userManager.FindByNameAsync(userName);
+            var user = await userManager.FindByIdAsync(userId);
             if (user != null && roleManager.RoleExists(roleName))
             {
                 await userManager.AddToRoleAsync(user.Id, roleName);

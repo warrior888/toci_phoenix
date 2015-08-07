@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Toci.Client.Logic;
 using Toci.Client.Models;
@@ -23,14 +24,13 @@ namespace Toci.Client.Controllers
         //dodane po to aby podnieść usera do admina - domyślnie oczywiźcie nie będzie takiej metody
         //http://localhost:13188/home/signadminrole?user=nirvana007@onet.pl
         [HttpGet]
-        public async Task<RedirectToRouteResult> SignAdminRole(string user)
+        public async Task<RedirectToRouteResult> SignAdminRole(string userName)
         {
             UserRoleHandler roleHandler = new UserRoleHandler();
             ApplicationDbContext context = new ApplicationDbContext();
             var userManager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
-            var userObject = userManager.FindByNameAsync(user);
-            var result = await roleHandler.AddNewUserRole(context, "Admin");
-            var result2 = await roleHandler.AddRoleToUser(context, user, "Admin");
+            var user = userManager.FindByName(userName);
+            await roleHandler.AddRoleToUser(context, user.Id, "admin");
             return RedirectToAction("Index", "Admin");
         }
     }
