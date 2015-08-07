@@ -44,6 +44,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{8A35C661-4087-4E54-8AA1-BCE29DC92131}"
 	ProjectSection(SolutionItems) = preProject
 		DbCredensialsApi.txt = DbCredensialsApi.txt
+		OauthLinks.txt = OauthLinks.txt
 	EndProjectSection
 EndProject
 Global

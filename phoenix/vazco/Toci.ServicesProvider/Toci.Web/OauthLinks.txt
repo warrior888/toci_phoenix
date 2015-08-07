@@ -1,0 +1,12 @@
+http://www.asp.net/aspnet/overview/owin-and-katana/owin-oauth-20-authorization-server <- na start ten projekt microsoftowy z u¿yciem owina, jak byœmy chcieli robiæ owinowe, to chyba z tego trzeba wyjœæ
+http://benfoster.io/blog/how-to-write-owin-middleware-in-5-different-steps <- fajny opis jak dzia³a Owin middleware
+http://stackoverflow.com/questions/26755573/how-to-implement-oauth2-server-in-asp-net-mvc-5-and-web-api-2 <- linki do 5 partów bloga co go robi w wyczepany sposób
+http://kapitanh.blogspot.de/2015/03/generate-oauth-20-bearer-token-with.html <- baaardzo prosta implementacja Startup.cs
+https://www.simple-talk.com/dotnet/.net-framework/creating-custom-oauth-middleware-for-mvc-5/ <- fajny s³owniczek na dole, co robi¹ jakieœ tam metody 
+http://dylanbeattie.blogspot.in/2013/08/building-servicestack-based-oauth2.html <- trochê linków do serwera stoj¹cego na openoauth
+http://www.skylinetechnologies.com/Blog/Article/2526/Building-an-OAuth2-Authorization-Server-with-DotNetOpenAuth.aspx <- to ten wielgachny projekt z openoautha
+http://blog.rfaisal.com/2014/01/14/building-your-own-api-and-securing-it-with-oauth-2-0-in-asp-net-webapi-2/ <- ten tutek prawie nic nie opisuje
+https://aaronparecki.com/articles/2012/07/29/1/oauth2-simplified <- to jest te¿ fajne na start
+http://www.tugberkugurlu.com/archive/simple-oauth-server-implementing-a-simple-oauth-server-with-katana-oauth-authorization-server-components-part-1 <- tut seems legit
+http://blog.mszcool.com/index.php/2013/12/asp-net-4-5-1-webapi-general-integration-with-oauth2-and-oauth-authentication-servers/ <- te¿ fajnie napisane
+https://vimeo.com/69313963 filmik, jakaœ reklamówka, do dupy
