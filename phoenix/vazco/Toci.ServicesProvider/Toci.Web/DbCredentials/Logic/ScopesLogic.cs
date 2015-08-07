@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using DbCredentials.DbLogic;
 using DbCredentials.DbLogic.CredentialsModels;
 
@@ -20,6 +21,24 @@ namespace DbCredentials.Logic
         {
             var list = dbQuery.Load(model).Cast<Scopes>().ToList();
             return list.Any(item => item.scopename.Equals(model.scopename));
+        }
+
+        public Scopes GetScopeId(Scopes model)
+        {
+            if (IsScopeExist(model))
+            {
+                var list = dbQuery.Load(model).Cast<Scopes>().ToList();
+
+                foreach (var item in list.Where(item => item.scopename.Equals(model.scopename)))
+                {
+                    model.scopeid = item.scopeid;
+                    return model;
+                }
+            }
+
+            //list.Any(item => item.scopename.Equals(model.scopename) model.scopeid = item.scopeid);
+            //return model; 
+                
         }
     }
 }

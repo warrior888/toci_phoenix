@@ -22,7 +22,7 @@ namespace Toci.CredentialsApi.Controllers
                 DbQuery dbHandle = new DbQuery();
                 return dbHandle.Save(model);
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 return default(int);
             }
