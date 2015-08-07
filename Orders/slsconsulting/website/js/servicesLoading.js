@@ -5,7 +5,7 @@ var subjects = {
     'car-rentals2' : 'wypozyczalnia samochodow',
     'car-rentals3' : 'sprzet rolniczy',
     'car-rentals4' : 'transport miedzynarodowy',
-    'car-rentals5' : 'wazywa/owoce',
+    'car-rentals5' : 'warzywa/owoce',
     'car-rentals6' : 'dzial IT',
     'car-rentals7' : 'domki caloroczne'
 };
