@@ -156,3 +156,5 @@ phoenix/phoenix.Dal/.vs/config/applicationhost.config
 /.idea/
 
 /philadelphia/code/server/nbproject/private/
+philadelphia/code/server/nbproject/project.xml
+philadelphia/code/server/nbproject/project.properties
