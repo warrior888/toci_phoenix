@@ -155,3 +155,4 @@ $RECYCLE.BIN/
 phoenix/phoenix.Dal/.vs/config/applicationhost.config
 /.idea/
 
+/philadelphia/code/server/nbproject/private/
