@@ -7,7 +7,7 @@ require_once(__DIR__.'/../Postgres/PgModel.php');
 class TranslationModel extends PgModel
 {
     private $table = 'translation_view';
-    private $columns = 'lang_name, element_name, translation';
+    private $columns = array('lang_name', 'element_name', 'translation');
     
     public function GetTranslation($language, $elementName)
     {
