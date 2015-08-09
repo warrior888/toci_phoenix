@@ -1,20 +1,31 @@
 
--- zmiana mailconfimred z text na boolean
-alter table applicants alter column mailconfirmed type boolean
-using case when mailconfirmed='false' then FALSE else true end;
-
--- Table: applicants
-DROP TABLE applicants;
-
-CREATE TABLE applicants
+CREATE TABLE clients
 (
   id serial NOT NULL,
   name text,
-  surname text,
-  email text,
-  phone text,
-  chosencourse text,
-  signature text,
-  mailconfirmed text,
-  CONSTRAINT applicants_pkey PRIMARY KEY (id)
+  address text,
+  postalcode text,
+  city text,
+  nip text,
+  CONSTRAINT clients_pkey PRIMARY KEY (id)
+)
+
+CREATE TABLE invoices
+(
+  id serial NOT NULL,
+  client_id integer,
+  "number" text,
+  html text,
+  CONSTRAINT invoices_pkey PRIMARY KEY (id),
+  CONSTRAINT invoices_client_id_fkey FOREIGN KEY (client_id)
+      REFERENCES clients (id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+)
+
+CREATE TABLE services
+(
+  id serial NOT NULL,
+  name text,
+  price text,
+  CONSTRAINT services_pkey PRIMARY KEY (id)
 )
