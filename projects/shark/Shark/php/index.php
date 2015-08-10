@@ -1,4 +1,15 @@
+
+
 <?php
+header('Content-Type: text/html; charset=UTF-8');
+/*
+ * Ilosc uslug - czy zawsze jedna?
+ * Kodowanie
+ * Sposób zapłaty
+ * Data sprzedazy/wystawienia faktury
+ */
+
+
 require_once("config.php");
 // load the login class
 require_once("classes/Login.php");

@@ -6,38 +6,44 @@ include_once "../../config.php";
 include_once "../../utils.php";
 
 
-    if(isset($_GET['client'])&&
-        isset($_GET['service'])
-    )
+    function genereteInvoice($clientId,$serviceId)
     {
-        //echo "wtf";
+        header('Content-Type: text/html; charset=UTF-8');
+        $returnInvoice="";
+
         $manager=new ClientsManager();
-        $client=$manager->GetClient("*","id=".$_GET['client'])[0];
+        $client=$manager->GetClient("*","id=".$clientId)[0];
         $manager->CloseConnection();
 
         $manager=new ServiceManager();
-        $service=$manager->GetService("*","id=".$_GET['service'])[0];
+        $service=$manager->GetService("*","id=".$serviceId)[0];
         $manager->CloseConnection();
 
-        $number="02/02/0202";
 
-        $nabywca="Imie i nazwisko/Tytuł: ".$client['name']."<br />Adres: ".$client['address']."<br />kod pocztowy: ".$client['postalcode'].
-            "<br />Miasto: ".$client['city']."<br />NIP:".$client['nip'];
+        $nabywca="<b>Imie i nazwisko/Tytuł:</b> ".$client['name']."<br /><b>Adres:</b> ".$client['address']."<br /><b>Kod pocztowy:</b> ".$client['postalcode'].
+            "<br /><b>Miasto: </b>".$client['city']."<br /><b>NIP:</b>".$client['nip'];
 
         $data=getTodaysDate();
 
-        $invoice = '<table border=1 width=80% align="center">
+        $invoice = '
+    <table border=1 width=80% align="center">
     <tr><th colspan="2" align="right"><b>ORYGINAŁ</b></th></tr>
     <tr><td colspan="2" align="center"><b>FAKTURA VAT NR ' . getNextInvoiceNumber() . '</b></td></tr>
-    <tr><td rowspan="4">SPRZEDAWCA<br />' . SPRZEDAWCA . '</td>
-        <td>Data Wystawienia:' . $data . '</td></tr><tr><td>Data Sprzedaży:' . $data  . '</td></tr>
-     <tr><td rowspan="2">Format itp:<br />' . "cośtam" . '</td>
-        </tr><tr></tr><tr><td colspan="2">NABYWCA<br>'.$nabywca.'</td></tr></table>';
+    <tr><td rowspan="4"><b>SPRZEDAWCA</b><br />' . SPRZEDAWCA . '</td>
+        <td><b>Data Wystawienia:' . $data . '</td></tr><tr><td>Data Sprzedaży:</b>' . $data  . '</td></tr>
+     <tr><td rowspan="2"><b>Format itp:</b><br />' . "cośtam" . '</td>
+        </tr><tr></tr><tr><td colspan="2"><b>NABYWCA</b><br>'.$nabywca.'</td></tr></table>';
 
-        echo $invoice;
+        $returnInvoice .= $invoice;
 
-        echo "<br><br>";
+        $returnInvoice .= "<br><br>";
 
+        //$service=$manager->GetService("*","id='".$_GET['service']."'");
+        $price=intval($service['price']);
+        $VatAmount=$price*0.23;
+        $nettoAmount=$price-$VatAmount;
+        $netto=$price-$nettoAmount;
+        $brutto=$price+$nettoAmount;
 
         $table= '
 <table border=1 width=80% align="center">
@@ -52,24 +58,31 @@ include_once "../../utils.php";
     <th>Wartość<br />Brutto(zł.)</th>
   </tr>
   <tr>
-    <td>11</td>
-    <td>22</td>
-    <td>33</td>
-    <td>44</td>
-    <td>55</td>
-    <td>66</td>
-    <td>77</td>
-    <td>88</td>
+    <td>1</td>
+    <td>'.$service['name'].'</td>
+    <td>1</td>
+    <td>'.$price.'</td>
+    <td>23</td>
+    <td>'.$VatAmount.'</td>
+    <td>'.$nettoAmount.'</td>
+    <td>'.$brutto.'</td>
   </tr>
   <tr>
-    <td colspan="5">999</td>
-    <td>111</td>
-    <td>222</td>
-    <td></td>
+    <td colspan="5" align="right"><b>Razem</b></td>
+    <td>'.$VatAmount.'</td>
+    <td>'.$nettoAmount.'</td>
+    <td>'.$brutto.'</td>
   </tr>
 </table>
         ';
 
-        echo $table;
+        $returnInvoice .= $table;
 
+        return $returnInvoice;
     }
+
+    if(isset($_GET['client'])&&
+        isset($_GET['service'])){
+        echo genereteInvoice($_GET['client'],$_GET['service']);
+    }
+

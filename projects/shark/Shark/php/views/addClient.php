@@ -34,7 +34,7 @@ if(!isset($_POST['add'])) {
     $client=array();
     $client['name']=$_POST['name'];
     $client['address']=$_POST['address'];
-    $client['postalcode']=$_POST['name'];
+    $client['postalcode']=$_POST['postalcode'];
     $client['city']=$_POST['city'];
     $client['nip']=$_POST['nip'];
 

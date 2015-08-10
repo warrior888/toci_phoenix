@@ -34,7 +34,3 @@ function getTodaysDate()
 {
     return getdate()['mday']."/".getMonth()."/".getdate()['year'];
 }
-
-$manager=new InvoiceManager();
-$numberOfLastInvoice=explode("/",$manager->GetInvoice("number","id=".intval($manager->GetInvoice("max(id)")[0]['max']))[0]["number"]);
-
