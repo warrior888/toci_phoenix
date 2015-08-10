@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using Phoenix.Bll.Interfaces.BusinessModels.TeamLeasing;
 
 namespace Phoenix.Bll.Interfaces.BusinessModels.DevelopersList
 {
-    public interface IDeveloperListBusinessModel
+    public interface IDeveloperBusinessModel
     {
         string Nick { get; set; }
 
@@ -11,6 +13,10 @@ namespace Phoenix.Bll.Interfaces.BusinessModels.DevelopersList
         string Surname { get; set; }
 
         double Score { get; set; }
+
+        DateTime ExperienceFrom { get; set; }
+
+        IDeveloperAvailableBusinessModel DeveloperAvailable { get; set; }
 
         IEnumerable<ISkillBusinessModel> Skills { get; set; }
 

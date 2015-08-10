@@ -115,9 +115,13 @@
     <Compile Include="BusinessModels\CoursesList\ICoursesListBuisnessModel.cs" />
     <Compile Include="BusinessModels\CourseRegistration\IChosenCourseRegistrationBusinessModel.cs" />
     <Compile Include="BusinessModels\CourseRegistration\ICourseRegistrationBusinessModel.cs" />
-    <Compile Include="BusinessModels\DevelopersList\IDeveloperListBusinessModel.cs" />
+    <Compile Include="BusinessModels\DevelopersList\IDeveloperBusinessModel.cs" />
     <Compile Include="BusinessModels\DevelopersList\IPortfolioBusinessModel.cs" />
     <Compile Include="BusinessModels\DevelopersList\ISkillBusinessModel.cs" />
+    <Compile Include="BusinessModels\TeamLeasing\IDeveloperAvailableBusinessModel.cs" />
+    <Compile Include="BusinessModels\TeamLeasing\IDeveloperTeamBusinessModel.cs" />
+    <Compile Include="BusinessModels\TeamLeasing\ITeamLeasingBusinessModel.cs" />
+    <Compile Include="BusinessModels\TeamLeasing\TeamLeasingOffer.cs" />
     <Compile Include="Logic\CourseReferences\ICourseReferencesLogic.cs" />
     <Compile Include="Logic\CourseRegistration\ICourseRegistrationLogic.cs" />
     <Compile Include="Logic\CoursesList\ICalendarLogic.cs" />
@@ -138,6 +142,7 @@
     <Compile Include="ILogic.cs" />
     <Compile Include="ILogSaver.cs" />
     <Compile Include="Localization\ILocalizationLogic.cs" />
+    <Compile Include="Logic\TeamLeasing\ITeamLeasingLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User\ClassificationLevel.cs" />
     <Compile Include="User\IPhoenixUser.cs" />

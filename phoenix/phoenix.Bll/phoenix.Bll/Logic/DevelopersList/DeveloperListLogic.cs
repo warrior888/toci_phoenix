@@ -6,13 +6,13 @@ namespace Phoenix.Bll.Logic.DevelopersList
 {
     public class DeveloperListLogic : DbLogic, IDeveloperListLogic
     {
-        public IDeveloperListBusinessModel GetDevById(int id)
+        public IDeveloperBusinessModel GetDevById(int id)
         {
             //uzyc modeli bazodanowych wygenerowanych naszym generatorem
             throw new System.NotImplementedException();
         }
 
-        public IEnumerable<IDeveloperListBusinessModel> GetAllDevelopers()
+        public IEnumerable<IDeveloperBusinessModel> GetAllDevelopers()
         {
             throw new System.NotImplementedException();
         }
