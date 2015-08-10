@@ -113,6 +113,23 @@
     <Compile Include="GeneratedModels\skills_technologies.cs" />
     <Compile Include="GeneratedModels\users.cs" />
     <Compile Include="GeneratedModels\users_portfolio.cs" />
+    <Compile Include="PatrykGeneratedModels\chosen_course_registration.cs" />
+    <Compile Include="PatrykGeneratedModels\courses_list.cs" />
+    <Compile Include="PatrykGeneratedModels\course_calendar.cs" />
+    <Compile Include="PatrykGeneratedModels\course_participants.cs" />
+    <Compile Include="PatrykGeneratedModels\course_references.cs" />
+    <Compile Include="PatrykGeneratedModels\course_registration.cs" />
+    <Compile Include="PatrykGeneratedModels\course_technologies.cs" />
+    <Compile Include="PatrykGeneratedModels\course_trainers.cs" />
+    <Compile Include="PatrykGeneratedModels\developers_avaibl.cs" />
+    <Compile Include="PatrykGeneratedModels\developers_lis.cs" />
+    <Compile Include="PatrykGeneratedModels\developers_skills.cs" />
+    <Compile Include="PatrykGeneratedModels\portfolio.cs" />
+    <Compile Include="PatrykGeneratedModels\portfolio_skills_technologie.cs" />
+    <Compile Include="PatrykGeneratedModels\roles.cs" />
+    <Compile Include="PatrykGeneratedModels\skills_technologies.cs" />
+    <Compile Include="PatrykGeneratedModels\users.cs" />
+    <Compile Include="PatrykGeneratedModels\users_portfolio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

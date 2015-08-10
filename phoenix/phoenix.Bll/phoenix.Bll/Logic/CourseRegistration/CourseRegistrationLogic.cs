@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using AutoMapper;
+//using AutoMapper;
 using Phoenix.Bll.Interfaces.BusinessModels.CourseRegistration;
 using Phoenix.Bll.Interfaces.BusinessModels.CoursesList;
 using Phoenix.Bll.Interfaces.Logic.CourseRegistration;
@@ -16,10 +16,10 @@ namespace Phoenix.Bll.Logic.CourseRegistration
             var courses = registration.ChosenCourses.Aggregate("", (current, item) => current + item);
 
             // AutoMapper
-            Mapper.CreateMap<ICourseRegistrationBusinessModel, course_registration>();
-            course_registration courseRegistration = Mapper.Map<course_registration>(registration);
+            //Mapper.CreateMap<ICourseRegistrationBusinessModel, course_registration>();
+            //course_registration courseRegistration = Mapper.Map<course_registration>(registration);
 
-            DbHandle.InsertData(courseRegistration);
+            //DbHandle.InsertData(courseRegistration);
         
             //nie AutoMapper
             DbHandle.InsertData(new course_registration()
