@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Phoenix.Bll;
 using Phoenix.Bll.Logic.CourseRegistration;
 using Phoenix.Dal.GeneratedModels;
 using Toci.Db.Clients;
@@ -14,13 +15,15 @@ namespace Phoenix.Integration.Test.Developers.Terry.DbTests
         [TestMethod]
         public void DbConnectionTesting()
         {
-            PostgreSqlClient client = new PostgreSqlClient("postgres", "ph03n1x", "localhost", "Phoenix");
-
-           var generator = new TociDbModelGeneratorWrapper();
-
+            DbHandleAccessData.Password = "ph03n1x";
+            DbHandleAccessData.DbAdress = "localhost";
+            DbHandleAccessData.DbName = "Phoenix";
+            DbHandleAccessData.UserName = "postgres";
+            
             CourseRegistrationLogic test = new CourseRegistrationLogic();
 
-           // test.SaveParticipantRegistration()
+
+
         }
     }
 }

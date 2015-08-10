@@ -10,7 +10,8 @@ namespace Phoenix.Bll
 
         protected DbLogic()
         {
-            //DbHandle = GetDbHandle();
+            DbHandle = GetDbHandle(DbHandleAccessData.UserName, DbHandleAccessData.Password, 
+                                   DbHandleAccessData.DbAdress, DbHandleAccessData.DbName);
         }
 
         public virtual IDbHandle GetDbHandle(string user, string password, string dbAddress, string dbName)
