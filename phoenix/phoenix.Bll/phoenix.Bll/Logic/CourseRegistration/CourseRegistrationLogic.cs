@@ -15,8 +15,13 @@ namespace Phoenix.Bll.Logic.CourseRegistration
         {
             var courses = registration.ChosenCourses.Aggregate("", (current, item) => current + item);
 
-         // AutoMapper
-            
+            // AutoMapper
+            Mapper.CreateMap<ICourseRegistrationBusinessModel, course_registration>();
+            course_registration courseRegistration = Mapper.Map<course_registration>(registration);
+
+            DbHandle.InsertData(courseRegistration);
+        
+            //nie AutoMapper
             DbHandle.InsertData(new course_registration()
             {   //id?
                 email = registration.Email,
