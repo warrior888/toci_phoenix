@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using AutoMapper;
 using Phoenix.Bll.Interfaces.BusinessModels.CourseRegistration;
 using Phoenix.Bll.Interfaces.BusinessModels.CoursesList;
 using Phoenix.Bll.Interfaces.Logic.CourseRegistration;
@@ -10,15 +11,13 @@ namespace Phoenix.Bll.Logic.CourseRegistration
 {
     public class CourseRegistrationLogic : DbLogic, ICourseRegistrationLogic
     {
-        
-
         public bool SaveParticipantRegistration(ICourseRegistrationBusinessModel registration)
         {
-            var dbAccess = GetDbHandle("", "", "", "");
-
             var courses = registration.ChosenCourses.Aggregate("", (current, item) => current + item);
 
-            dbAccess.InsertData(new course_registration()
+         // AutoMapper
+            Mapper.CreateMap<ICourseRegistrationBusinessModel, DbLogic>();
+            DbHandle.InsertData(new course_registration()
             {   //id?
                 email = registration.Email,
                 id_roles = Convert.ToInt32(registration.Role),
@@ -28,13 +27,13 @@ namespace Phoenix.Bll.Logic.CourseRegistration
                 password = registration.Password,
                 surname = registration.Surname
             });
-              
-            dbAccess.InsertData(new courses_list()
+
+            DbHandle.InsertData(new courses_list()
             {   //id ?
                 course_name = courses
             });
 
-            return (dbAccess.InsertData(new chosen_course_registration()
+            return (DbHandle.InsertData(new chosen_course_registration()
             {
                 //id?
 
