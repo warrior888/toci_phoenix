@@ -33,6 +33,10 @@
     <Reference Include="Autofac">
       <HintPath>..\..\Phoenix.Dal\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
     </Reference>
+    <Reference Include="AutoMapper, Version=4.0.4.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\phoenix.Dal\packages\AutoMapper.4.0.4\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Google.Apis, Version=1.9.0.26011, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\phoenix.Dal\packages\Google.Apis.1.9.0\lib\net40\Google.Apis.dll</HintPath>
       <Private>True</Private>
@@ -101,9 +105,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessModels\CourseRegistration\CourseRegistrationBusinessModel.cs" />
     <Compile Include="BusinessModels\DevelopersList\PortfolioBusinessModel.cs" />
-    <Compile Include="BusinessModels\TeamLeasing\DeveloperTeamBusinessModel.cs" />
-    <Compile Include="BusinessModels\TeamLeasing\TeamLeasingBusinessModel.cs" />
+    <Compile Include="DbHandleAccessData.cs" />
     <Compile Include="DbLogic.cs" />
     <Compile Include="Logic\CourseRegistration\CourseRegistrationLogic.cs" />
     <Compile Include="Logic\DevelopersList\DeveloperListLogic.cs" />
@@ -113,8 +117,6 @@
     <Compile Include="Essential\DependencyResolverFactory.cs" />
     <Compile Include="I18n\TranslationPhrases.cs" />
     <Compile Include="Localization\LocalizationLogic.cs" />
-    <Compile Include="BusinessModels\TeamLeasing\DeveloperAvailableBusinessModel.cs" />
-    <Compile Include="Logic\TeamLeasing\TeamLeasingLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User\UserLogic.cs" />
   </ItemGroup>

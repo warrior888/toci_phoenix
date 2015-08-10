@@ -1,14 +1,24 @@
 ﻿using Phoenix.Bll.Interfaces;
+using Toci.Db.ClusterAccess;
 using Toci.Db.Interfaces;
 
 namespace Phoenix.Bll
 {
-    public class DbLogic : IDbLogic
+    public abstract class DbLogic : IDbLogic
     {
-        public IDbHandle GetDbHandle(string user, string password, string dbAddress, string dbName)
+        protected IDbHandle DbHandle;
+
+        protected DbLogic()
+        {
+            DbHandle = GetDbHandle(DbHandleAccessData.UserName, DbHandleAccessData.Password, 
+                                   DbHandleAccessData.DbAdress, DbHandleAccessData.DbName);
+        }
+
+        public virtual IDbHandle GetDbHandle(string user, string password, string dbAddress, string dbName)
         {
             // podac obiekt pracujacy z baza danych
-            throw new System.NotImplementedException();
+            return DbHandleFactory.GetHandle(SqlClientKind.PostgreSql, user, password, dbAddress, dbName);
+
         }
     }
 }
