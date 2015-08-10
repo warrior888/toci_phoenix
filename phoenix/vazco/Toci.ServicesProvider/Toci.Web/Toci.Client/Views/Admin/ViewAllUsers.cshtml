@@ -1,0 +1,59 @@
+﻿@using Toci.Client.Models
+@model AdminModel
+    
+@{
+    ViewBag.Title = "Admin Panel";
+}
+<h4>@ViewBag.Title</h4>
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Email</th>
+        <th>Roles</th>
+    </tr>
+    </thead>
+    <tbody>
+    @{
+        foreach (var user in Model.UserDataList)
+        {
+            <tr>
+                <td>@user.id</td>
+                <td>@user.email</td>
+                <td>
+                    <ul class="list-unstyled">
+                        @foreach (var role in user.UserRoleList)
+                        {
+
+                            <li>@role @Html.ActionLink("Delete", "RemoveRole", new { roleName = @role, userId = @user.id }, new { @class = "btn btn-danger btn-sm " })</li>
+                            <br/>
+
+
+                        }
+                        @using (Html.BeginForm("AddRole", "Admin", new { }, FormMethod.Post))
+                        {
+
+                            <fieldset>
+                                @Html.Hidden("userId", user.id)
+                                <li>
+                                    <div style="display: inline-flex">
+                                        @Html.TextBox("roleName", null, new { @class = "form-control" })  <input type="submit" class="btn btn-success btn-sm" value="Add role" />
+                                    </div>
+                                </li>
+                            </fieldset>
+                        }
+
+                    </ul>
+
+                </td>
+            </tr>
+        }
+    }
+    </tbody>
+</table>
+
+
+
+
+

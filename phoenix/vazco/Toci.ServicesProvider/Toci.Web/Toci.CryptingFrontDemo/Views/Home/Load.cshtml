@@ -1,0 +1,15 @@
+﻿
+@model Toci.CryptingApi.Models.BodyModel
+
+@{
+    ViewBag.Title = "Load";
+}
+
+<h2>Input Password:</h2>
+@using (Html.BeginForm("Load", "Load", FormMethod.Post))
+{
+     @Html.PasswordFor(x => x.password)
+
+<input type="Submit" value="Load" class="btn btn-primary btn-sm"/>
+}
+

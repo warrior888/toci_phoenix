@@ -5,19 +5,28 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using DbCrypting;
+using DbCrypting.VazcoDb;
+using Toci.CryptingApi.Models;
 
 namespace Toci.CryptingApi.Controllers
 {
     public class DbUpdateController : ApiController
     {
         [Route("api/models/update")]
-        [HttpGet]
-        public string DeleteFromDb([FromUri] DbModel model)
+        [HttpPost]
+        public string Update(BodyModel model)
         {
-            var update = new DbSave();
-            update.Update(model);
+            try
+            {
+                var dbo = new DbOperations(model.password);
+                dbo.Update(new VazcoTable {id = model.id,addingTime = model.addingTime,data = model.data,name = model.name});
 
-            return "Updated!";
+                return "Updated!";
+            }
+            catch (Exception)
+            {
+                return "Bad Request!";
+            }
         }
     }
 }

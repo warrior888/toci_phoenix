@@ -3,7 +3,7 @@
     public static class LoadConfig
     {
         public const string DataBaseName = "master";
-        public const string TableName = "VazcoTestTable";
+        public const string TableName = "VazcoTable";
 
         public const string login = "sa";
         public const string secret = "Rabarbar12";

@@ -20,7 +20,7 @@ namespace Toci.DigitalSignature.DigitalSignHandlers
 
             var algorithmName = certificate.SignatureAlgorithm.FriendlyName.Replace(crypthoAlgorithm, string.Empty);
             var privateKey = (RSACryptoServiceProvider) certificate.PrivateKey;
-
+            
             if (!algorithmName.Contains(secureHashAlgorithm1) && !algorithmName.Contains(messageDigestAlgorithm5))
             {
                 RSACryptoServiceProvider privateKey1 = new RSACryptoServiceProvider();

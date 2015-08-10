@@ -20,9 +20,9 @@ namespace Toci.Db.DbVirtualization.MsSqlQuery
             return string.Format(Pattern, model.GetTableName(), GetSetStatement(model), where);
         }
 
-        private string GetSetStatement(IModel model)
+        protected virtual string GetSetStatement(IModel model)
         {
-            var list = model.GetFields().Select(item => string.Format(AssignmentPattern, item.Key, GetSurroundedValue(item.Value.GetValue()))).Cast<object>().ToList();
+            var list = model.GetFields().Where(x => !x.Value.IsPrimaryKey()).Select(item => string.Format(AssignmentPattern, item.Key, GetSurroundedValue(item.Value.GetValue()))).Cast<object>().ToList();
             return string.Join(Comma, list);
         }
 

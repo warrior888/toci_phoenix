@@ -20,7 +20,7 @@ namespace Toci.Utilities.Abstraction.Generator.DatabaseModelGenerator.DbDdlEntry
 
         protected virtual string GetFieldName(string column)
         {
-            return column.Split(ColumnDefinitionDelimiter).First();
+            return column.Split(ColumnDefinitionDelimiter).First().ToLower();
         }
        
         protected virtual Type GetFieldType(string column)

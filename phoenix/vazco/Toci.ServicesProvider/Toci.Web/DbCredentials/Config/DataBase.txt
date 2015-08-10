@@ -1,0 +1,26 @@
+﻿CREATE TABLE Scopes	
+   (ScopeID int PRIMARY KEY NOT NULL,
+    ScopeName  varchar(MAX) NOT NULL
+);
+
+
+CREATE TABLE Users	
+   (UserID int PRIMARY KEY NOT NULL,
+	ScopeID int NOT NULL references Scopes(ScopeID),
+	UserLogin varchar(MAX) NOT NULL,
+    UserPassword varchar(MAX) NOT NULL
+);
+
+CREATE TABLE Projects	
+   (ProjectID int PRIMARY KEY NOT NULL,
+    ScopeID int NOT NULL references Scopes(ScopeID),
+    ProjectName varchar(MAX) NOT NULL,
+    ProjectData  varchar(MAX) NOT NULL
+);
+
+
+CREATE TABLE ProjectAccess(
+	AccessID int PRIMARY KEY NOT NULL ,
+	UserID int NOT NULL references Users(UserID),
+	ProjectID int NOT NULL references Projects(ProjectID)
+);

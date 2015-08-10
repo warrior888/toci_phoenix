@@ -10,5 +10,6 @@ namespace Toci.Client
         {
             ConfigureAuth(app);
         }
+
     }
 }

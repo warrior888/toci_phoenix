@@ -9,14 +9,12 @@ namespace DbCrypting.Logic
          public static string GetUserNick()
          {
              //TODO get user nick
-             return "JanuszIT";
+             return "VazcoTeam";
          }
 
-         
-
-         public static List<DbModel> SortListByTime(List<DbModel> list)
-         {
-             return list.OrderByDescending(x => x.addingTime).ToList();
-         }
+        public static List<VazcoTable> SortListByTime(List<VazcoTable> list)
+        {
+            return list.OrderByDescending(x => x.addingTime).ToList();
+        }
     }
 }

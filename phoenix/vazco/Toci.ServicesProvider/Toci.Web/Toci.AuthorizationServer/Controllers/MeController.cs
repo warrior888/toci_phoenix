@@ -8,6 +8,7 @@ namespace Toci.AuthorizationServer.Controllers
 {
     public class MeController : Controller
     {
+        /*user endpoint*/
         // GET: Me
         public ActionResult Index()
         {

@@ -5,19 +5,29 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using DbCrypting;
+using DbCrypting.VazcoDb;
+using Toci.CryptingApi.Models;
 
 namespace Toci.CryptingApi.Controllers
 {
     public class DbDeleteController : ApiController
     {
         [Route("api/models/delete")]
-        [HttpGet]
-        public string DeleteFromDb([FromUri] DbModel model)
+        [HttpPost]
+        
+        public string DeleteFromDb(BodyModel model)
         {
-            var delete = new DbSave();
-            delete.Delete(model);
+            try
+            {
+                var dbo = new DbOperations(model.password);
+                dbo.Delete(new VazcoTable {id = model.id});
 
-            return "Deleted!";
+                return "Deleted!";
+            }
+            catch (Exception)
+            {
+                return "Bad Request!";
+            }
         }
     }
 }

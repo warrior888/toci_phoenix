@@ -167,7 +167,7 @@
   <ItemGroup>
     <Folder Include="Developers\Duch\destination\" />
     <Folder Include="Developers\Kielich\" />
-    <Folder Include="Developers\S2yfr4nt\" />
+    <Folder Include="Developers\S2yfr4nt\kupczon\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Developers\Duch\data\ddlExample.txt" />

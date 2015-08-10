@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -7,62 +8,66 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Helpers;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Toci.Client.Models;
-using Toci.Client.OauthProvider;
+using Toci.Client.Logic.OauthConnectionLogic;
 
 namespace Toci.Client.Controllers
 {
     public class OauthController : Controller
     {
+        public OauthConnectionUtils Utils = new OauthConnectionUtils();
         public ActionResult Index()
         {
             string VazcoAuthUri =
-                String.Format(
-                    "{0}?response_type={1}&client_id={2}&redirect_uri={3}", "http://oauth.stg.vazco.eu/oauth2/authorize",
-                    "code", "testoauth", "http://localhost:13188/oauth/authentication"); 
-
-
-
+                string.Format(
+                    "{0}?response_type={1}&client_id={2}&redirect_uri={3}", 
+                    Constants.VazcoAuthorizeUri, Constants.AccessCode, Constants.AppId, Constants.LocalAuthenticationUri); 
             return Redirect(VazcoAuthUri);
         }
-        // GET: Oauth
-        //[HttpPost]
+
         [Route("/oauth/authentication")]
-        public async Task<ViewResult> Authentication(string code)
+        public async Task<RedirectToRouteResult> Authentication(string code)
         {
-            var requestClient = new HttpClient();
-
-            var Params = new Dictionary<string,string>()
-                {
-                    {"grant_type", "authorization_code" },
-                    {"code", code },
-                    {"client_id", "testoauth" },
-                    {"client_secret", "testoauth" },
-                    {"redirect_uri", "http://localhost:13188/oauth/authentication" }
-                };
-            var content = new FormUrlEncodedContent(Params);
-            var response = await requestClient.PostAsync("http://oauth.stg.vazco.eu/oauth2/token", content);
-
-            var responseString = await response.Content.ReadAsStringAsync();
-
-
-            var jsonToken = (JObject)JsonConvert.DeserializeObject(responseString);
-            var responseToken = (VazcoTokenModel)jsonToken.ToObject(typeof (VazcoTokenModel));
-            var identityClient = new HttpClient();
-            identityClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + responseToken.access_token);
-            HttpResponseMessage identity = await identityClient.GetAsync("http://oauth.stg.vazco.eu/oauth2/getIdentity");
-            var readContent = identity.Content.ReadAsStringAsync();
-            var jsonIdentity = (JObject) JsonConvert.DeserializeObject(readContent.Result);
-            var responseIdentity = (VazcoIdentityModel)jsonIdentity.ToObject(typeof(VazcoIdentityModel));
-            
-            return View(responseToken);
-            
+            var responseModel = await Utils.GetResultOfConnectionToVazco(code);
+            //Skaczemy albo do strony logowania albo do rejestracji nowego konta
+            if (await Utils.IsRegistred(responseModel.id, System.Web.HttpContext.Current))
+            {
+                return RedirectToAction("Login", "Account", new LoginViewModel() { Email = responseModel.email });
+            }
+            TempData["responseModel"] = responseModel; //TODO czy da się to wypieprzyć?
+            return RedirectToAction("RegisterForm");
         }
 
+        public ViewResult RegisterForm()
+        {
+            var model = TempData["responseModel"];
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> Register(string id, string email, string password)
+        {
+
+            var userManager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+
+            ApplicationUser user = new ApplicationUser() { Id = id, UserName = email, Email = email }; //do uzupełnienia jeśli dojdą nowe claimsy
+
+            var makeUser = await userManager.CreateAsync(user, password);
+            if (makeUser.Succeeded)
+            {
+                // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
+                await Utils.SignIn(user.UserName, password, System.Web.HttpContext.Current);
+                //RETURN x.succeeded? jedna metoda : druga metoda
+                return RedirectToAction("Index", "Home");
+            }
+            return RedirectToAction("ExternalLoginFailure", "Account", new {errormsg = makeUser.Errors.First()});
+        }
 
     }
 }

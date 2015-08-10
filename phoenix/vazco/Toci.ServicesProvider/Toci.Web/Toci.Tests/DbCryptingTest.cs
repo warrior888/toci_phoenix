@@ -1,5 +1,6 @@
 ﻿using System;
 using DbCrypting;
+using DbCrypting.VazcoDb;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Toci.Tests
@@ -10,29 +11,29 @@ namespace Toci.Tests
         [TestMethod]
         public void TestMethod1()
         {
-            var dbSave = new DbSave();
-            var dbLoad = new DbLoad();
-            const string testString = "Test text";
+            var dbOperator = new DbOperations("dupa");
+            const string testString = "Test rwerwerw";
 
+            var model = new VazcoTable {data = testString};
 
-            var model = new DbModel() {data = testString};
+            dbOperator.Save(model);
 
-            dbSave.Save(model);
-            var result = dbLoad.Load();
+            var result = dbOperator.Load();
             Assert.AreEqual(testString,result[0].data);
         }
 
         [TestMethod]
         public void DeleteTest()
         {
-            var dbSave = new DbSave();
-            var dbLoad = new DbLoad();
-            var result = dbLoad.Load();
+            //var dbSave = new DbSave();
+           // var dbLoad = new DbLoad();
+           var dbo = new DbOperations("dupa");
+            var result = dbo.Load();
 
-            var model = new DbModel() { id = 2 };
+            var model = new VazcoTable() { id = 4 };
 
-            dbSave.Delete(model);
-            var result2 = dbLoad.Load();
+            dbo.Delete(model);
+            var result2 = dbo.Load();
             Assert.AreEqual(result.Count-1,result2.Count);
 
         }
@@ -40,28 +41,30 @@ namespace Toci.Tests
         [TestMethod]
         public void UpdateTest()
         {
-            var dbSave = new DbSave();
-            var dbLoad = new DbLoad();
+            //var dbSave = new DbSave();
+           // var dbLoad = new DbLoad();
+           var dbo = new DbOperations("dupa");
             const string testString = "ValueToUpdate";
             const string updatedString = "UpdatedValue";
 
 
-            var model = new DbModel() { data = testString };
+            var model = new VazcoTable() { data = testString };
 
-            dbSave.Save(model);
-            var result = dbLoad.Load();
-            var model2 = new DbModel()
+            dbo.Save(model);
+            var result = dbo.Load();
+            var model2 = new VazcoTable()
             {
                 addingTime = result[0].addingTime,
                 data = updatedString,
-                nick = result[0].nick
+                name = result[0].name,
+                id = result[0].id
             };
 
-            dbSave.Update(model2);
-            var result2 = dbLoad.Load();
+            dbo.Update(model2);
+            var result2 = dbo.Load();
 
 
-            Assert.AreEqual(updatedString, result[0].data);
+            Assert.AreEqual(updatedString, result2[0].data);
 
 
         }

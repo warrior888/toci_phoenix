@@ -74,6 +74,13 @@ namespace Toci.Db.DbVirtualization
                 Fields[columnName].SetWhere(true);
             }
         }
+        public void SetPrimaryKey(string columnName)
+        {
+            if (Fields.ContainsKey(columnName))
+            {
+                Fields[columnName].SetPrimary(true);
+            }
+        }
 
         public void SetSelect(string columnName, SelectClause clause)
         {
