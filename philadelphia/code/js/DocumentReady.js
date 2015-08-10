@@ -22,6 +22,24 @@ $(document).ready(function()
         }
     );
 
+    $("#references-carousel").owlCarousel(
+        {
+            loop: true,
+            autoplay: true,
+            autoplaySpeed: 1500,
+            autoplayHoverPause: true,
+            responsive: {
+
+                0: {
+                    items: 1
+                },
+                760: {
+                    items: 1
+                }
+            }
+        }
+    );
+
     $("#developers-carousel").owlCarousel(
         {
             loop: true,
