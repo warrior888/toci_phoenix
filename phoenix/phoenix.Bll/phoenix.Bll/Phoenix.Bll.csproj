@@ -105,7 +105,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessModels\CourseRegistration\CourseRegistrationBusinessModel.cs" />
     <Compile Include="BusinessModels\DevelopersList\PortfolioBusinessModel.cs" />
+    <Compile Include="DbHandleAccessData.cs" />
     <Compile Include="DbLogic.cs" />
     <Compile Include="Logic\CourseRegistration\CourseRegistrationLogic.cs" />
     <Compile Include="Logic\DevelopersList\DeveloperListLogic.cs" />

@@ -1,6 +1,8 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Phoenix.Bll;
+using Phoenix.Bll.BusinessModels.CourseRegistration;
+using Phoenix.Bll.Interfaces.BusinessModels.CourseRegistration;
 using Phoenix.Bll.Logic.CourseRegistration;
 using Phoenix.Dal.GeneratedModels;
 using Toci.Db.Clients;
@@ -19,11 +21,20 @@ namespace Phoenix.Integration.Test.Developers.Terry.DbTests
             DbHandleAccessData.DbAdress = "localhost";
             DbHandleAccessData.DbName = "Phoenix";
             DbHandleAccessData.UserName = "postgres";
-            
-            CourseRegistrationLogic test = new CourseRegistrationLogic();
 
+            CourseRegistrationBusinessModel test = new CourseRegistrationBusinessModel();
 
+            test.Password = "haszuo";
+            test.Email = "test@test.pl";
+            test.Name = "Jan";
+            test.Surname = "Trzeci";
+            test.Nick = "Sobieski";
+          //  test.Login = "Sobieski";
+            test.ChosenCourses = "c++";
 
+            CourseRegistrationLogic logic = new CourseRegistrationLogic();
+
+            logic.SaveParticipantRegistration(test);
         }
     }
 }
