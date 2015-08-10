@@ -6,6 +6,7 @@ using Phoenix.Bll.Interfaces.BusinessModels.CourseRegistration;
 using Phoenix.Bll.Logic.CourseRegistration;
 using Phoenix.Dal.GeneratedModels;
 using Toci.Db.Clients;
+using Toci.Db.ClusterAccess;
 using Toci.Utilities.Abstraction.Generator.DatabaseModelGenerator;
 using Toci.Utilities.Generator.DatabaseModelGenerator;
 
@@ -22,19 +23,32 @@ namespace Phoenix.Integration.Test.Developers.Terry.DbTests
             DbHandleAccessData.DbName = "Phoenix";
             DbHandleAccessData.UserName = "postgres";
 
-            CourseRegistrationBusinessModel test = new CourseRegistrationBusinessModel();
+            var handel =  DbHandleFactory.GetHandle(SqlClientKind.PostgreSql, DbHandleAccessData.UserName, DbHandleAccessData.Password,
+                DbHandleAccessData.DbAdress, DbHandleAccessData.DbName);
 
-            test.Password = "haszuo";
-            test.Email = "test@test.pl";
-            test.Name = "Jan";
-            test.Surname = "Trzeci";
-            test.Nick = "Sobieski";
-          //  test.Login = "Sobieski";
-            test.ChosenCourses = "c++";
+            var model = new course_registration()
+            {
+                email = "test@test.dd",
+                login = "login123",
+                id_roles = 1,
+                id = 4
+            };
 
-            CourseRegistrationLogic logic = new CourseRegistrationLogic();
+            var model2 = new course_registration()
+            {
+                email = "testowanie@test.dd",
+                login = "123",
+                id_roles = 2,
+                
+            };
 
-            logic.SaveParticipantRegistration(test);
+
+            handel.InsertData(model2);
+            handel.UpdateData(new course_registration()
+            {
+                id_roles = 3,
+                login = "iiiiiiiii"
+            });
         }
     }
 }
