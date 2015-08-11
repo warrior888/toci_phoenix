@@ -5,6 +5,8 @@ namespace Phoenix.Bll.Interfaces.BusinessModels.TeamLeasing
 {
     public interface IDeveloperTeamBusinessModel
     {
+        //mock
+
         IDeveloperBusinessModel TeamLeader { get; set; }
 
         IEnumerable<IDeveloperBusinessModel> AdditionalTeamMembers { get; set; }
