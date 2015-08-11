@@ -123,6 +123,7 @@
     <Compile Include="Developers\Mg\mg_user.cs" />
     <Compile Include="Developers\Patryk\DbTests\GenerateModelsTest.cs" />
     <Compile Include="Developers\Terry\DbTests\DbConnectionTest.cs" />
+    <Compile Include="Developers\Terry\TeamLeasingTests\TeamLeasingTests.cs" />
     <Compile Include="Developers\TypowyAdam\X509TestTrails.cs" />
     <Compile Include="Developers\TypowyAdam\X509CertificateTest.cs" />
     <Compile Include="Developers\Warrior\CommunicationMgWarrior\CommunicationMgWarriorTest.cs" />
