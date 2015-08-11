@@ -58,8 +58,9 @@ $(document).ready(function()
         }
     );
 
-
-
+    
+    $("div.resizable-post").autoResizeFbPost();
+    
 
     window.onresize =changeArrowOnResize;
 

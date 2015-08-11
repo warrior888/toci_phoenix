@@ -110,6 +110,7 @@
     <Content Include="js\faq\main.js" />
     <Content Include="js\html5shiv.js" />
     <Content Include="js\imagesloaded.pkgd.min.js" />
+    <Content Include="js\fbAutoResize.js" />
     <Content Include="js\jquery-1.11.1.min.js" />
     <Content Include="js\jquery.animate-enhanced.min.js" />
     <Content Include="js\jquery.easing.1.3.js" />
