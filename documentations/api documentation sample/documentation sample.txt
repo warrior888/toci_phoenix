@@ -1,0 +1,68 @@
+.... API documentation
+
+Stable version url: http...
+
+Production version url: http...
+
+
+API Resources
+
+Resource: /api/example/whatever
+
+Resource destination: This resource allows to .....
+
+
+
+1. Retrieve the data for resource operation.
+
+Example usage:
+
+GET /api/example/whatever
+
+Request uri parameters:
+
+id - int/string/other type,  required/optional, is an id of .....
+any - ...
+
+Request uri parameters syntax:
+
+id,xxx or any other particular syntax
+
+Query string parameters:
+
+searchName - string/other, is a name to search ....
+
+response formats: json, ....
+
+response format parameter: ......
+
+Example Json Response structure:
+
+{example: [
+	{id: 1}, 
+	{id: 2}, 
+]}
+
+Response structure description:
+
+	- example - is an element containing ....
+	- ...
+
+
+Error handling
+
+Error message format:
+
+{....}
+
+Errors that can be returned as a response to the resource query:
+	- 404 not found
+	- ....
+
+Remarks
+
+
+
+2. Set the data for resource operation 
+
+....
