@@ -87,14 +87,14 @@ namespace Toci.Tests
             Projects model = new Projects
             {
                 //projectname = "dads",
-                //scopeid = 1,
+                scopeid = 1,
                 //projectdata = "dsagfsgdh",
                 //projectauthor = "s2yfr4nt",
                 // modificationdate = 
                 //projectid = 2
             };
 
-            var result = dbQuery.Load(model); //, Projects.PROJECTID);
+            var result = dbQuery.Load(model, Projects.SCOPEID); //, Projects.PROJECTID);
         }
 
         [TestMethod]

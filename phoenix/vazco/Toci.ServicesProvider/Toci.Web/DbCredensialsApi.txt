@@ -1,34 +1,34 @@
-v Dodawanie projektu:
+v	Dodawanie projektu:
 	- ProjectData
+	- ProjectAuthor
 	- ProjectName
-	- Scope
+	- ScopeName
 	
-v	waliduje czy projektName istnieje	
+v	waliduje czy projectName istnieje	
 	zwraca success albo fail
 
-Wyci¹ganie projektu:
+v	Wyci¹ganie projektu:
 	- ProjectName
 	- Lista scopeów u¿ytkownika który pyta o zasób
 	
-	waliduje czy scopy pasuj¹ do projektu
+v	waliduje czy scopy pasuj¹ do projektu
 	zwraca projectdata
 	
-Wyci¹ganie grupy projektów:
+v	Wyci¹ganie grupy projektów:
 	- lista scopeów
 	
-	wyci¹ga wszystkie projekty z bazy które pasuj¹ do podanej listy scopeów
+v	wyci¹ga wszystkie projekty z bazy które pasuj¹ do podanej listy scopeów
 	zwraca s³ownik ProjectName i ProjectData
 
-Zwracanie listy projektów?
+v	Zwracanie listy projektów?
 
-Usuwanie projektu:
+v	Usuwanie projektu:
 	- ProjectName
 	- Lista scopeów usera
 	
-	Zwraca success/fail 
+v	Zwraca success/fail 	
 	
-	
-Update projektu
+	Update projektu
 	- ProjectName
 	- Nowe ProjectData
 	- Lista scopeów u¿ytkownika

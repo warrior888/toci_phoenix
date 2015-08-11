@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using DbCredentials.DbLogic;
 using DbCredentials.DbLogic.CredentialsModels;
 
@@ -11,8 +13,12 @@ namespace DbCredentials.BusinessLogic
         DbQuery dbQuery = new DbQuery();
 
         public bool AddScope(Scopes model)
-        { 
-            return IsScopeExist(model)||dbQuery.Save(model) != notSaved;
+        {
+            if (IsScopeExist(model))
+            {
+                return exist;
+            }
+            return dbQuery.Save(model) != notSaved;
         }
 
         public bool IsScopeExist(Scopes model)
@@ -23,10 +29,7 @@ namespace DbCredentials.BusinessLogic
 
         public Scopes GetScopeId(Scopes model)
         {
-            if (!IsScopeExist(model))
-            {
-                return model;
-            }
+            AddScope(model);
 
             var list = dbQuery.Load(model).Cast<Scopes>().ToList();
 
@@ -37,8 +40,12 @@ namespace DbCredentials.BusinessLogic
             }
 
             //list.Any(item => item.scopename.Equals(model.scopename) model.scopeid = item.scopeid);
-            return model; 
-                 
+            return model;     
+        }
+
+        public List<Scopes> GetScopesId(List<Scopes> scopesList)
+        {
+            return scopesList.Select(GetScopeId).ToList();
         }
     }
 }
