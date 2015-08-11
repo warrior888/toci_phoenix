@@ -4,12 +4,13 @@ include "../ClientManager.php";
 include_once "../ServiceManager.php";
 include_once "../../config.php";
 include_once "../../utils.php";
-
+include_once "../Lib/Kwota.php";
 
     function genereteInvoice($clientId,$serviceId)
     {
         header('Content-Type: text/html; charset=UTF-8');
-        $returnInvoice="";
+        $returnInvoice=array();
+        $returnInvoice['html']="";
 
         $manager=new ClientsManager();
         $client=$manager->GetClient("*","id=".$clientId)[0];
@@ -25,20 +26,23 @@ include_once "../../utils.php";
 
         $data=getTodaysDate();
 
+        $returnInvoice["number"]=getNextInvoiceNumber();
+        $returnInvoice["client_id"]=$clientId;
+
+
         $invoice = '
     <table border=1 width=80% align="center">
     <tr><th colspan="2" align="right"><b>ORYGINAŁ</b></th></tr>
-    <tr><td colspan="2" align="center"><b>FAKTURA VAT NR ' . getNextInvoiceNumber() . '</b></td></tr>
+    <tr><td colspan="2" align="center"><b>FAKTURA VAT NR ' . $returnInvoice['number'] . '</b></td></tr>
     <tr><td rowspan="4"><b>SPRZEDAWCA</b><br />' . SPRZEDAWCA . '</td>
-        <td><b>Data Wystawienia:' . $data . '</td></tr><tr><td>Data Sprzedaży:</b>' . $data  . '</td></tr>
+        <td><b>Data Wystawienia:</b>' . $data . '</td></tr><tr><td><b>Data Sprzedaży:</b>' . $data  . '</td></tr>
      <tr><td rowspan="2"><b>Format itp:</b><br />' . "cośtam" . '</td>
         </tr><tr></tr><tr><td colspan="2"><b>NABYWCA</b><br>'.$nabywca.'</td></tr></table>';
 
-        $returnInvoice .= $invoice;
+        $returnInvoice['html'] .= $invoice;
 
-        $returnInvoice .= "<br><br>";
+        $returnInvoice['html'] .= "<br><br>";
 
-        //$service=$manager->GetService("*","id='".$_GET['service']."'");
         $price=intval($service['price']);
         $VatAmount=$price*0.23;
         $nettoAmount=$price-$VatAmount;
@@ -76,13 +80,41 @@ include_once "../../utils.php";
 </table>
         ';
 
-        $returnInvoice .= $table;
+        $returnInvoice['html'] .= $table;
+
+        $returnInvoice['html'] .= '<table width=80% align="center"><tr><td><br><br> <b>Do zapłaty: </b>'.$brutto.' zł. (słownie: '.Kwota::getInstance()->slownie($price).').</td></tr></table> ';
+
+        $returnInvoice['html'] .='<br><br><br><br><br><br>';
+        $returnInvoice['html'] .='
+
+        <table width=80% align="center">
+        <tr><td valign="top"><b>....................................................................<br>'.$client['name'].'</b><td>
+        <td align="right" valign="top"><b>....................................................................<br>Bartłowiej Zapart,<br> uprawniony do wystawienia<br>
+Faktury VAT.<br> </b><td></tr>
+
+        </table>';
+
+
+        $invoice = '
+    <table border=1 width=80% align="center">
+    <tr><th colspan="2" align="right"><b>KOPIA</b></th></tr>
+    <tr><td colspan="2" align="center"><b>FAKTURA VAT NR ' . $returnInvoice['number'] . '</b></td></tr>
+    <tr><td rowspan="4"><b>SPRZEDAWCA</b><br />' . SPRZEDAWCA . '</td>
+        <td><b>Data Wystawienia:</b>' . $data . '</td></tr><tr><td><b>Data Sprzedaży:</b>' . $data  . '</td></tr>
+     <tr><td rowspan="2"><b>Format itp:</b><br />' . "cośtam" . '</td>
+        </tr><tr></tr><tr><td colspan="2"><b>NABYWCA</b><br>'.$nabywca.'</td></tr></table>';
+
+
 
         return $returnInvoice;
     }
 
     if(isset($_GET['client'])&&
         isset($_GET['service'])){
-        echo genereteInvoice($_GET['client'],$_GET['service']);
+        $invoice=genereteInvoice($_GET['client'],$_GET['service']);
+        echo $invoice['html'];
+        $invoice['html']=base64_encode($invoice['html']);
+        $manager=new InvoiceManager();
+        $manager->AddInvoice($invoice);
     }
 
