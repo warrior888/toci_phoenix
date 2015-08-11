@@ -1,7 +1,7 @@
 ﻿using System;
+using DbCredentials.BusinessLogic;
 using DbCredentials.DbLogic;
 using DbCredentials.DbLogic.CredentialsModels;
-using DbCredentials.Logic;
 
 namespace Toci.CredentialsApi.Models
 {
