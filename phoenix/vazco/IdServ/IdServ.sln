@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdServ", "IdServ\IdServ.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client1", "Client1\Client1.csproj", "{47D17A82-24A3-4B8B-BE23-8C3713DF476A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "Server\Server.csproj", "{CCD314DF-2FE3-4D64-ABDC-8185D2C8205D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{47D17A82-24A3-4B8B-BE23-8C3713DF476A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47D17A82-24A3-4B8B-BE23-8C3713DF476A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47D17A82-24A3-4B8B-BE23-8C3713DF476A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCD314DF-2FE3-4D64-ABDC-8185D2C8205D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCD314DF-2FE3-4D64-ABDC-8185D2C8205D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCD314DF-2FE3-4D64-ABDC-8185D2C8205D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCD314DF-2FE3-4D64-ABDC-8185D2C8205D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
