@@ -111,6 +111,7 @@
     <Compile Include="BusinessModels\DevelopersList\SkillBusinessModel.cs" />
     <Compile Include="BusinessModels\TeamLeasing\DeveloperAvailableBusinessModel.cs" />
     <Compile Include="BusinessModels\TeamLeasing\DeveloperTeamBusinessModel.cs" />
+    <Compile Include="Logic\TeamLeasing\TeamLeasingLogicMock.cs" />
     <Compile Include="BusinessModels\TeamLeasing\TeamLeasingBusinessModel.cs" />
     <Compile Include="DbHandleAccessData.cs" />
     <Compile Include="DbLogic.cs" />

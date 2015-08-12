@@ -1,0 +1,19 @@
+﻿
+
+<div>
+    <h1>
+        Hejka
+    </h1>
+</div>
+
+
+<p>
+    @model Phoenix.Front.Controllers.TeamLeasingViewModel
+
+    @Model.oneTeam.TeamLeader.Nick
+    @Model.oneTeam.AdditionalTeamMembers.First().Name
+    @Model.oneTeam.TeamPortfolio.First().ProjectName
+    @Model.oneTeam.TeamPortfolio.Last().ProjectName
+    @Model.oneTeam.TeamPortfolio.Last().EndDate
+   
+</p>

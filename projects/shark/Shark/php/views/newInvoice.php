@@ -8,7 +8,7 @@ header('Content-Type: text/html; charset=UTF-8');
 
 
 $manager=new ClientsManager();
-$clients=array_reverse($manager->GetClient("*"));
+$clients=array_reverse($manager->GetClient("id,name"));
 
 $manager->CloseConnection();
 
@@ -16,21 +16,42 @@ $manager=new ServiceManager();
 $services=$services=array_reverse($manager->GetService("*"));
 
 echo '<form action="../Database/Models/generateInvoice.php" method=\'get\'>';
-echo "Wybierze klienta: ";
-echo "<select name='client'>";
+echo "<table border=2>";
+echo "<tr>";
+echo "<td>Klient: </td>";
+echo "<td><select name='client'>";
 
 foreach($clients as $value)
 {
     echo '<option value="'.$value['id'].'">'.$value['id']." ".$value['name'].'</option>';
 }
 
-echo "</select> za usługę ";
+echo "</select></td><tr><td>";
+echo "Usługa:</td><td>";
 echo "<select name='service'>";
 
 foreach($services as $value)
 {
     echo '<option value="'.$value['id'].'">'.$value['id']." ".$value['name'].'</option>';
 }
-echo "</select> ";
-echo "<input type='submit'>";
+echo "</select></td></tr> ";
+
+echo "<tr><td>Płatność</td>";
+echo "<td><select name='payment'>";
+
+echo '<option value="Przelew"">Przelew</option>';
+echo '<option value="Gotówka"">Gotówka</option>';
+
+echo '</select></td></tr>';
+
+
+echo "<tr><td>Płatność</td>";
+echo '<td>
+<input type="text" name="termin" value="7"> dni
+</td></tr>';
+
+
+echo "<tr><td><input type='submit'></td></tr>";
+
+
 echo "</form>";
