@@ -20,44 +20,10 @@ namespace Phoenix.Integration.Test.Developers.Terry.DbTests
         [TestMethod]
         public void DbConnectionTesting()
         {
-           /* DbHandleAccessData.Password = "ph03n1x";
-            DbHandleAccessData.DbAdress = "localhost";
-            DbHandleAccessData.DbName = "Phoenix";
-            DbHandleAccessData.UserName = "postgres";
+               DeveloperListLogic devListLogic = new DeveloperListLogic();
 
-            var handel =  DbHandleFactory.GetHandle(SqlClientKind.PostgreSql, DbHandleAccessData.UserName, DbHandleAccessData.Password,
-                DbHandleAccessData.DbAdress, DbHandleAccessData.DbName);*/
+            devListLogic.GetDevById(5);
 
-            DeveloperListLogic devList = new DeveloperListLogic();
-            developers_list test = new developers_list();
-
-            
-
-            devList.GetDevById(1);
-
-            /*  var model = new course_registration()
-            {
-                email = "test@test.dd",
-                login = "login123",
-                id_roles = 1,
-                id = 4
-            };
-
-            var model2 = new course_registration()
-            {
-                email = "testowanie@test.dd",
-                login = "123",
-                id_roles = 2,
-                
-            };
-
-
-            handel.InsertData(model2);
-            handel.UpdateData(new course_registration()
-            {
-                id_roles = 3,
-                login = "iiiiiiiii"
-            });*/
         }
-    }
+}
 }

@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Phoenix.Bll.Interfaces.BusinessModels.DevelopersList;
 using Phoenix.Bll.Interfaces.Logic.DevelopersList;
 using Phoenix.Dal.GeneratedModels;
+using Toci.Db.DbVirtualization;
 
 namespace Phoenix.Bll.Logic.DevelopersList
 {
@@ -10,13 +12,11 @@ namespace Phoenix.Bll.Logic.DevelopersList
         public IDeveloperBusinessModel GetDevById(int id)
         {
             var devListModel = new developers_list();
-            devListModel.SetWhere("id_users");
+            devListModel.SetWhere("id");
+            devListModel.SetSelect("id", SelectClause.Equal);
+            var x = devListModel.GetFields();
 
-            var devList = DbHandle.GetData(devListModel).Tables[0].Columns[0];
-
-           var test = devList.Tables.IndexOf("id_users").Columns[0].ToString();
-
-
+           // var test = DbHandle.GetData(devListModel).Tables[0].Columns[0];
             return null;
         }
 
