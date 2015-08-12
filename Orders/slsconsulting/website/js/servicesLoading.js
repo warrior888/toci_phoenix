@@ -7,34 +7,23 @@ var subjects = {
     'intl-transport' : 'Transport międzynarodowy',
     'vegetables' : 'Warzywa/owoce',
     'it-section' : 'Dział IT',
-    'holiday-homes' : 'Domki całoroczne'
+    'holiday-homes-more' : 'Domki całoroczne'
 };
 
 
 $( document ).ready(function() {
-    AppendOnClick2('import-export');
-    //AppendOnClick('return', 'servicesContainer', 'server/Content/services.html');
 
-    AppendOnClick2('car-sale');
-    //AppendOnClick('return', 'servicesContainer', 'server/Content/services.html');
+    AppendOnClick('holiday-homes', 'servicesContainer', 'server/Content/holiday-homes.html');
+    AppendOnClick('return', 'servicesContainer', 'server/Content/empty.html');
 
-    AppendOnClick2('car-rentals');
-    //AppendOnClick('return', 'servicesContainer', 'server/Content/services.html');
-
-    AppendOnClick2('it-section');
-    //AppendOnClick('return', 'servicesContainer', 'server/Content/services.html');
-
-    AppendOnClick2('intl-transport');
-    //AppendOnClick('return', 'servicesContainer', 'server/Content/services.html');
-
-    AppendOnClick2('vegetables');
-    //AppendOnClick('return', 'servicesContainer', 'server/Content/services.html');
-
-    AppendOnClick2('agricultural');
-    //AppendOnClick('return', 'servicesContainer', 'server/Content/services.html');
-
-    AppendOnClick2('holiday-homes');
-    //AppendOnClick('return', 'servicesContainer', 'server/Content/services.html');
+    AddTitleToContactForm('import-export');
+    AddTitleToContactForm('car-sale');
+    AddTitleToContactForm('car-rentals');
+    AddTitleToContactForm('it-section');
+    AddTitleToContactForm('intl-transport');
+    AddTitleToContactForm('vegetables');
+    AddTitleToContactForm('agricultural');
+    AddTitleToContactForm('holiday-homes-more');
 });
 
 
@@ -45,7 +34,7 @@ function AppendOnClick(actionTrgId, containerId, fileName) {
     });
 }
 
-function AppendOnClick2(actionTrgId) {
+function AddTitleToContactForm(actionTrgId) {
     $('#'+ actionTrgId).on("click", function(){
         $('#met_subject').val(subjects[actionTrgId]);
     });
