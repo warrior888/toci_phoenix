@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-//using AutoMapper;
+using AutoMapper;
 using Phoenix.Bll.Interfaces.BusinessModels.CourseRegistration;
 using Phoenix.Bll.Interfaces.BusinessModels.CoursesList;
 using Phoenix.Bll.Interfaces.Logic.CourseRegistration;
-using Phoenix.Dal.GeneratedModels;
+//using Phoenix.Dal.GeneratedModels;
 
 namespace Phoenix.Bll.Logic.CourseRegistration
 {
@@ -13,13 +13,13 @@ namespace Phoenix.Bll.Logic.CourseRegistration
     {
         public bool SaveParticipantRegistration(ICourseRegistrationBusinessModel registration)
         {
-            var courses = registration.ChosenCourses.Aggregate("", (current, item) => current + item);
+         /*   //var courses = registration.ChosenCourses.Aggregate("", (current, item) => current + item);
 
             // AutoMapper
-            //Mapper.CreateMap<ICourseRegistrationBusinessModel, course_registration>();
-            //course_registration courseRegistration = Mapper.Map<course_registration>(registration);
+            Mapper.CreateMap<ICourseRegistrationBusinessModel, course_registration>();
+            course_registration courseRegistration = Mapper.Map<course_registration>(registration);
 
-            //DbHandle.InsertData(courseRegistration);
+            DbHandle.InsertData(courseRegistration);
         
             //nie AutoMapper
             DbHandle.InsertData(new course_registration()
@@ -33,16 +33,17 @@ namespace Phoenix.Bll.Logic.CourseRegistration
                 surname = registration.Surname
             });
 
-            DbHandle.InsertData(new courses_list()
+            /*DbHandle.InsertData(new courses_list()
             {   //id ?
                 course_name = courses
-            });
+            });#1#
 
             return (DbHandle.InsertData(new chosen_course_registration()
             {
                 //id?
 
-            })) != 0;//nie wiem czy dobry warunek
+            })) != 0;//nie wiem czy dobry warunek*/
+            return true;
         }
 
         public bool DeleteParticipantRegistration(ICourseRegistrationBusinessModel registration)

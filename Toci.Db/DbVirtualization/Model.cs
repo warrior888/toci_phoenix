@@ -7,7 +7,7 @@ namespace Toci.Db.DbVirtualization
 {
     public abstract class Model : IModel
     {
-        public const string ID = "id";
+        public const string ID_FOR_PRIMARY_KEY = "id";
 
         protected Dictionary<string, IDbField<object>> Fields = new Dictionary<string, IDbField<object>>();
         protected string TableName;
@@ -35,11 +35,11 @@ namespace Toci.Db.DbVirtualization
         {
             get
             {
-                return (int) Fields[ID].GetValue();
+                return (int) Fields[ID_FOR_PRIMARY_KEY].GetValue();
             }
             set
             {
-                SetValue(ID, value);
+                SetValue(ID_FOR_PRIMARY_KEY, value);
             }
         }
 
@@ -53,6 +53,16 @@ namespace Toci.Db.DbVirtualization
             {
                 Fields.Add(key, new DbField<object>(key, value));
             }
+        }
+
+        protected T GetValue<T>(string key)
+        {
+            if (Fields.ContainsKey(key))
+            {
+                return (T)Fields[key].GetValue();
+            }
+
+            return default(T);
         }
 
         protected void SetValue<T>(Model model, string key, T value)

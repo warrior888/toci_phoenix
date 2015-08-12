@@ -10,11 +10,11 @@ namespace Phoenix.Dal.GeneratedModels
         }
          
         public const string ID = "id";
-        public System.Int32 id
+        public System.Int32 Id
             {
                 get
                 {
-                     return (System.Int32) Fields[ID].GetValue();
+                     return GetValue<System.Int32>(ID);
                 }
                 set
                 {
@@ -23,11 +23,11 @@ namespace Phoenix.Dal.GeneratedModels
             }
          
         public const string ID_ROLES = "id_roles";
-        public System.Int32 id_roles
+        public System.Int32 IdRoles
             {
                 get
                 {
-                     return (System.Int32) Fields[ID_ROLES].GetValue();
+                     return GetValue<System.Int32>(ID_ROLES);
                 }
                 set
                 {
@@ -36,11 +36,11 @@ namespace Phoenix.Dal.GeneratedModels
             }
          
         public const string LOGIN = "login";
-        public System.String login
+        public System.String Login
             {
                 get
                 {
-                     return (System.String) Fields[LOGIN].GetValue();
+                     return GetValue<System.String>(LOGIN);
                 }
                 set
                 {
@@ -49,11 +49,11 @@ namespace Phoenix.Dal.GeneratedModels
             }
          
         public const string PASSWORD = "password";
-        public System.String password
+        public System.String Password
             {
                 get
                 {
-                     return (System.String) Fields[PASSWORD].GetValue();
+                     return GetValue<System.String>(PASSWORD);
                 }
                 set
                 {
@@ -62,11 +62,11 @@ namespace Phoenix.Dal.GeneratedModels
             }
          
         public const string EMAIL = "email";
-        public System.String email
+        public System.String Email
             {
                 get
                 {
-                     return (System.String) Fields[EMAIL].GetValue();
+                     return GetValue<System.String>(EMAIL);
                 }
                 set
                 {
@@ -75,11 +75,11 @@ namespace Phoenix.Dal.GeneratedModels
             }
          
         public const string NICK = "nick";
-        public System.String nick
+        public System.String Nick
             {
                 get
                 {
-                     return (System.String) Fields[NICK].GetValue();
+                     return GetValue<System.String>(NICK);
                 }
                 set
                 {
@@ -88,11 +88,11 @@ namespace Phoenix.Dal.GeneratedModels
             }
          
         public const string NAME = "name";
-        public System.String name
+        public System.String Name
             {
                 get
                 {
-                     return (System.String) Fields[NAME].GetValue();
+                     return GetValue<System.String>(NAME);
                 }
                 set
                 {
@@ -101,11 +101,11 @@ namespace Phoenix.Dal.GeneratedModels
             }
          
         public const string SURNAME = "surname";
-        public System.String surname
+        public System.String Surname
             {
                 get
                 {
-                     return (System.String) Fields[SURNAME].GetValue();
+                     return GetValue<System.String>(SURNAME);
                 }
                 set
                 {

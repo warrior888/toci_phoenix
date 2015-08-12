@@ -1,20 +1,20 @@
 using Toci.Db.DbVirtualization;
 using Toci.Db.Interfaces;
 
-namespace Phoenix.Dal.PatrykGeneratedModels
+namespace Phoenix.Dal.GeneratedModels
 {
-    public class developers_avaibl : Model
+    public class developers_available : Model
     {
-        public developers_avaibl() : base("developers_avaibl")
+        public developers_available() : base("developers_available")
         {
         }
          
         public const string ID = "id";
-        public System.Int32 id
+        public System.Int32 Id
             {
                 get
                 {
-                     return (System.Int32) Fields[ID].GetValue();
+                     return GetValue<System.Int32>(ID);
                 }
                 set
                 {
@@ -23,11 +23,11 @@ namespace Phoenix.Dal.PatrykGeneratedModels
             }
          
         public const string AVAILBLE_FOR = "availble_for";
-        public System.DateTime availble_for
+        public System.DateTime AvailbleFor
             {
                 get
                 {
-                     return (System.DateTime) Fields[AVAILBLE_FOR].GetValue();
+                     return GetValue<System.DateTime>(AVAILBLE_FOR);
                 }
                 set
                 {
@@ -36,11 +36,11 @@ namespace Phoenix.Dal.PatrykGeneratedModels
             }
          
         public const string START_WORK_HOUR = "start_work_hour";
-        public System.Int32 start_work_hour
+        public System.Int32 StartWorkHour
             {
                 get
                 {
-                     return (System.Int32) Fields[START_WORK_HOUR].GetValue();
+                     return GetValue<System.Int32>(START_WORK_HOUR);
                 }
                 set
                 {
@@ -49,11 +49,11 @@ namespace Phoenix.Dal.PatrykGeneratedModels
             }
          
         public const string END_WORK_HOUR = "end_work_hour";
-        public System.Int32 end_work_hour
+        public System.Int32 EndWorkHour
             {
                 get
                 {
-                     return (System.Int32) Fields[END_WORK_HOUR].GetValue();
+                     return GetValue<System.Int32>(END_WORK_HOUR);
                 }
                 set
                 {
@@ -64,7 +64,7 @@ namespace Phoenix.Dal.PatrykGeneratedModels
 
         protected override IModel GetInstance()
         {
-            return new developers_avaibl();
+            return new developers_available();
         }
     }
 }
