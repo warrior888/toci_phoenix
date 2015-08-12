@@ -1,4 +1,9 @@
 <?php
+
+
+header('Content-Type: text/html; charset=UTF-8');
+
+
 define("CONNECTION_STRING","host=46.101.222.238 user=postgres password=q1 dbname=postgres");
 define("DB_HOST", "127.0.0.1");
 define("DB_NAME", "login");

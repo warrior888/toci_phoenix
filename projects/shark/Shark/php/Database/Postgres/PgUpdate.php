@@ -17,9 +17,8 @@ class PgUpdate extends PgQuery implements IDbUpdate {
         $query .= $table;
         $query .= $this->CreateSetStatement($data);
 
-        if ($where) {
-            $query .= $this->CreateWhereStatement($where);
-        }
+        $query .= $this->CreateWhereStatement($where);
+
 
         $result = $query . ';';
 
@@ -32,9 +31,9 @@ class PgUpdate extends PgQuery implements IDbUpdate {
 
         if(is_array($data)) {
             foreach ($data as $column => $row) {
-                $setStatement .= $column . ' = ' . "'$row',";
+                $setStatement .=$column.'='."'$row',";
             }
-            $result = rtrim($setStatement, ',');
+            $setStatement = rtrim($setStatement, ', ');
         }else{
             $setStatement .=$data;
         }
