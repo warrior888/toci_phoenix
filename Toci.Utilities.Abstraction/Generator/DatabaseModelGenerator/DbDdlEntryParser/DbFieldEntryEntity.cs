@@ -8,5 +8,7 @@ namespace Toci.Utilities.Abstraction.Generator.DatabaseModelGenerator.DbDdlEntry
         public string Name { get; set; }
 
         public Type FieldType { get; set; }
+
+        public string FieldTypeName { get; set; }
     }
 }

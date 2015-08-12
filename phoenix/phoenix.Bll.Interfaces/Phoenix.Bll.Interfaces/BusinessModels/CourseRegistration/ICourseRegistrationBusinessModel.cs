@@ -6,7 +6,8 @@ namespace Phoenix.Bll.Interfaces.BusinessModels.CourseRegistration
     public interface ICourseRegistrationBusinessModel
     {
 
-        string Role {get;set;}
+        //string Role {get;set;}
+        int Role {get;set;}
         string Login { get; set; }
         string Password { get; set; }
         string Email { get; set; }
@@ -14,6 +15,6 @@ namespace Phoenix.Bll.Interfaces.BusinessModels.CourseRegistration
         string Name { get; set; }
         string Surname { get; set; }
 
-        IEnumerable<IChosenCourseRegistrationBusinessModel> ChosenCourses { get; set; }
+        //IEnumerable<IChosenCourseRegistrationBusinessModel> ChosenCourses { get; set; }
     }
 }

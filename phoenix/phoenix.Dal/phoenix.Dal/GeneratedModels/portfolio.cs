@@ -10,11 +10,11 @@ namespace Phoenix.Dal.GeneratedModels
         }
          
         public const string ID = "id";
-        public System.Int32 id
+        public System.Int32 Id
             {
                 get
                 {
-                     return (System.Int32) Fields[ID].GetValue();
+                     return GetValue<System.Int32>(ID);
                 }
                 set
                 {
@@ -23,15 +23,41 @@ namespace Phoenix.Dal.GeneratedModels
             }
          
         public const string PROJECT_NAME = "project_name";
-        public System.String project_name
+        public System.String ProjectName
             {
                 get
                 {
-                     return (System.String) Fields[PROJECT_NAME].GetValue();
+                     return GetValue<System.String>(PROJECT_NAME);
                 }
                 set
                 {
                     SetValue(PROJECT_NAME, value);
+                }
+            }
+         
+        public const string PROJECT_COMPLETION_DATE = "project_completion_date";
+        public System.DateTime ProjectCompletionDate
+            {
+                get
+                {
+                     return GetValue<System.DateTime>(PROJECT_COMPLETION_DATE);
+                }
+                set
+                {
+                    SetValue(PROJECT_COMPLETION_DATE, value);
+                }
+            }
+         
+        public const string FK_ID_USERS = "fk_id_users";
+        public System.Int32 FkIdUsers
+            {
+                get
+                {
+                     return GetValue<System.Int32>(FK_ID_USERS);
+                }
+                set
+                {
+                    SetValue(FK_ID_USERS, value);
                 }
             }
         

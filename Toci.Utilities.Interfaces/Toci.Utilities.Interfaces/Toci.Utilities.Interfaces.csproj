@@ -121,6 +121,7 @@
     <Compile Include="Generator\DatabaseModelGenerator\IModelsGenerator.cs" />
     <Compile Include="Generator\DatabaseModelGenerator\IModelGenerator.cs" />
     <Compile Include="Generator\DatabaseModelGenerator\IModelTemplateProvider.cs" />
+    <Compile Include="Generator\DatabaseModelGenerator\IWrapperModel.cs" />
     <Compile Include="IDocumentResource.cs" />
     <Compile Include="IParallelProcessing.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

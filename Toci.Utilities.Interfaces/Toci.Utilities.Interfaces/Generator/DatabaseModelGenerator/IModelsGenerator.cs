@@ -2,7 +2,7 @@
 {
     public interface IModelsGenerator
     {
-        void GenerateModels(string path, string destinationPath, string separator, string ddlItemsSeparator);
+        void GenerateModels(IWrapperModel model, string separator, string ddlItemsSeparator);
 
         // (); cr (); , , , 
     }

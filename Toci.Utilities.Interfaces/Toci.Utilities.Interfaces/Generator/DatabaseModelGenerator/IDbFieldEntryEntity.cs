@@ -8,6 +8,8 @@ namespace Toci.Utilities.Interfaces.Generator.DatabaseModelGenerator
 
         Type FieldType { get; set; } // int
 
+        string FieldTypeName { get; set; }
+
         // id int primary key
 
         //constraints, foreign keys
