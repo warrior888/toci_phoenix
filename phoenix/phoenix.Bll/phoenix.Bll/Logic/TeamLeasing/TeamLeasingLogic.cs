@@ -10,6 +10,7 @@ namespace Phoenix.Bll.Logic.TeamLeasing
 {
     public class TeamLeasingLogic : DbLogic, ITeamLeasingLogic
     {
+        
         public IEnumerable<IDeveloperTeamBusinessModel> GetTeams(ITeamLeasingBusinessModel model, int countOfTeams)
         {
            // DbHandle.GetData(new skills_technologies { tech_name = model .SkillSet.First().SkillName});
