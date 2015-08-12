@@ -15,22 +15,23 @@ namespace IdServ.Configruation
                     ClientId = "implicitclient",
                     ClientName = "Example Implicit Client",
                     Enabled = true,
+
                     Flow = Flows.Implicit,
+
                     RequireConsent = true,
                     AllowRememberConsent = true,
-                    RedirectUris = new List<string>(),
-                    PostLogoutRedirectUris = new List<string>(),
-                    ScopeRestrictions = new List<string>
-                    {
-                        Constants.StandardScopes.OpenId,
-                        Constants.StandardScopes.Profile,
-                        Constants.StandardScopes.Email
-                        
 
-                    },
+                    RedirectUris = new List<string> {"https://localhost:44301/account/signInCallback"},
+                    PostLogoutRedirectUris = new List<string> {"https://localhost:44301/"},
+                    ScopeRestrictions =
+                        new List<string>
+                        {
+                            Constants.StandardScopes.OpenId,
+                            Constants.StandardScopes.Profile,
+                            Constants.StandardScopes.Email
+                        },
                     AccessTokenType = AccessTokenType.Jwt
-
-                }
+                },
             };
         }  
     }

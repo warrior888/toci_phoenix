@@ -9,9 +9,13 @@ namespace IdServ.Configruation
         {
             return new List<Scope>
             {
-                StandardScopes.OpenId,
-                StandardScopes.Profile,
-                StandardScopes.Email
+                    StandardScopes.OpenId,
+                    StandardScopes.Profile,
+                    StandardScopes.Email,
+                    StandardScopes.Address,
+                    StandardScopes.OfflineAccess,
+                    StandardScopes.RolesAlwaysInclude,
+                    StandardScopes.AllClaims
             };
         }  
     }

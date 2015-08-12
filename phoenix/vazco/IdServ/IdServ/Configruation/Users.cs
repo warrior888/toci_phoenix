@@ -9,7 +9,8 @@ namespace IdServ.Configruation
     {
         public static List<InMemoryUser> Get()
         {//TODO userzy pobierani z bazy
-            return new List<InMemoryUser>
+
+            var users = new List<InMemoryUser>
             {
                 new InMemoryUser
                 {
@@ -22,8 +23,21 @@ namespace IdServ.Configruation
                         new Claim(Constants.ClaimTypes.FamilyName,"Brady"),
                         new Claim(Constants.ClaimTypes.Email,"info@scottbrady91.com")
                     }
+                },
+                new InMemoryUser
+                {
+                    Username = "bob",
+                    Password = "bob",
+                    Subject = "12",
+                    Claims = new List<Claim>
+                    {
+                        new Claim(Constants.ClaimTypes.GivenName,"Bob"),
+                        new Claim(Constants.ClaimTypes.FamilyName,"Bob"),
+                        new Claim(Constants.ClaimTypes.Email,"Bob@scottbrady91.com")
+                    }
                 }
             };
+            return users;
         } 
     }
 }
