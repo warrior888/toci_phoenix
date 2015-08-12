@@ -4,6 +4,8 @@ using Phoenix.Bll;
 using Phoenix.Bll.BusinessModels.CourseRegistration;
 using Phoenix.Bll.Interfaces.BusinessModels.CourseRegistration;
 using Phoenix.Bll.Logic.CourseRegistration;
+using Phoenix.Bll.Logic.DevelopersList;
+using Phoenix.Dal.GeneratedModels;
 //using Phoenix.Dal.GeneratedModels;
 using Toci.Db.Clients;
 using Toci.Db.ClusterAccess;
@@ -26,7 +28,14 @@ namespace Phoenix.Integration.Test.Developers.Terry.DbTests
             var handel =  DbHandleFactory.GetHandle(SqlClientKind.PostgreSql, DbHandleAccessData.UserName, DbHandleAccessData.Password,
                 DbHandleAccessData.DbAdress, DbHandleAccessData.DbName);
 
-          /*  var model = new course_registration()
+            DeveloperListLogic devList = new DeveloperListLogic();
+            developers_list test = new developers_list();
+
+            
+
+            devList.GetDevById(1);
+
+            /*  var model = new course_registration()
             {
                 email = "test@test.dd",
                 login = "login123",
