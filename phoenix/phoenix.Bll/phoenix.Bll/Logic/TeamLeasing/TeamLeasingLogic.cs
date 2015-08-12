@@ -12,7 +12,7 @@ namespace Phoenix.Bll.Logic.TeamLeasing
     {
         public IEnumerable<IDeveloperTeamBusinessModel> GetTeams(ITeamLeasingBusinessModel model, int countOfTeams)
         {
-            DbHandle.GetData(new skills_technologies { tech_name = model .SkillSet.First().SkillName});
+           // DbHandle.GetData(new skills_technologies { tech_name = model .SkillSet.First().SkillName});
             throw new System.NotImplementedException();
         }
 
