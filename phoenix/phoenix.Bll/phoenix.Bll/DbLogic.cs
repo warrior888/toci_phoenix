@@ -7,11 +7,15 @@ namespace Phoenix.Bll
     public abstract class DbLogic : IDbLogic
     {
         protected IDbHandle DbHandle;
+        protected DbHandleAccessDataFactory AccessDataFactory;
 
         protected DbLogic()
         {
-            DbHandle = GetDbHandle(DbHandleAccessData.UserName, DbHandleAccessData.Password, 
-                                   DbHandleAccessData.DbAdress, DbHandleAccessData.DbName);
+            DbHandleAccessData accessData = new DbHandleAccessDataFactory().Create("Patryk");
+            //DbHandleAccessData accessData = new DbHandleAccessDataFactory().Create("Terry");
+
+            DbHandle = GetDbHandle(accessData.UserName, accessData.Password,
+                                   accessData.DbAdress, accessData.DbName);
         }
 
         public virtual IDbHandle GetDbHandle(string user, string password, string dbAddress, string dbName)

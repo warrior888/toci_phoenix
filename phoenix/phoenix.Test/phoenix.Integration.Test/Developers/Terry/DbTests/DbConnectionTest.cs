@@ -18,13 +18,13 @@ namespace Phoenix.Integration.Test.Developers.Terry.DbTests
         [TestMethod]
         public void DbConnectionTesting()
         {
-            DbHandleAccessData.Password = "ph03n1x";
+           /* DbHandleAccessData.Password = "ph03n1x";
             DbHandleAccessData.DbAdress = "localhost";
             DbHandleAccessData.DbName = "Phoenix";
             DbHandleAccessData.UserName = "postgres";
 
             var handel =  DbHandleFactory.GetHandle(SqlClientKind.PostgreSql, DbHandleAccessData.UserName, DbHandleAccessData.Password,
-                DbHandleAccessData.DbAdress, DbHandleAccessData.DbName);
+                DbHandleAccessData.DbAdress, DbHandleAccessData.DbName);*/
 
           /*  var model = new course_registration()
             {
