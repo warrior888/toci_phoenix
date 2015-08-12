@@ -2,7 +2,7 @@
 using System.Linq;
 using Phoenix.Bll.Interfaces.BusinessModels.TeamLeasing;
 using Phoenix.Bll.Interfaces.Logic.TeamLeasing;
-using Phoenix.Dal.GeneratedModels;
+//using Phoenix.Dal.GeneratedModels;
 //using Phoenix.Dal.PatrykGeneratedModels;
 using Toci.Db.Interfaces;
 

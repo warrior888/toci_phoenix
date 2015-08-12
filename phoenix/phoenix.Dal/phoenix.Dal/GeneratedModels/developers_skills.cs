@@ -10,11 +10,11 @@ namespace Phoenix.Dal.GeneratedModels
         }
          
         public const string ID = "id";
-        public System.Int32 Id
+        public int Id
             {
                 get
                 {
-                     return GetValue<System.Int32>(ID);
+                     return GetValue<int>(ID);
                 }
                 set
                 {
@@ -23,11 +23,11 @@ namespace Phoenix.Dal.GeneratedModels
             }
          
         public const string ID_USERS = "id_users";
-        public System.Int32 IdUsers
+        public int IdUsers
             {
                 get
                 {
-                     return GetValue<System.Int32>(ID_USERS);
+                     return GetValue<int>(ID_USERS);
                 }
                 set
                 {
@@ -36,11 +36,11 @@ namespace Phoenix.Dal.GeneratedModels
             }
          
         public const string ID_SKILLS_TECHNOLOGIES = "id_skills_technologies";
-        public System.Int32 IdSkillsTechnologies
+        public int IdSkillsTechnologies
             {
                 get
                 {
-                     return GetValue<System.Int32>(ID_SKILLS_TECHNOLOGIES);
+                     return GetValue<int>(ID_SKILLS_TECHNOLOGIES);
                 }
                 set
                 {
@@ -49,11 +49,11 @@ namespace Phoenix.Dal.GeneratedModels
             }
          
         public const string SKILL_LEVEL = "skill_level";
-        public System.Single SkillLevel
+        public float SkillLevel
             {
                 get
                 {
-                     return GetValue<System.Single>(SKILL_LEVEL);
+                     return GetValue<float>(SKILL_LEVEL);
                 }
                 set
                 {

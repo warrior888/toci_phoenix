@@ -6,8 +6,6 @@ namespace Toci.Utilities.Interfaces.Generator.DatabaseModelGenerator
     {
         string Name { get; set; } //id
 
-        Type FieldType { get; set; } // int
-
         string FieldTypeName { get; set; }
 
         // id int primary key

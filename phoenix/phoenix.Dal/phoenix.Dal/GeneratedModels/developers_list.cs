@@ -1,3 +1,4 @@
+using System;
 using Toci.Db.DbVirtualization;
 using Toci.Db.Interfaces;
 
@@ -10,11 +11,11 @@ namespace Phoenix.Dal.GeneratedModels
         }
          
         public const string ID = "id";
-        public System.Int32 Id
+        public int Id
             {
                 get
                 {
-                     return GetValue<System.Int32>(ID);
+                     return GetValue<int>(ID);
                 }
                 set
                 {
@@ -23,11 +24,11 @@ namespace Phoenix.Dal.GeneratedModels
             }
          
         public const string EXPERIENCE_FROM = "experience_from";
-        public System.DateTime ExperienceFrom
+        public DateTime ExperienceFrom
             {
                 get
                 {
-                     return GetValue<System.DateTime>(EXPERIENCE_FROM);
+                     return GetValue<DateTime>(EXPERIENCE_FROM);
                 }
                 set
                 {
@@ -36,11 +37,11 @@ namespace Phoenix.Dal.GeneratedModels
             }
          
         public const string ID_USERS = "id_users";
-        public System.Int32 IdUsers
+        public int IdUsers
             {
                 get
                 {
-                     return GetValue<System.Int32>(ID_USERS);
+                     return GetValue<int>(ID_USERS);
                 }
                 set
                 {
@@ -49,11 +50,11 @@ namespace Phoenix.Dal.GeneratedModels
             }
          
         public const string FK_ID_DEVELOPERS_AVAIBLE = "fk_id_developers_avaible";
-        public System.Int32 FkIdDevelopersAvaible
+        public int FkIdDevelopersAvaible
             {
                 get
                 {
-                     return GetValue<System.Int32>(FK_ID_DEVELOPERS_AVAIBLE);
+                     return GetValue<int>(FK_ID_DEVELOPERS_AVAIBLE);
                 }
                 set
                 {

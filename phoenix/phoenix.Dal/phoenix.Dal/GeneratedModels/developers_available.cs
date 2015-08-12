@@ -1,3 +1,4 @@
+using System;
 using Toci.Db.DbVirtualization;
 using Toci.Db.Interfaces;
 
@@ -10,11 +11,11 @@ namespace Phoenix.Dal.GeneratedModels
         }
          
         public const string ID = "id";
-        public System.Int32 Id
+        public int Id
             {
                 get
                 {
-                     return GetValue<System.Int32>(ID);
+                     return GetValue<int>(ID);
                 }
                 set
                 {
@@ -23,11 +24,11 @@ namespace Phoenix.Dal.GeneratedModels
             }
          
         public const string AVAILBLE_FOR = "availble_for";
-        public System.DateTime AvailbleFor
+        public DateTime AvailbleFor
             {
                 get
                 {
-                     return GetValue<System.DateTime>(AVAILBLE_FOR);
+                     return GetValue<DateTime>(AVAILBLE_FOR);
                 }
                 set
                 {
@@ -36,11 +37,11 @@ namespace Phoenix.Dal.GeneratedModels
             }
          
         public const string START_WORK_HOUR = "start_work_hour";
-        public System.Int32 StartWorkHour
+        public int StartWorkHour
             {
                 get
                 {
-                     return GetValue<System.Int32>(START_WORK_HOUR);
+                     return GetValue<int>(START_WORK_HOUR);
                 }
                 set
                 {
@@ -49,11 +50,11 @@ namespace Phoenix.Dal.GeneratedModels
             }
          
         public const string END_WORK_HOUR = "end_work_hour";
-        public System.Int32 EndWorkHour
+        public int EndWorkHour
             {
                 get
                 {
-                     return GetValue<System.Int32>(END_WORK_HOUR);
+                     return GetValue<int>(END_WORK_HOUR);
                 }
                 set
                 {

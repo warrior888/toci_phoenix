@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Phoenix.Bll.BusinessModels.CourseRegistration;
 using Phoenix.Bll.Interfaces.BusinessModels.CourseRegistration;
-//using Phoenix.Dal.GeneratedModels;
+using Phoenix.Dal.GeneratedModels;
 
 namespace Phoenix.Integration.Test.Developers.Patryk.AutoMapper
 {
@@ -39,9 +39,9 @@ namespace Phoenix.Integration.Test.Developers.Patryk.AutoMapper
                 Name = "name",
                 Surname = "surname"
             };
- /*           Mapper.CreateMap<ICourseRegistrationBusinessModel, course_registration>();
+            Mapper.CreateMap<ICourseRegistrationBusinessModel, course_registration>();
             course_registration courseRegistration = new course_registration();
-            courseRegistration = Mapper.Map<course_registration>(registrationBusinessModel);*/
+            courseRegistration = Mapper.Map<course_registration>(registrationBusinessModel);
         }         
     }
 }

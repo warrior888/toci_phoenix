@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.InteropServices;
 using Toci.Utilities.Interfaces.Generator.DatabaseModelGenerator;
 using Toci.Utilities.Interfaces.Generator.DatabaseModelGenerator.DbDdlParser;
 
@@ -15,7 +12,7 @@ namespace Toci.Utilities.Abstraction.Generator.DatabaseModelGenerator.DbDdlEntry
 
         public IDbFieldEntryEntity GetFieldEntryEntity(string column)
         {
-             return new DbFieldEntryEntity() { Name = GetFieldName(column), FieldType = GetFieldType(column)};
+             return new DbFieldEntryEntity() { Name = GetFieldName(column), FieldTypeName = GetFieldTypeName(column)};
         }
 
         protected virtual string GetFieldName(string column)
@@ -23,9 +20,9 @@ namespace Toci.Utilities.Abstraction.Generator.DatabaseModelGenerator.DbDdlEntry
             return column.Split(ColumnDefinitionDelimiter).First().ToLower();
         }
        
-        protected virtual Type GetFieldType(string column)
+        protected virtual string GetFieldTypeName(string column)
         {
-            return (from item in TypeDictionary where column.Contains(item.Key) select item.Value()).FirstOrDefault();
+            return (from item in TypeDictionary where column.Contains(item.Key) select item.Value).FirstOrDefault();
         }
 
         //int integer datetime
@@ -33,6 +30,6 @@ namespace Toci.Utilities.Abstraction.Generator.DatabaseModelGenerator.DbDdlEntry
     
         protected abstract void GetFieldConstraints();
 
-        protected abstract Dictionary<string, Func<Type>> TypeDictionary { get; set; }
+        protected abstract Dictionary<string, string> TypeDictionary { get; set; }
     }
 }

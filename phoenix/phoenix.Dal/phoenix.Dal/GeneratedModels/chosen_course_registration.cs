@@ -10,11 +10,11 @@ namespace Phoenix.Dal.GeneratedModels
         }
          
         public const string ID = "id";
-        public System.Int32 Id
+        public int Id
             {
                 get
                 {
-                     return GetValue<System.Int32>(ID);
+                     return GetValue<int>(ID);
                 }
                 set
                 {
@@ -23,11 +23,11 @@ namespace Phoenix.Dal.GeneratedModels
             }
          
         public const string ID_COURSE_REGISTRATION = "id_course_registration";
-        public System.Int32 IdCourseRegistration
+        public int IdCourseRegistration
             {
                 get
                 {
-                     return GetValue<System.Int32>(ID_COURSE_REGISTRATION);
+                     return GetValue<int>(ID_COURSE_REGISTRATION);
                 }
                 set
                 {
@@ -36,11 +36,11 @@ namespace Phoenix.Dal.GeneratedModels
             }
          
         public const string ID_COURSES_LIST = "id_courses_list";
-        public System.Int32 IdCoursesList
+        public int IdCoursesList
             {
                 get
                 {
-                     return GetValue<System.Int32>(ID_COURSES_LIST);
+                     return GetValue<int>(ID_COURSES_LIST);
                 }
                 set
                 {

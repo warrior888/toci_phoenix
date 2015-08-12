@@ -1,3 +1,4 @@
+using System;
 using Toci.Db.DbVirtualization;
 using Toci.Db.Interfaces;
 
@@ -10,11 +11,11 @@ namespace Phoenix.Dal.GeneratedModels
         }
          
         public const string ID = "id";
-        public System.Int32 Id
+        public int Id
             {
                 get
                 {
-                     return GetValue<System.Int32>(ID);
+                     return GetValue<int>(ID);
                 }
                 set
                 {
@@ -23,11 +24,11 @@ namespace Phoenix.Dal.GeneratedModels
             }
          
         public const string ID_COURSES_LIST = "id_courses_list";
-        public System.Int32 IdCoursesList
+        public int IdCoursesList
             {
                 get
                 {
-                     return GetValue<System.Int32>(ID_COURSES_LIST);
+                     return GetValue<int>(ID_COURSES_LIST);
                 }
                 set
                 {
@@ -36,11 +37,11 @@ namespace Phoenix.Dal.GeneratedModels
             }
          
         public const string HOURS = "hours";
-        public System.Int32 Hours
+        public int Hours
             {
                 get
                 {
-                     return GetValue<System.Int32>(HOURS);
+                     return GetValue<int>(HOURS);
                 }
                 set
                 {
@@ -49,11 +50,11 @@ namespace Phoenix.Dal.GeneratedModels
             }
          
         public const string SESSION_DATE = "session_date";
-        public System.DateTime SessionDate
+        public DateTime SessionDate
             {
                 get
                 {
-                     return GetValue<System.DateTime>(SESSION_DATE);
+                     return GetValue<DateTime>(SESSION_DATE);
                 }
                 set
                 {
@@ -62,11 +63,11 @@ namespace Phoenix.Dal.GeneratedModels
             }
          
         public const string AGENDA = "agenda";
-        public System.String Agenda
+        public string Agenda
             {
                 get
                 {
-                     return GetValue<System.String>(AGENDA);
+                     return GetValue<string>(AGENDA);
                 }
                 set
                 {
