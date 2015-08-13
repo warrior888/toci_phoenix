@@ -104,7 +104,7 @@ namespace Toci.Db.DbVirtualization
         public List<IModel> GetDataRowsList(DataSet table)
         {
 
-            return table.Tables[0].Rows.OfType<DataRow>().Select(item => GetDataRow(item, table.Tables[0].Columns)).ToList();
+           return table.Tables[0].Rows.OfType<DataRow>().Select(item => GetDataRow(item, table.Tables[0].Columns)).ToList();
 
         }
 
