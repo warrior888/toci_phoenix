@@ -25,8 +25,9 @@ $(document).ready(function()
     $("#references-carousel").owlCarousel(
         {
             loop: true,
-            autoplay: true,
-            autoplaySpeed: 1500,
+            autoplay: false,
+            autoplaySpeed: 8800,
+	    paginationSpeed : 4800,
             autoplayHoverPause: true,
             responsive: {
 
