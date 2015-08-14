@@ -39,6 +39,17 @@ namespace Phoenix.Bll
         {
             var modelFromDb = model.GetDataRowsList(DbHandle.GetData(model));
             return modelFromDb.Count == 0 ? default(T) : (T)modelFromDb[0];
-        } 
+        }
+
+        protected T FetchModelById<T>(string columnName, SelectClause clause, int id) where T : Model, new()
+        {
+            T model = new T() { Id = id };
+            model.SetSelect(columnName, clause);
+
+            var result = FetchModelFromDb<T>(model);
+
+            return result == default(T) ? default(T) : result;
+        }
+
     }
 }
