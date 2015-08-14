@@ -11,20 +11,12 @@ namespace Phoenix.Bll.Logic.UsersList
     {
         public IUsers GetUserById(int id)
         {
-            users userFromDb = FetchModelById<users>(id);
-
-            Mapper.CreateMap<users, IUsers>();
-
-            return Mapper.Map<IUsers>(userFromDb);
+            return GetElementById<IUsers, users>(id);
         }
 
         public IEnumerable<IUsers> GetAllUsers()
         {
-            var usersModelsList = FetchModelsFromDb<users>(new users());
-
-            Mapper.CreateMap<users, IUsers>();
-
-            return usersModelsList.Select(user => Mapper.Map<IUsers>(user)).ToList();
+            return GetAllElements<IUsers, users>();
         }
     }
 }

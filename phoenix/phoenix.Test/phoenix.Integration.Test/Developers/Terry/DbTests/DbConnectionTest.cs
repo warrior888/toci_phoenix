@@ -22,12 +22,15 @@ namespace Phoenix.Integration.Test.Developers.Terry.DbTests
         [TestMethod]
         public void DbConnectionTesting()
         {
-            //DeveloperListLogic devListLogic = new DeveloperListLogic();
-            //devListLogic.GetDevById(5);
+            DeveloperListLogic devListLogic = new DeveloperListLogic();
+            devListLogic.GetDevById(5);
 
             UsersLogic usersLogic = new UsersLogic();
             var allUsers = usersLogic.GetAllUsers();
             var userById = usersLogic.GetUserById(3);
+
+            SkillLogic skillLogic = new SkillLogic();
+            var allSkills = skillLogic.GetUserSkills(4);
         }
-}
+    }
 }
