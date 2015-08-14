@@ -26,18 +26,18 @@ namespace Phoenix.Bll.Logic.DevelopersList
         {
             IDeveloperBusinessModel developer = new DeveloperBusinessModel();
 
-            developers_list developerToDb = new developers_list()
+            developers_list developerFromDb = FetchModelFromDb<developers_list>(new developers_list()
             {
                 IdUsers = id
-            };
-            developerToDb.SetSelect("id_users", SelectClause.Equal);
-            developers_list developerFromDb = FetchModelFromDb<developers_list>(developerToDb);
+            }.SetSelect("id_users", SelectClause.Equal));
+
+
             developer.User = _userLogic.GetUserById(developerFromDb.IdUsers);
             developer.ExperienceFrom = developerFromDb.ExperienceFrom;
             developer.Portfolio = _portfolioLogic.GetUserPortfolio(developerFromDb.IdUsers);
-            developer.Skills = _skillLogic.GetUserSkills(developerFromDb.IdUsers);
+            /*developer.Skills = _skillLogic.GetUserSkills(developerFromDb.IdUsers);
             developer.DeveloperAvailable =
-                _availableLogic.GetDeveloperAvailableById(developerFromDb.FkIdDevelopersAvaible);
+                _availableLogic.GetDeveloperAvailableById(developerFromDb.FkIdDevelopersAvaible);*/
             return developer;
 
         }
