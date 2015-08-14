@@ -1,3 +1,30 @@
+-- Table: applicants
+
+-- DROP TABLE applicants;
+
+CREATE TABLE applicants
+(
+  id serial NOT NULL,
+  name text,
+  surname text,
+  email text,
+  phone text,
+  chosencourse text,
+  signature text,
+  mailconfirmed boolean,
+  CONSTRAINT applicants_pkey PRIMARY KEY (id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE applicants
+  OWNER TO postgres;
+
+
+
+-- Table: clients
+
+-- DROP TABLE clients;
 
 CREATE TABLE clients
 (
@@ -9,6 +36,17 @@ CREATE TABLE clients
   nip text,
   CONSTRAINT clients_pkey PRIMARY KEY (id)
 )
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE clients
+  OWNER TO postgres;
+
+
+
+-- Table: invoices
+
+-- DROP TABLE invoices;
 
 CREATE TABLE invoices
 (
@@ -21,11 +59,8 @@ CREATE TABLE invoices
       REFERENCES clients (id) MATCH SIMPLE
       ON UPDATE NO ACTION ON DELETE NO ACTION
 )
-
-CREATE TABLE services
-(
-  id serial NOT NULL,
-  name text,
-  price text,
-  CONSTRAINT services_pkey PRIMARY KEY (id)
-)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE invoices
+  OWNER TO postgres;

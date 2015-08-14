@@ -10,7 +10,7 @@ require_once "Models/Model.php";
 require_once "Postgres/PgModel.php";
 
 
-class ClientsManager extends PgModel{
+class ClientManager extends PgModel{
 
     private $table="clients";
 

@@ -4,14 +4,14 @@
     include "../Database/ClientManager.php";
 
     if(isset($_GET['action'])){
-        $manager=new ClientsManager();
+        $manager=new ClientManager();
         if(!$manager->DeleteClient("id=".$_GET['client'])){
             echo "Wystąpił błąd";
         }
 
     }
 
-    $manager=new ClientsManager();
+    $manager=new ClientManager();
     $clients=$manager->GetClient("id, name");
 
     $html='<form method="get"><select name="client">';
