@@ -38,7 +38,7 @@ if(!isset($_POST['add'])) {
     $client['city']=$_POST['city'];
     $client['nip']=$_POST['nip'];
 
-    $manager=new ClientsManager();
+    $manager=new ClientManager();
     if(!$manager->AddClient($client)){
         die("Wystąpił błąd podczas zapisu do db");
     }{

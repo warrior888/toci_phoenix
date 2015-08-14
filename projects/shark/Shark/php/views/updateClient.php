@@ -15,7 +15,7 @@ include_once "../Database/ClientManager.php";
 
 if(!isset($_POST['action'])){
 
-    $manager=new ClientsManager();
+    $manager=new ClientManager();
     $client=$manager->GetClient("*","   id=".$_GET['client']."    ")[0];
 
     echo '
@@ -42,7 +42,7 @@ if(!isset($_POST['action'])){
     $client['city']=$_POST['city'];
     $client['nip']=$_POST['nip'];
 
-    $manager=new ClientsManager();
+    $manager=new ClientManager();
 //     echo $manager->UpdateClient($client,"   id=".$_POST['id']."    ",true);
      if(!$manager->UpdateClient($client,"   id=".$_POST['id']."    ")){
         die("Wystąpił błąd podczas zapisu do db");

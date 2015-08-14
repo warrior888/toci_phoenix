@@ -40,7 +40,13 @@ function getAheadDate($days)
     return date('Y-m-d',strtotime(date("Y-m-d", mktime()) . " + ".$days." day"));
 }
 
+function getClientNameById($id){
 
+    $manager=new ServiceManager();
+    $services=$services=array_reverse($manager->GetService("*"));
+
+
+}
 
 
 function slownie ($kw) {
@@ -92,4 +98,15 @@ function slownie ($kw) {
     }
     $text = $kw_slow.' '.$tmp[1].'/100 gr.';
     return $text;
+}
+
+
+function odstep($int){
+
+    $return="";
+
+    while($int--)
+        $return.="<br>";
+
+    return $return;
 }

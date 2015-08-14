@@ -1,3 +1,6 @@
+
+
+
 <?php
 
 include "../ClientManager.php";
@@ -9,7 +12,7 @@ include_once "../Lib/Kwota.php";
 
     function prepareNabywca($client){
         return "<b>Imie i nazwisko/Tytuł:</b> ".$client['name']."<br /><b>Adres:</b> ".$client['address']."<br /><b>Kod pocztowy:</b> ".$client['postalcode'].
-        "<br /><b>Miasto: </b>".$client['city']."<br /><b>NIP:</b>".$client['nip'];
+        "<br /><b>Miasto: </b>".$client['city']."<br /><b>NIP: </b>".$client['nip'];
     }
 
     function generateInvoiceUpperTable($invoiceNumber,$dataWystawienia, $dataSprzedazy, $nabywca, $original=true){
@@ -26,9 +29,11 @@ include_once "../Lib/Kwota.php";
         </tr><tr></tr><tr><td colspan="2"><b>NABYWCA</b><br>'.$nabywca.'</td></tr></table>';
     }
 
+
     function generateInvoiceDownTable($service){
 
         $price=intval($service['price']);
+
         $VatAmount=$price*0.23;
         $brutto=$price+$VatAmount;
 
@@ -61,7 +66,7 @@ include_once "../Lib/Kwota.php";
     <td>'.$brutto.'</td>
   </tr>
 </table>
-<table width=80% align="center"><tr><td><br><br> <b>Do zapłaty: </b>'.$brutto.' zł. (słownie: '.Kwota::getInstance()->slownie($price).').</td></tr></table> ';
+<table width=80% align="center"><tr><td><br><br> <b>Do zapłaty: </b>'.$brutto.' zł. (słownie: '.Kwota::getInstance()->slownie($brutto).').</td></tr></table> ';
     }
 
     function generateSignPlace($clientName,$sellerName){
@@ -74,19 +79,12 @@ Faktury VAT.<br> </b><td></tr>
         </table>';
     }
 
-    function odstep($int){
-
-        $return="";
-
-        while($int--)
-            $return.="<br>";
-
-        return $return;
-    }
 
     function genereteInvoice($client,$service)
     {
         header('Content-Type: text/html; charset=UTF-8');
+
+
 
         //zwracana faktura
         $returnInvoice=array();
@@ -99,7 +97,7 @@ Faktury VAT.<br> </b><td></tr>
 
         $data=getTodaysDate();
 
-        $returnInvoice["number"]=getNextInvoiceNumber();
+        $returnInvoice["number"]=$service['invoiceNumber'];
         $returnInvoice["client_id"]=$client['id'];
 
         $returnInvoice['html'] .= generateInvoiceUpperTable($returnInvoice['number'],$data,$data, $nabywca);
@@ -123,8 +121,9 @@ Faktury VAT.<br> </b><td></tr>
         return $returnInvoice;
     }
 
+
         //pobranie danych
-        $manager=new ClientsManager();
+        $manager=new ClientManager();
         $client=$manager->GetClient("*","id=".$_GET['client'])[0];
         $manager->CloseConnection();
 
@@ -133,7 +132,21 @@ Faktury VAT.<br> </b><td></tr>
         $manager->CloseConnection();
 
 
-        //generowanie, wyswietlenie htmla i zapis do bazy
+        if(!empty($_GET['price'])){
+            $service['price']=$_GET['price'];
+        }
+
+        if(!empty($_GET['invoiceNumber'])){
+            $service['invoiceNumber']=$_GET['invoiceNumber'];
+        }else{
+            $service['invoiceNumber']=getNextInvoiceNumber();
+        }
+
+
+
+
+
+//generowanie, wyswietlenie htmla i zapis do bazy
         $invoice=genereteInvoice($client,$service);
         echo $invoice['html'];
         $invoice['html']=base64_encode($invoice['html']);
