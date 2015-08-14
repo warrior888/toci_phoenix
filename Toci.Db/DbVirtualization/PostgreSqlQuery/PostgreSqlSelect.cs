@@ -17,7 +17,8 @@ namespace Toci.Db.DbVirtualization.PostgreSqlQuery
 
         public override string GetQuery(IModel model)
         {
-            string columnNames = string.Join(COLUMNS_DELIMITER, model.GetFields().Select(item => item.Key));
+            //string columnNames = string.Join(COLUMNS_DELIMITER, model.GetFields().Select(item => item.Key));
+            string columnNames = "*";
 
             var whereList = new List<string>();
 
@@ -36,7 +37,8 @@ namespace Toci.Db.DbVirtualization.PostgreSqlQuery
             {
                 return string.Format(WHERE_PATTERN, columnNames, model.GetTableName(), whereResult);
             }
-            return string.Format(SELECT_PATTERN, columnNames, model.GetTableName());
+            string query =  string.Format(SELECT_PATTERN, columnNames, model.GetTableName());
+            return query;
         }
 
     }

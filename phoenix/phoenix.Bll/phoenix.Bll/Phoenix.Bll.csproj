@@ -111,7 +111,11 @@
     <Compile Include="BusinessModels\DevelopersList\SkillBusinessModel.cs" />
     <Compile Include="BusinessModels\TeamLeasing\DeveloperAvailableBusinessModel.cs" />
     <Compile Include="BusinessModels\TeamLeasing\DeveloperTeamBusinessModel.cs" />
+    <Compile Include="BusinessModels\UsersList\Users.cs" />
     <Compile Include="DbHandleAccessDataFactory.cs" />
+    <Compile Include="Logic\DevelopersList\PortfolioLogic.cs" />
+    <Compile Include="Logic\DevelopersList\SkillLogic.cs" />
+    <Compile Include="Logic\TeamLeasing\DeveloperAvailableLogic.cs" />
     <Compile Include="Logic\TeamLeasing\TeamLeasingLogicMock.cs" />
     <Compile Include="BusinessModels\TeamLeasing\TeamLeasingBusinessModel.cs" />
     <Compile Include="DbHandleAccessData.cs" />
@@ -125,6 +129,7 @@
     <Compile Include="I18n\TranslationPhrases.cs" />
     <Compile Include="Localization\LocalizationLogic.cs" />
     <Compile Include="Logic\TeamLeasing\TeamLeasingLogic.cs" />
+    <Compile Include="Logic\UsersList\UsersLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User\UserLogic.cs" />
   </ItemGroup>

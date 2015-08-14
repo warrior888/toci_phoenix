@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using Phoenix.Bll.Interfaces.BusinessModels.TeamLeasing;
+using Phoenix.Bll.Interfaces.BusinessModels.UsersList;
 
 namespace Phoenix.Bll.Interfaces.BusinessModels.DevelopersList
 {
     public interface IDeveloperBusinessModel
     {
-        string Nick { get; set; }
-
-        string Name { get; set; }
-
-        string Surname { get; set; }
+        IUsers User { get; set; }
 
         double Score { get; set; }
 

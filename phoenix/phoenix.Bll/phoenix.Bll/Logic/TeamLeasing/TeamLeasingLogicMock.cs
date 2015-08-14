@@ -25,9 +25,9 @@ namespace Phoenix.Bll.Logic.TeamLeasing
                             StartWorkHour = 8
                         },
                     ExperienceFrom = new DateTime(2015, 5, 5),
-                    Name = "Zdzislaw",
+                  /*  Name = "Zdzislaw",
                     Surname = "Nowak",
-                    Nick = "M4s4kr4t0r",
+                    Nick = "M4s4kr4t0r",*/
                     Portfolio = new List<PortfolioBusinessModel>
                     {
                         new PortfolioBusinessModel()
@@ -49,9 +49,9 @@ namespace Phoenix.Bll.Logic.TeamLeasing
                             StartWorkHour = 8
                         },
                     ExperienceFrom = new DateTime(2012, 3, 1),
-                    Name = "Jan",
+                   /* Name = "Jan",
                     Surname = "Kowalski",
-                    Nick = "kowal",
+                    Nick = "kowal",*/
                     Portfolio = new List<PortfolioBusinessModel>
                     {
                         new PortfolioBusinessModel()
@@ -92,7 +92,7 @@ namespace Phoenix.Bll.Logic.TeamLeasing
 
         public void RentTeam(IDeveloperTeamBusinessModel developerTeam)
         {
-            var test = developerTeam.TeamLeader.Nick;
+            //var test = developerTeam.TeamLeader.Nick;
         }
     }
 }

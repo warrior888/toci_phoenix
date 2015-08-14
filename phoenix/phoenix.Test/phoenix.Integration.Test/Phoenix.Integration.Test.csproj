@@ -128,6 +128,8 @@
     <Compile Include="Developers\Patryk\AutoMapper\AnotherClassForMap.cs" />
     <Compile Include="Developers\Patryk\AutoMapper\AutoMapperTest.cs" />
     <Compile Include="Developers\Patryk\AutoMapper\ClassForMapping.cs" />
+    <Compile Include="Developers\Patryk\BLL\TeamLeasing\TeamLeasingLogicTest.cs" />
+    <Compile Include="Developers\Patryk\DbTests\DalToBll\FetchDeveloperFromDbTest.cs" />
     <Compile Include="Developers\Patryk\DbTests\GenerateModelsTest.cs" />
     <Compile Include="Developers\Patryk\GeneratedModels\ColumnNameToPropertyTest.cs" />
     <Compile Include="Developers\Terry\DbTests\DbConnectionTest.cs" />
@@ -180,7 +182,6 @@
   <ItemGroup>
     <Folder Include="Developers\Duch\destination\" />
     <Folder Include="Developers\Kielich\" />
-    <Folder Include="Developers\Patryk\BLL\" />
     <Folder Include="Developers\S2yfr4nt\kupczon\" />
   </ItemGroup>
   <ItemGroup>

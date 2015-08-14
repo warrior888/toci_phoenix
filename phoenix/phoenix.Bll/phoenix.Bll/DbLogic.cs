@@ -1,4 +1,6 @@
-﻿using Phoenix.Bll.Interfaces;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Phoenix.Bll.Interfaces;
 using Toci.Db.ClusterAccess;
 using Toci.Db.Interfaces;
 
@@ -22,7 +24,17 @@ namespace Phoenix.Bll
         {
             // podac obiekt pracujacy z baza danych
             return DbHandleFactory.GetHandle(SqlClientKind.PostgreSql, user, password, dbAddress, dbName);
-
         }
+
+        protected List<T> FetchModelsFromDb<T>(IModel model)
+        {
+            return model.GetDataRowsList(DbHandle.GetData(model)).Cast<T>().ToList();
+        } 
+        
+        protected T FetchModelFromDb<T>(IModel model)
+        {
+            var modelFromDb = model.GetDataRowsList(DbHandle.GetData(model));
+            return modelFromDb.Count == 0 ? default(T) : (T) modelFromDb[0];
+        } 
     }
 }
