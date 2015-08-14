@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Toci.Utilities.Common.String;
 using Toci.Utilities.Interfaces.Generator.DatabaseModelGenerator;
 
@@ -56,11 +58,11 @@ namespace {1}
         private const string DefaultPropertyPattern =
         @" 
         public const string {0:U} = ""{0}"";
-        public {1} {0}
+        public {1} {2}
             {{
                 get
                 {{
-                     return ({1}) Fields[{0:U}].GetValue();
+                     return GetValue<{1}>({0:U});
                 }}
                 set
                 {{
@@ -99,7 +101,9 @@ using Toci.Db.Interfaces";
         /// </summary>
         public string GetFilledPropertyTemplate(params string[] values)
         {
-            return string.Format(new UpperAndLowerStringFormat(),PropertyPattern,values);
+            List<string> valuesWithPropName = values.ToList();
+            valuesWithPropName.Add(ConvertColumnNameToPropertyName(values[0]));
+            return string.Format(new UpperAndLowerStringFormat(), PropertyPattern, valuesWithPropName.ToArray());
         }
 
         /// <summary>
@@ -122,6 +126,36 @@ using Toci.Db.Interfaces";
             return string.Format(ClassPattern, values);
             
             
+        }
+
+        private string FirstLetterToUpper(string str)
+        {
+            return char.ToUpper(str[0]) + str.Substring(1);
+        }
+
+        private string ConvertColumnNameToPropertyName(string columnName)
+        {
+            var splitColumnName = columnName.Split('_');
+            for (int i = 0; i < splitColumnName.Length; i++)
+            {
+                splitColumnName[i] = FirstLetterToUpper(splitColumnName[i]);
+            }
+            return  string.Join("", splitColumnName); 
+        }
+
+        // ;)
+        private string ConvertSystemTypeNameToNormalTypeName(string typeName)
+        {
+            switch (typeName)
+            {
+                case "System.Int32":
+                    typeName = "int";
+                    break;
+                case "System.String":
+                    typeName = "string";
+                    break;
+            }
+            return typeName;
         }
     }
 }

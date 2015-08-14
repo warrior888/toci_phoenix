@@ -1,9 +1,6 @@
-﻿using System.Linq.Expressions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Toci.Utilities.Abstraction.Generator.DatabaseModelGenerator;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Toci.Utilities.Generator.DatabaseModelGenerator;
 using Toci.Utilities.Generator.DatabaseModelGenerator.DbDdlParser;
-using Toci.Utilities.Test.Developers.Mg;
 
 namespace Toci.Utilities.Test.Developers.Warrior
 {

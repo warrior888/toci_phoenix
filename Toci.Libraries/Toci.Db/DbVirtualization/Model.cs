@@ -55,6 +55,16 @@ namespace Toci.Db.DbVirtualization
             }
         }
 
+        protected T GetValue<T>(string key)
+        {
+            if (Fields.ContainsKey(key))
+            {
+                return (T)Fields[key].GetValue();
+            }
+
+            return default(T);
+        }
+
         protected void SetValue<T>(Model model, string key, T value)
         {
             if (model.Fields.ContainsKey(key))
@@ -94,7 +104,7 @@ namespace Toci.Db.DbVirtualization
         public List<IModel> GetDataRowsList(DataSet table)
         {
 
-            return table.Tables[0].Rows.OfType<DataRow>().Select(item => GetDataRow(item, table.Tables[0].Columns)).ToList();
+           return table.Tables[0].Rows.OfType<DataRow>().Select(item => GetDataRow(item, table.Tables[0].Columns)).ToList();
 
         }
 

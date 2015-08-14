@@ -24,9 +24,8 @@ namespace Toci.Utilities.Generator.DatabaseModelGenerator.DbDdlParser
             int startPosition = ddl.ToUpper().IndexOf(_leftParenthesis) + _shiftValue; ;
             int endPosition = ddl.ToUpper().LastIndexOf(_rightParenthesis);
            
-                var splittedString = (ddl.Substring(startPosition, endPosition - startPosition).Trim()).Split(_delimiter);
-
-                return String.Join(_delimiter.ToString(), splittedString.Select(item => item.Trim()));
+            var splittedString = (ddl.Substring(startPosition, endPosition - startPosition).Trim()).Split(_delimiter);
+            return String.Join(_delimiter.ToString(), splittedString.Select(item => item.Trim()));
           
         }
 
@@ -38,6 +37,11 @@ namespace Toci.Utilities.Generator.DatabaseModelGenerator.DbDdlParser
                 var extract = ddl.Substring(startPosition, endPosition - startPosition).Trim();
                 return extract;
 
+        }
+
+        private string FirstLetterToUpper(string str)
+        {
+            return char.ToUpper(str[0]) + str.Substring(1);
         }
     }
 }

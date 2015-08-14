@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Toci.Utilities.Abstraction.Generator.DatabaseModelGenerator.DbDdlEntryParser;
 using Toci.Utilities.Generator.DatabaseModelGenerator.DbDdlParser;
 
 namespace Toci.Utilities.Test.Developers.DysQ
