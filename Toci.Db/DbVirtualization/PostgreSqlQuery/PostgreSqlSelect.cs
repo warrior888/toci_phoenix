@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Toci.Db.Interfaces;
 
 namespace Toci.Db.DbVirtualization.PostgreSqlQuery
@@ -17,7 +14,7 @@ namespace Toci.Db.DbVirtualization.PostgreSqlQuery
 
         public override string GetQuery(IModel model)
         {
-                //string columnNames = string.Join(COLUMNS_DELIMITER, model.GetFields().Select(item => item.Key));
+            //string columnNames = string.Join(COLUMNS_DELIMITER, model.GetFields().Select(item => item.Key));
             string columnNames = "*";
 
             var whereList = new List<string>();

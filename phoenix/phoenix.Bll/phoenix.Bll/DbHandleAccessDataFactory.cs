@@ -12,8 +12,8 @@ namespace Phoenix.Bll
             {
                 {"Patryk",(() => new DbHandleAccessData()
                 {
-                    UserName = "patrykj123", 
-                    Password = "pentagram",
+                    UserName = "postgres", 
+                    Password = "haslo123",
                     DbAdress = "localhost",
                     DbName = "philadelphia"
                 })},

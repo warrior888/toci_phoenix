@@ -17,8 +17,8 @@ namespace Phoenix.Bll
 
         protected DbLogic()
         {
-            //DbHandleAccessData accessData = new DbHandleAccessDataFactory().Create("Patryk");
-            DbHandleAccessData accessData = new DbHandleAccessDataFactory().Create("Terry");
+            DbHandleAccessData accessData = new DbHandleAccessDataFactory().Create("Patryk");
+            //DbHandleAccessData accessData = new DbHandleAccessDataFactory().Create("Terry");
 
             DbHandle = GetDbHandle(accessData.UserName, accessData.Password,
                 accessData.DbAdress, accessData.DbName);
@@ -44,13 +44,21 @@ namespace Phoenix.Bll
 
         protected T FetchModelById<T>(int id) where T : Model, new()
         {
-            T model = new T() {Id = id};
+            T model = new T() { Id = id };
             model.SetSelect("id", SelectClause.Equal);
-
-            var result = FetchModelFromDb<T>(model);
-
-            return result == default(T) ? default(T) : result;
+            return FetchModelFromDb<T>(model);
         }
+
+        protected List<TModel> FetchModelsByColumnValue<TModel, TValue>(string columnName, SelectClause clause, TValue value)
+            where TModel : Model, new()
+            where TValue : new()
+        {
+            TModel model = new TModel();
+            model.SetSelect(columnName, clause, value);
+            return FetchModelsFromDb<TModel>(model);
+        }
+
+        //TODO CreateMap przy starcie apliakcji, warstwa między business model i db logic
 
         protected T GetElementById<T, TModel>(int id) where TModel : Model, new()
         {
@@ -66,8 +74,7 @@ namespace Phoenix.Bll
         {
             TModel model = FetchModelById<TModel>(id);
             
-            Mapper.CreateMap<TModel, T>()
-                  .ForMember(destMember, action);
+            
 
             return Mapper.Map<T>(model);
         }
@@ -76,7 +83,7 @@ namespace Phoenix.Bll
         {
             var modelsList = FetchModelsFromDb<TModel>(new TModel());
 
-            Mapper.CreateMap<TModel, T>();
+            
 
             return modelsList.Select(model => Mapper.Map<T>(model)).ToList();
         }
@@ -86,12 +93,7 @@ namespace Phoenix.Bll
         {
             var modelsList = FetchModelsFromDb<TModel>(new TModel());
 
-            Mapper.CreateMap<TModel, T>()
-                  .ForMember(destMember, action); 
-
             return modelsList.Select(model => Mapper.Map<T>(model)).ToList();
         }
-
-
     }
 }
