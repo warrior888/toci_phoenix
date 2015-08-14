@@ -30,21 +30,21 @@ namespace Phoenix.Bll
 
         }
 
-        protected List<T> FetchModelsFromDb<T>(IModel model)
+        protected List<T> FetchModelsFromDb<T>(IModel model) where T : Model
         {
             return model.GetDataRowsList(DbHandle.GetData(model)).Cast<T>().ToList();
         }
 
-        protected T FetchModelFromDb<T>(IModel model)
+        protected T FetchModelFromDb<T>(IModel model) where T : Model
         {
             var modelFromDb = model.GetDataRowsList(DbHandle.GetData(model));
             return modelFromDb.Count == 0 ? default(T) : (T)modelFromDb[0];
         }
 
-        protected T FetchModelById<T>(string columnName, SelectClause clause, int id) where T : Model, new()
+        protected T FetchModelById<T>(int id) where T : Model, new()
         {
             T model = new T() { Id = id };
-            model.SetSelect(columnName, clause);
+            model.SetSelect("id", SelectClause.Equal);
 
             var result = FetchModelFromDb<T>(model);
 
