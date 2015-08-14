@@ -47,7 +47,7 @@ $(document).ready(function(){
 $(function() {
 
     var navHeight = $("#navigation-bar").outerHeight();
-    var navSectionOffset = 0;
+    var navSectionOffset = 0; //distance between header and navbar
 
 
     $('a.page-scroll').bind('click', function(event) {
@@ -62,12 +62,7 @@ $(function() {
 
         //ContentLoader.OnClickLoading(destSection);      AJAX feature
 
-
-        if (docOffset >= 270) {
-            sectionOffset = navHeight + navSectionOffset;
-        } else {
-            sectionOffset = navHeight + navSectionOffset + 90; //rozkminic: jak wyci¹gn¹æ tê liczbê?
-        }
+        sectionOffset = navHeight + navSectionOffset;
 
         $('html, body').stop().animate({
             scrollTop: ($($anchor.attr('href')).offset().top - sectionOffset)
