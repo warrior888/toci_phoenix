@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Toci.Db.Interfaces;
 
 namespace Toci.Db.DbVirtualization.MsSqlQuery
@@ -22,13 +23,22 @@ namespace Toci.Db.DbVirtualization.MsSqlQuery
 
         protected virtual string GetSetStatement(IModel model)
         {
-            var list = model.GetFields().Where(x => !x.Value.IsPrimaryKey()).Select(item => string.Format(AssignmentPattern, item.Key, GetSurroundedValue(item.Value.GetValue()))).Cast<object>().ToList();
+            var list = model.GetFields().Where(x =>!IsObjectDefault(x.Value.GetValue()) && !x.Value.IsPrimaryKey()).
+                Select(item => string.Format(AssignmentPattern, item.Key, GetSurroundedValue(item.Value.GetValue()))).
+                Cast<object>().ToList();
             return string.Join(Comma, list);
+        }
+
+        private bool IsObjectDefault<T>(T obj)
+        {
+            return obj==null;
         }
 
         private string GetWhereStatement(IModel model)
         {
-            var list = (from item in model.GetFields() where item.Value.IsWhere() select string.Format(AssignmentPattern, item.Key, GetSurroundedValue(item.Value.GetValue()))).Cast<object>().ToList();
+            var list = (from item in model.GetFields() where item.Value.IsWhere() 
+                        select string.Format(AssignmentPattern, item.Key, GetSurroundedValue(item.Value.GetValue()))).
+                        Cast<object>().ToList();
             return string.Join(AndOperator, list);
         }
     }

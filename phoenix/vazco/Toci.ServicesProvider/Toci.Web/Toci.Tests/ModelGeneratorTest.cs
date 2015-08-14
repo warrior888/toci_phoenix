@@ -53,7 +53,7 @@ namespace Toci.Tests
             };
 
             var gen = new TociDbModelGeneratorWrapper();
-            gen.GenerateModel(model);
+            //gen.GenerateModel(model);
 
         }
     }

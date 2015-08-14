@@ -131,7 +131,7 @@ namespace Toci.Tests
                 //scopeid = 1,
                 //projectdata = "dsagfsgdh",
                 //hash = null,
-                projectauthor = "s2yfr4nt105",
+                projectauthor = "s2yfr4nt1051",
                 projectid = 1008
             };
             var result = dbQuery.Update(model, Projects.PROJECTID);

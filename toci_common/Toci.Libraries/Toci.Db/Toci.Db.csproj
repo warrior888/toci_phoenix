@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E45EA1C2-F40C-4903-94C3-30A885A71D33}</ProjectGuid>
+    <ProjectGuid>{C2377285-FA65-4545-91FB-6C4DC28155F5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Toci.Db</RootNamespace>

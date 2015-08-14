@@ -50,8 +50,8 @@
     <Compile Include="VazcoDb\VazcoTable.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\Toci.Db\Toci.Db.csproj">
-      <Project>{e45ea1c2-f40c-4903-94c3-30a885a71d33}</Project>
+    <ProjectReference Include="..\..\..\..\..\toci_common\Toci.Libraries\Toci.Db\Toci.Db.csproj">
+      <Project>{c2377285-fa65-4545-91fb-6c4dc28155f5}</Project>
       <Name>Toci.Db</Name>
     </ProjectReference>
     <ProjectReference Include="..\EncodingLib\EncodingLib.csproj">
