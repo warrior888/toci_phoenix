@@ -113,6 +113,7 @@
     <Compile Include="GeneratedModels\portfolio_skills_technologies.cs" />
     <Compile Include="GeneratedModels\roles.cs" />
     <Compile Include="GeneratedModels\skills_technologies.cs" />
+    <Compile Include="GeneratedModels\skills_view.cs" />
     <Compile Include="GeneratedModels\users.cs" />
     <Compile Include="GeneratedModels\users_portfolio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -127,9 +128,7 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="GeneratedModels\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
   <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
