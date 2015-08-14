@@ -4,11 +4,11 @@
 //header('Content-Type: text/html; charset=UTF-8');
 
 
-define("CONNECTION_STRING","host=127.0.0.1 user=postgres password=beatka911 dbname=shark");
+define("CONNECTION_STRING","host=127.0.0.1 user=postgres password=beatka dbname=shark");
 define("DB_HOST", "127.0.0.1");
 define("DB_NAME", "shark");
 define("DB_USER", "postgres");
-define("DB_PASS", "beatka911");
+define("DB_PASS", "beatka");
 define("LOGIN_USER", "toci");
 define("LOGIN_PASS", 'da2196fe5e604bf3d3fca27af6515e4c');
 define("SPRZEDAWCA","

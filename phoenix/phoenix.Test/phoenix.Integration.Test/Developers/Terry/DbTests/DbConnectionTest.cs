@@ -28,6 +28,9 @@ namespace Phoenix.Integration.Test.Developers.Terry.DbTests
             UsersLogic usersLogic = new UsersLogic();
             var allUsers = usersLogic.GetAllUsers();
             var userById = usersLogic.GetUserById(3);
+
+            SkillLogic skillLogic = new SkillLogic();
+            var allSkills = skillLogic.GetUserSkills(4);
         }
-}
+    }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Phoenix.Bll.BusinessModels.DevelopersList;
 using Phoenix.Bll.Interfaces.BusinessModels.DevelopersList;
 using Phoenix.Bll.Interfaces.Logic.DevelopersList;
@@ -10,8 +11,13 @@ namespace Phoenix.Bll.Logic.DevelopersList
     {
         public IEnumerable<ISkillBusinessModel> GetUserSkills(int userId)
         {
-            ISkillBusinessModel skillBusinessModel = new SkillBusinessModel();
-            //List<portfolio> userPortfolioFromDb = FetchModelsFromDb<portfolio>(userPortfolioToDb);
+            var all = GetAllElements<ISkillBusinessModel, skills_view>();
+
+            foreach (var skill in  all)
+            {
+                
+            }
+
             return null;
         }
     }

@@ -2,31 +2,17 @@
 
 -- DROP TABLE services;
 
+
+
 CREATE TABLE services
 (
   id serial NOT NULL,
   name text,
-<<<<<<< HEAD
-  surname text,
-  email text,
-  phone text,
-  chosencourse text,
-  signature text,
-  mailconfirmed boolean,
-  CONSTRAINT applicants_pkey PRIMARY KEY (id)
-);
-=======
   price text,
   CONSTRAINT services_pkey PRIMARY KEY (id)
-)
-WITH (
-  OIDS=FALSE
 );
-ALTER TABLE services
-  OWNER TO postgres;
 
-
->>>>>>> 3769671cabb5f7a1f7710e9c6f187da5655eb174
+-- Table: clients
 
 -- DROP TABLE clients;
 
