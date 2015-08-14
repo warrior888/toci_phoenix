@@ -8,39 +8,55 @@ using DbCredentials.DbLogic.CredentialsModels;
 
 namespace DbCredentials.BusinessLogic
 {
-    class BusinessLogic
+    public class BusinessLogic
     {
         ScopesLogic scopesLogic = new ScopesLogic();
         ProjectsLogic projectsLogic = new ProjectsLogic();
 
         public bool AddProject(Scopes scopesModel, Projects projectsModel)
         {
-            return scopesLogic.AddScope(scopesModel) && projectsLogic.AddProject(projectsModel);
+            if (!scopesLogic.AddScope(scopesModel))
+            {
+                return false;
+            }
+            projectsModel.scopeid = scopesLogic.GetScopeId(scopesModel).scopeid;
+
+            return  projectsLogic.AddProject(projectsModel);
         }
 
-        public bool IsProjectExist(Projects model)
+        public Projects LoadProject(Projects model, List<Scopes> listOfScopes)
         {
-            return projectsLogic.IsProjectExist(model);
+            return projectsLogic.LoadProject(model, listOfScopes);
         }
 
-        public Projects LoadProject(Projects model, List<Scopes> listOfModels)
+        public List<Projects> LoadProjects(List<Scopes> listOfScopes)
         {
-            return projectsLogic.LoadProject(model, listOfModels);
+            return projectsLogic.LoadProjects(listOfScopes);
         }
 
-        public List<Projects> LoadProject(List<Scopes> listOfModels)
+        public bool DeleteProject(Projects model, List<Scopes> listOfScopes)
         {
-            return projectsLogic.LoadProjects(listOfModels);
+            return projectsLogic.DeleteProject(model, listOfScopes);
         }
 
-        public bool DeleteProject(Projects model, List<Scopes> listOfModels)
+        public bool UpdateProject(Projects model, List<Scopes> listOfScopes)
         {
-            return projectsLogic.DeleteProject(model, listOfModels);
+            return projectsLogic.UpdateProject(model, listOfScopes);
         }
 
-        public bool UpdateProject(Projects model, List<Scopes> listOfModels)
+        public List<Scopes> LoadScopes(Scopes model)
         {
-            return projectsLogic.UpdateProject(model, listOfModels);
+            return scopesLogic.LoadScopes(model);
+        }
+
+        public bool DeleteScope(Scopes model)
+        {
+            return scopesLogic.DeleteScope(model);
+        }
+
+        public bool UpdateScope(Scopes model)
+        {
+            return scopesLogic.UpdateScope(model);
         }
 
     }

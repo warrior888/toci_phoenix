@@ -27,9 +27,15 @@ namespace DbCredentials.DbLogic
             var secret = GetSecret(path, pksecret);
             var generateSecret = new GenerateSecret(secret);
             var hash = generateSecret.GetSecret();
-
-            projectsModel.projectdata = new TociCrypting().EncryptStringAes(projectsModel.projectdata, secret, hash);
-            projectsModel.hash = hash;
+            try
+            {
+                projectsModel.projectdata = new TociCrypting().EncryptStringAes(projectsModel.projectdata, secret, hash);
+                projectsModel.hash = hash;
+            }
+            catch (Exception)
+            {
+                // ignored
+            }
         }
 
         public static List<IModel> DecryptModels(this List<IModel> list)

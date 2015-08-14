@@ -28,11 +28,11 @@ v	Usuwanie projektu:
 	
 v	Zwraca success/fail 	
 	
-	Update projektu
+v	Update projektu
 	- ProjectName
 	- Nowe ProjectData
 	- Lista scopeów u¿ytkownika
 
-	Sprawdza czy ktoœ taki mo¿e zrobiæ update
+v	Sprawdza czy ktoœ taki mo¿e zrobiæ update
 	updateuje nowe projectdata
 	

@@ -19,7 +19,7 @@ namespace DbCredentials.BusinessLogic
         {
             if (IsProjectExist(model))
             {
-                return failure;
+                throw new Exception("Project exist");
             }
             return dbQuery.Save(model) != notSaved;
         }
@@ -32,15 +32,23 @@ namespace DbCredentials.BusinessLogic
 
         public Projects LoadProject(Projects model, List<Scopes> listOfModels)
         {
-
+            if (!IsProjectExist(model))
+            {
+                throw new Exception("Project does not exist. ");
+            }
             var listOfProjects = LoadProjects(listOfModels);
             var project = new Projects();
+            var error= true;
 
             foreach (var item in listOfProjects.Where(item => item.projectname.Equals(model.projectname)))
             {
+                error = false;
                 project = item;
-            }               
-            
+            }
+            if (error)
+            {
+                throw new Exception("There is no valid scopes, for this project.");
+            }
             return project;
         }
 
@@ -53,33 +61,43 @@ namespace DbCredentials.BusinessLogic
             {
                 var projectModel = new Projects { scopeid = item.scopeid };
                 var loadedListOfProjects = dbQuery.Load(projectModel, Projects.SCOPEID).Cast<Projects>().ToList();
-                foreach (var project in loadedListOfProjects)
-                {  
-                    listOfProjects.Add(project);
-                }
+                listOfProjects.AddRange(loadedListOfProjects);
             }
-            return listOfProjects;
+            if (listOfProjects.Any())
+            {
+                return listOfProjects;
+            }
+            throw new Exception("There is no valid scopes.");
         }
 
         public bool DeleteProject(Projects model, List<Scopes> listOfModels)
         {
-            var project = LoadProject(model, listOfModels);
+            if (!IsProjectExist(model))
+            {
+                throw new Exception("Project does not exist. ");
+            }
+            
             try
             {
+                var project = LoadProject(model, listOfModels);
                 dbQuery.Delete(project, Projects.PROJECTNAME);
                 return true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return false;
+                throw new Exception("Cannot delete project. " + ex.Message);
             }
         }
 
         public bool UpdateProject(Projects model, List<Scopes> listOfModels)
         {
-            var project = LoadProject(model, listOfModels);
+            if (!IsProjectExist(model))
+            {
+                throw new Exception("Project does not exist. ");
+            }
             try
             {
+                var project = LoadProject(model, listOfModels);
                 if (project.projectname.Equals(model.projectname))
                 {
                     dbQuery.Update(model, Projects.PROJECTNAME);
@@ -87,9 +105,9 @@ namespace DbCredentials.BusinessLogic
                 }
                 return false;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return false;
+                throw new Exception("Cannot update project. " + ex.Message);
             }
         }
     }

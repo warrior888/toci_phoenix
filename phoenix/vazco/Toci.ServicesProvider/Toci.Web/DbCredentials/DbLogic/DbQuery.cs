@@ -22,14 +22,15 @@ namespace DbCredentials.DbLogic
 
         public int Save(Model model)
         {
-            dbUtils.ModficateDate(model);
-            dbUtils.Encrypt(model);
-            return dbHandle.InsertData(model);
+            var newModel = dbUtils.GetNewModel(model);
+            dbUtils.ModficateDate(newModel);
+            dbUtils.Encrypt(newModel);
+            return dbHandle.InsertData(newModel);
         }
 
         public List<IModel> Load(Model model)
         {
-      
+            dbUtils.SetDefaultValue(model);
             var dataSet = dbHandle.GetData(model);
             var listOfModels = model.GetDataRowsList(dataSet);
 
@@ -48,6 +49,8 @@ namespace DbCredentials.DbLogic
             dbUtils.ModficateDate(model);
             dbUtils.Encrypt(model);
             return dbHandle.UpdateData(model);
+            
+            
         }
 
         public int Delete(Model model,string columnName)

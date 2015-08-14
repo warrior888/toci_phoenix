@@ -8,6 +8,7 @@ namespace DbCredentials.DbLogic.CredentialsModels
         public Scopes() : base("Scopes")
         {
             scopename = null;
+            //scopeid = default(int);
         }
          
         public const string SCOPEID = "scopeid";

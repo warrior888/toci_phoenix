@@ -16,6 +16,57 @@ namespace DbCredentials.DbLogic
             {"Scopes", columnName => columnName.ToLower().Equals("scopeid")},
         };
 
+        protected Dictionary<string, Func<Model, Model>> ModelsDictionary = new Dictionary<string, Func<Model, Model>>
+        {
+            {"Projects", ProjectsModel},
+            {"Scopes", ScopesModel}
+        };
+
+        protected Dictionary<string, Action<Model>> defaultValues = new Dictionary<string, Action<Model>>
+        {
+            {
+                "Projects", (model) =>
+                        {
+                            var refModel = (Projects) model;
+                            refModel.projectid = default(int);
+                        }
+            },
+            {
+                "Scopes", (model) => 
+                        {
+                            var refModel = (Scopes) model;
+                            refModel.scopeid = default(int);
+                        }
+            },
+        };
+
+        protected static Model ScopesModel(Model model)
+        {
+            var refModel = (Scopes)model;
+            var newModel = new Scopes {scopename = refModel.scopename};
+            return newModel;
+        }
+
+        protected static Model ProjectsModel(Model model)
+        {
+            var refModel = (Projects)model;
+            var newModel = new Projects
+            {
+                projectname = refModel.projectname,
+                projectdata = refModel.projectdata,
+                projectauthor = refModel.projectauthor,
+                modificationdate = refModel.modificationdate,
+                hash = refModel.hash,
+                scopeid = refModel.scopeid
+            };
+            return newModel;
+        }
+
+        public void SetDefaultValue(Model model)
+        {
+            defaultValues[model.GetTableName()](model);
+        }
+
         public void WhereClause(Model model, string columnName)
         {
             model.SetWhere(columnName.ToLower());
@@ -24,6 +75,11 @@ namespace DbCredentials.DbLogic
             {
                 model.SetPrimaryKey(columnName.ToLower());
             }
+        }
+
+        public Model GetNewModel(Model model)
+        {
+            return ModelsDictionary[model.GetTableName()](model);
         }
 
         public void ModficateDate(Model model)

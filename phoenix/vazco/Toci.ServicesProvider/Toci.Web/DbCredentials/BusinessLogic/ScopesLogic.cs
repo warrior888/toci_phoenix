@@ -18,7 +18,14 @@ namespace DbCredentials.BusinessLogic
             {
                 return exist;
             }
-            return dbQuery.Save(model) != notSaved;
+            try
+            {
+                return dbQuery.Save(model) != notSaved;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Cannot add scope. " + ex.Message);
+            }
         }
 
         public bool IsScopeExist(Scopes model)
@@ -46,6 +53,46 @@ namespace DbCredentials.BusinessLogic
         public List<Scopes> GetScopesId(List<Scopes> scopesList)
         {
             return scopesList.Select(GetScopeId).ToList();
+        }
+
+        public List<Scopes> LoadScopes(Scopes model)
+        {
+            return dbQuery.Load(model).Cast<Scopes>().ToList();
+        }
+
+        public bool DeleteScope(Scopes model)
+        {
+            if (!IsScopeExist(model))
+            {
+                throw new Exception("Scope does not exist. ");
+            }
+            try
+            {
+                dbQuery.Delete(model, Scopes.SCOPENAME);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Cannot delete scope. " + ex.Message);
+            }
+        }
+
+        public bool UpdateScope(Scopes model)
+        {
+            if (!IsScopeExist(model))
+            {
+                throw new Exception("Scope does not exist. ");
+            }
+            try
+            {
+                
+                dbQuery.Update(GetScopeId(model), Scopes.SCOPEID);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Cannot update scope. " + ex.Message);
+            }
         }
     }
 }

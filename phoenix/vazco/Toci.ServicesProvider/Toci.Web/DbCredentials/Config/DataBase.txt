@@ -1,6 +1,6 @@
 ﻿CREATE TABLE Scopes	
    (ScopeID int PRIMARY KEY NOT NULL,
-    ScopeName  varchar(MAX) NOT NULL
+    ScopeName varchar(MAX) NOT NULL
 );
 
 
@@ -15,7 +15,10 @@ CREATE TABLE Projects
    (ProjectID int PRIMARY KEY NOT NULL,
     ScopeID int NOT NULL references Scopes(ScopeID),
     ProjectName varchar(MAX) NOT NULL,
-    ProjectData  varchar(MAX) NOT NULL
+	ProjectAuthor varchar(MAX) NOT NULL,
+    ProjectData varchar(MAX) NOT NULL,
+	ModificationDate varchar(MAX) NOT NULL,
+	Hash varchar(MAX) NOT NULL,
 );
 
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net.NetworkInformation;
+using DbCredentials.BusinessLogic;
 using DbCredentials.DbLogic;
 using DbCredentials.DbLogic.CredentialsModels;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -12,6 +13,29 @@ namespace Toci.Tests
     public class DbCredentials
     {
         DbQuery dbQuery = new DbQuery();
+
+        [TestMethod]
+        public void AddProject()
+        {
+            BusinessLogic business = new BusinessLogic();
+            ScopesLogic scopes = new ScopesLogic();
+            ProjectsLogic projects = new ProjectsLogic();
+            Scopes modScopes = new Scopes
+            {
+                scopename = "admin2"
+            };
+            Projects modProjects = new Projects
+            {
+                projectdata = "traktor",
+                projectname = "taktak2",
+                projectauthor = "S2yfr4nt",
+            };
+            var result = business.AddProject(modScopes, modProjects);
+
+
+
+        }
+
         [TestMethod]
         public void TestMethod1()
         {
@@ -77,7 +101,8 @@ namespace Toci.Tests
                // modificationdate = 
                 //projectid = 2
             };
-            
+            ScopesLogic scopes = new ScopesLogic();
+            var result2 = scopes.IsScopeExist(scmodel);
             var result = dbQuery.Save(model); //, Projects.PROJECTID);
         }
 
@@ -91,10 +116,10 @@ namespace Toci.Tests
                 //projectdata = "dsagfsgdh",
                 //projectauthor = "s2yfr4nt",
                 // modificationdate = 
-                //projectid = 2
+                //projectid = 1
             };
-
-            var result = dbQuery.Load(model, Projects.SCOPEID); //, Projects.PROJECTID);
+            //model.SetPrimaryKey(Projects.PROJECTID);
+            var result = dbQuery.Load(model); //, Projects.PROJECTID);
         }
 
         [TestMethod]
@@ -102,12 +127,12 @@ namespace Toci.Tests
         {
             Projects model = new Projects
             {
-                projectname = "daadfsafgsdbds",
-                scopeid = 1,
-                projectdata = "dsagfsgdh",
+                //projectname = "daadfsafgsdbds",
+                //scopeid = 1,
+                //projectdata = "dsagfsgdh",
                 //hash = null,
-                projectauthor = "22222s2yfr4nt",
-                projectid = 2
+                projectauthor = "s2yfr4nt105",
+                projectid = 1008
             };
             var result = dbQuery.Update(model, Projects.PROJECTID);
         }
@@ -121,7 +146,7 @@ namespace Toci.Tests
                 //scopeid = 1,
                 //projectdata = "dsagfsgdh",
                 //hash = null,
-                projectid = 2
+                projectid = 1006
             };
             var result = dbQuery.Delete(model, Projects.PROJECTID);
         }

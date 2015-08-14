@@ -1,5 +1,4 @@
-﻿using Toci.Db.DbVirtualization;
-
+﻿
 namespace Toci.CredentialsApi.Models
 {
     public class ScopesModel
