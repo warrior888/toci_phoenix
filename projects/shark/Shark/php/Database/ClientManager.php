@@ -10,7 +10,7 @@ require_once "Models/Model.php";
 require_once "Postgres/PgModel.php";
 
 
-class ClientsManager extends PgModel{
+class ClientManager extends PgModel{
 
     private $table="clients";
 
@@ -29,10 +29,16 @@ class ClientsManager extends PgModel{
         return pg_fetch_all($this->dbHandle->RunQuery($query));
     }
 
-    public function UpdateClient($set,$where){
+    public function UpdateClient($set,$where,$returnString=false){
 
         $query=$this->dbUpdate->Update($this->table,$set,$where);
-        return $this->dbHandle->RunQuery($query);
+
+        if(!$returnString){
+            return $this->dbHandle->RunQuery($query);
+        }else{
+        return $query;
+        }
+
     }
 
 

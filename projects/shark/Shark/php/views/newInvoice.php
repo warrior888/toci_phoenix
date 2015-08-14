@@ -3,17 +3,17 @@
 
 include_once __DIR__."/../Database/ClientManager.php";
 include_once __DIR__."/../Database/ServiceManager.php";
+include_once __DIR__."/../utils.php";
 
-header('Content-Type: text/html; charset=UTF-8');
 
-
-$manager=new ClientsManager();
+$manager=new ClientManager();
 $clients=array_reverse($manager->GetClient("id,name"));
 
 $manager->CloseConnection();
 
 $manager=new ServiceManager();
 $services=$services=array_reverse($manager->GetService("*"));
+
 
 echo '<form action="../Database/Models/generateInvoice.php" method=\'get\'>';
 echo "<table border=2>";
@@ -50,8 +50,10 @@ echo '<td>
 <input type="text" name="termin" value="7"> dni
 </td></tr>';
 
+echo '<tr><td>Nr faktury</td><td><input type="text"  value="'. getNextInvoiceNumber() .'"  name="invoiceNumber"></td></tr>';
 
-echo "<tr><td><input type='submit'></td></tr>";
+echo '<tr><td>Cena</td><td><input type="text" name="price"></td></tr>';
 
 
-echo "</form>";
+echo '<tr><td colspan="2" align="right"><input type="submit"></td></tr>';
+echo "</form></table>";
