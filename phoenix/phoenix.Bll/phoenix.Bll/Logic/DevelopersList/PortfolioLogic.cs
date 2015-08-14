@@ -12,12 +12,10 @@ namespace Phoenix.Bll.Logic.DevelopersList
     {
         public IEnumerable<IPortfolioBusinessModel> GetUserPortfolio(int userId)
         {
-            portfolio userPortfolioToDb = new portfolio()
+            List<portfolio> userPortfolioFromDb = FetchModelsFromDb<portfolio>(new portfolio()
             {
                 FkIdUsers = userId
-            };
-            userPortfolioToDb.SetSelect("fk_id_users", SelectClause.Equal);
-            List<portfolio> userPortfolioFromDb = FetchModelsFromDb<portfolio>(userPortfolioToDb);
+            }.SetSelect("fk_id_users", SelectClause.Equal));
 
             return userPortfolioFromDb.Select(portfolio => new PortfolioBusinessModel()
             {
