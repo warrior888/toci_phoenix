@@ -10,6 +10,8 @@ a.button {
 
 <?php
 
+header('Content-Type: text/html; charset=UTF-8');
+
 include_once "../Database/ClientManager.php";
 
 if(!isset($_POST['add'])) {

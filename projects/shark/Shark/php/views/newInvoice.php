@@ -1,6 +1,8 @@
 
 <?php
 
+header('Content-Type: text/html; charset=UTF-8');
+
 include_once __DIR__."/../Database/ClientManager.php";
 include_once __DIR__."/../Database/ServiceManager.php";
 include_once __DIR__."/../utils.php";
