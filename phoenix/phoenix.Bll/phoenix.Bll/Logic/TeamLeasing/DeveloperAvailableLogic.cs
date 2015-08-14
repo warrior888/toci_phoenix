@@ -1,5 +1,7 @@
-﻿using Phoenix.Bll.Interfaces.BusinessModels.TeamLeasing;
+﻿using AutoMapper;
+using Phoenix.Bll.Interfaces.BusinessModels.TeamLeasing;
 using Phoenix.Bll.Interfaces.Logic.TeamLeasing;
+using Phoenix.Dal.GeneratedModels;
 
 namespace Phoenix.Bll.Logic.TeamLeasing
 {
@@ -7,7 +9,11 @@ namespace Phoenix.Bll.Logic.TeamLeasing
     {
         public IDeveloperAvailableBusinessModel GetDeveloperAvailableById(int id)
         {
-            throw new System.NotImplementedException();
+            return GetElementById<IDeveloperAvailableBusinessModel, developers_available>(
+                id, 
+                dest => dest.AvailableFor, 
+                opt => opt.MapFrom(src => src.AvailbleFor)
+                );
         }
     }
 }

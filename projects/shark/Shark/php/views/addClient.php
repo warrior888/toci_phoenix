@@ -1,12 +1,11 @@
 <style>
-    a.button {
-        -webkit-appearance: button;
-        -moz-appearance: button;
-        appearance: button;
-
-        text-decoration: none;
-        color: initial;
-    }
+a.button {
+	-webkit-appearance: button;
+	-moz-appearance: button;
+	appearance: button;
+	text-decoration: none;
+	color: initial;
+}
 </style>
 
 <?php
@@ -15,7 +14,7 @@ include_once "../Database/ClientManager.php";
 
 if(!isset($_POST['add'])) {
 
-    echo '
+	echo '
 <form action="addClient.php" method="post">
     <table>
     <pre>
@@ -31,20 +30,20 @@ if(!isset($_POST['add'])) {
 ';
 } else{
 
-    $client=array();
-    $client['name']=$_POST['name'];
-    $client['address']=$_POST['address'];
-    $client['postalcode']=$_POST['postalcode'];
-    $client['city']=$_POST['city'];
-    $client['nip']=$_POST['nip'];
+	$client=array();
+	$client['name']=$_POST['name'];
+	$client['address']=$_POST['address'];
+	$client['postalcode']=$_POST['postalcode'];
+	$client['city']=$_POST['city'];
+	$client['nip']=$_POST['nip'];
 
-    $manager=new ClientManager();
-    if(!$manager->AddClient($client)){
-        die("Wystąpił błąd podczas zapisu do db");
-    }{
-        echo "Dodano klienta<br />";
-        echo '<a href="JavaScript:window.close()" id="zamknij" class="button">Zamknij okno</a>';
-    }
+	$manager=new ClientManager();
+	if(!$manager->AddClient($client)){
+		die("Wystąpił błąd podczas zapisu do db");
+	}{
+		echo "Dodano klienta<br />";
+		echo '<a href="JavaScript:window.close()" id="zamknij" class="button">Zamknij okno</a>';
+	}
 
 }
 

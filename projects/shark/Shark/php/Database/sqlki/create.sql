@@ -1,11 +1,12 @@
--- Table: applicants
+-- Table: services
 
--- DROP TABLE applicants;
+-- DROP TABLE services;
 
-CREATE TABLE applicants
+CREATE TABLE services
 (
   id serial NOT NULL,
   name text,
+<<<<<<< HEAD
   surname text,
   email text,
   phone text,
@@ -13,16 +14,19 @@ CREATE TABLE applicants
   signature text,
   mailconfirmed boolean,
   CONSTRAINT applicants_pkey PRIMARY KEY (id)
+);
+=======
+  price text,
+  CONSTRAINT services_pkey PRIMARY KEY (id)
 )
 WITH (
   OIDS=FALSE
 );
-ALTER TABLE applicants
+ALTER TABLE services
   OWNER TO postgres;
 
 
-
--- Table: clients
+>>>>>>> 3769671cabb5f7a1f7710e9c6f187da5655eb174
 
 -- DROP TABLE clients;
 
@@ -35,12 +39,7 @@ CREATE TABLE clients
   city text,
   nip text,
   CONSTRAINT clients_pkey PRIMARY KEY (id)
-)
-WITH (
-  OIDS=FALSE
 );
-ALTER TABLE clients
-  OWNER TO postgres;
 
 
 
@@ -58,9 +57,4 @@ CREATE TABLE invoices
   CONSTRAINT invoices_client_id_fkey FOREIGN KEY (client_id)
       REFERENCES clients (id) MATCH SIMPLE
       ON UPDATE NO ACTION ON DELETE NO ACTION
-)
-WITH (
-  OIDS=FALSE
 );
-ALTER TABLE invoices
-  OWNER TO postgres;

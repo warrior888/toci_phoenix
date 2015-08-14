@@ -1,12 +1,11 @@
 <style>
-    a.button {
-        -webkit-appearance: button;
-        -moz-appearance: button;
-        appearance: button;
-
-        text-decoration: none;
-        color: initial;
-    }
+a.button {
+	-webkit-appearance: button;
+	-moz-appearance: button;
+	appearance: button;
+	text-decoration: none;
+	color: initial;
+}
 </style>
 
 <?php
@@ -15,7 +14,7 @@ include_once "../Database/ServiceManager.php";
 
 if(!isset($_POST['add'])) {
 
-    echo '
+	echo '
 <form action="addService.php" method="post">
     <table>
     <pre>
@@ -28,17 +27,17 @@ if(!isset($_POST['add'])) {
 ';
 } else{
 
-    $service=array();
-    $service['name']=$_POST['name'];
-    $service['price']=$_POST['price'];
+	$service=array();
+	$service['name']=$_POST['name'];
+	$service['price']=$_POST['price'];
 
-    $manager=new ServiceManager();
-    if(!$manager->AddService($service)){
-        die("Wystąpił błąd podczas zapisu do db");
-    }{
-        echo "Dodano usługę<br />";
-        echo '<a href="JavaScript:window.close()" id="zamknij" class="button">Zamknij okno</a>';
-    }
+	$manager=new ServiceManager();
+	if(!$manager->AddService($service)){
+		die("Wystąpił błąd podczas zapisu do db");
+	}{
+		echo "Dodano usługę<br />";
+		echo '<a href="JavaScript:window.close()" id="zamknij" class="button">Zamknij okno</a>';
+	}
 
 }
 

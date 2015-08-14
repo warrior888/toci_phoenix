@@ -6,13 +6,13 @@ require_once __DIR__.'/../Interfaces/IDbSelect.php';
 class PgSelect extends PgQuery implements IDbSelect {
 
 
-    public function Select($table ,$data , $where = false) {
+	public function Select($table ,$data , $where = false) {
 
-        $query = 'SELECT '.$data.' FROM ' . $table. $this->CreateWhereStatement($where);
+		$query = 'SELECT '.$data.' FROM ' . $table. $this->CreateWhereStatement($where);
 
-        $result = $query . ';';
+		$result = $query . ';';
 
-        return $result;
-    }
+		return $result;
+	}
 
 }

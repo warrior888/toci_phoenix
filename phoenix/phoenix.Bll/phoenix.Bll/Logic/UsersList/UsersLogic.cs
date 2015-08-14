@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using Phoenix.Bll.BusinessModels.UsersList;
+﻿using System.Collections.Generic;
+using System.Linq;
+using AutoMapper;
 using Phoenix.Bll.Interfaces.BusinessModels.UsersList;
 using Phoenix.Bll.Interfaces.Logic.UsersList;
 using Phoenix.Dal.GeneratedModels;
-using Toci.Db.DbVirtualization;
-
 
 namespace Phoenix.Bll.Logic.UsersList
 {
@@ -13,23 +11,12 @@ namespace Phoenix.Bll.Logic.UsersList
     {
         public IUsers GetUserById(int id)
         {
-            users userToDb = new users()
-            {
-                Id = id
-            };
-            userToDb.SetSelect("id",SelectClause.Equal);
-            users userFromDb = FetchModelFromDb<users>(userToDb);
-            return new Users()
-            {
-                Name = userFromDb.Name,
-                Surname = userFromDb.Surname,
-                Nick = userFromDb.Nick
-            };
+            return GetElementById<IUsers, users>(id);
         }
 
         public IEnumerable<IUsers> GetAllUsers()
         {
-            throw new NotImplementedException();
+            return GetAllElements<IUsers, users>();
         }
     }
 }

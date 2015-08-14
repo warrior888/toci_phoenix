@@ -2,6 +2,6 @@
 
 interface IDbHandle {
 
-    public function RunQuery($query);
-    
+	public function RunQuery($query);
+
 }
