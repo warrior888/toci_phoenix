@@ -8,12 +8,12 @@ require_once('PgHandle.php');
 
 class PgModel extends Model {
 
-    public function __construct() {
-        parent::__construct(
-                new PgDelete(), 
-                new PgInsert(), 
-                new PgSelect(), 
-                new PgUpdate(),
-                new PgHandle());
-    }
+	public function __construct() {
+		parent::__construct(
+		new PgDelete(),
+		new PgInsert(),
+		new PgSelect(),
+		new PgUpdate(),
+		new PgHandle());
+	}
 }

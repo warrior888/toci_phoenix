@@ -13,14 +13,7 @@ CREATE TABLE applicants
   signature text,
   mailconfirmed boolean,
   CONSTRAINT applicants_pkey PRIMARY KEY (id)
-)
-WITH (
-  OIDS=FALSE
 );
-ALTER TABLE applicants
-  OWNER TO postgres;
-
-
 
 -- Table: clients
 
@@ -35,12 +28,7 @@ CREATE TABLE clients
   city text,
   nip text,
   CONSTRAINT clients_pkey PRIMARY KEY (id)
-)
-WITH (
-  OIDS=FALSE
 );
-ALTER TABLE clients
-  OWNER TO postgres;
 
 
 
@@ -58,9 +46,4 @@ CREATE TABLE invoices
   CONSTRAINT invoices_client_id_fkey FOREIGN KEY (client_id)
       REFERENCES clients (id) MATCH SIMPLE
       ON UPDATE NO ACTION ON DELETE NO ACTION
-)
-WITH (
-  OIDS=FALSE
 );
-ALTER TABLE invoices
-  OWNER TO postgres;

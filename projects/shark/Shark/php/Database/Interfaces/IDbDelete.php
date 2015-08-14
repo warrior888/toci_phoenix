@@ -2,5 +2,5 @@
 
 interface IDbDelete {
 
-    public function Delete($table, $where = false);
+	public function Delete($table, $where = false);
 }

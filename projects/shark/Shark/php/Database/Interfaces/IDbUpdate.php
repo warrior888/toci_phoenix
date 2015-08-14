@@ -2,5 +2,5 @@
 
 interface IDbUpdate {
 
-    public function Update($table, $data, $where = false);
+	public function Update($table, $data, $where = false);
 }
