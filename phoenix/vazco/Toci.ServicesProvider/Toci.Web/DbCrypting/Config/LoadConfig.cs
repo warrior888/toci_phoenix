@@ -13,3 +13,15 @@
 
     }
 }
+
+/*
+
+CREATE TABLE VazcoTable
+   (id int IDENTITY PRIMARY KEY NOT NULL,
+    data varchar(MAX),
+	name varchar(MAX),
+	addingTime datetime,
+    hash varchar(MAX)
+);
+
+*/
