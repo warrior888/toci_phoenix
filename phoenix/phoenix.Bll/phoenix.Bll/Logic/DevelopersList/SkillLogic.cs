@@ -11,7 +11,7 @@ namespace Phoenix.Bll.Logic.DevelopersList
         public IEnumerable<ISkillBusinessModel> GetUserSkills(int userId)
         {
             ISkillBusinessModel skillBusinessModel = new SkillBusinessModel();
-            //List<portfolio> userPortfolioFromDb = ConvertDataSetToModels<portfolio>(userPortfolioToDb);
+            //List<portfolio> userPortfolioFromDb = FetchModelsFromDb<portfolio>(userPortfolioToDb);
             return null;
         }
     }
