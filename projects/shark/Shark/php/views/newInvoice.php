@@ -23,7 +23,7 @@ echo "<td><select name='client'>";
 
 foreach($clients as $value)
 {
-    echo '<option value="'.$value['id'].'">'.$value['id']." ".$value['name'].'</option>';
+	echo '<option value="'.$value['id'].'">'.$value['id']." ".$value['name'].'</option>';
 }
 
 echo "</select></td><tr><td>";
@@ -32,7 +32,7 @@ echo "<select name='service'>";
 
 foreach($services as $value)
 {
-    echo '<option value="'.$value['id'].'">'.$value['id']." ".$value['name'].'</option>';
+	echo '<option value="'.$value['id'].'">'.$value['id']." ".$value['name'].'</option>';
 }
 echo "</select></td></tr> ";
 
