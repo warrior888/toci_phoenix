@@ -105,6 +105,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutoMapperConfiguration.cs" />
     <Compile Include="BusinessModels\CourseRegistration\CourseRegistrationBusinessModel.cs" />
     <Compile Include="BusinessModels\DevelopersList\DeveloperBusinessModel.cs" />
     <Compile Include="BusinessModels\DevelopersList\PortfolioBusinessModel.cs" />

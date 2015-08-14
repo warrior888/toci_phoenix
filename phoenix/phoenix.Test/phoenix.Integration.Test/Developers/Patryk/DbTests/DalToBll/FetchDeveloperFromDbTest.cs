@@ -1,4 +1,6 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System.Collections.Generic;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Phoenix.Dal.GeneratedModels;
 
 namespace Phoenix.Integration.Test.Developers.Patryk.DbTests.DalToBll
 {
@@ -6,9 +8,10 @@ namespace Phoenix.Integration.Test.Developers.Patryk.DbTests.DalToBll
     public class FetchDeveloperFromDbTest
     {
         [TestMethod]
-        public void TryFetchDeveloperFromDb()
+        public void TryFetchDeveloperSkillsFromDb()
         {
-            
+            ModelLogic modelLogic = new ModelLogic();
+            List<developers_skills> developersSkills = modelLogic.GetModelFromDbTest<developers_skills>(new developers_skills());
         }
          
     }

@@ -103,15 +103,10 @@ namespace Toci.Db.DbVirtualization
             return this;
         }
 
-        public IModel SetSelect<T>(string columnName, SelectClause clause, T value) where T : new()
+        public IModel SetSelect<T>(string columnName, SelectClause clause, T value)
         {
-            if (Fields.ContainsKey(columnName))
-            {
-                Fields[columnName].SetWhere(true);
-                Fields[columnName].SetSelectClause(clause);
-                Fields[columnName].SetValue(value);
-            }
-            return this;
+            Fields[columnName].SetValue(value);
+            return SetSelect(columnName, clause);
         }
 
         public List<IModel> GetDataRowsList(DataSet table)

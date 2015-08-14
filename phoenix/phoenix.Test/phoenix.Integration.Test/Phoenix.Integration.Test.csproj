@@ -127,10 +127,13 @@
     <Compile Include="Developers\Mg\mg_user.cs" />
     <Compile Include="Developers\Patryk\AutoMapper\AnotherClassForMap.cs" />
     <Compile Include="Developers\Patryk\AutoMapper\AutoMapperTest.cs" />
+    <Compile Include="Developers\Patryk\AutoMapper\AutoMapperWorkThroughAllAppTest.cs" />
     <Compile Include="Developers\Patryk\AutoMapper\ClassForMapping.cs" />
+    <Compile Include="Developers\Patryk\AutoMapper\Whatever.cs" />
     <Compile Include="Developers\Patryk\BLL\TeamLeasing\TeamLeasingLogicTest.cs" />
     <Compile Include="Developers\Patryk\DbTests\DalToBll\FetchDeveloperFromDbTest.cs" />
-    <Compile Include="Developers\Patryk\DbTests\GenerateModelsTest.cs" />
+    <Compile Include="Developers\Patryk\DbTests\DalToBll\ModelLogic.cs" />
+    <Compile Include="Developers\Patryk\GeneratedModels\GenerateModelsTest.cs" />
     <Compile Include="Developers\Patryk\GeneratedModels\ColumnNameToPropertyTest.cs" />
     <Compile Include="Developers\Terry\DbTests\DbConnectionTest.cs" />
     <Compile Include="Developers\Terry\TeamLeasingTests\TeamLeasingTests.cs" />
