@@ -1,0 +1,22 @@
+﻿create table test (
+	id serial primary key,
+	nazwa text
+);
+
+create table test2 (
+	id serial primary key,
+	nazwa text
+);
+
+create table users (
+	id serial primary key,
+	name text,
+	email text,
+	cell_phone varchar(20),
+	guid text
+);
+
+create table privilege (
+	id serial primary key,
+	name text
+);
