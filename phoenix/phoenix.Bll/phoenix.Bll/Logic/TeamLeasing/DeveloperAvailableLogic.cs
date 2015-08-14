@@ -9,12 +9,11 @@ namespace Phoenix.Bll.Logic.TeamLeasing
     {
         public IDeveloperAvailableBusinessModel GetDeveloperAvailableById(int id)
         {
-            var devAvailableModel = FetchModelById<developers_available>(id);
-
-            Mapper.CreateMap<developers_available, IDeveloperAvailableBusinessModel>()
-                  .ForMember(dest => dest.AvailableFor, opt => opt.MapFrom(src => src.AvailbleFor));
-             
-            return Mapper.Map<IDeveloperAvailableBusinessModel>(devAvailableModel);
+            return GetElementById<IDeveloperAvailableBusinessModel, developers_available>(
+                id, 
+                dest => dest.AvailableFor, 
+                opt => opt.MapFrom(src => src.AvailbleFor)
+                );
         }
     }
 }
