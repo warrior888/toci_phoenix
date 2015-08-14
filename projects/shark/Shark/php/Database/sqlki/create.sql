@@ -1,11 +1,12 @@
--- Table: applicants
+-- Table: services
 
--- DROP TABLE applicants;
+-- DROP TABLE services;
 
-CREATE TABLE applicants
+CREATE TABLE services
 (
   id serial NOT NULL,
   name text,
+<<<<<<< HEAD
   surname text,
   email text,
   phone text,
@@ -14,8 +15,18 @@ CREATE TABLE applicants
   mailconfirmed boolean,
   CONSTRAINT applicants_pkey PRIMARY KEY (id)
 );
+=======
+  price text,
+  CONSTRAINT services_pkey PRIMARY KEY (id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE services
+  OWNER TO postgres;
 
--- Table: clients
+
+>>>>>>> 3769671cabb5f7a1f7710e9c6f187da5655eb174
 
 -- DROP TABLE clients;
 
