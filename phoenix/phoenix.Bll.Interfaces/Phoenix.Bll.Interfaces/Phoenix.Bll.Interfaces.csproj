@@ -118,6 +118,15 @@
     <Compile Include="BusinessModels\DevelopersList\IDeveloperBusinessModel.cs" />
     <Compile Include="BusinessModels\DevelopersList\IPortfolioBusinessModel.cs" />
     <Compile Include="BusinessModels\DevelopersList\ISkillBusinessModel.cs" />
+    <Compile Include="BusinessModels\InteractiveCourses\IModule.cs" />
+    <Compile Include="BusinessModels\InteractiveCourses\IOutput.cs" />
+    <Compile Include="BusinessModels\InteractiveCourses\IResult.cs" />
+    <Compile Include="BusinessModels\InteractiveCourses\ITask.cs" />
+    <Compile Include="BusinessModels\InteractiveCourses\ITaskContent.cs" />
+    <Compile Include="BusinessModels\InteractiveCourses\ITechnology.cs" />
+    <Compile Include="BusinessModels\InteractiveCourses\IUnitTest.cs" />
+    <Compile Include="BusinessModels\InteractiveCourses\IUserInput.cs" />
+    <Compile Include="BusinessModels\Payments\IPayment.cs" />
     <Compile Include="BusinessModels\TeamLeasing\IDeveloperAvailableBusinessModel.cs" />
     <Compile Include="BusinessModels\TeamLeasing\IDeveloperTeamBusinessModel.cs" />
     <Compile Include="BusinessModels\TeamLeasing\ITeamLeasingBusinessModel.cs" />
