@@ -6,6 +6,8 @@
 
         string Name { get; set; }
 
-        string Surname { get; set; } 
+        string Surname { get; set; }
+
+        decimal AccountBalance { get; set; }
     }
 }

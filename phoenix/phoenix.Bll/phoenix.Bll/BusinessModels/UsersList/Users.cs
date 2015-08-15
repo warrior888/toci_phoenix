@@ -8,5 +8,6 @@ namespace Phoenix.Bll.BusinessModels.UsersList
         public string Nick { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
+        public  decimal AccountBalance { get; set; }
     }
 }
