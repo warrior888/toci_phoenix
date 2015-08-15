@@ -10,6 +10,8 @@ drop table tasks;
 drop table lessons;
 drop table modules;
 
+----------------happy 13
+
 drop table course_references_comments;
 drop table course_references;
 
@@ -150,6 +152,9 @@ create table course_references_comments (
 	id_users integer references users(id) not null,
 	comment_text text
 );
+
+
+
 ------- Happy 13
 create table modules
 (

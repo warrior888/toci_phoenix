@@ -1,5 +1,20 @@
-ï»¿drop view users_portfolio_view;
+---
+drop table user_statistics;
+drop table levels;
+drop table results;
+drop table pay_to_win;
+drop table tasks_requirements;
+drop table requirements; 
+drop table technologies;
+drop table unit_tests;
+drop table tasks;
+drop table lessons;
+drop table modules;
+----
+
+drop view users_portfolio_view;
 drop view developer_skills_view;
+
 drop table developers_list;
 drop table course_trainers;
 drop table course_technologies;
@@ -17,6 +32,8 @@ drop table portfolio;
 drop table users;
 drop table roles;
 drop table developers_available;
+
+
 
 create table roles ( 
 	id serial primary key,
@@ -79,7 +96,7 @@ create table developers_skills (
 	skill_level float --
 );
 
---do kursÃ³w 
+--do kursów 
 
 create table courses_list (
 	id serial primary key,
@@ -138,6 +155,81 @@ create table course_references (
 	references_text text
 );
 
+---happy13
+
+create table modules
+(
+	id serial primary key,
+	module_name varchar(64) not null
+);
+create table lessons
+(
+	id serial primary key,
+	lesson_name varchar(64) not null,
+	id_modules integer references modules(id) not null
+);
+create table tasks
+(
+	id serial primary key,
+	task_content text not null,
+	average_time_minutes int not null,
+	id_lessons integer references lessons(id)not null --:P 
+);
+create table unit_tests
+(
+	id serial primary key,
+	unit_test_content text not null,
+	id_tasks integer references tasks(id) not null
+);
+create table technologies
+(
+	id serial primary key,
+	name_version varchar(64) not null
+);
+create table requirements
+(
+	id serial primary key,
+	tag varchar(32) not null,
+	id_technologies integer references technologies(id) not null
+);
+create table tasks_requirements 
+(
+	id serial primary key,
+	id_tasks integer references tasks(id) not null,
+	id_requirements integer references requirements(id) not null
+);
+create table pay_to_win --transfers
+(
+	id serial primary key,
+	transfer_cash_amount decimal not null,  --hajsy LL LL LL LL LL LL LL LL LL LL LL LL LL $_$
+	transfer_time timestamp not null,
+	id_users integer references users(id) not null
+);
+create table results
+(
+	id serial primary key,
+	execution_time_ms integer not null, --milisekundy (ile czasu siê wykonuje)
+	have_been_compiled boolean not null,
+	time_spent_s integer not null, --sekundy (ile czasu ktoœ spêdzi³ nad zadaniem)
+	id_users integer references users(id) not null,
+	id_tasks integer references tasks(id) not null,
+	id_unit_tests integer references unit_tests(id) not null
+);
+create table levels
+(
+	id serial primary key,
+	level_of_technology integer not null,
+	id_users integer references users(id) not null,
+	id_technologies integer references technologies(id) not null
+);
+create table user_statistics
+(
+	id serial primary key,
+	total_time_spent_s integer not null,--sekundy (ile czasu farmi³ w ogóle)
+	id_users integer references users(id) not null
+);
+
+--eo happy13
 
 --role
 
@@ -410,7 +502,7 @@ insert into portfolio_skills_technologies (fk_id_portfolio, fk_id_skills_technol
 											      (select id from skills_technologies where skills_technologies.tech_name = 'SQL'));											      
 											      									      
 
-delete from  portfolio_skills_technologies;											      
+--delete from  portfolio_skills_technologies;											      
 											      
 
 --user portfolio
@@ -452,30 +544,116 @@ create or replace view developer_skills_view as
 	join users on users.id = ds.id_users;
 
 
-select * from roles;
-select * from users;
-delete from users;
+select * from developer_skills_view order by nick desc;
 
-select * from portfolio;
-
-select * from developers_available;
-select * from developers_list;
-select * from developers_skills;
-
-select * from users_portfolio;
-select * from skills_technologies;
-
-delete from skills_technologies where id > 4;
-select * from portfolio_skills_technologies;
-
-
-select * from developer_skills_view;
 select * from users_portfolio_view;
 
+create or replace view developer_skill_and_portfolio as
+
+select developer_skills_view.nick, developer_skills_view.tech_name, developer_skills_view.skill_level, users_portfolio_view.project_name
+	from developer_skills_view join users_portfolio_view on developer_skills_view.nick = users_portfolio_view.nick;
+
+
+select nick, count(nick) as liczba, sum(skill_level) / count(nick) as average from developer_skills_view where nick like '%a%3%' group by nick having count(nick) = 1 order by nick desc;
+
+
+select * from developer_skills_view
+
+select nick, project_name from users_portfolio_view
+
+select * from developer_skills_view 
+
+select nick, project_name, (select nick from users_portfolio_view where project_name = upv1.project_name limit 1) 
+
+from users_portfolio_view upv1 where project_name in (select project_name from users_portfolio_view where nick = upv1.nick);
+
+---- bierzemy grupe z 1 projektu, dobrac info jaki jest ich skill
+--, (select nick from users_portfolio_view where nick != upv1.nick and project_name = upv1.project_name limit 1)
+
+--create language plpgsql;
 
 
 
 
+select nick, project_name 
+from users_portfolio_view upv1 where project_name in 
+(select project_name from users_portfolio_view where nick = upv1.nick) 
 
 
+
+select nick, project_name from users_portfolio_view group by nick, project_name having count(nick) > 1;
+
+
+
+and 
+(select sum(skill_level) / count(skill_level) from developer_skills_view where nick = upv1.nick group by nick) > 80;
+
+
+insert into users_portfolio (id_users, id_portfolio) values((select id from users where nick = 'warrior'),(select id from portfolio where portfolio.project_name = 'cambridge')); 
+insert into users_portfolio (id_users, id_portfolio) values((select id from users where nick = 'warrior'),(select id from portfolio where portfolio.project_name = 'pentagram'));  
+insert into users_portfolio (id_users, id_portfolio) values((select id from users where nick = 'patrykj123'),(select id from portfolio where portfolio.project_name = 'pentagram')); 
+insert into users_portfolio (id_users, id_portfolio) values((select id from users where nick = 'patrykj123'),(select id from portfolio where portfolio.project_name = 'philadelphia')); 
+insert into users_portfolio (id_users, id_portfolio) values((select id from users where nick = 'terry'),(select id from portfolio where portfolio.project_name = 'philadelphia')); 
+insert into users_portfolio (id_users, id_portfolio) values((select id from users where nick = 'terry'),(select id from portfolio where portfolio.project_name = 'cambridge')); 
+
+-- [0-9]{3,5}
+
+-- warriorr@ala.poczta.fm
+
+--regexp
+
+--- [a-zA-Z0-9]{1,*}[\@]{1}[a-zA-Z0-9]{1,*}[\.]{1}
+
+--regex coach
+
+--select * from roles;
+---select * from users;
+--delete from users;
+
+--select * from portfolio;
+
+--select * from developers_available;
+--select * from developers_list;
+--select * from developers_skills;
+
+--select * from users_portfolio;
+--select * from skills_technologies;
+
+--delete from skills_technologies where id > 4;
+--select * from portfolio_skills_technologies;
+
+
+--select * from developer_skills_view;
+--select * from users_portfolio_view;
+
+--- ktoery dev ile kiedy siezdial
+
+create table time_log (
+	id serial primary key,
+	fk_id_user integer references users(id) not null, -- 1
+	fk_id_skills_technologies integer references skills_technologies(id) not null, --5
+	hours integer   -- 4
+);
+
+insert into time_log (fk_id_user, fk_id_skills_technologies, hours) values (1, 1, 4);
+
+create trigger UpdateSkillLevelForTimeLog BEFORE INSERT ON time_log 
+FOR EACH ROW EXECUTE PROCEDURE UpdateSkillLevelForTimeLogProcedure();
+
+
+drop function UpdateSkillLevelForTimeLogProcedure() cascade;
+
+create function UpdateSkillLevelForTimeLogProcedure() RETURNS trigger AS $$
+DECLARE
+	
+BEGIN
+	update developers_skills set skill_level = skill_level * NEW.hours where id_skills_technologies = NEW.fk_id_skills_technologies and id_users = NEW.fk_id_user;
+	RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+
+select * from user_statistics 
+
+select * from developers_skills
 
