@@ -31,7 +31,7 @@ namespace Toci.Tests
 
             modelsGenerator.GenerateModels(
                 @"..\..\..\DbCrypting\VazcoDb\wrapper.txt",
-                // @"..\..\Developers\Duch\destination",
+
                 @"..\..\..\DbCrypting\VazcoDb\", ";", ",");
 
         }
