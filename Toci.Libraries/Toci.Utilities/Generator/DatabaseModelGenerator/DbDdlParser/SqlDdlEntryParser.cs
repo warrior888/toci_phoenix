@@ -16,7 +16,7 @@ namespace Toci.Utilities.Generator.DatabaseModelGenerator.DbDdlParser
                 {"int","int"},
                 {"decimal","decimal"},
                 {"double","double"},
-                {"float","float"},
+                {"float","double"},
                 {"varchar","string"},
                 {"char","string"},
                 {"text","string"},
