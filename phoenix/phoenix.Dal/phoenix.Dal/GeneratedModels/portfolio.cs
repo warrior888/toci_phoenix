@@ -35,7 +35,20 @@ namespace Phoenix.Dal.GeneratedModels
                     SetValue(PROJECT_NAME, value);
                 }
             }
-         
+
+        public const string PROJECT_START_DATE = "project_start_date";
+        public DateTime ProjectStartDate
+        {
+            get
+            {
+                return GetValue<DateTime>(PROJECT_COMPLETION_DATE);
+            }
+            set
+            {
+                SetValue(PROJECT_COMPLETION_DATE, value);
+            }
+        }
+
         public const string PROJECT_COMPLETION_DATE = "project_completion_date";
         public DateTime ProjectCompletionDate
             {

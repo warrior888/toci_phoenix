@@ -35,8 +35,8 @@ namespace Phoenix.Bll.Logic.DevelopersList
             developer.User = _userLogic.GetUserById(developerFromDb.IdUsers);
             developer.ExperienceFrom = developerFromDb.ExperienceFrom;
             developer.Portfolio = _portfolioLogic.GetUserPortfolio(developerFromDb.IdUsers);
-            /*developer.Skills = _skillLogic.GetUserSkills(developerFromDb.IdUsers);
-            developer.DeveloperAvailable =
+            developer.Skills = _skillLogic.GetUserSkills(developerFromDb.IdUsers);
+           /* developer.DeveloperAvailable =
                 _availableLogic.GetDeveloperAvailableById(developerFromDb.FkIdDevelopersAvaible);*/
             return developer;
 

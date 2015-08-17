@@ -9,11 +9,11 @@ namespace Phoenix.Integration.Test.Developers.Patryk.AutoMapper
         public course_registration DoMapping(ICourseRegistrationBusinessModel course)
         {
             return Mapper.Map<course_registration>(course);
-        } 
-        
-        public course_registration DoMapping2(ICourseRegistrationBusinessModel course)
+        }
+
+        public ICourseRegistrationBusinessModel DoMappingInOtherSide(course_registration course)
         {
-            return Mapper.Map<course_registration>(course);
+            return Mapper.Map<ICourseRegistrationBusinessModel>(course);
         } 
     }
 }

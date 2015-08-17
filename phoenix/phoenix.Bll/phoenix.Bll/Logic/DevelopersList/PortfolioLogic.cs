@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using AutoMapper;
 using Phoenix.Bll.BusinessModels.DevelopersList;
 using Phoenix.Bll.Interfaces.BusinessModels.DevelopersList;
 using Phoenix.Bll.Interfaces.Logic.DevelopersList;
@@ -10,17 +11,36 @@ namespace Phoenix.Bll.Logic.DevelopersList
 {
     public class PortfolioLogic : DbLogic, IPortfolioLogic
     {
+        private readonly ISkillLogic _skillLogic;
+
+        public PortfolioLogic()
+        {
+            _skillLogic = new SkillLogic();
+
+        }
+
         public IEnumerable<IPortfolioBusinessModel> GetUserPortfolio(int userId)
         {
-            List<portfolio> userPortfolioFromDb = FetchModelsFromDb<portfolio>(new portfolio()
-            {
-                FkIdUsers = userId
-            }.SetSelect("fk_id_users", SelectClause.Equal));
+            List<users_portfolio> userPortfolioFromDb = FetchModelsByColumnValue<users_portfolio, int>("id_users",
+                SelectClause.Equal, userId);
 
-            return userPortfolioFromDb.Select(portfolio => new PortfolioBusinessModel()
+            List<IPortfolioBusinessModel> userPortfolio =
+                userPortfolioFromDb.Select(portfolio => GetPortfolioById(portfolio.Id)).ToList();
+
+           /* List<IPortfolioBusinessModel> userPortfolio  = userPortfolioFromDb.Select(portfolio => new PortfolioBusinessModel()
             {
-                ProjectName = portfolio.ProjectName
-            }).Cast<IPortfolioBusinessModel>().ToList();
+                ProjectName = portfolio.ProjectName,
+                StartDate = portfolio.ProjectStartDate,
+                EndDate = portfolio.ProjectCompletionDate,
+                Skills = _skillLogic.GetPortfolioSkills(portfolio.Id)
+            }).Cast<IPortfolioBusinessModel>().ToList();*/
+
+            return userPortfolio;
         }
+
+        public IPortfolioBusinessModel GetPortfolioById(int portfolioId)
+        {
+            return Mapper.Map<IPortfolioBusinessModel>(FetchModelById<portfolio>(portfolioId));
+        } 
     }
 }
