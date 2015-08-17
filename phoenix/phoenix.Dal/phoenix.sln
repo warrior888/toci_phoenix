@@ -23,17 +23,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.DigitalSignature", "..
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.DigitalSignatureWebApi", "..\vazco\Toci.DigitalSignatureWebApi\Toci.DigitalSignatureWebApi\Toci.DigitalSignatureWebApi.csproj", "{08B8EA83-6366-4C16-93DA-EF1A5F6E4A83}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.Db", "..\..\..\toci_common\Toci.Libraries\Toci.Db\Toci.Db.csproj", "{C2377285-FA65-4545-91FB-6C4DC28155F5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.Db", "..\..\toci_common\Toci.Libraries\Toci.Db\Toci.Db.csproj", "{C2377285-FA65-4545-91FB-6C4DC28155F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.Utilities", "..\..\..\toci_common\Toci.Libraries\Toci.Utilities\Toci.Utilities.csproj", "{9A12B07D-D560-41D9-B714-3785C0360CCD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.Utilities", "..\..\toci_common\Toci.Libraries\Toci.Utilities\Toci.Utilities.csproj", "{9A12B07D-D560-41D9-B714-3785C0360CCD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.Utilities.Abstraction", "..\..\..\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\Toci.Utilities.Abstraction.csproj", "{E91D020A-2D43-42E3-8C53-0F57B4B4F549}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.Utilities.Abstraction", "..\..\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\Toci.Utilities.Abstraction.csproj", "{E91D020A-2D43-42E3-8C53-0F57B4B4F549}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.Utilities.Common", "..\..\..\toci_common\Toci.Libraries\Toci.Utilities.Common\Toci.Utilities.Common.csproj", "{10DB4113-AC97-426E-A233-3961A7D30E52}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.Utilities.Common", "..\..\toci_common\Toci.Libraries\Toci.Utilities.Common\Toci.Utilities.Common.csproj", "{10DB4113-AC97-426E-A233-3961A7D30E52}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.Utilities.Interfaces", "..\..\..\toci_common\Toci.Libraries\Toci.Utilities.Interfaces\Toci.Utilities.Interfaces\Toci.Utilities.Interfaces.csproj", "{5F10A690-71C7-4DAA-B46B-12720B16F64C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.Utilities.Interfaces", "..\..\toci_common\Toci.Libraries\Toci.Utilities.Interfaces\Toci.Utilities.Interfaces\Toci.Utilities.Interfaces.csproj", "{5F10A690-71C7-4DAA-B46B-12720B16F64C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.Utilities.Test", "..\..\..\toci_common\Toci.Libraries\Toci.Utillties.Test\Toci.Utilities.Test.csproj", "{AFA373BC-F581-4E32-80B5-CC3179F630F7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.Utilities.Test", "..\..\toci_common\Toci.Libraries\Toci.Utillties.Test\Toci.Utilities.Test.csproj", "{AFA373BC-F581-4E32-80B5-CC3179F630F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

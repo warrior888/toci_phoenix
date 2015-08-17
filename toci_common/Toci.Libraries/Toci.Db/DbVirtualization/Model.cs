@@ -92,13 +92,20 @@ namespace Toci.Db.DbVirtualization
             }
         }
 
-        public void SetSelect(string columnName, SelectClause clause)
+        public IModel SetSelect(string columnName, SelectClause clause)
         {
             if (Fields.ContainsKey(columnName))
             {
                 Fields[columnName].SetWhere(true);
                 Fields[columnName].SetSelectClause(clause);
             }
+            return this;
+        }
+
+        public IModel SetSelect<T>(string columnName, SelectClause clause, T value)
+        {
+            SetValue(columnName, value);
+            return SetSelect(columnName, clause);
         }
 
         public List<IModel> GetDataRowsList(DataSet table)

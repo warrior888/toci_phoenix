@@ -123,7 +123,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\toci_common\Toci.Libraries\Toci.Db\Toci.Db.csproj">
+    <ProjectReference Include="..\..\..\toci_common\Toci.Libraries\Toci.Db\Toci.Db.csproj">
       <Project>{c2377285-fa65-4545-91fb-6c4dc28155f5}</Project>
       <Name>Toci.Db</Name>
     </ProjectReference>

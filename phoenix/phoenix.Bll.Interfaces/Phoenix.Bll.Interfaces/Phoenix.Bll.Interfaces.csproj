@@ -170,11 +170,11 @@
     <Folder Include="BusinessModels\CourseReferences\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\toci_common\Toci.Libraries\Toci.Db\Toci.Db.csproj">
+    <ProjectReference Include="..\..\..\toci_common\Toci.Libraries\Toci.Db\Toci.Db.csproj">
       <Project>{c2377285-fa65-4545-91fb-6c4dc28155f5}</Project>
       <Name>Toci.Db</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\toci_common\Toci.Libraries\Toci.Utilities.Interfaces\Toci.Utilities.Interfaces\Toci.Utilities.Interfaces.csproj">
+    <ProjectReference Include="..\..\..\toci_common\Toci.Libraries\Toci.Utilities.Interfaces\Toci.Utilities.Interfaces\Toci.Utilities.Interfaces.csproj">
       <Project>{5f10a690-71c7-4daa-b46b-12720b16f64c}</Project>
       <Name>Toci.Utilities.Interfaces</Name>
     </ProjectReference>
