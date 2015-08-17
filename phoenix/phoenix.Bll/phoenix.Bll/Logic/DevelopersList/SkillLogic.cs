@@ -11,14 +11,11 @@ namespace Phoenix.Bll.Logic.DevelopersList
     {
         public IEnumerable<ISkillBusinessModel> GetUserSkills(int userId)
         {
-            var all = GetAllElements<ISkillBusinessModel, skills_view>();
+            var allSkills = GetAllElements<ISkillBusinessModel, skills_view>(dest => dest.SkillName, opt => opt.MapFrom(src => src.TechName));
 
-            foreach (var skill in  all)
-            {
-                
-            }
+            List<ISkillBusinessModel> userSkillsList = allSkills.Where(skill => skill.IdUsers == userId).ToList();
 
-            return null;
+            return userSkillsList;
         }
     }
 }

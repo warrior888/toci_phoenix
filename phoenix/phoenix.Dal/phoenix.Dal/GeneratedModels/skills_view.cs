@@ -23,11 +23,11 @@ namespace Phoenix.Dal.GeneratedModels
         }
 
         public const string SKILL_LEVEL = "skill_level";
-        public float SkillLevel
+        public double SkillLevel
         {
             get
             {
-                return GetValue<float>(SKILL_LEVEL);
+                return GetValue<double>(SKILL_LEVEL);
             }
             set
             {
