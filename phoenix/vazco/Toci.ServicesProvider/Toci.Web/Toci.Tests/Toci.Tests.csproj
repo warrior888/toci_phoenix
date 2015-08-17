@@ -37,12 +37,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="Toci.Utilities.Abstraction">
-      <HintPath>..\..\..\..\..\Toci.Utilities.Abstraction\bin\Debug\Toci.Utilities.Abstraction.dll</HintPath>
-    </Reference>
-    <Reference Include="Toci.Utilities.Interfaces">
-      <HintPath>..\..\..\..\..\Toci.Utilities.Abstraction\bin\Debug\Toci.Utilities.Interfaces.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -71,6 +65,14 @@
     <ProjectReference Include="..\..\..\..\..\toci_common\Toci.Libraries\Toci.Db\Toci.Db.csproj">
       <Project>{c2377285-fa65-4545-91fb-6c4dc28155f5}</Project>
       <Name>Toci.Db</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\Toci.Utilities.Abstraction.csproj">
+      <Project>{e91d020a-2d43-42e3-8c53-0f57b4b4f549}</Project>
+      <Name>Toci.Utilities.Abstraction</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\toci_common\Toci.Libraries\Toci.Utilities.Interfaces\Toci.Utilities.Interfaces\Toci.Utilities.Interfaces.csproj">
+      <Project>{5f10a690-71c7-4daa-b46b-12720b16f64c}</Project>
+      <Name>Toci.Utilities.Interfaces</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\..\..\toci_common\Toci.Libraries\Toci.Utilities\Toci.Utilities.csproj">
       <Project>{9a12b07d-d560-41d9-b714-3785c0360ccd}</Project>

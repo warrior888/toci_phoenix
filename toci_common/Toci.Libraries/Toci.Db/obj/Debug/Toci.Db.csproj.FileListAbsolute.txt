@@ -97,3 +97,30 @@ C:\Users\Salama\Documents\Visual Studio 2013\Projects\toci_phoenix\toci_common\T
 C:\Users\Salama\Documents\Visual Studio 2013\Projects\toci_phoenix\toci_common\Toci.Libraries\Toci.Db\obj\Debug\Toci.Db.dll
 C:\Users\Salama\Documents\Visual Studio 2013\Projects\toci_phoenix\toci_common\Toci.Libraries\Toci.Db\obj\Debug\Toci.Db.pdb
 C:\Users\Salama\Documents\Visual Studio 2013\Projects\toci_phoenix\toci_common\Toci.Libraries\Toci.Db\obj\Debug\Toci.Db.csprojResolveAssemblyReference.cache
+C:\Users\shass\Documents\toci_phoenix2\toci_common\Toci.Libraries\Toci.Db\bin\Debug\Toci.Db.dll.config
+C:\Users\shass\Documents\toci_phoenix2\toci_common\Toci.Libraries\Toci.Db\bin\Debug\Toci.Db.dll
+C:\Users\shass\Documents\toci_phoenix2\toci_common\Toci.Libraries\Toci.Db\bin\Debug\Toci.Db.pdb
+C:\Users\shass\Documents\toci_phoenix2\toci_common\Toci.Libraries\Toci.Db\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\shass\Documents\toci_phoenix2\toci_common\Toci.Libraries\Toci.Db\bin\Debug\Google.Apis.Auth.dll
+C:\Users\shass\Documents\toci_phoenix2\toci_common\Toci.Libraries\Toci.Db\bin\Debug\Google.Apis.Auth.PlatformServices.dll
+C:\Users\shass\Documents\toci_phoenix2\toci_common\Toci.Libraries\Toci.Db\bin\Debug\Google.Apis.Calendar.v3.dll
+C:\Users\shass\Documents\toci_phoenix2\toci_common\Toci.Libraries\Toci.Db\bin\Debug\Google.Apis.Core.dll
+C:\Users\shass\Documents\toci_phoenix2\toci_common\Toci.Libraries\Toci.Db\bin\Debug\Google.Apis.dll
+C:\Users\shass\Documents\toci_phoenix2\toci_common\Toci.Libraries\Toci.Db\bin\Debug\Google.Apis.PlatformServices.dll
+C:\Users\shass\Documents\toci_phoenix2\toci_common\Toci.Libraries\Toci.Db\bin\Debug\Newtonsoft.Json.dll
+C:\Users\shass\Documents\toci_phoenix2\toci_common\Toci.Libraries\Toci.Db\bin\Debug\System.Net.Http.Extensions.dll
+C:\Users\shass\Documents\toci_phoenix2\toci_common\Toci.Libraries\Toci.Db\bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\shass\Documents\toci_phoenix2\toci_common\Toci.Libraries\Toci.Db\bin\Debug\Zlib.Portable.dll
+C:\Users\shass\Documents\toci_phoenix2\toci_common\Toci.Libraries\Toci.Db\bin\Debug\Google.Apis.xml
+C:\Users\shass\Documents\toci_phoenix2\toci_common\Toci.Libraries\Toci.Db\bin\Debug\Google.Apis.Auth.xml
+C:\Users\shass\Documents\toci_phoenix2\toci_common\Toci.Libraries\Toci.Db\bin\Debug\Google.Apis.Auth.PlatformServices.xml
+C:\Users\shass\Documents\toci_phoenix2\toci_common\Toci.Libraries\Toci.Db\bin\Debug\Google.Apis.Calendar.v3.xml
+C:\Users\shass\Documents\toci_phoenix2\toci_common\Toci.Libraries\Toci.Db\bin\Debug\Google.Apis.Core.xml
+C:\Users\shass\Documents\toci_phoenix2\toci_common\Toci.Libraries\Toci.Db\bin\Debug\Google.Apis.PlatformServices.xml
+C:\Users\shass\Documents\toci_phoenix2\toci_common\Toci.Libraries\Toci.Db\bin\Debug\Newtonsoft.Json.xml
+C:\Users\shass\Documents\toci_phoenix2\toci_common\Toci.Libraries\Toci.Db\bin\Debug\System.Net.Http.Extensions.xml
+C:\Users\shass\Documents\toci_phoenix2\toci_common\Toci.Libraries\Toci.Db\bin\Debug\System.Net.Http.Primitives.xml
+C:\Users\shass\Documents\toci_phoenix2\toci_common\Toci.Libraries\Toci.Db\bin\Debug\Zlib.Portable.xml
+C:\Users\shass\Documents\toci_phoenix2\toci_common\Toci.Libraries\Toci.Db\obj\Debug\Toci.Db.csproj.App.config
+C:\Users\shass\Documents\toci_phoenix2\toci_common\Toci.Libraries\Toci.Db\obj\Debug\Toci.Db.dll
+C:\Users\shass\Documents\toci_phoenix2\toci_common\Toci.Libraries\Toci.Db\obj\Debug\Toci.Db.pdb

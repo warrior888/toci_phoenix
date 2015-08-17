@@ -170,9 +170,9 @@ namespace Toci.Tests
             var modelsGenerator = new TociDbModelsGenerator(new TociDbModelGenerator(new SqlDdlParser(new SqlDdlEntryParser()), template));
 
             modelsGenerator.GenerateModels(
-                @"..\..\..\DbCredentials\Config\DataBase.txt",
-                // @"..\..\Developers\Duch\destination",
-                @"..\..\..\DbCredentials\CredentialsModels",";", ",");
+            @"..\..\..\DbCredentials\Config\DataBase.txt",
+            // @"..\..\Developers\Duch\destination",
+            @"..\..\..\DbCredentials\CredentialsModels", ";", ",");
         }
     }
 }

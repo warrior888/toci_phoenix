@@ -27,3 +27,34 @@ CREATE TABLE ProjectAccess(
 	UserID int NOT NULL references Users(UserID),
 	ProjectID int NOT NULL references Projects(ProjectID)
 );
+----------------------------------
+
+CREATE TABLE Scopes	
+   (ScopeID serial PRIMARY KEY NOT NULL,
+    ScopeName text NOT NULL
+);
+
+
+CREATE TABLE Users	
+   (UserID serial PRIMARY KEY NOT NULL,
+	ScopeID integer NOT NULL references Scopes(ScopeID),
+	UserLogin text NOT NULL,
+    UserPassword text NOT NULL
+);
+
+CREATE TABLE Projects	
+   (ProjectID serial PRIMARY KEY NOT NULL,
+    ScopeID integer NOT NULL references Scopes(ScopeID),
+    ProjectName text NOT NULL,
+	ProjectAuthor text NOT NULL,
+    ProjectData text NOT NULL,
+	ModificationDate text NOT NULL,
+	Hash text NOT NULL
+);
+
+
+CREATE TABLE ProjectAccess(
+	AccessID serial PRIMARY KEY NOT NULL ,
+	UserID integer NOT NULL references Users(UserID),
+	ProjectID integer NOT NULL references Projects(ProjectID)
+);
