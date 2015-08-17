@@ -110,6 +110,9 @@
     <Compile Include="BusinessModels\DevelopersList\DeveloperBusinessModel.cs" />
     <Compile Include="BusinessModels\DevelopersList\PortfolioBusinessModel.cs" />
     <Compile Include="BusinessModels\DevelopersList\DeveloperSkillBusinessModel.cs" />
+    <Compile Include="BusinessModels\InteractiveCourses\Exercise.cs" />
+    <Compile Include="BusinessModels\InteractiveCourses\Lesson.cs" />
+    <Compile Include="BusinessModels\InteractiveCourses\Module.cs" />
     <Compile Include="BusinessModels\TeamLeasing\DeveloperAvailableBusinessModel.cs" />
     <Compile Include="BusinessModels\TeamLeasing\DeveloperTeamBusinessModel.cs" />
     <Compile Include="BusinessModels\UsersList\Users.cs" />

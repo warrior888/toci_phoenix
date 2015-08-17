@@ -7,7 +7,7 @@ namespace Phoenix.Bll.Interfaces.BusinessModels.InteractiveCourses
         string Exercise { get; set; }
         List<string> Steps { get; set; }
         List<string> Parameter { get; set; }
-        List<string> ReturnType { get; set; }
+        string ReturnType { get; set; }
         //List<string> Hint { get; set; } 
     }
 }

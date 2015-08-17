@@ -7,8 +7,6 @@ namespace Phoenix.Bll.Interfaces.BusinessModels.InteractiveCourses
         string Code { get; set; }
         IUsers User { get; set; }
         int TimeSpent { get; set; }
-        ITask Task { get; set; }
-
-        //hinty ?????????????????????????
+        ITask Task { get; set; } 
     }
 }
