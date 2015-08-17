@@ -35,7 +35,7 @@ namespace Toci.Db.DbVirtualization
         {
             get
             {
-                return (int) Fields[ID].GetValue();
+                return GetValue<int>(ID);
             }
             set
             {
