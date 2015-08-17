@@ -1,15 +1,14 @@
-﻿﻿using System.Collections.Generic;
-﻿using System;
-using System.Collections.Generic;
-using Phoenix.Bll.BusinessModels.DevelopersList;
-using Phoenix.Bll.Interfaces.BusinessModels.DevelopersList;
-using Phoenix.Bll.Interfaces.Logic.DevelopersList;
-using Phoenix.Bll.Interfaces.Logic.TeamLeasing;
-using Phoenix.Bll.Interfaces.Logic.UsersList;
-using Phoenix.Bll.Logic.TeamLeasing;
-using Phoenix.Bll.Logic.UsersList;
-using Phoenix.Dal.GeneratedModels;
-using Toci.Db.DbVirtualization;
+﻿﻿using System;
+﻿using System.Collections.Generic;
+﻿using Phoenix.Bll.BusinessModels.DevelopersList;
+﻿using Phoenix.Bll.Interfaces.BusinessModels.DevelopersList;
+﻿using Phoenix.Bll.Interfaces.Logic.DevelopersList;
+﻿using Phoenix.Bll.Interfaces.Logic.TeamLeasing;
+﻿using Phoenix.Bll.Interfaces.Logic.UsersList;
+﻿using Phoenix.Bll.Logic.TeamLeasing;
+﻿using Phoenix.Bll.Logic.UsersList;
+﻿using Phoenix.Dal.GeneratedModels;
+﻿using Toci.Db.DbVirtualization;
 
 namespace Phoenix.Bll.Logic.DevelopersList
 {
@@ -44,7 +43,7 @@ namespace Phoenix.Bll.Logic.DevelopersList
 
         public IEnumerable<IDeveloperBusinessModel> GetAllDevelopers()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
     }

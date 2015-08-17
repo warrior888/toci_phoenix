@@ -12,11 +12,11 @@ namespace Phoenix.Bll.Logic.DevelopersList
 {
     public class PortfolioLogic : DbLogic, IPortfolioLogic
     {
-        private ISkillLogic _skillLogic = new SkillLogic();
+        private IDeveloperSkillLogic _skillLogic;
 
         public PortfolioLogic()
         {
-            _skillLogic = new SkillLogic();
+            _skillLogic = new DeveloperSkillLogic();
 
         }
 

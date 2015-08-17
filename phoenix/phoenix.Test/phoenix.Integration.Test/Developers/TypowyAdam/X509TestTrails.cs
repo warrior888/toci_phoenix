@@ -24,7 +24,7 @@ namespace Phoenix.Integration.Test.Developers.TypowyAdam
         {
             X509Store my = new X509Store(StoreName.My, StoreLocation.CurrentUser);
             my.Open(OpenFlags.ReadOnly);
-            RSACryptoServiceProvider csp = null;
+            //RSACryptoServiceProvider csp = null;
             Sign signProvider = new Sign();
             var newtest = File.ReadAllBytes(@"C:\CertTest\TestPrywatnegoKlucza.pfx");
             
@@ -58,7 +58,7 @@ namespace Phoenix.Integration.Test.Developers.TypowyAdam
             
             X509Store my = new X509Store(StoreName.My, StoreLocation.CurrentUser);
             my.Open(OpenFlags.ReadOnly);
-            RSACryptoServiceProvider csp = null;
+            //RSACryptoServiceProvider csp = null;
             Verify verifyProvider = new Verify();
             var listOfFiles = Directory.GetFiles(@"C:\CertTest");
             foreach (var dictionaryEntity in hashList)
