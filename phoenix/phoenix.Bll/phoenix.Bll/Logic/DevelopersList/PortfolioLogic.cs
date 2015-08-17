@@ -11,11 +11,11 @@ namespace Phoenix.Bll.Logic.DevelopersList
 {
     public class PortfolioLogic : DbLogic, IPortfolioLogic
     {
-        private readonly ISkillLogic _skillLogic;
+        private readonly IDeveloperSkillLogic _skillLogic;
 
         public PortfolioLogic()
         {
-            _skillLogic = new SkillLogic();
+            _skillLogic = new DeveloperSkillLogic();
 
         }
 
@@ -26,14 +26,6 @@ namespace Phoenix.Bll.Logic.DevelopersList
 
             List<IPortfolioBusinessModel> userPortfolio =
                 userPortfolioFromDb.Select(portfolio => GetPortfolioById(portfolio.Id)).ToList();
-
-           /* List<IPortfolioBusinessModel> userPortfolio  = userPortfolioFromDb.Select(portfolio => new PortfolioBusinessModel()
-            {
-                ProjectName = portfolio.ProjectName,
-                StartDate = portfolio.ProjectStartDate,
-                EndDate = portfolio.ProjectCompletionDate,
-                Skills = _skillLogic.GetPortfolioSkills(portfolio.Id)
-            }).Cast<IPortfolioBusinessModel>().ToList();*/
 
             return userPortfolio;
         }

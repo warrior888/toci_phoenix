@@ -25,14 +25,14 @@ namespace Phoenix.Bll
 
         private static  void ForISkillBusinessModel()
         {
-            Mapper.CreateMap<ISkillBusinessModel, skills_technologies>();
-            Mapper.CreateMap<skills_technologies, ISkillBusinessModel>().
+            Mapper.CreateMap<IDeveloperSkillBusinessModel, skills_technologies>();
+            Mapper.CreateMap<skills_technologies, IDeveloperSkillBusinessModel>().
                 ForMember(dest => dest.SkillName, opts => opts.MapFrom(src => src.TechName) ); 
         }
 
         private static void ForIPortfolioBusinessModel()
         {
-            ISkillLogic skillLogic = new SkillLogic();
+            IDeveloperSkillLogic skillLogic = new DeveloperSkillLogic();
             Mapper.CreateMap<IPortfolioBusinessModel, portfolio>();
             Mapper.CreateMap<portfolio, IPortfolioBusinessModel>().
                 ForMember(dest => dest.StartDate, opts => opts.MapFrom(src => src.ProjectStartDate)).

@@ -12,7 +12,7 @@ namespace Phoenix.Bll.BusinessModels.DevelopersList
         public double Score { get; set; }
         public DateTime ExperienceFrom { get; set; }
         public IDeveloperAvailableBusinessModel DeveloperAvailable { get; set; }
-        public IEnumerable<ISkillBusinessModel> Skills { get; set; }
+        public IEnumerable<IDeveloperSkillBusinessModel> Skills { get; set; }
         public IEnumerable<IPortfolioBusinessModel> Portfolio { get; set; }
     }
 }
