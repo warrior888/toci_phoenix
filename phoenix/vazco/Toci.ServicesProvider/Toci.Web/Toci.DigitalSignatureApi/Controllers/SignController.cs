@@ -18,22 +18,46 @@ namespace Toci.DigitalSignatureApi.Controllers
         public string Sign([FromBody]SignModel model)
         {
             var sign = new Sign();
-           // var data1 =  Convert.ToBase64String(Encoding.ASCII.GetBytes(model.data)); //testing purposes only
-            return HttpServerUtility.UrlTokenEncode(sign.SignFile(model.data, model.cert));
-                //Convert.ToBase64String(sign.SignFile(data1, cert));
+            // var data1 =  Convert.ToBase64String(Encoding.ASCII.GetBytes(model.data)); //testing purposes only
+            try
+            {
+                return HttpServerUtility.UrlTokenEncode(sign.SignFile(model.data, model.cert));
+            }
+            catch (Exception e)
+            {
+
+                return e.Message;
+            }
         }
 
-        [HttpPost]
-        [Route("api/sign")]
-        public string Sign([FromBody]SecuredSignModel model)
-        {
+       [HttpPost]
+        [Route("api/passwordsign")]
+        public string PasswordSign([FromBody]SecuredSignModel model)
+       {
+            model = DecodeSignModel(model);
             var sign = new Sign();
-            return
-                HttpServerUtility.UrlTokenEncode(sign.SignFile(model.data,
-                    sign.PfxFileToCertificate(model.cert, model.password)));
+           try
+           {
+               return HttpServerUtility.UrlTokenEncode(sign.SignFile(model.data, sign.PfxFileToCertificate(model.cert, model.password)));
+            }
+           catch (Exception e)
+           {
+
+               return e.Message;
+           }
+            
             
         }
+
+        private SecuredSignModel DecodeSignModel(SecuredSignModel model)
+        {
+            /*
+            Nie wiem czemu nie może zrobić tego w ten sposób, prawdopodobnie base64string nie jest zgodny z tą metodą...
+            Nie jest to piękne ale ' ' => '+' wystarcza
+            */
+            //model.cert = Convert.ToBase64String(HttpServerUtility.UrlTokenDecode(model.cert));
+            model.cert = model.cert.Replace(' ', '+');
+            return model;
+        }
     }
-
-
 }

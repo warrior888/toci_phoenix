@@ -19,12 +19,13 @@ namespace Toci.DigitalSignatureApi.Controllers
         {
             var verify = new Verify();
             model = DecodeVerifyModel(model);
-            var data1 = Convert.ToBase64String(Encoding.ASCII.GetBytes(model.data)); //test purposes only - writing only string not base64 as data
-            return verify.VerifyFile(data1, model.signature, model.cert);
+            //var data1 = Convert.ToBase64String(Encoding.ASCII.GetBytes(model.data)); //test purposes only - writing only string not base64 as data
+            return verify.VerifyFile(model.data, model.signature, model.cert);
         }
 
         private VerifyModel DecodeVerifyModel(VerifyModel model)
         {
+            model.cert = model.cert.Replace(' ', '+');
             model.signature = Convert.ToBase64String(HttpServerUtility.UrlTokenDecode(model.signature));
             return model;
         }
