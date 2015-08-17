@@ -51,6 +51,7 @@ create table developers_list(
 create table portfolio (
 	id serial primary key,
 	project_name text,
+	project_start_date timestamp,
 	project_completion_date timestamp,
 	fk_id_users integer references users(id) not null -- team leader
 );

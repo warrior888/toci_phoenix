@@ -133,6 +133,7 @@
     <Compile Include="Developers\Patryk\BLL\TeamLeasing\TeamLeasingLogicTest.cs" />
     <Compile Include="Developers\Patryk\DbTests\DalToBll\FetchDeveloperFromDbTest.cs" />
     <Compile Include="Developers\Patryk\DbTests\DalToBll\ModelLogic.cs" />
+    <Compile Include="Developers\Patryk\DbTests\DalToBll\PortfolioMappingTest.cs" />
     <Compile Include="Developers\Patryk\GeneratedModels\GenerateModelsTest.cs" />
     <Compile Include="Developers\Patryk\GeneratedModels\ColumnNameToPropertyTest.cs" />
     <Compile Include="Developers\Terry\DbTests\DbConnectionTest.cs" />
@@ -185,12 +186,12 @@
   <ItemGroup>
     <Folder Include="Developers\Duch\destination\" />
     <Folder Include="Developers\Kielich\" />
+    <Folder Include="Developers\Patryk\SQL\" />
     <Folder Include="Developers\S2yfr4nt\kupczon\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Developers\Duch\data\ddlExample.txt" />
     <Content Include="Developers\Duch\data\test.txt" />
-    <Content Include="Developers\Patryk\SQL\TeamLeasing.txt" />
     <Content Include="Developers\Terry\TeamLeasing.txt" />
   </ItemGroup>
   <ItemGroup>

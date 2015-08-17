@@ -105,7 +105,7 @@ namespace Toci.Db.DbVirtualization
 
         public IModel SetSelect<T>(string columnName, SelectClause clause, T value)
         {
-            Fields[columnName].SetValue(value);
+            SetValue(columnName,value);
             return SetSelect(columnName, clause);
         }
 
