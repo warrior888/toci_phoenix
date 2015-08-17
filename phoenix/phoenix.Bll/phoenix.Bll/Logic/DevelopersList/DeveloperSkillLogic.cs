@@ -9,9 +9,9 @@ using Toci.Db.DbVirtualization;
 
 namespace Phoenix.Bll.Logic.DevelopersList
 {
-    public class SkillLogic : DbLogic,ISkillLogic
+    public class DeveloperSkillLogic : DbLogic,IDeveloperSkillLogic
     {
-        public IEnumerable<ISkillBusinessModel> GetUserSkills(int userId)
+        public IEnumerable<IDeveloperSkillBusinessModel> GetUserSkills(int userId)
         {
             /*var allSkills = GetAllElements<ISkillBusinessModel, skills_view>(dest => dest.SkillName, opt => opt.MapFrom(src => src.TechName));
 
@@ -22,25 +22,25 @@ namespace Phoenix.Bll.Logic.DevelopersList
             List<developers_skills> developersSkills= FetchModelsByColumnValue<developers_skills, int>
                 ("id_users", SelectClause.Equal, userId);
 
-            List<ISkillBusinessModel> skills =
+            List<IDeveloperSkillBusinessModel> skills =
                 developersSkills.Select(skill => GetSkillById(skill.IdSkillsTechnologies)).ToList();
 
             return skills;
         }
 
-        public IEnumerable<ISkillBusinessModel> GetPortfolioSkills(int portfolioId)
+        public IEnumerable<IDeveloperSkillBusinessModel> GetPortfolioSkills(int portfolioId)
         {
             List<portfolio_skills_technologies> portfolioSkills = FetchModelsByColumnValue<portfolio_skills_technologies, int>
                 ("fk_id_portfolio", SelectClause.Equal, portfolioId);
-            List<ISkillBusinessModel> skills = 
+            List<IDeveloperSkillBusinessModel> skills = 
                 portfolioSkills.Select(skill => GetSkillById(skill.FkIdSkillsTechnologies)).ToList();
 
             return skills;
         }
 
-        public ISkillBusinessModel GetSkillById(int skillId)
+        public IDeveloperSkillBusinessModel GetSkillById(int skillId)
         {
-            return Mapper.Map<ISkillBusinessModel>( FetchModelById<skills_technologies>(skillId) );
+            return Mapper.Map<IDeveloperSkillBusinessModel>( FetchModelById<skills_technologies>(skillId) );
         }
     }
 }

@@ -8,9 +8,9 @@ namespace Phoenix.Bll.BusinessModels.TeamLeasing
     {
         public TeamLeasingOffer LeasingOffer { get; set; }
 
-        public IEnumerable<ISkillBusinessModel> SkillSet { get; set; }
+        public IEnumerable<IDeveloperSkillBusinessModel> SkillSet { get; set; }
 
-        public IEnumerable<ISkillBusinessModel> SkillBusinessModel { get; set; }
+        public IEnumerable<IDeveloperSkillBusinessModel> SkillBusinessModel { get; set; }
 
         public IDeveloperAvailableBusinessModel AvailableBusinessModel { get; set; }
 

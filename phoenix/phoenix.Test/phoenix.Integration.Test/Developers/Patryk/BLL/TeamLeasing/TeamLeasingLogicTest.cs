@@ -26,9 +26,9 @@ namespace Phoenix.Integration.Test.Developers.Patryk.BLL.TeamLeasing
             ITeamLeasingLogic teamLeasingLogic = new TeamLeasingLogic();
             ITeamLeasingBusinessModel teamLeasingBusinessModel = new TeamLeasingBusinessModel()
             {
-                SkillSet = new List<ISkillBusinessModel>()
+                SkillSet = new List<IDeveloperSkillBusinessModel>()
                 {
-                    new SkillBusinessModel()
+                    new DeveloperSkillBusinessModel()
                     {
                         SkillLevel = 20,
                         SkillName = "C#"

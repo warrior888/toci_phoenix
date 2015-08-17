@@ -116,6 +116,7 @@
     <Compile Include="BusinessModels\CourseRegistration\IChosenCourseRegistrationBusinessModel.cs" />
     <Compile Include="BusinessModels\CourseRegistration\ICourseRegistrationBusinessModel.cs" />
     <Compile Include="BusinessModels\DevelopersList\IDeveloperBusinessModel.cs" />
+    <Compile Include="BusinessModels\DevelopersList\IDeveloperSkillBusinessModel.cs" />
     <Compile Include="BusinessModels\DevelopersList\IPortfolioBusinessModel.cs" />
     <Compile Include="BusinessModels\DevelopersList\ISkillBusinessModel.cs" />
     <Compile Include="BusinessModels\InteractiveCourses\IModule.cs" />
@@ -152,6 +153,7 @@
     <Compile Include="ILogic.cs" />
     <Compile Include="ILogSaver.cs" />
     <Compile Include="Localization\ILocalizationLogic.cs" />
+    <Compile Include="Logic\DevelopersList\IDeveloperSkillLogic.cs" />
     <Compile Include="Logic\DevelopersList\IPortfolioLogic.cs" />
     <Compile Include="Logic\DevelopersList\ISkillLogic.cs" />
     <Compile Include="Logic\TeamLeasing\IDeveloperAvailableLogic.cs" />

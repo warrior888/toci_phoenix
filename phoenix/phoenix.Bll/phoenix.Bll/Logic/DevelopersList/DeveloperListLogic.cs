@@ -19,7 +19,7 @@ namespace Phoenix.Bll.Logic.DevelopersList
         //TODO DI + widok
         private IUsersLogic _userLogic = new UsersLogic();
         private IPortfolioLogic _portfolioLogic = new PortfolioLogic();
-        private ISkillLogic _skillLogic = new SkillLogic();
+        private IDeveloperSkillLogic _skillLogic = new DeveloperSkillLogic();
         private IDeveloperAvailableLogic _availableLogic = new DeveloperAvailableLogic();
 
         public IDeveloperBusinessModel GetDevById(int id)

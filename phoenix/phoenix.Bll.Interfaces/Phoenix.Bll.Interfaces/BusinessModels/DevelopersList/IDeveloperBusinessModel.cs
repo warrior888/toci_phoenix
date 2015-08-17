@@ -15,7 +15,7 @@ namespace Phoenix.Bll.Interfaces.BusinessModels.DevelopersList
 
         IDeveloperAvailableBusinessModel DeveloperAvailable { get; set; }
 
-        IEnumerable<ISkillBusinessModel> Skills { get; set; }
+        IEnumerable<IDeveloperSkillBusinessModel> Skills { get; set; }
 
         IEnumerable<IPortfolioBusinessModel> Portfolio { get; set; }
     }

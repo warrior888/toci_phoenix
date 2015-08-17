@@ -109,13 +109,13 @@
     <Compile Include="BusinessModels\CourseRegistration\CourseRegistrationBusinessModel.cs" />
     <Compile Include="BusinessModels\DevelopersList\DeveloperBusinessModel.cs" />
     <Compile Include="BusinessModels\DevelopersList\PortfolioBusinessModel.cs" />
-    <Compile Include="BusinessModels\DevelopersList\SkillBusinessModel.cs" />
+    <Compile Include="BusinessModels\DevelopersList\DeveloperSkillBusinessModel.cs" />
     <Compile Include="BusinessModels\TeamLeasing\DeveloperAvailableBusinessModel.cs" />
     <Compile Include="BusinessModels\TeamLeasing\DeveloperTeamBusinessModel.cs" />
     <Compile Include="BusinessModels\UsersList\Users.cs" />
     <Compile Include="DbHandleAccessDataFactory.cs" />
     <Compile Include="Logic\DevelopersList\PortfolioLogic.cs" />
-    <Compile Include="Logic\DevelopersList\SkillLogic.cs" />
+    <Compile Include="Logic\DevelopersList\DeveloperSkillLogic.cs" />
     <Compile Include="Logic\TeamLeasing\DeveloperAvailableLogic.cs" />
     <Compile Include="Logic\TeamLeasing\TeamLeasingLogicMock.cs" />
     <Compile Include="BusinessModels\TeamLeasing\TeamLeasingBusinessModel.cs" />
