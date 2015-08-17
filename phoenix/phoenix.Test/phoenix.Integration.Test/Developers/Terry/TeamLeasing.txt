@@ -1,4 +1,9 @@
-﻿create table roles ( 
+﻿drop table roles;
+drop table users;
+drop table developers_avaible
+
+
+create table roles ( 
 	id serial primary key,
 	name text
 );
@@ -46,7 +51,7 @@ create table skills_technologies (
 	tech_name text
 );
 
-create table portfolio_skills_technologies(
+create table test(
 	id serial primary key,
 	fk_id_portfolio integer references portfolio(id) not null,
 	fk_id_skills_technologies integer references skills_technologies(id) not null
@@ -115,3 +120,11 @@ create table course_references (
 	id_users integer references users(id) not null,
 	references_text text
 );
+
+CREATE OR REPLACE VIEW skills_view AS 
+ SELECT developers_skills.id_users,
+    developers_skills.skill_level,
+    skills_technologies.tech_name
+   FROM developers_skills
+     JOIN skills_technologies ON developers_skills.id_skills_technologies = skills_technologies.id;
+

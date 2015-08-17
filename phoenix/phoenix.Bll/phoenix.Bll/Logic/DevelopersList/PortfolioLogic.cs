@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Channels;
 using AutoMapper;
 using Phoenix.Bll.BusinessModels.DevelopersList;
 using Phoenix.Bll.Interfaces.BusinessModels.DevelopersList;
@@ -11,11 +12,11 @@ namespace Phoenix.Bll.Logic.DevelopersList
 {
     public class PortfolioLogic : DbLogic, IPortfolioLogic
     {
-        private readonly IDeveloperSkillLogic _skillLogic;
+        private ISkillLogic _skillLogic = new SkillLogic();
 
         public PortfolioLogic()
         {
-            _skillLogic = new DeveloperSkillLogic();
+            _skillLogic = new SkillLogic();
 
         }
 
@@ -27,7 +28,16 @@ namespace Phoenix.Bll.Logic.DevelopersList
             List<IPortfolioBusinessModel> userPortfolio =
                 userPortfolioFromDb.Select(portfolio => GetPortfolioById(portfolio.Id)).ToList();
 
+           /* List<IPortfolioBusinessModel> userPortfolio  = userPortfolioFromDb.Select(portfolio => new PortfolioBusinessModel()
+            {
+                ProjectName = portfolio.ProjectName,
+                StartDate = portfolio.ProjectStartDate,
+                EndDate = portfolio.ProjectCompletionDate,
+                Skills = _skillLogic.GetPortfolioSkills(portfolio.Id)
+            }).Cast<IPortfolioBusinessModel>().ToList();*/
+
             return userPortfolio;
+
         }
 
         public IPortfolioBusinessModel GetPortfolioById(int portfolioId)
