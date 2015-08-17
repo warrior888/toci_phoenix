@@ -76,3 +76,35 @@ D:\TOCI\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\bin\Debug\BouncyCa
 D:\TOCI\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\bin\Debug\Google.Apis.Auth.pdb
 D:\TOCI\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\bin\Debug\Google.Apis.Auth.PlatformServices.pdb
 D:\TOCI\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\bin\Debug\Google.Apis.Calendar.v3.pdb
+C:\Users\Salama\Documents\Visual Studio 2013\Projects\toci_phoenix\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\bin\Debug\Toci.Utilities.Abstraction.dll.config
+C:\Users\Salama\Documents\Visual Studio 2013\Projects\toci_phoenix\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\bin\Debug\Toci.Utilities.Abstraction.dll
+C:\Users\Salama\Documents\Visual Studio 2013\Projects\toci_phoenix\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\bin\Debug\Toci.Utilities.Abstraction.pdb
+C:\Users\Salama\Documents\Visual Studio 2013\Projects\toci_phoenix\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Salama\Documents\Visual Studio 2013\Projects\toci_phoenix\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\bin\Debug\Google.Apis.Auth.dll
+C:\Users\Salama\Documents\Visual Studio 2013\Projects\toci_phoenix\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\bin\Debug\Google.Apis.Auth.PlatformServices.dll
+C:\Users\Salama\Documents\Visual Studio 2013\Projects\toci_phoenix\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\bin\Debug\Google.Apis.Calendar.v3.dll
+C:\Users\Salama\Documents\Visual Studio 2013\Projects\toci_phoenix\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\bin\Debug\Google.Apis.Core.dll
+C:\Users\Salama\Documents\Visual Studio 2013\Projects\toci_phoenix\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\bin\Debug\Google.Apis.dll
+C:\Users\Salama\Documents\Visual Studio 2013\Projects\toci_phoenix\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\bin\Debug\Google.Apis.PlatformServices.dll
+C:\Users\Salama\Documents\Visual Studio 2013\Projects\toci_phoenix\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Salama\Documents\Visual Studio 2013\Projects\toci_phoenix\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\bin\Debug\System.Net.Http.Extensions.dll
+C:\Users\Salama\Documents\Visual Studio 2013\Projects\toci_phoenix\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\Salama\Documents\Visual Studio 2013\Projects\toci_phoenix\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\bin\Debug\Toci.Utilities.Common.dll
+C:\Users\Salama\Documents\Visual Studio 2013\Projects\toci_phoenix\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\bin\Debug\Toci.Utilities.Interfaces.dll
+C:\Users\Salama\Documents\Visual Studio 2013\Projects\toci_phoenix\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\bin\Debug\Zlib.Portable.dll
+C:\Users\Salama\Documents\Visual Studio 2013\Projects\toci_phoenix\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\bin\Debug\Google.Apis.xml
+C:\Users\Salama\Documents\Visual Studio 2013\Projects\toci_phoenix\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\bin\Debug\Google.Apis.Auth.xml
+C:\Users\Salama\Documents\Visual Studio 2013\Projects\toci_phoenix\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\bin\Debug\Google.Apis.Auth.PlatformServices.xml
+C:\Users\Salama\Documents\Visual Studio 2013\Projects\toci_phoenix\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\bin\Debug\Google.Apis.Calendar.v3.xml
+C:\Users\Salama\Documents\Visual Studio 2013\Projects\toci_phoenix\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\bin\Debug\Google.Apis.Core.xml
+C:\Users\Salama\Documents\Visual Studio 2013\Projects\toci_phoenix\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\bin\Debug\Google.Apis.PlatformServices.xml
+C:\Users\Salama\Documents\Visual Studio 2013\Projects\toci_phoenix\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Salama\Documents\Visual Studio 2013\Projects\toci_phoenix\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\bin\Debug\System.Net.Http.Extensions.xml
+C:\Users\Salama\Documents\Visual Studio 2013\Projects\toci_phoenix\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\bin\Debug\System.Net.Http.Primitives.xml
+C:\Users\Salama\Documents\Visual Studio 2013\Projects\toci_phoenix\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\bin\Debug\Zlib.Portable.xml
+C:\Users\Salama\Documents\Visual Studio 2013\Projects\toci_phoenix\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\obj\Debug\Toci.Utilities.Abstraction.csproj.App.config
+C:\Users\Salama\Documents\Visual Studio 2013\Projects\toci_phoenix\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\obj\Debug\Toci.Utilities.Abstraction.csprojResolveAssemblyReference.cache
+C:\Users\Salama\Documents\Visual Studio 2013\Projects\toci_phoenix\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\obj\Debug\Toci.Utilities.Abstraction.dll
+C:\Users\Salama\Documents\Visual Studio 2013\Projects\toci_phoenix\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\obj\Debug\Toci.Utilities.Abstraction.pdb
+C:\Users\Salama\Documents\Visual Studio 2013\Projects\toci_phoenix\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\bin\Debug\Toci.Utilities.Common.pdb
+C:\Users\Salama\Documents\Visual Studio 2013\Projects\toci_phoenix\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\bin\Debug\Toci.Utilities.Interfaces.pdb
