@@ -109,10 +109,6 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\toci_common\Toci.Libraries\Toci.Db\Toci.Db.csproj">
-      <Project>{c2377285-fa65-4545-91fb-6c4dc28155f5}</Project>
-      <Name>Toci.Db</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DbCrypting\DbCrypting.csproj">
       <Project>{b8730ca1-13e6-4d51-a436-da4a8a7d4062}</Project>
       <Name>DbCrypting</Name>
