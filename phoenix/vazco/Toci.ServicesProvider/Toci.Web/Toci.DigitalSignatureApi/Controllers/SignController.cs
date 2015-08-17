@@ -18,9 +18,20 @@ namespace Toci.DigitalSignatureApi.Controllers
         public string Sign([FromBody]SignModel model)
         {
             var sign = new Sign();
-            var data1 =  Convert.ToBase64String(Encoding.ASCII.GetBytes(model.data)); //testing purposes only
-            return HttpServerUtility.UrlTokenEncode(sign.SignFile(data1, model.cert));
+           // var data1 =  Convert.ToBase64String(Encoding.ASCII.GetBytes(model.data)); //testing purposes only
+            return HttpServerUtility.UrlTokenEncode(sign.SignFile(model.data, model.cert));
                 //Convert.ToBase64String(sign.SignFile(data1, cert));
+        }
+
+        [HttpPost]
+        [Route("api/sign")]
+        public string Sign([FromBody]SecuredSignModel model)
+        {
+            var sign = new Sign();
+            return
+                HttpServerUtility.UrlTokenEncode(sign.SignFile(model.data,
+                    sign.PfxFileToCertificate(model.cert, model.password)));
+            
         }
     }
 
