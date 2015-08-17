@@ -14,15 +14,35 @@ namespace Phoenix.Bll.Logic.DevelopersList
     {
         private ISkillLogic _skillLogic = new SkillLogic();
 
+        public PortfolioLogic()
+        {
+            _skillLogic = new SkillLogic();
+
+        }
+
         public IEnumerable<IPortfolioBusinessModel> GetUserPortfolio(int userId)
         {
-            List<IPortfolioBusinessModel> portfolioList = new List<IPortfolioBusinessModel>();
+            List<users_portfolio> userPortfolioFromDb = FetchModelsByColumnValue<users_portfolio, int>("id_users",
+                SelectClause.Equal, userId);
 
-            var models = FetchModelsFromDb<portfolio>(new portfolio());
-            var allPortfolios = GetAllElements<IPortfolioBusinessModel, portfolio>(dest => dest.EndDate, opt => opt.MapFrom(src => src.ProjectCompletionDate));
+            List<IPortfolioBusinessModel> userPortfolio =
+                userPortfolioFromDb.Select(portfolio => GetPortfolioById(portfolio.Id)).ToList();
 
-          var x =  Mapper.CreateMap<IPortfolioBusinessModel, portfolio>();
-            return null;
+           /* List<IPortfolioBusinessModel> userPortfolio  = userPortfolioFromDb.Select(portfolio => new PortfolioBusinessModel()
+            {
+                ProjectName = portfolio.ProjectName,
+                StartDate = portfolio.ProjectStartDate,
+                EndDate = portfolio.ProjectCompletionDate,
+                Skills = _skillLogic.GetPortfolioSkills(portfolio.Id)
+            }).Cast<IPortfolioBusinessModel>().ToList();*/
+
+            return userPortfolio;
+
         }
+
+        public IPortfolioBusinessModel GetPortfolioById(int portfolioId)
+        {
+            return Mapper.Map<IPortfolioBusinessModel>(FetchModelById<portfolio>(portfolioId));
+        } 
     }
 }

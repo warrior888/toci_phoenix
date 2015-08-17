@@ -22,10 +22,24 @@ namespace Phoenix.Integration.Test.Developers.Patryk.AutoMapper
                 Name = "name",
                 Surname = "surname"
             };
+
+            course_registration courseRegistration = new course_registration()
+            {
+                Login = "patryk",
+                Password = "haslo123",
+                Email = "patrykj122@o2.pl",
+                Nick = "nick",
+                Name = "name",
+                Surname = "surname"
+            };
             Mapper.CreateMap<ICourseRegistrationBusinessModel, course_registration>();
+            Mapper.CreateMap<course_registration,ICourseRegistrationBusinessModel>();
             Whatever whatever = new Whatever();
             course_registration course = whatever.DoMapping(registrationBusinessModel);
-           // ICourseRegistrationBusinessModel courseBusinessModel = whatever.DoMapping(course);
+
+            ICourseRegistrationBusinessModel courseRegistrationBusinessModel =
+                whatever.DoMappingInOtherSide(courseRegistration);
+
         } 
          
     }
