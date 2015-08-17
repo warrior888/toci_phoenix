@@ -5,6 +5,7 @@ using Toci.Utilities.Interfaces.Generator.DatabaseModelGenerator;
 
 namespace Toci.Utilities.Abstraction.Generator.DatabaseModelGenerator
 {
+    
     public abstract class ModelsGenerator : IModelsGenerator
     {
         protected string FileSavePattern = @"{0}\{1}.{2}";
@@ -61,4 +62,5 @@ namespace Toci.Utilities.Abstraction.Generator.DatabaseModelGenerator
             }
         }
     }
+    
 }

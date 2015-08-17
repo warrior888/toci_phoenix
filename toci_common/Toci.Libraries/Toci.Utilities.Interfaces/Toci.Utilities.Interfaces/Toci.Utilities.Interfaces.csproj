@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C3976AC9-39A5-4B47-8A67-33F021A4CDC3}</ProjectGuid>
+    <ProjectGuid>{5F10A690-71C7-4DAA-B46B-12720B16F64C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Toci.Utilities.Interfaces</RootNamespace>
@@ -140,14 +140,14 @@
     <Compile Include="User\Privileges\IPrivilegeGroup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Toci.Utilities.Common\Toci.Utilities.Common.csproj">
-      <Project>{AA84D501-0707-40D3-AED8-F4884E7F0FB2}</Project>
-      <Name>Toci.Utilities.Common</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Toci.Utilities.Common\Toci.Utilities.Common.csproj">
+      <Project>{10db4113-ac97-426e-a233-3961a7d30e52}</Project>
+      <Name>Toci.Utilities.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\..\Toci.Db\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\Toci.Db\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />

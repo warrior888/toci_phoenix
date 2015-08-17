@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A7951807-F924-4108-A63B-253CE3F5B045}</ProjectGuid>
+    <ProjectGuid>{9A12B07D-D560-41D9-B714-3785C0360CCD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Toci.Utilities</RootNamespace>
@@ -185,11 +185,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Toci.Utilities.Abstraction\Toci.Utilities.Abstraction.csproj">
-      <Project>{3f7c2517-390a-40bf-a1fc-3f5dfae8bdf2}</Project>
+      <Project>{e91d020a-2d43-42e3-8c53-0f57b4b4f549}</Project>
       <Name>Toci.Utilities.Abstraction</Name>
     </ProjectReference>
     <ProjectReference Include="..\Toci.Utilities.Interfaces\Toci.Utilities.Interfaces\Toci.Utilities.Interfaces.csproj">
-      <Project>{c3976ac9-39a5-4b47-8a67-33f021a4cdc3}</Project>
+      <Project>{5f10a690-71c7-4daa-b46b-12720b16f64c}</Project>
       <Name>Toci.Utilities.Interfaces</Name>
     </ProjectReference>
   </ItemGroup>
