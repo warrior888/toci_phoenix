@@ -10,18 +10,6 @@ namespace Phoenix.Dal.GeneratedModels
         {
         }
          
-        public const string ID = "id";
-        public int Id
-            {
-                get
-                {
-                     return GetValue<int>(ID);
-                }
-                set
-                {
-                    SetValue(ID, value);
-                }
-            }
          
         public const string AVAILBLE_FOR = "availble_for";
         public DateTime AvailbleFor

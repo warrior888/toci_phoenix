@@ -13,12 +13,6 @@ namespace Phoenix.Bll.Logic.DevelopersList
     {
         public IEnumerable<IDeveloperSkillBusinessModel> GetUserSkills(int userId)
         {
-            /*var allSkills = GetAllElements<ISkillBusinessModel, skills_view>(dest => dest.SkillName, opt => opt.MapFrom(src => src.TechName));
-
-            List<ISkillBusinessModel> userSkillsList = allSkills.Where(skill => skill.IdUsers == userId).ToList();
-
-            return userSkillsList;*/
-
             List<developers_skills> developersSkills= FetchModelsByColumnValue<developers_skills, int>
                 ("id_users", SelectClause.Equal, userId);
 
