@@ -95,7 +95,7 @@ namespace Toci.Tests
             Projects model = new Projects
             {
                 projectname = "22222dads",
-                scopeid = 1,
+                scopeid = 2,
                 projectdata = "22222dsagfsgdh",
                 projectauthor = "22222s2yfr4nt",
                // modificationdate = 
