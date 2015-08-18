@@ -2,6 +2,7 @@
 using DbCrypting;
 using DbCrypting.VazcoDb;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Toci.CryptingApi.Models;
 
 namespace Toci.Tests
 {
@@ -11,8 +12,8 @@ namespace Toci.Tests
         [TestMethod]
         public void TestMethod1()
         {
-            var dbOperator = new DbOperations("dupa");
-            const string testString = "Test rwerwerw";
+            var dbOperator = new DbOperations("dupa", new VazcoConfig());
+            const string testString = "Test rwerwsfsdsferw";
 
             var model = new VazcoTable {data = testString,name = "TestName"};
 
@@ -27,7 +28,7 @@ namespace Toci.Tests
         {
             //var dbSave = new DbSave();
            // var dbLoad = new DbLoad();
-           var dbo = new DbOperations("dupa");
+           var dbo = new DbOperations("dupa", new VazcoConfig());
             var result = dbo.Load();
 
             var model = new VazcoTable() { id = 4 };
@@ -43,7 +44,7 @@ namespace Toci.Tests
         {
             //var dbSave = new DbSave();
            // var dbLoad = new DbLoad();
-           var dbo = new DbOperations("dupa");
+           var dbo = new DbOperations("dupa", new VazcoConfig());
             const string testString = "ValueToUpdate";
             const string updatedString = "UpdatedValue";
 

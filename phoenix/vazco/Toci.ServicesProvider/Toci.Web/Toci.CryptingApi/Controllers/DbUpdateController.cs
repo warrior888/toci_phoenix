@@ -18,7 +18,7 @@ namespace Toci.CryptingApi.Controllers
         {
             try
             {
-                var dbo = new DbOperations(model.password);
+                var dbo = new DbOperations(model.password, new VazcoConfig());
                 dbo.Update(new VazcoTable {id = model.id,addingTime = model.addingTime,data = model.data,name = model.name});
 
                 return "Updated!";

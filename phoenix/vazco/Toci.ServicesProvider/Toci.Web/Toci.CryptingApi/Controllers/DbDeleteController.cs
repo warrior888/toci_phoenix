@@ -19,7 +19,7 @@ namespace Toci.CryptingApi.Controllers
         {
             try
             {
-                var dbo = new DbOperations(model.password);
+                var dbo = new DbOperations(model.password,new VazcoConfig());
                 dbo.Delete(new VazcoTable {id = model.id});
 
                 return "Deleted!";

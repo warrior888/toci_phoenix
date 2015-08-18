@@ -5,22 +5,22 @@ using Toci.Db.DbVirtualization.MsSqlQuery;
 
 namespace DbCrypting.Logic
 {
-    static class DbConnect
+     class DbConnect
     {
-        private static readonly string login;
-        private static readonly string secret;
-        private static readonly string address;
-        private static readonly string dataBaseName;
+        private readonly string login;
+        private readonly string secret;
+        private readonly string address;
+        private readonly string dataBaseName;
 
-        static DbConnect()
+        public DbConnect(DbConfig config)
         {
-            login = LoadConfig.login;
-            secret = LoadConfig.secret;
-            address = LoadConfig.address;
-            dataBaseName = LoadConfig.DataBaseName;
+            login = config.login;
+            secret = config.secret;
+            address = config.address;
+            dataBaseName = config.DataBaseName;
         }
 
-        public static DbHandle Connect()
+        public  DbHandle Connect()
         {
             var client = new MsSqlClient(login, secret, address, dataBaseName);
             return new DbHandle(client, new MsSqlSelect(), new MsSqlInsert(), new MsSqlUpdate(), new MsSqlDelete());

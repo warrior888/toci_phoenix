@@ -19,11 +19,11 @@ namespace Toci.CryptingApi.Controllers
         {
             try
             {
-                var dbo = new DbOperations(model.password);
+                var dbo = new DbOperations(model.password, new VazcoConfig());
                 var vazcoList =  dbo.Load();
                 return vazcoList.Select(item => new BodyModel
                 {
-                    addingTime = DateTime.Now, data = item.data, id = item.id, name = item.name
+                    addingTime = item.addingTime, data = item.data, id = item.id, name = item.name
                 }).Where(x => x.data != WrongPassword).ToList();
                 //return model.name != default(string) ? dbo.Load().Where(x => x.name == model.name) : dbo.Load();
 
