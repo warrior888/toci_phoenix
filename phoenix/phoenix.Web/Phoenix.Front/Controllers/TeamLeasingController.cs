@@ -20,30 +20,25 @@ namespace Phoenix.Front.Controllers
 
     public class TeamLeasingController : Controller
     {
-        private ITeamLeasingLogic teamLeasingLogic;
-
-        public TeamLeasingController()
-        {
-            
-        }
-
+        private ITeamLeasingLogic _teamLeasingLogic;
+        
         public TeamLeasingController(ITeamLeasingLogic TeamLeasingLogic)
         {
-            teamLeasingLogic = TeamLeasingLogic;
+            _teamLeasingLogic = TeamLeasingLogic;
         }
 
      // GET: TeamLeasing
         public ActionResult IndexMock()
         {
-            /*TeamLeasingViewModel vm = new TeamLeasingViewModel();
+            TeamLeasingViewModel vm = new TeamLeasingViewModel();
             
             vm.teamLeasingLogic = new TeamLeasingLogicMock();
             vm.Teams = vm.teamLeasingLogic.GetTeams(null, 1);
             vm.oneTeam = vm.Teams.First(); 
             
 
-            return View(vm);*/
-            return null;
+            return View(vm);
+            
         }
     }
 }
