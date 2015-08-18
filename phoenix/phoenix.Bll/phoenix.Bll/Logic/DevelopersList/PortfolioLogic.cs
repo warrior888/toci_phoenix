@@ -12,21 +12,14 @@ namespace Phoenix.Bll.Logic.DevelopersList
 {
     public class PortfolioLogic : DbLogic, IPortfolioLogic
     {
-        private ISkillLogic _skillLogic;
-
-        public PortfolioLogic()
-        {
-            _skillLogic = new SkillLogic();
-
-        }
-
+      
         public IEnumerable<IPortfolioBusinessModel> GetUserPortfolio(int userId)
         {
             List<users_portfolio> userPortfolioFromDb = FetchModelsByColumnValue<users_portfolio, int>("id_users",
                 SelectClause.Equal, userId);
 
             List<IPortfolioBusinessModel> userPortfolio =
-                userPortfolioFromDb.Select(portfolio => GetPortfolioById(portfolio.Id)).ToList();
+                userPortfolioFromDb.Select(portfolio => GetPortfolioById(portfolio.IdPortfolio)).ToList();
 
             return userPortfolio;
 

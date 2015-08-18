@@ -1,5 +1,6 @@
 ﻿﻿using System;
 ﻿using System.Collections.Generic;
+﻿using System.Linq;
 ﻿using AutoMapper;
 ﻿using Phoenix.Bll.Interfaces.BusinessModels.DevelopersList;
 ﻿using Phoenix.Bll.Interfaces.Logic.DevelopersList;
@@ -12,10 +13,12 @@ namespace Phoenix.Bll.Logic.DevelopersList
     {        
         public IEnumerable<IDeveloperBusinessModel> GetAllDevelopers()
         {
-            throw new NotImplementedException();
+            List<developer_list_view> developersList = FetchModelsFromDb<developer_list_view>(new developer_list_view());
+
+            return developersList.Select(Mapper.Map<IDeveloperBusinessModel>);
         }
 
-        public IDeveloperBusinessModel GetDevById(int id)
+        public IDeveloperBusinessModel GetDevByUserId(int id)
         {
 
             developer_list_view developerFromDb = FetchModelFromDb<developer_list_view>(new developer_list_view()

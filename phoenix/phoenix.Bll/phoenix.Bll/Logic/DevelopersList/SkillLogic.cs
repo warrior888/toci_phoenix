@@ -11,12 +11,12 @@ namespace Phoenix.Bll.Logic.DevelopersList
 {
     public class SkillLogic : DbLogic,ISkillLogic
     {
-        public IEnumerable<ISkillBusinessModel> GetDeveloperSkills(int userId)
+        public IEnumerable<IDeveloperSkillBusinessModel> GetDeveloperSkills(int userId)
         {
             List<developer_skills_view> developersSkills = FetchModelsByColumnValue<developer_skills_view, int>
                 ("id_users", SelectClause.Equal, userId);
 
-            List<ISkillBusinessModel> skills = developersSkills.Select(skill => Mapper.Map<ISkillBusinessModel>(skill)).ToList();
+            List<IDeveloperSkillBusinessModel> skills = developersSkills.Select(Mapper.Map<IDeveloperSkillBusinessModel>).ToList();
 
             return skills;
         }

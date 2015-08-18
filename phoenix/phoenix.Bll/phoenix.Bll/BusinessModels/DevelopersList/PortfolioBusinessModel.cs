@@ -6,9 +6,9 @@ namespace Phoenix.Bll.BusinessModels.DevelopersList
 {
     public class PortfolioBusinessModel : IPortfolioBusinessModel
     {
+        public int Id { get; set; }
         public string ProjectName { get; set; }
-        public IEnumerable<ISkillBusinessModel> Skills { get; set; }
-        public IDeveloperBusinessModel ProjectTeamLeader { get; set; }
+        public IEnumerable<ISkillBusinessModel> Skills { get; set; }       
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
 

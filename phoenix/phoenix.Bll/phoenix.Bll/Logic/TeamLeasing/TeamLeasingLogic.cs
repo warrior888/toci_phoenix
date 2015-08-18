@@ -22,7 +22,7 @@ namespace Phoenix.Bll.Logic.TeamLeasing
             List<portfolio> portfolios = FetchModelsFromDb<portfolio>(new portfolio());
 
             List<IDeveloperBusinessModel> developers = portfolios.Select
-                                                    (portfolio => _developersLogic.GetDevById(portfolio.FkIdUsers)).ToList();
+                                                    (portfolio => _developersLogic.GetDevByUserId(portfolio.FkIdUsers)).ToList();
             return null;
         }
 

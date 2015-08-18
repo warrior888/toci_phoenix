@@ -8,11 +8,12 @@ namespace Phoenix.Bll.BusinessModels.DevelopersList
 {
     public class DeveloperBusinessModel : IDeveloperBusinessModel
     {
+        public int Id { get; set; }
         public IUsersBusinessModel User { get; set; }
         public double Score { get; set; }
         public DateTime ExperienceFrom { get; set; }
         public IDeveloperAvailableBusinessModel DeveloperAvailable { get; set; }
-        public IEnumerable<ISkillBusinessModel> Skills { get; set; }
+        public IEnumerable<IDeveloperSkillBusinessModel> Skills { get; set; }
         public IEnumerable<IPortfolioBusinessModel> Portfolio { get; set; }
     }
 }

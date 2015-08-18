@@ -21,6 +21,7 @@ namespace Phoenix.Bll
         //TODO DI
 
         private static IUsersLogic _userLogic = new UsersLogic();
+        private static IDeveloperListLogic _developerListLogic = new DeveloperListLogic();
         private static IPortfolioLogic _portfolioLogic = new PortfolioLogic();
         private static ISkillLogic _skillLogic = new SkillLogic();
         private static IDeveloperAvailableLogic _availableLogic = new DeveloperAvailableLogic();
@@ -46,8 +47,8 @@ namespace Phoenix.Bll
             Mapper.CreateMap<ISkillBusinessModel, skills_technologies>();
             Mapper.CreateMap<skills_technologies, ISkillBusinessModel>();
 
-            Mapper.CreateMap<ISkillBusinessModel, developer_skills_view>();
-            Mapper.CreateMap<developer_skills_view, ISkillBusinessModel>();
+            Mapper.CreateMap<IDeveloperSkillBusinessModel, developer_skills_view>();
+            Mapper.CreateMap<developer_skills_view, IDeveloperSkillBusinessModel>();
 
         }
 

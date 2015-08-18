@@ -58,7 +58,7 @@ create table users (
 
 create table developers_available(
 	id serial primary key,
-	availble_for timestamp,
+	available_for timestamp,
 	start_work_hour integer,
 	end_work_hour integer
 );
@@ -66,6 +66,7 @@ create table developers_available(
 create table developers_list(
 	id serial primary key,
 	experience_from timestamp,
+	score float,
 	id_users integer references users(id) not null,
 	fk_id_developers_avaible integer references developers_available(id) not null	
 ); 
@@ -307,24 +308,24 @@ values ((select id from roles where name='administrator'),'cxzczx','nbvnbv','mn@
 
 --developer available
 
-insert into developers_available (availble_for, start_work_hour, end_work_hour) values('2015-12-05',8,16);
-insert into developers_available (availble_for, start_work_hour, end_work_hour) values('2015-07-03',8,16);
-insert into developers_available (availble_for, start_work_hour, end_work_hour) values('2015-12-10',8,16);
-insert into developers_available (availble_for, start_work_hour, end_work_hour) values('2015-12-05',9,13);
-insert into developers_available (availble_for, start_work_hour, end_work_hour) values('2015-12-17',8,16);
-insert into developers_available (availble_for, start_work_hour, end_work_hour) values('2015-06-05',17,22);
-insert into developers_available (availble_for, start_work_hour, end_work_hour) values('2015-12-05',8,16);
-insert into developers_available (availble_for, start_work_hour, end_work_hour) values('2015-12-22',10,15);
-insert into developers_available (availble_for, start_work_hour, end_work_hour) values('2015-12-05',8,16);
-insert into developers_available (availble_for, start_work_hour, end_work_hour) values('2015-12-05',17,22);
-insert into developers_available (availble_for, start_work_hour, end_work_hour) values('2015-12-23',17,22);
-insert into developers_available (availble_for, start_work_hour, end_work_hour) values('2015-03-05',17,22);
-insert into developers_available (availble_for, start_work_hour, end_work_hour) values('2015-12-05',17,22);
-insert into developers_available (availble_for, start_work_hour, end_work_hour) values('2015-12-07',17,22);
-insert into developers_available (availble_for, start_work_hour, end_work_hour) values('2015-12-05',8,16);
-insert into developers_available (availble_for, start_work_hour, end_work_hour) values('2015-09-05',6,12);
-insert into developers_available (availble_for, start_work_hour, end_work_hour) values('2015-12-05',8,16);
-insert into developers_available (availble_for, start_work_hour, end_work_hour) values('2015-12-05',8,16);
+insert into developers_available (available_for, start_work_hour, end_work_hour) values('2015-12-05',8,16);
+insert into developers_available (available_for, start_work_hour, end_work_hour) values('2015-07-03',8,16);
+insert into developers_available (available_for, start_work_hour, end_work_hour) values('2015-12-10',8,16);
+insert into developers_available (available_for, start_work_hour, end_work_hour) values('2015-12-05',9,13);
+insert into developers_available (available_for, start_work_hour, end_work_hour) values('2015-12-17',8,16);
+insert into developers_available (available_for, start_work_hour, end_work_hour) values('2015-06-05',17,22);
+insert into developers_available (available_for, start_work_hour, end_work_hour) values('2015-12-05',8,16);
+insert into developers_available (available_for, start_work_hour, end_work_hour) values('2015-12-22',10,15);
+insert into developers_available (available_for, start_work_hour, end_work_hour) values('2015-12-05',8,16);
+insert into developers_available (available_for, start_work_hour, end_work_hour) values('2015-12-05',17,22);
+insert into developers_available (available_for, start_work_hour, end_work_hour) values('2015-12-23',17,22);
+insert into developers_available (available_for, start_work_hour, end_work_hour) values('2015-03-05',17,22);
+insert into developers_available (available_for, start_work_hour, end_work_hour) values('2015-12-05',17,22);
+insert into developers_available (available_for, start_work_hour, end_work_hour) values('2015-12-07',17,22);
+insert into developers_available (available_for, start_work_hour, end_work_hour) values('2015-12-05',8,16);
+insert into developers_available (available_for, start_work_hour, end_work_hour) values('2015-09-05',6,12);
+insert into developers_available (available_for, start_work_hour, end_work_hour) values('2015-12-05',8,16);
+insert into developers_available (available_for, start_work_hour, end_work_hour) values('2015-12-05',8,16);
 
 --portfolio
 
@@ -348,58 +349,58 @@ insert into skills_technologies (tech_name) values('HTML');
 -- developers_list
   
 
-insert into developers_list (experience_from, id_users, fk_id_developers_avaible) values ('2014-05-12',(select id from users where users.nick = 'patrykj123'),
+insert into developers_list (experience_from, score, id_users, fk_id_developers_avaible) values ('2014-05-12', 180, (select id from users where users.nick = 'patrykj123'),
 												       (select id from developers_available where start_work_hour = 8 limit 1));
 
-insert into developers_list (experience_from, id_users, fk_id_developers_avaible) values ('2013-05-17',(select id from users where users.nick = 'kuba455'),
+insert into developers_list (experience_from, score, id_users, fk_id_developers_avaible) values ('2013-05-17', 170, (select id from users where users.nick = 'kuba455'),
 												       (select id from developers_available where start_work_hour = 8 limit 1));												       
 
-insert into developers_list (experience_from, id_users, fk_id_developers_avaible) values ('2014-06-15',(select id from users where users.nick = 'terry'),
+insert into developers_list (experience_from, score, id_users, fk_id_developers_avaible) values ('2014-06-15', 220, (select id from users where users.nick = 'terry'),
 												       (select id from developers_available where start_work_hour = 8 limit 1));												       
 
-insert into developers_list (experience_from, id_users, fk_id_developers_avaible) values ('1999-01-01',(select id from users where users.nick = 'warrior'),
+insert into developers_list (experience_from, score, id_users, fk_id_developers_avaible) values ('1999-01-01', 900, (select id from users where users.nick = 'warrior'),
 												       (select id from developers_available where start_work_hour = 8 limit 1));
 
-insert into developers_list (experience_from, id_users, fk_id_developers_avaible) values ('2013-07-16',(select id from users where users.nick = 'janek999'),
+insert into developers_list (experience_from, score, id_users, fk_id_developers_avaible) values ('2013-07-16', 600, (select id from users where users.nick = 'janek999'),
 												       (select id from developers_available where start_work_hour = 17 limit 1));
 
-insert into developers_list (experience_from, id_users, fk_id_developers_avaible) values ('2014-05-12',(select id from users where users.nick = 'pawel344'),
+insert into developers_list (experience_from, score, id_users, fk_id_developers_avaible) values ('2014-05-12', 430, (select id from users where users.nick = 'pawel344'),
 												       (select id from developers_available where start_work_hour = 8 limit 1));
 
-insert into developers_list (experience_from, id_users, fk_id_developers_avaible) values ('2014-05-12',(select id from users where users.nick = 'optimus'),
+insert into developers_list (experience_from, score, id_users, fk_id_developers_avaible) values ('2014-05-12', 280, (select id from users where users.nick = 'optimus'),
 												       (select id from developers_available where start_work_hour = 17 limit 1));
 
-insert into developers_list (experience_from, id_users, fk_id_developers_avaible) values ('2013-07-16',(select id from users where users.nick = 'ronal633'),
+insert into developers_list (experience_from, score, id_users, fk_id_developers_avaible) values ('2013-07-16', 332, (select id from users where users.nick = 'ronal633'),
 												       (select id from developers_available where start_work_hour = 9 limit 1));
 
-insert into developers_list (experience_from, id_users, fk_id_developers_avaible) values ('2014-05-12',(select id from users where users.nick = 'rion'),
+insert into developers_list (experience_from, score, id_users, fk_id_developers_avaible) values ('2014-05-12', 100, (select id from users where users.nick = 'rion'),
 												       (select id from developers_available where start_work_hour = 9 limit 1));
 
-insert into developers_list (experience_from, id_users, fk_id_developers_avaible) values ('2014-05-12',(select id from users where users.nick = 'magnus'),
+insert into developers_list (experience_from, score, id_users, fk_id_developers_avaible) values ('2014-05-12', 550, (select id from users where users.nick = 'magnus'),
 												       (select id from developers_available where start_work_hour = 8 limit 1));
 
-insert into developers_list (experience_from, id_users, fk_id_developers_avaible) values ('2013-07-16',(select id from users where users.nick = 'ronal777'),
+insert into developers_list (experience_from, score, id_users, fk_id_developers_avaible) values ('2013-07-16', 492, (select id from users where users.nick = 'ronal777'),
 												       (select id from developers_available where start_work_hour = 9 limit 1));
 
-insert into developers_list (experience_from, id_users, fk_id_developers_avaible) values ('2014-05-12',(select id from users where users.nick = 'lars667'),
+insert into developers_list (experience_from, score, id_users, fk_id_developers_avaible) values ('2014-05-12', 321, (select id from users where users.nick = 'lars667'),
 												       (select id from developers_available where start_work_hour = 8 limit 1));												       
 
-insert into developers_list (experience_from, id_users, fk_id_developers_avaible) values ('2014-05-12',(select id from users where users.nick = 'wicio'),
+insert into developers_list (experience_from, score, id_users, fk_id_developers_avaible) values ('2014-05-12', 400, (select id from users where users.nick = 'wicio'),
 												       (select id from developers_available where start_work_hour = 8 limit 1));
 
-insert into developers_list (experience_from, id_users, fk_id_developers_avaible) values ('2013-07-16',(select id from users where users.nick = 'fenek31'),
+insert into developers_list (experience_from, score, id_users, fk_id_developers_avaible) values ('2013-07-16', 150, (select id from users where users.nick = 'fenek31'),
 												       (select id from developers_available where start_work_hour = 9 limit 1));
 
-insert into developers_list (experience_from, id_users, fk_id_developers_avaible) values ('2014-05-12',(select id from users where users.nick = 'checix76'),
+insert into developers_list (experience_from, score, id_users, fk_id_developers_avaible) values ('2014-05-12', 269, (select id from users where users.nick = 'checix76'),
 												       (select id from developers_available where start_work_hour = 8 limit 1));
 
-insert into developers_list (experience_from, id_users, fk_id_developers_avaible) values ('2013-07-16',(select id from users where users.nick = 'zielen689'),
+insert into developers_list (experience_from, score, id_users, fk_id_developers_avaible) values ('2013-07-16',  559, (select id from users where users.nick = 'zielen689'),
 												       (select id from developers_available where start_work_hour = 8 limit 1));
 
-insert into developers_list (experience_from, id_users, fk_id_developers_avaible) values ('2014-05-12',(select id from users where users.nick = 'snakus92'),
+insert into developers_list (experience_from, score, id_users, fk_id_developers_avaible) values ('2014-05-12', 357, (select id from users where users.nick = 'snakus92'),
 												       (select id from developers_available where start_work_hour = 6 limit 1));												     												       												       												       
 												       
-insert into developers_list (experience_from, id_users, fk_id_developers_avaible) values ('2013-07-16',(select id from users where users.nick = 'razor88'),
+insert into developers_list (experience_from, score, id_users, fk_id_developers_avaible) values ('2013-07-16', 430, (select id from users where users.nick = 'razor88'),
 												       (select id from developers_available where start_work_hour = 6 limit 1));
 
 --developers_skills
@@ -569,13 +570,13 @@ CREATE OR REPLACE VIEW developer_skills_view AS
 -- developer_list_view
 
 create or replace view developer_list_view as 
-	select u.id as user_id, u.nick, u.name, u.surname, dev.experience_from, dev_available.availble_for,
+	select u.id as user_id, u.nick, u.name, u.surname, dev.experience_from, dev.score, dev_available.available_for,
 	dev_available.start_work_hour, dev_available.end_work_hour
 	from developers_list dev
 	join users u on u.id = dev.id_users
 	join developers_available dev_available on dev_available.id = dev.fk_id_developers_avaible
 
-
+drop view developer_list_view 
 ---------------------------------------
 
 select * from skills_view;
@@ -640,16 +641,16 @@ and
 --regex coach
 
 --select * from roles;
----select * from users;
+select * from users;
 --delete from users;
 
---select * from portfolio;
+select * from portfolio;
 
 --select * from developers_available;
---select * from developers_list;
+select * from developers_list;
 --select * from developers_skills;
 
---select * from users_portfolio;
+select * from users_portfolio;
 --select * from skills_technologies;
 
 --delete from skills_technologies where id > 4;
