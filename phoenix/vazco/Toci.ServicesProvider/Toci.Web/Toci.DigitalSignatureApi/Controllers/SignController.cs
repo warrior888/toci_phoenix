@@ -17,8 +17,8 @@ namespace Toci.DigitalSignatureApi.Controllers
         private readonly DigitalSignatureApiUtils _digitalSignatureApiUtils = new DigitalSignatureApiUtils();
 
         [HttpPost]
-        [Route("api/sign")]
-        public string Sign([FromBody]SignModel model)
+        [Route("api/unsecuredsign")]
+        public string UnsecuredSign([FromBody]SignModel model)
         {
             var sign = new Sign();
             var isNullMessage = _digitalSignatureApiUtils.CheckForNull(model);
@@ -41,8 +41,8 @@ namespace Toci.DigitalSignatureApi.Controllers
         }
 
         [HttpPost]
-        [Route("api/passwordsign")]
-        public string PasswordSign([FromBody]SecuredSignModel model)
+        [Route("api/sign")]
+        public string Sign([FromBody]SecuredSignModel model)
         {
             var isNullMessage = _digitalSignatureApiUtils.CheckForNull(model);
             if (isNullMessage != null)
