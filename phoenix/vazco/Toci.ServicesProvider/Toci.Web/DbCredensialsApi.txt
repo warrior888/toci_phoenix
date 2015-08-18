@@ -29,7 +29,7 @@ v	Usuwanie projektu:
 v	Zwraca success/fail 	
 	
 v	Update projektu
-	- ProjectName
+	- ProjectId
 	- Nowe ProjectData
 	- Lista scopeów u¿ytkownika
 

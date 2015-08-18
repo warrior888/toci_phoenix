@@ -16,15 +16,15 @@ namespace Toci.CredentialsApi.Controllers
         
         [Route("Save/Project")]
         [HttpPost]
-        public bool SaveProject(BusinessModel model)
+        public string SaveProject(BusinessModel model)
         {
             try
-            {   
-                return businessLogic.AddProject(model.GetScopesModel(), model.GetProjectsModel());
-            }
-            catch (Exception exception)
             {
-                throw new Exception("Cannot add project. "+ exception.Message);
+                return businessLogic.AddProject(model.GetScopesModel(), model.GetProjectsModel()) ? "Succeed" : "Failed";
+            }
+            catch (ApplicationException exception)
+            {
+                throw new ApplicationException("Cannot add project. "+ exception.Message);
             }
         }
 
@@ -60,6 +60,20 @@ namespace Toci.CredentialsApi.Controllers
             }
         }
 
+        [Route("Delete/Project")]
+        [HttpPost]
+        public bool DeleteProject(BusinessModel model)
+        {
+            try
+            {
+                return businessLogic.DeleteProject(model.GetProjectsModel(), model.GetScopesList());
+            }
+            catch (Exception exception)
+            {
+                throw new Exception("Cannot update project. " + exception.Message);
+            }
+        }
+
         [Route("Update/Project")]
         [HttpPost]
         public bool UpdateProject(BusinessModel model)
@@ -73,5 +87,6 @@ namespace Toci.CredentialsApi.Controllers
                 throw new Exception("Cannot update project. " + exception.Message);
             }
         }
+
     }
 }

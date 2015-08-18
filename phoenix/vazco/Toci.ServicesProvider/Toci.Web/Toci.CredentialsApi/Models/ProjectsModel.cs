@@ -7,6 +7,8 @@ namespace Toci.CredentialsApi.Models
 {
     public class ProjectsModel
     {
+
+        public int projectId { get; set; }
         public string projectName { get; set; }
         public string projectAuthor { get; set; }
         public string projectData { get; set; }
@@ -16,6 +18,7 @@ namespace Toci.CredentialsApi.Models
         {
             return list.Select(item => new ProjectsModel
             {
+                projectId = item.projectid,
                 projectName = item.projectname, 
                 projectData = item.projectdata, 
                 projectAuthor = item.projectauthor, 
@@ -27,6 +30,7 @@ namespace Toci.CredentialsApi.Models
         {
             return new ProjectsModel
             {
+                projectId = model.projectid,
                 projectName = model.projectname,
                 projectData = model.projectdata,
                 projectAuthor = model.projectauthor,

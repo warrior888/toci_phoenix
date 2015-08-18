@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net.NetworkInformation;
 using DbCredentials.BusinessLogic;
 using DbCredentials.DbLogic;
@@ -88,16 +89,16 @@ namespace Toci.Tests
         {
             Scopes scmodel = new Scopes
             {
-                scopename = "admin2"
+                scopename = "klekotmuchy"
             };
             var sth = dbQuery.Save(scmodel);
 
             Projects model = new Projects
             {
-                projectname = "22222dads",
+                projectname = "dads2",
                 scopeid = 2,
-                projectdata = "22222dsagfsgdh",
-                projectauthor = "22222s2yfr4nt",
+                projectdata = "21d22e23sagfsgdh",
+                projectauthor = "s2yfr4nt",
                // modificationdate = 
                 //projectid = 2
             };
@@ -119,7 +120,26 @@ namespace Toci.Tests
                 //projectid = 1
             };
             //model.SetPrimaryKey(Projects.PROJECTID);
-            var result = dbQuery.Load(model); //, Projects.PROJECTID);
+            var result = dbQuery.Load(model, Projects.SCOPEID); //, Projects.PROJECTID);
+        }
+        [TestMethod]
+        public void LoadProjects()
+        {
+            Scopes model = new Scopes
+            {
+                
+                scopename = "tralala",
+                
+            };
+            Scopes model2 = new Scopes
+            {
+                
+                scopename = "admin2",
+                
+            };
+            ProjectsLogic logic = new ProjectsLogic();
+            var list = new List<Scopes> {model, model2};
+            var result = logic.LoadProjects(list); //, Projects.PROJECTID);
         }
 
         [TestMethod]

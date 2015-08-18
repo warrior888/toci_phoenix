@@ -49,15 +49,7 @@ namespace DbCredentials.BusinessLogic
             return scopesLogic.LoadScopes(model);
         }
 
-        public bool DeleteScope(Scopes model)
-        {
-            return scopesLogic.DeleteScope(model);
-        }
-
-        public bool UpdateScope(Scopes model)
-        {
-            return scopesLogic.UpdateScope(model);
-        }
+        
 
     }
 }
