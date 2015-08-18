@@ -206,3 +206,4 @@ C:\Users\Admin\Documents\SourceTree\toci_phoenix\toci_common\Toci.Libraries\Toci
 C:\Users\Admin\Documents\SourceTree\toci_phoenix\toci_common\Toci.Libraries\Toci.Utilities.Common\obj\Debug\Toci.Utilities.Common.csproj.App.config
 C:\Users\Admin\Documents\SourceTree\toci_phoenix\toci_common\Toci.Libraries\Toci.Utilities.Common\obj\Debug\Toci.Utilities.Common.dll
 C:\Users\Admin\Documents\SourceTree\toci_phoenix\toci_common\Toci.Libraries\Toci.Utilities.Common\obj\Debug\Toci.Utilities.Common.pdb
+C:\Users\Admin\Documents\SourceTree\toci_phoenix\toci_common\Toci.Libraries\Toci.Utilities.Common\obj\Debug\Toci.Utilities.Common.csprojResolveAssemblyReference.cache
