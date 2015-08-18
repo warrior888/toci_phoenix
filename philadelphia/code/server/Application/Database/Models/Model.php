@@ -13,20 +13,17 @@ abstract class Model {
     protected $dbInsert;
     protected $dbSelect;
     protected $dbUpdate;
-    protected $dbHandle;
 
     public function __construct(
         $deleteInstance,
         $insertInstance,
         $selectInstance,
-        $updateInstance,
-        $databaseHandle
+        $updateInstance
     ) {
         $this->dbDelete = $this->DbDeleteInstance($deleteInstance);
         $this->dbInsert = $this->DbInsertInstance($insertInstance);
         $this->dbSelect = $this->DbSelectInstance($selectInstance);
         $this->dbUpdate = $this->DbUpdateInstance($updateInstance);
-        $this->dbHandle = $this->DbHandleInstance($databaseHandle);
     }
 
 

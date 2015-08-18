@@ -1,4 +1,13 @@
-﻿<!DOCTYPE html>
+<?php
+if (!(isset($_COOKIE['currentLanguage']))) {
+    setcookie('currentLanguage', 'polish', time() + 60 * 60 * 24 * 365, '/');
+} else {
+    $language = $_COOKIE['currentLanguage'];
+    unset($_COOKIE['currentLanguage']);
+    setcookie('currentLanguage', $language, time() + 60 * 60 * 24 * 365, '/');
+}
+?>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -90,11 +99,13 @@
                             <li><a href="tel:1800123456"><i class="fa fa-phone"></i><span style="color:white;">570-751-507</span></a></li>
                             <li><a href="mailto:tociszkolenia@gmail.com"><i class="fa fa-envelope"></i><span style="color:white;">tociszkolenia@gmail.com</span></a></li>
                         </ul>
-<!--                        <ul class="pull-right">
-                            <li><input type="image" src="images/state_flags/pl.png" id="flag-pl" class="hvr-bounce-in"/></li>
-                            <li><input type="image" src="images/state_flags/uk.png" id="flag-uk" class="hvr-bounce-in"/></li>
-                            <li><input type="image" src="images/state_flags/de.png" id="flag-de" class="hvr-bounce-in"/></li>
-                        </ul>-->
+                        <!--TRANSLATION START-->
+                        <ul class="pull-right">
+                            <li><input type="image" src="images/state_flags/pl.png" id="flag-pl" class="state-flag"/></li>
+                            <li><input type="image" src="images/state_flags/uk.png" id="flag-uk" class="state-flag"/></li>
+                            <li><input type="image" src="images/state_flags/de.png" id="flag-de" class="state-flag"/></li>
+                        </ul>
+                        <!--TRANSLATION END-->
                     </div>
                 </div>
                 <!-- ==== TOOLS END ==== -->
@@ -780,7 +791,7 @@
                                     <strong>Kursy są prowadzone online</strong>, nagrywane i udostępniane do ponownego odtworzenia, dodatkowo uczestnicy będą pracować
                                     na wspólnym repozytorium kodu i tworzyć na nim zadania po każdej sesji kursu, a nawet symulowane mikro projekty
                                     przygotowujące uczestników do pracy programisty w rzeczywistych warunkach - przy niekompletnych i niejasnych specyfikacjach oraz nieadekwatnych architekturach ;-).
-				    Po kursie, lub w niektórych przypadkach nawet w trakcie ;-), pomagamy napisać dobre CV oraz wysyłamy na rekutację. Pilni kursanci dostają pracę nawet w trakcie trwania kursu !
+                                    Po kursie, lub w niektórych przypadkach nawet w trakcie ;-), pomagamy napisać dobre CV oraz wysyłamy na rekutację. Pilni kursanci dostają pracę nawet w trakcie trwania kursu !
                                 </p>
 
                             </div>
@@ -1337,7 +1348,7 @@
                                         <select form="apply-form" class="form-control" id="applicantChosenCourse" name="applicantChosenCourse" required>
                                             <option value="" class="form-control" style="display: none" disabled default selected>-- Wybierz kurs --</option>
                                             <option value="beginnerphp" class="form-control">Podstawowy PHP</option>
-					    <option value="beginnercsharp" class="form-control">Podstawowy C#</option>
+                                            <option value="beginnercsharp" class="form-control">Podstawowy C#</option>
                                             <option value="promotional" class="form-control">Promocyjny</option>
                                             <option value="intermediatecsharp" class="form-control">Średniozaawansowany C#</option>
                                             <option value="intermediatephp" class="form-control">Średniozaawansowany PHP</option>
@@ -1571,6 +1582,9 @@
             <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 
             <script src="js/DocumentReady.js"></script>
+
+
+            <script src="js/Translate.js"></script>
 
 
         </div>
