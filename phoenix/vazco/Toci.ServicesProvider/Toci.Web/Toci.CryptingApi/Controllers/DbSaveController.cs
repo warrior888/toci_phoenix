@@ -18,8 +18,8 @@ namespace Toci.CryptingApi.Controllers
         {
             try
             {
-                var dbo = new DbOperations(model.password);
-                dbo.Save(new VazcoTable {data = model.data});
+                var dbo = new DbOperations(model.password, new VazcoConfig());
+                dbo.Save(new VazcoTable {data = model.data,name = model.name});
 
                 return "Saved!";
             }

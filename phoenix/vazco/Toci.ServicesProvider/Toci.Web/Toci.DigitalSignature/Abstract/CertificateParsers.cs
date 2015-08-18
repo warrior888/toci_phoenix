@@ -1,6 +1,4 @@
 ﻿using System;
-using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
 using System.Security;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -25,6 +23,7 @@ namespace Toci.DigitalSignature.Abstract
             return new X509Certificate2(bytes);
         }
 
+
         public virtual X509Certificate2 PfxFileToCertificate(byte[] pfxBytes, SecureString password)
         {
             return new X509Certificate2(pfxBytes, password, X509KeyStorageFlags.Exportable);
@@ -32,6 +31,17 @@ namespace Toci.DigitalSignature.Abstract
         public virtual X509Certificate2 PfxFileToCertificate(string base64Certyficate, SecureString password)
         {
             
+            byte[] pfxBytes = Convert.FromBase64String(base64Certyficate);
+            return PfxFileToCertificate(pfxBytes, password);
+        }
+
+        public virtual X509Certificate2 PfxFileToCertificate(byte[] pfxBytes, string password)
+        {
+            return new X509Certificate2(pfxBytes, password, X509KeyStorageFlags.Exportable);
+        }
+        public virtual X509Certificate2 PfxFileToCertificate(string base64Certyficate, string password)
+        {
+
             byte[] pfxBytes = Convert.FromBase64String(base64Certyficate);
             return PfxFileToCertificate(pfxBytes, password);
         }

@@ -48,5 +48,10 @@ namespace Toci.DigitalSignature.DigitalSignHandlers
         {
             return SignFile(Convert.FromBase64String(base64InputFile), Base64ToCertificate(base64Certyficate));
         }
+
+        public virtual byte[] SignFile(string base64InputFile, X509Certificate2 certyficate)
+        {
+            return SignFile(Convert.FromBase64String(base64InputFile), certyficate);
+        }
     }
 }

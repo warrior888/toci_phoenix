@@ -91,6 +91,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\SecuredSignModel.cs" />
     <Compile Include="Models\SignModel.cs" />
     <Compile Include="Models\VerifyModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

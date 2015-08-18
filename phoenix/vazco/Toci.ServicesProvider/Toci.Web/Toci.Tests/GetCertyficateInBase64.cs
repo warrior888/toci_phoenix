@@ -14,7 +14,7 @@ namespace Toci.Tests
         {
             var sign = new DigitalSignature.DigitalSignHandlers.Sign();
             var newtest = File.ReadAllBytes(@"C:\CertTest\TestPrywatnegoKlucza.pfx");
-
+            var getcertbytes = Convert.ToBase64String(newtest);
             string password = "pass";
             SecureString securedPassword = new SecureString();
             foreach (var c in password.ToCharArray())
@@ -27,6 +27,16 @@ namespace Toci.Tests
             var wynik = sign.CertificateToBase64(test);
             sign.SignFile(new byte[] {40, 50, 60, 70}, test);
         }
+        [TestMethod]
+        public void GetCerCertInBase64()
+        {
+            var sign = new DigitalSignature.DigitalSignHandlers.Sign();
+            var test = File.ReadAllBytes(@"C:\CertTest\CertyfikatTestowy01.cer");
+            var getcertstring = Convert.ToBase64String(test);
+        }
     }
+    
+
+
 }
 	

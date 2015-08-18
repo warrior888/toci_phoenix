@@ -39,9 +39,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="Toci.Utilities.Interfaces">
-      <HintPath>..\..\..\..\..\Toci.Utilities.Abstraction\bin\Debug\Toci.Utilities.Interfaces.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -75,6 +72,14 @@
       <Project>{e91d020a-2d43-42e3-8c53-0f57b4b4f549}</Project>
       <Name>Toci.Utilities.Abstraction</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\toci_common\Toci.Libraries\Toci.Utilities.Common\Toci.Utilities.Common.csproj">
+      <Project>{10db4113-ac97-426e-a233-3961a7d30e52}</Project>
+      <Name>Toci.Utilities.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\toci_common\Toci.Libraries\Toci.Utilities.Interfaces\Toci.Utilities.Interfaces\Toci.Utilities.Interfaces.csproj">
+      <Project>{5f10a690-71c7-4daa-b46b-12720b16f64c}</Project>
+      <Name>Toci.Utilities.Interfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\..\..\toci_common\Toci.Libraries\Toci.Utilities.Interfaces\Toci.Utilities.Interfaces\Toci.Utilities.Interfaces.csproj">
       <Project>{5f10a690-71c7-4daa-b46b-12720b16f64c}</Project>
       <Name>Toci.Utilities.Interfaces</Name>
@@ -94,6 +99,10 @@
     <ProjectReference Include="..\EncodingLib\EncodingLib.csproj">
       <Project>{44d0c538-5d19-409a-8f30-2519339fc818}</Project>
       <Name>EncodingLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Toci.CryptingApi\Toci.CryptingApi.csproj">
+      <Project>{75C01E14-3D21-417F-9C06-8362AA79898D}</Project>
+      <Name>Toci.CryptingApi</Name>
     </ProjectReference>
     <ProjectReference Include="..\Toci.DigitalSignature\Toci.DigitalSignature.csproj">
       <Project>{ce9a63d1-d277-4828-bf68-211db483b483}</Project>
