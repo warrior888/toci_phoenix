@@ -1,6 +1,4 @@
 ﻿using System;
-using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
 using System.Security;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
