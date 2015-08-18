@@ -86,6 +86,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\Constants.cs" />
+    <Compile Include="Logic\DigitalSignatureApiUtils.cs" />
     <Compile Include="Controllers\SignController.cs" />
     <Compile Include="Controllers\VerifyController.cs" />
     <Compile Include="Global.asax.cs">

@@ -1,36 +1,44 @@
 ﻿using System;
+using System.Security.Cryptography;
 using System.Web;
 using System.Web.Http;
 using Toci.DigitalSignature.DigitalSignHandlers;
+using Toci.DigitalSignatureApi.Logic;
 using Toci.DigitalSignatureApi.Models;
 
 namespace Toci.DigitalSignatureApi.Controllers
 {
     public class VerifyController : ApiController
     {
+        private readonly DigitalSignatureApiUtils _digitalSignatureApiUtils = new DigitalSignatureApiUtils();
+
         [HttpPost]
         [Route("api/verify")]
-        public bool Verify([FromBody]VerifyModel model)
+        public string Verify([FromBody]VerifyModel model)
         {
+            var isNullMessage = _digitalSignatureApiUtils.CheckForNull(model);
+            if (isNullMessage != null)
+            {
+                return isNullMessage;
+            }
             var verify = new Verify();
             try
             {
-                model = DecodeVerifyModel(model);
-                //var data1 = Convert.ToBase64String(Encoding.ASCII.GetBytes(model.data)); //test purposes only - writing only string not base64 as data
-                return verify.VerifyFile(model.data, model.signature, model.cert);
+                model = _digitalSignatureApiUtils.DecodeVerifyModel(model);
+                return verify.VerifyFile(model.data, model.signature, model.cert)? "Legitimate" : "Corrupt";
             }
-            catch (Exception ex)
+            catch (CryptographicException)
             {
-                return false;
+
+                return Constants.InvalidCertificateExMsg;
             }
-           
+            catch (FormatException)
+            {
+                return Constants.InvalidBase64ExMsg;
+            }
+
         }
 
-        private VerifyModel DecodeVerifyModel(VerifyModel model)
-        {
-            model.cert = model.cert.Replace(' ', '+');
-            model.signature = Convert.ToBase64String(HttpServerUtility.UrlTokenDecode(model.signature));
-            return model;
-        }
+
     }
 }

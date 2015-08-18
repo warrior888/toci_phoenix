@@ -7,18 +7,21 @@ using System.Web;
 using System.Web.Http;
 using Microsoft.SqlServer.Server;
 using Toci.DigitalSignature.DigitalSignHandlers;
+using Toci.DigitalSignatureApi.Logic;
 using Toci.DigitalSignatureApi.Models;
 
 namespace Toci.DigitalSignatureApi.Controllers
 {
     public class SignController : ApiController
     {
+        private readonly DigitalSignatureApiUtils _digitalSignatureApiUtils = new DigitalSignatureApiUtils();
+
         [HttpPost]
         [Route("api/sign")]
         public string Sign([FromBody]SignModel model)
         {
             var sign = new Sign();
-            var isNullMessage = CheckForNull(model);
+            var isNullMessage = _digitalSignatureApiUtils.CheckForNull(model);
             if (isNullMessage != null)
             {
                 return isNullMessage;
@@ -29,12 +32,11 @@ namespace Toci.DigitalSignatureApi.Controllers
             }
             catch (CryptographicException)
             {
-
-                return "Invalid certificate file";
+                return Constants.InvalidCertificateExMsg;
             }
             catch (FormatException)
             {
-                return "Invalid base64String";
+                return Constants.InvalidBase64ExMsg;
             }
         }
 
@@ -42,7 +44,7 @@ namespace Toci.DigitalSignatureApi.Controllers
         [Route("api/passwordsign")]
         public string PasswordSign([FromBody]SecuredSignModel model)
         {
-            var isNullMessage = CheckForNull(model);
+            var isNullMessage = _digitalSignatureApiUtils.CheckForNull(model);
             if (isNullMessage != null)
             {
                 return isNullMessage;
@@ -50,7 +52,7 @@ namespace Toci.DigitalSignatureApi.Controllers
             var sign = new Sign();
             try
             {
-                model = DecodeSignModel(model);
+                model = _digitalSignatureApiUtils.DecodeSignModel(model);
                 return
                     HttpServerUtility.UrlTokenEncode(sign.SignFile(model.data,
                         sign.PfxFileToCertificate(model.cert, model.password)));
@@ -58,33 +60,14 @@ namespace Toci.DigitalSignatureApi.Controllers
             catch (CryptographicException)
             {
 
-                return "Invalid password or certificate file";
+                return Constants.InvalidCertificateExMsg;
             }
             catch (FormatException)
             {
-                return "Invalid base64String";
-            }
-            
-
-        }
-
-        private SecuredSignModel DecodeSignModel(SecuredSignModel model)
-        {
-            model.cert = model.cert.Replace(' ', '+');
-            return model;
-        }
-
-        private string CheckForNull(object model)
-        {
-            List<string> message = new List<string>();
-            var properties = model.GetType().GetProperties();
-            foreach (var property in properties)
-            {
-                if (property.GetValue(model, null) == null)
-                    message.Add(property.Name);
+                return Constants.InvalidBase64ExMsg;
             }
 
-            return message.Count > 0 ? string.Join(" & ", message.ToArray()) + " fields cannot be empty" : null;
+
         }
     }
 }
