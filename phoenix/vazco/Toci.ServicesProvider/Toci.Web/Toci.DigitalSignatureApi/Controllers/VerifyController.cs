@@ -25,7 +25,7 @@ namespace Toci.DigitalSignatureApi.Controllers
             try
             {
                 model = _digitalSignatureApiUtils.DecodeVerifyModel(model);
-                return verify.VerifyFile(model.data, model.signature, model.cert)? "Legitimate" : "Corrupt";
+                return verify.VerifyFile(model.data, model.signature, model.cert)? Constants.VerifyCorrectMsg : Constants.VerifyIncorrectMsg;
             }
             catch (CryptographicException)
             {

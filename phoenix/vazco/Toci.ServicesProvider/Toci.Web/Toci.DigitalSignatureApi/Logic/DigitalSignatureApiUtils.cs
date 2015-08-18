@@ -19,7 +19,7 @@ namespace Toci.DigitalSignatureApi.Logic
                     message.Add(property.Name);
             }
 
-            return message.Count > 0 ? string.Join(" & ", message.ToArray()) + " fields cannot be empty" : null;
+            return message.Count > 0 ? string.Join(" & ", message.ToArray()) + " field cannot be empty" : null;
         }
 
         public SecuredSignModel DecodeSignModel(SecuredSignModel model)

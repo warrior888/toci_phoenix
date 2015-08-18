@@ -6,7 +6,7 @@ DigitalSignatureApiDocumantation
 
 API Resources
 
-1. Resource: /api/passwordsign
+1. Resource: /api/sign
 Resource destination: This resource allows to sign in data using sent  *.pfx file with private key.
 
 2. Resource: /api/verify 
@@ -19,7 +19,7 @@ Resource destination: This resource allows to verify signed data using signature
 
 Example usage:
 
-POST /api/passwordsign
+POST /api/sign
 
 Accepted request formats: application/x-www-form-urlencoded, application/json
 

@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
 using System.Security.Cryptography;
 using System.Web;
 using System.Web.Http;
-using Microsoft.SqlServer.Server;
 using Toci.DigitalSignature.DigitalSignHandlers;
 using Toci.DigitalSignatureApi.Logic;
 using Toci.DigitalSignatureApi.Models;
