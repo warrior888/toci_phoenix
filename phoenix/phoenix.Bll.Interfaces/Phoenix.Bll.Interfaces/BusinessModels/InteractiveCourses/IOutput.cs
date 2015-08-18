@@ -5,8 +5,6 @@
         string ConsoleOutput { get; set; }
         string CompilationResult { get; set; }
         int ExecutionTimeMs { get; set; }
-
         IUnitTest UnitTest { get; set; }
-
     }
 }

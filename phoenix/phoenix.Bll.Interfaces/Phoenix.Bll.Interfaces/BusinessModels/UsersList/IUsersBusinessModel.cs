@@ -1,4 +1,7 @@
-﻿namespace Phoenix.Bll.Interfaces.BusinessModels.UsersList
+﻿using System;
+using Phoenix.Bll.Interfaces.BusinessModels.InteractiveCourses;
+
+namespace Phoenix.Bll.Interfaces.BusinessModels.UsersList
 {
     public interface IUsersBusinessModel
     {
@@ -9,5 +12,7 @@
         string Surname { get; set; }
 
         decimal AccountBalance { get; set; }
+        IProgress Progress { get; set; } 
+
     }
 }

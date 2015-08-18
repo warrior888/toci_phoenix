@@ -120,13 +120,14 @@
     <Compile Include="BusinessModels\DevelopersList\IPortfolioBusinessModel.cs" />
     <Compile Include="BusinessModels\InteractiveCourses\IModule.cs" />
     <Compile Include="BusinessModels\InteractiveCourses\IOutput.cs" />
+    <Compile Include="BusinessModels\InteractiveCourses\IProgress.cs" />
     <Compile Include="BusinessModels\InteractiveCourses\IResult.cs" />
     <Compile Include="BusinessModels\InteractiveCourses\ITask.cs" />
     <Compile Include="BusinessModels\InteractiveCourses\ITaskContent.cs" />
     <Compile Include="BusinessModels\InteractiveCourses\ITechnology.cs" />
     <Compile Include="BusinessModels\InteractiveCourses\IUnitTest.cs" />
     <Compile Include="BusinessModels\InteractiveCourses\IUserInput.cs" />
-    <Compile Include="BusinessModels\Payments\IPayment.cs" />
+    <Compile Include="BusinessModels\Payments\ITransfer.cs" />
     <Compile Include="BusinessModels\TeamLeasing\IDeveloperAvailableBusinessModel.cs" />
     <Compile Include="BusinessModels\TeamLeasing\IDeveloperTeamBusinessModel.cs" />
     <Compile Include="BusinessModels\TeamLeasing\ITeamLeasingBusinessModel.cs" />
@@ -154,6 +155,8 @@
     <Compile Include="Localization\ILocalizationLogic.cs" />
     <Compile Include="Logic\DevelopersList\ISkillLogic.cs" />
     <Compile Include="Logic\DevelopersList\IPortfolioLogic.cs" />
+    <Compile Include="Logic\InteractiveCourses\IInteractiveLogic.cs" />
+    <Compile Include="Logic\Payments\IPaymentsLogic.cs" />
     <Compile Include="Logic\TeamLeasing\IDeveloperAvailableLogic.cs" />
     <Compile Include="Logic\TeamLeasing\ITeamLeasingLogic.cs" />
     <Compile Include="Logic\UsersList\IUsersLogic.cs" />
