@@ -109,11 +109,12 @@
     <Compile Include="GeneratedModels\developers_available.cs" />
     <Compile Include="GeneratedModels\developers_list.cs" />
     <Compile Include="GeneratedModels\developers_skills.cs" />
+    <Compile Include="GeneratedModels\developer_list_view.cs" />
     <Compile Include="GeneratedModels\portfolio.cs" />
     <Compile Include="GeneratedModels\portfolio_skills_technologies.cs" />
     <Compile Include="GeneratedModels\roles.cs" />
     <Compile Include="GeneratedModels\skills_technologies.cs" />
-    <Compile Include="GeneratedModels\skills_view.cs" />
+    <Compile Include="GeneratedModels\developer_skills_view.cs" />
     <Compile Include="GeneratedModels\users.cs" />
     <Compile Include="GeneratedModels\users_portfolio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

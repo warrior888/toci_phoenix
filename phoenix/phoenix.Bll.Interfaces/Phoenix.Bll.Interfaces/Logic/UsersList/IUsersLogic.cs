@@ -5,8 +5,8 @@ namespace Phoenix.Bll.Interfaces.Logic.UsersList
 {
     public interface IUsersLogic
     {
-        IUsers GetUserById(int id);
+        IUsersBusinessModel GetUserById(int id);
 
-        IEnumerable<IUsers> GetAllUsers();
+        IEnumerable<IUsersBusinessModel> GetAllUsers();
     }
 }

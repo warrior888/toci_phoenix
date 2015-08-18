@@ -8,6 +8,6 @@ namespace Phoenix.Bll.Interfaces.BusinessModels.Payments
     {
         DateTime PaymentDateStamp { get; set; }
         decimal TransferedMoney { get; set; }
-        IUsers User { get; set; }
+        IUsersBusinessModel User { get; set; }
     }
 }

@@ -7,7 +7,7 @@ namespace Phoenix.Bll.Interfaces.BusinessModels.DevelopersList
     {
         string ProjectName { get; set; }
 
-        IEnumerable<IDeveloperSkillBusinessModel> Skills { get; set; }
+        IEnumerable<ISkillBusinessModel> Skills { get; set; }
 
         IDeveloperBusinessModel ProjectTeamLeader { get; set; }
 

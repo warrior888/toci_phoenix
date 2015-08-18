@@ -9,14 +9,14 @@ namespace Phoenix.Bll.Logic.UsersList
 {
     public class UsersLogic : DbLogic,IUsersLogic
     {
-        public IUsers GetUserById(int id)
+        public IUsersBusinessModel GetUserById(int id)
         {
-            return GetElementById<IUsers, users>(id);
+            return GetElementById<IUsersBusinessModel, users>(id);
         }
 
-        public IEnumerable<IUsers> GetAllUsers()
+        public IEnumerable<IUsersBusinessModel> GetAllUsers()
         {
-            return GetAllElements<IUsers, users>();
+            return GetAllElements<IUsersBusinessModel, users>();
         }
     }
 }

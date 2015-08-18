@@ -21,14 +21,14 @@ namespace Phoenix.Integration.Test.Developers.Patryk.BLL.TeamLeasing
             AutoMapperConfiguration.Configure();
 
             IDeveloperListLogic developerListLogic= new DeveloperListLogic();
-            developerListLogic.GetDevById(1);
+            developerListLogic.GetDevById(19);
 
             ITeamLeasingLogic teamLeasingLogic = new TeamLeasingLogic();
             ITeamLeasingBusinessModel teamLeasingBusinessModel = new TeamLeasingBusinessModel()
             {
-                SkillSet = new List<IDeveloperSkillBusinessModel>()
+                SkillSet = new List<ISkillBusinessModel>()
                 {
-                    new DeveloperSkillBusinessModel()
+                    new SkillBusinessModel()
                     {
                         SkillLevel = 20,
                         SkillName = "C#"

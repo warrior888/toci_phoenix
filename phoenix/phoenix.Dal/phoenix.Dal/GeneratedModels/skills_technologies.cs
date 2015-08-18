@@ -10,7 +10,7 @@ namespace Phoenix.Dal.GeneratedModels
         }
          
         public const string TECH_NAME = "tech_name";
-        public string TechName
+        public string SkillName
             {
                 get
                 {

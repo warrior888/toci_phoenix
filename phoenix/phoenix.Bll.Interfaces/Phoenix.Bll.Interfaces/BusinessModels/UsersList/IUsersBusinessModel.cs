@@ -1,6 +1,6 @@
 ﻿namespace Phoenix.Bll.Interfaces.BusinessModels.UsersList
 {
-    public interface IUsers
+    public interface IUsersBusinessModel
     {
         string Nick { get; set; }
 

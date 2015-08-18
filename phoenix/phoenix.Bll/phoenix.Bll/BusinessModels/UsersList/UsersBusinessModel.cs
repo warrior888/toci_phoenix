@@ -3,7 +3,7 @@ using Toci.Utilities.Interfaces.User;
 
 namespace Phoenix.Bll.BusinessModels.UsersList
 {
-    public class Users : IUsers
+    public class UsersBusinessModel : IUsersBusinessModel
     {
         public string Nick { get; set; }
         public string Name { get; set; }

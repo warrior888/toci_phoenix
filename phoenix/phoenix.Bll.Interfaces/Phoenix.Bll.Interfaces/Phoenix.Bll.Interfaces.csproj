@@ -116,7 +116,7 @@
     <Compile Include="BusinessModels\CourseRegistration\IChosenCourseRegistrationBusinessModel.cs" />
     <Compile Include="BusinessModels\CourseRegistration\ICourseRegistrationBusinessModel.cs" />
     <Compile Include="BusinessModels\DevelopersList\IDeveloperBusinessModel.cs" />
-    <Compile Include="BusinessModels\DevelopersList\IDeveloperSkillBusinessModel.cs" />
+    <Compile Include="BusinessModels\DevelopersList\ISkillBusinessModel.cs" />
     <Compile Include="BusinessModels\DevelopersList\IPortfolioBusinessModel.cs" />
     <Compile Include="BusinessModels\InteractiveCourses\IModule.cs" />
     <Compile Include="BusinessModels\InteractiveCourses\IOutput.cs" />
@@ -131,7 +131,7 @@
     <Compile Include="BusinessModels\TeamLeasing\IDeveloperTeamBusinessModel.cs" />
     <Compile Include="BusinessModels\TeamLeasing\ITeamLeasingBusinessModel.cs" />
     <Compile Include="BusinessModels\TeamLeasing\TeamLeasingOffer.cs" />
-    <Compile Include="BusinessModels\UsersList\IUsers.cs" />
+    <Compile Include="BusinessModels\UsersList\IUsersBusinessModel.cs" />
     <Compile Include="Logic\CourseReferences\ICourseReferencesLogic.cs" />
     <Compile Include="Logic\CourseRegistration\ICourseRegistrationLogic.cs" />
     <Compile Include="Logic\CoursesList\ICalendarLogic.cs" />
@@ -152,7 +152,7 @@
     <Compile Include="ILogic.cs" />
     <Compile Include="ILogSaver.cs" />
     <Compile Include="Localization\ILocalizationLogic.cs" />
-    <Compile Include="Logic\DevelopersList\IDeveloperSkillLogic.cs" />
+    <Compile Include="Logic\DevelopersList\ISkillLogic.cs" />
     <Compile Include="Logic\DevelopersList\IPortfolioLogic.cs" />
     <Compile Include="Logic\TeamLeasing\IDeveloperAvailableLogic.cs" />
     <Compile Include="Logic\TeamLeasing\ITeamLeasingLogic.cs" />

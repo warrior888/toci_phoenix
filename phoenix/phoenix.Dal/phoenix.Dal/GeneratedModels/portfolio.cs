@@ -25,7 +25,7 @@ namespace Phoenix.Dal.GeneratedModels
             }
 
         public const string PROJECT_START_DATE = "project_start_date";
-        public DateTime ProjectStartDate
+        public DateTime StartDate
         {
             get
             {
@@ -38,7 +38,7 @@ namespace Phoenix.Dal.GeneratedModels
         }
 
         public const string PROJECT_COMPLETION_DATE = "project_completion_date";
-        public DateTime ProjectCompletionDate
+        public DateTime EndDate
             {
                 get
                 {
