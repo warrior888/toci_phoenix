@@ -1,0 +1,102 @@
+.... API documentation
+
+Stable version url: http...
+
+Production version url: http...
+
+
+API Resources
+
+Resource: /api/models/whatever
+
+Resource destination: This resource allows to Load/Save/Update & Delete encrypted records in the databae, using a password. The entities are stored encrypted in the database, so only it can be only read using the right password.
+
+
+
+1. Retrieve the data for resource operation.
+
+Example usage:
+
+POST /api/models/load
+
+Request body:
+
+password - string type,  required, it is the password necessary to decode the entities, only the records encrypted with the given password will be returned.
+
+
+response formats: JSON
+
+
+
+Example JSON Response structure:
+
+[
+    {
+        "password": null,
+        "data": "Test rwerwerw",
+        "name": "TestName",
+        "addingTime": "2015-08-18T11:13:36.6903395+02:00",
+        "id": 1
+    }
+]
+
+Response structure description:
+
+	- Bodymodel - is an entity in the db
+		- addingTime - it is the time, when the record was added
+		- data - the text data that is encrypted
+		- id - entity id i nthe db
+		- name - the name/nick off the adding person
+		
+
+
+Error handling
+
+Error message format:
+
+String "Bad Request!" response.
+
+
+
+2. Save the data for resource operation.
+
+Example usage:
+
+POST /api/models/load
+
+Request body:
+
+password - string type,  required, it is the password necessary to decode the entities, only the records encrypted with the given password will be returned.
+
+
+response formats: XML
+
+
+
+Example XML Response structure:
+
+<ArrayOfBodyModel>
+    <BodyModel>
+        <addingTime>2015-08-05T13:28:34.2212762+02:00</addingTime>
+        <data>Some test data</data>
+        <id>3</id>
+        <name>TestName1</name>
+        <password i:nil="true" />
+    </BodyModel>
+</ArrayOfBodyModel>
+
+Response structure description:
+
+	- Bodymodel - is an entity in the db
+		- addingTime - it is the time, when the record was added
+		- data - the text data that is encrypted
+		- id - entity id i nthe db
+		- name - the name/nick off the adding person
+		
+
+
+Error handling
+
+Error message format:
+
+String "Bad Request!" response.

@@ -12,7 +12,7 @@ namespace Toci.CryptingApi.Controllers
 {
     public class DbLoadController : ApiController
     {
-        private const string empty = "";
+        private const string WrongPassword = "Invalid password!";
         [Route("api/models/load")]
         [HttpPost]
         public IEnumerable<BodyModel> LoadDbModels(BodyModel model)
@@ -24,7 +24,7 @@ namespace Toci.CryptingApi.Controllers
                 return vazcoList.Select(item => new BodyModel
                 {
                     addingTime = DateTime.Now, data = item.data, id = item.id, name = item.name
-                }).ToList();
+                }).Where(x => x.data != WrongPassword).ToList();
                 //return model.name != default(string) ? dbo.Load().Where(x => x.name == model.name) : dbo.Load();
 
             }

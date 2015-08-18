@@ -14,7 +14,7 @@ namespace Toci.Tests
             var dbOperator = new DbOperations("dupa");
             const string testString = "Test rwerwerw";
 
-            var model = new VazcoTable {data = testString};
+            var model = new VazcoTable {data = testString,name = "TestName"};
 
             dbOperator.Save(model);
 

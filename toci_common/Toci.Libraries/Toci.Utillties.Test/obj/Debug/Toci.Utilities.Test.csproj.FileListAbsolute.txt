@@ -152,3 +152,5 @@ C:\Users\Mateusz\Documents\REPOS\Phoenix\toci_common\Toci.Libraries\Toci.Utillti
 C:\Users\Mateusz\Documents\REPOS\Phoenix\toci_common\Toci.Libraries\Toci.Utillties.Test\obj\Debug\Toci.Utilities.Test.csprojResolveAssemblyReference.cache
 C:\Users\Mateusz\Documents\REPOS\Phoenix\toci_common\Toci.Libraries\Toci.Utillties.Test\obj\Debug\Toci.Utilities.Test.dll
 C:\Users\Mateusz\Documents\REPOS\Phoenix\toci_common\Toci.Libraries\Toci.Utillties.Test\obj\Debug\Toci.Utilities.Test.pdb
+C:\Users\Admin\Documents\SourceTree\toci_phoenix\toci_common\Toci.Libraries\Toci.Utillties.Test\obj\Debug\Toci.Utilities.Test.csproj.App.config
+C:\Users\Admin\Documents\SourceTree\toci_phoenix\toci_common\Toci.Libraries\Toci.Utillties.Test\obj\Debug\Toci.Utilities.Test.csprojResolveAssemblyReference.cache

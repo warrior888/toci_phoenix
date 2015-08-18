@@ -31,7 +31,11 @@ namespace DbCrypting.Logic
         }
         public static void FillAddInModel(this VazcoTable itemModel)
         {
+            if (itemModel.name == default(string))
+            {
             itemModel.name = DbUtils.GetUserNick();
+
+            }
             itemModel.addingTime = DateTime.Now;
         }
        

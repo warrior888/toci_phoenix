@@ -8,7 +8,7 @@ namespace DbCrypting.VazcoDb
 {
     public class DbOperations
     {
-        private const string IdColumnName = "id";
+        private const string IdColumnName = VazcoTable.ID;
         
         private readonly string _temporarySecret;
 
