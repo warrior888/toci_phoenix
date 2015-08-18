@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Text;
 using System.Web;
 using System.Web.Http;
 using Toci.DigitalSignature.DigitalSignHandlers;
@@ -25,28 +20,28 @@ namespace Toci.DigitalSignatureApi.Controllers
             }
             catch (Exception e)
             {
-
                 return e.Message;
             }
         }
 
-       [HttpPost]
+        [HttpPost]
         [Route("api/passwordsign")]
         public string PasswordSign([FromBody]SecuredSignModel model)
-       {
-            model = DecodeSignModel(model);
+        {
+            
             var sign = new Sign();
-           try
-           {
-               return HttpServerUtility.UrlTokenEncode(sign.SignFile(model.data, sign.PfxFileToCertificate(model.cert, model.password)));
+            try
+            {
+                model = DecodeSignModel(model);
+                return HttpServerUtility.UrlTokenEncode(sign.SignFile(model.data, sign.PfxFileToCertificate(model.cert, model.password)));
             }
-           catch (Exception e)
-           {
+            catch (Exception e)
+            {
 
-               return e.Message;
-           }
-            
-            
+                return e.Message;
+            }
+
+
         }
 
         private SecuredSignModel DecodeSignModel(SecuredSignModel model)

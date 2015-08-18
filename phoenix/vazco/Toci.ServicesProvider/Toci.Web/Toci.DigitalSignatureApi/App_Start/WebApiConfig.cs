@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Http;
+﻿using System.Web.Http;
 
 namespace Toci.DigitalSignatureApi
 {
@@ -9,6 +6,7 @@ namespace Toci.DigitalSignatureApi
     {
         public static void Register(HttpConfiguration config)
         {
+            GlobalConfiguration.Configuration.Formatters.XmlFormatter.SupportedMediaTypes.Clear();
             // Web API configuration and services
 
             // Web API routes

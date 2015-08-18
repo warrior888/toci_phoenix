@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Text;
 using System.Web;
 using System.Web.Http;
 using Toci.DigitalSignature.DigitalSignHandlers;
@@ -18,9 +13,17 @@ namespace Toci.DigitalSignatureApi.Controllers
         public bool Verify([FromBody]VerifyModel model)
         {
             var verify = new Verify();
-            model = DecodeVerifyModel(model);
-            //var data1 = Convert.ToBase64String(Encoding.ASCII.GetBytes(model.data)); //test purposes only - writing only string not base64 as data
-            return verify.VerifyFile(model.data, model.signature, model.cert);
+            try
+            {
+                model = DecodeVerifyModel(model);
+                //var data1 = Convert.ToBase64String(Encoding.ASCII.GetBytes(model.data)); //test purposes only - writing only string not base64 as data
+                return verify.VerifyFile(model.data, model.signature, model.cert);
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+           
         }
 
         private VerifyModel DecodeVerifyModel(VerifyModel model)
