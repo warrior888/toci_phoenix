@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using Phoenix.Bll.Interfaces.BusinessModels.TeamLeasing;
+﻿using Phoenix.Bll.Interfaces.BusinessModels.TeamLeasing;
 using Phoenix.Bll.Interfaces.Logic.TeamLeasing;
 using Phoenix.Dal.GeneratedModels;
 
@@ -9,7 +8,7 @@ namespace Phoenix.Bll.Logic.TeamLeasing
     {
         public IDeveloperAvailableBusinessModel GetDeveloperAvailableById(int id)
         {
-            return Mapper.Map<IDeveloperAvailableBusinessModel>(FetchModelById<developers_available>(id));
+            return GetElementById<IDeveloperAvailableBusinessModel, developers_available>(id);
         }
     }
 }

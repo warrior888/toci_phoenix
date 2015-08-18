@@ -20,13 +20,13 @@ namespace Phoenix.Bll
     {
         //TODO DI
 
-        private static IUsersLogic _userLogic = new UsersLogic();
-        private static IDeveloperListLogic _developerListLogic = new DeveloperListLogic();
-        private static IPortfolioLogic _portfolioLogic = new PortfolioLogic();
-        private static ISkillLogic _skillLogic = new SkillLogic();
-        private static IDeveloperAvailableLogic _availableLogic = new DeveloperAvailableLogic();
+        private IUsersLogic _userLogic = new UsersLogic();
+        private IDeveloperListLogic _developerListLogic = new DeveloperListLogic();
+        private IPortfolioLogic _portfolioLogic = new PortfolioLogic();
+        private ISkillLogic _skillLogic = new SkillLogic();
+        private IDeveloperAvailableLogic _availableLogic = new DeveloperAvailableLogic();
 
-        public static void Configure()
+        public void Configure()
         {
             ForICourseRegistrationBusinessModel();
             ForISkillBusinessModel();
@@ -36,13 +36,13 @@ namespace Phoenix.Bll
 
         }
 
-        private static void ForICourseRegistrationBusinessModel()
+        private void ForICourseRegistrationBusinessModel()
         {
             Mapper.CreateMap<ICourseRegistrationBusinessModel, course_registration>();
             Mapper.CreateMap<course_registration, ICourseRegistrationBusinessModel>(); 
         }
 
-        private static  void ForISkillBusinessModel()
+        private void ForISkillBusinessModel()
         {
             Mapper.CreateMap<ISkillBusinessModel, skills_technologies>();
             Mapper.CreateMap<skills_technologies, ISkillBusinessModel>();
@@ -52,31 +52,33 @@ namespace Phoenix.Bll
 
         }
 
-        private static void ForIPortfolioBusinessModel()
+        private void ForIPortfolioBusinessModel()
         {
             Mapper.CreateMap<IPortfolioBusinessModel, portfolio>();
             Mapper.CreateMap<portfolio, IPortfolioBusinessModel>().
                 ForMember(dest => dest.Skills, opts => opts.MapFrom(src => _skillLogic.GetPortfolioSkills(src.Id)));
         }
 
-        private static void ForIDeveloperAvailableBusinessModel()
+        private void ForIDeveloperAvailableBusinessModel()
         {
             Mapper.CreateMap<IDeveloperAvailableBusinessModel, developers_available>();
             Mapper.CreateMap<developers_available, IDeveloperAvailableBusinessModel>();
         }
 
-        private static void ForIDeveloperBusinessModel()
+        private void ForIDeveloperBusinessModel()
         {
             Mapper.CreateMap<IDeveloperBusinessModel, developer_list_view>();
             Mapper.CreateMap<developer_list_view, IDeveloperBusinessModel>().
                 ForMember(dest => dest.User, opts => opts.MapFrom(src=> new UsersBusinessModel()
                 {
+                    Id = src.UserId,
                     Name = src.Name,
                     Surname = src.Surname,
                     Nick = src.Nick
                 })).
                 ForMember(dest => dest.DeveloperAvailable, opts => opts.MapFrom(src => new DeveloperAvailableBusinessModel()
                 {
+                    Id = src.Id,
                     AvailableFor = src.AvailableFor,
                     EndWorkHour = src.EndWorkHour,
                     StartWorkHour = src.StartWorkHour

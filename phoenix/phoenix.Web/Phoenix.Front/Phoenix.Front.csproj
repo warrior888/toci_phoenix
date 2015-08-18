@@ -531,6 +531,10 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\toci_common\Toci.Libraries\Toci.Db\Toci.Db.csproj">
+      <Project>{c2377285-fa65-4545-91fb-6c4dc28155f5}</Project>
+      <Name>Toci.Db</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Phoenix.Bll.Interfaces\Phoenix.Bll.Interfaces\Phoenix.Bll.Interfaces.csproj">
       <Project>{471d3f60-27a8-402d-8599-952ec3a2985b}</Project>
       <Name>Phoenix.Bll.Interfaces</Name>

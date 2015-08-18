@@ -581,6 +581,8 @@ drop view developer_list_view
 
 select * from skills_view;
 
+select * from users;
+
 select * from developer_list_view;
 
 select * from developer_skills_view order by nick desc;

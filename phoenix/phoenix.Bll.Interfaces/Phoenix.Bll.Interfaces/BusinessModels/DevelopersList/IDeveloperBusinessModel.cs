@@ -7,8 +7,6 @@ namespace Phoenix.Bll.Interfaces.BusinessModels.DevelopersList
 {
     public interface IDeveloperBusinessModel
     {
-        int Id { get; set; }
-
         IUsersBusinessModel User { get; set; }
 
         double Score { get; set; }

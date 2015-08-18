@@ -6,5 +6,7 @@ namespace Phoenix.Bll.Interfaces.Logic.DevelopersList
     public interface IPortfolioLogic
     {
         IEnumerable<IPortfolioBusinessModel> GetUserPortfolio(int userId);
+
+        IDeveloperBusinessModel GetProjectTeamLeader(int portfolioId);
     }
 }

@@ -18,7 +18,7 @@ namespace Phoenix.Integration.Test.Developers.Patryk.BLL.TeamLeasing
         [TestMethod]
         public void TryGetDataFromDb()
         {
-            AutoMapperConfiguration.Configure();
+            new AutoMapperConfiguration().Configure();
 
             IDeveloperListLogic developerListLogic= new DeveloperListLogic();
             developerListLogic.GetDevByUserId(19);

@@ -1,7 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using AutoMapper;
-using Phoenix.Bll.BusinessModels.DevelopersList;
 using Phoenix.Bll.Interfaces.BusinessModels.DevelopersList;
 using Phoenix.Bll.Interfaces.Logic.DevelopersList;
 using Phoenix.Dal.GeneratedModels;
@@ -13,27 +11,20 @@ namespace Phoenix.Bll.Logic.DevelopersList
     {
         public IEnumerable<IDeveloperSkillBusinessModel> GetDeveloperSkills(int userId)
         {
-            List<developer_skills_view> developersSkills = FetchModelsByColumnValue<developer_skills_view, int>
-                ("id_users", SelectClause.Equal, userId);
-
-            List<IDeveloperSkillBusinessModel> skills = developersSkills.Select(Mapper.Map<IDeveloperSkillBusinessModel>).ToList();
-
-            return skills;
+            return GetElementsByColumnValue<IDeveloperSkillBusinessModel, developer_skills_view, int>("id_users",
+                    SelectClause.Equal, userId);
         }
 
         public IEnumerable<ISkillBusinessModel> GetPortfolioSkills(int portfolioId)
         {
             List<portfolio_skills_technologies> portfolioSkills = FetchModelsByColumnValue<portfolio_skills_technologies, int>
                 ("fk_id_portfolio", SelectClause.Equal, portfolioId);
-            List<ISkillBusinessModel> skills = 
-                portfolioSkills.Select(skill => GetSkillById(skill.FkIdSkillsTechnologies)).ToList();
-
-            return skills;
+            return portfolioSkills.Select(skill => GetSkillById(skill.FkIdSkillsTechnologies)).ToList();
         }
 
         public ISkillBusinessModel GetSkillById(int skillId)
         {
-            return Mapper.Map<ISkillBusinessModel>( FetchModelById<skills_technologies>(skillId) );
+            return GetElementById<ISkillBusinessModel, skills_technologies>(skillId);
         }
     }
 }
