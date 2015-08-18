@@ -11,7 +11,7 @@ namespace DbCredentials.DbLogic.CredentialsModels
             projectname = null;
             projectauthor = null;
             projectdata = null;
-            projectid = default(int);
+            //projectid = default(int);
             //scopeid = default(int);
             modificationdate = default(DateTime);
             hash = null;

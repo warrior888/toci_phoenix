@@ -14,7 +14,8 @@ namespace Toci.CredentialsApi.Models
         public string scopeName { get; set; }  
         public string projectData { get; set; }
 
-        public string scopes { get; set; }
+        public string scopesList { get; set; }
+
         public static string separator = ", ";
 
         public Projects GetProjectsModel()
@@ -37,7 +38,7 @@ namespace Toci.CredentialsApi.Models
 
         public List<Scopes> GetScopesList()
         {
-            var list = scopes.Split(new[] { separator }, StringSplitOptions.None).ToList();
+            var list = scopesList.Split(new[] { separator }, StringSplitOptions.None).ToList();
             return list.Select(item => new Scopes { scopename = item }).ToList();
         }
         

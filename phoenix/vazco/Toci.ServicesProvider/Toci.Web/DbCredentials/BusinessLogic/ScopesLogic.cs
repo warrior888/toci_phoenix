@@ -22,9 +22,9 @@ namespace DbCredentials.BusinessLogic
             {
                 return dbQuery.Save(model) != notSaved;
             }
-            catch (Exception ex)
+            catch (ApplicationException)
             {
-                throw new Exception("Cannot add scope. " + ex.Message);
+                throw new ApplicationException("Cannot add scope.");
             }
         }
 

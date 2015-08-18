@@ -19,9 +19,17 @@ namespace DbCredentials.BusinessLogic
         {
             if (IsProjectExist(model))
             {
-                throw new Exception("Project exist");
+                throw new ApplicationException("Project exist.");
             }
-            return dbQuery.Save(model) != notSaved;
+            try
+            {
+                return dbQuery.Save(model) != notSaved;
+            }
+            catch (ApplicationException)
+            {
+                throw new ApplicationException("Cannot save the project.");
+            }
+            
         }
 
         public bool IsProjectExist(Projects model)
