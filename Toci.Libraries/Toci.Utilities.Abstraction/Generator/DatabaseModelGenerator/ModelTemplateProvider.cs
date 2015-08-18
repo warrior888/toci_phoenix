@@ -101,6 +101,8 @@ using Toci.Db.Interfaces";
         /// </summary>
         public string GetFilledPropertyTemplate(params string[] values)
         {
+            if (values[0] == "id")
+                return "";
             List<string> valuesWithPropName = values.ToList();
             valuesWithPropName.Add(ConvertColumnNameToPropertyName(values[0]));
             return string.Format(new UpperAndLowerStringFormat(), PropertyPattern, valuesWithPropName.ToArray());
