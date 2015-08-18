@@ -7,6 +7,6 @@ namespace Phoenix.Bll.Interfaces.BusinessModels.InteractiveCourses
         int Id { get; set; }
         ITaskContent Content { get; set; }
         int AverageTime { get; set; }
-        List<string> UnitTests { get; set; } 
+        List<string> UnitTests { get; set; }
     }
 }

@@ -3,9 +3,9 @@ using Toci.Db.Interfaces;
 
 namespace Phoenix.Dal.GeneratedModels
 {
-    public class skills_view : Model
+    public class developer_skills_view : Model
     {
-        public skills_view() : base("skills_view")
+        public developer_skills_view() : base("developer_skills_view")
         {
         }
 
@@ -36,7 +36,7 @@ namespace Phoenix.Dal.GeneratedModels
         }
 
         public const string TECH_NAME = "tech_name";
-        public string TechName
+        public string SkillName
         {
             get
             {
@@ -50,7 +50,7 @@ namespace Phoenix.Dal.GeneratedModels
 
         protected override IModel GetInstance()
         {
-            return new skills_view();
+            return new developer_skills_view();
         }
     }
 }

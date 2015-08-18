@@ -1,3 +1,4 @@
+ï»¿
 ---
 drop table user_statistics;
 drop table levels;
@@ -10,10 +11,12 @@ drop table unit_tests;
 drop table tasks;
 drop table lessons;
 drop table modules;
-----
+
+---- TeamLeasing drop
 
 drop view users_portfolio_view;
 drop view developer_skills_view;
+drop view developer_list_view;
 
 drop table developers_list;
 drop table course_trainers;
@@ -33,7 +36,9 @@ drop table users;
 drop table roles;
 drop table developers_available;
 
+-- EO TeamLeasing drop
 
+-- TeamLeasing tables
 
 create table roles ( 
 	id serial primary key,
@@ -97,7 +102,7 @@ create table developers_skills (
 	skill_level float --
 );
 
---do kursów 
+--do kursÃ³w 
 
 create table courses_list (
 	id serial primary key,
@@ -156,6 +161,8 @@ create table course_references (
 	references_text text
 );
 
+-- EO TeamLeasing tables
+
 ---happy13
 
 create table modules
@@ -209,9 +216,9 @@ create table pay_to_win --transfers
 create table results
 (
 	id serial primary key,
-	execution_time_ms integer not null, --milisekundy (ile czasu siê wykonuje)
+	execution_time_ms integer not null, --milisekundy (ile czasu siÄ™ wykonuje)
 	have_been_compiled boolean not null,
-	time_spent_s integer not null, --sekundy (ile czasu ktoœ spêdzi³ nad zadaniem)
+	time_spent_s integer not null, --sekundy (ile czasu ktoÅ› spÄ™dziÅ‚ nad zadaniem)
 	id_users integer references users(id) not null,
 	id_tasks integer references tasks(id) not null,
 	id_unit_tests integer references unit_tests(id) not null
@@ -226,11 +233,13 @@ create table levels
 create table user_statistics
 (
 	id serial primary key,
-	total_time_spent_s integer not null,--sekundy (ile czasu farmi³ w ogóle)
+	total_time_spent_s integer not null,--sekundy (ile czasu farmiÅ‚ w ogÃ³le)
 	id_users integer references users(id) not null
 );
 
 --eo happy13
+
+-- TeamLeasing seed
 
 --role
 
@@ -527,6 +536,17 @@ insert into users_portfolio (id_users, id_portfolio) values((select id from user
 insert into users_portfolio (id_users, id_portfolio) values((select id from users where nick = 'zielen689'),(select id from portfolio where portfolio.project_name = 'cambridge')); 
 insert into users_portfolio (id_users, id_portfolio) values((select id from users where nick = 'snakus92'),(select id from portfolio where portfolio.project_name = 'cambridge')); 
 
+insert into users_portfolio (id_users, id_portfolio) values((select id from users where nick = 'warrior'),(select id from portfolio where portfolio.project_name = 'cambridge')); 
+insert into users_portfolio (id_users, id_portfolio) values((select id from users where nick = 'warrior'),(select id from portfolio where portfolio.project_name = 'pentagram'));  
+insert into users_portfolio (id_users, id_portfolio) values((select id from users where nick = 'patrykj123'),(select id from portfolio where portfolio.project_name = 'pentagram')); 
+insert into users_portfolio (id_users, id_portfolio) values((select id from users where nick = 'patrykj123'),(select id from portfolio where portfolio.project_name = 'philadelphia')); 
+insert into users_portfolio (id_users, id_portfolio) values((select id from users where nick = 'terry'),(select id from portfolio where portfolio.project_name = 'philadelphia')); 
+insert into users_portfolio (id_users, id_portfolio) values((select id from users where nick = 'terry'),(select id from portfolio where portfolio.project_name = 'cambridge')); 
+
+--EO TeamLeasing seed
+
+-- TeamLeasing navigate
+
 
 ----user portfolio view
 
@@ -538,12 +558,29 @@ create or replace view users_portfolio_view as
 
 -- developer_skills_view
 
-create or replace view developer_skills_view as
-	select users.nick, st.tech_name, ds.skill_level 
-	from developers_skills ds
-	join skills_technologies st on st.id = ds.id_skills_technologies
-	join users on users.id = ds.id_users;
 
+CREATE OR REPLACE VIEW developer_skills_view AS 
+       SELECT developers_skills.id_users,
+       developers_skills.skill_level,
+       skills_technologies.tech_name
+       FROM developers_skills
+       JOIN skills_technologies ON developers_skills.id_skills_technologies = skills_technologies.id;
+
+-- developer_list_view
+
+create or replace view developer_list_view as 
+	select u.id as user_id, u.nick, u.name, u.surname, dev.experience_from, dev_available.availble_for,
+	dev_available.start_work_hour, dev_available.end_work_hour
+	from developers_list dev
+	join users u on u.id = dev.id_users
+	join developers_available dev_available on dev_available.id = dev.fk_id_developers_avaible
+
+
+---------------------------------------
+
+select * from skills_view;
+
+select * from developer_list_view;
 
 select * from developer_skills_view order by nick desc;
 
@@ -590,12 +627,7 @@ and
 (select sum(skill_level) / count(skill_level) from developer_skills_view where nick = upv1.nick group by nick) > 80;
 
 
-insert into users_portfolio (id_users, id_portfolio) values((select id from users where nick = 'warrior'),(select id from portfolio where portfolio.project_name = 'cambridge')); 
-insert into users_portfolio (id_users, id_portfolio) values((select id from users where nick = 'warrior'),(select id from portfolio where portfolio.project_name = 'pentagram'));  
-insert into users_portfolio (id_users, id_portfolio) values((select id from users where nick = 'patrykj123'),(select id from portfolio where portfolio.project_name = 'pentagram')); 
-insert into users_portfolio (id_users, id_portfolio) values((select id from users where nick = 'patrykj123'),(select id from portfolio where portfolio.project_name = 'philadelphia')); 
-insert into users_portfolio (id_users, id_portfolio) values((select id from users where nick = 'terry'),(select id from portfolio where portfolio.project_name = 'philadelphia')); 
-insert into users_portfolio (id_users, id_portfolio) values((select id from users where nick = 'terry'),(select id from portfolio where portfolio.project_name = 'cambridge')); 
+
 
 -- [0-9]{3,5}
 
@@ -629,6 +661,12 @@ insert into users_portfolio (id_users, id_portfolio) values((select id from user
 
 --- ktoery dev ile kiedy siezdial
 
+
+-- EO TeamLeasing navigate
+
+
+
+
 create table time_log (
 	id serial primary key,
 	fk_id_user integer references users(id) not null, -- 1
@@ -657,4 +695,5 @@ $$ LANGUAGE plpgsql;
 select * from user_statistics 
 
 select * from developers_skills
+
 

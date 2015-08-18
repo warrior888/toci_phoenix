@@ -1,6 +1,6 @@
 ﻿namespace Phoenix.Bll.Interfaces.BusinessModels.DevelopersList
 {
-    public interface IDeveloperSkillBusinessModel
+    public interface ISkillBusinessModel
     {
         int IdUsers { get; set; }
 

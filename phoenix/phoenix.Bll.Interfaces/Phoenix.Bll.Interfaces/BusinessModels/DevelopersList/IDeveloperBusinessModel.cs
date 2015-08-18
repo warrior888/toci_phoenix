@@ -7,7 +7,7 @@ namespace Phoenix.Bll.Interfaces.BusinessModels.DevelopersList
 {
     public interface IDeveloperBusinessModel
     {
-        IUsers User { get; set; }
+        IUsersBusinessModel User { get; set; }
 
         double Score { get; set; }
 
@@ -15,7 +15,7 @@ namespace Phoenix.Bll.Interfaces.BusinessModels.DevelopersList
 
         IDeveloperAvailableBusinessModel DeveloperAvailable { get; set; }
 
-        IEnumerable<IDeveloperSkillBusinessModel> Skills { get; set; }
+        IEnumerable<ISkillBusinessModel> Skills { get; set; }
 
         IEnumerable<IPortfolioBusinessModel> Portfolio { get; set; }
     }

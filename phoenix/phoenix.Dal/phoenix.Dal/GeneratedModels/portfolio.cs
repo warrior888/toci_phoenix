@@ -10,18 +10,6 @@ namespace Phoenix.Dal.GeneratedModels
         {
         }
          
-        public const string ID = "id";
-        public int Id
-            {
-                get
-                {
-                     return GetValue<int>(ID);
-                }
-                set
-                {
-                    SetValue(ID, value);
-                }
-            }
          
         public const string PROJECT_NAME = "project_name";
         public string ProjectName
@@ -37,7 +25,7 @@ namespace Phoenix.Dal.GeneratedModels
             }
 
         public const string PROJECT_START_DATE = "project_start_date";
-        public DateTime ProjectStartDate
+        public DateTime StartDate
         {
             get
             {
@@ -50,7 +38,7 @@ namespace Phoenix.Dal.GeneratedModels
         }
 
         public const string PROJECT_COMPLETION_DATE = "project_completion_date";
-        public DateTime ProjectCompletionDate
+        public DateTime EndDate
             {
                 get
                 {

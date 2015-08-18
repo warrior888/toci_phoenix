@@ -4,10 +4,10 @@ using Phoenix.Bll.Interfaces.BusinessModels.UsersList;
 
 namespace Phoenix.Bll.Interfaces.BusinessModels.Payments
 {
-    public interface IPayment
+    public interface ITransfer
     {
         DateTime PaymentDateStamp { get; set; }
         decimal TransferedMoney { get; set; }
-        IUsers User { get; set; }
+        IUsersBusinessModel User { get; set; }
     }
 }

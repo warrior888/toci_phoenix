@@ -9,21 +9,8 @@ namespace Phoenix.Dal.GeneratedModels
         {
         }
          
-        public const string ID = "id";
-        public int Id
-            {
-                get
-                {
-                     return GetValue<int>(ID);
-                }
-                set
-                {
-                    SetValue(ID, value);
-                }
-            }
-         
         public const string TECH_NAME = "tech_name";
-        public string TechName
+        public string SkillName
             {
                 get
                 {

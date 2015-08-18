@@ -5,10 +5,8 @@ namespace Phoenix.Bll.Interfaces.BusinessModels.InteractiveCourses
     public interface IUserInput
     {
         string Code { get; set; }
-        IUsers User { get; set; }
+        IUsersBusinessModel User { get; set; }
         int TimeSpent { get; set; }
-        ITask Task { get; set; }
-
-        //hinty ?????????????????????????
+        ITask Task { get; set; } 
     }
 }

@@ -9,18 +9,6 @@ namespace Phoenix.Dal.GeneratedModels
         {
         }
          
-        public const string ID = "id";
-        public int Id
-            {
-                get
-                {
-                     return GetValue<int>(ID);
-                }
-                set
-                {
-                    SetValue(ID, value);
-                }
-            }
          
         public const string FK_ID_PORTFOLIO = "fk_id_portfolio";
         public int FkIdPortfolio

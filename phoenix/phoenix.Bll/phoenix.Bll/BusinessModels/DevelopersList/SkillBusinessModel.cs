@@ -2,7 +2,7 @@
 
 namespace Phoenix.Bll.BusinessModels.DevelopersList
 {
-    public class DeveloperSkillBusinessModel : IDeveloperSkillBusinessModel
+    public class SkillBusinessModel : ISkillBusinessModel
     {
         public int IdUsers { get; set; }
         public string SkillName { get; set; }
