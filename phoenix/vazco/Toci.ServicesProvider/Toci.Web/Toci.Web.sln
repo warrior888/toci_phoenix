@@ -3,11 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.AuthorizationServer", "Toci.AuthorizationServer\Toci.AuthorizationServer.csproj", "{B6A7D2CA-61C5-4017-B80D-6AEB9E6E76CA}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EncodingLib", "EncodingLib\EncodingLib.csproj", "{44D0C538-5D19-409A-8F30-2519339FC818}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.Provider", "Toci.Provider\Toci.Provider.csproj", "{26D4AAB3-B13D-452F-888C-F635BF700B45}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.Tests", "Toci.Tests\Toci.Tests.csproj", "{F2800038-82FE-47B4-BCDE-9BF9A314F0B7}"
 EndProject
@@ -21,8 +17,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.DigitalSignatureApi", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbCredentials", "DbCredentials\DbCredentials.csproj", "{C4549253-A41F-4EFF-B32E-4A22EF6BEC6B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.Client", "Toci.Client\Toci.Client.csproj", "{F36634DF-B233-48AC-9A26-2C33C08870B0}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.CryptingApi", "Toci.CryptingApi\Toci.CryptingApi.csproj", "{75C01E14-3D21-417F-9C06-8362AA79898D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.CryptingFrontDemo", "Toci.CryptingFrontDemo\Toci.CryptingFrontDemo.csproj", "{ED2AD3D7-C4E5-45C9-B5B1-C95FF562AB97}"
@@ -34,8 +28,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentat
 		DbCredensialsApi.txt = DbCredensialsApi.txt
 		OauthLinks.txt = OauthLinks.txt
 	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.AlternativeClient", "Toci.AlternativeClient\Toci.AlternativeClient.csproj", "{D8092937-14BA-4C05-A624-B29A30CF1550}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Toci.Libraries", "Toci.Libraries", "{619B6E5B-0FD8-45EC-B956-BA459D6886FA}"
 EndProject
@@ -57,18 +49,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B6A7D2CA-61C5-4017-B80D-6AEB9E6E76CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B6A7D2CA-61C5-4017-B80D-6AEB9E6E76CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B6A7D2CA-61C5-4017-B80D-6AEB9E6E76CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B6A7D2CA-61C5-4017-B80D-6AEB9E6E76CA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{44D0C538-5D19-409A-8F30-2519339FC818}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{44D0C538-5D19-409A-8F30-2519339FC818}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44D0C538-5D19-409A-8F30-2519339FC818}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44D0C538-5D19-409A-8F30-2519339FC818}.Release|Any CPU.Build.0 = Release|Any CPU
-		{26D4AAB3-B13D-452F-888C-F635BF700B45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{26D4AAB3-B13D-452F-888C-F635BF700B45}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{26D4AAB3-B13D-452F-888C-F635BF700B45}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{26D4AAB3-B13D-452F-888C-F635BF700B45}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F2800038-82FE-47B4-BCDE-9BF9A314F0B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F2800038-82FE-47B4-BCDE-9BF9A314F0B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2800038-82FE-47B4-BCDE-9BF9A314F0B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -93,10 +77,6 @@ Global
 		{C4549253-A41F-4EFF-B32E-4A22EF6BEC6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4549253-A41F-4EFF-B32E-4A22EF6BEC6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4549253-A41F-4EFF-B32E-4A22EF6BEC6B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F36634DF-B233-48AC-9A26-2C33C08870B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F36634DF-B233-48AC-9A26-2C33C08870B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F36634DF-B233-48AC-9A26-2C33C08870B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F36634DF-B233-48AC-9A26-2C33C08870B0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{75C01E14-3D21-417F-9C06-8362AA79898D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{75C01E14-3D21-417F-9C06-8362AA79898D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75C01E14-3D21-417F-9C06-8362AA79898D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -109,10 +89,6 @@ Global
 		{77CEE5BA-D7B7-4C2F-8466-7B97D74AC9FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77CEE5BA-D7B7-4C2F-8466-7B97D74AC9FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77CEE5BA-D7B7-4C2F-8466-7B97D74AC9FB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D8092937-14BA-4C05-A624-B29A30CF1550}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D8092937-14BA-4C05-A624-B29A30CF1550}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D8092937-14BA-4C05-A624-B29A30CF1550}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D8092937-14BA-4C05-A624-B29A30CF1550}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C2377285-FA65-4545-91FB-6C4DC28155F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C2377285-FA65-4545-91FB-6C4DC28155F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2377285-FA65-4545-91FB-6C4DC28155F5}.Release|Any CPU.ActiveCfg = Release|Any CPU

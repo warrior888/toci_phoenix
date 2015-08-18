@@ -36,9 +36,6 @@ namespace Toci.DigitalSignatureApi.Controllers
             {
                 return Constants.InvalidBase64ExMsg;
             }
-
         }
-
-
     }
 }
