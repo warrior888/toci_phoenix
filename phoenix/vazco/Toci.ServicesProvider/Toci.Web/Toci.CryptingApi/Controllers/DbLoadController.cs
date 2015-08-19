@@ -21,7 +21,6 @@ namespace Toci.CryptingApi.Controllers
         [HttpPost]
         public Dictionary<string, string> LoadDbModels(BodyModel model)
         {
-            //ApiSimpleResultManager man = new ApiSimpleResultManager();
             try
             {
                 var dbo = new DbOperations(model.password, new VazcoConfig());
@@ -32,21 +31,14 @@ namespace Toci.CryptingApi.Controllers
                 }).Where(x => x.data != WrongPassword).ToList();
 
                
-                /*foreach (var item in resultList)
-                {
-                    result.Data.Add("Id",item.id.ToString());
-                    result.Data.Add("Adding Time",item.addingTime.ToString());
-                    result.Data.Add("Name",item.name);
-                    result.Data.Add("Data", item.data);
-
-                }*/
+                
                 var dupa = new List<Dictionary<string,string>>();
                 foreach (var item in resultList)
                 {
                     dupa.Add(new Dictionary<string, string>()
                     {
                         {"Id",          item.id.ToString()},
-                        {"Adding Time", item.addingTime.ToString()},
+                        {"AddingTime",  item.addingTime.ToString()},
                         {"Name",        item.name},
                         {"Data",        item.data}
                     });
