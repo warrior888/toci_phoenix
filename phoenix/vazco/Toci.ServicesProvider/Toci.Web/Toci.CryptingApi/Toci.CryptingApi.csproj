@@ -85,17 +85,23 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstraction\TociApiController.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\DbDeleteController.cs" />
     <Compile Include="Controllers\DbLoadController.cs" />
     <Compile Include="Controllers\DbSaveController.cs" />
     <Compile Include="Controllers\DbUpdateController.cs" />
+    <Compile Include="Exceptions\ApiErrors.cs" />
+    <Compile Include="Exceptions\WebApiTociApplicationException.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Managers\BlindLanguageManager.cs" />
+    <Compile Include="Managers\BlindTranslator.cs" />
     <Compile Include="Models\BodyModel.cs" />
     <Compile Include="Models\VazcoConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValidationUtils\BodyModelValidation.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -110,6 +116,10 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\toci_common\Toci.Libraries\Toci.Db\Toci.Db.csproj">
+      <Project>{c2377285-fa65-4545-91fb-6c4dc28155f5}</Project>
+      <Name>Toci.Db</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\..\..\toci_common\Toci.Libraries\Toci.Utilities.Common\Toci.Utilities.Common.csproj">
       <Project>{10db4113-ac97-426e-a233-3961a7d30e52}</Project>
       <Name>Toci.Utilities.Common</Name>
