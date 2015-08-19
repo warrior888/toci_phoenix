@@ -43,13 +43,5 @@ namespace DbCredentials.BusinessLogic
         {
             return projectsLogic.UpdateProject(model, listOfScopes);
         }
-
-        public List<Scopes> LoadScopes(Scopes model)
-        {
-            return scopesLogic.LoadScopes(model);
-        }
-
-        
-
     }
 }
