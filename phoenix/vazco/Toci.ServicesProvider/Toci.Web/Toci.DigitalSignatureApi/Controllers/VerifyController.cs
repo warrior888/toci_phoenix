@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Security.Cryptography;
-using System.Web;
 using System.Web.Http;
 using Toci.DigitalSignature.DigitalSignHandlers;
 using Toci.DigitalSignatureApi.Logic;
@@ -10,13 +9,12 @@ namespace Toci.DigitalSignatureApi.Controllers
 {
     public class VerifyController : ApiController
     {
-        private readonly DigitalSignatureApiUtils _digitalSignatureApiUtils = new DigitalSignatureApiUtils();
 
         [HttpPost]
         [Route("api/verify")]
         public string Verify([FromBody]VerifyModel model)
         {
-            var isNullMessage = _digitalSignatureApiUtils.CheckForNull(model);
+            var isNullMessage = DigitalSignatureApiUtils.CheckForNull(model);
             if (isNullMessage != null)
             {
                 return isNullMessage;
@@ -24,7 +22,7 @@ namespace Toci.DigitalSignatureApi.Controllers
             var verify = new Verify();
             try
             {
-                model = _digitalSignatureApiUtils.DecodeVerifyModel(model);
+                model = DigitalSignatureApiUtils.DecodeVerifyModel(model);
                 return verify.VerifyFile(model.data, model.signature, model.cert)? Constants.VerifyCorrectMsg : Constants.VerifyIncorrectMsg;
             }
             catch (CryptographicException)
