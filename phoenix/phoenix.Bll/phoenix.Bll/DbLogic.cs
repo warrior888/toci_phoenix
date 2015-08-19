@@ -12,6 +12,7 @@ namespace Phoenix.Bll
     {
         protected IDbHandle DbHandle;
         protected DbHandleAccessDataFactory AccessDataFactory;
+        private const string Id = "id"; 
 
         protected DbLogic()
         {
@@ -43,7 +44,7 @@ namespace Phoenix.Bll
         protected T FetchModelById<T>(int id) where T : Model, new()
         {
             T model = new T() { Id = id };
-            model.SetSelect("id", SelectClause.Equal);
+            model.SetSelect(Id, SelectClause.Equal);
             return FetchModelFromDb<T>(model);
         }
 

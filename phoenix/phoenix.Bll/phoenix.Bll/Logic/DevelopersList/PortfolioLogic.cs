@@ -9,6 +9,10 @@ namespace Phoenix.Bll.Logic.DevelopersList
 {
     public class PortfolioLogic : DbLogic, IPortfolioLogic
     {
+        //DI
+        private IDeveloperListLogic _developerListLogic= new DeveloperListLogic();
+
+
         public IEnumerable<IPortfolioBusinessModel> GetUserPortfolio(int userId)
         {
             List<users_portfolio> userPortfolio = FetchModelsByColumnValue<users_portfolio, int>("id_users",
@@ -19,7 +23,7 @@ namespace Phoenix.Bll.Logic.DevelopersList
         public IDeveloperBusinessModel GetProjectTeamLeader(int portfolioId)
         {
             portfolio portfolio = FetchModelById<portfolio>(portfolioId);
-            return GetElementById<IDeveloperBusinessModel, developer_list_view>(portfolio.FkIdUsers);
+            return _developerListLogic.GetDevByUserId(portfolio.FkIdUsers);
         }
     }
 }
