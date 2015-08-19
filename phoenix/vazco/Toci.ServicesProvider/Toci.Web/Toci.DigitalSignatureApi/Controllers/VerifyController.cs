@@ -23,7 +23,7 @@ namespace Toci.DigitalSignatureApi.Controllers
                 return ResultManager.GetApiResult(
                         new SimpleResult
                         {
-                            Code = 69,
+                            Code = 4,
                             Message = isNullMessage
                         }, "Json");
             }
@@ -31,7 +31,7 @@ namespace Toci.DigitalSignatureApi.Controllers
             try
             {
                 model = DigitalSignatureApiUtils.DecodeVerifyModel(model);
-                var verifyResult = TmpMethodName1(model, verify);
+                var verifyResult = VerifyData(model, verify);
                 return ResultManager.GetApiResult(
                         new SimpleResult
                         {
@@ -45,7 +45,7 @@ namespace Toci.DigitalSignatureApi.Controllers
                 return ResultManager.GetApiResult(
                       new SimpleResult
                       {
-                          Code = 69,
+                          Code = 32,
                           Message = Constants.InvalidCertificateExMsg
                       }, "Json");
             }
@@ -54,13 +54,13 @@ namespace Toci.DigitalSignatureApi.Controllers
                 return ResultManager.GetApiResult(
                     new SimpleResult
                     {
-                        Code = 69,
+                        Code = 64,
                         Message = Constants.InvalidBase64ExMsg
                     }, "Json");
             }
         }
 
-        private static string TmpMethodName1(VerifyModel model, Verify verify)
+        private static string VerifyData(VerifyModel model, Verify verify)
         {
             return verify.VerifyFile(model.data, model.signature, model.cert)? Constants.VerifyCorrectMsg : Constants.VerifyIncorrectMsg;
         }

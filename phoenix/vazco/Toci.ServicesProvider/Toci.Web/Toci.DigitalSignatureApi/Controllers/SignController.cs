@@ -13,52 +13,6 @@ namespace Toci.DigitalSignatureApi.Controllers
 {
     public class SignController : TmpDsTociApiController
     {
-        [HttpPost]
-        [Route("api/unsecuredsign")]
-        public Dictionary<string, object> UnsecuredSign([FromBody]SignModel model)
-        {
-            var sign = new Sign();
-            var isNullMessage = DigitalSignatureApiUtils.CheckForNull(model);
-            if (isNullMessage != null)
-            {
-                return ResultManager.GetApiResult(
-                        new SimpleResult
-                        {
-                            Code = 69,
-                            Message = isNullMessage
-                        }, "Json");
-            }
-            try
-            {
-                var resultData = HttpServerUtility.UrlTokenEncode(sign.SignFile(model.data, model.cert));
-                return
-                    ResultManager.GetApiResult(
-                        new SimpleResult
-                        {
-                            Code = 0,
-                            Data = new Dictionary<string, object> { { "signature", resultData } },
-                            Message = "SuccessFully signed!"
-                        }, "Json");
-            }
-            catch (CryptographicException)
-            {
-                return ResultManager.GetApiResult(
-                      new SimpleResult
-                      {
-                          Code = 69,
-                          Message = Constants.InvalidCertificateExMsg
-                      }, "Json");
-            }
-            catch (FormatException)
-            {
-                return ResultManager.GetApiResult(
-                      new SimpleResult
-                      {
-                          Code = 69,
-                          Message = Constants.InvalidBase64ExMsg
-                      }, "Json");
-            }
-        }
 
         [HttpPost]
         [Route("api/sign")]
@@ -70,7 +24,7 @@ namespace Toci.DigitalSignatureApi.Controllers
                 return ResultManager.GetApiResult(
                        new SimpleResult
                        {
-                           Code = 69,
+                           Code = 4,
                            Message = isNullMessage
                        }, "Json");
             }
@@ -97,7 +51,7 @@ namespace Toci.DigitalSignatureApi.Controllers
                 return ResultManager.GetApiResult(
                       new SimpleResult
                       {
-                          Code = 69,
+                          Code = 32,
                           Message = Constants.InvalidCertificateExMsg
                       }, "Json");
             }
@@ -106,7 +60,7 @@ namespace Toci.DigitalSignatureApi.Controllers
                 return ResultManager.GetApiResult(
                      new SimpleResult
                      {
-                         Code = 69,
+                         Code = 64,
                          Message = Constants.InvalidBase64ExMsg
                      }, "Json");
             }
