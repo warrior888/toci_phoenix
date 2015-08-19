@@ -43,7 +43,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.Utilities.Interfaces",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.Utilities.Test", "..\..\..\..\toci_common\Toci.Libraries\Toci.Utillties.Test\Toci.Utilities.Test.csproj", "{AFA373BC-F581-4E32-80B5-CC3179F630F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.ErrorsAndMessages", "Toci.ErrorsAndMessages\Toci.ErrorsAndMessages.csproj", "{C723109F-5656-4245-8FFB-6A9CDE912F54}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrorsAndMessages", "Toci.ErrorsAndMessages\ErrorsAndMessages.csproj", "{C723109F-5656-4245-8FFB-6A9CDE912F54}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

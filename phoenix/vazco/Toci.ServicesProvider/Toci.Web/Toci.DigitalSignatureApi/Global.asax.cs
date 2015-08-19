@@ -1,9 +1,9 @@
-﻿using System.Net.Http.Formatting;
+﻿using System.Web;
 using System.Web.Http;
 
 namespace Toci.DigitalSignatureApi
 {
-    public class WebApiApplication : System.Web.HttpApplication
+    public class WebApiApplication : HttpApplication
     {
         protected void Application_Start()
         {

@@ -111,9 +111,21 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\toci_common\Toci.Libraries\Toci.Utilities.Common\Toci.Utilities.Common.csproj">
+      <Project>{10DB4113-AC97-426E-A233-3961A7D30E52}</Project>
+      <Name>Toci.Utilities.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\toci_common\Toci.Libraries\Toci.Utilities\Toci.Utilities.csproj">
+      <Project>{9a12b07d-d560-41d9-b714-3785c0360ccd}</Project>
+      <Name>Toci.Utilities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Toci.DigitalSignature\Toci.DigitalSignature.csproj">
       <Project>{ce9a63d1-d277-4828-bf68-211db483b483}</Project>
       <Name>Toci.DigitalSignature</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Toci.ErrorsAndMessages\ErrorsAndMessages.csproj">
+      <Project>{c723109f-5656-4245-8ffb-6a9cde912f54}</Project>
+      <Name>ErrorsAndMessages</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
