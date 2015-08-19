@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Web.Http;
 using DbCrypting;
 using DbCrypting.VazcoDb;
+using Toci.CryptingApi.Api;
 using Toci.CryptingApi.Models;
 using Toci.CryptingApi.ValidationUtils;
 using Toci.ErrorsAndMessages.Abstraction;
@@ -14,7 +15,7 @@ using Toci.Utilities.Common.Exceptions;
 
 namespace Toci.CryptingApi.Controllers
 {
-    public class DbDeleteController : TociApiController
+    public class DbDeleteController : TTociApiController
     {
         [Route("api/models/delete")]
         [HttpPost]
