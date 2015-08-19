@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Toci.Utilities.Api
@@ -10,6 +11,7 @@ namespace Toci.Utilities.Api
         private const string _delimiter = ",";
         public virtual string GetJson(Dictionary<string, string> elements)
         {
+            
             var entries = elements.Select(item => string.Format(_patternElement, elements.Keys, elements.Values));
 
             return "{" + string.Join(_delimiter, entries) + "}";

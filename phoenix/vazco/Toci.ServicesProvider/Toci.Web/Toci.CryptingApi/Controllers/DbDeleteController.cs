@@ -26,7 +26,7 @@ namespace Toci.CryptingApi.Controllers
             {
                 var dbo = new DbOperations(model.password,new VazcoConfig());
 
-                BodyModelValidation.Validate(model);
+                BodyModelValidation.ValidateId(model);
 
                 dbo.Delete(new VazcoTable {id = model.id});
 
