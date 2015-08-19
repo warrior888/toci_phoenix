@@ -18,18 +18,19 @@ namespace Phoenix.Integration.Test.Developers.Patryk.BLL.TeamLeasing
         [TestMethod]
         public void TryGetDataFromDb()
         {
-            AutoMapperConfiguration.Configure();
+            new AutoMapperConfiguration().Configure();
 
             IDeveloperListLogic developerListLogic= new DeveloperListLogic();
-            developerListLogic.GetDevById(19);
+            developerListLogic.GetDevByUserId(19);
 
             ITeamLeasingLogic teamLeasingLogic = new TeamLeasingLogic();
             ITeamLeasingBusinessModel teamLeasingBusinessModel = new TeamLeasingBusinessModel()
             {
-                SkillSet = new List<ISkillBusinessModel>()
+                SkillSet = new List<IDeveloperSkillBusinessModel>()
                 {
-                    new SkillBusinessModel()
+                    new DeveloperSkillBusinessModel()
                     {
+                        
                         SkillLevel = 20,
                         SkillName = "C#"
                     }

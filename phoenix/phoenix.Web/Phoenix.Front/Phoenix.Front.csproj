@@ -215,6 +215,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\LogInOut\LogInOutAreaRegistration.cs" />
+    <Compile Include="Areas\Registration\Controllers\RegistrationController.cs" />
+    <Compile Include="Areas\Registration\Models\RegistrationModel.cs" />
     <Compile Include="Areas\Registration\RegistrationAreaRegistration.cs" />
     <Compile Include="Areas\TeamLeasing\TeamReservation\TeamReservationAreaRegistration.cs" />
     <Compile Include="Areas\TeamLeasing\TeamSearching\Controllers\TeamSearchingController.cs" />
@@ -280,6 +282,10 @@
     <Content Include="Areas\LogInOut\Views\web.config" />
     <Content Include="Areas\TeamLeasing\TeamReservation\Views\web.config" />
     <Content Include="Areas\TeamLeasing\TeamSearching\Views\web.config" />
+    <Content Include="Areas\Registration\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Registration\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Registration\Views\Registration\RegistrationForm.cshtml" />
+    <Content Include="Areas\Registration\Views\Registration\CorrectRegistration.cshtml" />
     <None Include="Scripts\oldJS\jquery-1.10.2.intellisense.js" />
     <Content Include="icon\apple-touch-icon-114-precomposed.png" />
     <Content Include="icon\apple-touch-icon-144-precomposed.png" />
@@ -430,6 +436,7 @@
     <Content Include="images\testimonial\author.jpg" />
     <Content Include="images\testimonial\face_13.jpg" />
     <Content Include="images\toci.png" />
+    <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\datepicker.js" />
     <Content Include="Scripts\DocumentReady.js" />
@@ -516,9 +523,6 @@
     <Folder Include="Areas\LogInOut\Controllers\" />
     <Folder Include="Areas\LogInOut\Models\" />
     <Folder Include="Areas\LogInOut\Views\Shared\" />
-    <Folder Include="Areas\Registration\Controllers\" />
-    <Folder Include="Areas\Registration\Models\" />
-    <Folder Include="Areas\Registration\Views\Shared\" />
     <Folder Include="Areas\TeamLeasing\TeamReservation\Controllers\" />
     <Folder Include="Areas\TeamLeasing\TeamReservation\Models\" />
     <Folder Include="Areas\TeamLeasing\TeamReservation\Views\Shared\" />
@@ -532,6 +536,10 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\toci_common\Toci.Libraries\Toci.Db\Toci.Db.csproj">
+      <Project>{c2377285-fa65-4545-91fb-6c4dc28155f5}</Project>
+      <Name>Toci.Db</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Phoenix.Bll.Interfaces\Phoenix.Bll.Interfaces\Phoenix.Bll.Interfaces.csproj">
       <Project>{471d3f60-27a8-402d-8599-952ec3a2985b}</Project>
       <Name>Phoenix.Bll.Interfaces</Name>

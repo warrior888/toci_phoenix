@@ -6,7 +6,7 @@ namespace Phoenix.Bll.Interfaces.Logic.DevelopersList
 {
     public interface IDeveloperListLogic : IDbLogic
     {
-        IDeveloperBusinessModel GetDevById(int id);
+        IDeveloperBusinessModel GetDevByUserId(int id);
 
         IEnumerable<IDeveloperBusinessModel> GetAllDevelopers();
 

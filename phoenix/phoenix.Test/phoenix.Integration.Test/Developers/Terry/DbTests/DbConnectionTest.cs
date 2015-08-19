@@ -23,7 +23,7 @@ namespace Phoenix.Integration.Test.Developers.Terry.DbTests
         public void DbConnectionTesting()
         {
            DeveloperListLogic devListLogic = new DeveloperListLogic();
-            devListLogic.GetDevById(5);
+            devListLogic.GetDevByUserId(5);
 
             UsersLogic usersLogic = new UsersLogic();
             var allUsers = usersLogic.GetAllUsers();

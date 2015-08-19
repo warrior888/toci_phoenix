@@ -1,8 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Remoting.Channels;
-using AutoMapper;
-using Phoenix.Bll.BusinessModels.DevelopersList;
 using Phoenix.Bll.Interfaces.BusinessModels.DevelopersList;
 using Phoenix.Bll.Interfaces.Logic.DevelopersList;
 using Phoenix.Dal.GeneratedModels;
@@ -12,29 +9,17 @@ namespace Phoenix.Bll.Logic.DevelopersList
 {
     public class PortfolioLogic : DbLogic, IPortfolioLogic
     {
-        private ISkillLogic _skillLogic;
-
-        public PortfolioLogic()
-        {
-            _skillLogic = new SkillLogic();
-
-        }
-
         public IEnumerable<IPortfolioBusinessModel> GetUserPortfolio(int userId)
         {
-            List<users_portfolio> userPortfolioFromDb = FetchModelsByColumnValue<users_portfolio, int>("id_users",
+            List<users_portfolio> userPortfolio = FetchModelsByColumnValue<users_portfolio, int>("id_users",
                 SelectClause.Equal, userId);
-
-            List<IPortfolioBusinessModel> userPortfolio =
-                userPortfolioFromDb.Select(portfolio => GetPortfolioById(portfolio.Id)).ToList();
-
-            return userPortfolio;
-
+            return userPortfolio.Select(p => GetElementById<IPortfolioBusinessModel, portfolio>(p.IdPortfolio)).ToList();
         }
 
-        public IPortfolioBusinessModel GetPortfolioById(int portfolioId)
+        public IDeveloperBusinessModel GetProjectTeamLeader(int portfolioId)
         {
-            return Mapper.Map<IPortfolioBusinessModel>(FetchModelById<portfolio>(portfolioId));
-        } 
+            portfolio portfolio = FetchModelById<portfolio>(portfolioId);
+            return GetElementById<IDeveloperBusinessModel, developer_list_view>(portfolio.FkIdUsers);
+        }
     }
 }

@@ -13,15 +13,11 @@ namespace Phoenix.Bll
                 {"Patryk",(() => new DbHandleAccessData()
                 {
                     UserName = "postgres", 
-                    Password = "haslo123",
+                    Password = "team_leasing",
                     DbAdress = "localhost",
                     DbName = "philadelphia"
                 })},
-/*
-                DbHandleAccessData.Password = "ph03n1x";
-            DbHandleAccessData.DbAdress = "localhost";
-            DbHandleAccessData.DbName = "Phoenix";
-            DbHandleAccessData.UserName = "postgres";*/
+
                 
                 {"Terry",(() => new DbHandleAccessData()
                 {

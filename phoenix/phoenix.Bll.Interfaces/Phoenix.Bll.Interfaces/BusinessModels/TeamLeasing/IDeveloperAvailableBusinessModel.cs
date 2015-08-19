@@ -5,6 +5,7 @@ namespace Phoenix.Bll.Interfaces.BusinessModels.TeamLeasing
 {
     public interface IDeveloperAvailableBusinessModel
     {
+        int Id { get; set; }
         DateTime AvailableFor { get; set; }
 
 	    float StartWorkHour { get; set; }

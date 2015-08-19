@@ -11,6 +11,11 @@ namespace Phoenix.Bll.Logic.TeamLeasing
 {
     public class TeamLeasingLogicMock : DbLogic, ITeamLeasingLogic
     {
+        public IEnumerable<IDeveloperTeamBusinessModel> GetAllTeams()
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<IDeveloperTeamBusinessModel> GetTeams(ITeamLeasingBusinessModel model, int countOfTeams)
         {
             List<DeveloperBusinessModel> devList = new List<DeveloperBusinessModel>()

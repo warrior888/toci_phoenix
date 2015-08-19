@@ -4,8 +4,8 @@ namespace Phoenix.Bll.BusinessModels.DevelopersList
 {
     public class SkillBusinessModel : ISkillBusinessModel
     {
-        public int IdUsers { get; set; }
-        public string SkillName { get; set; }
-        public double SkillLevel { get; set; }
+        public int Id { get; set; }
+
+        public string SkillName { get; set; }       
     }
 }

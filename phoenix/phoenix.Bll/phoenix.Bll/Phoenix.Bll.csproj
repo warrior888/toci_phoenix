@@ -108,6 +108,7 @@
     <Compile Include="AutoMapperConfiguration.cs" />
     <Compile Include="BusinessModels\CourseRegistration\CourseRegistrationBusinessModel.cs" />
     <Compile Include="BusinessModels\DevelopersList\DeveloperBusinessModel.cs" />
+    <Compile Include="BusinessModels\DevelopersList\DeveloperSkillBusinessModel.cs" />
     <Compile Include="BusinessModels\DevelopersList\PortfolioBusinessModel.cs" />
     <Compile Include="BusinessModels\DevelopersList\SkillBusinessModel.cs" />
     <Compile Include="BusinessModels\InteractiveCourses\Exercise.cs" />

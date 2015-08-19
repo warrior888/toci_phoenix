@@ -1,0 +1,44 @@
+﻿@model Phoenix.Front.Areas.Registration.Models.RegistrationModel
+
+@{
+    ViewBag.Title = "RegistrationForm";
+    Layout = null;
+}
+
+<h2>RegistrationForm</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary()
+    <p>
+        @Html.LabelFor(item => item.login)
+        @Html.TextBoxFor(item => item.login)
+    </p>
+
+    <p>
+        @Html.LabelFor(item => item.password)
+        @Html.EditorFor(item => item.password)
+    </p>
+    <p>
+        @Html.LabelFor(item => item.name)
+        @Html.EditorFor(item => item.name)
+    </p>
+    <p>
+        @Html.LabelFor(item => item.surname)
+        @Html.EditorFor(item => item.surname)
+    </p>
+    <p>
+        @Html.LabelFor(item => item.email)
+        @Html.EditorFor(item => item.email)
+
+    </p>
+    <p>
+        @Html.LabelFor(item => item.nick)
+        @Html.EditorFor(item => item.nick)
+    </p>
+
+
+    <input type="submit" value="zarejestruj" />
+
+}

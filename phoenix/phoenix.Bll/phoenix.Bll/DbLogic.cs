@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 using AutoMapper;
 using Phoenix.Bll.Interfaces;
 using Toci.Db.ClusterAccess;
@@ -58,42 +56,26 @@ namespace Phoenix.Bll
             return FetchModelsFromDb<TModel>(model);
         }
 
-        //TODO CreateMap przy starcie apliakcji, warstwa między business model i db logic
+        //TODO warstwa między business model i db logic
 
         protected T GetElementById<T, TModel>(int id) where TModel : Model, new()
         {
             TModel model = FetchModelById<TModel>(id);
-
-            Mapper.CreateMap<TModel, T>();
-
-            return Mapper.Map<T>(model);
-        }
-
-        protected T GetElementById<T, TModel>(int id, Expression<Func<T, object>> destMember, Action<IMemberConfigurationExpression<TModel>> action) 
-            where TModel : Model, new() //for customized map
-        {
-            TModel model = FetchModelById<TModel>(id);
-            
-            
-
             return Mapper.Map<T>(model);
         }
 
         protected IEnumerable<T> GetAllElements<T, TModel>() where TModel : Model, new() 
         {
             var modelsList = FetchModelsFromDb<TModel>(new TModel());
-
-            
-
-            return modelsList.Select(model => Mapper.Map<T>(model)).ToList();
+            return modelsList.Select(Mapper.Map<T>);
         }
 
-        protected IEnumerable<T> GetAllElements<T, TModel>(Expression<Func<T, object>> destMember, Action<IMemberConfigurationExpression<TModel>> action) 
-            where TModel : Model, new() //for customized map
+        protected List<T> GetElementsByColumnValue<T,TModel,TValue>(string columnName, SelectClause clause, TValue value)
+            where TModel : Model, new()
+            where TValue : new()
         {
-            var modelsList = FetchModelsFromDb<TModel>(new TModel());
-
-            return modelsList.Select(model => Mapper.Map<T>(model)).ToList();
-        }
+            var modelsList = FetchModelsByColumnValue<TModel, TValue>(columnName, clause, value);
+            return modelsList.Select(Mapper.Map<T>).ToList();    
+        } 
     }
 }

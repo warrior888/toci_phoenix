@@ -5,7 +5,7 @@ namespace Phoenix.Bll.Interfaces.Logic.DevelopersList
 {
     public interface ISkillLogic
     {
-        IEnumerable<ISkillBusinessModel> GetDeveloperSkills(int userId);
+        IEnumerable<IDeveloperSkillBusinessModel> GetDeveloperSkills(int userId);
 
         IEnumerable<ISkillBusinessModel> GetPortfolioSkills(int portfolioId);
 
