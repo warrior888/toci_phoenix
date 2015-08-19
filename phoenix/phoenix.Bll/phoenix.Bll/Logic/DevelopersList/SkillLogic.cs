@@ -9,16 +9,19 @@ namespace Phoenix.Bll.Logic.DevelopersList
 {
     public class SkillLogic : DataAccessLogic, ISkillLogic
     {
+        private const string UserIdLabel = "id_users";
+        private const string PortfolioIdLabel = "fk_id_portfolio";
+
         public IEnumerable<IDeveloperSkillBusinessModel> GetDeveloperSkills(int userId)
         {
-            return GetElementsByColumnValue<IDeveloperSkillBusinessModel, developer_skills_view, int>("id_users",
+            return GetElementsByColumnValue<IDeveloperSkillBusinessModel, developer_skills_view, int>(UserIdLabel,
                     SelectClause.Equal, userId);
         }
 
         public IEnumerable<ISkillBusinessModel> GetPortfolioSkills(int portfolioId)
         {
             List<portfolio_skills_technologies> portfolioSkills = FetchModelsByColumnValue<portfolio_skills_technologies, int>
-                ("fk_id_portfolio", SelectClause.Equal, portfolioId);
+                (PortfolioIdLabel, SelectClause.Equal, portfolioId);
             return portfolioSkills.Select(skill => GetSkillById(skill.FkIdSkillsTechnologies)).ToList();
         }
 

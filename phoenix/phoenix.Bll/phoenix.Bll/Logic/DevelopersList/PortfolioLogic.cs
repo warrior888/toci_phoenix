@@ -9,6 +9,7 @@ namespace Phoenix.Bll.Logic.DevelopersList
 {
     public class PortfolioLogic : DataAccessLogic, IPortfolioLogic
     {
+        private const string UserIdLabel = "id_users";
         //DI
         private IDeveloperListLogic _developerListLogic;
 
@@ -19,7 +20,7 @@ namespace Phoenix.Bll.Logic.DevelopersList
 
         public IEnumerable<IPortfolioBusinessModel> GetUserPortfolio(int userId)
         {
-            List<users_portfolio> userPortfolio = FetchModelsByColumnValue<users_portfolio, int>("id_users",
+            List<users_portfolio> userPortfolio = FetchModelsByColumnValue<users_portfolio, int>(UserIdLabel,
                 SelectClause.Equal, userId);
             return userPortfolio.Select(p => GetElementById<IPortfolioBusinessModel, portfolio>(p.IdPortfolio)).ToList();
         }

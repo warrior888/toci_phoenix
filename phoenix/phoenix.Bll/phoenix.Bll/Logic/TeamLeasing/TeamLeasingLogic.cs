@@ -25,10 +25,26 @@ namespace Phoenix.Bll.Logic.TeamLeasing
             _portfolioLogic = PortfolioLogic;
         }
 
+        //TODO
         public IEnumerable<IDeveloperTeamBusinessModel> GetAllTeams()
         {
-            var projectsList = _portfolioLogic.GetAllProjects();
-       
+            var teamsList = new List<IDeveloperTeamBusinessModel>();
+
+            var devsList = _developersLogic.GetAllDevelopers().ToList();
+            var projectsList = _portfolioLogic.GetAllProjects().ToList();
+
+            projectsList.ForEach(project => teamsList.Add(new DeveloperTeamBusinessModel()));
+
+            foreach (var project in projectsList)
+            {
+                teamsList.Add(new DeveloperTeamBusinessModel()
+                {
+                    TeamLeader = _portfolioLogic.GetProjectTeamLeader(project.Id),
+                    
+                 
+                });
+            }
+            
 
             return null;
         }

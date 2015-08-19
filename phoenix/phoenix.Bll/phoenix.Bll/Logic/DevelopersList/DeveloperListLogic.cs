@@ -7,7 +7,9 @@
 namespace Phoenix.Bll.Logic.DevelopersList
 {
     public class DeveloperListLogic : DataAccessLogic, IDeveloperListLogic
-    {        
+    {
+        private const string UserIdLabel = "user_id";
+
         public IEnumerable<IDeveloperBusinessModel> GetAllDevelopers()
         {
 
@@ -17,7 +19,7 @@ namespace Phoenix.Bll.Logic.DevelopersList
 
         public IDeveloperBusinessModel GetDevByUserId(int id)
         {
-            IDeveloperBusinessModel developer = GetElementsByColumnValue<IDeveloperBusinessModel, developer_list_view, int>("user_id",
+            IDeveloperBusinessModel developer = GetElementsByColumnValue<IDeveloperBusinessModel, developer_list_view, int>(UserIdLabel,
                     SelectClause.Equal, id)[0];
             return developer;
 
