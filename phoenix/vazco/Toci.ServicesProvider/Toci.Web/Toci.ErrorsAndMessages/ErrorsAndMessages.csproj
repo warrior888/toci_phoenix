@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B8730CA1-13E6-4D51-A436-DA4A8A7D4062}</ProjectGuid>
+    <ProjectGuid>{C723109F-5656-4245-8FFB-6A9CDE912F54}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DbCrypting</RootNamespace>
-    <AssemblyName>DbCrypting</AssemblyName>
+    <RootNamespace>ErrorsAndMessages</RootNamespace>
+    <AssemblyName>ErrorsAndMessages</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,35 +42,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Config\DbConfig.cs" />
-    <Compile Include="Config\LoadConfig.cs" />
-    <Compile Include="Logic\CryptingExtMethods.cs" />
-    <Compile Include="Logic\DbConnect.cs" />
-    <Compile Include="Logic\DbUtils.cs" />
+    <Compile Include="Abstraction\TociApiController.cs" />
+    <Compile Include="Exceptions\ApiErrors.cs" />
+    <Compile Include="Exceptions\WebApiTociApplicationException.cs" />
+    <Compile Include="Managers\BlindLanguageManager.cs" />
+    <Compile Include="Managers\BlindTranslator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VazcoDb\DbOperations.cs" />
-    <Compile Include="VazcoDb\VazcoTable.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\toci_common\Toci.Libraries\Toci.Db\Toci.Db.csproj">
-      <Project>{c2377285-fa65-4545-91fb-6c4dc28155f5}</Project>
-      <Name>Toci.Db</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\..\..\..\toci_common\Toci.Libraries\Toci.Utilities.Common\Toci.Utilities.Common.csproj">
-      <Project>{10DB4113-AC97-426E-A233-3961A7D30E52}</Project>
+      <Project>{10db4113-ac97-426e-a233-3961a7d30e52}</Project>
       <Name>Toci.Utilities.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\EncodingLib\EncodingLib.csproj">
-      <Project>{44d0c538-5d19-409a-8f30-2519339fc818}</Project>
-      <Name>EncodingLib</Name>
+    <ProjectReference Include="..\..\..\..\..\toci_common\Toci.Libraries\Toci.Utilities\Toci.Utilities.csproj">
+      <Project>{9a12b07d-d560-41d9-b714-3785c0360ccd}</Project>
+      <Name>Toci.Utilities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Toci.ErrorsAndMessages\ErrorsAndMessages.csproj">
-      <Project>{c723109f-5656-4245-8ffb-6a9cde912f54}</Project>
-      <Name>Toci.ErrorsAndMessages</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="VazcoDb\template.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

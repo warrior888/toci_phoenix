@@ -22,7 +22,7 @@ namespace DbCrypting.Logic
         }
         public static void DecryptDbModels(this List<VazcoTable> list, string secret)
         {
-
+            
             foreach (var item in list)
             {
                 var validatePassword = new VerifySecret(item.hash,secret);

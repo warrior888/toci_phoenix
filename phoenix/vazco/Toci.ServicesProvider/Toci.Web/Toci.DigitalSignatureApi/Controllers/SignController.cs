@@ -1,69 +1,69 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Web;
 using System.Web.Http;
 using Toci.DigitalSignature.DigitalSignHandlers;
+using Toci.DigitalSignatureApi.Abstraction;
 using Toci.DigitalSignatureApi.Logic;
 using Toci.DigitalSignatureApi.Models;
+using Toci.Utilities.Api;
 
 namespace Toci.DigitalSignatureApi.Controllers
 {
-    public class SignController : ApiController
+    public class SignController : TmpDsTociApiController
     {
-        private readonly DigitalSignatureApiUtils _digitalSignatureApiUtils = new DigitalSignatureApiUtils();
-
-        [HttpPost]
-        [Route("api/unsecuredsign")]
-        public string UnsecuredSign([FromBody]SignModel model)
-        {
-            var sign = new Sign();
-            var isNullMessage = _digitalSignatureApiUtils.CheckForNull(model);
-            if (isNullMessage != null)
-            {
-                return isNullMessage;
-            }
-            try
-            {
-                return HttpServerUtility.UrlTokenEncode(sign.SignFile(model.data, model.cert));
-            }
-            catch (CryptographicException)
-            {
-                return Constants.InvalidCertificateExMsg;
-            }
-            catch (FormatException)
-            {
-                return Constants.InvalidBase64ExMsg;
-            }
-        }
 
         [HttpPost]
         [Route("api/sign")]
-        public string Sign([FromBody]SecuredSignModel model)
+        public Dictionary<string, object> Sign([FromBody]SecuredSignModel model)
         {
-            var isNullMessage = _digitalSignatureApiUtils.CheckForNull(model);
+            var isNullMessage = DigitalSignatureApiUtils.CheckForNull(model);
             if (isNullMessage != null)
             {
-                return isNullMessage;
+                return ResultManager.GetApiResult(
+                       new SimpleResult
+                       {
+                           Code = 4,
+                           Message = isNullMessage
+                       }, "Json");
             }
             var sign = new Sign();
             try
             {
-                model = _digitalSignatureApiUtils.DecodeSignModel(model);
-                return
+                model = DigitalSignatureApiUtils.DecodeSignModel(model);
+                var resultData =
                     HttpServerUtility.UrlTokenEncode(sign.SignFile(model.data,
                         sign.PfxFileToCertificate(model.cert, model.password)));
+                return
+                   ResultManager.GetApiResult(
+                       new SimpleResult
+                       {
+                           Code = 0,
+                           Data = new Dictionary<string, object> { { "signature", resultData } },
+                           Message = "SuccessFully signed!"
+                       }, "Json");
+
             }
             catch (CryptographicException)
             {
 
-                return Constants.InvalidCertificateExMsg;
+                return ResultManager.GetApiResult(
+                      new SimpleResult
+                      {
+                          Code = 32,
+                          Message = Constants.InvalidCertificateExMsg
+                      }, "Json");
             }
             catch (FormatException)
             {
-                return Constants.InvalidBase64ExMsg;
+                return ResultManager.GetApiResult(
+                     new SimpleResult
+                     {
+                         Code = 64,
+                         Message = Constants.InvalidBase64ExMsg
+                     }, "Json");
             }
-
-
         }
     }
 }

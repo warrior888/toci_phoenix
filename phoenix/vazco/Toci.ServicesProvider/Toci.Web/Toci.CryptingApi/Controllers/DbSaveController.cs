@@ -6,26 +6,38 @@ using System.Net.Http;
 using System.Web.Http;
 using DbCrypting;
 using DbCrypting.VazcoDb;
+using Toci.CryptingApi.Api;
 using Toci.CryptingApi.Models;
+using Toci.CryptingApi.ValidationUtils;
+using Toci.ErrorsAndMessages.Abstraction;
+using Toci.Utilities.Api;
+using Toci.Utilities.Common.Exceptions;
 
 namespace Toci.CryptingApi.Controllers
 {
-    public class DbSaveController : ApiController
+    public class DbSaveController : TTociApiController
     {
         [Route("api/models/save")]
         [HttpPost]
-        public string SaveToDb(BodyModel model)
+        public Dictionary<string, object> SaveToDb(BodyModel model)
         {
             try
             {
+                BodyModelValidation.ValidatePassword(model);
+                BodyModelValidation.ValidateData(model);
+                BodyModelValidation.ValidateName(model);
+
                 var dbo = new DbOperations(model.password, new VazcoConfig());
+
+                
+
                 dbo.Save(new VazcoTable {data = model.data,name = model.name});
 
-                return "Saved!";
+                return ResultManager.GetApiResult(new SimpleResult { Code = 0, Message = "Saved!" }, "Json");
             }
-            catch (Exception)
+            catch (UiTociApplicationException ex)
             {
-                return "Bad Request!";
+                return ResultManager.GetApiResult(new SimpleResult { Code = ex.GetErrorCode(ex), ErrorMessage = string.Join(", ", ex.GetErrorList(ex)), Message = "Save unsuccessfull." }, "Json");
             }
         }
     }

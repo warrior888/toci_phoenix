@@ -4,6 +4,8 @@ using System.Linq;
 using DbCrypting.Config;
 using DbCrypting.Logic;
 using Toci.Db.ClusterAccess;
+using Toci.ErrorsAndMessages.Exceptions;
+using Toci.Utilities.Common.Exceptions;
 
 namespace DbCrypting.VazcoDb
 {
@@ -50,16 +52,30 @@ namespace DbCrypting.VazcoDb
             var vazcoEntityList = vazcoDataRows.Cast<VazcoTable>().ToList();
 
 
-           
-            vazcoEntityList.DecryptDbModels(_temporarySecret);
+           // try
+          //  {
+                vazcoEntityList.DecryptDbModels(_temporarySecret);
+           // }
+          //  catch (Exception)
+         //   {
+
+           //     throw new WebApiTociApplicationException("The given password is missing.", "missing password", (int)ApiErrors.PasswordMissing);
+           // }
+            
             return DbUtils.SortListByTime(vazcoEntityList);
         }
 
         public void Delete(VazcoTable model)
         {
             model.SetWhere(IdColumnName);
-            
-            dbh.DeleteData(model);
+            try
+            {
+                dbh.DeleteData(model);
+            }
+            catch (Exception)
+            {
+              throw new WebApiTociApplicationException("The given ID is not present in the database.", "zle id", (int)ApiErrors.WrongId);
+            }
         }
         public void Update(VazcoTable model)
         {
@@ -72,8 +88,15 @@ namespace DbCrypting.VazcoDb
             model.SetWhere(IdColumnName);
             model.SetPrimaryKey(IdColumnName);
             model.addingTime = DateTime.Now;
-
-            dbh.UpdateData(model);
+            try
+            {
+                dbh.UpdateData(model);
+            }
+            catch(Exception)
+            {
+                throw new WebApiTociApplicationException("The given ID is not present in the database.", "zle id", (int)ApiErrors.WrongId);
+            }
+            
         }
     }
 }
