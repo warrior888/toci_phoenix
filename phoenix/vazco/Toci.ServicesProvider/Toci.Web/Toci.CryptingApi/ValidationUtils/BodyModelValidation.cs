@@ -8,7 +8,7 @@ namespace Toci.CryptingApi.ValidationUtils
 {
     public static class BodyModelValidation
     {
-        private const string MissingPattern = "{0} missing, please provide an {0} in Your request";
+        private const string MissingPattern = "{0} missing, please provide a/an {0} in Your request";
         public static void ValidateId(BodyModel model)
         {
             if (model.id < 1)

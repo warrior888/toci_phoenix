@@ -8,6 +8,7 @@ using DbCrypting;
 using DbCrypting.VazcoDb;
 using Toci.CryptingApi.Api;
 using Toci.CryptingApi.Models;
+using Toci.CryptingApi.ValidationUtils;
 using Toci.ErrorsAndMessages.Abstraction;
 using Toci.Utilities.Api;
 using Toci.Utilities.Common.Exceptions;
@@ -18,11 +19,18 @@ namespace Toci.CryptingApi.Controllers
     {
         [Route("api/models/save")]
         [HttpPost]
-        public Dictionary<string, string> SaveToDb(BodyModel model)
+        public Dictionary<string, object> SaveToDb(BodyModel model)
         {
             try
             {
+                BodyModelValidation.ValidatePassword(model);
+                BodyModelValidation.ValidateData(model);
+                BodyModelValidation.ValidateName(model);
+
                 var dbo = new DbOperations(model.password, new VazcoConfig());
+
+                
+
                 dbo.Save(new VazcoTable {data = model.data,name = model.name});
 
                 return ResultManager.GetApiResult(new SimpleResult { Code = 0, Message = "Saved!" }, "Json");

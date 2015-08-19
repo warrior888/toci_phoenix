@@ -52,8 +52,16 @@ namespace DbCrypting.VazcoDb
             var vazcoEntityList = vazcoDataRows.Cast<VazcoTable>().ToList();
 
 
-           
-            vazcoEntityList.DecryptDbModels(_temporarySecret);
+           // try
+          //  {
+                vazcoEntityList.DecryptDbModels(_temporarySecret);
+           // }
+          //  catch (Exception)
+         //   {
+
+           //     throw new WebApiTociApplicationException("The given password is missing.", "missing password", (int)ApiErrors.PasswordMissing);
+           // }
+            
             return DbUtils.SortListByTime(vazcoEntityList);
         }
 
