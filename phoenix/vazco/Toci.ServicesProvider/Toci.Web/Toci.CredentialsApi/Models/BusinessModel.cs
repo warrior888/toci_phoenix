@@ -38,8 +38,15 @@ namespace Toci.CredentialsApi.Models
 
         public List<Scopes> GetScopesList()
         {
-            var list = scopesList.Split(new[] { separator }, StringSplitOptions.None).ToList();
-            return list.Select(item => new Scopes { scopename = item }).ToList();
+            try
+            {
+                var list = scopesList.Split(new[] {separator}, StringSplitOptions.None).ToList();
+                return list.Select(item => new Scopes {scopename = item}).ToList();
+            }
+            catch (Exception)
+            {
+                throw new Exception("Invalid scopesList.");
+            }
         }
         
     }

@@ -7,6 +7,7 @@ using System.Web.Http;
 using DbCrypting;
 using DbCrypting.VazcoDb;
 using Toci.CryptingApi.Models;
+using Toci.Utilities.Api;
 
 namespace Toci.CryptingApi.Controllers
 {
@@ -17,6 +18,7 @@ namespace Toci.CryptingApi.Controllers
         [HttpPost]
         public IEnumerable<BodyModel> LoadDbModels(BodyModel model)
         {
+            //ApiSimpleResultManager man = new ApiSimpleResultManager();
             try
             {
                 var dbo = new DbOperations(model.password, new VazcoConfig());
@@ -27,9 +29,12 @@ namespace Toci.CryptingApi.Controllers
                 }).Where(x => x.data != WrongPassword).ToList();
                 //return model.name != default(string) ? dbo.Load().Where(x => x.name == model.name) : dbo.Load();
 
+                //man.GetApiResult()
+
             }
             catch (Exception)
             {
+
                 return default(IEnumerable<BodyModel>);
             }
         }

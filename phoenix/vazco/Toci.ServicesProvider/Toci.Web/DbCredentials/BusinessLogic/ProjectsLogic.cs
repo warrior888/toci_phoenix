@@ -1,17 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Remoting.Lifetime;
 using DbCredentials.DbLogic;
 using DbCredentials.DbLogic.CredentialsModels;
-using Toci.Db.Interfaces;
 
 namespace DbCredentials.BusinessLogic
 {
     public class ProjectsLogic
     {
         private const int notSaved = 0;
-        private const bool failure = false;
         DbQuery dbQuery = new DbQuery();
         ScopesLogic scopesLogic = new ScopesLogic();
 
@@ -42,7 +39,7 @@ namespace DbCredentials.BusinessLogic
         {
             if (!IsProjectExist(model))
             {
-                throw new Exception("Project does not exist. ");
+                throw new Exception("Project does not exist.");
             }
             var listOfProjects = LoadProjects(listOfModels);
             var project = new Projects();
@@ -82,7 +79,7 @@ namespace DbCredentials.BusinessLogic
         {
             if (!IsProjectExist(model))
             {
-                throw new Exception("Project does not exist. ");
+                throw new Exception("Project does not exist.");
             }
             
             try
@@ -91,9 +88,9 @@ namespace DbCredentials.BusinessLogic
                 dbQuery.Delete(project, Projects.PROJECTNAME);
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw new Exception("Cannot delete project. " + ex.Message);
+                throw new Exception("Cannot delete project.");
             }
         }
 
@@ -101,7 +98,7 @@ namespace DbCredentials.BusinessLogic
         {
             if (!IsProjectExist(model))
             {
-                throw new Exception("Project does not exist. ");
+                throw new Exception("Project does not exist.");
             }
             try
             {
@@ -113,9 +110,9 @@ namespace DbCredentials.BusinessLogic
                 }
                 return false;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw new Exception("Cannot update project. " + ex.Message);
+                throw new Exception("Cannot update project.");
             }
         }
     }
