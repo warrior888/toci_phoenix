@@ -8,15 +8,15 @@ namespace DbCredentials.DbLogic.CredentialsModels
     {
         public Projects() : base("Projects")
         {
-            projectname = null;
-            projectauthor = null;
-            projectdata = null;
+            //projectname = null;
+            //projectauthor = null;
+            //projectdata = null;
             //projectid = default(int);
             //scopeid = default(int);
             modificationdate = default(DateTime);
             hash = null;
         }
-         
+
         public const string PROJECTID = "projectid";
         public System.Int32 projectid
             {

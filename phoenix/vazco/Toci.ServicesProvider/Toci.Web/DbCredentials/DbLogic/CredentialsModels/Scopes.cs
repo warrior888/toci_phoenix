@@ -7,7 +7,7 @@ namespace DbCredentials.DbLogic.CredentialsModels
     {
         public Scopes() : base("Scopes")
         {
-            scopename = null;
+            //scopename = null;
             //scopeid = default(int);
         }
          
