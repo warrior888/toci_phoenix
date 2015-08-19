@@ -4,18 +4,18 @@ using System.Security.Cryptography;
 using System.Web;
 using System.Web.Http;
 using Toci.DigitalSignature.DigitalSignHandlers;
+using Toci.DigitalSignatureApi.Abstraction;
 using Toci.DigitalSignatureApi.Logic;
 using Toci.DigitalSignatureApi.Models;
-using Toci.ErrorsAndMessages.Abstraction;
 using Toci.Utilities.Api;
 
 namespace Toci.DigitalSignatureApi.Controllers
 {
-    public class SignController : TociApiController
+    public class SignController : TmpDsTociApiController
     {
         [HttpPost]
         [Route("api/unsecuredsign")]
-        public Dictionary<string, string> UnsecuredSign([FromBody]SignModel model)
+        public Dictionary<string, object> UnsecuredSign([FromBody]SignModel model)
         {
             var sign = new Sign();
             var isNullMessage = DigitalSignatureApiUtils.CheckForNull(model);
@@ -36,7 +36,7 @@ namespace Toci.DigitalSignatureApi.Controllers
                         new SimpleResult
                         {
                             Code = 0,
-                            //Data = new Dictionary<string, string> { { "signature", resultData } },
+                            Data = new Dictionary<string, object> { { "signature", resultData } },
                             Message = "SuccessFully signed!"
                         }, "Json");
             }
@@ -62,7 +62,7 @@ namespace Toci.DigitalSignatureApi.Controllers
 
         [HttpPost]
         [Route("api/sign")]
-        public Dictionary<string, string> Sign([FromBody]SecuredSignModel model)
+        public Dictionary<string, object> Sign([FromBody]SecuredSignModel model)
         {
             var isNullMessage = DigitalSignatureApiUtils.CheckForNull(model);
             if (isNullMessage != null)
@@ -86,7 +86,7 @@ namespace Toci.DigitalSignatureApi.Controllers
                        new SimpleResult
                        {
                            Code = 0,
-                           //Data = new Dictionary<string, string> { { "signature", resultData } },
+                           Data = new Dictionary<string, object> { { "signature", resultData } },
                            Message = "SuccessFully signed!"
                        }, "Json");
 
