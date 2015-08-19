@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Web;
 using System.Web.Http;
+using System.Web.Services.Description;
 using Toci.DigitalSignature.DigitalSignHandlers;
 using Toci.DigitalSignatureApi.Abstraction;
 using Toci.DigitalSignatureApi.Logic;
@@ -25,7 +26,8 @@ namespace Toci.DigitalSignatureApi.Controllers
                        new SimpleResult
                        {
                            Code = 4,
-                           Message = isNullMessage
+                           Message = "Some fields are empty",
+                           ErrorMessage = isNullMessage
                        }, "Json");
             }
             var sign = new Sign();
@@ -45,23 +47,25 @@ namespace Toci.DigitalSignatureApi.Controllers
                        }, "Json");
 
             }
-            catch (CryptographicException)
+            catch (CryptographicException ex)
             {
 
                 return ResultManager.GetApiResult(
                       new SimpleResult
                       {
                           Code = 32,
-                          Message = Constants.InvalidCertificateExMsg
+                          Message = Constants.InvalidCertificateExMsg,
+                          ErrorMessage = ex.Message
                       }, "Json");
             }
-            catch (FormatException)
+            catch (FormatException ex)
             {
                 return ResultManager.GetApiResult(
                      new SimpleResult
                      {
                          Code = 64,
-                         Message = Constants.InvalidBase64ExMsg
+                         Message = Constants.InvalidBase64ExMsg,
+                         ErrorMessage = ex.Message
                      }, "Json");
             }
         }
