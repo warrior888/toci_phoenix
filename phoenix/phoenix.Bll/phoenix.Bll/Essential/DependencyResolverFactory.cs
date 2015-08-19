@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using Toci.Utilities.Abstraction.DesignPatterns;
 using Toci.Utilities.Interfaces.DependencyResolve;
+using _3mb.Bll.Essential;
 
-namespace _3mb.Bll.Essential
+namespace Phoenix.Bll.Essential
 {
     public class DependencyResolverFactory : Factory<DependencyResolverType, IDependencyResolver>
     {

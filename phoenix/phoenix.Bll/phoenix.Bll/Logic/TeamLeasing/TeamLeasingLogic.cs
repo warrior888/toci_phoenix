@@ -15,8 +15,14 @@ namespace Phoenix.Bll.Logic.TeamLeasing
     {
 
         //DI
-        private IDeveloperListLogic _developersLogic = new DeveloperListLogic();
-        private IPortfolioLogic _portfolioLogic = new PortfolioLogic();
+        private IDeveloperListLogic _developersLogic;
+        private IPortfolioLogic _portfolioLogic;
+
+        public TeamLeasingLogic(IDeveloperListLogic DeveloperListLogic, IPortfolioLogic PortfolioLogic)
+        {
+            _developersLogic = DeveloperListLogic;
+            _portfolioLogic = PortfolioLogic;
+        }
 
         public IEnumerable<IDeveloperTeamBusinessModel> GetAllTeams()
         {

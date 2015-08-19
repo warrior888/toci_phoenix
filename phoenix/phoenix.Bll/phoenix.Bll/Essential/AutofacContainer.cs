@@ -1,6 +1,12 @@
 ﻿using System.Collections.Generic;
 using Autofac;
 using Autofac.Core;
+using Phoenix.Bll.Interfaces.Logic.DevelopersList;
+using Phoenix.Bll.Interfaces.Logic.TeamLeasing;
+using Phoenix.Bll.Interfaces.Logic.UsersList;
+using Phoenix.Bll.Logic.DevelopersList;
+using Phoenix.Bll.Logic.TeamLeasing;
+using Phoenix.Bll.Logic.UsersList;
 using Phoenix.Bll.User;
 using Toci.Db.Clients;
 using Toci.Db.ClusterAccess;
@@ -12,7 +18,7 @@ using Toci.Utilities.Interfaces;
 using Toci.Utilities.Interfaces.Document.DocumentParse;
 using _3mb.Bll.Interfaces.User;
 
-namespace _3mb.Bll.Essential
+namespace Phoenix.Bll.Essential
 {
     public class AutofacContainer
     {
@@ -44,9 +50,14 @@ namespace _3mb.Bll.Essential
             builder.RegisterType<PumaOcrParser>().As<IDocumentInterpreter>();
 
             builder.RegisterType<UserLogic>().As<IUserLogic>();
-            
-            
 
+            builder.RegisterType<TeamLeasingLogic>().As<ITeamLeasingLogic>();
+            builder.RegisterType<DeveloperListLogic>().As<IDeveloperListLogic>();
+            builder.RegisterType<PortfolioLogic>().As<IPortfolioLogic>();
+            builder.RegisterType<DeveloperAvailableLogic>().As<IDeveloperAvailableLogic>();
+            builder.RegisterType<SkillLogic>().As<ISkillLogic>();
+            builder.RegisterType<UsersLogic>().As<IUsersLogic>();
+          
             return builder.Build();
         }
 

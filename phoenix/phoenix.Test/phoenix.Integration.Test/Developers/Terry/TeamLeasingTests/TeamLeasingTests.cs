@@ -1,7 +1,9 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Phoenix.Bll.BusinessModels.TeamLeasing;
+using Phoenix.Bll.Essential;
 using Phoenix.Bll.Interfaces.BusinessModels.TeamLeasing;
+using Phoenix.Bll.Interfaces.Logic.TeamLeasing;
 using Phoenix.Bll.Logic.TeamLeasing;
 
 namespace Phoenix.Integration.Test.Developers.Terry.TeamLeasingTests
@@ -12,11 +14,11 @@ namespace Phoenix.Integration.Test.Developers.Terry.TeamLeasingTests
         [TestMethod]
         public void TeamLeasingBusinessLogicMockTest()
         {
-            TeamLeasingBusinessModel lease = new TeamLeasingBusinessModel();
+            AutofacDependencyResolver resolver = new AutofacDependencyResolver();
 
-            TeamLeasingLogicMock logic = new TeamLeasingLogicMock();
+            var logic = resolver.Resolve<ITeamLeasingLogic>();
 
-            var result = logic.GetTeams(lease, 1);
+            var teams = logic.GetAllTeams();
 
         }
 }

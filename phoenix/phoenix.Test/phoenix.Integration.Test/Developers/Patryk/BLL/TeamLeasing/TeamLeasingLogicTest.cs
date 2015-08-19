@@ -23,7 +23,7 @@ namespace Phoenix.Integration.Test.Developers.Patryk.BLL.TeamLeasing
             IDeveloperListLogic developerListLogic= new DeveloperListLogic();
             developerListLogic.GetDevByUserId(19);
 
-            ITeamLeasingLogic teamLeasingLogic = new TeamLeasingLogic();
+            ITeamLeasingLogic teamLeasingLogic = new TeamLeasingLogic(new DeveloperListLogic(), new PortfolioLogic()); // zmieniłem bo DI
             ITeamLeasingBusinessModel teamLeasingBusinessModel = new TeamLeasingBusinessModel()
             {
                 SkillSet = new List<IDeveloperSkillBusinessModel>()
