@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Text;
-using Toci.CryptingApi.Exceptions;
+
 using Toci.CryptingApi.Models;
+using Toci.ErrorsAndMessages.Exceptions;
 
 namespace Toci.CryptingApi.ValidationUtils
 {

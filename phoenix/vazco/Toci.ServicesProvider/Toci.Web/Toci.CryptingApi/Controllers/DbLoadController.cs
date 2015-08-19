@@ -7,35 +7,47 @@ using System.Web.Http;
 using DbCrypting;
 using DbCrypting.VazcoDb;
 using Toci.CryptingApi.Models;
+using Toci.ErrorsAndMessages.Abstraction;
 using Toci.Utilities.Api;
+using Toci.Utilities.Common.Exceptions;
 
 namespace Toci.CryptingApi.Controllers
 {
-    public class DbLoadController : ApiController
+    public class DbLoadController : TociApiController
     {
         private const string WrongPassword = "Invalid password!";
         [Route("api/models/load")]
         [HttpPost]
-        public IEnumerable<BodyModel> LoadDbModels(BodyModel model)
+        public Dictionary<string, string> LoadDbModels(BodyModel model)
         {
             //ApiSimpleResultManager man = new ApiSimpleResultManager();
             try
             {
                 var dbo = new DbOperations(model.password, new VazcoConfig());
                 var vazcoList =  dbo.Load();
-                return vazcoList.Select(item => new BodyModel
+                var resultList = vazcoList.Select(item => new BodyModel
                 {
                     addingTime = item.addingTime, data = item.data, id = item.id, name = item.name
                 }).Where(x => x.data != WrongPassword).ToList();
-                //return model.name != default(string) ? dbo.Load().Where(x => x.name == model.name) : dbo.Load();
 
-                //man.GetApiResult()
+                var result = new SimpleResult
+                {Code = 0, Message = "Loaded!"};
 
+                foreach (var item in resultList)
+                {
+                    result.Data.Add("Id",item.id.ToString());
+                    result.Data.Add("Adding Time",item.addingTime.ToString());
+                    result.Data.Add("Name",item.name);
+                    result.Data.Add("Data", item.data);
+
+                }
+
+                return ResultManager.GetApiResult(result, "Json");
+                
             }
-            catch (Exception)
+            catch (UiTociApplicationException ex)
             {
-
-                return default(IEnumerable<BodyModel>);
+                return ResultManager.GetApiResult(new SimpleResult { Code = ex.GetErrorCode(ex), ErrorMessage = string.Join(", ", ex.GetErrorList(ex)), Message = "Load unsuccessfull." }, "Json");
             }
         }
 

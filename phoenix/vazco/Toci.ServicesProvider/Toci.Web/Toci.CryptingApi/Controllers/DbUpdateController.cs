@@ -7,25 +7,28 @@ using System.Web.Http;
 using DbCrypting;
 using DbCrypting.VazcoDb;
 using Toci.CryptingApi.Models;
+using Toci.ErrorsAndMessages.Abstraction;
+using Toci.Utilities.Api;
+using Toci.Utilities.Common.Exceptions;
 
 namespace Toci.CryptingApi.Controllers
 {
-    public class DbUpdateController : ApiController
+    public class DbUpdateController : TociApiController
     {
         [Route("api/models/update")]
         [HttpPost]
-        public string Update(BodyModel model)
+        public Dictionary<string, string> Update(BodyModel model)
         {
             try
             {
                 var dbo = new DbOperations(model.password, new VazcoConfig());
                 dbo.Update(new VazcoTable {id = model.id,addingTime = model.addingTime,data = model.data,name = model.name});
 
-                return "Updated!";
+                return ResultManager.GetApiResult(new SimpleResult { Code = 0, Message = "Updated!" }, "Json");
             }
-            catch (Exception)
+            catch (UiTociApplicationException ex)
             {
-                return "Bad Request!";
+                return ResultManager.GetApiResult(new SimpleResult { Code = ex.GetErrorCode(ex), ErrorMessage = string.Join(", ", ex.GetErrorList(ex)), Message = "Update unsuccessfull." }, "Json");
             }
         }
     }

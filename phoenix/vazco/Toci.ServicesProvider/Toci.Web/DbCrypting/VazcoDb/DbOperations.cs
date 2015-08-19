@@ -4,6 +4,7 @@ using System.Linq;
 using DbCrypting.Config;
 using DbCrypting.Logic;
 using Toci.Db.ClusterAccess;
+using Toci.ErrorsAndMessages.Exceptions;
 using Toci.Utilities.Common.Exceptions;
 
 namespace DbCrypting.VazcoDb
@@ -65,7 +66,7 @@ namespace DbCrypting.VazcoDb
             }
             catch (Exception)
             {
-              //  throw new WebApiTociApplicationException("lel", "litania do zalogowania", 2);
+              throw new WebApiTociApplicationException("The given ID is not present in the database.", "zle id", (int)ApiErrors.WrongId);
             }
         }
         public void Update(VazcoTable model)
@@ -79,8 +80,15 @@ namespace DbCrypting.VazcoDb
             model.SetWhere(IdColumnName);
             model.SetPrimaryKey(IdColumnName);
             model.addingTime = DateTime.Now;
-
-            dbh.UpdateData(model);
+            try
+            {
+                dbh.UpdateData(model);
+            }
+            catch(Exception)
+            {
+                throw new WebApiTociApplicationException("The given ID is not present in the database.", "zle id", (int)ApiErrors.WrongId);
+            }
+            
         }
     }
 }
