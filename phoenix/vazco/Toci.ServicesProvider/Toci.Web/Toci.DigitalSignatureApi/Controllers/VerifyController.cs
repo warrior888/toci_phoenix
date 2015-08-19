@@ -14,7 +14,7 @@ namespace Toci.DigitalSignatureApi.Controllers
     {
 
         [HttpPost]
-        [Route("api/verify")]
+        [Route("api/verify")] 
         public Dictionary<string, object> Verify([FromBody]VerifyModel model)
         {
             var isNullMessage = DigitalSignatureApiUtils.CheckForNull(model);
@@ -23,8 +23,10 @@ namespace Toci.DigitalSignatureApi.Controllers
                 return ResultManager.GetApiResult(
                         new SimpleResult
                         {
+                            
                             Code = 4,
-                            Message = isNullMessage
+                            Message = "Some fields are empty",
+                           ErrorMessage = isNullMessage
                         }, "Json");
             }
             var verify = new Verify();
@@ -40,22 +42,25 @@ namespace Toci.DigitalSignatureApi.Controllers
                             Message = "Successfully veryfied!"
                         }, "Json");
             }
-            catch (CryptographicException)
+            catch (CryptographicException ex)
             {
                 return ResultManager.GetApiResult(
                       new SimpleResult
                       {
                           Code = 32,
-                          Message = Constants.InvalidCertificateExMsg
+                          Message = Constants.InvalidCertificateExMsg,
+                          ErrorMessage = ex.Message
+
                       }, "Json");
             }
-            catch (FormatException)
+            catch (FormatException ex)
             {
                 return ResultManager.GetApiResult(
                     new SimpleResult
                     {
                         Code = 64,
-                        Message = Constants.InvalidBase64ExMsg
+                        Message = Constants.InvalidBase64ExMsg,
+                        ErrorMessage = ex.Message
                     }, "Json");
             }
         }
