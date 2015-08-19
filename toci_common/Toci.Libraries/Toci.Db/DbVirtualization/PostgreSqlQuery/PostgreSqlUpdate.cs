@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Toci.Db.Interfaces;
 
 namespace Toci.Db.DbVirtualization.PostgreSqlQuery
@@ -25,11 +26,7 @@ namespace Toci.Db.DbVirtualization.PostgreSqlQuery
 
         private string GetSetStatement(IModel model)
         {
-            var list = new List<string>();
-            foreach (var item in model.GetFields())
-            {
-                list.Add(string.Format(AssignmentPattern, item.Key, GetSurroundedValue(item.Value.GetValue())));
-            }
+            var list = (from item in model.GetFields() where item.Value.GetValue() != null && !item.Value.IsPrimaryKey() select string.Format(AssignmentPattern, item.Key, GetSurroundedValue(item.Value.GetValue()))).ToList();
             return string.Join(Comma, list);
         }
 

@@ -34,7 +34,7 @@ namespace DbCredentials.BusinessLogic
             var list = dbQuery.Load(model).Cast<Projects>().ToList();
             return list.Any(item => item.projectname.Equals(model.projectname));
         }
-
+        
         public Projects LoadProject(Projects model, List<Scopes> listOfModels)
         {
             if (!IsProjectExist(model))
@@ -94,18 +94,31 @@ namespace DbCredentials.BusinessLogic
             }
         }
 
+        public bool IsProjectExist(Projects model, int projectid)
+        {
+            var list = dbQuery.Load(model).Cast<Projects>().ToList();
+            model.projectid = projectid;
+            return list.Any(item => item.projectid.Equals(projectid));
+        }
         public bool UpdateProject(Projects model, List<Scopes> listOfModels)
         {
-            if (!IsProjectExist(model))
+            if (!IsProjectExist(model, model.projectid))
             {
                 throw new Exception("Project does not exist.");
             }
+            var projectid = model.projectid;
+            if (IsProjectExist(model))
+            {
+                throw new Exception("Invalid project name.");
+            }
+            model.projectid = projectid;
             try
             {
-                var project = LoadProject(model, listOfModels);
-                if (project.projectname.Equals(model.projectname))
+                
+                var project = LoadProject(GetProjectName(model, model.projectid), listOfModels);
+                if (project.projectid.Equals(model.projectid))
                 {
-                    dbQuery.Update(model, Projects.PROJECTNAME);
+                    dbQuery.Update(model, Projects.PROJECTID);
                     return true;
                 }
                 return false;
@@ -114,6 +127,18 @@ namespace DbCredentials.BusinessLogic
             {
                 throw new Exception("Cannot update project.");
             }
+        }
+
+        public Projects GetProjectName(Projects model, int projectid)
+        {
+            var list = dbQuery.Load(model).Cast<Projects>().ToList();
+            var newmodel = new Projects();
+            model.projectid = projectid;
+            foreach (var item in list.Where(item => item.projectid.Equals(model.projectid)))
+            {
+                newmodel.projectname = item.projectname;
+            }
+            return newmodel;
         }
     }
 }

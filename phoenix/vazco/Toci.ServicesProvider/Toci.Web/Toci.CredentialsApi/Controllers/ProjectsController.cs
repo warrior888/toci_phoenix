@@ -70,7 +70,7 @@ namespace Toci.CredentialsApi.Controllers
             }
             catch (Exception exception)
             {
-                throw new Exception("Cannot update project. " + exception.Message);
+                throw new Exception("Cannot delete project. " + exception.Message);
             }
         }
 
@@ -80,7 +80,7 @@ namespace Toci.CredentialsApi.Controllers
         {
             try
             {
-                return businessLogic.UpdateProject(model.GetProjectsModel(), model.GetScopesList());
+                 return businessLogic.UpdateProject(model.GetProjectsModel("Update"), model.GetScopesList());
             }
             catch (Exception exception)
             {
