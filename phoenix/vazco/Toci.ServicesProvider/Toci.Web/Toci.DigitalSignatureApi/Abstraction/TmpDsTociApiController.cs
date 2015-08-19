@@ -2,13 +2,13 @@
 using Toci.Utilities.Api;
 using Toci.Utilities.Common.Api;
 
-namespace Toci.ErrorsAndMessages.Abstraction
+namespace Toci.DigitalSignatureApi.Abstraction
 {
-    public abstract class TociApiController : ApiController
+    public abstract class TmpDsTociApiController : ApiController
     {
         protected ApiResultManager<object, SimpleResult> ResultManager;
 
-        protected TociApiController()
+        protected TmpDsTociApiController()
         {
             ResultManager = new ApiSimpleResultManager();
         }

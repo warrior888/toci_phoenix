@@ -8,7 +8,7 @@ namespace Toci.Utilities.Api
 
         public string Message { get; set; }
 
-        public Dictionary<string,string> Data { get; set; }
+        public Dictionary<string,object> Data { get; set; }
 
         public string ErrorMessage { get; set; }
     }

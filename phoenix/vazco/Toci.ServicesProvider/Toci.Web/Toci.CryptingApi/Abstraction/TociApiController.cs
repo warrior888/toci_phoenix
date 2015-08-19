@@ -6,7 +6,7 @@ namespace Toci.CryptingApi.Abstraction
 {
     public abstract class TociApiController : ApiController
     {
-        protected ApiResultManager<string, SimpleResult> ResultManager;
+        protected ApiResultManager<object, SimpleResult> ResultManager;
 
         protected TociApiController()
         {

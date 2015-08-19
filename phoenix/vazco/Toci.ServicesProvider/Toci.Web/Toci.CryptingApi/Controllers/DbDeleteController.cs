@@ -20,7 +20,7 @@ namespace Toci.CryptingApi.Controllers
         [Route("api/models/delete")]
         [HttpPost]
         
-        public Dictionary<string, string> DeleteFromDb(BodyModel model)
+        public Dictionary<string, object> DeleteFromDb(BodyModel model)
         {
             try
             {
