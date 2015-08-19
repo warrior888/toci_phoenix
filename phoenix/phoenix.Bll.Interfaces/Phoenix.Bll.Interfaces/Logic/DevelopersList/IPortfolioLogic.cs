@@ -8,5 +8,7 @@ namespace Phoenix.Bll.Interfaces.Logic.DevelopersList
         IEnumerable<IPortfolioBusinessModel> GetUserPortfolio(int userId);
 
         IDeveloperBusinessModel GetProjectTeamLeader(int portfolioId);
+
+        IEnumerable<IPortfolioBusinessModel> GetAllProjects();
     }
 }

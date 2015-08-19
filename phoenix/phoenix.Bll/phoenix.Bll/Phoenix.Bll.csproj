@@ -117,6 +117,7 @@
     <Compile Include="BusinessModels\TeamLeasing\DeveloperAvailableBusinessModel.cs" />
     <Compile Include="BusinessModels\TeamLeasing\DeveloperTeamBusinessModel.cs" />
     <Compile Include="BusinessModels\UsersList\UsersBusinessModel.cs" />
+    <Compile Include="DataAccessLogic.cs" />
     <Compile Include="DbHandleAccessDataFactory.cs" />
     <Compile Include="Logic\DevelopersList\PortfolioLogic.cs" />
     <Compile Include="Logic\DevelopersList\SkillLogic.cs" />

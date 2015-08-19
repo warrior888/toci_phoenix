@@ -1,5 +1,6 @@
 ﻿using System.Data.SqlClient;
 using AutoMapper;
+using Ionic.Zlib;
 using log4net.Core;
 using Phoenix.Bll.BusinessModels.TeamLeasing;
 using Phoenix.Bll.BusinessModels.UsersList;
@@ -20,11 +21,28 @@ namespace Phoenix.Bll
     {
         //TODO DI
 
-        private IUsersLogic _userLogic = new UsersLogic();
-        private IDeveloperListLogic _developerListLogic = new DeveloperListLogic();
-        private IPortfolioLogic _portfolioLogic = new PortfolioLogic();
-        private ISkillLogic _skillLogic = new SkillLogic();
-        private IDeveloperAvailableLogic _availableLogic = new DeveloperAvailableLogic();
+        private IUsersLogic _userLogic;
+        private IDeveloperListLogic _developerListLogic;
+        private IPortfolioLogic _portfolioLogic;
+        private ISkillLogic _skillLogic;
+        private IDeveloperAvailableLogic _availableLogic;
+
+        public AutoMapperConfiguration(
+            IUsersLogic usersLogic,
+            IDeveloperListLogic developerListLogic,
+            IPortfolioLogic portfolioLogic,
+            ISkillLogic skillLogic,
+            IDeveloperAvailableLogic developerAvailableLogic
+            )
+        {
+            _userLogic = usersLogic;
+            _developerListLogic = developerListLogic;
+            _portfolioLogic = portfolioLogic;
+            _skillLogic = skillLogic;
+            _availableLogic = developerAvailableLogic;
+
+            Configure();
+        }
 
         public void Configure()
         {
@@ -68,6 +86,18 @@ namespace Phoenix.Bll
         private void ForIDeveloperBusinessModel()
         {
             Mapper.CreateMap<IDeveloperBusinessModel, developer_list_view>();
+            
+            /* .
+                ForMember(dest => dest.UserId, opts => opts.MapFrom(src => src.User.Id)).
+                ForMember(dest => dest.Name, opts => opts.MapFrom(src => src.User.Name)).
+                ForMember(dest => dest.Surname, opts => opts.MapFrom(src => src.User.Surname)).
+                ForMember(dest => dest.Nick, opts => opts.MapFrom(src => src.User.Nick)).
+                ForMember(dest => dest.AvailableFor, opts => opts.MapFrom(src => src.DeveloperAvailable.AvailableFor)).
+                ForMember(dest => dest.StartWorkHour, opts => opts.MapFrom(src => src.DeveloperAvailable.StartWorkHour)).
+                ForMember(dest => dest.EndWorkHour, opts => opts.MapFrom(src => src.DeveloperAvailable.EndWorkHour));*/
+             
+                
+                
             Mapper.CreateMap<developer_list_view, IDeveloperBusinessModel>().
                 ForMember(dest => dest.User, opts => opts.MapFrom(src=> new UsersBusinessModel()
                 {

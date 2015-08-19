@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Phoenix.Bll.BusinessModels.DevelopersList;
 using Phoenix.Bll.BusinessModels.TeamLeasing;
 using Phoenix.Bll.Interfaces.BusinessModels.DevelopersList;
 using Phoenix.Bll.Interfaces.BusinessModels.TeamLeasing;
@@ -11,7 +12,7 @@ using Phoenix.Dal.GeneratedModels;
 
 namespace Phoenix.Bll.Logic.TeamLeasing
 {
-    public class TeamLeasingLogic : DbLogic, ITeamLeasingLogic
+    public class TeamLeasingLogic : DataAccessLogic, ITeamLeasingLogic
     {
 
         //DI
@@ -26,7 +27,9 @@ namespace Phoenix.Bll.Logic.TeamLeasing
 
         public IEnumerable<IDeveloperTeamBusinessModel> GetAllTeams()
         {
-            List<portfolio> portfolio = FetchModelsFromDb<portfolio>(new portfolio());
+            var projectsList = _portfolioLogic.GetAllProjects();
+       
+
             return null;
         }
 
@@ -51,6 +54,7 @@ namespace Phoenix.Bll.Logic.TeamLeasing
 
         private IDeveloperTeamBusinessModel GetTeam()
         {
+  
             return null;
         }
     }

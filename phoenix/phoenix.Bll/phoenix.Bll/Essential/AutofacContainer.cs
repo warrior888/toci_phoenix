@@ -49,6 +49,8 @@ namespace Phoenix.Bll.Essential
             builder.RegisterType<DocumentResource>().As<IDocumentResource>();
             builder.RegisterType<PumaOcrParser>().As<IDocumentInterpreter>();
 
+            builder.RegisterType<AutoMapperConfiguration>().As<AutoMapperConfiguration>(); //na razie tak
+
             builder.RegisterType<UserLogic>().As<IUserLogic>();
 
             builder.RegisterType<TeamLeasingLogic>().As<ITeamLeasingLogic>();

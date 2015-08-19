@@ -9,7 +9,7 @@ using Phoenix.Bll.Interfaces.Logic.CourseRegistration;
 
 namespace Phoenix.Bll.Logic.CourseRegistration
 {
-    public class CourseRegistrationLogic : DbLogic, ICourseRegistrationLogic
+    public class CourseRegistrationLogic : DataAccessLogic, ICourseRegistrationLogic
     {
         public bool SaveParticipantRegistration(ICourseRegistrationBusinessModel registration)
         {

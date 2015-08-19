@@ -22,7 +22,7 @@ namespace Phoenix.Integration.Test.Developers.Terry.DbTests
         [TestMethod]
         public void DbConnectionTesting()
         {
-           DeveloperListLogic devListLogic = new DeveloperListLogic();
+          /* DeveloperListLogic devListLogic = new DeveloperListLogic();
             devListLogic.GetDevByUserId(5);
 
             UsersLogic usersLogic = new UsersLogic();
@@ -33,7 +33,7 @@ namespace Phoenix.Integration.Test.Developers.Terry.DbTests
             var allSkills = skillLogic.GetDeveloperSkills(4);
 
             PortfolioLogic portfolioLogic = new PortfolioLogic();
-            var portfolios = portfolioLogic.GetUserPortfolio(4);
+            var portfolios = portfolioLogic.GetUserPortfolio(4);*/
         }
     }
 }

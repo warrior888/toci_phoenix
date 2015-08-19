@@ -7,11 +7,15 @@ using Toci.Db.DbVirtualization;
 
 namespace Phoenix.Bll.Logic.DevelopersList
 {
-    public class PortfolioLogic : DbLogic, IPortfolioLogic
+    public class PortfolioLogic : DataAccessLogic, IPortfolioLogic
     {
         //DI
-        private IDeveloperListLogic _developerListLogic= new DeveloperListLogic();
+        private IDeveloperListLogic _developerListLogic;
 
+        public PortfolioLogic(IDeveloperListLogic DeveloperListLogic)
+        {
+            _developerListLogic = DeveloperListLogic;
+        }
 
         public IEnumerable<IPortfolioBusinessModel> GetUserPortfolio(int userId)
         {
@@ -24,6 +28,11 @@ namespace Phoenix.Bll.Logic.DevelopersList
         {
             portfolio portfolio = FetchModelById<portfolio>(portfolioId);
             return _developerListLogic.GetDevByUserId(portfolio.FkIdUsers);
+        }
+
+        public IEnumerable<IPortfolioBusinessModel> GetAllProjects()
+        {
+            return GetAllElements<IPortfolioBusinessModel, portfolio>();
         }
     }
 }

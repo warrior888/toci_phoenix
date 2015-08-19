@@ -4,7 +4,7 @@ using Phoenix.Dal.GeneratedModels;
 
 namespace Phoenix.Bll.Logic.TeamLeasing
 {
-    public class DeveloperAvailableLogic : DbLogic, IDeveloperAvailableLogic
+    public class DeveloperAvailableLogic : DataAccessLogic, IDeveloperAvailableLogic
     {
         public IDeveloperAvailableBusinessModel GetDeveloperAvailableById(int id)
         {

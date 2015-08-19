@@ -7,7 +7,7 @@ using Toci.Db.DbVirtualization;
 
 namespace Phoenix.Bll.Logic.DevelopersList
 {
-    public class SkillLogic : DbLogic,ISkillLogic
+    public class SkillLogic : DataAccessLogic, ISkillLogic
     {
         public IEnumerable<IDeveloperSkillBusinessModel> GetDeveloperSkills(int userId)
         {

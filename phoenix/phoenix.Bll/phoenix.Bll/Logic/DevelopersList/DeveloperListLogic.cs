@@ -6,11 +6,13 @@
 
 namespace Phoenix.Bll.Logic.DevelopersList
 {
-    public class DeveloperListLogic : DbLogic, IDeveloperListLogic
+    public class DeveloperListLogic : DataAccessLogic, IDeveloperListLogic
     {        
         public IEnumerable<IDeveloperBusinessModel> GetAllDevelopers()
         {
-            return GetAllElements<IDeveloperBusinessModel, developer_list_view>();
+
+            var devs = GetAllElements<IDeveloperBusinessModel, developer_list_view>();
+            return devs;
         }
 
         public IDeveloperBusinessModel GetDevByUserId(int id)
