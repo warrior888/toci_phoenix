@@ -85,19 +85,15 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstraction\TociApiController.cs" />
+    <Compile Include="Api\TTociApiController.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\DbDeleteController.cs" />
     <Compile Include="Controllers\DbLoadController.cs" />
     <Compile Include="Controllers\DbSaveController.cs" />
     <Compile Include="Controllers\DbUpdateController.cs" />
-    <Compile Include="Exceptions\ApiErrors.cs" />
-    <Compile Include="Exceptions\WebApiTociApplicationException.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Managers\BlindLanguageManager.cs" />
-    <Compile Include="Managers\BlindTranslator.cs" />
     <Compile Include="Models\BodyModel.cs" />
     <Compile Include="Models\VazcoConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -131,6 +127,10 @@
     <ProjectReference Include="..\DbCrypting\DbCrypting.csproj">
       <Project>{b8730ca1-13e6-4d51-a436-da4a8a7d4062}</Project>
       <Name>DbCrypting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Toci.ErrorsAndMessages\ErrorsAndMessages.csproj">
+      <Project>{c723109f-5656-4245-8ffb-6a9cde912f54}</Project>
+      <Name>Toci.ErrorsAndMessages</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

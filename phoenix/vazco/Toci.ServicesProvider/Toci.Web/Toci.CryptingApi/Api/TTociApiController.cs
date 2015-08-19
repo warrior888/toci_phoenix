@@ -2,13 +2,13 @@
 using Toci.Utilities.Api;
 using Toci.Utilities.Common.Api;
 
-namespace Toci.CryptingApi.Abstraction
+namespace Toci.CryptingApi.Api
 {
-    public abstract class TociApiController : ApiController
+    public abstract class TTociApiController : ApiController
     {
         protected ApiResultManager<object, SimpleResult> ResultManager;
 
-        protected TociApiController()
+        protected TTociApiController()
         {
             ResultManager = new ApiSimpleResultManager();
         }

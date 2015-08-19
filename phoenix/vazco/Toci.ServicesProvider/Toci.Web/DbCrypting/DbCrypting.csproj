@@ -63,6 +63,10 @@
       <Project>{44d0c538-5d19-409a-8f30-2519339fc818}</Project>
       <Name>EncodingLib</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Toci.ErrorsAndMessages\ErrorsAndMessages.csproj">
+      <Project>{c723109f-5656-4245-8ffb-6a9cde912f54}</Project>
+      <Name>Toci.ErrorsAndMessages</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="VazcoDb\template.txt" />

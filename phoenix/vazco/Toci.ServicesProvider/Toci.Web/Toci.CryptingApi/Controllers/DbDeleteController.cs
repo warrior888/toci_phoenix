@@ -6,10 +6,9 @@ using System.Net.Http;
 using System.Web.Http;
 using DbCrypting;
 using DbCrypting.VazcoDb;
-using Toci.CryptingApi.Abstraction;
-using Toci.CryptingApi.Exceptions;
 using Toci.CryptingApi.Models;
 using Toci.CryptingApi.ValidationUtils;
+using Toci.ErrorsAndMessages.Abstraction;
 using Toci.Utilities.Api;
 using Toci.Utilities.Common.Exceptions;
 
@@ -24,9 +23,10 @@ namespace Toci.CryptingApi.Controllers
         {
             try
             {
+                BodyModelValidation.ValidateId(model);
+
                 var dbo = new DbOperations(model.password,new VazcoConfig());
 
-                BodyModelValidation.ValidateId(model);
 
                 dbo.Delete(new VazcoTable {id = model.id});
 
