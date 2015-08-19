@@ -15,10 +15,11 @@ namespace Toci.CryptingFrontDemo.Controllers
         [HttpPost]
         public ActionResult Load(BodyModel model)
         {
-            var dbLoad = new DbLoadController();
-            var dbList = dbLoad.LoadDbModels(model).Where(x => x.data != InvalidPasswordMsg);
-            if (model.password == default(string)) dbList = default(IEnumerable<BodyModel>);
-            return View(    dbList     );
+            //Projekt się nie budował
+//            var dbLoad = new DbLoadController();
+//            var dbList = dbLoad.LoadDbModels(model).Where(x => x.data != InvalidPasswordMsg);
+//            if (model.password == default(string)) dbList = default(IEnumerable<BodyModel>);
+            return View(         );//dbList
         }
     }
 }
