@@ -3,12 +3,14 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using DbCredentials.DbLogic.CredentialsModels;
 
 namespace Toci.CredentialsApi.Models
 {
     public class BusinessModel
     {
+        public int projectId { get; set; }
         public string projectName { get; set; }
         public string projectAuthor { get; set; }  
         public string scopeName { get; set; }  
@@ -27,7 +29,16 @@ namespace Toci.CredentialsApi.Models
                 projectname = projectName,
             };
         }
-
+        public Projects GetProjectsModel(string update)
+        {
+            return new Projects
+            {
+                projectauthor = projectAuthor,
+                projectdata = projectData,
+                projectname = projectName,
+                projectid = projectId
+            };
+        }
         public Scopes GetScopesModel()
         {
            return new Scopes
