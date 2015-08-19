@@ -55,6 +55,10 @@
       <Project>{c2377285-fa65-4545-91fb-6c4dc28155f5}</Project>
       <Name>Toci.Db</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\toci_common\Toci.Libraries\Toci.Utilities.Common\Toci.Utilities.Common.csproj">
+      <Project>{10DB4113-AC97-426E-A233-3961A7D30E52}</Project>
+      <Name>Toci.Utilities.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EncodingLib\EncodingLib.csproj">
       <Project>{44d0c538-5d19-409a-8f30-2519339fc818}</Project>
       <Name>EncodingLib</Name>

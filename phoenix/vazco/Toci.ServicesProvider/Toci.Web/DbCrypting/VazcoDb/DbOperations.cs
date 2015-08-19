@@ -4,6 +4,7 @@ using System.Linq;
 using DbCrypting.Config;
 using DbCrypting.Logic;
 using Toci.Db.ClusterAccess;
+using Toci.Utilities.Common.Exceptions;
 
 namespace DbCrypting.VazcoDb
 {
@@ -58,8 +59,14 @@ namespace DbCrypting.VazcoDb
         public void Delete(VazcoTable model)
         {
             model.SetWhere(IdColumnName);
-            
-            dbh.DeleteData(model);
+            try
+            {
+                dbh.DeleteData(model);
+            }
+            catch (Exception)
+            {
+              //  throw new WebApiTociApplicationException("lel", "litania do zalogowania", 2);
+            }
         }
         public void Update(VazcoTable model)
         {
