@@ -27,18 +27,30 @@ namespace Phoenix.Front.Controllers
             _teamLeasingLogic = TeamLeasingLogic;
         }
 
+        public TeamLeasingController()
+        {
+            
+        }
+
      // GET: TeamLeasing
         public ActionResult IndexMock()
         {
             TeamLeasingViewModel vm = new TeamLeasingViewModel();
-            
-            vm.teamLeasingLogic = new TeamLeasingLogicMock();
-            vm.Teams = vm.teamLeasingLogic.GetTeams(null, 1);
-            vm.oneTeam = vm.Teams.First(); 
-            
-
-            return View(vm);
+          
+           
+        
+            return View();
             
         }
+
+        public ActionResult PostTesting(FormCollection data)
+        {
+            var nazwa = data["Nazwa"];
+
+            return new EmptyResult();
+        }
+
+
+
     }
 }

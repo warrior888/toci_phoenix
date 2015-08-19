@@ -217,6 +217,7 @@
     <Compile Include="Areas\LogInOut\LogInOutAreaRegistration.cs" />
     <Compile Include="Areas\Registration\RegistrationAreaRegistration.cs" />
     <Compile Include="Areas\TeamLeasing\TeamReservation\TeamReservationAreaRegistration.cs" />
+    <Compile Include="Areas\TeamLeasing\TeamSearching\Controllers\TeamSearchingController.cs" />
     <Compile Include="Areas\TeamLeasing\TeamSearching\TeamSearchingAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -521,7 +522,7 @@
     <Folder Include="Areas\TeamLeasing\TeamReservation\Controllers\" />
     <Folder Include="Areas\TeamLeasing\TeamReservation\Models\" />
     <Folder Include="Areas\TeamLeasing\TeamReservation\Views\Shared\" />
-    <Folder Include="Areas\TeamLeasing\TeamSearching\Controllers\" />
+    <Folder Include="Areas\TeamLeasing\TeamReservation\Views\TeamSearching\" />
     <Folder Include="Areas\TeamLeasing\TeamSearching\Models\" />
     <Folder Include="Areas\TeamLeasing\TeamSearching\Views\Shared\" />
     <Folder Include="Views\WarriorTest\" />

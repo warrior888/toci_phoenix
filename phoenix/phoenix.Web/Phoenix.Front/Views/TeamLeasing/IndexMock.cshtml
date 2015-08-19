@@ -1,4 +1,6 @@
-﻿
+﻿@using Microsoft.Ajax.Utilities
+@using Phoenix.Front.Controllers
+
 
 <div>
     <h1>
@@ -8,12 +10,16 @@
 
 
 <p>
-    @model Phoenix.Front.Controllers.TeamLeasingViewModel
+    @using (Html.BeginForm("PostTesting", "TeamLeasing", FormMethod.Post))
+    {
+        @Html.Label("podaj nazwę: ");
+        @Html.TextBox("Nazwa");
 
-    @Model.oneTeam.TeamLeader.Nick
-    @Model.oneTeam.AdditionalTeamMembers.First().Name
-    @Model.oneTeam.TeamPortfolio.First().ProjectName
-    @Model.oneTeam.TeamPortfolio.Last().ProjectName
-    @Model.oneTeam.TeamPortfolio.Last().EndDate
+        <input class="button" id="submit" type="submit" value="Submit" />
+    }
+        
+
+
+    
    
 </p>
