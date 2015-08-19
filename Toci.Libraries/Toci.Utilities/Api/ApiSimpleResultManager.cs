@@ -13,9 +13,12 @@ namespace Toci.Utilities.Api
             {
                 { "code", result.Code.ToString() },
                 { "message", result.Message },
-                { "data", _serializer.GetJson(result.Data) },
+                
             };
-
+            if (result.Data != null)
+            {
+                apiResult.Add("data", _serializer.GetJson(result.Data));
+            }
             if (result.Code > 0)
             {
                 apiResult.Add("errorMsg", result.ErrorMessage);
