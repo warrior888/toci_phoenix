@@ -31,17 +31,15 @@ namespace Toci.CryptingApi.Controllers
                     addingTime = item.addingTime, data = item.data, id = item.id, name = item.name
                 }).Where(x => x.data != WrongPassword).ToList();
 
-                var result = new SimpleResult
-                {Code = 0, Message = "Loaded!",Data = new Dictionary<string, string>()};
-
-                foreach (var item in resultList)
+               
+                /*foreach (var item in resultList)
                 {
                     result.Data.Add("Id",item.id.ToString());
                     result.Data.Add("Adding Time",item.addingTime.ToString());
                     result.Data.Add("Name",item.name);
                     result.Data.Add("Data", item.data);
 
-                }
+                }*/
                 var dupa = new List<Dictionary<string,string>>();
                 foreach (var item in resultList)
                 {
@@ -53,6 +51,9 @@ namespace Toci.CryptingApi.Controllers
                         {"Data",        item.data}
                     });
                 }
+                var result = new SimpleResult
+                { Code = 0, Message = "Loaded!", Data = new Dictionary<string, List<Dictionary<string, string>>>() };
+                result.Data.Add("testkey",dupa);
 
                 return ResultManager.GetApiResult(result, "Json");
                 

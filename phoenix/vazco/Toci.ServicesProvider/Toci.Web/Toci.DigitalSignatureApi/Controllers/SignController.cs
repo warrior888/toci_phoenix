@@ -36,7 +36,7 @@ namespace Toci.DigitalSignatureApi.Controllers
                         new SimpleResult
                         {
                             Code = 0,
-                            Data = new Dictionary<string, string> { { "signature", resultData } },
+                            //Data = new Dictionary<string, string> { { "signature", resultData } },
                             Message = "SuccessFully signed!"
                         }, "Json");
             }
@@ -86,7 +86,7 @@ namespace Toci.DigitalSignatureApi.Controllers
                        new SimpleResult
                        {
                            Code = 0,
-                           Data = new Dictionary<string, string> { { "signature", resultData } },
+                           //Data = new Dictionary<string, string> { { "signature", resultData } },
                            Message = "SuccessFully signed!"
                        }, "Json");
 
