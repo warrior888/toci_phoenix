@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Web.Http;
 using DbCrypting;
 using DbCrypting.VazcoDb;
+using Toci.CryptingApi.Api;
 using Toci.CryptingApi.Models;
 using Toci.ErrorsAndMessages.Abstraction;
 using Toci.Utilities.Api;
@@ -13,7 +14,7 @@ using Toci.Utilities.Common.Exceptions;
 
 namespace Toci.CryptingApi.Controllers
 {
-    public class DbSaveController : TociApiController
+    public class DbSaveController : TTociApiController
     {
         [Route("api/models/save")]
         [HttpPost]

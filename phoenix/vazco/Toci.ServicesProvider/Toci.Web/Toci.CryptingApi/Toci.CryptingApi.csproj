@@ -85,6 +85,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Api\TTociApiController.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\DbDeleteController.cs" />
     <Compile Include="Controllers\DbLoadController.cs" />
@@ -127,7 +128,7 @@
       <Project>{b8730ca1-13e6-4d51-a436-da4a8a7d4062}</Project>
       <Name>DbCrypting</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Toci.ErrorsAndMessages\Toci.ErrorsAndMessages.csproj">
+    <ProjectReference Include="..\Toci.ErrorsAndMessages\ErrorsAndMessages.csproj">
       <Project>{c723109f-5656-4245-8ffb-6a9cde912f54}</Project>
       <Name>Toci.ErrorsAndMessages</Name>
     </ProjectReference>
