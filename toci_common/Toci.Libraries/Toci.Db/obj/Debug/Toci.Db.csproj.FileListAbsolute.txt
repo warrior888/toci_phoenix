@@ -262,3 +262,4 @@ D:\TOCI\phoenix\toci_common\Toci.Libraries\Toci.Db\bin\Debug\Zlib.Portable.xml
 D:\TOCI\phoenix\toci_common\Toci.Libraries\Toci.Db\obj\Debug\Toci.Db.csproj.App.config
 D:\TOCI\phoenix\toci_common\Toci.Libraries\Toci.Db\obj\Debug\Toci.Db.dll
 D:\TOCI\phoenix\toci_common\Toci.Libraries\Toci.Db\obj\Debug\Toci.Db.pdb
+C:\Users\Admin\Documents\SourceTree\toci_phoenix\toci_common\Toci.Libraries\Toci.Db\obj\Debug\Toci.Db.csprojResolveAssemblyReference.cache

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Text;
-
+using System.Web.Http.ModelBinding;
 using Toci.CryptingApi.Models;
 using Toci.ErrorsAndMessages.Exceptions;
 
@@ -11,7 +11,7 @@ namespace Toci.CryptingApi.ValidationUtils
         private const string MissingPattern = "{0} missing, please provide a/an {0} in Your request";
         public static void ValidateId(BodyModel model)
         {
-            if (model.id < 1)
+            if (model.id == default(int))
             {
                 throw new WebApiTociApplicationException(MissingMsgGenerator("Id"), "litania do zalogowania", (int)ApiErrors.IdMissing);
             }
