@@ -3,44 +3,38 @@ using System.Collections.Generic;
 using System.Linq;
 using DbCredentials.DbLogic;
 using DbCredentials.DbLogic.CredentialsModels;
+using Toci.ErrorsAndMessages.Exceptions;
+using Toci.Utilities.Common.Exceptions;
 
 namespace DbCredentials.BusinessLogic
 {
     public class ProjectsLogic
     {
         private const int notSaved = 0;
+        private const int notDeleted = 0;
         DbQuery dbQuery = new DbQuery();
         ScopesLogic scopesLogic = new ScopesLogic();
+        BusinessLogicUtills utills = new BusinessLogicUtills();
 
         public bool AddProject(Projects model)
         {
-            if (IsProjectExist(model))
-            {
-                throw new ApplicationException("Project exist.");
-            }
             try
             {
+                utills.ValidateProjectNameExsiting(model);
                 return dbQuery.Save(model) != notSaved;
             }
-            catch (ApplicationException)
+            catch (TociApplicationException ex)
             {
-                throw new ApplicationException("Cannot save the project.");
+                throw new WebApiTociApplicationException("Cannot save the project.", null, (int)ApiErrors.WrongData, ex);
             }
-            
         }
 
-        public bool IsProjectExist(Projects model)
-        {
-            var list = dbQuery.Load(model).Cast<Projects>().ToList();
-            return list.Any(item => item.projectname.Equals(model.projectname));
-        }
-
+        
+        
         public Projects LoadProject(Projects model, List<Scopes> listOfModels)
         {
-            if (!IsProjectExist(model))
-            {
-                throw new Exception("Project does not exist.");
-            }
+            utills.ValidateProjectExsiting(model);
+
             var listOfProjects = LoadProjects(listOfModels);
             var project = new Projects();
             var error= true;
@@ -77,16 +71,11 @@ namespace DbCredentials.BusinessLogic
 
         public bool DeleteProject(Projects model, List<Scopes> listOfModels)
         {
-            if (!IsProjectExist(model))
-            {
-                throw new Exception("Project does not exist.");
-            }
-            
             try
             {
+                utills.ValidateProjectExsiting(model);
                 var project = LoadProject(model, listOfModels);
-                dbQuery.Delete(project, Projects.PROJECTNAME);
-                return true;
+                return dbQuery.Delete(project, Projects.PROJECTNAME) != notDeleted;
             }
             catch (Exception)
             {
@@ -94,18 +83,18 @@ namespace DbCredentials.BusinessLogic
             }
         }
 
+        
         public bool UpdateProject(Projects model, List<Scopes> listOfModels)
         {
-            if (!IsProjectExist(model))
-            {
-                throw new Exception("Project does not exist.");
-            }
+            
             try
             {
-                var project = LoadProject(model, listOfModels);
-                if (project.projectname.Equals(model.projectname))
+                utills.ValidateProjectExsitingById(model);
+                utills.ValidateProjectNameExsiting(model);
+                var project = LoadProject(GetProjectName(model, model.projectid), listOfModels);
+                if (project.projectid.Equals(model.projectid))
                 {
-                    dbQuery.Update(model, Projects.PROJECTNAME);
+                    dbQuery.Update(model, Projects.PROJECTID);
                     return true;
                 }
                 return false;
@@ -114,6 +103,18 @@ namespace DbCredentials.BusinessLogic
             {
                 throw new Exception("Cannot update project.");
             }
+        }
+
+        public Projects GetProjectName(Projects model, int projectid)
+        {
+            var list = dbQuery.Load(model).Cast<Projects>().ToList();
+            var newmodel = new Projects();
+            model.projectid = projectid;
+            foreach (var item in list.Where(item => item.projectid.Equals(model.projectid)))
+            {
+                newmodel.projectname = item.projectname;
+            }
+            return newmodel;
         }
     }
 }

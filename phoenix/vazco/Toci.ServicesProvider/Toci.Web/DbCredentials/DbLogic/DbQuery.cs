@@ -12,7 +12,6 @@ namespace DbCredentials.DbLogic
         private DbHandle dbHandle;
         private DbUtils dbUtils;
 
-
         public DbQuery()
         {
             dbHandle = DbConnect.Connect();
@@ -39,6 +38,7 @@ namespace DbCredentials.DbLogic
         
         public List<IModel> Load(Model model, string columnName)
         {
+            
             dbUtils.WhereClause(model, columnName);
             return Load(model);
         }
