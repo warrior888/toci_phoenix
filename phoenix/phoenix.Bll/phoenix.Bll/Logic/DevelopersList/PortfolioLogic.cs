@@ -10,12 +10,12 @@ namespace Phoenix.Bll.Logic.DevelopersList
     public class PortfolioLogic : DataAccessLogic, IPortfolioLogic
     {
         private const string UserIdLabel = "id_users";
-        //DI
-        private IDeveloperListLogic _developerListLogic;
+   
+        private readonly IDeveloperListLogic _developerListLogic;
 
-        public PortfolioLogic(IDeveloperListLogic DeveloperListLogic)
+        public PortfolioLogic(IDeveloperListLogic developerListLogic)
         {
-            _developerListLogic = DeveloperListLogic;
+            _developerListLogic = developerListLogic;
         }
 
         public IEnumerable<IPortfolioBusinessModel> GetUserPortfolio(int userId)

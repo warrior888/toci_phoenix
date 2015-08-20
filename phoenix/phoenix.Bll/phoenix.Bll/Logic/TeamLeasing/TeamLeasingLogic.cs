@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Phoenix.Bll.BusinessModels.DevelopersList;
 using Phoenix.Bll.BusinessModels.TeamLeasing;
 using Phoenix.Bll.Interfaces.BusinessModels.DevelopersList;
 using Phoenix.Bll.Interfaces.BusinessModels.TeamLeasing;
 using Phoenix.Bll.Interfaces.Logic.DevelopersList;
 using Phoenix.Bll.Interfaces.Logic.TeamLeasing;
-using Phoenix.Bll.Logic.DevelopersList;
 using Phoenix.Dal.GeneratedModels;
 
 namespace Phoenix.Bll.Logic.TeamLeasing
@@ -15,14 +13,13 @@ namespace Phoenix.Bll.Logic.TeamLeasing
     public class TeamLeasingLogic : DataAccessLogic, ITeamLeasingLogic
     {
 
-        //DI
-        private IDeveloperListLogic _developersLogic;
-        private IPortfolioLogic _portfolioLogic;
+        private readonly IDeveloperListLogic _developersLogic;
+        private readonly IPortfolioLogic _portfolioLogic;
 
-        public TeamLeasingLogic(IDeveloperListLogic DeveloperListLogic, IPortfolioLogic PortfolioLogic)
+        public TeamLeasingLogic(IDeveloperListLogic developerListLogic, IPortfolioLogic portfolioLogic)
         {
-            _developersLogic = DeveloperListLogic;
-            _portfolioLogic = PortfolioLogic;
+            _developersLogic = developerListLogic;
+            _portfolioLogic = portfolioLogic;
         }
 
         //TODO

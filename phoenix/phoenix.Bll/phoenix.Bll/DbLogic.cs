@@ -16,8 +16,8 @@ namespace Phoenix.Bll
 
         protected DbLogic()
         {
-            //DbHandleAccessData accessData = new DbHandleAccessDataFactory().Create("Patryk");
-           DbHandleAccessData accessData = new DbHandleAccessDataFactory().Create("Terry");
+            DbHandleAccessData accessData = new DbHandleAccessDataFactory().Create("Patryk");
+           //DbHandleAccessData accessData = new DbHandleAccessDataFactory().Create("Terry");
 
             DbHandle = GetDbHandle(accessData.UserName, accessData.Password,
                 accessData.DbAdress, accessData.DbName);

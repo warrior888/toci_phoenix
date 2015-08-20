@@ -1,6 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
-using AutoMapper;
 using Phoenix.Bll.Interfaces.BusinessModels.UsersList;
 using Phoenix.Bll.Interfaces.Logic.UsersList;
 using Phoenix.Dal.GeneratedModels;

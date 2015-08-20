@@ -49,16 +49,16 @@ namespace Phoenix.Bll.Essential
             builder.RegisterType<DocumentResource>().As<IDocumentResource>();
             builder.RegisterType<PumaOcrParser>().As<IDocumentInterpreter>();
 
-            builder.RegisterType<AutoMapperConfiguration>().As<AutoMapperConfiguration>(); //na razie tak
-
             builder.RegisterType<UserLogic>().As<IUserLogic>();
 
-            builder.RegisterType<TeamLeasingLogic>().As<ITeamLeasingLogic>();
             builder.RegisterType<DeveloperListLogic>().As<IDeveloperListLogic>();
-            builder.RegisterType<PortfolioLogic>().As<IPortfolioLogic>();
             builder.RegisterType<DeveloperAvailableLogic>().As<IDeveloperAvailableLogic>();
             builder.RegisterType<SkillLogic>().As<ISkillLogic>();
             builder.RegisterType<UsersLogic>().As<IUsersLogic>();
+            builder.Register(c => new PortfolioLogic(Resolve<IDeveloperListLogic>())).As<IPortfolioLogic>();
+            builder.Register(c => new TeamLeasingLogic(Resolve<IDeveloperListLogic>(), Resolve<IPortfolioLogic>())).As<ITeamLeasingLogic>();
+            builder.Register(c => new AutoMapperConfiguration(Resolve<IUsersLogic>(), Resolve<IDeveloperListLogic>(),
+                                                              Resolve<IPortfolioLogic>(), Resolve<ISkillLogic>(), Resolve<IDeveloperAvailableLogic>()));
           
             return builder.Build();
         }

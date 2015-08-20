@@ -3,12 +3,14 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Phoenix.Bll;
 using Phoenix.Bll.BusinessModels.DevelopersList;
 using Phoenix.Bll.BusinessModels.TeamLeasing;
+using Phoenix.Bll.Essential;
 using Phoenix.Bll.Interfaces.BusinessModels.DevelopersList;
 using Phoenix.Bll.Interfaces.BusinessModels.TeamLeasing;
 using Phoenix.Bll.Interfaces.Logic.DevelopersList;
 using Phoenix.Bll.Interfaces.Logic.TeamLeasing;
 using Phoenix.Bll.Logic.DevelopersList;
 using Phoenix.Bll.Logic.TeamLeasing;
+using Toci.Utilities.Interfaces.DependencyResolve;
 
 namespace Phoenix.Integration.Test.Developers.Patryk.BLL.TeamLeasing
 {
@@ -18,14 +20,16 @@ namespace Phoenix.Integration.Test.Developers.Patryk.BLL.TeamLeasing
         [TestMethod]
         public void TryGetDataFromDb()
         {
-            //testy średnio działają po zrobienu DI
+            IDependencyResolver dependencyResolver = new DependencyResolverFactory().Create(DependencyResolverType.Autofac);
 
-           /* new AutoMapperConfiguration().Configure();
+            AutoMapperConfiguration configuration = dependencyResolver.Resolve<AutoMapperConfiguration>();
 
-            IDeveloperListLogic developerListLogic= new DeveloperListLogic();
+            configuration.Configure();
+
+            IDeveloperListLogic developerListLogic = dependencyResolver.Resolve<IDeveloperListLogic>();
             developerListLogic.GetDevByUserId(19);
 
-            ITeamLeasingLogic teamLeasingLogic = new TeamLeasingLogic(new DeveloperListLogic(), new PortfolioLogic()); // zmieniłem bo DI
+            ITeamLeasingLogic teamLeasingLogic = new TeamLeasingLogic(dependencyResolver.Resolve<IDeveloperListLogic>(), dependencyResolver.Resolve<IPortfolioLogic>());
             ITeamLeasingBusinessModel teamLeasingBusinessModel = new TeamLeasingBusinessModel()
             {
                 SkillSet = new List<IDeveloperSkillBusinessModel>()
@@ -38,7 +42,7 @@ namespace Phoenix.Integration.Test.Developers.Patryk.BLL.TeamLeasing
                     }
                 }
             };
-            teamLeasingLogic.GetTeams(teamLeasingBusinessModel, 5);*/
+            teamLeasingLogic.GetTeams(teamLeasingBusinessModel, 5);
         }         
     }
 }

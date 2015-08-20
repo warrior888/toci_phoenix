@@ -1,7 +1,4 @@
-﻿using System.Data.SqlClient;
-using AutoMapper;
-using Ionic.Zlib;
-using log4net.Core;
+﻿using AutoMapper;
 using Phoenix.Bll.BusinessModels.TeamLeasing;
 using Phoenix.Bll.BusinessModels.UsersList;
 using Phoenix.Bll.Interfaces.BusinessModels.CourseRegistration;
@@ -10,9 +7,6 @@ using Phoenix.Bll.Interfaces.BusinessModels.TeamLeasing;
 using Phoenix.Bll.Interfaces.Logic.DevelopersList;
 using Phoenix.Bll.Interfaces.Logic.TeamLeasing;
 using Phoenix.Bll.Interfaces.Logic.UsersList;
-using Phoenix.Bll.Logic.DevelopersList;
-using Phoenix.Bll.Logic.TeamLeasing;
-using Phoenix.Bll.Logic.UsersList;
 using Phoenix.Dal.GeneratedModels;
 
 namespace Phoenix.Bll
@@ -84,20 +78,7 @@ namespace Phoenix.Bll
         }
 
         private void ForIDeveloperBusinessModel()
-        {
-            Mapper.CreateMap<IDeveloperBusinessModel, developer_list_view>();
-            
-            /* .
-                ForMember(dest => dest.UserId, opts => opts.MapFrom(src => src.User.Id)).
-                ForMember(dest => dest.Name, opts => opts.MapFrom(src => src.User.Name)).
-                ForMember(dest => dest.Surname, opts => opts.MapFrom(src => src.User.Surname)).
-                ForMember(dest => dest.Nick, opts => opts.MapFrom(src => src.User.Nick)).
-                ForMember(dest => dest.AvailableFor, opts => opts.MapFrom(src => src.DeveloperAvailable.AvailableFor)).
-                ForMember(dest => dest.StartWorkHour, opts => opts.MapFrom(src => src.DeveloperAvailable.StartWorkHour)).
-                ForMember(dest => dest.EndWorkHour, opts => opts.MapFrom(src => src.DeveloperAvailable.EndWorkHour));*/
-             
-                
-                
+        {                    
             Mapper.CreateMap<developer_list_view, IDeveloperBusinessModel>().
                 ForMember(dest => dest.User, opts => opts.MapFrom(src=> new UsersBusinessModel()
                 {

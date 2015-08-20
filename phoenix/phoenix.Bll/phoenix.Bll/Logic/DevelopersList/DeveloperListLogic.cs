@@ -22,7 +22,6 @@ namespace Phoenix.Bll.Logic.DevelopersList
             IDeveloperBusinessModel developer = GetElementsByColumnValue<IDeveloperBusinessModel, developer_list_view, int>(UserIdLabel,
                     SelectClause.Equal, id)[0];
             return developer;
-
         }
 
     }
