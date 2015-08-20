@@ -13,8 +13,8 @@ drop table VazcoTable;
 
 CREATE TABLE VazcoTable
    (id serial PRIMARY KEY NOT NULL,
-    data text,
+	data text,
 	name text,
-	addingTime date,
-    hash text
+	addingTime timestamp,
+	hash text
 );
