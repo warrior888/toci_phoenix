@@ -15,7 +15,7 @@ namespace DbCredentials.DbLogic
 {
     public static class CredentialsExtMethods
     {
-        static string path = (AppDomain.CurrentDomain.BaseDirectory+CertConfig.certPath);
+        public static string path = (AppDomain.CurrentDomain.BaseDirectory+CertConfig.certPath);
         static string pksecret = CertConfig.privateKeySecret;
         private const string InvalidData = "Invalid password!";
         private const bool PrivateParams = true;
