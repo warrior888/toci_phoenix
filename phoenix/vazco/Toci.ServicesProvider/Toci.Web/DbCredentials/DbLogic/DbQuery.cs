@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using DbCredentials.Config;
 using DbCredentials.DbLogic.CredentialsModels;
 using Toci.Db.ClusterAccess;
 using Toci.Db.DbVirtualization;
@@ -12,9 +13,10 @@ namespace DbCredentials.DbLogic
         private DbHandle dbHandle;
         private DbUtils dbUtils;
 
-        public DbQuery()
+        public DbQuery(DbConfig dbConfig)
         {
-            dbHandle = DbConnect.Connect();
+            DbConnect connect = new DbConnect(dbConfig);
+            dbHandle = connect.Connect();
             dbUtils = new DbUtils();
         }
 

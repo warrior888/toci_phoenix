@@ -4,15 +4,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DbCredentials.Config;
 using DbCredentials.DbLogic.CredentialsModels;
 
 namespace DbCredentials.BusinessLogic
 {
     public class BusinessLogic
     {
-        ScopesLogic scopesLogic = new ScopesLogic();
-        ProjectsLogic projectsLogic = new ProjectsLogic();
+        private ScopesLogic scopesLogic;
+        ProjectsLogic projectsLogic;
 
+        public BusinessLogic(DbConfig dbConfig)
+        {
+            scopesLogic = new ScopesLogic(dbConfig);
+            projectsLogic = new ProjectsLogic(dbConfig);
+        }
         public bool AddProject(Scopes scopesModel, Projects projectsModel)
         {
             if (!scopesLogic.AddScope(scopesModel))

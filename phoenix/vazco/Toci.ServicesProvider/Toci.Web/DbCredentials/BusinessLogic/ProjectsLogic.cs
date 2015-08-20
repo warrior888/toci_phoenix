@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using DbCredentials.Config;
 using DbCredentials.DbLogic;
 using DbCredentials.DbLogic.CredentialsModels;
 using Toci.ErrorsAndMessages.Exceptions;
@@ -12,10 +13,16 @@ namespace DbCredentials.BusinessLogic
     {
         private const int notSaved = 0;
         private const int notDeleted = 0;
-        DbQuery dbQuery = new DbQuery();
-        ScopesLogic scopesLogic = new ScopesLogic();
-        BusinessLogicUtills utills = new BusinessLogicUtills();
+        DbQuery dbQuery;
+        ScopesLogic scopesLogic;
+        BusinessLogicUtills utills;
 
+        public ProjectsLogic(DbConfig dbConfig)
+        {
+            dbQuery = new DbQuery(dbConfig);
+            scopesLogic = new ScopesLogic(dbConfig);
+            utills = new BusinessLogicUtills(dbConfig);
+        }
         public bool AddProject(Projects model)
         {
             try

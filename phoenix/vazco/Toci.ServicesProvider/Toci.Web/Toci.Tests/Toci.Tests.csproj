@@ -100,6 +100,10 @@
       <Project>{44d0c538-5d19-409a-8f30-2519339fc818}</Project>
       <Name>EncodingLib</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Toci.CredentialsApi\Toci.CredentialsApi.csproj">
+      <Project>{94f9065b-fb80-403e-bb72-5ab6f4567e4a}</Project>
+      <Name>Toci.CredentialsApi</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Toci.CryptingApi\Toci.CryptingApi.csproj">
       <Project>{75C01E14-3D21-417F-9C06-8362AA79898D}</Project>
       <Name>Toci.CryptingApi</Name>

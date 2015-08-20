@@ -5,6 +5,7 @@ using DbCredentials.BusinessLogic;
 using DbCredentials.DbLogic;
 using DbCredentials.DbLogic.CredentialsModels;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Toci.CredentialsApi.Models;
 using Toci.Utilities.Generator.DatabaseModelGenerator;
 using Toci.Utilities.Generator.DatabaseModelGenerator.DbDdlParser;
 
@@ -13,14 +14,14 @@ namespace Toci.Tests
     [TestClass]
     public class DbCredentials
     {
-        DbQuery dbQuery = new DbQuery();
+        DbQuery dbQuery = new DbQuery(new VazcoDbConfig());
 
         [TestMethod]
         public void AddProject()
         {
-            BusinessLogic business = new BusinessLogic();
-            ScopesLogic scopes = new ScopesLogic();
-            ProjectsLogic projects = new ProjectsLogic();
+            BusinessLogic business = new BusinessLogic(new VazcoDbConfig());
+            ScopesLogic scopes = new ScopesLogic(new VazcoDbConfig());
+            ProjectsLogic projects = new ProjectsLogic(new VazcoDbConfig());
             Scopes modScopes = new Scopes
             {
                 scopename = "admin2"
@@ -102,7 +103,7 @@ namespace Toci.Tests
                // modificationdate = 
                 //projectid = 2
             };
-            ScopesLogic scopes = new ScopesLogic();
+            ScopesLogic scopes = new ScopesLogic(new VazcoDbConfig());
             var result2 = scopes.IsScopeExist(scmodel);
             var result = dbQuery.Save(model); //, Projects.PROJECTID);
         }
@@ -137,7 +138,7 @@ namespace Toci.Tests
                 scopename = "admin2",
                 
             };
-            ProjectsLogic logic = new ProjectsLogic();
+            ProjectsLogic logic = new ProjectsLogic(new VazcoDbConfig());
             var list = new List<Scopes> {model, model2};
             var result = logic.LoadProjects(list); //, Projects.PROJECTID);
         }

@@ -8,20 +8,20 @@ namespace DbCredentials.DbLogic
 {
     public class DbConnect
     {
-        private static readonly string login;
-        private static readonly string secret;
-        private static readonly string address;
-        private static readonly string dataBaseName;
+        private readonly string login;
+        private readonly string secret;
+        private readonly string address;
+        private readonly string dataBaseName;
 
-        static DbConnect()
+        public DbConnect(DbConfig dbConfig)
         {
-            login = DbConfig.login;
-            secret = DbConfig.secret;
-            address = DbConfig.address;
-            dataBaseName = DbConfig.dataBaseName;
+            login = dbConfig.login;
+            secret = dbConfig.secret;
+            address = dbConfig.address;
+            dataBaseName = dbConfig.dataBaseName;
         }
 
-        public static DbHandle Connect()
+        public  DbHandle Connect()
         {
             var client = new PostgreSqlClient(login, secret, address, dataBaseName);
             return new DbHandle(client, new PostgreSqlSelect(), new PostgreSqlInsert(), new PostgreSqlUpdate(), new PostgreSqlDelete());

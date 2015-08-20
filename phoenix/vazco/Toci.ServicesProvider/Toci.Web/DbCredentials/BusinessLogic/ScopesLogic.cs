@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using DbCredentials.Config;
 using DbCredentials.DbLogic;
 using DbCredentials.DbLogic.CredentialsModels;
 
@@ -10,8 +11,12 @@ namespace DbCredentials.BusinessLogic
     {
         private const int notSaved = 0;
         private const bool exist = true;
-        DbQuery dbQuery = new DbQuery();
+        DbQuery dbQuery;
 
+        public ScopesLogic(DbConfig dbConfig)
+        {
+            dbQuery = new DbQuery(dbConfig);
+        }
         public bool AddScope(Scopes model)
         {
             if (IsScopeExist(model))

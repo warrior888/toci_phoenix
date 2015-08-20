@@ -1,10 +1,10 @@
 ﻿namespace DbCredentials.Config
 {
-    public static class DbConfig
+    public class DbConfig
     {
-        public static string dataBaseName = "ImportantStuffDb";
-        public static string login = "postgres";
-        public static string secret = "localhost";
-        public static string address = "localhost";
+        public string dataBaseName { get; set; }
+        public string login { get; set; }
+        public string secret { get; set; }
+        public string address { get; set; }
     }
 }

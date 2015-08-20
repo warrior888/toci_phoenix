@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using DbCredentials.BusinessLogic;
+using DbCredentials.DbLogic;
 using Toci.CredentialsApi.Models;
 
 using DbCredentials.DbLogic.CredentialsModels;
@@ -12,8 +13,8 @@ namespace Toci.CredentialsApi.Controllers
 {
     public class ProjectsController : ApiController
     {
-        BusinessLogic businessLogic = new BusinessLogic();
-        
+        BusinessLogic businessLogic = new BusinessLogic(new VazcoDbConfig());
+
         [Route("Save/Project")]
         [HttpPost]
         public string SaveProject(BusinessModel model)

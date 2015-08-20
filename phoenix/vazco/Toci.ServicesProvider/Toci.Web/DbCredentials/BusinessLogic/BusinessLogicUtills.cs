@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DbCredentials.Config;
 using DbCredentials.DbLogic;
 using DbCredentials.DbLogic.CredentialsModels;
 using Toci.ErrorsAndMessages.Exceptions;
@@ -11,7 +12,12 @@ namespace DbCredentials.BusinessLogic
 {
     public class BusinessLogicUtills
     {
-        DbQuery dbQuery = new DbQuery();
+        DbQuery dbQuery;
+
+        public BusinessLogicUtills(DbConfig dbConfig)
+        {
+            dbQuery = new DbQuery(dbConfig);
+        }
         public bool IsProjectExist(int projectId)
         {
             Projects model = new Projects
