@@ -1,0 +1,42 @@
+//Save example:
+
+{
+"data":"test test rest",
+"password":"SomePassword",
+"name":"SomeName"
+}
+//Update examples:
+
+{
+"data":"test test rest",
+"password":"SomePassword",
+"name":"SomeName",
+"id":"1"
+}
+
+{
+"data":"test test rest",
+"password":"SomePassword",
+"id":"1"
+}
+
+{
+"name":"SomeName",
+"id":"1"
+}
+//Delete examples:
+
+{
+"id":"1"
+}
+{
+"data":"test test rest",
+"password":"SomePassword",
+"name":"SomeName",
+"id":"1"
+}
+//Load example:
+
+{
+"password":"SomePassword"
+}

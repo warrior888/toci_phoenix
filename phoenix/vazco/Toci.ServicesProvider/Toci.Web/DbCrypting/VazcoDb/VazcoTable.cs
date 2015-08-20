@@ -48,7 +48,7 @@ namespace DbCrypting
                 }
             }
          
-        public const string ADDINGTIME = "addingTime";
+        public const string ADDINGTIME = "addingtime";
         public System.DateTime addingTime
             {
                 get

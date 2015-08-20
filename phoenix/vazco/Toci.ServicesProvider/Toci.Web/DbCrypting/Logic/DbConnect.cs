@@ -2,6 +2,7 @@
 using Toci.Db.Clients;
 using Toci.Db.ClusterAccess;
 using Toci.Db.DbVirtualization.MsSqlQuery;
+using Toci.Db.DbVirtualization.PostgreSqlQuery;
 
 namespace DbCrypting.Logic
 {
@@ -22,8 +23,9 @@ namespace DbCrypting.Logic
 
         public  DbHandle Connect()
         {
-            var client = new MsSqlClient(login, secret, address, dataBaseName);
-            return new DbHandle(client, new MsSqlSelect(), new MsSqlInsert(), new MsSqlUpdate(), new MsSqlDelete());
+            //var client = new MsSqlClient(login, secret, address, dataBaseName);
+            var client = new PostgreSqlClient(login,secret,address,dataBaseName);
+            return new DbHandle(client, new PostgreSqlSelect(), new PostgreSqlInsert(), new PostgreSqlUpdate(), new PostgreSqlDelete());
         }
     }
 }
