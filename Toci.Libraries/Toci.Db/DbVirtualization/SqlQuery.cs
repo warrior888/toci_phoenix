@@ -1,10 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 using Toci.Db.Interfaces;
 
 namespace Toci.Db.DbVirtualization
@@ -12,6 +7,11 @@ namespace Toci.Db.DbVirtualization
     public abstract class SqlQuery : IQuery
     {
         protected const string COLUMNS_DELIMITER = ",";
+
+        
+        protected const string WHERE = "{0} {1} {2}";
+        protected const string ANDOperator = " AND ";
+        protected bool Where;
 
         protected Dictionary<Type, string> Surroundings = new Dictionary<Type, string>()
         {

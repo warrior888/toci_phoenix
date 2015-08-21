@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Toci.Db.DbVirtualization.MsSqlQuery;
 using Toci.Db.DbVirtualization.PostgreSqlQuery;
 
@@ -27,7 +22,7 @@ namespace Toci.Utilities.Test.Developers.Duch
 			tM.AddIsWhere("rhird", 55, true);
 			tM.AddIsWhere("secondFalse", 14, false);
 			var resultSql = sqlDelete.GetQuery(tM);
-			var resultPost = sqlDelete.GetQuery(tM);
+			var resultPost = postDelete.GetQuery(tM);
 		    var resultInsert = ins.GetQuery(tM);
 
             Assert.AreEqual("delete from tejbelnejm where first=5 and second='value' and rhird=55;", resultSql);

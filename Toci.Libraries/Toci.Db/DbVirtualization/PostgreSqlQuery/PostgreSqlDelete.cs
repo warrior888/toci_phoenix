@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Toci.Db.Interfaces;
 
 namespace Toci.Db.DbVirtualization.PostgreSqlQuery
@@ -11,7 +7,6 @@ namespace Toci.Db.DbVirtualization.PostgreSqlQuery
 	{
 		private const string PATTERN = "delete from {0} where {1};";
 		private const string equalSign = "=";
-		private const string andSign = " and ";
 
 		public override string GetQuery(IModel model)
 		{
@@ -26,7 +21,7 @@ namespace Toci.Db.DbVirtualization.PostgreSqlQuery
 				}
 			}
 
-			var where = String.Join(andSign, whereDelete);
+			var where = string.Join(ANDOperator, whereDelete);
 
 			return string.Format(PATTERN, model.GetTableName(), where);
 		}

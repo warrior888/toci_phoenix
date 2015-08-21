@@ -9,7 +9,6 @@ namespace Toci.Db.DbVirtualization.PostgreSqlQuery
     {
         private const string Pattern = "UPDATE {0} SET {1} WHERE {2};";
         private const string AssignmentPattern = "{0} = {1}";
-        private const string AndOperator = " AND ";
         private const string Comma = ", ";
         private const int MinStatementLength = 2;
 
@@ -40,7 +39,7 @@ namespace Toci.Db.DbVirtualization.PostgreSqlQuery
                     list.Add(string.Format(AssignmentPattern, item.Key, GetSurroundedValue(item.Value.GetValue())));
                 }
             }
-            return string.Join(AndOperator, list);
+            return string.Join(ANDOperator, list);
         }
     }
 }

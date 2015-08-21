@@ -8,7 +8,6 @@ namespace Toci.Db.DbVirtualization.MsSqlQuery
     {
         private const string Pattern = "UPDATE {0} SET {1} WHERE {2};";
         private const string AssignmentPattern = "{0} = {1}";
-        private const string AndOperator = " AND ";
         private const string Comma = ", ";
         private const int MinStatementLength = 2;
 
@@ -36,10 +35,11 @@ namespace Toci.Db.DbVirtualization.MsSqlQuery
 
         private string GetWhereStatement(IModel model)
         {
-            var list = (from item in model.GetFields() where item.Value.IsWhere() 
-                        select string.Format(AssignmentPattern, item.Key, GetSurroundedValue(item.Value.GetValue()))).
+            var list = (model.GetFields()
+                .Where(item => item.Value.IsWhere())
+                .Select(item => string.Format(AssignmentPattern, item.Key, GetSurroundedValue(item.Value.GetValue())))).
                         Cast<object>().ToList();
-            return string.Join(AndOperator, list);
+            return string.Join(ANDOperator, list);
         }
     }
 }
