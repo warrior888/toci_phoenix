@@ -5,13 +5,11 @@ namespace Toci.Db.DbVirtualization.PostgreSqlQuery
 {
 	public class PostgreSqlDelete : SqlQuery, IDelete
 	{
-		private const string PATTERN = "delete from {0} where {1};";
+		private const string PATTERN = "delete from {0}{1};";
 
 		public override string GetQuery(IModel model)
 		{
-		    var whereStatement = GetWhereStatement(model);
-
-			return string.Format(PATTERN, model.GetTableName(), whereStatement);
+            return string.Format(PATTERN, model.GetTableName(), GetWhereStatement(model));
 		}
     }
 }

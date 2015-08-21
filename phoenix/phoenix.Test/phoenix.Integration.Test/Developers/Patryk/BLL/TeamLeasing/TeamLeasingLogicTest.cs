@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Phoenix.Bll;
 using Phoenix.Bll.BusinessModels.DevelopersList;
@@ -46,7 +47,8 @@ namespace Phoenix.Integration.Test.Developers.Patryk.BLL.TeamLeasing
             };
             teamLeasingLogic.GetTeams(teamLeasingBusinessModel, 5);
             
-            teamLeasingLogic.GetAllTeams();
+            List<IDeveloperTeamBusinessModel> teamLeasing = teamLeasingLogic.GetAllTeams().ToList();
+            int a = 6;
         }
 
 
