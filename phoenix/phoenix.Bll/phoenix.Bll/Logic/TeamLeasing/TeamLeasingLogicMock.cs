@@ -71,7 +71,7 @@ namespace Phoenix.Bll.Logic.TeamLeasing
             DeveloperTeamBusinessModel devTeam = new DeveloperTeamBusinessModel()
             {
                 TeamLeader = devList[0],
-                AdditionalTeamMembers = devList,
+                TeamMembers = devList,
                 TeamPortfolio = new List<IPortfolioBusinessModel>()
                 {
                     new PortfolioBusinessModel()

@@ -35,9 +35,11 @@ namespace Toci.Db.DbVirtualization.PostgreSqlQuery
 
             if (where)
             {
+                where = false;
                 return string.Format(WHERE_PATTERN, columnNames, model.GetTableName(), whereResult);
             }
-            return string.Format(SELECT_PATTERN, columnNames, model.GetTableName());
+            string query = string.Format(SELECT_PATTERN, columnNames, model.GetTableName());
+            return query;
         }
 
     }

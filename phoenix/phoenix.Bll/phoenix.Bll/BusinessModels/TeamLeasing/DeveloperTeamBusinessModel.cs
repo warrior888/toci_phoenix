@@ -8,7 +8,7 @@ namespace Phoenix.Bll.BusinessModels.TeamLeasing
     {
         public int id { get; set; }
         public IDeveloperBusinessModel TeamLeader { get; set; }
-        public IEnumerable<IDeveloperBusinessModel> AdditionalTeamMembers { get; set; }
+        public IEnumerable<IDeveloperBusinessModel> TeamMembers { get; set; }
         public IEnumerable<IPortfolioBusinessModel> TeamPortfolio { get; set; }
     }
 }

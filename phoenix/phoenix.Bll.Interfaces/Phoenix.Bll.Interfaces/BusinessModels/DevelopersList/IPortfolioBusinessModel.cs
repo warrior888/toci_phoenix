@@ -12,6 +12,8 @@ namespace Phoenix.Bll.Interfaces.BusinessModels.DevelopersList
 
         IEnumerable<ISkillBusinessModel> Skills { get; set; }
 
+        int TeamLeaderId { get; set; }
+
         //data od data do itd
         DateTime StartDate { get; set; }
 

@@ -8,7 +8,8 @@ namespace Phoenix.Bll.BusinessModels.DevelopersList
     {
         public int Id { get; set; }
         public string ProjectName { get; set; }
-        public IEnumerable<ISkillBusinessModel> Skills { get; set; }       
+        public IEnumerable<ISkillBusinessModel> Skills { get; set; }
+        public int TeamLeaderId { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
 

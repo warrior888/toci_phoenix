@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Phoenix.Bll;
 using Phoenix.Bll.BusinessModels.DevelopersList;
@@ -29,7 +30,8 @@ namespace Phoenix.Integration.Test.Developers.Patryk.BLL.TeamLeasing
             IDeveloperListLogic developerListLogic = dependencyResolver.Resolve<IDeveloperListLogic>();
             developerListLogic.GetDevByUserId(19);
 
-            ITeamLeasingLogic teamLeasingLogic = new TeamLeasingLogic(dependencyResolver.Resolve<IDeveloperListLogic>(), dependencyResolver.Resolve<IPortfolioLogic>());
+            //ITeamLeasingLogic teamLeasingLogic = new TeamLeasingLogic(dependencyResolver.Resolve<IDeveloperListLogic>(), dependencyResolver.Resolve<IPortfolioLogic>());
+            ITeamLeasingLogic teamLeasingLogic = new TeamLeasingLogic(new DeveloperListLogic(), new PortfolioLogic(new DeveloperListLogic()));
             ITeamLeasingBusinessModel teamLeasingBusinessModel = new TeamLeasingBusinessModel()
             {
                 SkillSet = new List<IDeveloperSkillBusinessModel>()
@@ -43,6 +45,16 @@ namespace Phoenix.Integration.Test.Developers.Patryk.BLL.TeamLeasing
                 }
             };
             teamLeasingLogic.GetTeams(teamLeasingBusinessModel, 5);
-        }         
+            
+            teamLeasingLogic.GetAllTeams();
+        }
+
+
+        [TestMethod]
+        public void BusinessLogicTest()
+        {
+            IPortfolioLogic portfolioLogic = new PortfolioLogic(new DeveloperListLogic());
+            portfolioLogic.GetAllProjects(); 
+        }
     }
 }

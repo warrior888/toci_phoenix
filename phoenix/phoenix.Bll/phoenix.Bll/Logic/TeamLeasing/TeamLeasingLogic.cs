@@ -22,53 +22,43 @@ namespace Phoenix.Bll.Logic.TeamLeasing
             _portfolioLogic = portfolioLogic;
         }
 
-        //TODO
         public IEnumerable<IDeveloperTeamBusinessModel> GetAllTeams()
         {
-            var teamsList = new List<IDeveloperTeamBusinessModel>();
+            List<portfolio> portfolio = FetchModelsFromDb<portfolio>(new portfolio());
 
-            var devsList = _developersLogic.GetAllDevelopers().ToList();
-            var projectsList = _portfolioLogic.GetAllProjects().ToList();
-
-            projectsList.ForEach(project => teamsList.Add(new DeveloperTeamBusinessModel()));
-
-            foreach (var project in projectsList)
-            {
-                teamsList.Add(new DeveloperTeamBusinessModel()
-                {
-                    TeamLeader = _portfolioLogic.GetProjectTeamLeader(project.Id),
-                    
-                 
-                });
-            }
-            
-
-            return null;
+            List<IDeveloperBusinessModel> teamsLeaders = portfolio.Select(p => _portfolioLogic.GetProjectTeamLeader(p.Id))
+                                                                  .Distinct().ToList();
+            List<IDeveloperTeamBusinessModel> teams = teamsLeaders.Select(GetTeamByTeamLeader).ToList();
+            return teams;
         }
 
         public IEnumerable<IDeveloperTeamBusinessModel> GetTeams(ITeamLeasingBusinessModel model, int countOfTeams)
         {
-            List<portfolio> portfolio = FetchModelsFromDb<portfolio>(new portfolio());
-
-            List<IDeveloperBusinessModel> developers = portfolio.Select
-                                                    (p => _developersLogic.GetDevByUserId(p.FkIdUsers)).ToList();
-            
-            IDeveloperTeamBusinessModel developersTeam = new DeveloperTeamBusinessModel()
-            {
-                
-            };
             return null;
         }
 
         public void RentTeam(IDeveloperTeamBusinessModel developerTeam)
         {
-            throw new NotImplementedException();
+            
         }
 
-        private IDeveloperTeamBusinessModel GetTeam()
+        private IDeveloperTeamBusinessModel GetTeamByTeamLeader(IDeveloperBusinessModel teamLeader)
         {
-  
-            return null;
+            List<List<IDeveloperBusinessModel>> projectDevelopers = new List<List<IDeveloperBusinessModel>>();
+            List<IPortfolioBusinessModel> leadProjects =  teamLeader.Portfolio.Where(portfolio => portfolio.TeamLeaderId == teamLeader.User.Id).ToList();
+            leadProjects.ForEach(portfolio => projectDevelopers.Add(_portfolioLogic.GetProjectDevelopers(portfolio.Id).ToList()));
+            List<double> teamScores = projectDevelopers.Select(team => team.Sum(dev => dev.Score)).ToList();
+
+            int indexOfBestTeam = teamScores.IndexOf(teamScores.Max());
+
+            return new DeveloperTeamBusinessModel()
+            {
+                TeamLeader = teamLeader,
+                TeamMembers = projectDevelopers[indexOfBestTeam],
+                TeamPortfolio = _portfolioLogic.GetTeamProjects(projectDevelopers[indexOfBestTeam])
+            };
         }
+
+        
     }
 }
