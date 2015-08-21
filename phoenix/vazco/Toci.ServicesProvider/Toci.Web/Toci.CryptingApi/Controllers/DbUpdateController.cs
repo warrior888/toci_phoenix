@@ -9,7 +9,6 @@ using DbCrypting.VazcoDb;
 using Toci.CryptingApi.Api;
 using Toci.CryptingApi.Models;
 using Toci.CryptingApi.ValidationUtils;
-using Toci.ErrorsAndMessages.Abstraction;
 using Toci.Utilities.Api;
 using Toci.Utilities.Common.Exceptions;
 

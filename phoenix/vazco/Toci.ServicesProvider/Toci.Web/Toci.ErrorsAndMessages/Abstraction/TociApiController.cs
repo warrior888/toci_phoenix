@@ -2,7 +2,7 @@
 using Toci.Utilities.Api;
 using Toci.Utilities.Common.Api;
 
-namespace Toci.ErrorsAndMessages.Abstraction
+namespace ErrorsAndMessages.Abstraction
 {
     public abstract class TociApiController : ApiController
     {
