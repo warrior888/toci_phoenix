@@ -67,44 +67,44 @@ namespace DbCredentials.BusinessLogic
             var list = dbQuery.Load(model).Cast<Scopes>().ToList();
             return (from item in list where item.scopeid == scopeId select item.scopename).FirstOrDefault();
         }
-        public List<Scopes> LoadScopes(Scopes model)
-        {
-            return dbQuery.Load(model).Cast<Scopes>().ToList();
-        }
+        //public List<Scopes> LoadScopes(Scopes model)
+        //{
+        //    return dbQuery.Load(model).Cast<Scopes>().ToList();
+        //}
 
-        public bool DeleteScope(Scopes model)
-        {
-            if (!IsScopeExist(model))
-            {
-                throw new WebApiTociApplicationException("Scope does not exist. ", null, (int)ApiErrors.DataMissing);
-            }
-            try
-            {
-                dbQuery.Delete(model, Scopes.SCOPENAME);
-                return true;
-            }
-            catch (TociApplicationException ex)
-            {
-                throw new WebApiTociApplicationException("Cannot delete scope. ", null, (int)ApiErrors.WrongData, ex);
-            }
-        }
+        //public bool DeleteScope(Scopes model)
+        //{
+        //    if (!IsScopeExist(model))
+        //    {
+        //        throw new WebApiTociApplicationException("Scope does not exist. ", null, (int)ApiErrors.DataMissing);
+        //    }
+        //    try
+        //    {
+        //        dbQuery.Delete(model, Scopes.SCOPENAME);
+        //        return true;
+        //    }
+        //    catch (TociApplicationException ex)
+        //    {
+        //        throw new WebApiTociApplicationException("Cannot delete scope. ", null, (int)ApiErrors.WrongData, ex);
+        //    }
+        //}
 
-        public bool UpdateScope(Scopes model)
-        {
-            if (!IsScopeExist(model))
-            {
-                throw new WebApiTociApplicationException("Scope does not exist. ", null, (int)ApiErrors.DataMissing);
-            }
-            try
-            {
+        //public bool UpdateScope(Scopes model)
+        //{
+        //    if (!IsScopeExist(model))
+        //    {
+        //        throw new WebApiTociApplicationException("Scope does not exist. ", null, (int)ApiErrors.DataMissing);
+        //    }
+        //    try
+        //    {
                 
-                dbQuery.Update(GetScopeId(model), Scopes.SCOPEID);
-                return true;
-            }
-            catch (TociApplicationException ex)
-            {
-                throw new WebApiTociApplicationException("Cannot update scope. ", null, (int)ApiErrors.WrongData, ex);
-            }
-        }
+        //        dbQuery.Update(GetScopeId(model), Scopes.SCOPEID);
+        //        return true;
+        //    }
+        //    catch (TociApplicationException ex)
+        //    {
+        //        throw new WebApiTociApplicationException("Cannot update scope. ", null, (int)ApiErrors.WrongData, ex);
+        //    }
+        //}
     }
 }

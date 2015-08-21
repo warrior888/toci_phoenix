@@ -51,6 +51,7 @@ namespace Toci.CredentialsApi.Models
         {
             try
             {
+                
                 var list = scopesList.Split(new[] {separator}, StringSplitOptions.None).ToList();
                 return list.Select(item => new Scopes {scopename = item}).ToList();
             }
