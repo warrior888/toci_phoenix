@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Toci.Db.Interfaces;
 
 namespace Toci.Db.DbVirtualization
@@ -42,16 +43,12 @@ namespace Toci.Db.DbVirtualization
         protected virtual string GetWhereStatement(IModel model)
         {
             var whereList = new List<string>();
-
-            foreach (var item in model.GetFields())
-            {
-                if (item.Value.IsWhere())
-                {
-                    whereList.Add(string.Format(WHERE, item.Key, GetClauseSign(item.Value.GetSelectClause()), GetSurroundedValue(item.Value.GetValue())));
-                }
-            }
-
-            return string.Join(AndOperator, whereList);
+            model.GetFields().Where(item => item.Value.IsWhere()).ToList().ForEach(
+                item => whereList.Add(string.Format(WHERE, item.Key, GetClauseSign(item.Value.GetSelectClause()), GetSurroundedValue(item.Value.GetValue())))
+            );
+            return whereList.Any()
+                ? string.Format(" WHERE {0}", string.Join(AndOperator, whereList))
+                : string.Join(AndOperator, whereList);
         }
     }
 }
