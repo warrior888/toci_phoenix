@@ -76,16 +76,16 @@ namespace DbCredentials.BusinessLogic
         {
             if (!IsScopeExist(model))
             {
-                throw new WebApiTociApplicationException("Scope does not exist. ");
+                throw new WebApiTociApplicationException("Scope does not exist. ", null, (int)ApiErrors.DataMissing);
             }
             try
             {
                 dbQuery.Delete(model, Scopes.SCOPENAME);
                 return true;
             }
-            catch (Exception ex)
+            catch (TociApplicationException ex)
             {
-                throw new WebApiTociApplicationException("Cannot delete scope. " + ex.Message);
+                throw new WebApiTociApplicationException("Cannot delete scope. ", null, (int)ApiErrors.WrongData, ex);
             }
         }
 
@@ -93,7 +93,7 @@ namespace DbCredentials.BusinessLogic
         {
             if (!IsScopeExist(model))
             {
-                throw new WebApiTociApplicationException("Scope does not exist. ");
+                throw new WebApiTociApplicationException("Scope does not exist. ", null, (int)ApiErrors.DataMissing);
             }
             try
             {
@@ -101,9 +101,9 @@ namespace DbCredentials.BusinessLogic
                 dbQuery.Update(GetScopeId(model), Scopes.SCOPEID);
                 return true;
             }
-            catch (Exception ex)
+            catch (TociApplicationException ex)
             {
-                throw new WebApiTociApplicationException("Cannot update scope. " + ex.Message);
+                throw new WebApiTociApplicationException("Cannot update scope. ", null, (int)ApiErrors.WrongData, ex);
             }
         }
     }
