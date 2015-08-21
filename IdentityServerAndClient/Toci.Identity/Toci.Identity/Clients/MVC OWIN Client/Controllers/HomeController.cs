@@ -1,5 +1,6 @@
 ﻿using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace MVC_OWIN_Client.Controllers
 {
@@ -20,6 +21,8 @@ namespace MVC_OWIN_Client.Controllers
 
         public ActionResult Signout()
         {
+            
+
             Request.GetOwinContext().Authentication.SignOut();
             return Redirect("/");
         }

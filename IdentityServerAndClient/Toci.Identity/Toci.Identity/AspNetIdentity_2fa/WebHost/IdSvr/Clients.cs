@@ -58,7 +58,8 @@ namespace WebHost.IdSvr
                         Constants.StandardScopes.Email,
                         Constants.StandardScopes.OfflineAccess,
                         "read",
-                        "write"
+                        "write",
+                        Constants.StandardScopes.Roles
                     },
 
                     //SubjectType = SubjectTypes.Global,
@@ -107,8 +108,11 @@ namespace WebHost.IdSvr
                         Constants.StandardScopes.OpenId,
                         Constants.StandardScopes.Profile,
                         Constants.StandardScopes.Email,
+                        Constants.StandardScopes.Roles,
+                        Constants.StandardScopes.AllClaims,
                         "read",
-                        "write"
+                        "write",
+                        "projects"
                     },
 
                     //SubjectType = SubjectTypes.Global,

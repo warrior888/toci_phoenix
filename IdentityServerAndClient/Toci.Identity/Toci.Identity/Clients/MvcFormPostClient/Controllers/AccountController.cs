@@ -20,7 +20,7 @@ namespace MvcFormPostClient.Controllers
             var url = Constants.AuthorizeEndpoint +
                 "?client_id=implicitclient" +
                 "&response_type=id_token" +
-                "&scope=openid email" +
+                "&scope=openid projects" +
                 "&redirect_uri=http://localhost:11716/account/signInCallback" +
                 "&response_mode=form_post" +
                 "&state=" + state +

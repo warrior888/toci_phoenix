@@ -31,6 +31,7 @@ namespace WebHost.IdSvr
                 StandardScopes.Profile,
                 StandardScopes.Email,
                 StandardScopes.OfflineAccess,
+                StandardScopes.Roles,
                 new Scope
                 {
                     Name = "read",
@@ -51,6 +52,18 @@ namespace WebHost.IdSvr
                     DisplayName = "Forbidden scope",
                     Type = ScopeType.Resource,
                     Emphasize = true
+                },
+                new Scope
+                {
+                    Name = "projects",
+                    DisplayName = "Projects",
+                    Description = "Projects in which you participate",
+                    Type = ScopeType.Identity,
+
+                    Claims = new List<ScopeClaim>
+                    {
+                        new ScopeClaim("project",true)
+                    }
                 }
              };
         }
