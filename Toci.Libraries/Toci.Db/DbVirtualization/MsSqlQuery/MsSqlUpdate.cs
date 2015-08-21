@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Toci.Db.Interfaces;
 
@@ -31,15 +32,6 @@ namespace Toci.Db.DbVirtualization.MsSqlQuery
         private bool IsObjectDefault<T>(T obj)
         {
             return obj==null;
-        }
-
-        private string GetWhereStatement(IModel model)
-        {
-            var list = (model.GetFields()
-                .Where(item => item.Value.IsWhere())
-                .Select(item => string.Format(AssignmentPattern, item.Key, GetSurroundedValue(item.Value.GetValue())))).
-                        Cast<object>().ToList();
-            return string.Join(ANDOperator, list);
         }
     }
 }

@@ -25,8 +25,8 @@ namespace Toci.Utilities.Test.Developers.Duch
 			var resultPost = postDelete.GetQuery(tM);
 		    var resultInsert = ins.GetQuery(tM);
 
-            Assert.AreEqual("delete from tejbelnejm where first=5 and second='value' and rhird=55;", resultSql);
-			Assert.AreEqual("delete from tejbelnejm where first=5 and second='value' and rhird=55;", resultPost);
+            Assert.AreEqual("delete from tejbelnejm where first = 5 AND second = 'value' AND rhird = 55;", resultSql);
+			Assert.AreEqual("delete from tejbelnejm where first = 5 AND second = 'value' AND rhird = 55;", resultPost);
             Assert.AreEqual("insert into tejbelnejm (first,second,firstFalse,rhird,secondFalse) values (5,'value',5,55,14);", resultInsert);
 		}
 	}

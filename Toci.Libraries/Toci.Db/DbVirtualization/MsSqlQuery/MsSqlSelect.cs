@@ -7,12 +7,27 @@ namespace Toci.Db.DbVirtualization.MsSqlQuery
     public class MsSqlSelect : SqlQuery, ISelect
     {
         private const string SELECT_PATTERN = "SELECT {0} FROM {1}";
-        private const string WHERE_PATTERN = "SELECT {0} FROM {1} WHERE {2}";
+        private const string SELECT_WHERE_PATTERN = "SELECT {0} FROM {1} WHERE {2}";
+
+        protected bool Where;
 
         public override string GetQuery(IModel model)
         {
             string columnNames = string.Join(COLUMNS_DELIMITER, model.GetFields().Select(item => item.Key));
 
+            var whereStatement = GetWhereStatement(model);
+
+            if (Where)
+            {
+                Where = false;
+                return string.Format(SELECT_WHERE_PATTERN, columnNames, model.GetTableName(), whereStatement);
+            }
+
+            return string.Format(SELECT_PATTERN, columnNames, model.GetTableName());
+        }
+
+        protected override string GetWhereStatement(IModel model)
+        {
             var whereList = new List<string>();
 
             foreach (var item in model.GetFields())
@@ -24,13 +39,7 @@ namespace Toci.Db.DbVirtualization.MsSqlQuery
                 }
             }
 
-            var whereResult = string.Join(ANDOperator, whereList);
-
-            if (Where)
-            {
-                return string.Format(WHERE_PATTERN, columnNames, model.GetTableName(), whereResult);
-            }
-            return string.Format(SELECT_PATTERN, columnNames, model.GetTableName());
+            return string.Join(AndOperator, whereList);
         }
     }
 }
