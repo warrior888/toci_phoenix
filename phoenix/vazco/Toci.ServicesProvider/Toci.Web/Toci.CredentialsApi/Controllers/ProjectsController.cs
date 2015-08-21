@@ -7,85 +7,114 @@ using System.Web.Http;
 using DbCredentials.BusinessLogic;
 using DbCredentials.DbLogic;
 using Toci.CredentialsApi.Models;
-
+using Toci.Utilities.Api;
 using DbCredentials.DbLogic.CredentialsModels;
+using Toci.Utilities.Common.Exceptions;
+
 namespace Toci.CredentialsApi.Controllers
 {
     public class ProjectsController : ApiController
     {
         BusinessLogic businessLogic = new BusinessLogic(new VazcoDbConfig());
+        ApiSimpleResultManager ResultManager = new ApiSimpleResultManager();
 
         [Route("Save/Project")]
         [HttpPost]
-        public string SaveProject(BusinessModel model)
+        public Dictionary<string, object> SaveProject(BusinessModel model)
         {
             try
             {
-                return businessLogic.AddProject(model.GetScopesModel(), model.GetProjectsModel()) ? "Succeed" : "Failed";
+                businessLogic.AddProject(model.GetScopesModel(), model.GetProjectsModel());
+                return ResultManager.GetApiResult(new SimpleResult { Code = 0, Message = "Saved!" }, "Json");
             }
-            catch (ApplicationException exception)
+            catch (TociApplicationException ex)
             {
-                throw new ApplicationException("Cannot add project. "+ exception.Message);
+                return ResultManager.GetApiResult(new SimpleResult { Code = ex.GetErrorCode(ex),
+                ErrorMessage = string.Join(", ", ex.GetErrorList(ex)), Message = "Save unsuccessfull." }, "Json");
             }
         }
 
         [Route("Load/Project")]
         [HttpPost]
-        public ProjectsModel LoadProject(BusinessModel model)
+        public Dictionary<string, object> LoadProject(BusinessModel model)
         {
             try
             {
                 ProjectsModel projectsModel = new ProjectsModel();
                 var projectmodel = businessLogic.LoadProject(model.GetProjectsModel(),model.GetScopesList());
-                return projectsModel.GetProjectElement(projectmodel);
+                var result = projectsModel.GetProjectElement(projectmodel);
+                return ResultManager.GetApiResult(new SimpleResult
+                {
+                    Code = 0,
+                    Message = "Loaded!",
+                    Data = new Dictionary<string, object> { { "Result", result }}
+                }, "Json");
             }
-            catch (Exception exception)
+            catch (TociApplicationException ex)
             {
-                throw new Exception("Cannot load project. " + exception.Message);
+                return ResultManager.GetApiResult(new SimpleResult
+                {
+                    Code = ex.GetErrorCode(ex),
+                    ErrorMessage = string.Join(", ", ex.GetErrorList(ex)),
+                    Message = "Load unsuccessfull."
+                }, "Json");
             }
         }
 
         [Route("Load/Projects")]
         [HttpPost]
-        public List<ProjectsModel> LoadProjects(BusinessModel model)
+        public Dictionary<string, object> LoadProjects(BusinessModel model)
         {
             try
             {
                 ProjectsModel projectsModel = new ProjectsModel();
                 var list = businessLogic.LoadProjects(model.GetScopesList());
-                return projectsModel.GetProjectsList(list);
+                var resultList = projectsModel.GetProjectsList(list);
+                return ResultManager.GetApiResult(new SimpleResult { Code = 0, Message = "Loaded!",
+                    Data  = new Dictionary<string, object>{ { "Result", resultList}}},"Json");
             }
-            catch (Exception exception)
+            catch (TociApplicationException ex)
             {
-                throw new Exception("Cannot load projects. " + exception.Message);
+                return ResultManager.GetApiResult(new SimpleResult
+                {
+                    Code = ex.GetErrorCode(ex),
+                    ErrorMessage = string.Join(", ", ex.GetErrorList(ex)),
+                    Message = "Load unsuccessfull."
+                }, "Json");
             }
         }
 
         [Route("Delete/Project")]
         [HttpPost]
-        public bool DeleteProject(BusinessModel model)
+        public Dictionary<string, object> DeleteProject(BusinessModel model)
         {
             try
             {
-                return businessLogic.DeleteProject(model.GetProjectsModel(), model.GetScopesList());
+                businessLogic.DeleteProject(model.GetProjectsModel(), model.GetScopesList());
+                return ResultManager.GetApiResult(new SimpleResult { Code = 0, Message = "Deleted!" }, "Json");
             }
-            catch (Exception exception)
+            catch (TociApplicationException ex)
             {
-                throw new Exception("Cannot delete project. " + exception.Message);
+                return ResultManager.GetApiResult(new SimpleResult { Code = ex.GetErrorCode(ex),
+                ErrorMessage = string.Join(", ", ex.GetErrorList(ex)), Message = "Delete unsuccessfull." }, "Json");
             }
         }
 
         [Route("Update/Project")]
         [HttpPost]
-        public bool UpdateProject(BusinessModel model)
+        public Dictionary<string,object> UpdateProject(BusinessModel model)
         {
             try
             {
-                 return businessLogic.UpdateProject(model.GetProjectsModel("Update"), model.GetScopesList());
+
+                businessLogic.UpdateProject(model.GetProjectsModel("Update"), model.GetScopesList());
+                
+                return ResultManager.GetApiResult(new SimpleResult { Code = 0, Message = "Updated!" }, "Json");
             }
-            catch (Exception exception)
+            catch (TociApplicationException ex)
             {
-                throw new Exception("Cannot update project. " + exception.Message);
+                return ResultManager.GetApiResult(new SimpleResult { Code = ex.GetErrorCode(ex),
+                ErrorMessage = string.Join(", ", ex.GetErrorList(ex)), Message = "Update unsuccessfull." }, "Json");
             }
         }
 

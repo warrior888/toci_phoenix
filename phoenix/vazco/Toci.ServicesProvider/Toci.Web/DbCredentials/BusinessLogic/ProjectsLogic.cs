@@ -97,12 +97,9 @@ namespace DbCredentials.BusinessLogic
                 utills.ValidateProjectExsitingById(model);
                 utills.ValidateProjectNameExsiting(model);
                 var project = LoadProject(utills.GetProjectName(model, model.projectid), listOfModels);
-                if (project.projectid.Equals(model.projectid))
-                {
-                    dbQuery.Update(model, Projects.PROJECTID);
-                    return true;
-                }
-                return false;
+                if (!project.projectid.Equals(model.projectid)) return false;
+                dbQuery.Update(model, Projects.PROJECTID);
+                return true;
             }
             catch (TociApplicationException ex)
             {
