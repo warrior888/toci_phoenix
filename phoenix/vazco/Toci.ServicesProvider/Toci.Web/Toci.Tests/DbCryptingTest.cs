@@ -9,10 +9,20 @@ namespace Toci.Tests
     [TestClass]
     public class DbCryptingTest
     {
+        private VazcoConfig conf = new VazcoConfig
+        { 
+            login = "postgres",
+            secret = "Rabarbar12",
+            address = "localhost",
+            DataBaseName = "postgres"
+        };
+    
+        
         [TestMethod]
         public void TestMethod1()
         {
-            var dbOperator = new DbOperations("dupa", new VazcoConfig());
+            
+            var dbOperator = new DbOperations("dupa", conf);
             const string testString = "Test rwerwsfsdsferw";
 
             var model = new VazcoTable {data = testString,name = "TestName"};
