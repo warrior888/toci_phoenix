@@ -1,4 +1,5 @@
 ﻿using System.Configuration;
+using DbCredentials.Certificate;
 using DbCredentials.Config;
 
 namespace Toci.CredentialsApi.Models
@@ -11,6 +12,8 @@ namespace Toci.CredentialsApi.Models
             secret = ConfigurationManager.AppSettings["secret"];
             address = ConfigurationManager.AppSettings["address"];
             dataBaseName = ConfigurationManager.AppSettings["DataBaseName"];
+            CertConfig.certPath= ConfigurationManager.AppSettings["certPath"];
+            CertConfig.privateKeySecret= ConfigurationManager.AppSettings["keySecret"];
         } 
     }
 }

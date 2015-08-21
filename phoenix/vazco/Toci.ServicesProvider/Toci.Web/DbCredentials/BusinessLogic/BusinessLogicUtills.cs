@@ -25,7 +25,7 @@ namespace DbCredentials.BusinessLogic
                 projectid = projectId
             };
             var list = dbQuery.Load(model).Cast<Projects>().ToList();
-            return list.Any(item => item.projectname.Equals(model.projectname));
+            return list.Any(item => item.projectid.Equals(projectId));
         }
         public bool IsProjectExist(string projectName)
         {
@@ -59,6 +59,18 @@ namespace DbCredentials.BusinessLogic
             {
                 throw new WebApiTociApplicationException("Project does not exist.", null, (int)ApiErrors.DataMissing);
             }
+        }
+
+        public Projects GetProjectName(Projects model, int projectid)
+        {
+            var list = dbQuery.Load(model).Cast<Projects>().ToList();
+            var newmodel = new Projects();
+            model.projectid = projectid;
+            foreach (var item in list.Where(item => item.projectid.Equals(model.projectid)))
+            {
+                newmodel.projectname = item.projectname;
+            }
+            return newmodel;
         }
     }
 }

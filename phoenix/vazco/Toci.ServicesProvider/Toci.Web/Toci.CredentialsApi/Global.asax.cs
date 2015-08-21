@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Http;
 using System.Web.Routing;
 using DbCredentials.Certificate;
+using DbCredentials.Config;
 using DbCredentials.DbLogic;
 
 namespace Toci.CredentialsApi
@@ -16,8 +17,9 @@ namespace Toci.CredentialsApi
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
             GlobalConfiguration.Configuration.IncludeErrorDetailPolicy = IncludeErrorDetailPolicy.Always;
+            
 
-           // CertConfig.certPath = ConfigurationManager.AppSettings["certPath"];
         }
+
     }
 }

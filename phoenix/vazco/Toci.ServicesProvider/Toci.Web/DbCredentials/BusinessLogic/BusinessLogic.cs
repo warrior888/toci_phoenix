@@ -16,8 +16,8 @@ namespace DbCredentials.BusinessLogic
 
         public BusinessLogic(DbConfig dbConfig)
         {
-            scopesLogic = new ScopesLogic(dbConfig);
-            projectsLogic = new ProjectsLogic(dbConfig);
+            scopesLogic=new ScopesLogic(dbConfig);
+            projectsLogic=new ProjectsLogic(dbConfig);
         }
         public bool AddProject(Scopes scopesModel, Projects projectsModel)
         {

@@ -4,6 +4,8 @@ using System.Linq;
 using DbCredentials.Config;
 using DbCredentials.DbLogic;
 using DbCredentials.DbLogic.CredentialsModels;
+using Toci.ErrorsAndMessages.Exceptions;
+using Toci.Utilities.Common.Exceptions;
 
 namespace DbCredentials.BusinessLogic
 {
@@ -27,9 +29,9 @@ namespace DbCredentials.BusinessLogic
             {
                 return dbQuery.Save(model) != notSaved;
             }
-            catch (ApplicationException)
+            catch (TociApplicationException ex)
             {
-                throw new ApplicationException("Cannot add scope.");
+                throw new WebApiTociApplicationException("Cannot add scope.", null, (int)ApiErrors.WrongData, ex);
             }
         }
 
@@ -59,7 +61,12 @@ namespace DbCredentials.BusinessLogic
         {
             return scopesList.Select(GetScopeId).ToList();
         }
-
+        public string GetScopesName(int scopeId)
+        {
+            var model = new Scopes {scopeid = scopeId};
+            var list = dbQuery.Load(model).Cast<Scopes>().ToList();
+            return (from item in list where item.scopeid == scopeId select item.scopename).FirstOrDefault();
+        }
         public List<Scopes> LoadScopes(Scopes model)
         {
             return dbQuery.Load(model).Cast<Scopes>().ToList();
@@ -69,7 +76,7 @@ namespace DbCredentials.BusinessLogic
         {
             if (!IsScopeExist(model))
             {
-                throw new Exception("Scope does not exist. ");
+                throw new WebApiTociApplicationException("Scope does not exist. ");
             }
             try
             {
@@ -78,7 +85,7 @@ namespace DbCredentials.BusinessLogic
             }
             catch (Exception ex)
             {
-                throw new Exception("Cannot delete scope. " + ex.Message);
+                throw new WebApiTociApplicationException("Cannot delete scope. " + ex.Message);
             }
         }
 
@@ -86,7 +93,7 @@ namespace DbCredentials.BusinessLogic
         {
             if (!IsScopeExist(model))
             {
-                throw new Exception("Scope does not exist. ");
+                throw new WebApiTociApplicationException("Scope does not exist. ");
             }
             try
             {
@@ -96,7 +103,7 @@ namespace DbCredentials.BusinessLogic
             }
             catch (Exception ex)
             {
-                throw new Exception("Cannot update scope. " + ex.Message);
+                throw new WebApiTociApplicationException("Cannot update scope. " + ex.Message);
             }
         }
     }

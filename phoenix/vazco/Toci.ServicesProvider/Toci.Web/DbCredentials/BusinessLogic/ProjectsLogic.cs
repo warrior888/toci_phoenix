@@ -13,9 +13,9 @@ namespace DbCredentials.BusinessLogic
     {
         private const int notSaved = 0;
         private const int notDeleted = 0;
-        DbQuery dbQuery;
-        ScopesLogic scopesLogic;
-        BusinessLogicUtills utills;
+        readonly DbQuery dbQuery;
+        readonly ScopesLogic scopesLogic;
+        readonly BusinessLogicUtills utills;
 
         public ProjectsLogic(DbConfig dbConfig)
         {
@@ -23,6 +23,7 @@ namespace DbCredentials.BusinessLogic
             scopesLogic = new ScopesLogic(dbConfig);
             utills = new BusinessLogicUtills(dbConfig);
         }
+
         public bool AddProject(Projects model)
         {
             try
@@ -35,8 +36,6 @@ namespace DbCredentials.BusinessLogic
                 throw new WebApiTociApplicationException("Cannot save the project.", null, (int)ApiErrors.WrongData, ex);
             }
         }
-
-        
         
         public Projects LoadProject(Projects model, List<Scopes> listOfModels)
         {
@@ -53,7 +52,7 @@ namespace DbCredentials.BusinessLogic
             }
             if (error)
             {
-                throw new Exception("There is no valid scopes, for this project.");
+                throw new WebApiTociApplicationException("There is no valid scopes, for this project.", null, (int)ApiErrors.DataMissing);
             }
             return project;
         }
@@ -73,7 +72,7 @@ namespace DbCredentials.BusinessLogic
             {
                 return listOfProjects;
             }
-            throw new Exception("There is no valid scopes.");
+            throw new WebApiTociApplicationException("There is no valid scopes.", null, (int)ApiErrors.DataMissing);
         }
 
         public bool DeleteProject(Projects model, List<Scopes> listOfModels)
@@ -84,21 +83,20 @@ namespace DbCredentials.BusinessLogic
                 var project = LoadProject(model, listOfModels);
                 return dbQuery.Delete(project, Projects.PROJECTNAME) != notDeleted;
             }
-            catch (Exception)
+            catch (TociApplicationException ex)
             {
-                throw new Exception("Cannot delete project.");
+                throw new WebApiTociApplicationException("Cannot delete project.", null, (int)ApiErrors.WrongData, ex);
             }
         }
 
         
         public bool UpdateProject(Projects model, List<Scopes> listOfModels)
         {
-            
             try
             {
                 utills.ValidateProjectExsitingById(model);
                 utills.ValidateProjectNameExsiting(model);
-                var project = LoadProject(GetProjectName(model, model.projectid), listOfModels);
+                var project = LoadProject(utills.GetProjectName(model, model.projectid), listOfModels);
                 if (project.projectid.Equals(model.projectid))
                 {
                     dbQuery.Update(model, Projects.PROJECTID);
@@ -106,22 +104,10 @@ namespace DbCredentials.BusinessLogic
                 }
                 return false;
             }
-            catch (Exception)
+            catch (TociApplicationException ex)
             {
-                throw new Exception("Cannot update project.");
+                throw new WebApiTociApplicationException("Cannot update project.", null, (int)ApiErrors.WrongData, ex);
             }
-        }
-
-        public Projects GetProjectName(Projects model, int projectid)
-        {
-            var list = dbQuery.Load(model).Cast<Projects>().ToList();
-            var newmodel = new Projects();
-            model.projectid = projectid;
-            foreach (var item in list.Where(item => item.projectid.Equals(model.projectid)))
-            {
-                newmodel.projectname = item.projectname;
-            }
-            return newmodel;
         }
     }
 }
