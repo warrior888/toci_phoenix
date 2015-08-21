@@ -32,6 +32,13 @@ namespace Toci.CredentialsApi.Controllers
                 return ResultManager.GetApiResult(new SimpleResult { Code = ex.GetErrorCode(ex),
                 ErrorMessage = string.Join(", ", ex.GetErrorList(ex)), Message = "Save unsuccessfull." }, "Json");
             }
+            catch (Exception)
+            {
+                return ResultManager.GetApiResult(new SimpleResult
+                {
+                    Message = "Save unsuccessfull."
+                }, "Json");
+            }
         }
 
         [Route("Load/Project")]
@@ -59,6 +66,13 @@ namespace Toci.CredentialsApi.Controllers
                     Message = "Load unsuccessfull."
                 }, "Json");
             }
+            catch (Exception)
+            {
+                return ResultManager.GetApiResult(new SimpleResult
+                {
+                    Message = "Load unsuccessfull."
+                }, "Json");
+            }
         }
 
         [Route("Load/Projects")]
@@ -82,6 +96,13 @@ namespace Toci.CredentialsApi.Controllers
                     Message = "Load unsuccessfull."
                 }, "Json");
             }
+            catch (Exception)
+            {
+                return ResultManager.GetApiResult(new SimpleResult
+                {
+                    Message = "Load unsuccessfull."
+                }, "Json");
+            }
         }
 
         [Route("Delete/Project")]
@@ -97,6 +118,13 @@ namespace Toci.CredentialsApi.Controllers
             {
                 return ResultManager.GetApiResult(new SimpleResult { Code = ex.GetErrorCode(ex),
                 ErrorMessage = string.Join(", ", ex.GetErrorList(ex)), Message = "Delete unsuccessfull." }, "Json");
+            }
+            catch (Exception)
+            {
+                return ResultManager.GetApiResult(new SimpleResult
+                {
+                    Message = "Delete unsuccessfull."
+                }, "Json");
             }
         }
 
@@ -115,6 +143,13 @@ namespace Toci.CredentialsApi.Controllers
             {
                 return ResultManager.GetApiResult(new SimpleResult { Code = ex.GetErrorCode(ex),
                 ErrorMessage = string.Join(", ", ex.GetErrorList(ex)), Message = "Update unsuccessfull." }, "Json");
+            }
+            catch (Exception)
+            {
+                return ResultManager.GetApiResult(new SimpleResult
+                {
+                    Message = "Update unsuccessfull."
+                }, "Json");
             }
         }
 

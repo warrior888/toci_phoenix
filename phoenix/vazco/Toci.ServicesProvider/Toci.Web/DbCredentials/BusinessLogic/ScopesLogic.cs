@@ -13,7 +13,7 @@ namespace DbCredentials.BusinessLogic
     {
         private const int notSaved = 0;
         private const bool exist = true;
-        DbQuery dbQuery;
+        readonly DbQuery dbQuery;
 
         public ScopesLogic(DbConfig dbConfig)
         {

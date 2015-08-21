@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using DbCredentials.BusinessLogic;
 using DbCredentials.DbLogic.CredentialsModels;
 
 namespace Toci.CredentialsApi.Models
@@ -31,12 +32,15 @@ namespace Toci.CredentialsApi.Models
         }
         public Projects GetProjectsModel(string update)
         {
+            
+            ScopesLogic scope = new ScopesLogic(new VazcoDbConfig());
             return new Projects
             {
                 projectauthor = projectAuthor,
                 projectdata = projectData,
                 projectname = projectName,
-                projectid = projectId
+                projectid = projectId,
+                scopeid = scope.GetScopeId(new Scopes {scopename = scopeName}).scopeid
             };
         }
         public Scopes GetScopesModel()
