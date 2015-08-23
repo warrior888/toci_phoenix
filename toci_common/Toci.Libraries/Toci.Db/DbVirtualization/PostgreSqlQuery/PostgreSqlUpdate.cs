@@ -1,21 +1,18 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
+using Toci.Db.DbVirtualization.SQLQuery;
 using Toci.Db.Interfaces;
 
 namespace Toci.Db.DbVirtualization.PostgreSqlQuery
 {
-    public class PostgreSqlUpdate : SqlQuery, IUpdate
+    public class PostgreSqlUpdate : SqlQueryWithNecessaryWhereClause, IUpdate
     {
-        private const string Pattern = "UPDATE {0} SET {1}{2};";
+        private const string Pattern = "UPDATE {0} SET {1}";
         private const string AssignmentPattern = "{0} = {1}";
         private const string Comma = ", ";
-        private const int MinStatementLength = 2;
 
-        public override string GetQuery(IModel model)
+        protected override string GetQueryWithoutWherePart(IModel model)
         {
-            var where = GetWhereStatement(model);
-            return (where.Length < MinStatementLength) ? string.Empty :
-                                                         string.Format(Pattern, model.GetTableName(), GetSetStatement(model), where);
+            return string.Format(Pattern, model.GetTableName(), GetSetStatement(model));
         }
 
         private string GetSetStatement(IModel model)

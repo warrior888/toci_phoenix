@@ -1,16 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using Toci.Db.Interfaces;
 
-namespace Toci.Db.DbVirtualization
+namespace Toci.Db.DbVirtualization.SQLQuery
 {
     public abstract class SqlQuery : IQuery
     {
-        protected const string COLUMNS_DELIMITER = ",";
-        
-        protected const string WHERE = "{0} {1} {2}";
-        protected const string AndOperator = " AND ";
+        protected const string ColumnsDelimiter = ",";
 
         protected Dictionary<Type, string> Surroundings = new Dictionary<Type, string>()
         {
@@ -38,17 +34,6 @@ namespace Toci.Db.DbVirtualization
         protected string GetClauseSign(SelectClause clause)
         {
             return string.Format("{0}", Signs[(clause)]);
-        }
-
-        protected virtual string GetWhereStatement(IModel model)
-        {
-            var whereList = new List<string>();
-            model.GetFields().Where(item => item.Value.IsWhere()).ToList().ForEach(
-                item => whereList.Add(string.Format(WHERE, item.Key, GetClauseSign(item.Value.GetSelectClause()), GetSurroundedValue(item.Value.GetValue())))
-            );
-            return whereList.Any()
-                ? string.Format(" WHERE {0}", string.Join(AndOperator, whereList))
-                : string.Join(AndOperator, whereList);
         }
     }
 }

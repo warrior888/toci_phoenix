@@ -43,8 +43,8 @@ namespace Phoenix.Bll
 
         protected T FetchModelById<T>(int id) where T : Model, new()
         {
-            T model = new T() { Id = id };
-            model.SetSelect(Id, SelectClause.Equal);
+            T model = new T();
+            model.SetSelect(Id, SelectClause.Equal, id);
             return FetchModelFromDb<T>(model);
         }
 
