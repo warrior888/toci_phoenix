@@ -26,7 +26,7 @@ namespace Toci.DigitalSignature.Abstract
 
         public virtual X509Certificate2 PfxFileToCertificate(byte[] pfxBytes, SecureString password)
         {
-            return new X509Certificate2(pfxBytes, password, X509KeyStorageFlags.Exportable);
+            return new X509Certificate2(pfxBytes, password, X509KeyStorageFlags.Exportable | X509KeyStorageFlags.PersistKeySet | X509KeyStorageFlags.MachineKeySet);
         }
         public virtual X509Certificate2 PfxFileToCertificate(string base64Certyficate, SecureString password)
         {
@@ -37,7 +37,7 @@ namespace Toci.DigitalSignature.Abstract
 
         public virtual X509Certificate2 PfxFileToCertificate(byte[] pfxBytes, string password)
         {
-            return new X509Certificate2(pfxBytes, password, X509KeyStorageFlags.Exportable);
+            return new X509Certificate2(pfxBytes, password, X509KeyStorageFlags.Exportable | X509KeyStorageFlags.PersistKeySet | X509KeyStorageFlags.MachineKeySet);
         }
         public virtual X509Certificate2 PfxFileToCertificate(string base64Certyficate, string password)
         {
