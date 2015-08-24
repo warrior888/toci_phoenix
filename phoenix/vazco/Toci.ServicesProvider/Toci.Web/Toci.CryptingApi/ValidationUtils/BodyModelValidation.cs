@@ -1,7 +1,4 @@
-﻿using System;
-using System.Text;
-using System.Web.Http.ModelBinding;
-using Toci.CryptingApi.Models;
+﻿using Toci.CryptingApi.Models;
 using Toci.ErrorsAndMessages.Exceptions;
 
 namespace Toci.CryptingApi.ValidationUtils

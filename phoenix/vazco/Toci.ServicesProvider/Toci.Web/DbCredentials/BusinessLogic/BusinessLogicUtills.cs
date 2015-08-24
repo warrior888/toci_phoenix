@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DbCredentials.Config;
 using DbCredentials.DbLogic;
 using DbCredentials.DbLogic.CredentialsModels;
@@ -33,8 +30,15 @@ namespace DbCredentials.BusinessLogic
             {
                 projectname = projectName
             };
-            var list = dbQuery.Load(model).Cast<Projects>().ToList();
-            return list.Any(item => item.projectname.Equals(model.projectname));
+            try
+            {
+                var list = dbQuery.Load(model).Cast<Projects>().ToList();
+                return list.Any(item => item.projectname.Equals(model.projectname));
+            }
+            catch (Exception)
+            {
+                throw new WebApiTociApplicationException("Cannot load project list.", null, (int)ApiErrors.WrongData);
+            }
         }
         
         public void ValidateProjectNameExsiting(Projects model)

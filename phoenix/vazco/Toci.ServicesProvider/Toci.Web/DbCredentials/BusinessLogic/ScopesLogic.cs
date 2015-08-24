@@ -37,8 +37,17 @@ namespace DbCredentials.BusinessLogic
 
         public bool IsScopeExist(Scopes model)
         {
-            var list = dbQuery.Load(model).Cast<Scopes>().ToList();
-            return list.Any(item => item.scopename.Equals(model.scopename));
+            List<Scopes> list;
+            try
+            {
+                list = dbQuery.Load(model).Cast<Scopes>().ToList();
+                return list.Any(item => item.scopename.Equals(model.scopename));
+            }
+            catch (Exception)
+            {
+                throw new WebApiTociApplicationException("Cannot load scope list.", null, (int)ApiErrors.WrongData);
+            }
+            
         }
 
         public Scopes GetScopeId(Scopes model)

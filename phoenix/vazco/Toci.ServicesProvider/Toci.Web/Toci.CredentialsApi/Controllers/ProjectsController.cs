@@ -1,14 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using DbCredentials.BusinessLogic;
-using DbCredentials.DbLogic;
 using Toci.CredentialsApi.Models;
 using Toci.Utilities.Api;
-using DbCredentials.DbLogic.CredentialsModels;
 using Toci.Utilities.Common.Exceptions;
 
 namespace Toci.CredentialsApi.Controllers

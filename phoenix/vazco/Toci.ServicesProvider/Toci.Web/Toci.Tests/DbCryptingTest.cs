@@ -1,5 +1,4 @@
-﻿using System;
-using DbCrypting;
+﻿using DbCrypting;
 using DbCrypting.VazcoDb;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Toci.CryptingApi.Models;

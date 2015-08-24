@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Web;
 using System.Web.Http;
-using System.Web.Services.Description;
 using Toci.DigitalSignature.DigitalSignHandlers;
 using Toci.DigitalSignatureApi.Abstraction;
 using Toci.DigitalSignatureApi.Logic;

@@ -1,5 +1,4 @@
 ﻿using System;
-using DbCrypting;
 
 namespace Toci.CryptingApi.Models
 {

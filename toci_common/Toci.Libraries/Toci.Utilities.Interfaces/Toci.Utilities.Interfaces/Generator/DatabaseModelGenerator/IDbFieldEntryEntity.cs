@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Toci.Utilities.Interfaces.Generator.DatabaseModelGenerator
+﻿namespace Toci.Utilities.Interfaces.Generator.DatabaseModelGenerator
 {
     public interface IDbFieldEntryEntity
     {

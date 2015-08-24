@@ -10,12 +10,13 @@ using EncodingLib;
 using Toci.Db.DbVirtualization;
 using Toci.Db.Interfaces;
 using Toci.DigitalSignature.DigitalSignHandlers;
+using Toci.ErrorsAndMessages.Exceptions;
 
 namespace DbCredentials.DbLogic
 {
     public static class CredentialsExtMethods
     {
-        static string path = (AppDomain.CurrentDomain.BaseDirectory+CertConfig.certPath);
+        static string path = CertConfig.certPath;
         static string pksecret = CertConfig.privateKeySecret;
         private const string InvalidData = "Invalid password!";
         private const bool PrivateParams = true;
@@ -34,7 +35,7 @@ namespace DbCredentials.DbLogic
             }
             catch (Exception)
             {
-                // ignored
+                throw new WebApiTociApplicationException("Cannot encrypt project data in encrypt model.", null, (int)ApiErrors.WrongData);
             }
         }
 
@@ -43,29 +44,53 @@ namespace DbCredentials.DbLogic
             //var projectsList = list.ConvertAll(new Converter<Model, Projects>(input => new Projects());
             var projectsList = list.Cast<Projects>().ToList();
             var secret = GetSecret(path, pksecret);
-            foreach (var item in projectsList)
+            try
             {
-                var validateData = new VerifySecret(item.hash, secret);
-                item.projectdata = validateData.Verification() ? new TociCrypting().DecryptStringAes(item.projectdata, secret, item.hash) : InvalidData;
+                foreach (var item in projectsList)
+                {
+                    var validateData = new VerifySecret(item.hash, secret);
+                    item.projectdata = validateData.Verification()
+                        ? new TociCrypting().DecryptStringAes(item.projectdata, secret, item.hash)
+                        : InvalidData;
+                }
+                return projectsList.Cast<IModel>().ToList();
             }
-            return projectsList.Cast<IModel>().ToList();
+            catch (Exception)
+            {
+                throw new WebApiTociApplicationException("Cannot decrypt project data in decrypt models.", null, (int)ApiErrors.WrongData);
+            }
+            
         }
 
         private static string GetSecret(string path, string password)
         {
             var sign = new Sign();
-            var pfxFile = File.ReadAllBytes(path);
+            byte[] pfxFile;
+            try
+            {
+                pfxFile = File.ReadAllBytes(path);
+            }
+            catch (Exception)
+            {
+                throw new WebApiTociApplicationException("Unable to load pfx file", "litania do pfx", (int)ApiErrors.IdMissing);
+            }
 
             SecureString securedPassword = new SecureString();
             foreach (var c in password.ToCharArray())
             {
                 securedPassword.AppendChar(c);
             }
-
-            var certificate = sign.PfxFileToCertificate(pfxFile, securedPassword);
-            var privateKey = (RSACryptoServiceProvider)certificate.PrivateKey;
-
-            return privateKey.ToXmlString(PrivateParams);
+            try
+            {
+                var certificate = sign.PfxFileToCertificate(pfxFile, securedPassword);
+                var privateKey = (RSACryptoServiceProvider) certificate.PrivateKey;
+                return privateKey.ToXmlString(PrivateParams);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            
         }
 
         

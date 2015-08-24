@@ -2,7 +2,6 @@
 using Toci.Utilities.Document.DocumentParsers;
 using Toci.Utilities.Document.DocumentParsers.ThirdParty.Tesseract;
 
-
 namespace Toci.Utilities.Test.Developers.Chmura
 {
     [TestClass]

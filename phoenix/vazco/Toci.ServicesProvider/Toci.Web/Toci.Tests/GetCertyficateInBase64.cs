@@ -1,8 +1,8 @@
 ﻿using System;
 using System.IO;
 using System.Security;
-using System.Security.Cryptography.X509Certificates;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Toci.DigitalSignature.DigitalSignHandlers;
 
 namespace Toci.Tests
 {
@@ -12,7 +12,7 @@ namespace Toci.Tests
         [TestMethod]
         public void TestMethod1()
         {
-            var sign = new DigitalSignature.DigitalSignHandlers.Sign();
+            var sign = new Sign();
             var newtest = File.ReadAllBytes(@"C:\CertTest\TestPrywatnegoKlucza.pfx");
             var getcertbytes = Convert.ToBase64String(newtest);
             string password = "pass";
@@ -30,7 +30,7 @@ namespace Toci.Tests
         [TestMethod]
         public void GetCerCertInBase64()
         {
-            var sign = new DigitalSignature.DigitalSignHandlers.Sign();
+            var sign = new Sign();
             var test = File.ReadAllBytes(@"C:\CertTest\CertyfikatTestowy01.cer");
             var getcertstring = Convert.ToBase64String(test);
         }

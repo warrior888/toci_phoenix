@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using DbCredentials.Config;
-using DbCredentials.DbLogic.CredentialsModels;
 using Toci.Db.ClusterAccess;
 using Toci.Db.DbVirtualization;
 using Toci.Db.Interfaces;
+using Toci.ErrorsAndMessages.Exceptions;
 
 namespace DbCredentials.DbLogic
 {
@@ -26,7 +26,14 @@ namespace DbCredentials.DbLogic
             var newModel = dbUtils.GetNewModel(model);
             dbUtils.ModficateDate(newModel);
             dbUtils.Encrypt(newModel);
-            return dbHandle.InsertData(newModel);
+            try
+            {
+                return dbHandle.InsertData(newModel);
+            }
+            catch (Exception)
+            {
+                throw new WebApiTociApplicationException("Cannot insert project.", null, (int)ApiErrors.WrongData);
+            }
         }
 
         public List<IModel> Load(Model model)

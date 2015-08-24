@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using EncodingLib;
-using Toci.Db.DbVirtualization;
 
 namespace DbCrypting.Logic
 {

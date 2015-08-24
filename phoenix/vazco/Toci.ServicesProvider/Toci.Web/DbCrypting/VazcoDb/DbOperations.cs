@@ -5,7 +5,6 @@ using DbCrypting.Config;
 using DbCrypting.Logic;
 using Toci.Db.ClusterAccess;
 using Toci.ErrorsAndMessages.Exceptions;
-using Toci.Utilities.Common.Exceptions;
 
 namespace DbCrypting.VazcoDb
 {

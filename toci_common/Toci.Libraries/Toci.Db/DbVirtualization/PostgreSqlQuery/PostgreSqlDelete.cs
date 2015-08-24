@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Toci.Db.Interfaces;
+﻿using Toci.Db.Interfaces;
 
 namespace Toci.Db.DbVirtualization.PostgreSqlQuery
 {
