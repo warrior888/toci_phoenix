@@ -35,7 +35,7 @@ namespace DbCredentials.DbLogic
             }
             catch (Exception)
             {
-                // ignored
+                throw new WebApiTociApplicationException("Cannot encrypt project data in encrypt model.", null, (int)ApiErrors.WrongData);
             }
         }
 
@@ -44,12 +44,22 @@ namespace DbCredentials.DbLogic
             //var projectsList = list.ConvertAll(new Converter<Model, Projects>(input => new Projects());
             var projectsList = list.Cast<Projects>().ToList();
             var secret = GetSecret(path, pksecret);
-            foreach (var item in projectsList)
+            try
             {
-                var validateData = new VerifySecret(item.hash, secret);
-                item.projectdata = validateData.Verification() ? new TociCrypting().DecryptStringAes(item.projectdata, secret, item.hash) : InvalidData;
+                foreach (var item in projectsList)
+                {
+                    var validateData = new VerifySecret(item.hash, secret);
+                    item.projectdata = validateData.Verification()
+                        ? new TociCrypting().DecryptStringAes(item.projectdata, secret, item.hash)
+                        : InvalidData;
+                }
+                return projectsList.Cast<IModel>().ToList();
             }
-            return projectsList.Cast<IModel>().ToList();
+            catch (Exception)
+            {
+                throw new WebApiTociApplicationException("Cannot decrypt project data in decrypt models.", null, (int)ApiErrors.WrongData);
+            }
+            
         }
 
         private static string GetSecret(string path, string password)
@@ -70,11 +80,17 @@ namespace DbCredentials.DbLogic
             {
                 securedPassword.AppendChar(c);
             }
-
-            var certificate = sign.PfxFileToCertificate(pfxFile, securedPassword);
-            var privateKey = (RSACryptoServiceProvider)certificate.PrivateKey;
-
-            return privateKey.ToXmlString(PrivateParams);
+            try
+            {
+                var certificate = sign.PfxFileToCertificate(pfxFile, securedPassword);
+                var privateKey = (RSACryptoServiceProvider) certificate.PrivateKey;
+                return privateKey.ToXmlString(PrivateParams);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            
         }
 
         
