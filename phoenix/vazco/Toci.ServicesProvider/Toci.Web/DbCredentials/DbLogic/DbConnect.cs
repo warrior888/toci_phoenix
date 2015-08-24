@@ -1,7 +1,6 @@
 ﻿using DbCredentials.Config;
 using Toci.Db.Clients;
 using Toci.Db.ClusterAccess;
-using Toci.Db.DbVirtualization.MsSqlQuery;
 using Toci.Db.DbVirtualization.PostgreSqlQuery;
 
 namespace DbCredentials.DbLogic

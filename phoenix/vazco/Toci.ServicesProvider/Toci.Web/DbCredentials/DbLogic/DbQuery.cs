@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using DbCredentials.Config;
-using DbCredentials.DbLogic.CredentialsModels;
 using Toci.Db.ClusterAccess;
 using Toci.Db.DbVirtualization;
 using Toci.Db.Interfaces;

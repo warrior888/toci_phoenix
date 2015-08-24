@@ -10,12 +10,13 @@ using EncodingLib;
 using Toci.Db.DbVirtualization;
 using Toci.Db.Interfaces;
 using Toci.DigitalSignature.DigitalSignHandlers;
+using Toci.ErrorsAndMessages.Exceptions;
 
 namespace DbCredentials.DbLogic
 {
     public static class CredentialsExtMethods
     {
-        static string path = (AppDomain.CurrentDomain.BaseDirectory+CertConfig.certPath);
+        static string path = CertConfig.certPath;
         static string pksecret = CertConfig.privateKeySecret;
         private const string InvalidData = "Invalid password!";
         private const bool PrivateParams = true;
@@ -54,7 +55,15 @@ namespace DbCredentials.DbLogic
         private static string GetSecret(string path, string password)
         {
             var sign = new Sign();
-            var pfxFile = File.ReadAllBytes(path);
+            byte[] pfxFile;
+            try
+            {
+                pfxFile = File.ReadAllBytes(path);
+            }
+            catch (Exception)
+            {
+                throw new WebApiTociApplicationException("Unable to load pfx file", "litania do pfx", (int)ApiErrors.IdMissing);
+            }
 
             SecureString securedPassword = new SecureString();
             foreach (var c in password.ToCharArray())

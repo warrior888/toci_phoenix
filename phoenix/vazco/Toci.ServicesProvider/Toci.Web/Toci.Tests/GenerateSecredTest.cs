@@ -1,5 +1,4 @@
-﻿using System;
-using EncodingLib;
+﻿using EncodingLib;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Toci.Tests

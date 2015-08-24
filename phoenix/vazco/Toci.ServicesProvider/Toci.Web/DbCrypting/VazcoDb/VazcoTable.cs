@@ -1,3 +1,4 @@
+using System;
 using Toci.Db.DbVirtualization;
 using Toci.Db.Interfaces;
 
@@ -10,11 +11,11 @@ namespace DbCrypting
         }
          
         public const string ID = "id";
-        public System.Int32 id
+        public Int32 id
             {
                 get
                 {
-                     return (System.Int32) Fields[ID].GetValue();
+                     return (Int32) Fields[ID].GetValue();
                 }
                 set
                 {
@@ -23,11 +24,11 @@ namespace DbCrypting
             }
          
         public const string DATA = "data";
-        public System.String data
+        public String data
             {
                 get
                 {
-                     return (System.String) Fields[DATA].GetValue();
+                     return (String) Fields[DATA].GetValue();
                 }
                 set
                 {
@@ -36,11 +37,11 @@ namespace DbCrypting
             }
          
         public const string NAME = "name";
-        public System.String name
+        public String name
             {
                 get
                 {
-                     return (System.String) Fields[NAME].GetValue();
+                     return (String) Fields[NAME].GetValue();
                 }
                 set
                 {
@@ -49,11 +50,11 @@ namespace DbCrypting
             }
          
         public const string ADDINGTIME = "addingtime";
-        public System.DateTime addingTime
+        public DateTime addingTime
             {
                 get
                 {
-                     return (System.DateTime) Fields[ADDINGTIME].GetValue();
+                     return (DateTime) Fields[ADDINGTIME].GetValue();
                 }
                 set
                 {
@@ -62,11 +63,11 @@ namespace DbCrypting
             }
          
         public const string HASH = "hash";
-        public System.String hash
+        public String hash
             {
                 get
                 {
-                     return (System.String) Fields[HASH].GetValue();
+                     return (String) Fields[HASH].GetValue();
                 }
                 set
                 {

@@ -18,11 +18,11 @@ namespace DbCredentials.DbLogic.CredentialsModels
         }
 
         public const string PROJECTID = "projectid";
-        public System.Int32 projectid
+        public Int32 projectid
             {
                 get
                 {
-                     return (System.Int32) Fields[PROJECTID].GetValue();
+                     return (Int32) Fields[PROJECTID].GetValue();
                 }
                 set
                 {
@@ -31,11 +31,11 @@ namespace DbCredentials.DbLogic.CredentialsModels
             }
          
         public const string SCOPEID = "scopeid";
-        public System.Int32 scopeid
+        public Int32 scopeid
             {
                 get
                 {
-                     return (System.Int32) Fields[SCOPEID].GetValue();
+                     return (Int32) Fields[SCOPEID].GetValue();
                 }
                 set
                 {
@@ -44,11 +44,11 @@ namespace DbCredentials.DbLogic.CredentialsModels
             }
          
         public const string PROJECTNAME = "projectname";
-        public System.String projectname
+        public String projectname
             {
                 get
                 {
-                     return (System.String) Fields[PROJECTNAME].GetValue();
+                     return (String) Fields[PROJECTNAME].GetValue();
                 }
                 set
                 {
@@ -57,11 +57,11 @@ namespace DbCredentials.DbLogic.CredentialsModels
             }
 
         public const string PROJECTAUTHOR = "projectauthor";
-        public System.String projectauthor
+        public String projectauthor
         {
             get
             {
-                return (System.String)Fields[PROJECTAUTHOR].GetValue();
+                return (String)Fields[PROJECTAUTHOR].GetValue();
             }
             set
             {
@@ -70,11 +70,11 @@ namespace DbCredentials.DbLogic.CredentialsModels
         }
 
         public const string PROJECTDATA = "projectdata";
-        public System.String projectdata
+        public String projectdata
             {
                 get
                 {
-                     return (System.String) Fields[PROJECTDATA].GetValue();
+                     return (String) Fields[PROJECTDATA].GetValue();
                 }
                 set
                 {
@@ -83,11 +83,11 @@ namespace DbCredentials.DbLogic.CredentialsModels
             }
 
         public const string MODIFICATIONDATE = "modificationdate";
-        public System.DateTime modificationdate
+        public DateTime modificationdate
         {
             get
             {
-                return (System.DateTime)Fields[MODIFICATIONDATE].GetValue();
+                return (DateTime)Fields[MODIFICATIONDATE].GetValue();
             }
             set
             {
@@ -96,11 +96,11 @@ namespace DbCredentials.DbLogic.CredentialsModels
         }
 
         public const string HASH = "hash";
-        public System.String hash
+        public String hash
         {
             get
             {
-                return (System.String)Fields[HASH].GetValue();
+                return (String)Fields[HASH].GetValue();
             }
             set
             {

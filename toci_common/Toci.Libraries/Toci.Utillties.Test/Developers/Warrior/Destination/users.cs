@@ -1,3 +1,4 @@
+using System;
 using Toci.Db.DbVirtualization;
 using Toci.Db.Interfaces;
 
@@ -9,11 +10,11 @@ namespace Toci.Utilities.Test.Developers.Warrior.Destination
         {
         }
         
-        public System.String id
+        public String id
             {
                 get
                 {
-                     return (System.String) Fields[ID].GetValue();
+                     return (String) Fields[ID].GetValue();
                 }
                 set
                 {
@@ -22,11 +23,11 @@ namespace Toci.Utilities.Test.Developers.Warrior.Destination
             }
          
         public const string NAME = "name";
-        public System.String name
+        public String name
             {
                 get
                 {
-                     return (System.String) Fields[NAME].GetValue();
+                     return (String) Fields[NAME].GetValue();
                 }
                 set
                 {
@@ -35,11 +36,11 @@ namespace Toci.Utilities.Test.Developers.Warrior.Destination
             }
          
         public const string EMAIL = "email";
-        public System.String email
+        public String email
             {
                 get
                 {
-                     return (System.String) Fields[EMAIL].GetValue();
+                     return (String) Fields[EMAIL].GetValue();
                 }
                 set
                 {
@@ -48,11 +49,11 @@ namespace Toci.Utilities.Test.Developers.Warrior.Destination
             }
          
         public const string CELL_PHONE = "cell_phone";
-        public System.String cell_phone
+        public String cell_phone
             {
                 get
                 {
-                     return (System.String) Fields[CELL_PHONE].GetValue();
+                     return (String) Fields[CELL_PHONE].GetValue();
                 }
                 set
                 {

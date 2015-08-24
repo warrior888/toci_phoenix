@@ -1,3 +1,4 @@
+using System;
 using Toci.Db.DbVirtualization;
 using Toci.Db.Interfaces;
 
@@ -12,11 +13,11 @@ namespace DbCredentials.DbLogic.CredentialsModels
         }
          
         public const string SCOPEID = "scopeid";
-        public System.Int32 scopeid
+        public Int32 scopeid
             {
                 get
                 {
-                     return (System.Int32) Fields[SCOPEID].GetValue();
+                     return (Int32) Fields[SCOPEID].GetValue();
                 }
                 set
                 {
@@ -25,11 +26,11 @@ namespace DbCredentials.DbLogic.CredentialsModels
             }
          
         public const string SCOPENAME = "scopename";
-        public System.String scopename
+        public String scopename
             {
                 get
                 {
-                     return (System.String) Fields[SCOPENAME].GetValue();
+                     return (String) Fields[SCOPENAME].GetValue();
                 }
                 set
                 {
