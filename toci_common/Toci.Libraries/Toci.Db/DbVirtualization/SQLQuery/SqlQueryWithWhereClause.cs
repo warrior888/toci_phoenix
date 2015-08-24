@@ -11,9 +11,14 @@ namespace Toci.Db.DbVirtualization.SQLQuery
         protected const string AndOperator = " AND ";
         protected const string QueryWithWherePattern = "{0}{1};";
 
+        public override string GetQuery(IModel model)
+        {
+            return string.Format(QueryWithWherePattern, GetQueryWithoutWherePart(model), GetWhereStatement(model));
+        } 
+
         protected abstract string GetQueryWithoutWherePart(IModel model); 
 
-        protected string GetWhereStatement(IModel model)
+        protected virtual string GetWhereStatement(IModel model)
         {
             var whereList = new List<string>();
             model.GetFields().Where(item => item.Value.IsWhere()).ToList().ForEach(

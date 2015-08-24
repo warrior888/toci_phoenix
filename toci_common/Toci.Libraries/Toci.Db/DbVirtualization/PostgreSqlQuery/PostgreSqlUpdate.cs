@@ -4,7 +4,7 @@ using Toci.Db.Interfaces;
 
 namespace Toci.Db.DbVirtualization.PostgreSqlQuery
 {
-    public class PostgreSqlUpdate : SqlQueryWithNecessaryWhereClause, IUpdate
+    public class PostgreSqlUpdate : SqlQueryWithWhereClause, IUpdate
     {
         private const string Pattern = "UPDATE {0} SET {1}";
         private const string AssignmentPattern = "{0} = {1}";

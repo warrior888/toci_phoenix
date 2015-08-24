@@ -4,7 +4,7 @@ using Toci.Db.Interfaces;
 
 namespace Toci.Db.DbVirtualization.MsSqlQuery
 {
-    public class MsSqlUpdate : SqlQueryWithNecessaryWhereClause, IUpdate
+    public class MsSqlUpdate : SqlQueryWithWhereClause, IUpdate
     {
         private const string Pattern = "UPDATE {0} SET {1}";
         private const string AssignmentPattern = "{0} = {1}";

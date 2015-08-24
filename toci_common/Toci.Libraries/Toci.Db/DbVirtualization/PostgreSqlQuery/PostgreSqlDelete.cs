@@ -3,7 +3,7 @@ using Toci.Db.Interfaces;
 
 namespace Toci.Db.DbVirtualization.PostgreSqlQuery
 {
-	public class PostgreSqlDelete : SqlQueryWithPossibleWhereClause, IDelete
+	public class PostgreSqlDelete : SqlQueryWithWhereClause, IDelete
 	{
 		private const string Pattern = "DELETE FROM {0}";
 
