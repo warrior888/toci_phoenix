@@ -3,7 +3,7 @@ using Toci.Db.Interfaces;
 
 namespace Toci.Db.DbVirtualization.PostgreSqlQuery
 {
-    public class PostgreSqlSelect : SqlQueryWithPossibleWhereClause, ISelect
+    public class PostgreSqlSelect : SqlQueryWithWhereClause, ISelect
     {
         private const string SelectPattern = "SELECT {0} FROM {1}";
 

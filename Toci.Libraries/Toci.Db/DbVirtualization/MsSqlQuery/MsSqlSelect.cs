@@ -3,7 +3,7 @@ using Toci.Db.Interfaces;
 
 namespace Toci.Db.DbVirtualization.MsSqlQuery
 {
-    public class MsSqlSelect : SqlQueryWithPossibleWhereClause, ISelect
+    public class MsSqlSelect : SqlQueryWithWhereClause, ISelect
     {
         private const string SelectPattern = "SELECT {0} FROM {1}";
 

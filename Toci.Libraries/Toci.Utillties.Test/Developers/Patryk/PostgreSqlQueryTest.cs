@@ -25,7 +25,12 @@ namespace Toci.Utilities.Test.Developers.Patryk
             _testModelWithWhere.SetSelect("height", SelectClause.NotEqual, 170);
             _testModelWithWhere.SetSelect("city", SelectClause.Like, "Lub");
 
-            _testModelWithoutWhere = new TestModel("table");
+            _testModelWithoutWhere = new TestModel("table")
+            {
+                Age = 35,
+                Height = 180,
+                City = "Lubań"
+            };
 
 
         }
@@ -62,7 +67,7 @@ namespace Toci.Utilities.Test.Developers.Patryk
             Assert.AreEqual(queryWithWhere, "UPDATE table SET age = 35, height = 180, city = 'Lubań' WHERE age = 20 AND height != 170 AND city LIKE 'Lub';");
 
             string queryWithoutWhere = postgreSqlUpdate.GetQuery(_testModelWithoutWhere);
-            Assert.AreEqual(queryWithoutWhere, "");
+            Assert.AreEqual(queryWithoutWhere, "UPDATE table SET age = 35, height = 180, city = 'Lubań';");
         }
 
         [TestMethod]

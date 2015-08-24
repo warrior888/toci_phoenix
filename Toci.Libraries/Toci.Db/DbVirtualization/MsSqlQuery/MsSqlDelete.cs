@@ -3,7 +3,7 @@ using Toci.Db.Interfaces;
 
 namespace Toci.Db.DbVirtualization.MsSqlQuery
 {
-    public class MsSqlDelete : SqlQueryWithPossibleWhereClause, IDelete
+    public class MsSqlDelete : SqlQueryWithWhereClause, IDelete
     {
         private const string Pattern = "delete from {0}";
 
