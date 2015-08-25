@@ -243,6 +243,10 @@
     <Content Include="Content\flexslider.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\icomoon.css" />
+    <Content Include="Content\jquery-ui.css" />
+    <Content Include="Content\jquery-ui.min.css" />
+    <Content Include="Content\jquery-ui.structure.css" />
+    <Content Include="Content\jquery-ui.structure.min.css" />
     <Content Include="Content\owl.carousel.css" />
     <Content Include="Content\shortcodes.css" />
     <Content Include="Content\socialico.css" />
@@ -274,6 +278,7 @@
     <Content Include="images\testimonial\Thumbs.db" />
     <Content Include="images\Thumbs.db" />
     <Content Include="Areas\TeamLeasing\Views\web.config" />
+    <Content Include="Areas\TeamLeasing\Views\TeamSearching\Index.cshtml" />
     <None Include="Scripts\oldJS\jquery-1.10.2.intellisense.js" />
     <Content Include="icon\apple-touch-icon-114-precomposed.png" />
     <Content Include="icon\apple-touch-icon-144-precomposed.png" />
@@ -426,13 +431,17 @@
     <Content Include="images\toci.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\datepicker-pl.js" />
     <Content Include="Scripts\datepicker.js" />
     <Content Include="Scripts\DocumentReady.js" />
+    <Content Include="Scripts\jquery.js" />
     <Content Include="Scripts\gmap3.min.js" />
     <Content Include="Scripts\GoogleMaps.js" />
     <Content Include="Scripts\html5shiv.js" />
     <Content Include="Scripts\imagesloaded.min.js" />
     <Content Include="Scripts\jquery-countTo.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
     <Content Include="Scripts\jquery-waypoints.js" />
     <Content Include="Scripts\jquery.bxslider.js" />
     <Content Include="Scripts\jquery.cookie.js" />
@@ -510,7 +519,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\TeamLeasing\Models\" />
     <Folder Include="Areas\TeamLeasing\Views\Shared\" />
-    <Folder Include="Areas\TeamLeasing\Views\TeamSearching\" />
+    <Folder Include="Scripts\external\jquery\" />
     <Folder Include="Views\WarriorTest\" />
   </ItemGroup>
   <ItemGroup>

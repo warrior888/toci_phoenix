@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Index", "TeamSearching", FormMethod.Get))
+{
+    <div class="col-sm-6 ui-datepicker-div">
+        <p>
+            Data: <input type="text" id="testDate" value="Podaj datę" />
+        </p>
+    </div>
+
+
+}
+
