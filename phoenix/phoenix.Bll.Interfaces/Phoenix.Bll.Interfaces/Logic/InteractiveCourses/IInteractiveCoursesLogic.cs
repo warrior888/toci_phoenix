@@ -5,6 +5,6 @@ namespace Phoenix.Bll.Interfaces.Logic.InteractiveCourses
     public interface IInteractiveCoursesLogic
     {
         IOutput GetCodeResults(IUserInput userInput);
-        ITask GetTask(int taskId);
+        ITask GetActualTask(int userId);  //pobiera zadanie po ostatnim ukonczonym
     }
 }

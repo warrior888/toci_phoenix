@@ -214,6 +214,8 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\InteractiveCourses\Controllers\InteractiveCoursesController.cs" />
+    <Compile Include="Areas\InteractiveCourses\InteractiveCoursesAreaRegistration.cs" />
     <Compile Include="Areas\TeamLeasing\Controllers\TeamSearchingController.cs" />
     <Compile Include="Areas\TeamLeasing\TeamLeasingAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -274,6 +276,8 @@
     <Content Include="images\testimonial\Thumbs.db" />
     <Content Include="images\Thumbs.db" />
     <Content Include="Areas\TeamLeasing\Views\web.config" />
+    <Content Include="Areas\InteractiveCourses\Views\web.config" />
+    <Content Include="Areas\InteractiveCourses\Views\InteractiveCourses\Index.cshtml" />
     <None Include="Scripts\oldJS\jquery-1.10.2.intellisense.js" />
     <Content Include="icon\apple-touch-icon-114-precomposed.png" />
     <Content Include="icon\apple-touch-icon-144-precomposed.png" />
@@ -508,6 +512,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\InteractiveCourses\Models\" />
+    <Folder Include="Areas\InteractiveCourses\Views\Shared\" />
     <Folder Include="Areas\TeamLeasing\Models\" />
     <Folder Include="Areas\TeamLeasing\Views\Shared\" />
     <Folder Include="Areas\TeamLeasing\Views\TeamSearching\" />
