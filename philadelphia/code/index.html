@@ -1372,7 +1372,17 @@
                                 </div>
                                 <br />
 
-                                <button id="applyButton" type="submit" class="btn btn-primary ladda-button center-block" data-style="expand-right">Zgłoś się</button>
+
+
+                                <div id="apply-btn-placeholder">
+                                <script id="apply-btn-template" type="text/x-handlebars-template">
+
+                                    <label>{{label}}</label>
+                                    <button id="applyButton" type="submit" class="btn btn-primary ladda-button center-block" data-style="expand-right">{{button}}</button>
+
+                                </script>
+                                </div>
+
 
                             </form>
 
@@ -1592,6 +1602,8 @@
 
             <script src="js/fbAutoResize.js"></script>
 
+            <script src="js/handlebars-v3.0.3.js"></script>
+            <script src="js/templates.js"></script>
 
 
             <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
