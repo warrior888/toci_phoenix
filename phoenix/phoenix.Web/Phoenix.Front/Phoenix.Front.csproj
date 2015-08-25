@@ -214,13 +214,8 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Areas\LogInOut\LogInOutAreaRegistration.cs" />
-    <Compile Include="Areas\Registration\Controllers\RegistrationController.cs" />
-    <Compile Include="Areas\Registration\Models\RegistrationModel.cs" />
-    <Compile Include="Areas\Registration\RegistrationAreaRegistration.cs" />
-    <Compile Include="Areas\TeamLeasing\TeamReservation\TeamReservationAreaRegistration.cs" />
-    <Compile Include="Areas\TeamLeasing\TeamSearching\Controllers\TeamSearchingController.cs" />
-    <Compile Include="Areas\TeamLeasing\TeamSearching\TeamSearchingAreaRegistration.cs" />
+    <Compile Include="Areas\TeamLeasing\Controllers\TeamSearchingController.cs" />
+    <Compile Include="Areas\TeamLeasing\TeamLeasingAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -278,14 +273,7 @@
     <Content Include="images\slide\Thumbs.db" />
     <Content Include="images\testimonial\Thumbs.db" />
     <Content Include="images\Thumbs.db" />
-    <Content Include="Areas\Registration\Views\web.config" />
-    <Content Include="Areas\LogInOut\Views\web.config" />
-    <Content Include="Areas\TeamLeasing\TeamReservation\Views\web.config" />
-    <Content Include="Areas\TeamLeasing\TeamSearching\Views\web.config" />
-    <Content Include="Areas\Registration\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Registration\Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\Registration\Views\Registration\RegistrationForm.cshtml" />
-    <Content Include="Areas\Registration\Views\Registration\CorrectRegistration.cshtml" />
+    <Content Include="Areas\TeamLeasing\Views\web.config" />
     <None Include="Scripts\oldJS\jquery-1.10.2.intellisense.js" />
     <Content Include="icon\apple-touch-icon-114-precomposed.png" />
     <Content Include="icon\apple-touch-icon-144-precomposed.png" />
@@ -520,15 +508,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\LogInOut\Controllers\" />
-    <Folder Include="Areas\LogInOut\Models\" />
-    <Folder Include="Areas\LogInOut\Views\Shared\" />
-    <Folder Include="Areas\TeamLeasing\TeamReservation\Controllers\" />
-    <Folder Include="Areas\TeamLeasing\TeamReservation\Models\" />
-    <Folder Include="Areas\TeamLeasing\TeamReservation\Views\Shared\" />
-    <Folder Include="Areas\TeamLeasing\TeamReservation\Views\TeamSearching\" />
-    <Folder Include="Areas\TeamLeasing\TeamSearching\Models\" />
-    <Folder Include="Areas\TeamLeasing\TeamSearching\Views\Shared\" />
+    <Folder Include="Areas\TeamLeasing\Models\" />
+    <Folder Include="Areas\TeamLeasing\Views\Shared\" />
+    <Folder Include="Areas\TeamLeasing\Views\TeamSearching\" />
     <Folder Include="Views\WarriorTest\" />
   </ItemGroup>
   <ItemGroup>

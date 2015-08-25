@@ -1,22 +1,22 @@
 ﻿using System.Web.Mvc;
 
-namespace Phoenix.Front.Areas.Registration
+namespace Phoenix.Front.Areas.TeamLeasing
 {
-    public class RegistrationAreaRegistration : AreaRegistration 
+    public class TeamLeasingAreaRegistration : AreaRegistration 
     {
         public override string AreaName 
         {
             get 
             {
-                return "Registration";
+                return "TeamLeasing";
             }
         }
 
         public override void RegisterArea(AreaRegistrationContext context) 
         {
             context.MapRoute(
-                "Registration_default",
-                "Registration/{controller}/{action}/{id}",
+                "TeamLeasing_default",
+                "TeamLeasing/{controller}/{action}/{id}",
                 new { action = "Index", id = UrlParameter.Optional }
             );
         }
