@@ -6,11 +6,57 @@
 
 @using (Html.BeginForm("Index", "TeamSearching", FormMethod.Get))
 {
-    <div class="col-sm-6 ui-datepicker-div">
-        <p>
-            Data: <input type="text" id="testDate" value="Podaj datę" />
-        </p>
-    </div>
+    
+        <table class="table table-responsive">
+            <tr>
+                <th>Oferta leasingu (?)</th>
+                <th>Technologie</th>
+                <th>Doświadczenie</th>
+                <th>Dostępność</th>
+                <th>Ilość developerów</th>
+            </tr>
+            <tr>
+                <td>
+                    <select name="leasing-offer" class="selector-box" style="width: 100%">
+                        <option>Podstawowa</option>
+                        <option>Medium (?)</option>
+                        <option>Promocyjna</option>
+                        <option>Na wyłączność</option>
+                    </select>
+                </td> 
+                <td>
+                    <select name="tech" class="selector-box" style="width: 100%">
+                        <option>C#</option>
+                        <option>PHP</option>
+                        <option>JavaScript</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="experience" class="selector-box" style="width: 100%">
+                        <option>dowolne</option>
+                        <option>minimum 1 rok</option>
+                        <option>minimum 2 lata</option>
+                    </select>
+                </td>
+                <td>
+                    <p>Od: <input name="date-from" type="datetime-local" size="10" id="availibility-from" value="Podaj datę"/>
+                    </p>
+                    <p>Do: <input name="date-to" type="datetime-local" size="10" id="availibility-to" value="Podaj datę"/>
+                    </p>
+                </td>
+                <td>
+                    <select name="devs-count" class="selector-box" style="width: 100%">
+                        <option>dowolna</option>
+                        <option>1</option>
+                        <option>2-5</option>
+                        <option>5-10</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <div align="center">
+            <button class="btn-primary" name="search-button" type="submit">Szukaj</button>
+        </div>
 
 
 }
