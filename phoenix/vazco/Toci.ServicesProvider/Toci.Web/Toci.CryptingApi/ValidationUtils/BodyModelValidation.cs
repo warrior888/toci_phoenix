@@ -1,5 +1,5 @@
-﻿using Toci.CryptingApi.Models;
-using Toci.ErrorsAndMessages.Exceptions;
+﻿using ErrorsAndMessages.Exceptions;
+using Toci.CryptingApi.Models;
 
 namespace Toci.CryptingApi.ValidationUtils
 {

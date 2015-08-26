@@ -6,6 +6,7 @@ namespace Toci.Db.Interfaces
     {
         string GetColumnName();
         T GetValue();
+        T ValueForWhereClause { get; set; }
         bool IsWhere();
         bool IsPrimaryKey();
         SelectClause GetSelectClause();
