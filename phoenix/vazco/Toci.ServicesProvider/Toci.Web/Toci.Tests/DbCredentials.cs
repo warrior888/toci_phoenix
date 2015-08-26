@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using DbCredentials.BusinessLogic;
+using DbCredentials.Certificate;
+using DbCredentials.Config;
 using DbCredentials.DbLogic;
 using DbCredentials.DbLogic.CredentialsModels;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Toci.CredentialsApi.Models;
+using Toci.Db.Clients;
 using Toci.Utilities.Generator.DatabaseModelGenerator;
 using Toci.Utilities.Generator.DatabaseModelGenerator.DbDdlParser;
 
@@ -13,80 +16,94 @@ namespace Toci.Tests
     [TestClass]
     public class DbCredentials
     {
-        DbQuery dbQuery = new DbQuery(new VazcoDbConfig());
-
-        [TestMethod]
-        public void AddProject()
+        private DbCredentials()
         {
-            BusinessLogic business = new BusinessLogic(new VazcoDbConfig());
-            ScopesLogic scopes = new ScopesLogic(new VazcoDbConfig());
-            ProjectsLogic projects = new ProjectsLogic(new VazcoDbConfig());
-            Scopes modScopes = new Scopes
-            {
-                scopename = "admin2"
-            };
-            Projects modProjects = new Projects
-            {
-                projectdata = "traktor",
-                projectname = "taktak2",
-                projectauthor = "S2yfr4nt",
-            };
-            var result = business.AddProject(modScopes, modProjects);
-
-
-
+            CertConfig.privateKeySecret = "P@ssw0rd";
+            //certPath
+            CertConfig.certPath =@"C:\Users\shass\Documents\toci_phoenix2\phoenix\vazco\Toci.ServicesProvider\Toci.Web\DbCredentials\Certificate\Certificate.pfx";
         }
-
-        [TestMethod]
-        public void TestMethod1()
+        DbQuery dbQuery = new DbQuery(new DbConfig
         {
-           //dbQuery = new DbQuery();
-           // const string testString = "Test text";
-           // Projects projmodel = new Projects();
-           // var rreesult = dbQuery.Load(projmodel);
+            //secret and dataBaseName
+            secret = "localhost",
+            address = "localhost",
+            dataBaseName = "ImportantStuffDb",
+            login = "postgres",
+        });
+        
+        //[TestMethod]
+        //public void AddProject()
+        //{
+        //    BusinessLogic business = new BusinessLogic(new VazcoDbConfig());
+        //    ScopesLogic scopes = new ScopesLogic(new VazcoDbConfig());
+        //    ProjectsLogic projects = new ProjectsLogic(new VazcoDbConfig());
+        //    Scopes modScopes = new Scopes
+        //    {
+        //        scopename = "admin2"
+        //    };
+        //    Projects modProjects = new Projects
+        //    {
+        //        projectdata = "traktor",
+        //        projectname = "taktak2",
+        //        projectauthor = "S2yfr4nt",
+        //    };
+        //    var result = business.AddProject(modScopes, modProjects);
 
-            Scopes model = new Scopes
-            {
-               // scopeid = 2,
-                scopename = "Tralalaasfdsaf"
-            };
-            var rresult = dbQuery.Load(model, Scopes.SCOPEID);
-           // model.SetWhere(Scopes.SCOPEID);
-            dbQuery.Save(model);
-            model.scopeid = 2;
-            model.scopename = "kupczon";
-            dbQuery.Update(model, Scopes.SCOPEID);
+
+
+        //}
+
+        //[TestMethod]
+        //public void TestMethod1()
+        //{
+        //   //dbQuery = new DbQuery();
+        //   // const string testString = "Test text";
+        //   // Projects projmodel = new Projects();
+        //   // var rreesult = dbQuery.Load(projmodel);
+
+        //    Scopes model = new Scopes
+        //    {
+        //       // scopeid = 2,
+        //        scopename = "Tralalaasfdsaf"
+        //    };
+        //    var rresult = dbQuery.Load(model, Scopes.SCOPEID);
+        //   // model.SetWhere(Scopes.SCOPEID);
+        //    dbQuery.Save(model);
+        //    model.scopeid = 2;
+        //    model.scopename = "kupczon";
+        //    dbQuery.Update(model, Scopes.SCOPEID);
             
-            var result = dbQuery.Load(model);
-            model.scopeid = 1;
-            model.scopename = "kupczon";
-            dbQuery.Update(model, Scopes.SCOPEID);
-            model = new Scopes();
-            model.scopename = null;
-            result = dbQuery.Load(model);
-            ////////////////////////////////////////////
+        //    var result = dbQuery.Load(model);
+        //    model.scopeid = 1;
+        //    model.scopename = "kupczon";
+        //    dbQuery.Update(model, Scopes.SCOPEID);
+        //    model = new Scopes();
+        //    model.scopename = null;
+        //    result = dbQuery.Load(model);
+        //    ////////////////////////////////////////////
 
-            Projects prmodel = new Projects
-            {
-                projectname = "dads",
-                scopeid = 1,
-                projectdata = "dsagfsgdh"
-            };
-            dbQuery.Save(prmodel);
-            prmodel.projectid = 1;
-            prmodel.scopeid = 2;
-            prmodel.projectdata = "FSDSGSG";
-            dbQuery.Update(prmodel,Projects.PROJECTID);
-            result = dbQuery.Load(prmodel);
-            prmodel = new Projects();
-            result = dbQuery.Load(prmodel);
-            //var anotherresult = dbQuery.Load(anothermodel).ToArray();
-            //Assert.AreEqual(testString, r);
-        }
+        //    Projects prmodel = new Projects
+        //    {
+        //        projectname = "dads",
+        //        scopeid = 1,
+        //        projectdata = "dsagfsgdh"
+        //    };
+        //    dbQuery.Save(prmodel);
+        //    prmodel.projectid = 1;
+        //    prmodel.scopeid = 2;
+        //    prmodel.projectdata = "FSDSGSG";
+        //    dbQuery.Update(prmodel,Projects.PROJECTID);
+        //    result = dbQuery.Load(prmodel);
+        //    prmodel = new Projects();
+        //    result = dbQuery.Load(prmodel);
+        //    //var anotherresult = dbQuery.Load(anothermodel).ToArray();
+        //    //Assert.AreEqual(testString, r);
+        //}
 
         [TestMethod]
         public void Save()
         {
+            
             Scopes scmodel = new Scopes
             {
                 scopename = "klekotmuchy"
