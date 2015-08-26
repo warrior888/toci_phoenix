@@ -1,4 +1,6 @@
-﻿using AutoMapper;
+﻿using System;
+using AutoMapper;
+using Ionic.Zlib;
 using Phoenix.Bll.BusinessModels.TeamLeasing;
 using Phoenix.Bll.BusinessModels.UsersList;
 using Phoenix.Bll.Interfaces.BusinessModels.CourseRegistration;
@@ -73,8 +75,13 @@ namespace Phoenix.Bll
 
         private void ForIDeveloperAvailableBusinessModel()
         {
-            Mapper.CreateMap<IDeveloperAvailableBusinessModel, developers_available>();
-            Mapper.CreateMap<developers_available, IDeveloperAvailableBusinessModel>();
+            Mapper.CreateMap<IDeveloperAvailableBusinessModel, developers_available>()
+                .ForMember(dest => dest.AvailableFrom, opt => opt.MapFrom(src => src.AvailableFrom))
+                .ForMember(dest => dest.AvailableTo, opt => opt.MapFrom(src => src.AvailableTo)); 
+            Mapper.CreateMap<developers_available, IDeveloperAvailableBusinessModel>()
+                .ForMember(dest => dest.AvailableFrom, opt => opt.MapFrom(src => src.AvailableFrom))
+                .ForMember(dest => dest.AvailableTo, opt => opt.MapFrom(src => src.AvailableTo));
+
         }
 
         private void ForIDeveloperBusinessModel()
@@ -90,7 +97,8 @@ namespace Phoenix.Bll
                 ForMember(dest => dest.DeveloperAvailable, opts => opts.MapFrom(src => new DeveloperAvailableBusinessModel()
                 {
                     Id = src.Id,
-                    AvailableFor = src.AvailableFor,
+                    AvailableFrom = src.AvailableFrom,
+                    AvailableTo = src.AvailableTo,
                     EndWorkHour = src.EndWorkHour,
                     StartWorkHour = src.StartWorkHour
                 })).

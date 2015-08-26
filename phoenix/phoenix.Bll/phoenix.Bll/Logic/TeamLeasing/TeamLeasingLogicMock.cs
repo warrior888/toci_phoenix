@@ -25,7 +25,7 @@ namespace Phoenix.Bll.Logic.TeamLeasing
                     DeveloperAvailable =
                         new DeveloperAvailableBusinessModel()
                         {
-                            AvailableFor = new DateTime(2015, 8, 27),
+                            AvailableFrom = new DateTime(2015, 8, 27),
                             EndWorkHour = 16,
                             StartWorkHour = 8
                         },
@@ -49,7 +49,7 @@ namespace Phoenix.Bll.Logic.TeamLeasing
                     DeveloperAvailable =
                         new DeveloperAvailableBusinessModel()
                         {
-                            AvailableFor = new DateTime(2015, 8, 27),
+                            AvailableFrom = new DateTime(2015, 8, 27),
                             EndWorkHour = 16,
                             StartWorkHour = 8
                         },
