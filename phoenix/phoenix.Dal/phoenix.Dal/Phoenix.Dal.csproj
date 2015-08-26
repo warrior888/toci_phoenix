@@ -98,6 +98,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="generatedKsebal\AplicationTests.cs" />
+    <Compile Include="generatedKsebal\TestsResults.cs" />
     <Compile Include="GeneratedModels\chosen_course_registration.cs" />
     <Compile Include="GeneratedModels\courses_list.cs" />
     <Compile Include="GeneratedModels\course_calendar.cs" />
@@ -128,6 +130,9 @@
       <Project>{c2377285-fa65-4545-91fb-6c4dc28155f5}</Project>
       <Name>Toci.Db</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="generatedKsebal\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
