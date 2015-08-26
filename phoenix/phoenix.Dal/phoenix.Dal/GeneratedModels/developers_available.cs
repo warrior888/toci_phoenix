@@ -11,16 +11,29 @@ namespace Phoenix.Dal.GeneratedModels
         }
          
          
-        public const string AVAILBLE_FOR = "availble_for";
-        public DateTime AvailbleFor
+        public const string AVAILABLE_FROM = "available_from";
+        public DateTime AvailableFrom
             {
                 get
                 {
-                     return GetValue<DateTime>(AVAILBLE_FOR);
+                     return GetValue<DateTime>(AVAILABLE_FROM);
                 }
                 set
                 {
-                    SetValue(AVAILBLE_FOR, value);
+                    SetValue(AVAILABLE_FROM, value);
+                }
+            }
+
+        public const string AVAILABLE_TO = "available_to";
+        public DateTime AvailableTo
+            {
+                get
+                {
+                     return GetValue<DateTime>(AVAILABLE_TO);
+                }
+                set
+                {
+                    SetValue(AVAILABLE_TO, value);
                 }
             }
          

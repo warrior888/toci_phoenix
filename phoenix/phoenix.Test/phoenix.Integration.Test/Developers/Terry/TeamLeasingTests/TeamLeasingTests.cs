@@ -20,8 +20,12 @@ namespace Phoenix.Integration.Test.Developers.Terry.TeamLeasingTests
 
             var mapper = resolver.Resolve<AutoMapperConfiguration>();
             var logic = resolver.Resolve<ITeamLeasingLogic>();
+            var logicAvailable = resolver.Resolve<IDeveloperAvailableLogic>();
+            var logicDev = resolver.Resolve<IDeveloperListLogic>();
 
-            var devs = logic.GetAllTeams();
+         //   var devTest = logicDev.GetDevByUserId(3);
+            var test = logicAvailable.GetDeveloperAvailableById(18);
+            //var devs = logic.GetAllTeams();
 
         }
 }

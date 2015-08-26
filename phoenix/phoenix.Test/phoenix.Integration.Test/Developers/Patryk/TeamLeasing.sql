@@ -58,7 +58,8 @@ create table users (
 
 create table developers_available(
 	id serial primary key,
-	available_for timestamp,
+	available_from timestamp,
+	available_to timestamp,
 	start_work_hour integer,
 	end_work_hour integer
 );
@@ -308,24 +309,24 @@ values ((select id from roles where name='administrator'),'cxzczx','nbvnbv','mn@
 
 --developer available
 
-insert into developers_available (available_for, start_work_hour, end_work_hour) values('2015-12-05',8,16);
-insert into developers_available (available_for, start_work_hour, end_work_hour) values('2015-07-03',8,16);
-insert into developers_available (available_for, start_work_hour, end_work_hour) values('2015-12-10',8,16);
-insert into developers_available (available_for, start_work_hour, end_work_hour) values('2015-12-05',9,13);
-insert into developers_available (available_for, start_work_hour, end_work_hour) values('2015-12-17',8,16);
-insert into developers_available (available_for, start_work_hour, end_work_hour) values('2015-06-05',17,22);
-insert into developers_available (available_for, start_work_hour, end_work_hour) values('2015-12-05',8,16);
-insert into developers_available (available_for, start_work_hour, end_work_hour) values('2015-12-22',10,15);
-insert into developers_available (available_for, start_work_hour, end_work_hour) values('2015-12-05',8,16);
-insert into developers_available (available_for, start_work_hour, end_work_hour) values('2015-12-05',17,22);
-insert into developers_available (available_for, start_work_hour, end_work_hour) values('2015-12-23',17,22);
-insert into developers_available (available_for, start_work_hour, end_work_hour) values('2015-03-05',17,22);
-insert into developers_available (available_for, start_work_hour, end_work_hour) values('2015-12-05',17,22);
-insert into developers_available (available_for, start_work_hour, end_work_hour) values('2015-12-07',17,22);
-insert into developers_available (available_for, start_work_hour, end_work_hour) values('2015-12-05',8,16);
-insert into developers_available (available_for, start_work_hour, end_work_hour) values('2015-09-05',6,12);
-insert into developers_available (available_for, start_work_hour, end_work_hour) values('2015-12-05',8,16);
-insert into developers_available (available_for, start_work_hour, end_work_hour) values('2015-12-05',8,16);
+insert into developers_available (available_from, available_to, start_work_hour, end_work_hour) values('2015-12-05', '2015-12-22',8,16);
+insert into developers_available (available_from, available_to, start_work_hour, end_work_hour) values('2015-07-03', '2015-08-23',8,16);
+insert into developers_available (available_from, available_to, start_work_hour, end_work_hour) values('2015-12-10', '2015-12-15',8,16);
+insert into developers_available (available_from, available_to, start_work_hour, end_work_hour) values('2015-12-05', '2015-12-15',9,13);
+insert into developers_available (available_from, available_to, start_work_hour, end_work_hour) values('2015-12-17', '2016-01-05',8,16);
+insert into developers_available (available_from, available_to, start_work_hour, end_work_hour) values('2015-06-05','2015-09-05',17,22);
+insert into developers_available (available_from, available_to, start_work_hour, end_work_hour) values('2015-12-05','2015-12-22',8,16);
+insert into developers_available (available_from, available_to, start_work_hour, end_work_hour) values('2015-12-22','2016-01-22',10,15);
+insert into developers_available (available_from, available_to, start_work_hour, end_work_hour) values('2015-11-05','2015-12-05',8,16);
+insert into developers_available (available_from, available_to, start_work_hour, end_work_hour) values('2015-12-05','2015-12-15',17,22);
+insert into developers_available (available_from, available_to, start_work_hour, end_work_hour) values('2015-10-14','2015-12-01',17,22);
+insert into developers_available (available_from, available_to, start_work_hour, end_work_hour) values('2015-12-25','2015-12-29',17,22);
+insert into developers_available (available_from, available_to, start_work_hour, end_work_hour) values('2015-08-05','2015-12-15',17,22);
+insert into developers_available (available_from, available_to, start_work_hour, end_work_hour) values('2015-12-15','2016-02-15',17,22);
+insert into developers_available (available_from, available_to, start_work_hour, end_work_hour) values('2015-09-15','2016-01-01',8,16);
+insert into developers_available (available_from, available_to, start_work_hour, end_work_hour) values('2015-09-11','2015-11-01',6,12);
+insert into developers_available (available_from, available_to, start_work_hour, end_work_hour) values('2015-09-15','2016-01-21',7,15);
+insert into developers_available (available_from, available_to, start_work_hour, end_work_hour) values('2015-12-15','2016-01-01',8,16);
 
 --portfolio
 
@@ -570,7 +571,7 @@ CREATE OR REPLACE VIEW developer_skills_view AS
 -- developer_list_view
 
 create or replace view developer_list_view as 
-	select u.id as user_id, u.nick, u.name, u.surname, dev.experience_from, dev.score, dev_available.available_for,
+	select u.id as user_id, u.nick, u.name, u.surname, dev.experience_from, dev.score, dev_available.available_from, dev_available.available_to,
 	dev_available.start_work_hour, dev_available.end_work_hour
 	from developers_list dev
 	join users u on u.id = dev.id_users
