@@ -1,7 +1,7 @@
-﻿using Toci.ErrorsAndMessages.Managers;
+﻿using ErrorsAndMessages.Managers;
 using Toci.Utilities.Common.Exceptions;
 
-namespace Toci.ErrorsAndMessages.Exceptions
+namespace ErrorsAndMessages.Exceptions
 {
     public class WebApiTociApplicationException : UiTociApplicationException
     {

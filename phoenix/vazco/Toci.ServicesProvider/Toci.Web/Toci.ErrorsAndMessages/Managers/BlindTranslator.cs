@@ -1,6 +1,6 @@
 ﻿using Toci.Utilities.Common.Internationalization;
 
-namespace Toci.ErrorsAndMessages.Managers
+namespace ErrorsAndMessages.Managers
 {
     public class BlindTranslator : Translator
     {

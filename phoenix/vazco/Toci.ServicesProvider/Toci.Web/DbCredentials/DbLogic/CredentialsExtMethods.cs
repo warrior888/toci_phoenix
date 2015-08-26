@@ -7,10 +7,10 @@ using System.Security.Cryptography;
 using DbCredentials.Certificate;
 using DbCredentials.DbLogic.CredentialsModels;
 using EncodingLib;
+using ErrorsAndMessages.Exceptions;
 using Toci.Db.DbVirtualization;
 using Toci.Db.Interfaces;
 using Toci.DigitalSignature.DigitalSignHandlers;
-using Toci.ErrorsAndMessages.Exceptions;
 
 namespace DbCredentials.DbLogic
 {

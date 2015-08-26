@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using DbCredentials.Config;
+using ErrorsAndMessages.Exceptions;
 using Toci.Db.ClusterAccess;
 using Toci.Db.DbVirtualization;
 using Toci.Db.Interfaces;
-using Toci.ErrorsAndMessages.Exceptions;
 
 namespace DbCredentials.DbLogic
 {

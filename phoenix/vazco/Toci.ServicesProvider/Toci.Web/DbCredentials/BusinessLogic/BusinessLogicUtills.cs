@@ -3,7 +3,7 @@ using System.Linq;
 using DbCredentials.Config;
 using DbCredentials.DbLogic;
 using DbCredentials.DbLogic.CredentialsModels;
-using Toci.ErrorsAndMessages.Exceptions;
+using ErrorsAndMessages.Exceptions;
 
 namespace DbCredentials.BusinessLogic
 {
