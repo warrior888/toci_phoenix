@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,7 @@ namespace Toci.Pentagram.Logic.CaptchaLogic.Logic
 {
 
     public class PngParser : ImageData<string, Image>
-    {
+    {   //nieeee tooooo
         private char[] separators = new[] { '\n' };
         private Color color = Color.AliceBlue;
         private Brush brush = Brushes.Black;
@@ -28,8 +29,8 @@ namespace Toci.Pentagram.Logic.CaptchaLogic.Logic
         public override Image parseImage(string stream)
         {
        
-            string[] a = stream.Split(separators, StringSplitOptions.None);
-            string thelongesWord = a.OrderByDescending(s => 8 * s.Count(x => x == '\t') + s.Count(x => x != '\t'))
+            string[] allwords = stream.Split(separators, StringSplitOptions.None);
+            string thelongesWord = allwords.OrderByDescending(s => 8 * s.Count(x => x == '\t') + s.Count(x => x != '\t'))
                 . First();
             int tabsInLongestWord = thelongesWord.Count(x => x == '\t');
             Bitmap image = new Bitmap
@@ -47,7 +48,7 @@ namespace Toci.Pentagram.Logic.CaptchaLogic.Logic
                 g.DrawString(stream, font, brush, 0, 0);
             }
 
-            //   image.Save("sss.jpeg",ImageFormat.Jpeg);
+           //  image.Save("sss.jpeg",ImageFormat.Jpeg);
 
             return image;
         }

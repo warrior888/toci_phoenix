@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Toci.Pentagram.Logic.CaptchaLogic.Abstract
 {
-	abstract class CaptchaParser
+    public abstract class CaptchaParser
 	{
 		public abstract string ConvertToBase64(string codeSnippet);
 
