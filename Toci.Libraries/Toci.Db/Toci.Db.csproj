@@ -130,7 +130,8 @@
     <Compile Include="DbVirtualization\PostgreSqlQuery\PostgreSqlSelect.cs" />
     <Compile Include="DbVirtualization\PostgreSqlQuery\PostgreSqlUpdate.cs" />
     <Compile Include="DbVirtualization\SelectClause.cs" />
-    <Compile Include="DbVirtualization\SqlQuery.cs" />
+    <Compile Include="DbVirtualization\SQLQuery\SqlQuery.cs" />
+    <Compile Include="DbVirtualization\SQLQuery\SqlQueryWithWhereClause.cs" />
     <Compile Include="Interfaces\IDbClient.cs" />
     <Compile Include="Interfaces\IDbCluster.cs" />
     <Compile Include="Interfaces\IDbField.cs" />
