@@ -263,3 +263,4 @@ F:\phoenixx\toci_common\Toci.Libraries\Toci.Db\obj\Debug\Toci.Db.csproj.App.conf
 F:\phoenixx\toci_common\Toci.Libraries\Toci.Db\obj\Debug\Toci.Db.dll
 F:\phoenixx\toci_common\Toci.Libraries\Toci.Db\obj\Debug\Toci.Db.pdb
 C:\Users\PatrykDev\Documents\toci_phoenix\toci_common\Toci.Libraries\Toci.Db\obj\Debug\Toci.Db.csprojResolveAssemblyReference.cache
+S:\TOCI\Phoenix\repo\toci_common\Toci.Libraries\Toci.Db\obj\Debug\Toci.Db.csprojResolveAssemblyReference.cache
