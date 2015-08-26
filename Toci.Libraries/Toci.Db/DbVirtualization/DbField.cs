@@ -4,6 +4,7 @@ namespace Toci.Db.DbVirtualization
 {
     public class DbField<T> : IDbField<T>
     {
+        public T ValueForWhereClause { get; set; }
         protected string ColumnName;
         protected T FieldValue;
         protected bool FieldIsWhere;

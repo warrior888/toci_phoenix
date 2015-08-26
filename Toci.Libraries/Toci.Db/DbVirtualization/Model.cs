@@ -102,9 +102,12 @@ namespace Toci.Db.DbVirtualization
             return this;
         }
 
+        //TODO jak najszybciej poprawic generator tak, aby nazwy kolumn były od razu dostępne ;)
         public IModel SetSelect<T>(string columnName, SelectClause clause, T value)
         {
-            SetValue(columnName, value);
+            if (!Fields.ContainsKey(columnName))
+                Fields.Add(columnName, new DbField<object>(columnName));
+            Fields[columnName].ValueForWhereClause = value;
             return SetSelect(columnName, clause);
         }
 
@@ -117,14 +120,14 @@ namespace Toci.Db.DbVirtualization
 
         protected virtual IModel GetDataRow(DataRow row, DataColumnCollection columns)
         {
-            var _model = GetInstance();
+            var model = GetInstance();
             
             foreach (DataColumn column in columns)
             {
-                SetValue((Model)_model, column.ColumnName, row[column.ColumnName]);
+                SetValue((Model)model, column.ColumnName, row[column.ColumnName]);
             }
 
-            return _model;
+            return model;
         }
 
         protected abstract IModel GetInstance();
