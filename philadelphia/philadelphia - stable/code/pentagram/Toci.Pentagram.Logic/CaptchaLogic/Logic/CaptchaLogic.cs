@@ -8,11 +8,19 @@ using System.Net.Mime;
 using System.Text;
 using System.Threading.Tasks;
 using Toci.Pentagram.Logic.CaptchaLogic.Abstract;
+using Toci.Pentagram.Logic.CaptchaLogic.Interfaces;
 
 namespace Toci.Pentagram.Logic.CaptchaLogic.Logic
 {
-	class CaptchaLogic : CaptchaParser
+	public class CaptchaLogic : CaptchaParser
 	{
+
+	    private ICaptchaBuilder<string,Image>_builder;
+        public CaptchaLogic(ICaptchaBuilder<string,Image> builder)
+        {
+            _builder = builder;
+        }
+
 		public override string ConvertToBase64(string codeSnippet)
 		{
 		    return ConvertfromMs(DrawImage(codeSnippet));
@@ -22,10 +30,10 @@ namespace Toci.Pentagram.Logic.CaptchaLogic.Logic
 
 
 		// private methods:
-	    private MemoryStream DrawImage(string stream)
+	   public  MemoryStream DrawImage(string stream)
 	    {
 	        MemoryStream ms;
-	        Image img=new PngParser().parseImage(stream);
+	        Image img=_builder.ParseImage(stream);
 	        using (ms = new MemoryStream())
 	        {
                 img.Save(ms,ImageFormat.Png);
@@ -44,4 +52,6 @@ namespace Toci.Pentagram.Logic.CaptchaLogic.Logic
 		// TODO: png -> base64
 		// TODO: return it to front end
 	}
+
+    
 }
