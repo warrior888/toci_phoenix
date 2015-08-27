@@ -17,12 +17,22 @@ namespace Phoenix.Front.Areas.TeamLeasing.Controllers
       
 
         //TODO: DI
-        private ITeamLeasingBusinessModel buiBusinessModel;
-        private ITeamLeasingLogic leasingLogic;
+        private ITeamLeasingBusinessModel _buiBusinessModel;
+        private ITeamLeasingLogic _leasingLogic;
         public IEnumerable<IDeveloperTeamBusinessModel> FoundTeam;
         TeamSearchingViewModel _model = new TeamSearchingViewModel();
         // GET: TeamLeasing/TeamSearching
 
+        public TeamSearchingController()
+        {
+            
+        }
+
+        public TeamSearchingController(ITeamLeasingBusinessModel buiBusinessModel, ITeamLeasingLogic leasingLogic)
+        {
+            _buiBusinessModel = buiBusinessModel;
+            _leasingLogic = leasingLogic;
+        }
 
         [HttpGet]
         public ActionResult Search()

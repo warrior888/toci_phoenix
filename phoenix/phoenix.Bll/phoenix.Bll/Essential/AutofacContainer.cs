@@ -1,5 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Reflection;
 using System.Web.Mvc;
+using System.Web.Routing;
 using Autofac;
 using Autofac.Core;
 using Phoenix.Bll.Interfaces.Logic.DevelopersList;
@@ -29,7 +32,7 @@ namespace Phoenix.Bll.Essential
 
         private AutofacContainer()
         {
-            
+            _container = CreateConfiguration();
         }
 
         public static AutofacContainer GetContainer()
@@ -90,6 +93,21 @@ namespace Phoenix.Bll.Essential
 
                 return scope.Resolve<TService>(afParams);
             }
+        }
+        
+        //TODO: RegisterTypes
+        protected override IController GetControllerInstance(System.Web.Routing.RequestContext requestContext, Type controllerType)
+        {
+            if (requestContext.HttpContext.Request.Url.ToString().EndsWith("favicon.ico"))
+                return null;
+
+            var builder = new ContainerBuilder();
+
+            var typ = controllerType.Name;
+            var lol = Type.GetType(typ);
+
+            var result = _container.Resolve(controllerType) as IController;
+            return result;
         }
     }
 }

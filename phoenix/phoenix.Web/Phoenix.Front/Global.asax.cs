@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using Phoenix.Bll.Essential;
 
 namespace Phoenix.Front
 {
@@ -17,6 +18,8 @@ namespace Phoenix.Front
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
+            //TODO
+           // ControllerBuilder.Current.SetControllerFactory(AutofacContainer.GetContainer());
 
         }
     }
