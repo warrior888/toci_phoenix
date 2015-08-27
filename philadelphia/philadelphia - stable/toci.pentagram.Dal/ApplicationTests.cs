@@ -7,6 +7,7 @@ namespace toci.pentagram.Dal
     {
         public ApplicationTests() : base("ApplicationTests")
         {
+            
         }
          
         public const string CODESNIPET = "codesnipet";

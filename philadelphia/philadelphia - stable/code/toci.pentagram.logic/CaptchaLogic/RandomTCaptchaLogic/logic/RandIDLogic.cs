@@ -23,13 +23,17 @@ namespace toci.pentagram.logic.CaptchaLogic.RandomTCaptchaLogic.logic
 
         public int RandId()
         {
-            return 0;
+            var testy = testsRand.GetAllTests().Select(item=>item.Id).ToList();
+           
+            return testy[GetId(testy.Count)];
         }
 
 
-    /*  private int GetId(IEnumerable<IApplicationTestsBuisnessModel> tests)
+      private int GetId(int ListOfLength)
       {
-          List<int> listId=tests.Select(item=>item.Codesnipet)
-      }*/
+          Random rand = new Random();
+          return rand.Next(ListOfLength);
+
+      }
     }
 }

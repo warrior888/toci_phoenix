@@ -12,3 +12,4 @@ namespace toci.pentagram.logic.CaptchaLogic.Interfaces
         int RandId();
     }
 }
+ 

@@ -7,6 +7,7 @@ using toci.pentagram.bll.Buisnessmodel;
 using toci.pentagram.bll.dblogic;
 using toci.pentagram.bll.logic;
 using toci.pentagram.interfaces;
+using toci.pentagram.logic.CaptchaLogic.RandomTCaptchaLogic.logic;
 using Toci.Pentagram.Logic.CaptchaLogic.Logic;
 using Toci.Pentagram.Logic.CaptchaLogic.RandomCaptchaLogic.Interfaces;
 using Toci.Pentagram.Logic.CaptchaLogic.RandomCaptchaLogic.logic;
@@ -27,14 +28,14 @@ namespace PentagramTests
           //  MemoryStream stream = logic.DrawImage(a);
            AutoMapperConfiguration maper = new AutoMapperConfiguration();
             maper.Configure();
-            IApplicationTestsLogicToRand logic = new ApplicationTestsLogicToRand();
-            IEnumerable<IApplicationTestsBuisnessModel> model = logic.GetAllTests();
+         //  IApplicationTestsLogicToRand logic = new ApplicationTestsLogicToRand();
+         //  IEnumerable<IApplicationTestsBuisnessModel> model = logic.GetAllTests();
 
-           
-            int dupa =
-            32;
-            
-         
+
+         RandIDLogic log = new RandIDLogic();
+            int a = log.RandId();
+
+
 
 
         }
