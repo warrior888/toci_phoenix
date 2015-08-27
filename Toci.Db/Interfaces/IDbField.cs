@@ -11,10 +11,14 @@ namespace Toci.Db.Interfaces
     {
         string GetColumnName();
         T GetValue();
+        T ValueForWhereClause { get; set; }
         bool IsWhere();
+        bool IsPrimaryKey();
         SelectClause GetSelectClause();
         void SetValue(T value);
         void SetWhere(bool isWhere);
+        void SetPrimary(bool isPirmary);
         void SetSelectClause(SelectClause clause);
+
     }
 }

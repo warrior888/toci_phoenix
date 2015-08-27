@@ -35,7 +35,7 @@ namespace Toci.Db.DbVirtualization
         {
             get
             {
-                return (int) Fields[ID].GetValue();
+                return GetValue<int>(ID);
             }
             set
             {
@@ -53,6 +53,16 @@ namespace Toci.Db.DbVirtualization
             {
                 Fields.Add(key, new DbField<object>(key, value));
             }
+        }
+
+        protected T GetValue<T>(string key)
+        {
+            if (Fields.ContainsKey(key))
+            {
+                return (T)Fields[key].GetValue();
+            }
+
+            return default(T);
         }
 
         protected void SetValue<T>(Model model, string key, T value)
@@ -74,14 +84,31 @@ namespace Toci.Db.DbVirtualization
                 Fields[columnName].SetWhere(true);
             }
         }
+        public void SetPrimaryKey(string columnName)
+        {
+            if (Fields.ContainsKey(columnName))
+            {
+                Fields[columnName].SetPrimary(true);
+            }
+        }
 
-        public void SetSelect(string columnName, SelectClause clause)
+        public IModel SetSelect(string columnName, SelectClause clause)
         {
             if (Fields.ContainsKey(columnName))
             {
                 Fields[columnName].SetWhere(true);
                 Fields[columnName].SetSelectClause(clause);
             }
+            return this;
+        }
+
+        //TODO jak najszybciej poprawic generator tak, aby nazwy kolumn były od razu dostępne ;)
+        public IModel SetSelect<T>(string columnName, SelectClause clause, T value)
+        {
+            if (!Fields.ContainsKey(columnName))
+                Fields.Add(columnName, new DbField<object>(columnName));
+            Fields[columnName].ValueForWhereClause = value;
+            return SetSelect(columnName, clause);
         }
 
         public List<IModel> GetDataRowsList(DataSet table)
@@ -93,14 +120,14 @@ namespace Toci.Db.DbVirtualization
 
         protected virtual IModel GetDataRow(DataRow row, DataColumnCollection columns)
         {
-            var _model = GetInstance();
-            
+            var model = GetInstance();
+
             foreach (DataColumn column in columns)
             {
-                SetValue((Model)_model, column.ColumnName, row[column.ColumnName]);
+                SetValue((Model)model, column.ColumnName, row[column.ColumnName]);
             }
 
-            return _model;
+            return model;
         }
 
         protected abstract IModel GetInstance();

@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D6C3B2C6-431C-4B96-8794-35EE82C4BF41}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Toci.Pentagram.Logic</RootNamespace>
+    <AssemblyName>Toci.Pentagram.Logic</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CaptchaLogic\Abstract\CaptchaPars.cs" />
+    <Compile Include="CaptchaLogic\Abstract\CaptchaParser.cs" />
+    <Compile Include="CaptchaLogic\Abstract\ImageData.cs" />
+    <Compile Include="CaptchaLogic\Interfaces\ICaptchaBuilder.cs" />
+    <Compile Include="CaptchaLogic\Interfaces\ICaptchaParser.cs" />
+    <Compile Include="CaptchaLogic\Logic\CaptchaLogic.cs" />
+    <Compile Include="CaptchaLogic\Logic\PngParsers.cs" />
+    <Compile Include="CaptchaLogic\RandomCaptchaLogic\Interfaces\IApplicationTestsLogicToRand.cs" />
+    <Compile Include="CaptchaLogic\RandomCaptchaLogic\logic\ApplicationTestsLogicToRand.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="Models\RegistrationTask.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Mock\QuestionMock.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Toci.Db\Toci.Db.csproj">
+      <Project>{e45ea1c2-f40c-4903-94c3-30a885a71d33}</Project>
+      <Name>Toci.Db</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Toci.Utilities.Abstraction\Toci.Utilities.Abstraction.csproj">
+      <Project>{3f7c2517-390a-40bf-a1fc-3f5dfae8bdf2}</Project>
+      <Name>Toci.Utilities.Abstraction</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Toci.Utilities.Common\Toci.Utilities.Common.csproj">
+      <Project>{aa84d501-0707-40d3-aed8-f4884e7f0fb2}</Project>
+      <Name>Toci.Utilities.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Toci.Utilities.Interfaces\Toci.Utilities.Interfaces\Toci.Utilities.Interfaces.csproj">
+      <Project>{c3976ac9-39a5-4b47-8a67-33f021a4cdc3}</Project>
+      <Name>Toci.Utilities.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Toci.Utilities\Toci.Utilities.csproj">
+      <Project>{a7951807-f924-4108-a63b-253ce3f5b045}</Project>
+      <Name>Toci.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\code\toci.pentagram.bll\toci.pentagram.bll.csproj">
+      <Project>{c678ae4d-7db0-4130-9d14-19a2b57791a6}</Project>
+      <Name>toci.pentagram.bll</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\code\toci.pentagram.interfaces\toci.pentagram.interfaces.csproj">
+      <Project>{eef0f143-682f-4fb1-a9b9-65aa28247e7a}</Project>
+      <Name>toci.pentagram.interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\toci.pentagram.Dal\toci.pentagram.Dal.csproj">
+      <Project>{c6678713-e9ec-46a0-aaa3-b6297779d76a}</Project>
+      <Name>toci.pentagram.Dal</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DbLogic\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

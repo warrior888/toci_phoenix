@@ -33,6 +33,7 @@ namespace Toci.Db.DbVirtualization
         protected string GetSurroundedValue<T>(T value)
         {
             // beatka 'beatka' 5 5
+            if(value==null) return string.Empty;
             return string.Format("{0}{1}{0}", Surroundings.ContainsKey(value.GetType()) ? Surroundings[value.GetType()] : "'", value);
         }
 

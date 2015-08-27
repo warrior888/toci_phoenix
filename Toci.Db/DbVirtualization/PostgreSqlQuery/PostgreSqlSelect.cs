@@ -17,8 +17,8 @@ namespace Toci.Db.DbVirtualization.PostgreSqlQuery
 
         public override string GetQuery(IModel model)
         {
-            string columnNames = string.Join(COLUMNS_DELIMITER, model.GetFields().Select(item => item.Key));
-
+           // string columnNames = string.Join(COLUMNS_DELIMITER, model.GetFields().Select(item => item.Key));
+            string columnNames = "*";
             var whereList = new List<string>();
 
             foreach (var item in model.GetFields())

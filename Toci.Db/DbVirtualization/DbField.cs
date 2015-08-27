@@ -1,18 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Toci.Db.Interfaces;
+﻿using Toci.Db.Interfaces;
 
 namespace Toci.Db.DbVirtualization
 {
     public class DbField<T> : IDbField<T>
     {
+        public T ValueForWhereClause { get; set; }
         protected string ColumnName;
         protected T FieldValue;
         protected bool FieldIsWhere;
-        protected SelectClause Clause;
+        protected SelectClause Clause = SelectClause.Equal;
+        protected bool FieldIsPrimaryKey;
 
         public DbField(string columnName)
         {
@@ -36,7 +33,7 @@ namespace Toci.Db.DbVirtualization
             this.FieldIsWhere = isWhere;
             this.Clause = clause;
         }
-        
+
 
 
         public string GetColumnName()
@@ -54,6 +51,11 @@ namespace Toci.Db.DbVirtualization
             return FieldIsWhere;
         }
 
+        public bool IsPrimaryKey()
+        {
+            return FieldIsPrimaryKey;
+        }
+
         public SelectClause GetSelectClause()
         {
             return Clause;
@@ -68,7 +70,10 @@ namespace Toci.Db.DbVirtualization
         {
             FieldIsWhere = isWhere;
         }
-
+        public void SetPrimary(bool isPrimary)
+        {
+            FieldIsPrimaryKey = isPrimary;
+        }
         public void SetSelectClause(SelectClause clause)
         {
             this.Clause = clause;
