@@ -8,44 +8,39 @@
     <tr>
         <th>Oferta leasingu (?)</th>
         <th>Technologie</th>
-        <th>Doświadczenie</th>
+        <th>Skill</th>
         <th>Dostępność</th>
         <th>Godziny pracy</th>
-        <th>Ilość developerów</th>
+        <th>Ilość <br/> developerów</th>
     </tr>
     <tr>
         <td>
-            <select name="leasing-offer" class="selector-box" style="width: 100%">
-                <option>Podstawowa</option>
-                <option>Medium (?)</option>
-                <option>Promocyjna</option>
-                <option>Na wyłączność</option>
-            </select>
+           @Html.EnumDropDownListFor(m => m.LeasingOffer)
         </td>
         <td>
             @Html.ListBoxFor(m=>m.Tech, Model.TechList, new {multiple="multiple"})
         </td>
         <td>
-            <select name="experience" class="selector-box" style="width: 100%">
-                <option>dowolne</option>
-                <option>minimum 1 rok</option>
-                <option>minimum 2 lata</option>
-            </select>
+            @Html.TextBoxFor(m => m.SkillSet.SkillLevel, new { @Value = "0", Type = "number", Min = "0", Max = "99" })
         </td>
         <td>
             <p>
-                Od: @Html.TextBoxFor(m => m.AvailableFrom, new { @Value = "Podaj datę rozpoczęcia" })
+                @Html.LabelFor(m => m.AvailableFrom, "Od:") 
+                @Html.TextBoxFor(m => m.AvailableFrom, new { @Value = "Podaj datę" })
             </p>
             <p>
-                Do: @Html.TextBoxFor(m => m.AvailableTo, new { @Value = "Podaj datę zakończenia" })
+                @Html.LabelFor(m => m.AvailableTo, "Do:") 
+                @Html.TextBoxFor(m => m.AvailableTo, new { @Value = "Podaj datę" })
             </p>
         </td>
         <td>
             <p>
-                Godzina rozpoczęcia: @Html.TextBoxFor(m => m.StartWorkHour, new {@Value = "8", Type = "number", Min = "6", Max = "18"})
+                @Html.LabelFor(m => m.StartWorkHour, "Od:") 
+                @Html.TextBoxFor(m => m.StartWorkHour, new {@Value = "8", Type = "number", Min = "6", Max = "18"})
             </p>
             <p>
-                Godzina zakończenia: @Html.TextBoxFor(m => m.EndWorkHour, new {@Value = "16", Type = "number", Min = "7", Max = "22"})
+                @Html.LabelFor(m => m.EndWorkHour, "Do:") 
+                @Html.TextBoxFor(m => m.EndWorkHour, new {@Value = "16", Type = "number", Min = "7", Max = "22"})
             </p>
         </td>
         <td>
