@@ -13,39 +13,56 @@ namespace Phoenix.Front.Areas.TeamLeasing.Controllers
 {
     public class TeamSearchingController : Controller
     {
+
+        //TODO: DI
         private ITeamLeasingBusinessModel buiBusinessModel;
         private ITeamLeasingLogic leasingLogic;
-        public IEnumerable<IDeveloperTeamBusinessModel> FindedTeam;
-        // GET: TeamLeasing/TeamSearching
+        public IEnumerable<IDeveloperTeamBusinessModel> FoundTeam;
         TeamSearchingViewModel _model = new TeamSearchingViewModel();
+        // GET: TeamLeasing/TeamSearching
+
 
         [HttpGet]
-        public ActionResult Search(TeamSearchingViewModel model)
+        public ActionResult Search()
         {
-            
-            
-            return View(model);
+           
+            return View(_model);
         }
 
-        [HttpPost]
-        public ActionResult _SearchResults(TeamLeasingBusinessModel model)
+        [HttpPost] //TODO: Ajax
+        public ActionResult _SearchResults(TeamSearchingViewModel model)
         {
-            
-            return View(model);
+            return PartialView(model);
         }
 
         public ActionResult _TeamSearching(TeamSearchingViewModel model)
         {
-           
-
-            return View(model);
+           return View(model);
         }
 
-        public ActionResult GetResults(TeamSearchingViewModel viewModel)
+        [HttpPost] //TODO: AutoMapper
+        public ActionResult GetResults(TeamSearchingViewModel viewModel, string AvailableFrom)
         {
             TeamLeasingBusinessModel model = new TeamLeasingBusinessModel();
+            
 
-            return View("_SearchResults", model);
+        
+
+            viewModel.test = "GetResults";
+
+            return _SearchResults(viewModel);
+        }
+
+        protected DateTime StringDateTimeParserPl(string date)
+        {
+            if (date == null) return default(DateTime);
+
+            var splitDate = date.Split(new[] { '.' }, 3);
+            int day = int.Parse(splitDate[0]);
+            int month = int.Parse(splitDate[1]);
+            int year = int.Parse(splitDate[2]);
+
+            return new DateTime(year, month, day);
         }
     }
 }

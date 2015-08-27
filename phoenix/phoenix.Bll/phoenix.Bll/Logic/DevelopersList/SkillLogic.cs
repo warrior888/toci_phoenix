@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Phoenix.Bll.Essential;
 using Phoenix.Bll.Interfaces.BusinessModels.DevelopersList;
 using Phoenix.Bll.Interfaces.Logic.DevelopersList;
 using Phoenix.Dal.GeneratedModels;
@@ -29,5 +30,15 @@ namespace Phoenix.Bll.Logic.DevelopersList
         {
             return GetElementById<ISkillBusinessModel, skills_technologies>(skillId);
         }
+
+        public IEnumerable<ISkillBusinessModel> GetAllSkills()
+        {   
+            
+            /***** na potrzeby testow, zanim zrobie DI na forncie *******/
+                AutofacDependencyResolver resolver = new AutofacDependencyResolver();
+                var mapper = resolver.Resolve<AutoMapperConfiguration>();
+           
+            return GetAllElements<ISkillBusinessModel, skills_technologies>();
+        } 
     }
 }

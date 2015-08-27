@@ -5,15 +5,18 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@{
-    Html.RenderPartial("_TeamSearching");
-}
+<div id="search-table-container">
+    @{
+        Html.RenderPartial("_TeamSearching", Model);
+    }
+</div>
 
+<div id="search-results-container">
+    @{
 
-@{
-    Html.Partial("_SearchResults");
-}
-
+        Html.RenderPartial("_SearchResults", Model);
+    }
+</div>
 
 
 
