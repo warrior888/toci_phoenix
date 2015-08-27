@@ -16,7 +16,8 @@ namespace Toci.Tests
     [TestClass]
     public class DbCredentials
     {
-        private DbCredentials()
+        [TestInitialize]
+        public void DbCredentialsIntializaton()
         {
             CertConfig.privateKeySecret = "P@ssw0rd";
             //certPath
