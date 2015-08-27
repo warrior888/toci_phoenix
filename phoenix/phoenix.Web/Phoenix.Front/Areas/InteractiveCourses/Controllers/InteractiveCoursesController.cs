@@ -12,32 +12,32 @@ namespace Phoenix.Front.Areas.InteractiveCourses.Controllers
     {
         private IInteractiveCoursesUserAuthorization _userAuthorization;
         private IInteractiveCoursesLogic _courseLogic;
-        
 
-        public InteractiveCoursesController(IInteractiveCoursesUserAuthorization userAuthorization,IInteractiveCoursesLogic courseLogic)    //parametrem jest typ interfejsowy w ktorym zawarte są wszystkie metody ktore maja sie wykonac
-        {
-            _userAuthorization = userAuthorization;
-            _courseLogic = courseLogic;
-        }
+
+        //public InteractiveCoursesController(IInteractiveCoursesUserAuthorization userAuthorization, IInteractiveCoursesLogic courseLogic)    //parametrem jest typ interfejsowy w ktorym zawarte są wszystkie metody ktore maja sie wykonac
+        //{
+        //    _userAuthorization = userAuthorization;
+        //    _courseLogic = courseLogic;
+        //}
 
         // GET: InteractiveCourses/InteractiveCourses
         public ActionResult Index()
         {
 
-            var isEntryAllowed = _userAuthorization.CheckUserAccountBalance(5);
-            try
-            {
-                if (isEntryAllowed)
-                {
-                    //dalsza logika
-                    
-                }
-            }
-            catch (Exception)
-            {
+            //var isEntryAllowed = _userAuthorization.CheckUserAccountBalance(5);
+            //try
+            //{
+            //    if (isEntryAllowed)
+            //    {
+            //        //dalsza logika
+
+            //    }
+            //}
+            //catch (Exception)
+            //{
                 
                
-            }
+            //}
             return View();
         }
     }
