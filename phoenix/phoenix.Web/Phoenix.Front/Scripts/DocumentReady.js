@@ -3,6 +3,6 @@
     /******* Datepicker ********/
     $.datepicker.setDefaults($.datepicker.regional['pl']);
     $("#AvailableFrom").datepicker();
-    $("#availibility-to").datepicker();
+    $("#AvailableTo").datepicker();
 
 });

@@ -14,6 +14,8 @@ namespace Phoenix.Front.Areas.TeamLeasing.Controllers
     public class TeamSearchingController : Controller
     {
 
+      
+
         //TODO: DI
         private ITeamLeasingBusinessModel buiBusinessModel;
         private ITeamLeasingLogic leasingLogic;
@@ -41,7 +43,7 @@ namespace Phoenix.Front.Areas.TeamLeasing.Controllers
         }
 
         [HttpPost] //TODO: AutoMapper
-        public ActionResult GetResults(TeamSearchingViewModel viewModel, string AvailableFrom)
+        public ActionResult GetResults(TeamSearchingViewModel viewModel)
         {
             TeamLeasingBusinessModel model = new TeamLeasingBusinessModel();
             

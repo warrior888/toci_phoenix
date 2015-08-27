@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Web.Mvc;
 using Autofac;
 using Autofac.Core;
 using Phoenix.Bll.Interfaces.Logic.DevelopersList;
@@ -20,7 +21,8 @@ using _3mb.Bll.Interfaces.User;
 
 namespace Phoenix.Bll.Essential
 {
-    public class AutofacContainer
+    public class AutofacContainer : DefaultControllerFactory
+
     {
         private static AutofacContainer _instance;
         private IContainer _container;
@@ -60,6 +62,8 @@ namespace Phoenix.Bll.Essential
             builder.Register(c => new AutoMapperConfiguration(Resolve<IUsersLogic>(), Resolve<IDeveloperListLogic>(),
                                                               Resolve<IPortfolioLogic>(), Resolve<ISkillLogic>(), Resolve<IDeveloperAvailableLogic>()));
           
+            
+
             return builder.Build();
         }
 
