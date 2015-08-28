@@ -58,3 +58,39 @@ CREATE TABLE ProjectAccess(
 	UserID integer NOT NULL references Users(UserID),
 	ProjectID integer NOT NULL references Projects(ProjectID)
 );
+----------------------------------
+
+-- drop table users;
+drop tABLE Projects;
+drop table scopes;
+-- drop tABLE ProjectAccess;
+
+CREATE TABLE Scopes	
+   (ScopeID serial PRIMARY KEY NOT NULL,
+    ScopeName text NOT NULL
+);
+
+
+-- CREATE TABLE USERS	
+--    (USERID SERIAL PRIMARY KEY NOT NULL,
+-- 	SCOPEID INTEGER NOT NULL REFERENCES SCOPES(SCOPEID),
+-- 	USERLOGIN TEXT NOT NULL,
+--     USERPASSWORD TEXT NOT NULL
+-- );
+
+CREATE TABLE Projects	
+   (ProjectID serial PRIMARY KEY NOT NULL,
+    ScopeID integer NOT NULL references Scopes(ScopeID),
+    ProjectName text NOT NULL,
+	ProjectAuthor text NOT NULL,
+    ProjectData text NOT NULL,
+	ModificationDate timestamp NOT NULL,
+	Hash text NOT NULL
+);
+
+
+-- CREATE TABLE ProjectAccess(
+-- 	AccessID serial PRIMARY KEY NOT NULL ,
+-- 	UserID integer NOT NULL references Users(UserID),
+-- 	ProjectID integer NOT NULL references Projects(ProjectID)
+-- );

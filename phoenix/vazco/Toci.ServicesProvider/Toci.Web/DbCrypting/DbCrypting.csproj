@@ -65,7 +65,7 @@
     </ProjectReference>
     <ProjectReference Include="..\Toci.ErrorsAndMessages\ErrorsAndMessages.csproj">
       <Project>{c723109f-5656-4245-8ffb-6a9cde912f54}</Project>
-      <Name>Toci.ErrorsAndMessages</Name>
+      <Name>ErrorsAndMessages</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

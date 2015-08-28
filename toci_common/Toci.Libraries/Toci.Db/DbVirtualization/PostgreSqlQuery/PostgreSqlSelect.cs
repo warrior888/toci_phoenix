@@ -1,46 +1,17 @@
-﻿using System.Collections.Generic;
+﻿using Toci.Db.DbVirtualization.SQLQuery;
 using Toci.Db.Interfaces;
 
 namespace Toci.Db.DbVirtualization.PostgreSqlQuery
 {
-    public class PostgreSqlSelect : SqlQuery, ISelect
+    public class PostgreSqlSelect : SqlQueryWithWhereClause, ISelect
     {
-        private const string SELECT_PATTERN = "SELECT {0} FROM {1}";
-        private const string SELECT_WHERE_PATTERN = "SELECT {0} FROM {1} WHERE {2}";
+        private const string SelectPattern = "SELECT {0} FROM {1}";
 
-        protected bool Where;
-
-        public override string GetQuery(IModel model)
+        protected override string GetQueryWithoutWherePart(IModel model)
         {
-                //string columnNames = string.Join(COLUMNS_DELIMITER, model.GetFields().Select(item => item.Key));
+            //string columnNames = string.Join(COLUMNS_DELIMITER, model.GetFields().Select(item => item.Key));
             string columnNames = "*";
-
-            var whereStatement = GetWhereStatement(model);
-
-            if (Where)
-            {
-                Where = false;
-                return string.Format(SELECT_WHERE_PATTERN, columnNames, model.GetTableName(), whereStatement);
-            }
-
-            return string.Format(SELECT_PATTERN, columnNames, model.GetTableName());
+            return string.Format(SelectPattern, columnNames, model.GetTableName());
         }
-
-        protected override string GetWhereStatement(IModel model)
-        {
-            var whereList = new List<string>();
-
-            foreach (var item in model.GetFields())
-            {
-                if (item.Value.IsWhere())
-                {
-                    whereList.Add(string.Format(WHERE, item.Key, GetClauseSign(item.Value.GetSelectClause()), GetSurroundedValue(item.Value.GetValue())));
-                    Where = true;
-                }
-            }
-
-            return string.Join(AndOperator, whereList);
-        }
-
     }
 }

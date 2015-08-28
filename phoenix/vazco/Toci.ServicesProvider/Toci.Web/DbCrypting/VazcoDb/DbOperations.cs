@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using DbCrypting.Config;
 using DbCrypting.Logic;
+using ErrorsAndMessages.Exceptions;
 using Toci.Db.ClusterAccess;
-using Toci.ErrorsAndMessages.Exceptions;
 
 namespace DbCrypting.VazcoDb
 {

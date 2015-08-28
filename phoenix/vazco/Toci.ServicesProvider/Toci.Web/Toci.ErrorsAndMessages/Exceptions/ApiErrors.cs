@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Toci.ErrorsAndMessages.Exceptions
+namespace ErrorsAndMessages.Exceptions
 {
     [Flags]
     public enum ApiErrors
