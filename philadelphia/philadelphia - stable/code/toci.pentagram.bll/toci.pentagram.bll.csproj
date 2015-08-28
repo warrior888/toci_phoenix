@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Buisnessmodel\ApplicationbuisnessModelForInsert.cs" />
     <Compile Include="Buisnessmodel\AppliCationTestsBuisnessModel.cs" />
     <Compile Include="Buisnessmodel\TestResultsBuisnessModel.cs" />
     <Compile Include="dblogic\AutoMapperConfiguration.cs" />

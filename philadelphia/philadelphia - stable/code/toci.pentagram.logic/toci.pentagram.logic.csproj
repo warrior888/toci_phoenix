@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=4.0.4.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AutoMapper.4.0.4\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -41,6 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CaptchalogicOnFront\CaptchaFrontModel.cs" />
+    <Compile Include="CaptchalogicOnFront\interfaces\ICaptchaFront.cs" />
     <Compile Include="CaptchaLogic\Abstract\CaptchaPars.cs" />
     <Compile Include="CaptchaLogic\Abstract\CaptchaParser.cs" />
     <Compile Include="CaptchaLogic\Abstract\ImageData.cs" />
@@ -52,7 +58,17 @@
     <Compile Include="CaptchaLogic\RandomTCaptchaLogic\interfaces\IApplicationTestsLogicToRand.cs" />
     <Compile Include="CaptchaLogic\RandomTCaptchaLogic\logic\ApplicationTestsLogicToRand.cs" />
     <Compile Include="CaptchaLogic\RandomTCaptchaLogic\logic\RandIDLogic.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="JanuszoweForDb\DataOperation\DataOperationLogic.cs" />
+    <Compile Include="FileReader\Abstract\Reader.cs" />
+    <Compile Include="FileReader\interfaces\IFileReader.cs" />
+    <Compile Include="FileReader\interfaces\IGetFileExtension.cs" />
+    <Compile Include="FileReader\interfaces\ITextReaderLogic.cs" />
+    <Compile Include="FileReader\logic\TextReader.cs" />
+    <Compile Include="FileReader\logic\TextReaderLogic.cs" />
+    <Compile Include="JanuszoweForDb\DataOperation\PosgresDataOperationLogic.cs" />
+    <Compile Include="JanuszoweForDb\DataOperation\PosgressDataOperation.cs" />
+    <Compile Include="JanuszoweForDb\IDataOperatioonLogic.cs" />
+    <Compile Include="JanuszoweForDb\IGetOperationForModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -88,6 +104,9 @@
       <Project>{EEF0F143-682F-4FB1-A9B9-65AA28247E7A}</Project>
       <Name>toci.pentagram.interfaces</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

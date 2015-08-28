@@ -17,7 +17,7 @@ namespace toci.pentagram.bll.dblogic
         {
             DbHandleAccessData accessData = new DbHandleAccessDataFactory().Create("ksebal");
             //DbHandleAccessData accessData = new DbHandleAccessDataFactory().Create("Terry");
-
+            
             DbHandle = GetDbHandle(accessData.UserName, accessData.Password,
                 accessData.DbAdress, accessData.DbName);
         }

@@ -30,7 +30,7 @@ namespace Toci.Pentagram.Logic.CaptchaLogic.Logic
 
 
 		// private methods:
-	   public  MemoryStream DrawImage(string stream)
+	   private  MemoryStream DrawImage(string stream)
 	    {
 	        MemoryStream ms;
 	        Image img=_builder.ParseImage(stream);

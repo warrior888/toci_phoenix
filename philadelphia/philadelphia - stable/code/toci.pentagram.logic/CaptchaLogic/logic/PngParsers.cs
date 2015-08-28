@@ -23,7 +23,7 @@ namespace Toci.Pentagram.Logic.CaptchaLogic.Logic
             Bitmap image = new Bitmap
                 (
                 //8- standardowa ilsoc znakow w tab
-                (thelongesWord.Length + tabsInLongestWord * widthOfTab - tabsInLongestWord) * FontSize, //odkomentowac!
+                (thelongesWord.Length + tabsInLongestWord * widthOfTab - tabsInLongestWord) * FontSize, 
                 (stream.Count(x => x == '\n') + 1) * Font.Height
                 
 
@@ -35,7 +35,7 @@ namespace Toci.Pentagram.Logic.CaptchaLogic.Logic
                 g.DrawString(stream, Font, brush, 0, 0);
             }
 
-              image.Save("obrazek.jpeg", ImageFormat.Jpeg);
+             // image.Save("obrazek.jpeg", ImageFormat.Jpeg);
 
             return image;
         }

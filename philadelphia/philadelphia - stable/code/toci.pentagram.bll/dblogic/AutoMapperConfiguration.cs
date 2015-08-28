@@ -3,6 +3,7 @@ using Phoenix.Dal.GeneratedModels;
 using toci.pentagram.bll.logic;
 using toci.pentagram.Dal;
 using toci.pentagram.interfaces;
+using toci.pentagram.interfaces.buisnessModel;
 
 namespace toci.pentagram.bll.dblogic
 {
@@ -36,7 +37,8 @@ namespace toci.pentagram.bll.dblogic
             Mapper.CreateMap<TestsResults, ITestResultsBuisnessModel>().
           ForMember(dest => dest.applicationtests, opts => opts.MapFrom(src => _applicationtests.GetTestById(src.FkIdApplicationtests)));
 
-           
+            Mapper.CreateMap<IApplicationtestBuisnessModelforInsert, ApplicationTests>();
+            Mapper.CreateMap<ApplicationTests, IApplicationtestBuisnessModelforInsert>();
 
         }
 private void ForApplicationTestsbuisnesModel()
