@@ -23,14 +23,10 @@ namespace Phoenix.Front.Areas.TeamLeasing.Controllers
         TeamSearchingViewModel _model = new TeamSearchingViewModel();
         // GET: TeamLeasing/TeamSearching
 
-        public TeamSearchingController()
+     
+        public TeamSearchingController( ITeamLeasingLogic leasingLogic)
         {
-            
-        }
-
-        public TeamSearchingController(ITeamLeasingBusinessModel buiBusinessModel, ITeamLeasingLogic leasingLogic)
-        {
-            _buiBusinessModel = buiBusinessModel;
+            _buiBusinessModel = new TeamLeasingBusinessModel();
             _leasingLogic = leasingLogic;
         }
 

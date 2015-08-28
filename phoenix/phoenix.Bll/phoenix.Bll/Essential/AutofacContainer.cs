@@ -24,15 +24,22 @@ using _3mb.Bll.Interfaces.User;
 
 namespace Phoenix.Bll.Essential
 {
-    public class AutofacContainer : DefaultControllerFactory
-
+    public class AutofacContainer 
     {
         private static AutofacContainer _instance;
         private IContainer _container;
 
+        //TODO: wymyslic cos mniej paskudnego
+        private Dictionary<string, ContainerBuilder> _buildersList = new Dictionary<string, ContainerBuilder>
+        {
+            {"internal", new ContainerBuilder()},
+            {"external", new ContainerBuilder()}
+        };
+
+        
         private AutofacContainer()
         {
-            _container = CreateConfiguration();
+            CreateConfiguration();
         }
 
         public static AutofacContainer GetContainer()
@@ -40,41 +47,72 @@ namespace Phoenix.Bll.Essential
             return _instance ?? (_instance = new AutofacContainer());
         }
 
-        private IContainer CreateConfiguration()
+        private void CreateConfiguration()
         {
-            var builder = new ContainerBuilder();
-            builder.RegisterType<DbHandle>().As<IDbHandle>();
-            builder.RegisterType<PostgreSqlClient>().As<IDbClient>();
+            foreach (KeyValuePair<string, ContainerBuilder> builder in _buildersList)
+            {
+                builder.Value.RegisterType<DbHandle>().As<IDbHandle>();
+                builder.Value.RegisterType<PostgreSqlClient>().As<IDbClient>();
 
-            builder.RegisterType<PostgreSqlSelect>().As<ISelect>();
-            builder.RegisterType<PostgreSqlInsert>().As<IInsert>();
-            builder.RegisterType<PostgreSqlUpdate>().As<IUpdate>();
-            builder.RegisterType<PostgreSqlDelete>().As<IDelete>();
+                builder.Value.RegisterType<PostgreSqlSelect>().As<ISelect>();
+                builder.Value.RegisterType<PostgreSqlInsert>().As<IInsert>();
+                builder.Value.RegisterType<PostgreSqlUpdate>().As<IUpdate>();
+                builder.Value.RegisterType<PostgreSqlDelete>().As<IDelete>();
 
-            builder.RegisterType<DocumentResource>().As<IDocumentResource>();
-            builder.RegisterType<PumaOcrParser>().As<IDocumentInterpreter>();
+                builder.Value.RegisterType<DocumentResource>().As<IDocumentResource>();
+                builder.Value.RegisterType<PumaOcrParser>().As<IDocumentInterpreter>();
 
-            builder.RegisterType<UserLogic>().As<IUserLogic>();
+                builder.Value.RegisterType<UserLogic>().As<IUserLogic>();
 
-            builder.RegisterType<DeveloperListLogic>().As<IDeveloperListLogic>();
-            builder.RegisterType<DeveloperAvailableLogic>().As<IDeveloperAvailableLogic>();
-            builder.RegisterType<SkillLogic>().As<ISkillLogic>();
-            builder.RegisterType<UsersLogic>().As<IUsersLogic>();
-            builder.Register(c => new PortfolioLogic(Resolve<IDeveloperListLogic>())).As<IPortfolioLogic>();
-            builder.Register(c => new TeamLeasingLogic(Resolve<IDeveloperListLogic>(), Resolve<IPortfolioLogic>())).As<ITeamLeasingLogic>();
-            builder.Register(c => new AutoMapperConfiguration(Resolve<IUsersLogic>(), Resolve<IDeveloperListLogic>(),
-                                                              Resolve<IPortfolioLogic>(), Resolve<ISkillLogic>(), Resolve<IDeveloperAvailableLogic>()));
-          
-            
+                builder.Value.RegisterType<DeveloperListLogic>().As<IDeveloperListLogic>();
+                builder.Value.RegisterType<DeveloperAvailableLogic>().As<IDeveloperAvailableLogic>();
+                builder.Value.RegisterType<SkillLogic>().As<ISkillLogic>();
+                builder.Value.RegisterType<UsersLogic>().As<IUsersLogic>();
+                builder.Value.Register(c => new PortfolioLogic(Resolve<IDeveloperListLogic>())).As<IPortfolioLogic>();
+                builder.Value.Register(c => new TeamLeasingLogic(Resolve<IDeveloperListLogic>(), Resolve<IPortfolioLogic>()))
+                    .As<ITeamLeasingLogic>();
+                builder.Value.Register(
+                    c => new AutoMapperConfiguration(Resolve<IUsersLogic>(), Resolve<IDeveloperListLogic>(),
+                        Resolve<IPortfolioLogic>(), Resolve<ISkillLogic>(), Resolve<IDeveloperAvailableLogic>()));
+            }
+            /*  builder.RegisterType<DbHandle>().As<IDbHandle>();
+              builder.RegisterType<PostgreSqlClient>().As<IDbClient>();
 
-            return builder.Build();
+              builder.RegisterType<PostgreSqlSelect>().As<ISelect>();
+              builder.RegisterType<PostgreSqlInsert>().As<IInsert>();
+              builder.RegisterType<PostgreSqlUpdate>().As<IUpdate>();
+              builder.RegisterType<PostgreSqlDelete>().As<IDelete>();
+
+              builder.RegisterType<DocumentResource>().As<IDocumentResource>();
+              builder.RegisterType<PumaOcrParser>().As<IDocumentInterpreter>();
+
+              builder.RegisterType<UserLogic>().As<IUserLogic>();
+
+              builder.RegisterType<DeveloperListLogic>().As<IDeveloperListLogic>();
+              builder.RegisterType<DeveloperAvailableLogic>().As<IDeveloperAvailableLogic>();
+              builder.RegisterType<SkillLogic>().As<ISkillLogic>();
+              builder.RegisterType<UsersLogic>().As<IUsersLogic>();
+              builder.Register(c => new PortfolioLogic(Resolve<IDeveloperListLogic>())).As<IPortfolioLogic>();
+              builder.Register(c => new TeamLeasingLogic(Resolve<IDeveloperListLogic>(), Resolve<IPortfolioLogic>()))
+                  .As<ITeamLeasingLogic>();
+              builder.Register(
+                  c => new AutoMapperConfiguration(Resolve<IUsersLogic>(), Resolve<IDeveloperListLogic>(),
+                      Resolve<IPortfolioLogic>(), Resolve<ISkillLogic>(), Resolve<IDeveloperAvailableLogic>()));*/
+
         }
+        
+        // for mvc
+        public void UpdateContainer(IContainer container)
+        {
+            _buildersList["external"].Update(container);
+        }
+        //
 
         public TService Resolve<TService>(params object[] parameters)
         {
             if (_container == null)
             {
-                _container = CreateConfiguration();
+                _container = _buildersList["internal"].Build();
             }
 
             using (var scope = _container.BeginLifetimeScope())
@@ -95,19 +133,5 @@ namespace Phoenix.Bll.Essential
             }
         }
         
-        //TODO: RegisterTypes
-        protected override IController GetControllerInstance(System.Web.Routing.RequestContext requestContext, Type controllerType)
-        {
-            if (requestContext.HttpContext.Request.Url.ToString().EndsWith("favicon.ico"))
-                return null;
-
-            var builder = new ContainerBuilder();
-
-            var typ = controllerType.Name;
-            var lol = Type.GetType(typ);
-
-            var result = _container.Resolve(controllerType) as IController;
-            return result;
-        }
     }
 }
