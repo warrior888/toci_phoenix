@@ -1,4 +1,5 @@
-﻿@{
+﻿@using MvcFormPostClient.Models
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -12,19 +13,7 @@
         <h3>Identity</h3>
         @if (User.Identity.IsAuthenticated)
         {
-            <p>
-                <dl>
-                    @foreach (var claim in System.Security.Claims.ClaimsPrincipal.Current.Claims)
-                    {
-                        if (claim.Type == "project")
-                        {
-                            <dt>@claim.Type</dt>
-                            <dd>@claim.Value</dd>
-                        }
-
-                    }
-                </dl>
-            </p>
+          @Html.Partial("Projects/View", new ClaimedProjectListModel())
         }
         else
         {

@@ -1,0 +1,34 @@
+﻿@model MvcFormPostClient.Models.ClaimedProjectListModel
+
+@if (Model.CreatePermission)
+{
+    <p>
+        @Html.ActionLink("Create New", "Create", "ProjectOperations")
+    </p>
+}
+
+<table class="table">
+    <tr>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model.projects) {
+    <tr>
+        <td>
+            <div>@item</div>
+            @if (Model.EditPermission)
+            {
+                @Html.ActionLink("Edit", "Edit", new {/* id=item.PrimaryKey */}) 
+                @Html.Raw(" |")
+            }
+            @Html.ActionLink("Details", "Details", new {/* id=item.PrimaryKey */}) 
+            @if (Model.DeletePermission)
+            {
+                @Html.Raw("| ")
+                @Html.ActionLink("Delete", "Delete", new {/* id=item.PrimaryKey */})
+            }
+        </td>
+    </tr>
+}
+
+</table>

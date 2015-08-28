@@ -28,6 +28,7 @@ namespace MvcCodeFlowClientManual.Controllers
             client.SetBearerToken(principal.FindFirst("access_token").Value);
 
             var result = await client.GetStringAsync(Constants.AspNetWebApiSampleApi + "identity");
+            
 
             return View(JArray.Parse(result));
         }

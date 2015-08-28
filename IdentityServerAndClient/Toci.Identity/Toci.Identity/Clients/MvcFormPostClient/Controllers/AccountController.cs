@@ -12,6 +12,7 @@ namespace MvcFormPostClient.Controllers
 {
 	public class AccountController : Controller
 	{
+	    private const string _urlPattern = "?client_id={0}&response_type={1}&scope={2}&redirect_uri=https://localhost:44300/account/signInCallback&response_mode=form_post&state=&nonce=";
         public ActionResult SignIn()
         {
 	        var state = Guid.NewGuid().ToString("N");
@@ -20,8 +21,8 @@ namespace MvcFormPostClient.Controllers
             var url = Constants.AuthorizeEndpoint +
                 "?client_id=implicitclient" +
                 "&response_type=id_token" +
-                "&scope=openid projects" +
-                "&redirect_uri=http://localhost:11716/account/signInCallback" +
+                "&scope=openid projects roles" +
+                "&redirect_uri=https://localhost:44300/account/signInCallback" +
                 "&response_mode=form_post" +
                 "&state=" + state +
                 "&nonce=" + nonce;
