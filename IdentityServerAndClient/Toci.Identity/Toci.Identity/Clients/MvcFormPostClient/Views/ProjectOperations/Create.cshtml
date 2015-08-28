@@ -20,8 +20,13 @@
                 @Model.projects
                 <div>Project name:<br/>@Html.TextBox("ProjectName")
                 </div>
+                <div>Scope name:<br />@Html.TextArea("ScopeName")
+                </div>
+                <div>Project author:<br/>@Html.TextArea("ProjectAuthor")
+                </div>
                 <div>Project data:<br/>@Html.TextArea("ProjectData")
                 </div>
+
 
                 <input type="submit" value="Create" class="btn btn-default"/>
             </div>

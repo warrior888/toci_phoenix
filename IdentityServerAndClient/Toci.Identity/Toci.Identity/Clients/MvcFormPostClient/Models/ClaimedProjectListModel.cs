@@ -13,7 +13,7 @@ namespace MvcFormPostClient.Models
             CreatePermission = list.Any(x => x.Value == "Create" && x.Type == "role");
             EditPermission = list.Any(x => x.Value == "Edit" && x.Type == "role");
             DeletePermission = list.Any(x => x.Value == "Delete" && x.Type == "role");
-
+           
         }
 
 
