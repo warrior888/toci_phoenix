@@ -1,0 +1,9 @@
+﻿public class TxtClass
+{
+    private const string message = "Hello from text file";
+
+    public string  MethodOne()
+    {
+        return message;
+    }
+}
