@@ -262,7 +262,6 @@ F:\phoenixx\toci_common\Toci.Libraries\Toci.Db\bin\Debug\Zlib.Portable.xml
 F:\phoenixx\toci_common\Toci.Libraries\Toci.Db\obj\Debug\Toci.Db.csproj.App.config
 F:\phoenixx\toci_common\Toci.Libraries\Toci.Db\obj\Debug\Toci.Db.dll
 F:\phoenixx\toci_common\Toci.Libraries\Toci.Db\obj\Debug\Toci.Db.pdb
-S:\TOCI\Phoenix\repo\toci_common\Toci.Libraries\Toci.Db\obj\Debug\Toci.Db.csprojResolveAssemblyReference.cache
 C:\Users\PatrykDev\Documents\toci_phoenix\toci_common\Toci.Libraries\Toci.Db\obj\Debug\Toci.Db.csprojResolveAssemblyReference.cache
 E:\TociPhoenix\toci_common\Toci.Libraries\Toci.Db\bin\Debug\Toci.Db.dll.config
 E:\TociPhoenix\toci_common\Toci.Libraries\Toci.Db\bin\Debug\Toci.Db.dll
@@ -292,3 +291,4 @@ E:\TociPhoenix\toci_common\Toci.Libraries\Toci.Db\obj\Debug\Toci.Db.csproj.App.c
 E:\TociPhoenix\toci_common\Toci.Libraries\Toci.Db\obj\Debug\Toci.Db.csprojResolveAssemblyReference.cache
 E:\TociPhoenix\toci_common\Toci.Libraries\Toci.Db\obj\Debug\Toci.Db.dll
 E:\TociPhoenix\toci_common\Toci.Libraries\Toci.Db\obj\Debug\Toci.Db.pdb
+S:\TOCI\Phoenix\repo\toci_common\Toci.Libraries\Toci.Db\obj\Debug\Toci.Db.csprojResolveAssemblyReference.cache
