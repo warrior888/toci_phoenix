@@ -1,5 +1,4 @@
 ﻿using System;
-using System.CodeDom;
 using System.CodeDom.Compiler;
 using System.Linq;
 using Microsoft.CSharp;
@@ -26,11 +25,10 @@ namespace Con_Air.Terry
             cp.ReferencedAssemblies.Add("System.dll");
             cp.GenerateExecutable = false;
             cp.GenerateInMemory = true;
-
-
+            
             CompilerResults cr = provider.CompileAssemblyFromSource(cp, code);
-            var typ = cr.CompiledAssembly.DefinedTypes;
-            dynamic instance = Activator.CreateInstance(typ.FirstOrDefault().AsType());
+            var type = cr.CompiledAssembly.DefinedTypes;
+            dynamic instance = Activator.CreateInstance(type.FirstOrDefault().AsType());
 
             liczba =  instance.GetValue();
             napis = instance.GetMsg();

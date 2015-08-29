@@ -15,6 +15,9 @@ namespace ConAir.Tests.Terry
             string napis;
 
             testVariable.Compile(out liczba, out napis);
+
+            Assert.AreEqual(888, liczba);
+            Assert.AreEqual("Toci", napis);
         }
          
     }
