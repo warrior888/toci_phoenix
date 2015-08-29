@@ -28,6 +28,7 @@ namespace Phoenix.Bll.Essential
     {
         private static AutofacContainer _instance;
         private IContainer _container;
+        private ContainerBuilder _builder = new ContainerBuilder();
 
         //TODO: wymyslic cos mniej paskudnego
         private Dictionary<string, ContainerBuilder> _buildersList = new Dictionary<string, ContainerBuilder>
@@ -39,7 +40,7 @@ namespace Phoenix.Bll.Essential
         
         private AutofacContainer()
         {
-            CreateConfiguration();
+            
         }
 
         public static AutofacContainer GetContainer()
@@ -47,35 +48,9 @@ namespace Phoenix.Bll.Essential
             return _instance ?? (_instance = new AutofacContainer());
         }
 
-        private void CreateConfiguration()
+        private void CreateConfiguration(ContainerBuilder builder)
         {
-            foreach (KeyValuePair<string, ContainerBuilder> builder in _buildersList)
-            {
-                builder.Value.RegisterType<DbHandle>().As<IDbHandle>();
-                builder.Value.RegisterType<PostgreSqlClient>().As<IDbClient>();
-
-                builder.Value.RegisterType<PostgreSqlSelect>().As<ISelect>();
-                builder.Value.RegisterType<PostgreSqlInsert>().As<IInsert>();
-                builder.Value.RegisterType<PostgreSqlUpdate>().As<IUpdate>();
-                builder.Value.RegisterType<PostgreSqlDelete>().As<IDelete>();
-
-                builder.Value.RegisterType<DocumentResource>().As<IDocumentResource>();
-                builder.Value.RegisterType<PumaOcrParser>().As<IDocumentInterpreter>();
-
-                builder.Value.RegisterType<UserLogic>().As<IUserLogic>();
-
-                builder.Value.RegisterType<DeveloperListLogic>().As<IDeveloperListLogic>();
-                builder.Value.RegisterType<DeveloperAvailableLogic>().As<IDeveloperAvailableLogic>();
-                builder.Value.RegisterType<SkillLogic>().As<ISkillLogic>();
-                builder.Value.RegisterType<UsersLogic>().As<IUsersLogic>();
-                builder.Value.Register(c => new PortfolioLogic(Resolve<IDeveloperListLogic>())).As<IPortfolioLogic>();
-                builder.Value.Register(c => new TeamLeasingLogic(Resolve<IDeveloperListLogic>(), Resolve<IPortfolioLogic>()))
-                    .As<ITeamLeasingLogic>();
-                builder.Value.Register(
-                    c => new AutoMapperConfiguration(Resolve<IUsersLogic>(), Resolve<IDeveloperListLogic>(),
-                        Resolve<IPortfolioLogic>(), Resolve<ISkillLogic>(), Resolve<IDeveloperAvailableLogic>()));
-            }
-            /*  builder.RegisterType<DbHandle>().As<IDbHandle>();
+              builder.RegisterType<DbHandle>().As<IDbHandle>();
               builder.RegisterType<PostgreSqlClient>().As<IDbClient>();
 
               builder.RegisterType<PostgreSqlSelect>().As<ISelect>();
@@ -97,14 +72,16 @@ namespace Phoenix.Bll.Essential
                   .As<ITeamLeasingLogic>();
               builder.Register(
                   c => new AutoMapperConfiguration(Resolve<IUsersLogic>(), Resolve<IDeveloperListLogic>(),
-                      Resolve<IPortfolioLogic>(), Resolve<ISkillLogic>(), Resolve<IDeveloperAvailableLogic>()));*/
-
+                      Resolve<IPortfolioLogic>(), Resolve<ISkillLogic>(), Resolve<IDeveloperAvailableLogic>()));
         }
         
         // for mvc
         public void UpdateContainer(IContainer container)
         {
-            _buildersList["external"].Update(container);
+            if (_builder == null)
+                CreateConfiguration(_builder);
+
+            _builder.Update(container);
         }
         //
 
@@ -112,7 +89,8 @@ namespace Phoenix.Bll.Essential
         {
             if (_container == null)
             {
-                _container = _buildersList["internal"].Build();
+                CreateConfiguration(_builder);
+                _container = _builder.Build();
             }
 
             using (var scope = _container.BeginLifetimeScope())
