@@ -1,5 +1,7 @@
-﻿using System.CodeDom;
+﻿using System;
+using System.CodeDom;
 using System.CodeDom.Compiler;
+using System.Linq;
 using Microsoft.CSharp;
 
 namespace Con_Air.Terry
@@ -8,14 +10,15 @@ namespace Con_Air.Terry
     {
         public string GetGeneratedClass()
         {
-            return "public class TestClass { private string msg = \"Hejka\"" +
-                   " public string GetMsg() {return msg}" +
-                   "}";
+            return "public class TestClass {  public int GetValue() {return 888;}}";
+                  
         }
 
 
-        public void Compile(string body)
+        public int Compile()
         {
+
+            var code = GetGeneratedClass();
 
             CSharpCodeProvider provider = new CSharpCodeProvider();
             CompilerParameters cp = new CompilerParameters();
@@ -23,10 +26,13 @@ namespace Con_Air.Terry
             cp.ReferencedAssemblies.Add("System.dll");
             cp.GenerateExecutable = false;
             cp.GenerateInMemory = true;
-            
 
-            CompilerResults cr = provider.CompileAssemblyFromFile(cp, GetGeneratedClass());
 
+            CompilerResults cr = provider.CompileAssemblyFromSource(cp, code);
+            var typ = cr.CompiledAssembly.DefinedTypes;
+            dynamic instance = Activator.CreateInstance(typ.FirstOrDefault().AsType());
+
+            return instance.GetValue();
         }
 
     }

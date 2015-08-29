@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Automapper\Patryk.cs" />
     <Compile Include="GhostRider\Rubish.cs" />
+    <Compile Include="Terry\GeneratedClass.cs" />
     <Compile Include="VazcoFlexi\TypowyAdam.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
