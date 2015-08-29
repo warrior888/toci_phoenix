@@ -1,15 +1,16 @@
 ﻿using System;
 using System.CodeDom.Compiler;
 using System.Linq;
+using Con_Air.Flexi;
 using Microsoft.CSharp;
 
 namespace Con_Air.Terry
 {
-    public class GeneratedClass
+    public class TerryGeneratedClass : GeneratedClass
     {
-        public string GetGeneratedClass()
+        public override string GetGeneratedClass()
         {
-            return "public class TestClass {  public int GetValue() {return 888;} public string GetMsg() {return \"Toci\";}}";
+            return "public class TestClass {  public int GetValue() {return 777;} public string GetMsg() {return \"Toci\";}}";
                   
         }
 
