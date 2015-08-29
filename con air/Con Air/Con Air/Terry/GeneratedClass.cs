@@ -4,6 +4,7 @@ using System.Linq;
 using Con_Air.Flexi;
 using Microsoft.CSharp;
 
+
 namespace Con_Air.Terry
 {
     public class TerryGeneratedClass : GeneratedClass
@@ -13,7 +14,6 @@ namespace Con_Air.Terry
             return "public class TestClass {  public int GetValue() {return " + counter + ";} public string GetMsg() {return \"Toci\";}}";
                   
         }
-
 
         public void Compile(out int liczba, out string napis)
         {

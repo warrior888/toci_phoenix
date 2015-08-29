@@ -52,6 +52,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Terry\GeneratedClassTest.cs" />
+    <Compile Include="Terry\Base64Test.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

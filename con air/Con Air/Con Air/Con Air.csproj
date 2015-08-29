@@ -51,7 +51,11 @@
     <Compile Include="Flexi\IGeneratedClass.cs" />
     <Compile Include="GhostRider\Rubish.cs" />
     <Compile Include="Patryk\PatrykLoadClass.cs" />
+    <Compile Include="Terry\Base64StringOperations.cs" />
+    <Compile Include="Terry\BinaryFileOperations.cs" />
+    <Compile Include="Terry\Enum\BinaryFileExtension.cs" />
     <Compile Include="Terry\GeneratedClass.cs" />
+    <Compile Include="Terry\Interfaces\IBinaryFileOperations.cs" />
     <Compile Include="VazcoFlexi\TypowyAdam.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
