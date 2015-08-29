@@ -11,7 +11,10 @@ namespace ConAir.Tests.Terry
         {
             var testVariable = new GeneratedClass();
 
-            var kek = testVariable.Compile();
+            int liczba;
+            string napis;
+
+            testVariable.Compile(out liczba, out napis);
         }
          
     }

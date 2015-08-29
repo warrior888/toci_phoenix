@@ -10,12 +10,12 @@ namespace Con_Air.Terry
     {
         public string GetGeneratedClass()
         {
-            return "public class TestClass {  public int GetValue() {return 888;}}";
+            return "public class TestClass {  public int GetValue() {return 888;} public string GetMsg() {return \"Toci\";}}";
                   
         }
 
 
-        public int Compile()
+        public void Compile(out int liczba, out string napis)
         {
 
             var code = GetGeneratedClass();
@@ -32,7 +32,8 @@ namespace Con_Air.Terry
             var typ = cr.CompiledAssembly.DefinedTypes;
             dynamic instance = Activator.CreateInstance(typ.FirstOrDefault().AsType());
 
-            return instance.GetValue();
+            liczba =  instance.GetValue();
+            napis = instance.GetMsg();
         }
 
     }
