@@ -261,7 +261,6 @@ F:\phoenixx\toci_common\Toci.Libraries\Toci.Utilities.Common\obj\Debug\Toci.Util
 F:\phoenixx\toci_common\Toci.Libraries\Toci.Utilities.Common\obj\Debug\Toci.Utilities.Common.csprojResolveAssemblyReference.cache
 F:\phoenixx\toci_common\Toci.Libraries\Toci.Utilities.Common\obj\Debug\Toci.Utilities.Common.dll
 F:\phoenixx\toci_common\Toci.Libraries\Toci.Utilities.Common\obj\Debug\Toci.Utilities.Common.pdb
-S:\TOCI\Phoenix\repo\toci_common\Toci.Libraries\Toci.Utilities.Common\obj\Debug\Toci.Utilities.Common.csprojResolveAssemblyReference.cache
 C:\Users\PatrykDev\Documents\toci_phoenix\toci_common\Toci.Libraries\Toci.Utilities.Common\obj\Debug\Toci.Utilities.Common.csprojResolveAssemblyReference.cache
 E:\TociPhoenix\toci_common\Toci.Libraries\Toci.Utilities.Common\bin\Debug\Toci.Utilities.Common.dll.config
 E:\TociPhoenix\toci_common\Toci.Libraries\Toci.Utilities.Common\bin\Debug\Toci.Utilities.Common.dll
@@ -291,3 +290,4 @@ E:\TociPhoenix\toci_common\Toci.Libraries\Toci.Utilities.Common\obj\Debug\Toci.U
 E:\TociPhoenix\toci_common\Toci.Libraries\Toci.Utilities.Common\obj\Debug\Toci.Utilities.Common.csprojResolveAssemblyReference.cache
 E:\TociPhoenix\toci_common\Toci.Libraries\Toci.Utilities.Common\obj\Debug\Toci.Utilities.Common.dll
 E:\TociPhoenix\toci_common\Toci.Libraries\Toci.Utilities.Common\obj\Debug\Toci.Utilities.Common.pdb
+S:\TOCI\Phoenix\repo\toci_common\Toci.Libraries\Toci.Utilities.Common\obj\Debug\Toci.Utilities.Common.csprojResolveAssemblyReference.cache
