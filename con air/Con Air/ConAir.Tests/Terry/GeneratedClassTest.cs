@@ -1,6 +1,11 @@
-﻿using Con_Air.Flexi;
+﻿using System;
+using System.Reflection;
+using Con_Air.Common;
+using Con_Air.Flexi;
 using Con_Air.Terry;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Toci.Db.ClusterAccess;
+using Toci.Db.Interfaces;
 
 namespace ConAir.Tests.Terry
 {
@@ -15,10 +20,23 @@ namespace ConAir.Tests.Terry
             int liczba;
             string napis;
 
-            testVariable.Compile(out liczba, out napis);
+            //testVariable.Compile(out liczba, out napis);
 
-            Assert.AreEqual(888, liczba);
-            Assert.AreEqual("Toci", napis);
+            var dbHandle = DbHandleFactory.GetHandle(SqlClientKind.PostgreSql, "postgres", "beatka", "localhost", "con_air");
+
+            for (var i = 0; i < 10; i++)
+            {
+                dbHandle.InsertData(new CodeStorageModel() {Codeblob = testVariable.GetGeneratedClass(i)});
+            }
+
+
+            //Assert.AreEqual(888, liczba);
+            //Assert.AreEqual("Toci", napis);
+
+            //Assembly.LoadFrom()
+
+
+            //Base64FormattingOptions.
         }
          
     }
