@@ -1,4 +1,4 @@
-﻿@model MvcFormPostClient.Models.ClaimedProjectListModel
+﻿@model MvcFormPostClient.Models.ProjectModel
 
 @{
     ViewBag.Title = "Create";
@@ -7,24 +7,24 @@
 <h2>CreateProject</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm("CreateProject", "CreateController")) 
 {
     
-    
+
     <div class="form-horizontal">
         <h4>ClaimedProjectListModel</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             <div class="col-md-10">
-                @Model.projects
-                <div>Project name:<br/>@Html.TextBox("ProjectName")
+                
+                <div>Project name:<br/>@Html.TextBoxFor(x=>x.ProjectName)
                 </div>
-                <div>Scope name:<br />@Html.TextArea("ScopeName")
+                <div>Scope name:<br />@Html.TextBoxFor(x => x.ScopeName)
                 </div>
-                <div>Project author:<br/>@Html.TextArea("ProjectAuthor")
+                <div>Project author:<br/>@Html.TextBoxFor(x => x.ProjectAuthor)
                 </div>
-                <div>Project data:<br/>@Html.TextArea("ProjectData")
+                <div>Project data:<br/>@Html.TextBoxFor(x => x.ProjectData)
                 </div>
 
 
