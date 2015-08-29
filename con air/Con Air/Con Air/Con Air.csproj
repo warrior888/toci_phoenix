@@ -42,7 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Automapper\AutoMapeerConfiguration.cs" />
+    <Compile Include="Automapper\IClassForMappingGenerator.cs" />
+    <Compile Include="Automapper\IClassForMappingWrapper.cs" />
     <Compile Include="Automapper\Patryk.cs" />
+    <Compile Include="Flexi\GeneratedClass.cs" />
+    <Compile Include="Flexi\IGeneratedClass.cs" />
     <Compile Include="GhostRider\Rubish.cs" />
     <Compile Include="Terry\GeneratedClass.cs" />
     <Compile Include="VazcoFlexi\TypowyAdam.cs" />
@@ -51,7 +56,9 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Automapper\abstract\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
