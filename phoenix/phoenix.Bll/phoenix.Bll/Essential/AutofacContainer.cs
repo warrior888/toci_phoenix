@@ -28,15 +28,7 @@ namespace Phoenix.Bll.Essential
     {
         private static AutofacContainer _instance;
         private IContainer _container;
-        private ContainerBuilder _builder = new ContainerBuilder();
-
-        //TODO: wymyslic cos mniej paskudnego
-        private Dictionary<string, ContainerBuilder> _buildersList = new Dictionary<string, ContainerBuilder>
-        {
-            {"internal", new ContainerBuilder()},
-            {"external", new ContainerBuilder()}
-        };
-
+        private ContainerBuilder _builder;
         
         private AutofacContainer()
         {
@@ -76,12 +68,11 @@ namespace Phoenix.Bll.Essential
         }
         
         // for mvc
-        public void UpdateContainer(IContainer container)
+        public void UpdateExternalContainer(IContainer container)
         {
-            if (_builder == null)
-                CreateConfiguration(_builder);
-
-            _builder.Update(container);
+            var builder = new ContainerBuilder();
+            CreateConfiguration(builder);
+            builder.Update(container);
         }
         //
 
@@ -89,6 +80,7 @@ namespace Phoenix.Bll.Essential
         {
             if (_container == null)
             {
+                if (_builder == null) _builder = new ContainerBuilder();
                 CreateConfiguration(_builder);
                 _container = _builder.Build();
             }
@@ -98,13 +90,12 @@ namespace Phoenix.Bll.Essential
                 List<Parameter> afParams = new List<Parameter>();
                 int i = 0;
 
-                if (parameters.Length > 0)
+                if (parameters.Length <= 0) return scope.Resolve<TService>(afParams);
+
+                foreach (var parameter in parameters)
                 {
-                    foreach (var parameter in parameters)
-                    {
-                        afParams.Add(new PositionalParameter(i, parameter));
-                        i++;
-                    }
+                    afParams.Add(new PositionalParameter(i, parameter));
+                    i++;
                 }
 
                 return scope.Resolve<TService>(afParams);
