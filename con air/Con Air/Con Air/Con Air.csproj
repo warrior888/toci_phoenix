@@ -46,6 +46,8 @@
     <Compile Include="Automapper\IClassForMappingGenerator.cs" />
     <Compile Include="Automapper\IClassForMappingWrapper.cs" />
     <Compile Include="Automapper\Patryk.cs" />
+    <Compile Include="Flexi\GeneratedClass.cs" />
+    <Compile Include="Flexi\IGeneratedClass.cs" />
     <Compile Include="GhostRider\Rubish.cs" />
     <Compile Include="VazcoFlexi\TypowyAdam.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
