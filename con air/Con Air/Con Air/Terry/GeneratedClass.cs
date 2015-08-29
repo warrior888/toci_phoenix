@@ -33,6 +33,7 @@ namespace Con_Air.Terry
 
             liczba =  instance.GetValue();
             napis = instance.GetMsg();
+
         }
 
     }
