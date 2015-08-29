@@ -4,7 +4,7 @@ namespace Con_Air.Flexi
 {
     public class GeneratedClass : IGeneratedClass
     {
-        public string GetGeneratedClass()
+        public virtual string GetGeneratedClass()
         {
             return "public class GeneratedClass : IGeneratedClass { public string GetGeneratedClass() { return \"public class GeneratedClass : IGeneratedClass {}\"; } }";
         }
