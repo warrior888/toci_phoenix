@@ -121,6 +121,7 @@
     <Compile Include="Developers\Casanova\DbTesting\TestModel.cs" />
     <Compile Include="Developers\Chmura\DocumentParseTesting\CsvParseTesting.cs" />
     <Compile Include="Developers\Chmura\DocumentParseTesting\DocParseTesting.cs" />
+    <Compile Include="Developers\Coffee13\dbcomunicationtests.cs" />
     <Compile Include="Developers\Duch\DDLTest.cs" />
     <Compile Include="Developers\Dysq\SupportedAttachments\SupportedAttachmentsTest.cs" />
     <Compile Include="Developers\Mg\CommunicationTests.cs" />
