@@ -6,6 +6,7 @@ namespace Con_Air.Terry.Interfaces
     public interface IBinaryFileOperations
     {
         string GetBase64Representation(string filePath);
+        byte[] GetByteArrRepresentation(string filePath);
         void CreateFile(string filePath, string fileName, string base64Content, BinaryFileExtension extension);
     }
 }
