@@ -1,6 +1,4 @@
-﻿using Toci.Db.Interfaces;
-
-namespace Phoenix.Bll.Interfaces
+﻿namespace Toci.Db.Interfaces
 {
     public interface IDbLogic
     {

@@ -149,7 +149,6 @@
     <Compile Include="FinancialOperations\Order\IOrder.cs" />
     <Compile Include="FinancialOperations\Order\IPurchase.cs" />
     <Compile Include="FinancialOperations\Order\IRequirement.cs" />
-    <Compile Include="IDbLogic.cs" />
     <Compile Include="IExceptionNotifier.cs" />
     <Compile Include="ILogic.cs" />
     <Compile Include="ILogSaver.cs" />

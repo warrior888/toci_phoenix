@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Phoenix.Bll.Interfaces.BusinessModels.CourseReferences;
+using Toci.Db.Interfaces;
 
 namespace Phoenix.Bll.Interfaces.Logic.CourseReferences
 {
