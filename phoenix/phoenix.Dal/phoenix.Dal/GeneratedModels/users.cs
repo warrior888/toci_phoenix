@@ -99,6 +99,19 @@ namespace Phoenix.Dal.GeneratedModels
                     SetValue(SURNAME, value);
                 }
             }
+
+        public const string ACCOUNTBALANCE = "account_balance";
+        public decimal AccountBalance
+        {
+            get
+            {
+                return GetValue<decimal>(ACCOUNTBALANCE);
+            }
+            set
+            {
+                SetValue(ACCOUNTBALANCE, value);
+            }
+        }
         
 
         protected override IModel GetInstance()
