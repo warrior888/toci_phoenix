@@ -3,6 +3,8 @@ using Google.Apis.Calendar.v3;
 using Google.Apis.Services;
 using Phoenix.Bll.Interfaces.BusinessModels.CoursesList;
 using System.Collections.Generic;
+using Toci.Db.Interfaces;
+
 namespace Phoenix.Bll.Interfaces.Logic.CoursesList
 {
     public interface ICoursesListLogic : IDbLogic

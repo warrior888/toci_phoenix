@@ -1,11 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Phoenix.Bll.Interfaces;
 using Toci.Db.ClusterAccess;
 using Toci.Db.DbVirtualization;
 using Toci.Db.Interfaces;
 
-namespace Phoenix.Bll
+namespace Toci.Db.DbUtils
 {
     public abstract class DbLogic : IDbLogic
     {
@@ -14,18 +13,13 @@ namespace Phoenix.Bll
 
         protected DbLogic()
         {
-            //DbHandleAccessData accessData = new DbHandleAccessDataFactory().Create("Patryk");
-           DbHandleAccessData accessData = new DbHandleAccessDataFactory().Create("Terry");
-
-            DbHandle = GetDbHandle(accessData.UserName, accessData.Password,
-                accessData.DbAdress, accessData.DbName);
+            // tutaj dane do polaczenia z baza powinny byc argumentami konstruktora ale na razie niech tak bedzie ;)
+            DbHandle = GetDbHandle("","","","");
         }
 
         public virtual IDbHandle GetDbHandle(string user, string password, string dbAddress, string dbName)
         {
-            // podac obiekt pracujacy z baza danych
             return DbHandleFactory.GetHandle(SqlClientKind.PostgreSql, user, password, dbAddress, dbName);
-
         }
 
         protected List<T> FetchModelsFromDb<T>(IModel model) where T : Model
