@@ -16,23 +16,22 @@ namespace Con_Air.Terry
             {BinaryFileExtension.Exe, ".exe"}
         };
 
-        protected string GetBase64FromFile(string filePath)
+        protected byte[] GetBytesFromFile(string filePath)
         {
-            string result;
+            byte[] byteArr;
 
             using (var stream = new FileStream(filePath, FileMode.Open))
             using (var binReader = new BinaryReader(stream))
             {
-                var byteArr = binReader.ReadBytes(Convert.ToInt32(stream.Length));
-                result = Convert.ToBase64String(byteArr);
+                 byteArr = binReader.ReadBytes(Convert.ToInt32(stream.Length));
             }
 
-            return result;
+            return byteArr;
         }
 
         protected void WriteToFile(string filePath, string fileName, string base64Content, BinaryFileExtension extension)
         {
-            var byteArr = Convert.FromBase64String(base64Content);
+            var byteArr = Base64Operations.GetBytesFromBase64(base64Content);
             var fullPath = string.Format(_format, filePath, fileName, extensions[extension]);
 
             using (var stream = new FileStream(fullPath, FileMode.Create))
@@ -42,7 +41,12 @@ namespace Con_Air.Terry
         
         public string GetBase64Representation(string filePath)
         {
-            return GetBase64FromFile(filePath);
+            return Base64Operations.GetBase64FromByteArr(GetBytesFromFile(filePath));
+        }
+
+        public byte[] GetByteArrRepresentation(string filePath)
+        {
+            return GetBytesFromFile(filePath);
         }
 
         public void CreateFile(string filePath, string fileName, string base64Content, BinaryFileExtension extension)
