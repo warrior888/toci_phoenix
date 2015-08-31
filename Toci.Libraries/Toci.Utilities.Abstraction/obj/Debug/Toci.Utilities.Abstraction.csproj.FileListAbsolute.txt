@@ -300,7 +300,6 @@ F:\phoenixx\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\obj\Debug\Toci
 F:\phoenixx\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\obj\Debug\Toci.Utilities.Abstraction.csprojResolveAssemblyReference.cache
 F:\phoenixx\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\obj\Debug\Toci.Utilities.Abstraction.dll
 F:\phoenixx\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\obj\Debug\Toci.Utilities.Abstraction.pdb
-<<<<<<< HEAD
 C:\self\toci\software\sourcetree\phoenix\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\bin\Debug\Toci.Utilities.Abstraction.dll.config
 C:\self\toci\software\sourcetree\phoenix\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\bin\Debug\Toci.Utilities.Abstraction.dll
 C:\self\toci\software\sourcetree\phoenix\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\bin\Debug\Toci.Utilities.Abstraction.pdb
@@ -333,7 +332,6 @@ C:\self\toci\software\sourcetree\phoenix\toci_common\Toci.Libraries\Toci.Utiliti
 C:\self\toci\software\sourcetree\phoenix\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\obj\Debug\Toci.Utilities.Abstraction.csprojResolveAssemblyReference.cache
 C:\self\toci\software\sourcetree\phoenix\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\obj\Debug\Toci.Utilities.Abstraction.dll
 C:\self\toci\software\sourcetree\phoenix\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\obj\Debug\Toci.Utilities.Abstraction.pdb
-=======
 E:\TociPhoenix\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\bin\Debug\Toci.Utilities.Abstraction.dll.config
 E:\TociPhoenix\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\bin\Debug\Toci.Utilities.Abstraction.dll
 E:\TociPhoenix\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\bin\Debug\Toci.Utilities.Abstraction.pdb
@@ -366,4 +364,3 @@ E:\TociPhoenix\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\obj\Debug\T
 E:\TociPhoenix\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\obj\Debug\Toci.Utilities.Abstraction.csprojResolveAssemblyReference.cache
 E:\TociPhoenix\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\obj\Debug\Toci.Utilities.Abstraction.dll
 E:\TociPhoenix\toci_common\Toci.Libraries\Toci.Utilities.Abstraction\obj\Debug\Toci.Utilities.Abstraction.pdb
->>>>>>> 4f3ba3293315d63dc0025730f2c7323a3b70a714

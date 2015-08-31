@@ -282,7 +282,6 @@ F:\phoenixx\toci_common\Toci.Libraries\Toci.Utilities.Interfaces\Toci.Utilities.
 F:\phoenixx\toci_common\Toci.Libraries\Toci.Utilities.Interfaces\Toci.Utilities.Interfaces\obj\Debug\Toci.Utilities.Interfaces.csprojResolveAssemblyReference.cache
 F:\phoenixx\toci_common\Toci.Libraries\Toci.Utilities.Interfaces\Toci.Utilities.Interfaces\obj\Debug\Toci.Utilities.Interfaces.dll
 F:\phoenixx\toci_common\Toci.Libraries\Toci.Utilities.Interfaces\Toci.Utilities.Interfaces\obj\Debug\Toci.Utilities.Interfaces.pdb
-<<<<<<< HEAD
 C:\self\toci\software\sourcetree\phoenix\toci_common\Toci.Libraries\Toci.Utilities.Interfaces\Toci.Utilities.Interfaces\bin\Debug\Toci.Utilities.Interfaces.dll.config
 C:\self\toci\software\sourcetree\phoenix\toci_common\Toci.Libraries\Toci.Utilities.Interfaces\Toci.Utilities.Interfaces\bin\Debug\Toci.Utilities.Interfaces.dll
 C:\self\toci\software\sourcetree\phoenix\toci_common\Toci.Libraries\Toci.Utilities.Interfaces\Toci.Utilities.Interfaces\bin\Debug\Toci.Utilities.Interfaces.pdb
@@ -313,7 +312,6 @@ C:\self\toci\software\sourcetree\phoenix\toci_common\Toci.Libraries\Toci.Utiliti
 C:\self\toci\software\sourcetree\phoenix\toci_common\Toci.Libraries\Toci.Utilities.Interfaces\Toci.Utilities.Interfaces\obj\Debug\Toci.Utilities.Interfaces.csprojResolveAssemblyReference.cache
 C:\self\toci\software\sourcetree\phoenix\toci_common\Toci.Libraries\Toci.Utilities.Interfaces\Toci.Utilities.Interfaces\obj\Debug\Toci.Utilities.Interfaces.dll
 C:\self\toci\software\sourcetree\phoenix\toci_common\Toci.Libraries\Toci.Utilities.Interfaces\Toci.Utilities.Interfaces\obj\Debug\Toci.Utilities.Interfaces.pdb
-=======
 E:\TociPhoenix\toci_common\Toci.Libraries\Toci.Utilities.Interfaces\Toci.Utilities.Interfaces\bin\Debug\Toci.Utilities.Interfaces.dll.config
 E:\TociPhoenix\toci_common\Toci.Libraries\Toci.Utilities.Interfaces\Toci.Utilities.Interfaces\bin\Debug\Toci.Utilities.Interfaces.dll
 E:\TociPhoenix\toci_common\Toci.Libraries\Toci.Utilities.Interfaces\Toci.Utilities.Interfaces\bin\Debug\Toci.Utilities.Interfaces.pdb
@@ -344,4 +342,3 @@ E:\TociPhoenix\toci_common\Toci.Libraries\Toci.Utilities.Interfaces\Toci.Utiliti
 E:\TociPhoenix\toci_common\Toci.Libraries\Toci.Utilities.Interfaces\Toci.Utilities.Interfaces\obj\Debug\Toci.Utilities.Interfaces.csprojResolveAssemblyReference.cache
 E:\TociPhoenix\toci_common\Toci.Libraries\Toci.Utilities.Interfaces\Toci.Utilities.Interfaces\obj\Debug\Toci.Utilities.Interfaces.dll
 E:\TociPhoenix\toci_common\Toci.Libraries\Toci.Utilities.Interfaces\Toci.Utilities.Interfaces\obj\Debug\Toci.Utilities.Interfaces.pdb
->>>>>>> 4f3ba3293315d63dc0025730f2c7323a3b70a714

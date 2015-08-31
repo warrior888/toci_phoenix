@@ -377,7 +377,6 @@ F:\phoenixx\toci_common\Toci.Libraries\Toci.Utilities\obj\Debug\Toci.Utilities.c
 F:\phoenixx\toci_common\Toci.Libraries\Toci.Utilities\obj\Debug\Toci.Utilities.csprojResolveAssemblyReference.cache
 F:\phoenixx\toci_common\Toci.Libraries\Toci.Utilities\obj\Debug\Toci.Utilities.dll
 F:\phoenixx\toci_common\Toci.Libraries\Toci.Utilities\obj\Debug\Toci.Utilities.pdb
-<<<<<<< HEAD
 C:\self\toci\software\sourcetree\phoenix\toci_common\Toci.Libraries\Toci.Utilities\bin\Debug\x64\liblept168.dll
 C:\self\toci\software\sourcetree\phoenix\toci_common\Toci.Libraries\Toci.Utilities\bin\Debug\x64\libtesseract302.dll
 C:\self\toci\software\sourcetree\phoenix\toci_common\Toci.Libraries\Toci.Utilities\bin\Debug\x86\liblept168.dll
@@ -418,7 +417,6 @@ C:\self\toci\software\sourcetree\phoenix\toci_common\Toci.Libraries\Toci.Utiliti
 C:\self\toci\software\sourcetree\phoenix\toci_common\Toci.Libraries\Toci.Utilities\obj\Debug\Toci.Utilities.csprojResolveAssemblyReference.cache
 C:\self\toci\software\sourcetree\phoenix\toci_common\Toci.Libraries\Toci.Utilities\obj\Debug\Toci.Utilities.dll
 C:\self\toci\software\sourcetree\phoenix\toci_common\Toci.Libraries\Toci.Utilities\obj\Debug\Toci.Utilities.pdb
-=======
 E:\TociPhoenix\toci_common\Toci.Libraries\Toci.Utilities\bin\Debug\x64\liblept168.dll
 E:\TociPhoenix\toci_common\Toci.Libraries\Toci.Utilities\bin\Debug\x64\libtesseract302.dll
 E:\TociPhoenix\toci_common\Toci.Libraries\Toci.Utilities\bin\Debug\x86\liblept168.dll
@@ -459,4 +457,3 @@ E:\TociPhoenix\toci_common\Toci.Libraries\Toci.Utilities\obj\Debug\Toci.Utilitie
 E:\TociPhoenix\toci_common\Toci.Libraries\Toci.Utilities\obj\Debug\Toci.Utilities.csprojResolveAssemblyReference.cache
 E:\TociPhoenix\toci_common\Toci.Libraries\Toci.Utilities\obj\Debug\Toci.Utilities.dll
 E:\TociPhoenix\toci_common\Toci.Libraries\Toci.Utilities\obj\Debug\Toci.Utilities.pdb
->>>>>>> 4f3ba3293315d63dc0025730f2c7323a3b70a714
