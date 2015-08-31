@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Toci.Db.Clients;
+﻿using Toci.Db.Clients;
 using Toci.Db.DbVirtualization.MsSqlQuery;
 using Toci.Db.DbVirtualization.PostgreSqlQuery;
 using Toci.Db.Interfaces;

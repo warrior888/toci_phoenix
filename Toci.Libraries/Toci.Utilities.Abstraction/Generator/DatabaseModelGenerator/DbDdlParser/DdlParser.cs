@@ -19,7 +19,7 @@ namespace Toci.Utilities.Abstraction.Generator.DatabaseModelGenerator.DbDdlParse
         {
             if (ddl.Length > _minLength)
             {
-                var coreddl = ExtractCoreDdl(ddl); // creat ( 'dfsag,fdsg' )
+                    var coreddl = ExtractCoreDdl(ddl); // creat ( 'dfsag,fdsg' )
                 tableName = ExtractDdlTableName(ddl);
                 var ddlEntriesList = coreddl.Split(new[] {separator}, StringSplitOptions.None); // , fdagf,fda,fgads,fgds
 
