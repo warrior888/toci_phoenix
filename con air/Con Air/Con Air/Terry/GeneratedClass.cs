@@ -4,16 +4,16 @@ using System.Linq;
 using Con_Air.Flexi;
 using Microsoft.CSharp;
 
+
 namespace Con_Air.Terry
 {
     public class TerryGeneratedClass : GeneratedClass
     {
-        public override string GetGeneratedClass()
+        public string GetGeneratedClass(int counter)
         {
-            return "public class TestClass {  public int GetValue() {return 777;} public string GetMsg() {return \"Toci\";}}";
+            return "public class TestClass {  public int GetValue() {return " + counter + ";} public string GetMsg() {return \"Toci\";}}";
                   
         }
-
 
         public void Compile(out int liczba, out string napis)
         {

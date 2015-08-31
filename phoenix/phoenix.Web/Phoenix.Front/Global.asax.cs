@@ -25,10 +25,13 @@ namespace Phoenix.Front
 
             //Autofac
 
-            var builder = new ContainerBuilder();
-            builder.RegisterControllers(typeof(MvcApplication).Assembly);
-            var container = builder.Build();
-            AutofacContainer.GetContainer().UpdateContainer(container);
+            var controllerBuilder = new ContainerBuilder();
+            
+            controllerBuilder.RegisterControllers(typeof(MvcApplication).Assembly);
+            var container = controllerBuilder.Build();
+
+            AutofacContainer.GetContainer().UpdateExternalContainer(container); //BLL dependancies
+
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
 
         }
