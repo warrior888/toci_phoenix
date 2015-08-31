@@ -2,6 +2,9 @@
 {
     public class S2yfr4ntClass
     {
-         private string Itsnotapublicmethod
+        private string ItsNotAPublicMethod()
+        {
+            return "trolololo";
+        }
     }
 }
