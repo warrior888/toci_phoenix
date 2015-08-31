@@ -8,13 +8,11 @@ namespace Phoenix.Integration.Test.Developers.Coffee13
     public class UnitTdbcomunicationtestsest1
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TestOfuserAutorization()
         {
             var obj = new InteractiveCoursersUserAuthorization();
-
-            obj.CheckUserAccountBalance(5, 10);
-
-
+            Assert.IsTrue(obj.CheckUserAccountBalance(5, new decimal(10.00)));
+            Assert.IsFalse(obj.CheckUserAccountBalance(5,new decimal(100.23)));
         }
     }
 }
