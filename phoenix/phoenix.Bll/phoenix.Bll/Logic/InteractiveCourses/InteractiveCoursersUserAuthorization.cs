@@ -1,4 +1,7 @@
-﻿using Phoenix.Bll.Interfaces.Logic.InteractiveCourses;
+﻿using System;
+using System.Data;
+using log4net.Core;
+using Phoenix.Bll.Interfaces.Logic.InteractiveCourses;
 using Phoenix.Dal.GeneratedModels;
 using Toci.Db.ClusterAccess;
 
@@ -11,13 +14,10 @@ namespace Phoenix.Bll.Logic.InteractiveCourses
             var dbhandle = DbHandleFactory.GetHandle(SqlClientKind.PostgreSql, "web", "mateusz", "localhost", "ic_database");
             var data = dbhandle.GetData(new users());
 
-            
-            
-            //dataset obsługa i compare 
+            DataRow[] foundRows = data.Tables[0].Select("id=" + userId);
+            var userActualAccountBalance = foundRows[0]["account_balance"];
 
-
-
-            return true;
+            return Convert.ToDecimal(userActualAccountBalance) >= usersMinAccountBalance;
         }
     }
 }
