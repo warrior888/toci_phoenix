@@ -2,7 +2,7 @@ using System;
 using Toci.Db.DbVirtualization;
 using Toci.Db.Interfaces;
 
-namespace UnitTestProject.res
+namespace Phoenix.Dal.GeneratedModels
 {
     public class pay_to_win : Model
     {

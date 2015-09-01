@@ -1,7 +1,7 @@
 ﻿using Toci.Db.DbVirtualization;
 using Toci.Db.Interfaces;
 
-namespace UnitTestProject.res
+namespace Phoenix.Dal.GeneratedModels
 {
     public class user_statistics : Model
     {
