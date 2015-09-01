@@ -112,13 +112,24 @@
     <Compile Include="GeneratedModels\developers_list.cs" />
     <Compile Include="GeneratedModels\developers_skills.cs" />
     <Compile Include="GeneratedModels\developer_list_view.cs" />
+    <Compile Include="GeneratedModels\developer_skills_view.cs" />
+    <Compile Include="GeneratedModels\lessons.cs" />
+    <Compile Include="GeneratedModels\levels.cs" />
+    <Compile Include="GeneratedModels\modules.cs" />
+    <Compile Include="GeneratedModels\pay_to_win.cs" />
     <Compile Include="GeneratedModels\portfolio.cs" />
     <Compile Include="GeneratedModels\portfolio_skills_technologies.cs" />
+    <Compile Include="GeneratedModels\requirements.cs" />
+    <Compile Include="GeneratedModels\results.cs" />
     <Compile Include="GeneratedModels\roles.cs" />
     <Compile Include="GeneratedModels\skills_technologies.cs" />
-    <Compile Include="GeneratedModels\developer_skills_view.cs" />
+    <Compile Include="GeneratedModels\tasks.cs" />
+    <Compile Include="GeneratedModels\tasks_requirements.cs" />
+    <Compile Include="GeneratedModels\technologies.cs" />
+    <Compile Include="GeneratedModels\unit_tests.cs" />
     <Compile Include="GeneratedModels\users.cs" />
     <Compile Include="GeneratedModels\users_portfolio.cs" />
+    <Compile Include="GeneratedModels\user_statistics.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -131,9 +142,7 @@
       <Name>Toci.Db</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="generatedKsebal\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
   <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
