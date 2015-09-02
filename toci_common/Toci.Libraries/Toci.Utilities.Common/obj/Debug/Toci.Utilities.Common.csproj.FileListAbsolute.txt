@@ -289,3 +289,4 @@ C:\Users\shass\Documents\toci_phoenix2\toci_common\Toci.Libraries\Toci.Utilities
 C:\Users\shass\Documents\toci_phoenix2\toci_common\Toci.Libraries\Toci.Utilities.Common\obj\Debug\Toci.Utilities.Common.csproj.App.config
 C:\Users\shass\Documents\toci_phoenix2\toci_common\Toci.Libraries\Toci.Utilities.Common\obj\Debug\Toci.Utilities.Common.dll
 C:\Users\shass\Documents\toci_phoenix2\toci_common\Toci.Libraries\Toci.Utilities.Common\obj\Debug\Toci.Utilities.Common.pdb
+C:\Users\shass\Documents\toci_phoenix2\toci_common\Toci.Libraries\Toci.Utilities.Common\obj\Debug\Toci.Utilities.Common.csprojResolveAssemblyReference.cache
