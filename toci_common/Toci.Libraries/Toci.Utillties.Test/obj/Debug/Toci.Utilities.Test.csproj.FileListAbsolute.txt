@@ -412,3 +412,4 @@ C:\Users\shass\Documents\toci_phoenix2\toci_common\Toci.Libraries\Toci.Utillties
 C:\Users\shass\Documents\toci_phoenix2\toci_common\Toci.Libraries\Toci.Utillties.Test\obj\Debug\Toci.Utilities.Test.dll
 C:\Users\shass\Documents\toci_phoenix2\toci_common\Toci.Libraries\Toci.Utillties.Test\obj\Debug\Toci.Utilities.Test.pdb
 C:\Users\shass\Documents\toci_phoenix2\toci_common\Toci.Libraries\Toci.Utillties.Test\bin\Debug\AutoMapper.dll
+C:\Users\shass\Documents\toci_phoenix2\toci_common\Toci.Libraries\Toci.Utillties.Test\bin\Debug\AutoMapper.xml

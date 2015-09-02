@@ -291,3 +291,5 @@ C:\Users\shass\Documents\toci_phoenix2\toci_common\Toci.Libraries\Toci.Db\obj\De
 C:\Users\shass\Documents\toci_phoenix2\toci_common\Toci.Libraries\Toci.Db\obj\Debug\Toci.Db.csprojResolveAssemblyReference.cache
 C:\Users\shass\Documents\toci_phoenix2\toci_common\Toci.Libraries\Toci.Db\obj\Debug\Toci.Db.dll
 C:\Users\shass\Documents\toci_phoenix2\toci_common\Toci.Libraries\Toci.Db\obj\Debug\Toci.Db.pdb
+C:\Users\shass\Documents\toci_phoenix2\toci_common\Toci.Libraries\Toci.Db\bin\Debug\AutoMapper.dll
+C:\Users\shass\Documents\toci_phoenix2\toci_common\Toci.Libraries\Toci.Db\bin\Debug\AutoMapper.xml
