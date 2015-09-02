@@ -1,6 +1,6 @@
 ﻿namespace Toci.Db.ClusterAccess
 {
-    public class DbConfig
+    public class DbAccessConfig
     {
         public string UserName { get; set; } 
         public string Password { get; set; } 

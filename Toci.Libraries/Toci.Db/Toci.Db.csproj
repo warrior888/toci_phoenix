@@ -120,7 +120,7 @@
     <Compile Include="Clients\MsSqlClient.cs" />
     <Compile Include="Clients\PostgreSqlClient.cs" />
     <Compile Include="Clients\SqlClientBase.cs" />
-    <Compile Include="ClusterAccess\DbConfig.cs" />
+    <Compile Include="ClusterAccess\DbAccessConfig.cs" />
     <Compile Include="ClusterAccess\DbHandle.cs" />
     <Compile Include="ClusterAccess\DbHandleFactory.cs" />
     <Compile Include="ClusterAccess\SqlClientKind.cs" />
