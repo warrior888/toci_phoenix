@@ -287,6 +287,5 @@ C:\Users\shass\Documents\toci_phoenix2\toci_common\Toci.Libraries\Toci.Utilities
 C:\Users\shass\Documents\toci_phoenix2\toci_common\Toci.Libraries\Toci.Utilities.Common\bin\Debug\System.Net.Http.Primitives.xml
 C:\Users\shass\Documents\toci_phoenix2\toci_common\Toci.Libraries\Toci.Utilities.Common\bin\Debug\Zlib.Portable.xml
 C:\Users\shass\Documents\toci_phoenix2\toci_common\Toci.Libraries\Toci.Utilities.Common\obj\Debug\Toci.Utilities.Common.csproj.App.config
-C:\Users\shass\Documents\toci_phoenix2\toci_common\Toci.Libraries\Toci.Utilities.Common\obj\Debug\Toci.Utilities.Common.csprojResolveAssemblyReference.cache
 C:\Users\shass\Documents\toci_phoenix2\toci_common\Toci.Libraries\Toci.Utilities.Common\obj\Debug\Toci.Utilities.Common.dll
 C:\Users\shass\Documents\toci_phoenix2\toci_common\Toci.Libraries\Toci.Utilities.Common\obj\Debug\Toci.Utilities.Common.pdb

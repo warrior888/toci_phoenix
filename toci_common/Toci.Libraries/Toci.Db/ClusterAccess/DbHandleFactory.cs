@@ -11,8 +11,8 @@ namespace Toci.Db.ClusterAccess
 {
     public static class DbHandleFactory
     {
-        private static Dictionary<SqlClientKind, Func<DbConfig, IDbHandle>> dbHandleFactory
-            = new Dictionary<SqlClientKind, Func<DbConfig, IDbHandle>>
+        private static Dictionary<SqlClientKind, Func<DbAccessConfig, IDbHandle>> dbHandleFactory
+            = new Dictionary<SqlClientKind, Func<DbAccessConfig, IDbHandle>>
             {
                 {
                     SqlClientKind.MsSql, (config) => new DbHandle(
@@ -28,7 +28,7 @@ namespace Toci.Db.ClusterAccess
 
         public static IDbHandle GetHandle(SqlClientKind kind, string name, string password, string dbAddress, string dbName)
         {
-            DbConfig config = new DbConfig
+            DbAccessConfig config = new DbAccessConfig
             {
                 UserName = name,
                 Password = password,
@@ -48,7 +48,7 @@ namespace Toci.Db.ClusterAccess
             //            }
         }
 
-        public static IDbHandle GetHandle(SqlClientKind kind, DbConfig config)
+        public static IDbHandle GetHandle(SqlClientKind kind, DbAccessConfig config)
         {
             return dbHandleFactory.ContainsKey(kind) ? dbHandleFactory[kind](config): null;
         }
