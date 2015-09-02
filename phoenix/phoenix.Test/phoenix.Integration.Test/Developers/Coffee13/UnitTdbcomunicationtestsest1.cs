@@ -14,5 +14,13 @@ namespace Phoenix.Integration.Test.Developers.Coffee13
             Assert.IsTrue(obj.CheckUserAccountBalance(5, new decimal(10.00)));
             Assert.IsFalse(obj.CheckUserAccountBalance(5,new decimal(100.23)));
         }
+
+        [TestMethod]
+        public void TaskOperationsTest()
+        {
+            var obj =  new InteractiveCoursesTaskOperations();
+            Assert.IsFalse(obj.CheckIfUsersTaskExist(5));
+            Assert.IsTrue(obj.CheckIfUsersTaskExist(5));
+        }
     }
 }

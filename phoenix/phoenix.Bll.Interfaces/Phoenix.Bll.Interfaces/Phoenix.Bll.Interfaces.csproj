@@ -157,6 +157,7 @@
     <Compile Include="Logic\DevelopersList\IPortfolioLogic.cs" />
     <Compile Include="Logic\InteractiveCourses\IInteractiveCoursesUserAuthorization.cs" />
     <Compile Include="Logic\InteractiveCourses\IInteractiveCoursesLogic.cs" />
+    <Compile Include="Logic\InteractiveCourses\IInteractiveCourseTaskOperations.cs" />
     <Compile Include="Logic\Payments\IPaymentsLogic.cs" />
     <Compile Include="Logic\TeamLeasing\IDeveloperAvailableLogic.cs" />
     <Compile Include="Logic\TeamLeasing\ITeamLeasingLogic.cs" />

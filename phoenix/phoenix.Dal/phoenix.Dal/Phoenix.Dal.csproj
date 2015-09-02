@@ -101,6 +101,7 @@
     <Compile Include="generatedKsebal\AplicationTests.cs" />
     <Compile Include="generatedKsebal\TestsResults.cs" />
     <Compile Include="GeneratedModels\chosen_course_registration.cs" />
+    <Compile Include="GeneratedModels\completed_tasks.cs" />
     <Compile Include="GeneratedModels\courses_list.cs" />
     <Compile Include="GeneratedModels\course_calendar.cs" />
     <Compile Include="GeneratedModels\course_participants.cs" />
