@@ -20,7 +20,10 @@ namespace Phoenix.Integration.Test.Developers.Coffee13
         {
             var obj =  new InteractiveCoursesTaskOperations();
             Assert.IsFalse(obj.CheckIfUsersTaskExist(5));
-            Assert.IsTrue(obj.CheckIfUsersTaskExist(5));
+           // Assert.IsTrue(obj.CheckIfUsersTaskExist(5));
+
+            //obj.InsertUsersFirstRecord(5)
         }
+
     }
 }
