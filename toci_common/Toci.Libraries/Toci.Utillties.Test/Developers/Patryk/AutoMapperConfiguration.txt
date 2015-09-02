@@ -1,0 +1,76 @@
+﻿using System;
+using AutoMapper;
+using Ionic.Zlib;
+using Phoenix.Bll.BusinessModels.TeamLeasing;
+using Phoenix.Bll.BusinessModels.UsersList;
+using Phoenix.Bll.Interfaces.BusinessModels.CourseRegistration;
+using Phoenix.Bll.Interfaces.BusinessModels.DevelopersList;
+using Phoenix.Bll.Interfaces.BusinessModels.TeamLeasing;
+using Phoenix.Bll.Interfaces.Logic.DevelopersList;
+using Phoenix.Bll.Interfaces.Logic.TeamLeasing;
+using Phoenix.Bll.Interfaces.Logic.UsersList;
+using Phoenix.Dal.GeneratedModels;
+
+namespace Phoenix.Bll
+{
+    public class AutoMapperConfiguration
+    {
+        private ISkillLogic _skillLogic;
+
+        public AutoMapperConfiguration(
+            ISkillLogic skillLogic
+            )
+        {
+            _skillLogic = skillLogic;
+
+            Configure();
+        }
+
+        public void Configure()
+        {
+            ForICourseRegistrationBusinessModel();
+            ForISkillBusinessModel();
+            ForIPortfolioBusinessModel();
+            ForIDeveloperAvailableBusinessModel();
+            ForIDeveloperBusinessModel();
+
+        }
+
+        private void ForICourseRegistrationBusinessModel()
+        {
+			//Gdy właściwości mają takie same nazwy nic więcej nie trzeba robić
+            Mapper.CreateMap<ICourseRegistrationBusinessModel, course_registration>();
+            Mapper.CreateMap<course_registration, ICourseRegistrationBusinessModel>(); 
+        }
+
+        private void ForISkillBusinessModel()
+        {
+            Mapper.CreateMap<ISkillBusinessModel, skills_technologies>();
+            Mapper.CreateMap<skills_technologies, ISkillBusinessModel>();
+
+            Mapper.CreateMap<IDeveloperSkillBusinessModel, developer_skills_view>();
+            Mapper.CreateMap<developer_skills_view, IDeveloperSkillBusinessModel>();
+
+        }
+
+        private void ForIPortfolioBusinessModel()
+        {
+			//Gdy mają inne, lub np chcemy pobrac wszystkie skile wykorzystane w projekcie po id projektu
+            Mapper.CreateMap<IPortfolioBusinessModel, portfolio>();
+            Mapper.CreateMap<portfolio, IPortfolioBusinessModel>().
+                ForMember(dest => dest.Skills, opts => opts.MapFrom(src => _skillLogic.GetPortfolioSkills(src.Id)));
+        }
+
+        private void ForIDeveloperAvailableBusinessModel()
+        {
+		//gdy mamy DateTime
+            Mapper.CreateMap<IDeveloperAvailableBusinessModel, developers_available>()
+                .ForMember(dest => dest.AvailableFrom, opt => opt.MapFrom(src => src.AvailableFrom))
+                .ForMember(dest => dest.AvailableTo, opt => opt.MapFrom(src => src.AvailableTo)); 
+            Mapper.CreateMap<developers_available, IDeveloperAvailableBusinessModel>()
+                .ForMember(dest => dest.AvailableFrom, opt => opt.MapFrom(src => src.AvailableFrom))
+                .ForMember(dest => dest.AvailableTo, opt => opt.MapFrom(src => src.AvailableTo));
+
+        }
+    }
+}
