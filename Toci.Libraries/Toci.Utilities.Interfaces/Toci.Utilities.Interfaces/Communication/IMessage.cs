@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Toci.Utilities.Interfaces.Communication.CommunicationMessages;
 using Toci.Utilities.Interfaces.User;
 

@@ -1,24 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
+using Toci.Db.DbVirtualization.SQLQuery;
 using Toci.Db.Interfaces;
 
 namespace Toci.Db.DbVirtualization.MsSqlQuery
 {
-    public class MsSqlUpdate : SqlQuery, IUpdate
+    public class MsSqlUpdate : SqlQueryWithWhereClause, IUpdate
     {
-        private const string Pattern = "UPDATE {0} SET {1} WHERE {2};";
+        private const string Pattern = "UPDATE {0} SET {1}";
         private const string AssignmentPattern = "{0} = {1}";
         private const string Comma = ", ";
-        private const int MinStatementLength = 2;
 
-        public override string GetQuery(IModel model)
+        protected override string GetQueryWithoutWherePart(IModel model)
         {
-            var where = GetWhereStatement(model);
-            if (where.Length < MinStatementLength)
-                return "";
-
-            return string.Format(Pattern, model.GetTableName(), GetSetStatement(model), where);
+            return string.Format(Pattern, model.GetTableName(), GetSetStatement(model));
         }
 
         protected virtual string GetSetStatement(IModel model)

@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Text;
-using Toci.Utilities.Abstraction.Generator.DatabaseModelGenerator;
+﻿using Toci.Utilities.Abstraction.Generator.DatabaseModelGenerator;
 using Toci.Utilities.Interfaces.Generator.DatabaseModelGenerator;
 using Toci.Utilities.Interfaces.Generator.DatabaseModelGenerator.DbDdlParser;
 

@@ -1,4 +1,4 @@
-﻿using System.ComponentModel;
+﻿using System;
 using Toci.Db.DbVirtualization;
 using Toci.Db.Interfaces;
 
@@ -33,7 +33,7 @@ namespace Toci.Utilities.Test.Developers.Casanova
 
         protected override IModel GetInstance()
         {   //return model obcject
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
     }
 }

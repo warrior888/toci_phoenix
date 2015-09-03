@@ -1,17 +1,15 @@
-﻿using System.Collections.Generic;
-using Toci.Db.Interfaces;
+﻿using Toci.Db.DbVirtualization.SQLQuery;
+﻿using Toci.Db.Interfaces;
 
 namespace Toci.Db.DbVirtualization.MsSqlQuery
 {
-    public class MsSqlDelete : SqlQuery, IDelete
+    public class MsSqlDelete : SqlQueryWithWhereClause, IDelete
     {
-        private const string PATTERN = "delete from {0} where {1};";
+        private const string Pattern = "delete from {0}";
 
-        public override string GetQuery(IModel model)
+        protected override string GetQueryWithoutWherePart(IModel model)
         {
-	        var whereStatement = GetWhereStatement(model);
-	       
-		    return string.Format(PATTERN, model.GetTableName(), whereStatement);
+            return string.Format(Pattern, model.GetTableName());
         }
     }
 }

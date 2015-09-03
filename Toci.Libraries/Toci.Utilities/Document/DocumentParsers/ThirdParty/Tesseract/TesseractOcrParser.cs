@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using Tesseract;
 using Toci.Utilities.Abstraction.Document;
 using Toci.Utilities.Interfaces;
+using ImageFormat = System.Drawing.Imaging.ImageFormat;
 
 namespace Toci.Utilities.Document.DocumentParsers.ThirdParty.Tesseract
 {
@@ -138,7 +136,7 @@ namespace Toci.Utilities.Document.DocumentParsers.ThirdParty.Tesseract
         {
             using (var buffer = new MemoryStream())
             {
-                img.Save(buffer, System.Drawing.Imaging.ImageFormat.Tiff);
+                img.Save(buffer, ImageFormat.Tiff);
                 return buffer.ToArray();
             }
         }
