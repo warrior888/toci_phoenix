@@ -1,0 +1,14 @@
+﻿CREATE TABLE Scopes	
+   (ScopeID serial PRIMARY KEY NOT NULL,
+    ScopeName text NOT NULL
+   );
+
+CREATE TABLE Projects	
+   (ProjectID serial PRIMARY KEY NOT NULL,
+    ScopeID integer NOT NULL references Scopes(ScopeID),
+    ProjectName text NOT NULL,
+	ProjectAuthor text NOT NULL,
+    ProjectData text NOT NULL,
+	ModificationDate timestamp NOT NULL,
+	Hash text NOT NULL
+);
