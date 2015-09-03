@@ -1,4 +1,4 @@
-﻿using System.Linq;
+using System.Linq;
 using Toci.Db.DbVirtualization.SQLQuery;
 using Toci.Db.Interfaces;
 

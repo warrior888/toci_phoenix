@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="AutoMapper, Version=4.0.4.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\..\..\phoenix\phoenix.Dal\packages\AutoMapper.4.0.4\lib\net45\AutoMapper.dll</HintPath>
+      <HintPath>packages\AutoMapper.4.0.4\lib\net45\AutoMapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="BouncyCastle.Crypto, Version=1.7.4137.9688, Culture=neutral, PublicKeyToken=a4292a325f69b123, processorArchitecture=MSIL">
@@ -120,6 +121,7 @@
     <Compile Include="Clients\MsSqlClient.cs" />
     <Compile Include="Clients\PostgreSqlClient.cs" />
     <Compile Include="Clients\SqlClientBase.cs" />
+    <Compile Include="ClusterAccess\DbAccessConfig.cs" />
     <Compile Include="ClusterAccess\DbHandle.cs" />
     <Compile Include="ClusterAccess\DbHandleFactory.cs" />
     <Compile Include="ClusterAccess\SqlClientKind.cs" />

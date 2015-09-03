@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
+﻿using System.Collections.Generic;
 using System.Text;
 using Toci.Utilities.Interfaces.Generator.DatabaseModelGenerator;
 using Toci.Utilities.Interfaces.Generator.DatabaseModelGenerator.DbDdlParser;

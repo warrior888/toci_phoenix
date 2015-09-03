@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Linq;
+using System.Net;
 using System.Net.Mail;
 using System.Text;
 using Toci.Utilities.Abstraction.Communication;
 using Toci.Utilities.Interfaces.Communication;
-using Toci.Utilities.Interfaces.Communication.CommunicationMedia;
-using Toci.Utilities.Interfaces.Communication.CommunicationMessages;
 
 namespace Toci.Utilities.Communication.MediaTypes
 {
@@ -36,7 +35,7 @@ namespace Toci.Utilities.Communication.MediaTypes
                 smtpServer.EnableSsl = true;
                 smtpServer.Port = Port;
                 smtpServer.Host = Host;
-                smtpServer.Credentials = new System.Net.NetworkCredential(Login, Password);
+                smtpServer.Credentials = new NetworkCredential(Login, Password);
                 smtpServer.EnableSsl = true;
                 smtpServer.DeliveryFormat = SmtpDeliveryFormat.International;
                 smtpServer.DeliveryMethod = SmtpDeliveryMethod.Network;

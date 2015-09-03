@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using Toci.Utilities.Abstraction.DesignPatterns;
 using Toci.Utilities.Interfaces.Communication;
-using Toci.Utilities.Interfaces.Communication.CommunicationMessages;
 
 namespace Toci.Utilities.Abstraction.Communication.Factories
 {
