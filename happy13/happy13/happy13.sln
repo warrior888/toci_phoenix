@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phoenix.happy13", "happy13\Phoenix.happy13.csproj", "{99094B1A-35F6-4550-BD37-BE38C04EAF19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phoenix.Bll.Interfaces", "..\..\phoenix\phoenix.Bll.Interfaces\Phoenix.Bll.Interfaces\Phoenix.Bll.Interfaces.csproj", "{471D3F60-27A8-402D-8599-952EC3A2985B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phoenix.Bll", "..\..\phoenix\phoenix.Bll\phoenix.Bll\Phoenix.Bll.csproj", "{02E87EFF-1F75-4627-9AD8-8720AFA5CFA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phoenix.Dal", "..\..\phoenix\phoenix.Dal\phoenix.Dal\Phoenix.Dal.csproj", "{71E30224-522B-4925-9F5E-280ACE8D6292}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phoenix.Integration.Test", "..\..\phoenix\phoenix.Test\phoenix.Integration.Test\Phoenix.Integration.Test.csproj", "{A2E8D8A8-E4B3-427E-9443-858DC950F88A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phoenix.Front", "..\..\phoenix\phoenix.Web\Phoenix.Front\Phoenix.Front.csproj", "{0C1A4599-49F9-426E-89AB-8D6FA60ECA69}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{99094B1A-35F6-4550-BD37-BE38C04EAF19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99094B1A-35F6-4550-BD37-BE38C04EAF19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99094B1A-35F6-4550-BD37-BE38C04EAF19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99094B1A-35F6-4550-BD37-BE38C04EAF19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{471D3F60-27A8-402D-8599-952EC3A2985B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{471D3F60-27A8-402D-8599-952EC3A2985B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{471D3F60-27A8-402D-8599-952EC3A2985B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{471D3F60-27A8-402D-8599-952EC3A2985B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02E87EFF-1F75-4627-9AD8-8720AFA5CFA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02E87EFF-1F75-4627-9AD8-8720AFA5CFA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02E87EFF-1F75-4627-9AD8-8720AFA5CFA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02E87EFF-1F75-4627-9AD8-8720AFA5CFA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71E30224-522B-4925-9F5E-280ACE8D6292}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71E30224-522B-4925-9F5E-280ACE8D6292}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71E30224-522B-4925-9F5E-280ACE8D6292}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71E30224-522B-4925-9F5E-280ACE8D6292}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2E8D8A8-E4B3-427E-9443-858DC950F88A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2E8D8A8-E4B3-427E-9443-858DC950F88A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2E8D8A8-E4B3-427E-9443-858DC950F88A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2E8D8A8-E4B3-427E-9443-858DC950F88A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C1A4599-49F9-426E-89AB-8D6FA60ECA69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C1A4599-49F9-426E-89AB-8D6FA60ECA69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C1A4599-49F9-426E-89AB-8D6FA60ECA69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C1A4599-49F9-426E-89AB-8D6FA60ECA69}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -98,7 +98,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="generatedKsebal\AplicationTests.cs" />
+    <Compile Include="generatedKsebal\TestsResults.cs" />
     <Compile Include="GeneratedModels\chosen_course_registration.cs" />
+    <Compile Include="GeneratedModels\completed_tasks.cs" />
     <Compile Include="GeneratedModels\courses_list.cs" />
     <Compile Include="GeneratedModels\course_calendar.cs" />
     <Compile Include="GeneratedModels\course_participants.cs" />
@@ -106,24 +109,39 @@
     <Compile Include="GeneratedModels\course_registration.cs" />
     <Compile Include="GeneratedModels\course_technologies.cs" />
     <Compile Include="GeneratedModels\course_trainers.cs" />
+    <Compile Include="GeneratedModels\developers_available.cs" />
     <Compile Include="GeneratedModels\developers_list.cs" />
     <Compile Include="GeneratedModels\developers_skills.cs" />
+    <Compile Include="GeneratedModels\developer_list_view.cs" />
+    <Compile Include="GeneratedModels\developer_skills_view.cs" />
+    <Compile Include="GeneratedModels\lessons.cs" />
+    <Compile Include="GeneratedModels\levels.cs" />
+    <Compile Include="GeneratedModels\modules.cs" />
+    <Compile Include="GeneratedModels\pay_to_win.cs" />
     <Compile Include="GeneratedModels\portfolio.cs" />
+    <Compile Include="GeneratedModels\portfolio_skills_technologies.cs" />
+    <Compile Include="GeneratedModels\requirements.cs" />
+    <Compile Include="GeneratedModels\results.cs" />
     <Compile Include="GeneratedModels\roles.cs" />
     <Compile Include="GeneratedModels\skills_technologies.cs" />
+    <Compile Include="GeneratedModels\tasks.cs" />
+    <Compile Include="GeneratedModels\tasks_requirements.cs" />
+    <Compile Include="GeneratedModels\technologies.cs" />
+    <Compile Include="GeneratedModels\unit_tests.cs" />
     <Compile Include="GeneratedModels\users.cs" />
     <Compile Include="GeneratedModels\users_portfolio.cs" />
+    <Compile Include="GeneratedModels\user_statistics.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\Toci.Db\Toci.Db.csproj">
-      <Project>{e45ea1c2-f40c-4903-94c3-30a885a71d33}</Project>
-      <Name>Toci.Db</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\toci_common\Toci.Libraries\Toci.Db\Toci.Db.csproj">
+      <Project>{c2377285-fa65-4545-91fb-6c4dc28155f5}</Project>
+      <Name>Toci.Db</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

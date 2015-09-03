@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using Toci.Db.Interfaces;
@@ -7,7 +8,7 @@ namespace Toci.Db.DbVirtualization
 {
     public abstract class Model : IModel
     {
-        public const string ID = "id";
+        public const string ID_FOR_PRIMARY_KEY = "id";
 
         protected Dictionary<string, IDbField<object>> Fields = new Dictionary<string, IDbField<object>>();
         protected string TableName;
@@ -35,11 +36,11 @@ namespace Toci.Db.DbVirtualization
         {
             get
             {
-                return (int) Fields[ID].GetValue();
+                return (int) Fields[ID_FOR_PRIMARY_KEY].GetValue();
             }
             set
             {
-                SetValue(ID, value);
+                SetValue(ID_FOR_PRIMARY_KEY, value);
             }
         }
 
@@ -53,6 +54,16 @@ namespace Toci.Db.DbVirtualization
             {
                 Fields.Add(key, new DbField<object>(key, value));
             }
+        }
+
+        protected T GetValue<T>(string key)
+        {
+            if (Fields.ContainsKey(key))
+            {
+                return (T)Fields[key].GetValue();
+            }
+
+            return default(T);
         }
 
         protected void SetValue<T>(Model model, string key, T value)
@@ -82,19 +93,26 @@ namespace Toci.Db.DbVirtualization
             }
         }
 
-        public void SetSelect(string columnName, SelectClause clause)
+        public IModel SetSelect(string columnName, SelectClause clause)
         {
             if (Fields.ContainsKey(columnName))
             {
                 Fields[columnName].SetWhere(true);
                 Fields[columnName].SetSelectClause(clause);
             }
+            return this;
+        }
+
+        public IModel SetSelect<T>(string columnName, SelectClause clause, T value)
+        {
+            SetValue(columnName,value);
+            return SetSelect(columnName, clause);
         }
 
         public List<IModel> GetDataRowsList(DataSet table)
         {
 
-            return table.Tables[0].Rows.OfType<DataRow>().Select(item => GetDataRow(item, table.Tables[0].Columns)).ToList();
+           return table.Tables[0].Rows.OfType<DataRow>().Select(item => GetDataRow(item, table.Tables[0].Columns)).ToList();
 
         }
 

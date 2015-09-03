@@ -2,8 +2,8 @@
 {
     public interface ISkillBusinessModel
     {
-        string SkillName { get; set; }
+        int Id { get; set; }
 
-        double SkillLevel { get; set; }
+        string SkillName { get; set; }       
     }
 }

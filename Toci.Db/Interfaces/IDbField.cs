@@ -18,5 +18,6 @@ namespace Toci.Db.Interfaces
         void SetWhere(bool isWhere);
         void SetPrimary(bool isPrimary);
         void SetSelectClause(SelectClause clause);
+        // constraints ? references not null ?
     }
 }

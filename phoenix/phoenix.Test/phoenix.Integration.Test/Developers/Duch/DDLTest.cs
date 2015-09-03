@@ -30,11 +30,11 @@ namespace Phoenix.Integration.Test.Developers.Duch
 
             var modelsGenerator = new TociDbModelsGenerator(new TociDbModelGenerator(new SqlDdlParser(new SqlDdlEntryParser()), template));
 
-            modelsGenerator.GenerateModels(
+           /* modelsGenerator.GenerateModels(
                 @"..\..\Developers\Duch\data\test.txt",
                // @"..\..\Developers\Duch\destination",
                 @"..\..\..\..\phoenix.Dal\Phoenix.Dal\GeneratedModels",
-                ";", ",");
+                ";", ",");*/
         }
 
         [TestMethod]

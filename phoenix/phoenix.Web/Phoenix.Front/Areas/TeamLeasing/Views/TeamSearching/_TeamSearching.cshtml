@@ -1,0 +1,56 @@
+﻿@using WebGrease.Css.Extensions
+@model Phoenix.Front.Areas.TeamLeasing.Models.TeamSearchingViewModel
+
+@using (Html.BeginForm("GetResults", "TeamSearching", FormMethod.Post))
+{
+
+<table class="table table-responsive">
+    <tr>
+        <th>Oferta leasingu (?)</th>
+        <th>Technologie</th>
+        <th>Skill</th>
+        <th>Dostępność</th>
+        <th>Godziny pracy</th>
+        <th>Ilość <br/> developerów</th>
+    </tr>
+    <tr>
+        <td>
+           @Html.EnumDropDownListFor(m => m.LeasingOffer)
+        </td>
+        <td>
+            @Html.ListBoxFor(m=>m.Tech, Model.TechList, new {multiple="multiple"})
+        </td>
+        <td>
+            @Html.TextBoxFor(m => m.SkillSet.SkillLevel, new { @Value = "0", Type = "number", Min = "0", Max = "99" })
+        </td>
+        <td>
+            <p>
+                @Html.LabelFor(m => m.AvailableFrom, "Od:") 
+                @Html.TextBoxFor(m => m.AvailableFrom, new { @Value = "Podaj datę" })
+            </p>
+            <p>
+                @Html.LabelFor(m => m.AvailableTo, "Do:") 
+                @Html.TextBoxFor(m => m.AvailableTo, new { @Value = "Podaj datę" })
+            </p>
+        </td>
+        <td>
+            <p>
+                @Html.LabelFor(m => m.StartWorkHour, "Od:") 
+                @Html.TextBoxFor(m => m.StartWorkHour, new {@Value = "8", Type = "number", Min = "6", Max = "18"})
+            </p>
+            <p>
+                @Html.LabelFor(m => m.EndWorkHour, "Do:") 
+                @Html.TextBoxFor(m => m.EndWorkHour, new {@Value = "16", Type = "number", Min = "7", Max = "22"})
+            </p>
+        </td>
+        <td>
+            @Html.TextBoxFor(m => m.CountOfTeam, new { @Value = "1", Type = "number", Min="1", Max="3" })
+        </td>
+    </tr>
+</table>
+<div align="center">
+    <button class="btn-primary" name="search-button" type="submit">Szukaj</button>
+</div>
+
+}
+

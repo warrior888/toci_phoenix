@@ -1,24 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using AutoMapper;
 using Phoenix.Bll.Interfaces.BusinessModels.CourseRegistration;
 using Phoenix.Bll.Interfaces.BusinessModels.CoursesList;
 using Phoenix.Bll.Interfaces.Logic.CourseRegistration;
-using Phoenix.Dal.GeneratedModels;
+//using Phoenix.Dal.GeneratedModels;
 
 namespace Phoenix.Bll.Logic.CourseRegistration
 {
-    public class CourseRegistrationLogic : DbLogic, ICourseRegistrationLogic
+    public class CourseRegistrationLogic : DataAccessLogic, ICourseRegistrationLogic
     {
-        
-
         public bool SaveParticipantRegistration(ICourseRegistrationBusinessModel registration)
         {
-            var dbAccess = GetDbHandle("", "", "", "");
+         /*   //var courses = registration.ChosenCourses.Aggregate("", (current, item) => current + item);
 
-            var courses = registration.ChosenCourses.Aggregate("", (current, item) => current + item);
+            // AutoMapper
+            Mapper.CreateMap<ICourseRegistrationBusinessModel, course_registration>();
+            course_registration courseRegistration = Mapper.Map<course_registration>(registration);
 
-            dbAccess.InsertData(new course_registration()
+            DbHandle.InsertData(courseRegistration);
+        
+            //nie AutoMapper
+            DbHandle.InsertData(new course_registration()
             {   //id?
                 email = registration.Email,
                 id_roles = Convert.ToInt32(registration.Role),
@@ -28,17 +32,18 @@ namespace Phoenix.Bll.Logic.CourseRegistration
                 password = registration.Password,
                 surname = registration.Surname
             });
-              
-            dbAccess.InsertData(new courses_list()
+
+            /*DbHandle.InsertData(new courses_list()
             {   //id ?
                 course_name = courses
-            });
+            });#1#
 
-            return (dbAccess.InsertData(new chosen_course_registration()
+            return (DbHandle.InsertData(new chosen_course_registration()
             {
                 //id?
 
-            })) != 0;//nie wiem czy dobry warunek
+            })) != 0;//nie wiem czy dobry warunek*/
+            return true;
         }
 
         public bool DeleteParticipantRegistration(ICourseRegistrationBusinessModel registration)

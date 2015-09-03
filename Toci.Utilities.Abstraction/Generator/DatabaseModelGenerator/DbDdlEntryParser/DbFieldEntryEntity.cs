@@ -1,5 +1,4 @@
-﻿using System;
-using Toci.Utilities.Interfaces.Generator.DatabaseModelGenerator;
+﻿using Toci.Utilities.Interfaces.Generator.DatabaseModelGenerator;
 
 namespace Toci.Utilities.Abstraction.Generator.DatabaseModelGenerator.DbDdlEntryParser
 {
@@ -7,6 +6,6 @@ namespace Toci.Utilities.Abstraction.Generator.DatabaseModelGenerator.DbDdlEntry
     {
         public string Name { get; set; }
 
-        public Type FieldType { get; set; }
+        public string FieldTypeName { get; set; }
     }
 }

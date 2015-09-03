@@ -140,11 +140,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Toci.Utilities.Common\Toci.Utilities.Common.csproj">
-      <Project>{10db4113-ac97-426e-a233-3961a7d30e52}</Project>
+      <Project>{aa84d501-0707-40d3-aed8-f4884e7f0fb2}</Project>
       <Name>Toci.Utilities.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\Toci.Utilities.Interfaces\Toci.Utilities.Interfaces\Toci.Utilities.Interfaces.csproj">
-      <Project>{5f10a690-71c7-4daa-b46b-12720b16f64c}</Project>
+      <Project>{c3976ac9-39a5-4b47-8a67-33f021a4cdc3}</Project>
       <Name>Toci.Utilities.Interfaces</Name>
     </ProjectReference>
   </ItemGroup>

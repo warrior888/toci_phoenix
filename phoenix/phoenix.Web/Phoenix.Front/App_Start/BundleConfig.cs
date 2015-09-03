@@ -9,7 +9,9 @@ namespace Phoenix.Front
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery.min.js",
+                        "~/Scripts/jquery.js",
+                        "~/Scripts/jquery-ui.js",
+                        "~/Scripts/datepicker-pl.js",
                         "~/Scripts/jquery.easing.js",
                         "~/Scripts/jquery.sticky.js",
                         "~/Scripts/jquery.flexslider-min.js",
@@ -24,7 +26,13 @@ namespace Phoenix.Front
                         "~/Scripts/smoothscroll.js",                         
                         "~/Scripts/gmap3.min.js",
                         "~/Scripts/jquery.tweet.min.js",
-                        "~/Scripts/main.js"
+                        "~/Scripts/main.js",
+                        "~/Scripts/GoogleMaps.js",
+                        "~/Scripts/scrolling-nav.js",
+                         "~/Scripts/jquery.easing.min.js",
+                        "~/Scripts/DocumentReady.js"
+
+
                         ));
 
            /* bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
@@ -44,7 +52,9 @@ namespace Phoenix.Front
                       "~/Content/site.css",
                       "~/Content/style.css",
                       "~/Content/animate.css",
-                      "~/Content/color/color1.css"  
+                      "~/Content/color/color1.css",  
+                      "~/Content/jquery-ui.css",  
+                      "~/Content/jquery-ui.structure.css"  
                       ));
         }
     }

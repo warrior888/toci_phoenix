@@ -145,7 +145,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Toci.Utilities.Common\Toci.Utilities.Common.csproj">
-      <Project>{10db4113-ac97-426e-a233-3961a7d30e52}</Project>
+      <Project>{aa84d501-0707-40d3-aed8-f4884e7f0fb2}</Project>
       <Name>Toci.Utilities.Common</Name>
     </ProjectReference>
   </ItemGroup>

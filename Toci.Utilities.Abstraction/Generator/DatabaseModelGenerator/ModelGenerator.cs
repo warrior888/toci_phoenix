@@ -39,7 +39,7 @@ namespace Toci.Utilities.Abstraction.Generator.DatabaseModelGenerator
             if(dbFields!=null)
             foreach (var dbFieldEntryEntity in dbFields)
             {
-                result.Append(TemplateProvider.GetFilledPropertyTemplate(dbFieldEntryEntity.Value.Name, dbFieldEntryEntity.Value.FieldType.ToString()));
+                result.Append(TemplateProvider.GetFilledPropertyTemplate(dbFieldEntryEntity.Value.Name, dbFieldEntryEntity.Value.FieldTypeName));
             }
 
             return result.ToString();

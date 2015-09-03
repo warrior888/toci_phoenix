@@ -110,8 +110,8 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Tesseract, Version=2.4.0.0, Culture=neutral, PublicKeyToken=ebeb3d86bef60cbe, processorArchitecture=MSIL">
-      <HintPath>..\Toci.Db\packages\Tesseract.2.4.0.0\lib\net45\Tesseract.dll</HintPath>
+    <Reference Include="Tesseract">
+      <HintPath>..\Toci.Db\packages\Tesseract.2.3.0.0\lib\net45\Tesseract.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Zlib.Portable, Version=1.11.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -188,15 +188,15 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Toci.Utilities.Abstraction\Toci.Utilities.Abstraction.csproj">
-      <Project>{e91d020a-2d43-42e3-8c53-0f57b4b4f549}</Project>
+      <Project>{3f7c2517-390a-40bf-a1fc-3f5dfae8bdf2}</Project>
       <Name>Toci.Utilities.Abstraction</Name>
     </ProjectReference>
     <ProjectReference Include="..\Toci.Utilities.Common\Toci.Utilities.Common.csproj">
-      <Project>{10db4113-ac97-426e-a233-3961a7d30e52}</Project>
+      <Project>{aa84d501-0707-40d3-aed8-f4884e7f0fb2}</Project>
       <Name>Toci.Utilities.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\Toci.Utilities.Interfaces\Toci.Utilities.Interfaces\Toci.Utilities.Interfaces.csproj">
-      <Project>{5f10a690-71c7-4daa-b46b-12720b16f64c}</Project>
+      <Project>{c3976ac9-39a5-4b47-8a67-33f021a4cdc3}</Project>
       <Name>Toci.Utilities.Interfaces</Name>
     </ProjectReference>
   </ItemGroup>

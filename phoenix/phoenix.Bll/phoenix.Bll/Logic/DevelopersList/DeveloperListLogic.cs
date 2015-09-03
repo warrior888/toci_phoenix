@@ -1,20 +1,27 @@
-﻿using System.Collections.Generic;
-using Phoenix.Bll.Interfaces.BusinessModels.DevelopersList;
-using Phoenix.Bll.Interfaces.Logic.DevelopersList;
+﻿﻿using System.Collections.Generic;
+﻿using Phoenix.Bll.Interfaces.BusinessModels.DevelopersList;
+﻿using Phoenix.Bll.Interfaces.Logic.DevelopersList;
+﻿using Phoenix.Dal.GeneratedModels;
+﻿using Toci.Db.DbVirtualization;
 
 namespace Phoenix.Bll.Logic.DevelopersList
 {
-    public class DeveloperListLogic : DbLogic, IDeveloperListLogic
+    public class DeveloperListLogic : DataAccessLogic, IDeveloperListLogic
     {
-        public IDeveloperListBusinessModel GetDevById(int id)
+        private const string UserIdLabel = "user_id";
+
+        public IEnumerable<IDeveloperBusinessModel> GetAllDevelopers()
         {
-            //uzyc modeli bazodanowych wygenerowanych naszym generatorem
-            throw new System.NotImplementedException();
+
+            var devs = GetAllElements<IDeveloperBusinessModel, developer_list_view>();
+            return devs;
         }
 
-        public IEnumerable<IDeveloperListBusinessModel> GetAllDevelopers()
+        public IDeveloperBusinessModel GetDevByUserId(int id)
         {
-            throw new System.NotImplementedException();
+            IDeveloperBusinessModel developer = GetElementsByColumnValue<IDeveloperBusinessModel, developer_list_view, int>(UserIdLabel,
+                    SelectClause.Equal, id)[0];
+            return developer;
         }
 
     }

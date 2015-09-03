@@ -26,9 +26,9 @@ class MailSender{
 	{
 
 		$this->mail->Subject=$subject;
-		$this->mail->Body="Przesłał: ".$senderData.", mail: ".$senderEmail." <br/ ><br />".$message;
-		$this->mail->AddAddress("tociszkolenia@gmail.com");
-		$this->mail->SetFrom($senderEmail);
+		$this->mail->Body=$message;
+		$this->mail->AddAddress($senderEmail);
+		//$this->mail->SetFrom($senderEmail);
 
 		return $this->mail->Send();
 	}

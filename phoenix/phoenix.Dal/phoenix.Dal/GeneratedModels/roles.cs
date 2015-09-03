@@ -9,25 +9,12 @@ namespace Phoenix.Dal.GeneratedModels
         {
         }
          
-        public const string ID = "id";
-        public System.Int32 id
-            {
-                get
-                {
-                     return (System.Int32) Fields[ID].GetValue();
-                }
-                set
-                {
-                    SetValue(ID, value);
-                }
-            }
-         
         public const string NAME = "name";
-        public System.String name
+        public string Name
             {
                 get
                 {
-                     return (System.String) Fields[NAME].GetValue();
+                     return GetValue<string>(NAME);
                 }
                 set
                 {
