@@ -47,12 +47,6 @@
     <Compile Include="Logic\ITestResultsLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\..\toci_common\Toci.Libraries\Toci.Db\Toci.Db.csproj">
-      <Project>{e45ea1c2-f40c-4903-94c3-30a885a71d33}</Project>
-      <Name>Toci.Db</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

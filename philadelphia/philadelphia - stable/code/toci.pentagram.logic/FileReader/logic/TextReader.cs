@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Phoenix.Dal.GeneratedModels;
+﻿using System.IO;
 using toci.pentagram.logic.FileReader.interfaces;
 
 namespace toci.pentagram.logic.FileReader.logic

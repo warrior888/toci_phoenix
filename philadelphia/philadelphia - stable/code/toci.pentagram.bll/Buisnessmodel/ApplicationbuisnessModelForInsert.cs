@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using toci.pentagram.interfaces.buisnessModel;
+﻿using toci.pentagram.interfaces.buisnessModel;
 
 namespace toci.pentagram.bll.Buisnessmodel
 {

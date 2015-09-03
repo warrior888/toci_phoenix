@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Phoenix.Dal.GeneratedModels;
+﻿using Phoenix.Dal.GeneratedModels;
 using toci.pentagram.bll.Buisnessmodel;
 using toci.pentagram.bll.dblogic;
 using toci.pentagram.interfaces;

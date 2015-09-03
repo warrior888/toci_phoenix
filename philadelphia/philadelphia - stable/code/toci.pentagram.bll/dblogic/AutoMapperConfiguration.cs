@@ -41,14 +41,10 @@ namespace toci.pentagram.bll.dblogic
             Mapper.CreateMap<ApplicationTests, IApplicationtestBuisnessModelforInsert>();
 
         }
-private void ForApplicationTestsbuisnesModel()
+        private void ForApplicationTestsbuisnesModel()
         {
             Mapper.CreateMap<IApplicationTestsBuisnessModel, ApplicationTests>();
-    Mapper.CreateMap<ApplicationTests, IApplicationTestsBuisnessModel>();
-         
-
-           
-
+            Mapper.CreateMap<ApplicationTests, IApplicationTestsBuisnessModel>();
         }
 
 

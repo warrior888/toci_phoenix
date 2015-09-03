@@ -1,10 +1,10 @@
-﻿using toci.pentagram.bll.Buisnessmodel;
-using toci.pentagram.bll.logic;
+﻿using toci.pentagram.bll.logic;
 using toci.pentagram.interfaces;
 using toci.pentagram.logic.CaptchalogicOnFront.interfaces;
 using toci.pentagram.logic.CaptchaLogic.Interfaces;
 using toci.pentagram.logic.CaptchaLogic.RandomTCaptchaLogic.logic;
 using Toci.Pentagram.Logic.CaptchaLogic.Logic;
+
 namespace toci.pentagram.logic.CaptchalogicOnFront
 {
     public class CaptchaFrontModel:ICaptchaFront

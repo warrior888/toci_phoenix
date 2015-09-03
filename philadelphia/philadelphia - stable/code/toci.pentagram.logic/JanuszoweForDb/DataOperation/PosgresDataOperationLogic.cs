@@ -1,18 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using AutoMapper;
 using toci.pentagram.bll.Buisnessmodel;
-using toci.pentagram.bll.dblogic;
 using toci.pentagram.Dal;
-using toci.pentagram.interfaces;
 using toci.pentagram.interfaces.buisnessModel;
 using toci.pentagram.logic.FileReader.interfaces;
 using toci.pentagram.logic.FileReader.logic;
-using Toci.Db.DbVirtualization.PostgreSqlQuery;
 using Toci.Db.Interfaces;
 
 namespace toci.pentagram.logic.logicforDb.DataOperation

@@ -8,22 +8,22 @@ namespace toci.pentagram.bll.dblogic
     {
         public DbHandleAccessDataFactory()
         {
-            FactoryDictionary = new Dictionary<string, Func<DbHandleAccessData>>()
+            FactoryDictionary = new Dictionary<string, Func<DbHandleAccessData>>
             {
-                {"Patryk",(() => new DbHandleAccessData()
+                {"Patryk",(() => new DbHandleAccessData
                 {
                     UserName = "postgres",
                     Password = "team_leasing",
                     DbAdress = "localhost",
                     DbName = "philadelphia"
                 })},
-                {"ksebal",(() => new DbHandleAccessData()
+                {"ksebal",(() => new DbHandleAccessData
                 {
                     UserName = "postgres",
                     Password = "konrad",
                     DbAdress = "localhost",
                     DbName = "phonix"
-                })},
+                })}
 
             };
         }

@@ -1,17 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using toci.pentagram.bll.Buisnessmodel;
-using toci.pentagram.bll.dblogic;
-using toci.pentagram.interfaces;
-using toci.pentagram.interfaces.buisnessModel;
+﻿using System.Collections.Generic;
 using toci.pentagram.logic.logicforDb;
-using toci.pentagram.logic.logicforDb.DataOperation;
-using Toci.Db.DbVirtualization.PostgreSqlQuery;
-using Toci.Db.Interfaces;
 
 namespace toci.pentagram.logic.DbLogic.PostgresInsert
 {

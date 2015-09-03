@@ -24,7 +24,7 @@ namespace toci.pentagram.bll.dblogic
             where TValue : new()
         {
             var modelsList = FetchModelsByColumnValue<TModel, TValue>(columnName, clause, value);
-            return modelsList.Select(Mapper.Map<T>).ToList();
+            return Enumerable.ToList(modelsList.Select(Mapper.Map<T>));
         }
     }
 }

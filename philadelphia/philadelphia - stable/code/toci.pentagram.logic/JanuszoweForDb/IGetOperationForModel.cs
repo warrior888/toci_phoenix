@@ -1,6 +1,4 @@
-﻿using System;
-using System.Security.Cryptography.X509Certificates;
-using toci.pentagram.interfaces.buisnessModel;
+﻿using toci.pentagram.interfaces.buisnessModel;
 using toci.pentagram.logic.FileReader.interfaces;
 using Toci.Db.Interfaces;
 

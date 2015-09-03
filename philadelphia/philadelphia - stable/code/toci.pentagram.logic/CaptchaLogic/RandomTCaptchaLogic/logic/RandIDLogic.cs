@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using toci.pentagram.interfaces;
 using toci.pentagram.logic.CaptchaLogic.Interfaces;
 using Toci.Pentagram.Logic.CaptchaLogic.RandomCaptchaLogic.Interfaces;
 using Toci.Pentagram.Logic.CaptchaLogic.RandomCaptchaLogic.logic;
