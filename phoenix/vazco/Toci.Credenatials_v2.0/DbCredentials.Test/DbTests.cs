@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Toci.Utilities.Generator.DatabaseModelGenerator;
 
 namespace DbCredentials.Test
 {
@@ -9,7 +10,10 @@ namespace DbCredentials.Test
         [TestMethod]
         public void ModelsGenerator()
         {
-
+            WrapperModel model = new WrapperModel
+            {
+                CsprojPath = "",
+            };
         }
     }
 }
