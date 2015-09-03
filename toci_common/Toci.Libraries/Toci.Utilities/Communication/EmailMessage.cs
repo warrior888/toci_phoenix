@@ -3,7 +3,6 @@ using Toci.Utilities.Abstraction.Communication;
 using Toci.Utilities.Abstraction.User;
 using Toci.Utilities.Interfaces.Communication;
 using Toci.Utilities.Interfaces.Communication.CommunicationMessages;
-using Toci.Utilities.Interfaces.User;
 
 namespace Toci.Utilities.Communication
 {
