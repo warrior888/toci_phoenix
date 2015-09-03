@@ -15,8 +15,6 @@ namespace Phoenix.Bll
 {
     public class AutoMapperConfiguration
     {
-        //TODO DI
-
         private IUsersLogic _userLogic;
         private IDeveloperListLogic _developerListLogic;
         private IPortfolioLogic _portfolioLogic;
