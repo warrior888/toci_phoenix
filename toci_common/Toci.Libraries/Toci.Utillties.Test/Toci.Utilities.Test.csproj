@@ -117,6 +117,8 @@
     <Compile Include="Developers\Kielich\Select.cs" />
     <None Include="Developers\Mg\FileEntryEntity.cs" />
     <Compile Include="Developers\Mg\ModelProviderTest.cs" />
+    <Compile Include="Developers\Patryk\GeneratedModels\ColumnNameToPropertyTest.cs" />
+    <Compile Include="Developers\Patryk\GeneratedModels\GenerateModelsTest.cs" />
     <Compile Include="Developers\Patryk\PostgreSqlQueryTest.cs" />
     <Compile Include="Developers\Warrior\Destination\users.cs" />
     <Compile Include="Developers\Warrior\Poc\GeneralTests.cs" />

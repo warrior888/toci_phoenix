@@ -1,6 +1,4 @@
-﻿using System;
-using AutoMapper;
-using Ionic.Zlib;
+﻿using AutoMapper;
 using Phoenix.Bll.BusinessModels.TeamLeasing;
 using Phoenix.Bll.BusinessModels.UsersList;
 using Phoenix.Bll.Interfaces.BusinessModels.CourseRegistration;
