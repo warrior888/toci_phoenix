@@ -1,12 +1,9 @@
-﻿
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Toci.Utilities.Generator.DatabaseModelGenerator;
 using Toci.Utilities.Interfaces.Generator.DatabaseModelGenerator;
 
-
-namespace Phoenix.Integration.Test.Developers.Patryk.DbTests
+namespace Toci.Utilities.Test.Developers.Patryk.GeneratedModels
 {
     [TestClass]
     public class GenerateModelsTest
