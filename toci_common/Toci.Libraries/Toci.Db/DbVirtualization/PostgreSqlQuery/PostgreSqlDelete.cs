@@ -1,5 +1,5 @@
 ﻿using Toci.Db.DbVirtualization.SQLQuery;
-using Toci.Db.Interfaces;
+﻿using Toci.Db.Interfaces;
 
 namespace Toci.Db.DbVirtualization.PostgreSqlQuery
 {

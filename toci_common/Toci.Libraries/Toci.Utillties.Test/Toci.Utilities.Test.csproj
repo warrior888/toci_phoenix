@@ -137,23 +137,23 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Toci.Db\Toci.Db.csproj">
-      <Project>{c2377285-fa65-4545-91fb-6c4dc28155f5}</Project>
+      <Project>{e45ea1c2-f40c-4903-94c3-30a885a71d33}</Project>
       <Name>Toci.Db</Name>
     </ProjectReference>
     <ProjectReference Include="..\Toci.Utilities.Abstraction\Toci.Utilities.Abstraction.csproj">
-      <Project>{e91d020a-2d43-42e3-8c53-0f57b4b4f549}</Project>
+      <Project>{3f7c2517-390a-40bf-a1fc-3f5dfae8bdf2}</Project>
       <Name>Toci.Utilities.Abstraction</Name>
     </ProjectReference>
     <ProjectReference Include="..\Toci.Utilities.Common\Toci.Utilities.Common.csproj">
-      <Project>{10db4113-ac97-426e-a233-3961a7d30e52}</Project>
+      <Project>{aa84d501-0707-40d3-aed8-f4884e7f0fb2}</Project>
       <Name>Toci.Utilities.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\Toci.Utilities.Interfaces\Toci.Utilities.Interfaces\Toci.Utilities.Interfaces.csproj">
-      <Project>{5f10a690-71c7-4daa-b46b-12720b16f64c}</Project>
+      <Project>{c3976ac9-39a5-4b47-8a67-33f021a4cdc3}</Project>
       <Name>Toci.Utilities.Interfaces</Name>
     </ProjectReference>
     <ProjectReference Include="..\Toci.Utilities\Toci.Utilities.csproj">
-      <Project>{9a12b07d-d560-41d9-b714-3785c0360ccd}</Project>
+      <Project>{a7951807-f924-4108-a63b-253ce3f5b045}</Project>
       <Name>Toci.Utilities</Name>
     </ProjectReference>
   </ItemGroup>

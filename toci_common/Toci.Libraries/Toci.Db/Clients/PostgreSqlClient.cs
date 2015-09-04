@@ -1,7 +1,5 @@
 ﻿using System.Data;
-using System.Transactions;
 using Npgsql;
-using Toci.Db.Interfaces;
 
 namespace Toci.Db.Clients
 {

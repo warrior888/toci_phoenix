@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Net;
 using System.Net.Http;
-using System.Net.Sockets;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Toci.Utilities.Test.Developers.Warrior.Poc

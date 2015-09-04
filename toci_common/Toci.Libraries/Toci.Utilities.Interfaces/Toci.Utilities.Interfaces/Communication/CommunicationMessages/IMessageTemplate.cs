@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Toci.Utilities.Interfaces.Communication.CommunicationMessages
+﻿namespace Toci.Utilities.Interfaces.Communication.CommunicationMessages
 {
     public interface IMessageTemplate
     {
