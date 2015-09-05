@@ -26,5 +26,28 @@ namespace Toci.Db.DbUtils
             var modelsList = FetchModelsByColumnValue<TModel, TValue>(columnName, clause, value);
             return modelsList.Select(Mapper.Map<T>).ToList();
         }
+
+        protected int InsertModel<T, TModel>(T businessModel) where TModel : Model
+        {
+            return InsertModel(Mapper.Map<TModel>(businessModel));
+        }
+
+        protected int InsertModels<T, TModel>(T businessModel) where TModel : Model
+        {
+            return InsertModels(Mapper.Map<List<TModel>>(businessModel));
+        }
+
+        protected int UpdateElementById<T, TModel>(T businessModel) where TModel : Model
+        {
+            return UpdateModelById(Mapper.Map<TModel>(businessModel));
+        }
+
+        protected int UpdateElementByColumnValue<T, TModel, TValue>
+                                                            (T businessModel, string columnName, SelectClause clause, TValue value)
+            where TModel : Model
+            where TValue : new()
+        {
+            return UpdateModelByColumnValue(Mapper.Map<TModel>(businessModel), columnName, clause, value);
+        }
     }
 }

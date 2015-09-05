@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Phoenix.Integration.Test.Developers.Patryk.GeneratedModels
+namespace Toci.Utilities.Test.Developers.Patryk.GeneratedModels
 {
     [TestClass]
     public class ColumnNameToPropertyTest
