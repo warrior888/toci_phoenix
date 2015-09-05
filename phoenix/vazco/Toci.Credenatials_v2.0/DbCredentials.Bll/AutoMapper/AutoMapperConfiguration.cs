@@ -22,14 +22,13 @@ namespace DbCredentials.Bll.AutoMapper
         private void ForIProjectModel()
         {
             
-            //Gdy właściwości mają takie same nazwy nic więcej nie trzeba robić
-            Mapper.CreateMap<IProjectModel, Projects>();
+//            Mapper.CreateMap<IProjectModel, Projects>().ForMember(dest => dest.ScopeId, opts => opts.MapFrom(src => srcLogic.GetScopeModelById(src.Scope))); ;
                 
             Mapper.CreateMap<Projects, IProjectModel>().ForMember(dest => dest.Scope, opts => opts.MapFrom(src => srcLogic.GetScopeModelById(src.ScopeId)));
         }
         private void ForIScopeModel()
         {
-            //Gdy właściwości mają takie same nazwy nic więcej nie trzeba robić
+            
             Mapper.CreateMap<Scopes, IScopeModel>();
             Mapper.CreateMap<IScopeModel, Scopes>();
             
