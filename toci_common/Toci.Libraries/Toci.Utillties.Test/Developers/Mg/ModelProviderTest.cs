@@ -1,7 +1,4 @@
-﻿using System;
-using System.Diagnostics;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Toci.Utilities.Abstraction.Generator.DatabaseModelGenerator;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Toci.Utilities.Test.Developers.Mg
 {

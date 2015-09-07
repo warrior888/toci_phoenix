@@ -1,6 +1,4 @@
-﻿using System;
-using AutoMapper;
-using Ionic.Zlib;
+﻿using AutoMapper;
 using Phoenix.Bll.BusinessModels.TeamLeasing;
 using Phoenix.Bll.BusinessModels.UsersList;
 using Phoenix.Bll.Interfaces.BusinessModels.CourseRegistration;
@@ -15,8 +13,6 @@ namespace Phoenix.Bll
 {
     public class AutoMapperConfiguration
     {
-        //TODO DI
-
         private IUsersLogic _userLogic;
         private IDeveloperListLogic _developerListLogic;
         private IPortfolioLogic _portfolioLogic;

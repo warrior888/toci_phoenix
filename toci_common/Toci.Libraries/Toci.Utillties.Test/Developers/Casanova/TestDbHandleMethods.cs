@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlTypes;
-using System.Diagnostics;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Toci.Db.Clients;
 using Toci.Db.ClusterAccess;
-using Toci.Db.DbVirtualization;
 using Toci.Db.DbVirtualization.PostgreSqlQuery;
 
 namespace Toci.Utilities.Test.Developers.Casanova
