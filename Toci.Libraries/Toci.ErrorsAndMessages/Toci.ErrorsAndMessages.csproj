@@ -1,18 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AA84D501-0707-40D3-AED8-F4884E7F0FB2}</ProjectGuid>
+    <ProjectGuid>{C723109F-5656-4245-8FFB-6A9CDE912F54}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Toci.Utilities.Common</RootNamespace>
-    <AssemblyName>Toci.Utilities.Common</AssemblyName>
+    <RootNamespace>ErrorsAndMessages</RootNamespace>
+    <AssemblyName>ErrorsAndMessages</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -34,36 +33,39 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Net" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="Zlib.Portable, Version=1.11.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\Toci.Db\packages\Zlib.Portable.1.11.0\lib\portable-net4+sl5+wp8+win8+wpa81+MonoTouch+MonoAndroid\Zlib.Portable.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Api\ApiResultManager.cs" />
-    <Compile Include="Enums\DocumentTypes.cs" />
-    <Compile Include="Enums\ErrorCodes.cs" />
-    <Compile Include="Exceptions\TociApplicationException.cs" />
-    <Compile Include="Exceptions\UiTociApplicationException.cs" />
-    <Compile Include="Internationalization\LanguageManager.cs" />
-    <Compile Include="Internationalization\TranslationsManager.cs" />
-    <Compile Include="Internationalization\Translator.cs" />
+    <Compile Include="Abstraction\TociApiController.cs" />
+    <Compile Include="Exceptions\ApiErrors.cs" />
+    <Compile Include="Exceptions\WebApiTociApplicationException.cs" />
+    <Compile Include="Managers\BlindLanguageManager.cs" />
+    <Compile Include="Managers\BlindTranslator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="String\UpperAndLowerStringFormat.cs" />
-    <Compile Include="String\PathUtilities.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Toci.Utilities.Common\Toci.Utilities.Common.csproj">
+      <Project>{aa84d501-0707-40d3-aed8-f4884e7f0fb2}</Project>
+      <Name>Toci.Utilities.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Toci.Utilities\Toci.Utilities.csproj">
+      <Project>{a7951807-f924-4108-a63b-253ce3f5b045}</Project>
+      <Name>Toci.Utilities</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

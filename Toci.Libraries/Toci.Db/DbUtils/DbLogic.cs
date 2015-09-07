@@ -48,5 +48,53 @@ namespace Toci.Db.DbUtils
             model.SetSelect(columnName, clause, value);
             return FetchModelsFromDb<TModel>(model);
         }
+
+        protected int DeleteModel(IModel model)
+        {
+            return DbHandle.DeleteData(model);
+        }
+
+        protected int DeleteModelById<T>(int id) where T : Model, new()
+        {
+            T model = new T();
+            model.SetSelect(Id, SelectClause.Equal, id);
+            return DeleteModel(model);
+        }
+
+        protected int DeleteModelByColumnValue<TModel, TValue>(string columnName, SelectClause clause, TValue value)
+            where TModel : Model, new()
+            where TValue : new()
+        {
+            TModel model = new TModel();
+            model.SetSelect(columnName, clause, value);
+            return DeleteModel(model);
+        }
+
+        protected int InsertModel(IModel model)
+        {
+            return DbHandle.InsertData(model);
+        }
+
+        protected int InsertModels(IEnumerable<IModel> models)
+        {
+            return models.Select(InsertModel).Sum();
+        }
+
+        protected int UpdateModel(IModel model)
+        {
+            return DbHandle.UpdateData(model);
+        }
+
+        protected int UpdateModelById(Model model)
+        {
+            model.SetSelect(Id, SelectClause.Equal, model.Id);
+            return UpdateModel(model);
+        }
+
+        protected int UpdateModelByColumnValue<TValue>(Model model, string columnName, SelectClause clause, TValue value)
+        {
+            model.SetSelect(columnName, clause, value);
+            return UpdateModel(model);
+        }
     }
 }

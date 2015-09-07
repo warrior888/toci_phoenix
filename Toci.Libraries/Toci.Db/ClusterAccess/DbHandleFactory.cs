@@ -50,7 +50,8 @@ namespace Toci.Db.ClusterAccess
 
         public static IDbHandle GetHandle(SqlClientKind kind, DbAccessConfig config)
         {
-            return dbHandleFactory.ContainsKey(kind) ? dbHandleFactory[kind](config): null;
+            return dbHandleFactory.ContainsKey(kind) ? dbHandleFactory[kind](config) : null;
         }
+
     }
 }
