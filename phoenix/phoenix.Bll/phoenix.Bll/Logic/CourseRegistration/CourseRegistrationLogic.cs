@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using AutoMapper;
 using Phoenix.Bll.Interfaces.BusinessModels.CourseRegistration;
 using Phoenix.Bll.Interfaces.BusinessModels.CoursesList;
 using Phoenix.Bll.Interfaces.Logic.CourseRegistration;
+
 //using Phoenix.Dal.GeneratedModels;
 
 namespace Phoenix.Bll.Logic.CourseRegistration
 {
-    public class CourseRegistrationLogic : DataAccessLogic, ICourseRegistrationLogic
+    public class CourseRegistrationLogic : PhoenixDataAccessLogic, ICourseRegistrationLogic
     {
         public bool SaveParticipantRegistration(ICourseRegistrationBusinessModel registration)
         {

@@ -10,7 +10,7 @@ using Phoenix.Dal.GeneratedModels;
 
 namespace Phoenix.Bll.Logic.TeamLeasing
 {
-    public class TeamLeasingLogic : DataAccessLogic, ITeamLeasingLogic
+    public class TeamLeasingLogic : PhoenixDataAccessLogic, ITeamLeasingLogic
     {
 
         private readonly IDeveloperListLogic _developersLogic;

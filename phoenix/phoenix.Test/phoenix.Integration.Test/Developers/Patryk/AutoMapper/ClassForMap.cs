@@ -1,8 +1,8 @@
 ﻿namespace Phoenix.Integration.Test.Developers.Patryk.AutoMapper
 {
-    public class ClassForMapping
+    public class ClassForMap
     {
         public string Name { get; set; }
-        public int Age { get; set; }
+        public int Ag { get; set; }
     }
 }

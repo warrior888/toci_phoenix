@@ -13,8 +13,8 @@ namespace Phoenix.Bll
 
         protected DbLogic()
         {
-            //DbHandleAccessData accessData = new DbHandleAccessDataFactory().Create("Patryk");
-           DbHandleAccessData accessData = new DbHandleAccessDataFactory().Create("Terry");
+           DbHandleAccessData accessData = new DbHandleAccessDataFactory().Create("Patryk");
+           //DbHandleAccessData accessData = new DbHandleAccessDataFactory().Create("Terry");
 
             DbHandle = GetDbHandle(accessData.UserName, accessData.Password,
                 accessData.DbAdress, accessData.DbName);
@@ -100,6 +100,11 @@ namespace Phoenix.Bll
         {
             model.SetSelect(columnName, clause, value);
             return UpdateModel(model);
+        }
+
+        public IDbHandle GetDbHandle(DbAccessConfig config)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

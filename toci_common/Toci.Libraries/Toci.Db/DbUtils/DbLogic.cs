@@ -8,19 +8,25 @@ namespace Toci.Db.DbUtils
 {
     public abstract class DbLogic : IDbLogic
     {
-        protected IDbHandle DbHandle;
+        protected static IDbHandle DbHandle;
         private const string Id = "id"; 
 
         protected DbLogic()
         {
-            // tutaj dane do polaczenia z baza powinny byc argumentami konstruktora ale na razie niech tak bedzie ;)
-            DbHandle = GetDbHandle("","","","");
+            if (DbHandle == null)
+            {
+                DbHandle = GetDbHandle(GetDbAccessConfig());
+            }
         }
 
-        public virtual IDbHandle GetDbHandle(string user, string password, string dbAddress, string dbName)
+        
+
+        public virtual IDbHandle GetDbHandle(DbAccessConfig config)
         {
-            return DbHandleFactory.GetHandle(SqlClientKind.PostgreSql, user, password, dbAddress, dbName);
+            return DbHandleFactory.GetHandle(config.ClientKind, config.UserName, config.Password, config.DbAddress, config.DbName);
         }
+
+        protected abstract DbAccessConfig GetDbAccessConfig();
 
         protected List<T> FetchModelsFromDb<T>(IModel model) where T : Model
         {

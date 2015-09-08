@@ -9,7 +9,7 @@ using Phoenix.Bll.Interfaces.Logic.TeamLeasing;
 
 namespace Phoenix.Bll.Logic.TeamLeasing
 {
-    public class TeamLeasingLogicMock : DataAccessLogic, ITeamLeasingLogic
+    public class TeamLeasingLogicMock : PhoenixDataAccessLogic, ITeamLeasingLogic
     {
         public IEnumerable<IDeveloperTeamBusinessModel> GetAllTeams()
         {

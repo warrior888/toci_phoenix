@@ -50,7 +50,7 @@ namespace Phoenix.Dal.GeneratedModels
                 }
             }
          
-        public const string FK_ID_USERS = "fk_id_users";
+        public const string FK_ID_USERS = "fk_id_users";  //User
         public int TeamLeaderId
             {
                 get

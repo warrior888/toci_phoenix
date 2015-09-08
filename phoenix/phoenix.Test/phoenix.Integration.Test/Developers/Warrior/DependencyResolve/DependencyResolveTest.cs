@@ -27,9 +27,13 @@ namespace Phoenix.Integration.Test.Developers.Warrior.DependencyResolve
         public void TestDbHandleDependencyResolve()
         {
             var bllDbLogic = new BllDbLogic();
-
-            var dbHandle = bllDbLogic.GetDbHandle("test", "test", "localhost", "test");
-            
+            var dbHandle = bllDbLogic.GetDbHandle(new DbAccessConfig()
+            {
+                UserName = "test",
+                Password = "test",
+                DbAddress = "localhost",
+                DbName = "test"
+            });
             Assert.IsInstanceOfType(dbHandle, typeof(DbHandle));
         }
     }

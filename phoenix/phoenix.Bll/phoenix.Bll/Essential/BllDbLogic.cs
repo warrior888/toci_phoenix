@@ -13,10 +13,10 @@ namespace _3mb.Bll.Essential
         protected static IFactory<DependencyResolverType, IDependencyResolver> DependencyResolverFactory = new DependencyResolverFactory();
         protected static IDependencyResolver DependencyResolver = DependencyResolverFactory.Create(DependencyResolverType.Autofac);
 
-        public override IDbHandle GetDbHandle(string user, string password, string dbAddress, string dbName)
+        public override IDbHandle GetDbHandle(DbAccessConfig config)
         {
             DbHandle = DependencyResolver.Resolve<IDbHandle>(
-                DependencyResolver.Resolve<IDbClient>(user, password, dbAddress, dbName),
+                DependencyResolver.Resolve<IDbClient>(config.UserName, config.Password, config.DbAddress, config.DbName),
                 DependencyResolver.Resolve<ISelect>(),
                 DependencyResolver.Resolve<IInsert>(),
                 DependencyResolver.Resolve<IUpdate>(),

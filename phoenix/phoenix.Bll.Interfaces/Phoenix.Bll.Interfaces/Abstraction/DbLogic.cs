@@ -1,4 +1,5 @@
 ﻿using Phoenix.Bll.Interfaces;
+using Toci.Db.ClusterAccess;
 using Toci.Db.Interfaces;
 
 namespace _3mb.Bll.Interfaces.Abstraction
@@ -7,6 +8,6 @@ namespace _3mb.Bll.Interfaces.Abstraction
     {
         protected IDbHandle DbHandle;
 
-        public abstract IDbHandle GetDbHandle(string user, string password, string dbAddress, string dbName);
+        public abstract IDbHandle GetDbHandle(DbAccessConfig config);
     }
 }

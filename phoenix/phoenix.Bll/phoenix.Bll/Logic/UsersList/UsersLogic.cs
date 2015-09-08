@@ -5,7 +5,7 @@ using Phoenix.Dal.GeneratedModels;
 
 namespace Phoenix.Bll.Logic.UsersList
 {
-    public class UsersLogic : DataAccessLogic, IUsersLogic
+    public class UsersLogic : PhoenixDataAccessLogic, IUsersLogic
     {
         public IUsersBusinessModel GetUserById(int id)
         {

@@ -8,7 +8,7 @@ using Toci.Db.DbVirtualization;
 
 namespace Phoenix.Bll.Logic.DevelopersList
 {
-    public class SkillLogic : DataAccessLogic, ISkillLogic
+    public class SkillLogic : PhoenixDataAccessLogic, ISkillLogic
     {
         private const string UserIdLabel = "id_users";
         private const string PortfolioIdLabel = "fk_id_portfolio";
@@ -23,7 +23,8 @@ namespace Phoenix.Bll.Logic.DevelopersList
         {
             List<portfolio_skills_technologies> portfolioSkills = FetchModelsByColumnValue<portfolio_skills_technologies, int>
                 (PortfolioIdLabel, SelectClause.Equal, portfolioId);
-            return portfolioSkills.Select(skill => GetSkillById(skill.FkIdSkillsTechnologies)).ToList();
+            List<ISkillBusinessModel> skillBusinessModels =  portfolioSkills.Select(skill => GetSkillById(skill.FkIdSkillsTechnologies)).ToList();
+            return skillBusinessModels;
         }
 
         public ISkillBusinessModel GetSkillById(int skillId)

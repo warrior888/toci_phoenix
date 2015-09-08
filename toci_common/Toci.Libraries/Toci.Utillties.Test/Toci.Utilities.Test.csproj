@@ -133,6 +133,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Developers\Patryk\AutoMapperConfiguration.txt" />
+    <Content Include="Developers\Patryk\GeneratedModels\Sql\generateModels.txt" />
     <Content Include="Developers\Warrior\data\ddlExample.txt" />
   </ItemGroup>
   <ItemGroup>

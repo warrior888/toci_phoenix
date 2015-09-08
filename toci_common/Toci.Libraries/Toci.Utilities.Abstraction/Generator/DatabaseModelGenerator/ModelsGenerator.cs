@@ -58,6 +58,9 @@ namespace Toci.Utilities.Abstraction.Generator.DatabaseModelGenerator
                         swr.Write(classModel);
                         swr.Close();
                     }
+
+
+                    //.cs
                 }
             }
         }

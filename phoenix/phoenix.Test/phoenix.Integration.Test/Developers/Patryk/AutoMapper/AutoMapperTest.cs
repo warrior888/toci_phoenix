@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System.Runtime.InteropServices.ComTypes;
+using AutoMapper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Phoenix.Bll.BusinessModels.CourseRegistration;
 using Phoenix.Bll.Interfaces.BusinessModels.CourseRegistration;
@@ -14,13 +15,14 @@ namespace Phoenix.Integration.Test.Developers.Patryk.AutoMapper
         [TestMethod]
         public void MapObjectWhenTheSameFieldsName()
         {
-            ClassForMapping classForMap = new ClassForMapping()
+            ClassForMap classForMap = new ClassForMap()
             {
                 Name = "Patryk",
-                Age  = 21
+                Ag  = 21
             };
 
-            Mapper.CreateMap<ClassForMapping, AnotherClassForMap>();
+            Mapper.CreateMap<ClassForMap, AnotherClassForMap>()
+                .ForMember(dest => dest.Age, opts => opts.MapFrom(src => src.Ag));
             AnotherClassForMap anotherObjectForMap = Mapper.Map<AnotherClassForMap>(classForMap);
         }
 

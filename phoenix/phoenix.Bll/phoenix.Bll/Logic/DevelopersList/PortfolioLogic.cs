@@ -3,11 +3,12 @@ using System.Linq;
 using Phoenix.Bll.Interfaces.BusinessModels.DevelopersList;
 using Phoenix.Bll.Interfaces.Logic.DevelopersList;
 using Phoenix.Dal.GeneratedModels;
+using Toci.Db.DbUtils;
 using Toci.Db.DbVirtualization;
 
 namespace Phoenix.Bll.Logic.DevelopersList
 {
-    public class PortfolioLogic : DataAccessLogic, IPortfolioLogic
+    public class PortfolioLogic : PhoenixDataAccessLogic, IPortfolioLogic
     {
         private const string UserIdLabel = "id_users";
         private const string PortfolioLabel = "id_portfolio";
