@@ -72,7 +72,7 @@ namespace {1}
 
         private const string DefaultUsings =
  @"Toci.Db.DbVirtualization;
-using Toci.Db.Interfaces";           
+using Toci.Db.Interfaces";       //.cs    
      
 
 

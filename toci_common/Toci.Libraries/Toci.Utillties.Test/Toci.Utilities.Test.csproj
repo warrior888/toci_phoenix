@@ -49,6 +49,7 @@
     <Reference Include="System.Web">
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Web.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -85,9 +86,6 @@
     <Compile Include="Developers\Warrior\Poc\MultiThreading\TestMultiThreadStacking.cs" />
     <Compile Include="Developers\Warrior\WarriorTociDbModelsGeneratorTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <None Include="packages.config">
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Common\FileParserTest\" />
@@ -95,6 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Developers\Patryk\AutoMapperConfiguration.txt" />
+    <Content Include="Developers\Patryk\GeneratedModels\Sql\generateModels.txt" />
     <Content Include="Developers\Warrior\data\ddlExample.txt" />
   </ItemGroup>
   <ItemGroup>

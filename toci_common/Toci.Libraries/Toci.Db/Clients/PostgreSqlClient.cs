@@ -6,7 +6,7 @@ namespace Toci.Db.Clients
     public class PostgreSqlClient : SqlClientBase
     {
         protected NpgsqlConnection Connection;
-        private const string connectionPattern = "Server={0};Port=5432;Database={1};User Id={2};Password={3};";
+        private const string connectionPattern = "Server={0};Port=5433;Database={1};User Id={2};Password={3};";
         private string connectionString;
 
         public PostgreSqlClient(string name, string password, string dbAddress, string dbName) : base(name, password, dbAddress, dbName)
@@ -32,9 +32,10 @@ namespace Toci.Db.Clients
         {
             using (Connection = new NpgsqlConnection(connectionString))
             {
-                NpgsqlCommand command = new NpgsqlCommand(query, Connection);
+                string query2 = string.Format("{0} select SCOPE_IDENTITY();", query);
+                NpgsqlCommand command = new NpgsqlCommand(query2, Connection);
                 Connection.Open();
-                return command.ExecuteNonQuery();
+                return (int) command.ExecuteScalar();
             }
         }
     }
