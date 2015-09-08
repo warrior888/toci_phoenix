@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Linq;
 using Phoenix.Bll.Interfaces.BusinessModels.InteractiveCourses;
 using Phoenix.Bll.Interfaces.Logic.InteractiveCourses;
@@ -22,8 +23,15 @@ namespace Phoenix.Bll.Logic.InteractiveCourses
 
         public bool InsertUsersFirstRecord(int userId)
         {
+            DateTime thisDay = DateTime.Today;
+
             var handle = DbHandleFactory.GetHandle(SqlClientKind.PostgreSql, "web", "mateusz", "localhost", "ic_database");
-            handle.InsertData(new completed_tasks {});
+            handle.InsertData(new completed_tasks 
+            {
+                DateOfTaskCompletion = thisDay,
+                IdLastCompletedTask = 0,
+                IdUsers = userId
+            });
 
             return true;
         }
