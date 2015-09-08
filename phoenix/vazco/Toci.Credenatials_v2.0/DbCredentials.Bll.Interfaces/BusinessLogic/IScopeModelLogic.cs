@@ -5,5 +5,6 @@ namespace DbCredentials.Bll.Interfaces.BusinessLogic
     public interface IScopeModelLogic
     {
         IScopeModel GetScopeModelById(int Id);
+        
     }
 }
