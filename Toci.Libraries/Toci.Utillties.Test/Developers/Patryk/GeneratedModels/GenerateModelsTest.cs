@@ -15,14 +15,14 @@ namespace Toci.Utilities.Test.Developers.Patryk.GeneratedModels
             IWrapperModel wrapperModel = new WrapperModel
             {
                 ParentName = "Model",
-                NamespaceName = "Phoenix.Dal.GeneratedModels",
+                NamespaceName = "Phoenix.Dal.Models",
                 UsingsList = new List<string>()
                 {
                     "Toci.Db.DbVirtualization",
                     "Toci.Db.Interfaces"
                 },
-                TemplatePath = @"C:\Users\ksebal\Desktop\sql.txt",
-                DestinationPath = @"..\..\..\..\phoenix.Dal\Phoenix.Dal\generatedKsebal",
+                TemplatePath = @"..\..\Developers\Patryk\GeneratedModels\Sql\generateModels.txt",
+                DestinationPath = @"..\..\..\..\..\phoenix\phoenix.Dal\Phoenix.Dal\Models",
             };
 
             generator.GenerateModel(wrapperModel,"Phoenix.Dal");

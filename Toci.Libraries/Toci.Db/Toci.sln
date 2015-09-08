@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.Db", "Toci.Db.csproj", "{E45EA1C2-F40C-4903-94C3-30A885A71D33}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.Utilities", "..\Toci.Utilities\Toci.Utilities.csproj", "{A7951807-F924-4108-A63B-253CE3F5B045}"
@@ -12,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.Utilities.Interfaces", "..\Toci.Utilities.Interfaces\Toci.Utilities.Interfaces\Toci.Utilities.Interfaces.csproj", "{C3976AC9-39A5-4B47-8A67-33F021A4CDC3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.Utilities.Test", "..\Toci.Utillties.Test\Toci.Utilities.Test.csproj", "{AFA373BC-F581-4E32-80B5-CC3179F630F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.ErrorsAndMessages", "..\Toci.ErrorsAndMessages\Toci.ErrorsAndMessages.csproj", "{C723109F-5656-4245-8FFB-6A9CDE912F54}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +47,10 @@ Global
 		{AFA373BC-F581-4E32-80B5-CC3179F630F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFA373BC-F581-4E32-80B5-CC3179F630F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFA373BC-F581-4E32-80B5-CC3179F630F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C723109F-5656-4245-8FFB-6A9CDE912F54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C723109F-5656-4245-8FFB-6A9CDE912F54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C723109F-5656-4245-8FFB-6A9CDE912F54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C723109F-5656-4245-8FFB-6A9CDE912F54}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -7,6 +7,7 @@ namespace Toci.Db.DbUtils
 {
     public abstract class DataAccessLogic : DbLogic
     {
+        
         protected T GetElementById<T, TModel>(int id) where TModel : Model, new()
         {
             TModel model = FetchModelById<TModel>(id);
@@ -49,5 +50,7 @@ namespace Toci.Db.DbUtils
         {
             return UpdateModelByColumnValue(Mapper.Map<TModel>(businessModel), columnName, clause, value);
         }
+
+        
     }
 }
