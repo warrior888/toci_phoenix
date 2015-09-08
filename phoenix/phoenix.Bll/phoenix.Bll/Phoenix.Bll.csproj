@@ -155,8 +155,6 @@
     <Compile Include="Logic\TeamLeasing\DeveloperAvailableLogic.cs" />
     <Compile Include="Logic\TeamLeasing\TeamLeasingLogicMock.cs" />
     <Compile Include="BusinessModels\TeamLeasing\TeamLeasingBusinessModel.cs" />
-    <Compile Include="DbHandleAccessData.cs" />
-    <Compile Include="DbLogic.cs" />
     <Compile Include="Logic\CourseRegistration\CourseRegistrationLogic.cs" />
     <Compile Include="Logic\DevelopersList\DeveloperListLogic.cs" />
     <Compile Include="Essential\AutofacContainer.cs" />

@@ -1,30 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
+using Toci.Db.ClusterAccess;
 using Toci.Utilities.Abstraction.DesignPatterns;
 
 namespace Phoenix.Bll
 {
-    public class DbHandleAccessDataFactory : Factory<string,DbHandleAccessData>
+    public class DbHandleAccessDataFactory : Factory<string, DbAccessConfig>
     {
         public DbHandleAccessDataFactory()
         {
-            FactoryDictionary = new Dictionary<string, Func<DbHandleAccessData>>()
+            FactoryDictionary = new Dictionary<string, Func<DbAccessConfig>>()
             {
-                {"Patryk",(() => new DbHandleAccessData()
+                {"Patryk",(() => new DbAccessConfig()
                 {
                     UserName = "postgres", 
-                    Password = "team_leasing",
-                    DbAdress = "localhost",
-                    DbName = "philadelphia"
+                    Password = "postgres",
+                    DbAddress = "localhost",
+                    DbName = "philadelphia",
+                    ClientKind = SqlClientKind.PostgreSql
+
                 })},
 
                 
-                {"Terry",(() => new DbHandleAccessData()
+                {"Terry",(() => new DbAccessConfig()
                 {
                     UserName = "postgres", 
                     Password = "ph03n1x",
-                    DbAdress = "localhost",
-                    DbName = "Phoenix"
+                    DbAddress = "localhost",
+                    DbName = "Phoenix",
+                    ClientKind = SqlClientKind.PostgreSql
                 })}
             };
         }

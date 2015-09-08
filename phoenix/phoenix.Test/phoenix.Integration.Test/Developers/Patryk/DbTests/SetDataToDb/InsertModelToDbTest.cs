@@ -8,7 +8,7 @@ namespace Phoenix.Integration.Test.Developers.Patryk.DbTests.SetDataToDb
 {
 
     [TestClass]
-    public class InsertModelToDbTest : DbLogic
+    public class InsertModelToDbTest : PhoenixDataAccessLogic
     {
         [TestMethod]
         public void TryInsertModelToDb()

@@ -5,15 +5,29 @@ using Phoenix.Bll.Interfaces.BusinessModels.InteractiveCourses;
 using Phoenix.Bll.Interfaces.Logic.InteractiveCourses;
 using Phoenix.Dal.GeneratedModels;
 using Toci.Db.ClusterAccess;
+using Toci.Db.Interfaces;
 
 namespace Phoenix.Bll.Logic.InteractiveCourses
 {
     public class InteractiveCoursesTaskOperations : IInteractiveCourseTaskOperations
     {
+        private IDbHandle _handle;
+
+        public InteractiveCoursesTaskOperations()
+        {
+            _handle = DbHandleFactory.GetHandle(new DbAccessConfig
+            {
+                ClientKind = SqlClientKind.PostgreSql,
+                UserName = "web",
+                Password = "mateusz",
+                DbAddress = "localhost",
+                DbName = "ic_database"
+            });
+        }
+
         public bool CheckIfUsersTaskExist(int userId)
         {
-            var handle = DbHandleFactory.GetHandle(SqlClientKind.PostgreSql, "web", "mateusz", "localhost", "ic_database");
-            var data = handle.GetData(new completed_tasks());
+            var data = _handle.GetData(new completed_tasks());
 
             DataRow[] foundRows = data.Tables[0].Select("id=" + userId);
             var usersRecordsAmount = foundRows.Count();
@@ -25,8 +39,7 @@ namespace Phoenix.Bll.Logic.InteractiveCourses
         {
             DateTime thisDay = DateTime.Today;
 
-            var handle = DbHandleFactory.GetHandle(SqlClientKind.PostgreSql, "web", "mateusz", "localhost", "ic_database");
-            handle.InsertData(new completed_tasks 
+            _handle.InsertData(new completed_tasks 
             {
                 DateOfTaskCompletion = thisDay,
                 IdLastCompletedTask = 0,

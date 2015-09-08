@@ -7,13 +7,8 @@ namespace Phoenix.Bll
     {
         protected override DbAccessConfig GetDbAccessConfig()
         {
-            return new DbAccessConfig
-            {
-                UserName = "",
-                Password = "",
-                DbAddress = "",
-                DbName = "",
-            };
+            return new DbHandleAccessDataFactory().Create("Patryk");
+            //DbHandleAccessData accessData = new DbHandleAccessDataFactory().Create("Terry");
         }
     }
 }

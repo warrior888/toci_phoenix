@@ -24,9 +24,7 @@ namespace Phoenix.Integration.Test.Developers.Patryk.BLL.TeamLeasing
         {
             IDependencyResolver dependencyResolver = new DependencyResolverFactory().Create(DependencyResolverType.Autofac);
 
-            AutoMapperConfiguration configuration = dependencyResolver.Resolve<AutoMapperConfiguration>();
-
-            configuration.Configure();
+            dependencyResolver.Resolve<AutoMapperConfiguration>().Configure();
 
             IDeveloperListLogic developerListLogic = dependencyResolver.Resolve<IDeveloperListLogic>();
             developerListLogic.GetDevByUserId(19);

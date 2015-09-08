@@ -11,7 +11,14 @@ namespace Phoenix.Bll.Logic.InteractiveCourses
        
         public bool CheckUserAccountBalance(int userId,decimal usersMinAccountBalance)
         {
-            var dbhandle = DbHandleFactory.GetHandle(SqlClientKind.PostgreSql, "web", "mateusz", "localhost", "ic_database");
+            var dbhandle = DbHandleFactory.GetHandle(new DbAccessConfig
+            {
+                ClientKind = SqlClientKind.PostgreSql,
+                UserName = "web",
+                Password = "mateusz",
+                DbAddress = "localhost",
+                DbName = "ic_database"
+            });
             var data = dbhandle.GetData(new users());
 
             DataRow[] foundRows = data.Tables[0].Select("id=" + userId);

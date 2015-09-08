@@ -23,7 +23,7 @@ namespace Toci.Db.DbUtils
 
         public virtual IDbHandle GetDbHandle(DbAccessConfig config)
         {
-            return DbHandleFactory.GetHandle(config.ClientKind, config.UserName, config.Password, config.DbAddress, config.DbName);
+            return DbHandleFactory.GetHandle(config);
         }
 
         protected abstract DbAccessConfig GetDbAccessConfig();
