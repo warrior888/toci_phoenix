@@ -48,7 +48,7 @@ namespace Toci.Db.DbUtils
 
         protected List<TModel> FetchModelsByColumnValue<TModel, TValue>(string columnName, SelectClause clause, TValue value)
             where TModel : Model, new()
-            where TValue : new()
+            //where TValue : new()
         {
             TModel model = new TModel();
             model.SetSelect(columnName, clause, value);

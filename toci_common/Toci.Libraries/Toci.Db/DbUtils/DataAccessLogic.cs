@@ -22,10 +22,11 @@ namespace Toci.Db.DbUtils
 
         protected List<T> GetElementsByColumnValue<T, TModel, TValue>(string columnName, SelectClause clause, TValue value)
             where TModel : Model, new()
-            where TValue : new()
+            //where TValue : new()
         {
             var modelsList = FetchModelsByColumnValue<TModel, TValue>(columnName, clause, value);
-            return modelsList.Select(Mapper.Map<T>).ToList();
+            var result = modelsList.Select(Mapper.Map<T>).ToList();
+            return result;
         }
 
         protected int InsertModel<T, TModel>(T businessModel) where TModel : Model

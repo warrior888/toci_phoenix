@@ -32,10 +32,12 @@ namespace Toci.Db.Clients
         {
             using (Connection = new NpgsqlConnection(connectionString))
             {
-                string query2 = string.Format("{0} select SCOPE_IDENTITY();", query);
-                NpgsqlCommand command = new NpgsqlCommand(query2, Connection);
+                //                string query2 = string.Format("{0} select SCOPE_IDENTITY();", query);
+                //                NpgsqlCommand command = new NpgsqlCommand(query2, Connection);
+                NpgsqlCommand command = new NpgsqlCommand(query, Connection);
                 Connection.Open();
-                return (int) command.ExecuteScalar();
+                return command.ExecuteNonQuery();
+                //return (int) command.ExecuteScalar();
             }
         }
     }

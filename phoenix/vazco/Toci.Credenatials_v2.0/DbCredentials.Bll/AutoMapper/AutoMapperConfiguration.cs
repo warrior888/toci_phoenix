@@ -16,22 +16,20 @@ namespace DbCredentials.Bll.AutoMapper
         {
             ForIScopeModel();
             ForIProjectModel();
-            
         }
         ScopeModelLogic srcLogic = new ScopeModelLogic();
         private void ForIProjectModel()
         {
-            
-//            Mapper.CreateMap<IProjectModel, Projects>().ForMember(dest => dest.ScopeId, opts => opts.MapFrom(src => srcLogic.GetScopeModelById(src.Scope))); ;
+            Mapper.CreateMap<IProjectModel, Projects>().ForMember(dest => dest.ScopeId,
+                opts => opts.MapFrom(src => srcLogic.GetScopeModelByScopeName(src.Scope.ScopeName).ScopeId));
                 
-            Mapper.CreateMap<Projects, IProjectModel>().ForMember(dest => dest.Scope, opts => opts.MapFrom(src => srcLogic.GetScopeModelById(src.ScopeId)));
+            Mapper.CreateMap<Projects, IProjectModel>().ForMember(dest => dest.Scope, 
+                opts => opts.MapFrom(src => srcLogic.GetScopeModelByScopeId(src.ScopeId)));
         }
         private void ForIScopeModel()
         {
-            
             Mapper.CreateMap<Scopes, IScopeModel>();
             Mapper.CreateMap<IScopeModel, Scopes>();
-            
         }
 
     
