@@ -37,8 +37,8 @@ insert into lookup (id_lookup_type, name) values (1, 'Janusz');
 insert into lookup (id_lookup_type, name) values (1, 'Konrad');
 insert into lookup (id_lookup_type, name) values (1, 'Pawe³');
 insert into lookup (id_lookup_type, name) values (1, 'Mariusz');
-insert into lookup (id_lookup_type, name) values (1, 'Eustachy'');
-insert into lookup (id_lookup_type, name) values (1, 'Vladimir'');
+insert into lookup (id_lookup_type, name) values (1, 'Eustachy');
+insert into lookup (id_lookup_type, name) values (1, 'Vladimir');
 
 create table personal_data (
 	id serial primary key,

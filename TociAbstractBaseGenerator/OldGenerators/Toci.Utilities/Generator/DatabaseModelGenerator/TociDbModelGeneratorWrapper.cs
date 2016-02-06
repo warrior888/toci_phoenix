@@ -28,16 +28,16 @@ namespace Toci.Utilities.Generator.DatabaseModelGenerator
             {
                 NamespaceName = model.NamespaceName,
                 Parents = model.ParentName,
-                Usings = string.Join(newline, model.UsingsList)
-                //Usings = string.Format("{0}{1}{2}", "Toci.Db.DbVirtualization", newline, "Toci.Db.Interfaces")
+                //Usings = string.Join(newline, model.UsingsList)
+                Usings = string.Format("{0}{1}{2}", "Toci.Db.DbVirtualization", newline, "Toci.Db.Interfaces")
             };
         }
 
         private void FillWrapperModel(IWrapperModel model, string dllName)
         {
-            var splitProjectPath = model.DestinationPath.Split(new string[] {dllName + "\\"}, StringSplitOptions.None);
-            model.CsprojPath = string.Format("{0}{1}\\{1}.csproj", splitProjectPath[0],dllName);
-            model.FolderPath = splitProjectPath[1];
+            var splitProjectPath = model.DestinationPath.Split(new [] {dllName + @"\\"}, StringSplitOptions.None);
+            model.CsprojPath = string.Format("{0}{1}\\{1}.csproj", splitProjectPath[0],dllName);// ??????
+            model.FolderPath = @"C:\self\toci\software\sourcetree\phoenix\TociAbstractBaseGenerator\OldGenerators\Toci.Utillties.Test\Developers\Warrior\Destination";//  splitProjectPath[1];
         }
     }
 }

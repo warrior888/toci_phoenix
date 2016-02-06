@@ -67,6 +67,7 @@
     <Compile Include="Developers\Kielich\TestModel.cs" />
     <Compile Include="Developers\Kielich\Select.cs" />
     <Compile Include="Developers\Mg\ModelProviderTest.cs" />
+    <Compile Include="Developers\Warrior\ModelGeneratorTest.cs" />
     <Compile Include="Developers\Warrior\Poc\GeneralTests.cs" />
     <Compile Include="Developers\Warrior\Poc\MultiThreading\TestMultiThreadStacking.cs" />
     <Compile Include="Developers\Warrior\WarriorTociDbModelsGeneratorTest.cs" />

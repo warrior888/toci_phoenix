@@ -1,22 +1,36 @@
-﻿create table test (
-	id serial primary key,
-	nazwa text
-);
+﻿----https://github.com/warrior888/toci_phoenix/blob/5e180dd4490f04b35e6f36a86ffc6e0632ae50f8/toci_common/Toci.Libraries/Toci.Utillties.Test/Developers/Patryk/GeneratedModels/GenerateModelsTest.cs
 
-create table test2 (
-	id serial primary key,
-	nazwa text
-);
-
-create table users (
-	id serial primary key,
-	name text,
-	email text,
-	cell_phone varchar(20),
-	guid text
-);
-
-create table privilege (
+create table lookup_type (
 	id serial primary key,
 	name text
+);
+
+
+create table lookup (
+	id serial primary key,
+	id_lookup_type int references lookup_type (id),
+	name text
+);
+
+create table personal_data (
+	id serial primary key,
+	id_name int not null references lookup (id),
+	surname text not null,
+	pesel varchar(11),
+	birth_date date,
+	registration_date date,
+	address text
+);
+
+create table courses (
+	id serial primary key,
+	id_personal_data int references personal_data(id) not null,
+	id_personal_data_lector int references personal_data(id) not null,
+	id_status_lookup int references lookup(id),
+	id_classeskind_lookup int references lookup(id),
+	
+);
+
+create table phone (
+	
 );
