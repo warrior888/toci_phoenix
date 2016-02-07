@@ -39,9 +39,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="lookup.cs" />
-    <Compile Include="lookup_type.cs" />
-    <Compile Include="personal_data.cs" />
+    <Compile Include="Lookup.cs" />
+    <Compile Include="LookupType.cs" />
+    <Compile Include="PersonalData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

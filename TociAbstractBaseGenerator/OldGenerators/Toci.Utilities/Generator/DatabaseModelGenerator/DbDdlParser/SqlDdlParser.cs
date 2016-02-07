@@ -14,6 +14,7 @@ namespace Toci.Utilities.Generator.DatabaseModelGenerator.DbDdlParser
         private const char _rightParenthesis = ')';
         private const string _table = "TABLE";
         private const char _delimiter = ',';
+        private string[] _dbTablesNamesWordSeparator = {"_"};
 
         public SqlDdlParser(IDdlEntryParser ddlEntryParser) : base(ddlEntryParser)
         {
@@ -34,14 +35,15 @@ namespace Toci.Utilities.Generator.DatabaseModelGenerator.DbDdlParser
             int startPosition = ddl.ToUpper().IndexOf(_table) + _table.Length;
             int endPosition = ddl.ToUpper().IndexOf(_leftParenthesis) - _shiftValue;
             
-                var extract = ddl.Substring(startPosition, endPosition - startPosition).Trim();
-                return extract;
+            var extract = ddl.Substring(startPosition, endPosition - startPosition).Trim();
+
+            return UpperCaseCammelCase(extract);
 
         }
 
-        private string FirstLetterToUpper(string str)
+        private string UpperCaseCammelCase(string str)
         {
-            return char.ToUpper(str[0]) + str.Substring(1);
+            return string.Join("", str.Split(_dbTablesNamesWordSeparator, StringSplitOptions.None).Select(x => x.Substring(0, 1).ToUpper() + x.Substring(1)));
         }
     }
 }

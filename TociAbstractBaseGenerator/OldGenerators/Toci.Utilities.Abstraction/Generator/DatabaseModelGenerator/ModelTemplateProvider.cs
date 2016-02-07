@@ -59,16 +59,16 @@ namespace {1}
         @" 
         public const string {0:U} = ""{0}"";
         public {1} {2}
+        {{
+            get
             {{
-                get
-                {{
-                     return GetValue<{1}>({0:U});
-                }}
-                set
-                {{
-                    SetValue({0:U}, value);
-                }}
+                    return GetValue<{1}>({0:U});
             }}
+            set
+            {{
+                SetValue({0:U}, value);
+            }}
+        }}
         ";
 
         private const string DefaultUsings =

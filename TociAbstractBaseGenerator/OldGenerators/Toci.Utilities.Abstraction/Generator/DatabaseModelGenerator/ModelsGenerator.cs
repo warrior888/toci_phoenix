@@ -34,7 +34,7 @@ namespace Toci.Utilities.Abstraction.Generator.DatabaseModelGenerator
                         swr.Write(classModel);
                         swr.Close();
                     }
-                    project.AddItem("Compile", string.Format("{0}\\{1}.cs",model.FolderPath,className));
+                    project.AddItem("Compile", string.Format("{0}\\{1}.cs",model.FolderPath,className)); // Dziara z Konradem research i fix
                 }
                 project.Save();
             }

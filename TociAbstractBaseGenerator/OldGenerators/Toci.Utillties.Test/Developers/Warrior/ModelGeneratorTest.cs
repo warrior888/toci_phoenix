@@ -14,8 +14,8 @@ namespace Toci.Utilities.Test.Developers.Warrior
 
             wrapperModel.CsprojPath = @"C:\self\toci\software\sourcetree\phoenix\TociAbstractBaseGenerator\Toci.RoyalSchool.Dal";
             wrapperModel.DestinationPath = @"C:\self\toci\software\sourcetree\phoenix\TociAbstractBaseGenerator\Toci.RoyalSchool.Dal";
-            wrapperModel.FolderPath = "";
-            wrapperModel.NamespaceName = "alamakota";
+            wrapperModel.FolderPath = @"C:\self\toci\software\sourcetree\phoenix\TociAbstractBaseGenerator\Toci.RoyalSchool.Dal";
+            wrapperModel.NamespaceName = "Toci.RoyalSchool.Dal";
             wrapperModel.ParentName = "Model";
             wrapperModel.TemplatePath = @"C:\self\toci\software\sourcetree\phoenix\TociAbstractBaseGenerator\OldGenerators\Toci.Utillties.Test\Developers\Warrior\data\ddlExample.txt";
             //wrapperModel.UsingsList = "";
