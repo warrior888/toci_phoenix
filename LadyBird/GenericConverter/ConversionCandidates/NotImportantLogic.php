@@ -37,5 +37,7 @@
 					}
 				}
 			}
+			
+			//preg_grep($pattern, $input)
 		}
 	}

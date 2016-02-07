@@ -1,7 +1,13 @@
-dafaq
 
 call_user_function
 
-array
+
+		array(1,2,3,4,5,6, 
+				'klucz' => array(
+					'alamakota' => 8,
+					array('jezusmaria')
+				)
+			)
+		 
 
 $$wywolanie();
