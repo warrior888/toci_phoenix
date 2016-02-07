@@ -2,5 +2,5 @@
 
 	interface IInstruction
 	{
-		
+		function Render();
 	} 
