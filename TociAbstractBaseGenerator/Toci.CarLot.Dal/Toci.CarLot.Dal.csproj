@@ -54,6 +54,7 @@
     <Compile Include="Zwyciestwo\Auta\Maluszek.cs" />
     <Compile Include="Zwyciestwo\Auta\Multipla.cs" />
     <Compile Include="Zwyciestwo\Auta\Nissan.cs" />
+    <Compile Include="Zwyciestwo\Auta\Polonez.cs" />
     <Compile Include="Zwyciestwo\Auta\Porsze.cs" />
     <Compile Include="Zwyciestwo\CarBase.cs" />
   </ItemGroup>

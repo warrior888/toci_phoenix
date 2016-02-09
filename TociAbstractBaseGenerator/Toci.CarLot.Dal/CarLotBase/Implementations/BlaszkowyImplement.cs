@@ -8,5 +8,9 @@ namespace Toci.CarLot.Dal.CarLotBase.Implementations
 {
 	class BlaszkowyImplement : CarLotBase
 	{
+		protected override void CzyHiszpanskiGownoDZialaTakJAkJaMysle()
+		{
+			throw new NotImplementedException();
+		}
 	}
 }

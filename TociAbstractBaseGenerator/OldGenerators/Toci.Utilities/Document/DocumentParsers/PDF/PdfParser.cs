@@ -1,8 +1,8 @@
 ﻿using System;
 using System.IO;
 using System.Text;
-using iTextSharp.text.pdf;
-using iTextSharp.text.pdf.parser;
+//using iTextSharp.text.pdf;
+//using iTextSharp.text.pdf.parser;
 using Toci.Utilities.Abstraction.Document;
 using Toci.Utilities.Interfaces;
 
@@ -15,6 +15,7 @@ namespace Toci.Utilities.Document.DocumentParsers.PDF
 
         protected override StringBuilder Interpret(Stream stream)
         {
+            /*
             PdfReader reader = new PdfReader(stream);
             StringBuilder result = new StringBuilder();
             for (int page = 1; page <= reader.NumberOfPages; page++)
@@ -25,6 +26,8 @@ namespace Toci.Utilities.Document.DocumentParsers.PDF
                 result.Append(s);
             }
             return result;
+            */
+            return null;
         }
     }
 }

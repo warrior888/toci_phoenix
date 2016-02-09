@@ -35,8 +35,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.Utilities.Interfaces",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.Utilities.Test", "OldGenerators\Toci.Utillties.Test\Toci.Utilities.Test.csproj", "{AFA373BC-F581-4E32-80B5-CC3179F630F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.CarLot.Dal", "Toci.CarLot.Dal\Toci.CarLot.Dal.csproj", "{2FD97EA2-A0D0-4C9A-BC89-B1739B4EC9E9}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -91,10 +89,6 @@ Global
 		{AFA373BC-F581-4E32-80B5-CC3179F630F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFA373BC-F581-4E32-80B5-CC3179F630F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFA373BC-F581-4E32-80B5-CC3179F630F7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2FD97EA2-A0D0-4C9A-BC89-B1739B4EC9E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2FD97EA2-A0D0-4C9A-BC89-B1739B4EC9E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2FD97EA2-A0D0-4C9A-BC89-B1739B4EC9E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2FD97EA2-A0D0-4C9A-BC89-B1739B4EC9E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -109,6 +103,5 @@ Global
 		{AA84D501-0707-40D3-AED8-F4884E7F0FB2} = {BD351090-9A6E-4F12-8771-2777FB156C49}
 		{C3976AC9-39A5-4B47-8A67-33F021A4CDC3} = {BD351090-9A6E-4F12-8771-2777FB156C49}
 		{AFA373BC-F581-4E32-80B5-CC3179F630F7} = {BD351090-9A6E-4F12-8771-2777FB156C49}
-		{2FD97EA2-A0D0-4C9A-BC89-B1739B4EC9E9} = {F1303C25-6C24-4507-88C2-22910312F55B}
 	EndGlobalSection
 EndGlobal

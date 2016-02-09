@@ -1,6 +1,6 @@
 ﻿using System.IO;
 using System.Text;
-using Code7248.word_reader;
+//using Code7248.word_reader;
 using Toci.Utilities.Abstraction.Document;
 using Toci.Utilities.Interfaces;
 
@@ -15,8 +15,9 @@ namespace Toci.Utilities.Document.DocumentParsers.DOC
 
         protected override StringBuilder Interpret(Stream stream)
         {
-            TextExtractor extractor = new TextExtractor(GetFilePath());
-            return new StringBuilder(extractor.ExtractText());
+            //TextExtractor extractor = new TextExtractor(GetFilePath());
+            //return new StringBuilder(extractor.ExtractText());
+            return null;
         }
     }
 }

@@ -2,15 +2,15 @@
 {
     public abstract class CarBase
     {
-        protected abstract int KindOfGasoline();
+        protected abstract int KindOfGasoline(); 
 
         // royal school 
         // eena
         // eco driving
         // vsa
         // 3mb
-
-
+        // TeamLeasing KURWA !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! elo
+                                                               // idziemy spac
 
         // Lista błędów VS Anywhere:
         // - VS Anywhere.
@@ -25,7 +25,7 @@
                       |_____________________________________|
 											|			|
  					
-        */
+       */
 
         // :) 
         // hISZPANIA!!

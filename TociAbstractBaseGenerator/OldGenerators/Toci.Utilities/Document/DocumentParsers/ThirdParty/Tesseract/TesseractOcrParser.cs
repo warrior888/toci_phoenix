@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tesseract;
+//using Tesseract;
 using Toci.Utilities.Abstraction.Document;
 using Toci.Utilities.Interfaces;
 
@@ -16,7 +16,7 @@ namespace Toci.Utilities.Document.DocumentParsers.ThirdParty.Tesseract
     {
         const string tessdataPath = @"C:/Users/Mateusz/Desktop/tessdata";
         const string language = "pol";
-        private TesseractEngine engine = new TesseractEngine(tessdataPath, language);
+        //private TesseractEngine engine = new TesseractEngine(tessdataPath, language);
 
         public TesseractOcrParser(IDocumentResource documentResource): base(documentResource)
         {                                          
@@ -26,10 +26,10 @@ namespace Toci.Utilities.Document.DocumentParsers.ThirdParty.Tesseract
         {
             StringBuilder stringBuilder = new StringBuilder();
             Bitmap image = new Bitmap(stream);
-            IEnumerable<Word> result = OcrAndIterateWords(image);
-            foreach (var item in result)
+            //IEnumerable<Word> result = OcrAndIterateWords(image);
+            //foreach (var item in result)
             {
-                stringBuilder.Append(item.Text+" ");
+            //    stringBuilder.Append(item.Text+" ");
             }             
 
             return stringBuilder;
@@ -64,7 +64,7 @@ namespace Toci.Utilities.Document.DocumentParsers.ThirdParty.Tesseract
             }
             return bm;
         }
-
+        /*
         /// <summary>
         /// Iteruj po słowach w bitmapie (jak nazwa wskazuje zresztą).
         /// Nie takie proste do napisania jak by się wydawało.
@@ -127,7 +127,7 @@ namespace Toci.Utilities.Document.DocumentParsers.ThirdParty.Tesseract
                 } while (iter.Next(PageIteratorLevel.Block));
             }
         }
-
+        */
         /// <summary>
         /// Mały helper, zapisuje bitmapę jako TIFF do tablicy bajtów. 
         /// Bo API wspiera tylko czytanie tiffów z bajtów, a Pix z bitmapy nie działał afaik (bug jakiś)

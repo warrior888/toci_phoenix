@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using System.IO;
 using System.Text;
-using Puma.Net;
+//using Puma.Net;
 using Toci.Utilities.Abstraction.Document;
 using Toci.Utilities.Interfaces;
 
@@ -17,7 +17,7 @@ namespace Toci.Utilities.Document.DocumentParsers.ThirdParty.Puma
             {
                 image = PumaOcrHelpers.GetProperDpiImage(image, 300);
             }
-            var pumaPage = new PumaPage(image);
+            /*var pumaPage = new PumaPage(image);
             using (pumaPage)
             {
 
@@ -33,7 +33,7 @@ namespace Toci.Utilities.Document.DocumentParsers.ThirdParty.Puma
                 pumaPage.FontSettings.DetectItalic = true;
                 resultText.Append(pumaPage.RecognizeToString());
                 pumaPage.Dispose();
-            }
+            }*/
             return resultText;
         }
 

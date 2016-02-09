@@ -10,7 +10,6 @@ namespace Toci.CarLot.Dal.Zwyciestwo.Auta
 {
     class Porsze : CarBase
     {
-        const double fajnosc = pow(10, 99999);
         protected override int KindOfGasoline()
         {
             throw new NotImplementedException();
