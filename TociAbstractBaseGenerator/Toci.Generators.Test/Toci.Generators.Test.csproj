@@ -50,8 +50,10 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="nowyTest.cs" />
     <Compile Include="test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Łazaaaa.cs" />
     <Content Include="VSASUX\vsanywheresux.txt" />
   </ItemGroup>
   <Choose>
