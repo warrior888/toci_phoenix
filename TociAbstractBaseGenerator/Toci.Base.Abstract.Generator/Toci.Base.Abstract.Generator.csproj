@@ -44,6 +44,12 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AbstractGeneratorsInterfaces\Toci.Base.Abstract.Generator.Interfaces\Toci.Base.Abstract.Generator.Interfaces.csproj">
+      <Project>{11a6b98d-7b61-49d3-abd9-b9b0f76338af}</Project>
+      <Name>Toci.Base.Abstract.Generator.Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

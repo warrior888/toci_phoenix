@@ -39,14 +39,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DatabaseDataGenerator\Class2.cs" />
-    <Compile Include="DatabaseDataGenerator\MichalClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="DatabaseDataGenerator\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AbstractGeneratorsInterfaces\Toci.Abstract.Generator.Interfaces\Toci.Abstract.Generator.Interfaces.csproj">
+      <Project>{3427ca10-4614-4ed4-b78d-c00156bb9709}</Project>
+      <Name>Toci.Abstract.Generator.Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

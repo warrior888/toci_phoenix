@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Toci.Abstract.Generator.DatabaseDataGenerator
+namespace Toci.Abstract.Generator
 {
-	class Class2
-	{
-		void dupa2() { }
-		//widać to?
-	}
+    public class Class1
+    {
+    }
 }
