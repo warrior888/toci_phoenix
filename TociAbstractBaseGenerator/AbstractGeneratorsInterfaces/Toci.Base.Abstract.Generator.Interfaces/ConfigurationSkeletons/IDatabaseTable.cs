@@ -9,7 +9,7 @@ namespace Toci.Base.Abstract.Generator.Interfaces.ConfigurationSkeletons
 
         IDictionary<string, IDatabaseColumn> TableColumns { get; set; }
 
-        IDictionary<string, IBusinessLogicConfiguration> TableColumnsBusinessGenerator { get; set; }
+        //IDictionary<string, IBusinessLogicConfiguration> TableColumnsBusinessGenerator { get; set; }
 
         IDictionary<string, IDatabaseTable> ReferencingTables { get; set; }
     }
