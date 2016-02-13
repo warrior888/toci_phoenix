@@ -59,7 +59,32 @@
     <Compile Include="warrior\walker.cs" />
     <Content Include="VSASUX\vsanywheresux.txt" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\AbstractGeneratorsInterfaces\Toci.Abstract.Generator.Interfaces\Toci.Abstract.Generator.Interfaces.csproj">
+      <Project>{3427ca10-4614-4ed4-b78d-c00156bb9709}</Project>
+      <Name>Toci.Abstract.Generator.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AbstractGeneratorsInterfaces\Toci.Base.Abstract.Generator.Interfaces\Toci.Base.Abstract.Generator.Interfaces.csproj">
+      <Project>{11a6b98d-7b61-49d3-abd9-b9b0f76338af}</Project>
+      <Name>Toci.Base.Abstract.Generator.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DedicatedGeneratorsInterfaces\Toci.Crm.Generator.Interfaces\Toci.Crm.Generator.Interfaces.csproj">
+      <Project>{74cf09f8-1817-41be-a34b-b873eab03019}</Project>
+      <Name>Toci.Crm.Generator.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Toci.Abstract.Generator\Toci.Abstract.Generator.csproj">
+      <Project>{5841c6d5-2291-421d-aca6-275f602c5540}</Project>
+      <Name>Toci.Abstract.Generator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Toci.Base.Abstract.Generator\Toci.Base.Abstract.Generator.csproj">
+      <Project>{dc378a45-4681-4287-8cfa-0c1e25d579c9}</Project>
+      <Name>Toci.Base.Abstract.Generator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Toci.Crm.Generator\Toci.Crm.Generator.csproj">
+      <Project>{5a9bde9e-244f-4a17-b94a-cb7303f405ee}</Project>
+      <Name>Toci.Crm.Generator</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

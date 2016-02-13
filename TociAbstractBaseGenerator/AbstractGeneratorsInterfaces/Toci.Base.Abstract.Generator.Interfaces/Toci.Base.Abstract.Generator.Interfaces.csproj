@@ -39,6 +39,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfigurationSkeletons\IBusinessLogicConfiguration.cs" />
+    <Compile Include="ConfigurationSkeletons\IDatabaseColumn.cs" />
+    <Compile Include="ConfigurationSkeletons\IDatabaseTable.cs" />
+    <Compile Include="ConfigurationSkeletons\IRegrasionTestConfiguration.cs" />
+    <Compile Include="ConfigurationSkeletons\IViewConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

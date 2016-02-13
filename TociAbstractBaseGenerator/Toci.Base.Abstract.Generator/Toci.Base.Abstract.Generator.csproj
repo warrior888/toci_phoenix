@@ -39,6 +39,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfigurationSkeletons\BusinessLogicConfiguration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ConfigurationSkeletons\DatabaseColumn.cs" />
+    <Compile Include="ConfigurationSkeletons\DatabaseTable.cs" />
+    <Compile Include="ConfigurationSkeletons\ViewConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
