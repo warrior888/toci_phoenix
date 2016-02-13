@@ -76,5 +76,5 @@ create table courses (
 );
 
 create table phone (
-	
+	id serial primary key
 );
