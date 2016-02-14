@@ -5,11 +5,9 @@ namespace Toci.Base.Abstract.Generator.ConfigurationSkeletons
 {
     public class BusinessLogicConfiguration :  IBusinessLogicConfiguration
     {
+        public string Kind { get; set; }
+        public object Value { get; set; }
         public IDictionary<string, IDatabaseColumn> Constraints { get; set; }
-        public void DelegateEmployee(IDatabaseColumn column)
-        {
-            throw new System.NotImplementedException();
-        }
     }
 
 }

@@ -11,8 +11,6 @@ namespace Toci.Base.Abstract.Generator.Interfaces.ConfigurationSkeletons
         object Value { get; set; }
 
         IDictionary<string, IDatabaseColumn> Constraints { get; set; }
-
-        void DelegateEmployee(IDatabaseColumn column);
     }
 
 }
