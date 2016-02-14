@@ -2,7 +2,7 @@
 
 namespace Toci.Base.Abstract.Generator.Interfaces.ConfigurationSkeletons
 {
-    public interface IDatabaseColumn
+    public interface IDatabaseColumnConfiguration
     {
         // typ kolumny
         string Kind { get; set; }

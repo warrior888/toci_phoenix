@@ -47,6 +47,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DedicatedGeneratorsInterfac
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.Crm.Generator.Interfaces", "DedicatedGeneratorsInterfaces\Toci.Crm.Generator.Interfaces\Toci.Crm.Generator.Interfaces.csproj", "{74CF09F8-1817-41BE-A34B-B873EAB03019}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.Extensions", "..\Toci.Extensions\Toci.Extensions.csproj", "{EAF5E6C1-E106-44C6-A3DE-6580B5166F9F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -117,6 +119,10 @@ Global
 		{74CF09F8-1817-41BE-A34B-B873EAB03019}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74CF09F8-1817-41BE-A34B-B873EAB03019}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74CF09F8-1817-41BE-A34B-B873EAB03019}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAF5E6C1-E106-44C6-A3DE-6580B5166F9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAF5E6C1-E106-44C6-A3DE-6580B5166F9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAF5E6C1-E106-44C6-A3DE-6580B5166F9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAF5E6C1-E106-44C6-A3DE-6580B5166F9F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

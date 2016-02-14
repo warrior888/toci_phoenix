@@ -2,7 +2,7 @@
 
 namespace Toci.Base.Abstract.Generator.ConfigurationSkeletons
 {
-    public class DatabaseColumn: IDatabaseColumn
+    public class DatabaseColumnConfiguration: IDatabaseColumnConfiguration
     {
         public string Kind { get; set; }
 

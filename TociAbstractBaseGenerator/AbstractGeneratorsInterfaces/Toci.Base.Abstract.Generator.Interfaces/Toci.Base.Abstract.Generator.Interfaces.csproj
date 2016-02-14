@@ -40,11 +40,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConfigurationSkeletons\IBusinessLogicConfiguration.cs" />
-    <Compile Include="ConfigurationSkeletons\IDatabaseColumn.cs" />
-    <Compile Include="ConfigurationSkeletons\IDatabaseTable.cs" />
+    <Compile Include="ConfigurationSkeletons\IDatabaseColumnConfiguration.cs" />
+    <Compile Include="ConfigurationSkeletons\IDatabaseTableConfiguration.cs" />
     <Compile Include="ConfigurationSkeletons\IRegrasionTestConfiguration.cs" />
     <Compile Include="ConfigurationSkeletons\IViewConfiguration.cs" />
+    <Compile Include="LogicSkeleton\IBusinessLogic.cs" />
+    <Compile Include="LogicSkeleton\IDatabaseColumnLogic.cs" />
+    <Compile Include="LogicSkeleton\IDatabaseTableLogic.cs" />
+    <Compile Include="LogicSkeleton\IRegresionTestLogic.cs" />
+    <Compile Include="LogicSkeleton\IViewLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UserConfiguration\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

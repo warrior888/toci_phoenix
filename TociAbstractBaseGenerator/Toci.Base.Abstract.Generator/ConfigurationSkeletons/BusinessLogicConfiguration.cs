@@ -7,7 +7,7 @@ namespace Toci.Base.Abstract.Generator.ConfigurationSkeletons
     {
         public string Kind { get; set; }
         public object Value { get; set; }
-        public IDictionary<string, IDatabaseColumn> Constraints { get; set; }
+        public IDictionary<string, IDatabaseColumnConfiguration> Constraints { get; set; }
     }
 
 }
