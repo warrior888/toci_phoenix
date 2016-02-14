@@ -1,16 +1,18 @@
 ﻿using System.Collections.Generic;
-using System.IO.Ports;
+using Toci.Base.Abstract.Generator.Interfaces.LogicSkeleton;
 
 namespace Toci.Base.Abstract.Generator.Interfaces.ConfigurationSkeletons
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public interface IBusinessLogicConfiguration
     {
-        // typ kolumny
-        string Kind { get; set; }
+        ILogicConfiguration Configuration { get; set; }
+            
+        IDictionary<string, IDatabaseTableConfiguration> Tables { get; set; }
 
-        object Value { get; set; }
-
-        IDictionary<string, IDatabaseColumnConfiguration> Constraints { get; set; }
+        IDictionary<string, IBusinessLogic> DependentBusinessLogics { get; set; }
     }
 
 }

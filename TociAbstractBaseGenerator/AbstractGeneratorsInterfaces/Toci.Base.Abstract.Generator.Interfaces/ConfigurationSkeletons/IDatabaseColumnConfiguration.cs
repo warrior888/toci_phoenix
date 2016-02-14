@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Toci.Base.Abstract.Generator.Interfaces.ConfigurationSkeletons
 {
@@ -9,6 +10,6 @@ namespace Toci.Base.Abstract.Generator.Interfaces.ConfigurationSkeletons
 
         object Value { get; set; }
 
-        string Constraints { get; set; }
+        IDictionary<string, IDatabaseColumnConfiguration> Constraints { get; set; }
     }
 }
