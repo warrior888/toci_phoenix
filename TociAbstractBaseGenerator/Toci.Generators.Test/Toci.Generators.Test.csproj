@@ -50,6 +50,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Base.Abstract.Generator.Tests\DdlAnalyzerTests.cs" />
     <Compile Include="GhostRider\januszek.cs" />
     <Compile Include="GhostRider\Rajder.cs" />
     <Compile Include="nowyTest.cs" />
@@ -85,6 +86,7 @@
       <Name>Toci.Crm.Generator</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

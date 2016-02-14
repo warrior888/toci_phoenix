@@ -46,6 +46,14 @@
     <Compile Include="ConfigurationSkeletons\DatabaseTableConfiguration.cs" />
     <Compile Include="ConfigurationSkeletons\RegresionTestConfiguration.cs" />
     <Compile Include="ConfigurationSkeletons\ViewConfiguration.cs" />
+    <Compile Include="LogicSkeleton\BusinessLogic.cs" />
+    <Compile Include="LogicSkeleton\DatabaseColumnLogic.cs" />
+    <Compile Include="LogicSkeleton\DatabaseTableLogic.cs" />
+    <Compile Include="LogicSkeleton\DdlHandling\DdlAnalyzer.cs" />
+    <Compile Include="LogicSkeleton\DdlHandling\SingleDdlParser.cs" />
+    <Compile Include="LogicSkeleton\DdlHandling\SingleDdlParserBase.cs" />
+    <Compile Include="LogicSkeleton\RegressionTestLogic.cs" />
+    <Compile Include="LogicSkeleton\ViewLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -55,6 +63,10 @@
     <ProjectReference Include="..\AbstractGeneratorsInterfaces\Toci.Base.Abstract.Generator.Interfaces\Toci.Base.Abstract.Generator.Interfaces.csproj">
       <Project>{11a6b98d-7b61-49d3-abd9-b9b0f76338af}</Project>
       <Name>Toci.Base.Abstract.Generator.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Toci.Extensions\Toci.Extensions.csproj">
+      <Project>{6db9d78a-436d-4c28-80b7-8576db97ad0d}</Project>
+      <Name>Toci.Extensions</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -28,14 +28,14 @@ insert into lookup (id_lookup_type, name) values (1, 'Marta');
 insert into lookup (id_lookup_type, name) values (1, 'Yuriy');
 insert into lookup (id_lookup_type, name) values (1, 'Karol');
 insert into lookup (id_lookup_type, name) values (1, 'Igor');
-insert into lookup (id_lookup_type, name) values (1, 'Micha≥');
+insert into lookup (id_lookup_type, name) values (1, 'Micha≈Ç');
 insert into lookup (id_lookup_type, name) values (1, 'Karol');
-insert into lookup (id_lookup_type, name) values (1, 'Rafa≥');
+insert into lookup (id_lookup_type, name) values (1, 'Rafa≈Ç');
 insert into lookup (id_lookup_type, name) values (1, 'Tadeusz');
-insert into lookup (id_lookup_type, name) values (1, 'Jaros≥aw');
+insert into lookup (id_lookup_type, name) values (1, 'Jaros≈Çaw');
 insert into lookup (id_lookup_type, name) values (1, 'Janusz');
 insert into lookup (id_lookup_type, name) values (1, 'Konrad');
-insert into lookup (id_lookup_type, name) values (1, 'Pawe≥');
+insert into lookup (id_lookup_type, name) values (1, 'Pawe≈Ç');
 insert into lookup (id_lookup_type, name) values (1, 'Mariusz');
 insert into lookup (id_lookup_type, name) values (1, 'Eustachy');
 insert into lookup (id_lookup_type, name) values (1, 'Vladimir');
@@ -50,21 +50,21 @@ create table personal_data (
 	address text
 );
 
-insert into personal_data (id_name,surname,pesel,birth_date,registration_date,address) values (1, 'Kowalski', 84080818074, '1984-08-08','2015-12-10','PomaraÒczowa 3');
+insert into personal_data (id_name,surname,pesel,birth_date,registration_date,address) values (1, 'Kowalski', 84080818074, '1984-08-08','2015-12-10','Pomara≈Ñczowa 3');
 insert into personal_data (id_name,surname,pesel,birth_date,registration_date,address) values (2, 'Moron',00010244256,'2000-01-01','2016-06-02', 'Krzywa 18/6');
 insert into personal_data (id_name,surname,pesel,birth_date,registration_date,address) values (3,'Cebulak',00010244256,'2000-01-01','2016-06-02','Konkretna 32');
-insert into personal_data (id_name,surname,pesel,birth_date,registration_date,address) values (4,'Marian',00010244256,'2000-01-01','2016-06-02','D≥uga 15');
+insert into personal_data (id_name,surname,pesel,birth_date,registration_date,address) values (4,'Marian',00010244256,'2000-01-01','2016-06-02','D≈Çuga 15');
 insert into personal_data (id_name,surname,pesel,birth_date,registration_date,address) values (5, 'Ignacy', 00010244256,'2000-01-01','2016-06-02','Konkretna 32');
 insert into personal_data (id_name,surname,pesel,birth_date,registration_date,address) values (6,'Cebulak',00010244256,'2000-01-01','2016-06-02','Konkretna 32');
 insert into personal_data (id_name,surname,pesel,birth_date,registration_date,address) values (7,'Cebulak',00010244256,'2000-01-01','2016-06-02','Konkretna 32');
-insert into personal_data (id_name,surname,pesel,birth_date,registration_date,address) values (8,'Bu≥ka',00010244256,'2000-01-01','2016-06-02','Konkretna 32');
+insert into personal_data (id_name,surname,pesel,birth_date,registration_date,address) values (8,'Bu≈Çka',00010244256,'2000-01-01','2016-06-02','Konkretna 32');
 insert into personal_data (id_name,surname,pesel,birth_date,registration_date,address) values (9,'Cebulak',00010244256,'2000-01-01','2016-06-02','Konkretna 32');
 insert into personal_data (id_name,surname,pesel,birth_date,registration_date,address) values (10,'Cebulak',00010244256,'2000-01-01','2016-06-02','Konkretna 32');
 insert into personal_data (id_name,surname,pesel,birth_date,registration_date,address) values (11,'Cebulak',00010244256,'2000-01-01','2016-06-02','Konkretna 32');
 insert into personal_data (id_name,surname,pesel,birth_date,registration_date,address) values (12,'Indiego',00010244256,'2000-01-01','2016-06-02','Konkretna 32');
 insert into personal_data (id_name,surname,pesel,birth_date,registration_date,address) values (13,'Cebulak',00010244256,'2000-01-01','2016-06-02','Randomowa 666/666');
 insert into personal_data (id_name,surname,pesel,birth_date,registration_date,address) values (14,'Cebulak',00010244256,'2000-01-01','2016-06-02','Konkretna 32');
-insert into personal_data (id_name,surname,pesel,birth_date,registration_date,address) values (15,'Putin',00010244256,'1952-10-07','2016-06-02','£agrowa 66/6');
+insert into personal_data (id_name,surname,pesel,birth_date,registration_date,address) values (15,'Putin',00010244256,'1952-10-07','2016-06-02','≈Åagrowa 66/6');
 
 create table courses (
 	id serial primary key,
