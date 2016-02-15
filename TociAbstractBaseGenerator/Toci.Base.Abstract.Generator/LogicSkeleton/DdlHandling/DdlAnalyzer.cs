@@ -1,19 +1,26 @@
-﻿using System.Collections.Generic;
-using Toci.Base.Abstract.Generator.Interfaces.LogicSkeleton;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text.RegularExpressions;
+using Toci.Base.Abstract.Generator.Interfaces.LogicSkeleton.DdlHandling;
 
-namespace Toci.Base.Abstract.Generator.LogicSkeleton
+namespace Toci.Base.Abstract.Generator.LogicSkeleton.DdlHandling
 {
     public class DdlAnalyzer : IDdlAnalyzer
     {
-        public Dictionary<string, string> GetAllTablesDdlsSeparated(string textFilePath)
-        {
-            throw new System.NotImplementedException();
+        private const char Separator = ';';
+        private const string EscapeChars = "\r\n|\n|\t";
 
+        public IList<string> GetAllTablesDdlsSeparated(string textFilePath)
+        {
+            var fileContent = File.ReadAllText(textFilePath);
+            return GetAllTablesDdlsSeparatedFromString(fileContent);
         }
 
-        public Dictionary<string, string> GetAllTablesDdlsSeparatedFromString(string fileContent)//a czy nie był by tu potrzebny przykładowy plik?
+        public IList<string> GetAllTablesDdlsSeparatedFromString(string fileContent)//RoyalSchool/ddl/sql.sql
         {
-            throw new System.NotImplementedException();
+            return Regex.Replace(fileContent, EscapeChars, string.Empty).Split(Separator).ToList();
         }
     }
 }
