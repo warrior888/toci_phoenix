@@ -2,6 +2,6 @@
 {
     public interface IDdlConvertionManager
     {
-         
+        void CreateDdlModels(IDdlAnalyzer analyzer);
     }
 }
