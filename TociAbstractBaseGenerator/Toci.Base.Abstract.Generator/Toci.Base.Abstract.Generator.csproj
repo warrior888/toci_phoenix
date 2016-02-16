@@ -41,6 +41,8 @@
   <ItemGroup>
     <Compile Include="BaseTypes\Database\DatabaseModel.cs" />
     <Compile Include="BaseTypes\Database\DbField.cs" />
+    <Compile Include="BaseTypes\Database\Virtualization\PostgreSql\PostgreSqlVirtualStorageTypeMap.cs" />
+    <Compile Include="BaseTypes\Database\Virtualization\VirtualStorageTypeMapBase.cs" />
     <Compile Include="ConfigurationSkeletons\BusinessLogicConfiguration.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -55,6 +57,7 @@
     <Compile Include="LogicSkeleton\DdlHandling\DdlAnalyzer.cs" />
     <Compile Include="LogicSkeleton\DdlHandling\SingleDdlParser.cs" />
     <Compile Include="LogicSkeleton\DdlHandling\SingleDdlParserBase.cs" />
+    <Compile Include="LogicSkeleton\DdlHandling\Virtualization\PostgreSqlSingleDdlParser.cs" />
     <Compile Include="LogicSkeleton\RegressionTestLogic.cs" />
     <Compile Include="LogicSkeleton\ViewLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -71,6 +74,10 @@
       <Project>{6db9d78a-436d-4c28-80b7-8576db97ad0d}</Project>
       <Name>Toci.Extensions</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BaseTypes\Database\Virtualization\MsSql\" />
+    <Folder Include="BaseTypes\Database\Virtualization\Oracle\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

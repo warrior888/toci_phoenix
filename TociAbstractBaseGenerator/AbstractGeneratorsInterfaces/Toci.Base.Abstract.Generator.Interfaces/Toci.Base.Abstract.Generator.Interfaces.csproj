@@ -42,6 +42,7 @@
     <Compile Include="BaseTypes\Database\IDatabaseModel.cs" />
     <Compile Include="BaseTypes\Database\IDbField.cs" />
     <Compile Include="BaseTypes\Database\SelectClause.cs" />
+    <Compile Include="BaseTypes\Database\Virtualization\IVirtualStorageTypeMap.cs" />
     <Compile Include="ConfigurationSkeletons\IBusinessLogicConfiguration.cs" />
     <Compile Include="ConfigurationSkeletons\IDatabaseColumnConfiguration.cs" />
     <Compile Include="ConfigurationSkeletons\IDatabaseTableConfiguration.cs" />

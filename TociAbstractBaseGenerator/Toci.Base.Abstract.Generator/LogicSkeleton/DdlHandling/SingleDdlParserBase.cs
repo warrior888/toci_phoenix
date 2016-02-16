@@ -1,5 +1,6 @@
 ﻿using System;
 using Toci.Base.Abstract.Generator.ConfigurationSkeletons;
+using Toci.Base.Abstract.Generator.Interfaces.BaseTypes.Database.Virtualization;
 using Toci.Base.Abstract.Generator.Interfaces.ConfigurationSkeletons;
 using Toci.Base.Abstract.Generator.Interfaces.LogicSkeleton.DdlHandling;
 using Toci.Extensions.String.Ddl;
@@ -9,8 +10,15 @@ namespace Toci.Base.Abstract.Generator.LogicSkeleton.DdlHandling
     public abstract class SingleDdlParserBase : ISingleDdlParser
     {
         private const char Separator = ',';
+        private const char DdlRowSeparator = ' ';
         private const char OpeningBracket = '(';
         private const char ClosingBracket = ')';
+        private const int MinimumRowElementsLength = 2;
+
+        private const int RowNamePosition = 0;
+
+        protected IVirtualStorageTypeMap TypesMap;
+
         /// <summary>
         /// Parses a single data definition language command to an instance of the given Table
         /// </summary>
@@ -24,22 +32,20 @@ namespace Toci.Base.Abstract.Generator.LogicSkeleton.DdlHandling
 	id_lookup_type int references lookup_type (id),
 	name text
 ); */
+            IDatabaseTableConfiguration table = new DatabaseTableConfiguration();   
+
             if (ddl.IsCreate())
             {
                 var rows = ExtractRows(ddl);
 
                 foreach (var row in rows)
                 {
-                    // TODO create column config from ddl row
-                    // row = id serial primary key   |   id_last_whatever integer references sometable(some_column)
-                    var record = new DatabaseColumnConfiguration();
-                    
-
+                    IDatabaseColumnConfiguration dbColumn = GetColumnForStringRow(row);
+                    table.TableColumns.Add(dbColumn.Name, dbColumn);
                 }
-                //IDatabaseColumnConfiguration
             }
 
-            return null;
+            return table;
         }
 
         /// <summary>
@@ -77,6 +83,29 @@ namespace Toci.Base.Abstract.Generator.LogicSkeleton.DdlHandling
                     endPosition = j;
                 }
             }
+        }
+
+        protected virtual IDatabaseColumnConfiguration GetColumnForStringRow(string row)
+        {
+            // row = id serial primary key   |   id_last_whatever integer references sometable(some_column)
+            // columnname character varying (45)
+
+            var record = new DatabaseColumnConfiguration();
+
+            var rowElements = row.Split(DdlRowSeparator);
+
+            if (rowElements.Length < MinimumRowElementsLength)
+            {
+                // it is rather an error we should stop at
+                return null;
+            }
+
+            record.Name = rowElements[RowNamePosition];
+            record.Kind = TypesMap.GetTypeForDdlRow(row);
+
+            //TODO constraints
+
+            return record;
         }
 
         /// <summary>
