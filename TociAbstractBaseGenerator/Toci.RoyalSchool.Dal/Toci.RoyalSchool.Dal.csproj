@@ -47,7 +47,7 @@
   <ItemGroup>
     <Content Include="ddl\dummy.txt" />
     <Content Include="ddl\sql.sql" />
-    <Content Include="ddl\TextFile1.txt" />
+    <Content Include="ddl\TextFile2.txt" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OldGenerators\Toci.Db\Toci.Db.csproj">
