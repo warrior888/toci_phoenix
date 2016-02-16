@@ -5,6 +5,11 @@ namespace Toci.Base.Abstract.Generator.ConfigurationSkeletons
 {
     public class DatabaseTableConfiguration : IDatabaseTableConfiguration
     {
+        public DatabaseTableConfiguration()
+        {
+            TableColumns = new Dictionary<string, IDatabaseColumnConfiguration>();
+        }
+
         public string TableName { get; set; }
         // id_last_whatever str below
         public IDictionary<string, IDatabaseColumnConfiguration> TableColumns { get; set; }
@@ -15,7 +20,7 @@ namespace Toci.Base.Abstract.Generator.ConfigurationSkeletons
 
         public string GenerateDbModel()
         {
-            throw new System.NotImplementedException();
+            return string.Empty;
         }
     }
 }

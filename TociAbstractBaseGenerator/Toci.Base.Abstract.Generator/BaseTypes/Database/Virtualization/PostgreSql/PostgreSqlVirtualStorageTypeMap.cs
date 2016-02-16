@@ -10,7 +10,8 @@ namespace Toci.Base.Abstract.Generator.BaseTypes.Database.Virtualization.Postgre
             {
                 { "character varying", "string" },
                 { "int", "int" },
-                { "integer", "integer" }, // TODO
+                { "serial", "int" },
+                { "integer", "int" }, // TODO
             };
         }
     }

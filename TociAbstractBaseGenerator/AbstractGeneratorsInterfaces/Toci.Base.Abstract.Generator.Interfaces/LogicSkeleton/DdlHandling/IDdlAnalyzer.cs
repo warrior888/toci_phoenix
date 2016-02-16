@@ -10,7 +10,7 @@ namespace Toci.Base.Abstract.Generator.Interfaces.LogicSkeleton.DdlHandling
         /// </summary>
         /// <param name="textFile">File cointaining ddls</param>
         /// <returns>ddls from file</returns>
-        IList<string> GetAllTablesDdlsSeparated(string textFilePath); // TODO remove method param
+        IList<string> GetAllTablesDdlsSeparated(); 
         /// <summary>
         /// Parses ddl to dict
         /// </summary>

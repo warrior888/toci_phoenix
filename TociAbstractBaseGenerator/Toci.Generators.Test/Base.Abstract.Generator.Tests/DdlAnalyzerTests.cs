@@ -3,6 +3,7 @@ using System.ComponentModel.Design.Serialization;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Toci.Base.Abstract.Generator.Interfaces.LogicSkeleton.DdlHandling;
 using Toci.Base.Abstract.Generator.LogicSkeleton.DdlHandling;
+using Toci.Base.Abstract.Generator.LogicSkeleton.DdlHandling.Virtualization;
 
 namespace Toci.Generators.Test.Base.Abstract.Generator.Tests
 {
@@ -18,8 +19,15 @@ namespace Toci.Generators.Test.Base.Abstract.Generator.Tests
             //arrange
             const string textFilePath = @"\..\..\..\Toci.RoyalSchool.Dal\ddl\sql.sql";
             //act
-            var ddlAnalyzer = new DdlAnalyzer();
-            var result = ddlAnalyzer.GetAllTablesDdlsSeparated(string.Format("{0}{1}", Environment.CurrentDirectory, textFilePath));
+            var ddlAnalyzer = new DdlAnalyzer(string.Format("{0}{1}", Environment.CurrentDirectory, textFilePath));
+            IDdlConvertionManager manager = new DdlConvertionManager();
+
+            manager.CreateDdlModels(ddlAnalyzer, new PostgreSqlSingleDdlParser());
+
+            //nowy
+            // jestem tu
+            //var result = ddlAnalyzer.GetAllTablesDdlsSeparated();
+
             //assert nie jest niezbędny póki nie wiadomo dokładnie co wyjdzie 
             //Assert.AreEqual(result,null); 
         }

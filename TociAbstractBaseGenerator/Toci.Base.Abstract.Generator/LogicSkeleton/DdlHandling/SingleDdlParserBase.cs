@@ -61,9 +61,7 @@ namespace Toci.Base.Abstract.Generator.LogicSkeleton.DdlHandling
 
             //GetDdlBracketPositions(ddl, out firstBracketIndex, out lastBracketIndex);
 
-            ddl = ddl.Remove(0, firstBracketIndex);
-            ddl = ddl.Remove(lastBracketIndex);
-            return ddl.Split(Separator);
+            return ddl.Substring(firstBracketIndex + 1, lastBracketIndex - firstBracketIndex - 1).Split(Separator);
         }
 
         protected virtual void GetDdlBracketPositions(string str, out int beginingPos, out int endPosition)

@@ -11,8 +11,14 @@ namespace Toci.Base.Abstract.Generator.LogicSkeleton.DdlHandling
     {
         private const char Separator = ';';
         private const string EscapeChars = "\r\n|\n|\t";
+        private string textFilePath;
 
-        public IList<string> GetAllTablesDdlsSeparated(string textFilePath)
+        public DdlAnalyzer(string pathToFile)
+        {
+            textFilePath = pathToFile;
+        }
+
+        public IList<string> GetAllTablesDdlsSeparated()
         {
             var fileContent = File.ReadAllText(textFilePath);
             return GetAllTablesDdlsSeparatedFromString(fileContent);
