@@ -19,7 +19,7 @@ namespace Toci.Generators.Test.Base.Abstract.Generator.Tests
             const string textFilePath = @"\..\..\..\Toci.RoyalSchool.Dal\ddl\sql.sql";
             //act
             var ddlAnalyzer = new DdlAnalyzer();
-            var result = ddlAnalyzer.GetAllTablesDdlsSeparated(Environment.CurrentDirectory+textFilePath);
+            var result = ddlAnalyzer.GetAllTablesDdlsSeparated(string.Format("{0}{1}", Environment.CurrentDirectory, textFilePath));
             //assert nie jest niezbędny póki nie wiadomo dokładnie co wyjdzie 
             //Assert.AreEqual(result,null); 
         }

@@ -39,12 +39,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseTypes\Database\IDatabaseModel.cs" />
+    <Compile Include="BaseTypes\Database\IDbField.cs" />
+    <Compile Include="BaseTypes\Database\SelectClause.cs" />
     <Compile Include="ConfigurationSkeletons\IBusinessLogicConfiguration.cs" />
     <Compile Include="ConfigurationSkeletons\IDatabaseColumnConfiguration.cs" />
     <Compile Include="ConfigurationSkeletons\IDatabaseTableConfiguration.cs" />
+    <Compile Include="ConfigurationSkeletons\IErd.cs" />
     <Compile Include="ConfigurationSkeletons\ILogicConfiguration.cs" />
     <Compile Include="ConfigurationSkeletons\IRegresionTestConfiguration.cs" />
     <Compile Include="ConfigurationSkeletons\IViewConfiguration.cs" />
+    <Compile Include="LogicSkeleton\DdlHandling\IDdlConvertionManager.cs" />
     <Compile Include="LogicSkeleton\DdlHandling\ISingleDdlParser.cs" />
     <Compile Include="LogicSkeleton\IBusinessLogic.cs" />
     <Compile Include="LogicSkeleton\IDatabaseColumnLogic.cs" />

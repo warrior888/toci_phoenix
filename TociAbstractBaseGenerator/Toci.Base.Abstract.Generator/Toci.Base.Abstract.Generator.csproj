@@ -39,11 +39,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseTypes\Database\DatabaseModel.cs" />
+    <Compile Include="BaseTypes\Database\DbField.cs" />
     <Compile Include="ConfigurationSkeletons\BusinessLogicConfiguration.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ConfigurationSkeletons\DatabaseColumnConfiguration.cs" />
     <Compile Include="ConfigurationSkeletons\DatabaseTableConfiguration.cs" />
+    <Compile Include="ConfigurationSkeletons\Erd.cs" />
     <Compile Include="ConfigurationSkeletons\RegresionTestConfiguration.cs" />
     <Compile Include="ConfigurationSkeletons\ViewConfiguration.cs" />
     <Compile Include="LogicSkeleton\BusinessLogic.cs" />

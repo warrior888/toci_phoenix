@@ -10,5 +10,8 @@ namespace Toci.Base.Abstract.Generator.Interfaces.ConfigurationSkeletons
         IDictionary<string, IDatabaseColumnConfiguration> TableColumns { get; set; }
 
         IDictionary<string, IDatabaseTableConfiguration> ReferencingTables { get; set; }
+
+        // klasa do zapisu do pliku
+        string GenerateDbModel();
     }
 }
