@@ -1,4 +1,5 @@
-﻿using Toci.Base.Abstract.Generator.Interfaces.DesignPatternSkeletons.ChainResponsibility;
+﻿using System;
+using Toci.Base.Abstract.Generator.Interfaces.DesignPatternSkeletons.ChainResponsibility;
 using Toci.Base.Abstract.Generator.Interfaces.DesignPatternSkeletons.Strategy;
 
 namespace Toci.Base.Abstract.Generator.DesignPatternSkeletons.ChainResponsibility
@@ -7,7 +8,17 @@ namespace Toci.Base.Abstract.Generator.DesignPatternSkeletons.ChainResponsibilit
     {
         public void Run(IAbstractGenericStrategy strategy, IRefTypeEntity entity)
         {
-            throw new System.NotImplementedException();
+            if (strategy == null)
+            {
+                throw new ArgumentNullException("strategy");
+            }
+
+            if (entity == null)
+            {
+                throw new ArgumentNullException("entity");
+            }
+
+
         }
     }
 }

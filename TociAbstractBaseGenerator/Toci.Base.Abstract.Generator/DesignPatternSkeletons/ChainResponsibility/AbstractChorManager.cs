@@ -8,6 +8,8 @@ namespace Toci.Base.Abstract.Generator.DesignPatternSkeletons.ChainResponsibilit
     {
         public IDictionary<string, IChorHandler> GetHandlersDictionary()
         {
+            
+
             throw new System.NotImplementedException();
         }
 

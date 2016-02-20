@@ -4,28 +4,38 @@ using Toci.Base.Abstract.Generator.Interfaces.DesignPatternSkeletons.Factory;
 
 namespace Toci.Base.Abstract.Generator.DesignPatternSkeletons.Factory
 {
-    public abstract class AbstractGenericFactory<TKey,TValue>:IAbstractGenericFactory<TKey, TValue>
+    public abstract class AbstractGenericFactory<TKey, TFactoredType> : IAbstractGenericFactory<TKey, TFactoredType>
     {
-        private readonly Dictionary<TKey, TValue> factoryDictionary;
+        private readonly Dictionary<TKey, TFactoredType> factoryDictionary;
 
-        public AbstractGenericFactory(Dictionary<TKey, TValue> factoryDictionary)
+        protected AbstractGenericFactory() 
+        {
+
+        }
+
+        protected AbstractGenericFactory(Dictionary<TKey, TFactoredType> factoryDictionary)
         {
             if (factoryDictionary == null)
             {
-                throw new ArgumentException("factoryDictionary");
+                throw new ArgumentNullException("the given factoryDictionary is null");
             }
 
             this.factoryDictionary = factoryDictionary;
         }
 
-        public virtual Dictionary<TKey, TValue> GetAllnstances()
+        public virtual Dictionary<TKey, TFactoredType> GetAllnstances()
         {
             return factoryDictionary;
         }
 
-        public virtual TValue GetInstance(TKey key)
+        public virtual TFactoredType GetInstance(TKey key)
         {
-            return factoryDictionary.ContainsKey(key) ? factoryDictionary[key] : default(TValue);
+            if (key == null)
+            {
+                throw new ArgumentNullException("The given key is null");
+            }
+
+            return factoryDictionary.ContainsKey(key) ? factoryDictionary[key] : default(TFactoredType);
         }
     }
 }
