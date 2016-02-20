@@ -18,5 +18,7 @@ namespace Toci.Base.Abstract.Generator.LogicSkeleton.DdlHandling
                 databaseTables.Add(ddlParser.GetTableModel(ddlCreateTable));
             }
         }
+
+
     }
 }
