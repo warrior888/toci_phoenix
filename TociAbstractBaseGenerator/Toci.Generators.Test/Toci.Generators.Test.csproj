@@ -51,6 +51,12 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Base.Abstract.Generator.Tests\DdlAnalyzerTests.cs" />
+    <Compile Include="Generators.Lotr\BlaszkowyTest.cs" />
+    <Compile Include="Generators.Lotr\DuchTest.cs" />
+    <Compile Include="Generators.Lotr\KnigtRiderTest.cs" />
+    <Compile Include="Generators.Lotr\TypowyAdamTest.cs" />
+    <Compile Include="Generators.Lotr\YuriyTest.cs" />
+    <Compile Include="Generators.Lotr\WojtekTest.cs" />
     <Compile Include="GhostRider\januszek.cs" />
     <Compile Include="GhostRider\Rajder.cs" />
     <Compile Include="nowyTest.cs" />

@@ -1,6 +1,8 @@
-﻿namespace Toci.Base.Abstract.Generator.Interfaces.ConfigurationSkeletons.ModelPatternProviders
+﻿using Toci.Base.Abstract.Generator.Interfaces.ConfigurationSkeletons.ModelTemplates;
+
+namespace Toci.Base.Abstract.Generator.Interfaces.ConfigurationSkeletons.ModelPatternProviders
 {
-    public interface IDbModelTemplateProvider
+    public interface IDbModelFilledTemplateProvider
     {       
         /// <summary>
         /// Gets the language of the template.
@@ -11,8 +13,9 @@
         /// <summary>
         /// Recognizes the pattern for the given language.
         /// </summary>
-        /// <param name="config">Table config</param>
+        /// <param name="tableConfig"></param>
+        /// <param name="template"></param>
         /// <returns>Pattern for the given language</returns
-        string FillTemplatePattern(IDatabaseTableConfiguration tableConfig);
+        string FillTemplate(IDatabaseTableConfiguration tableConfig, IModelTemplate template);
     }
 }

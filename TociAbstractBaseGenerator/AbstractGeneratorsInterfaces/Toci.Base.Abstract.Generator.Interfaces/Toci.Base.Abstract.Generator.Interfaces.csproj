@@ -50,9 +50,15 @@
     <Compile Include="ConfigurationSkeletons\ILogicConfiguration.cs" />
     <Compile Include="ConfigurationSkeletons\IRegresionTestConfiguration.cs" />
     <Compile Include="ConfigurationSkeletons\IViewConfiguration.cs" />
-    <Compile Include="ConfigurationSkeletons\ModelPatternProviders\CSharpModelTeplateProvider.cs" />
+    <Compile Include="ConfigurationSkeletons\ModelGenerationManagers\IModelGenerationManager.cs" />
     <Compile Include="ConfigurationSkeletons\ModelPatternProviders\IDbModelTemplateProvider.cs" />
     <Compile Include="ConfigurationSkeletons\ModelPatternProviders\ModelProgrammingLanguage.cs" />
+    <Compile Include="ConfigurationSkeletons\ModelTemplates\IModelTemplate.cs" />
+    <Compile Include="DesignPatternSkeletons\ChainResponsibility\IChorHandler.cs" />
+    <Compile Include="DesignPatternSkeletons\ChainResponsibility\IChorManager.cs" />
+    <Compile Include="DesignPatternSkeletons\ChainResponsibility\IRefTypeEntity.cs" />
+    <Compile Include="DesignPatternSkeletons\Factory\IAbstractGenericFactory.cs" />
+    <Compile Include="DesignPatternSkeletons\Strategy\IAbstractGenericStrategy.cs" />
     <Compile Include="LogicSkeleton\DdlHandling\IDdlConvertionManager.cs" />
     <Compile Include="LogicSkeleton\DdlHandling\ISingleDdlParser.cs" />
     <Compile Include="LogicSkeleton\IBusinessLogic.cs" />

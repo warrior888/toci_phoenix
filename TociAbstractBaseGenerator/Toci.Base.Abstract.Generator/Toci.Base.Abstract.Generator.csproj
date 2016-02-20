@@ -49,9 +49,16 @@
     <Compile Include="ConfigurationSkeletons\DatabaseColumnConfiguration.cs" />
     <Compile Include="ConfigurationSkeletons\DatabaseTableConfiguration.cs" />
     <Compile Include="ConfigurationSkeletons\Erd.cs" />
-    <Compile Include="ConfigurationSkeletons\ModelPatternProviders\ModelTemplateProviderBase.cs" />
+    <Compile Include="ConfigurationSkeletons\ModelPatternProviders\CSharpDbModelFilledTemplateProvider.cs" />
+    <Compile Include="ConfigurationSkeletons\ModelPatternProviders\DbModelFilledTemplateProvider.cs" />
     <Compile Include="ConfigurationSkeletons\RegresionTestConfiguration.cs" />
     <Compile Include="ConfigurationSkeletons\ViewConfiguration.cs" />
+    <Compile Include="DesignPatternSkeletons\ChainResponsibility\AbstractChorHandler.cs" />
+    <Compile Include="DesignPatternSkeletons\ChainResponsibility\AbstractChorManager.cs" />
+    <Compile Include="DesignPatternSkeletons\ChainResponsibility\AbstractRefTypeEntity.cs" />
+    <Compile Include="DesignPatternSkeletons\Factory\AbstractGenericFactory.cs" />
+    <Compile Include="DesignPatternSkeletons\Factory\DbModelFilledTemplateProviderFactory.cs" />
+    <Compile Include="DesignPatternSkeletons\Strategy\StrategyGenericFactory.cs" />
     <Compile Include="LogicSkeleton\BusinessLogic.cs" />
     <Compile Include="LogicSkeleton\DatabaseColumnLogic.cs" />
     <Compile Include="LogicSkeleton\DatabaseTableLogic.cs" />
@@ -80,6 +87,7 @@
   <ItemGroup>
     <Folder Include="BaseTypes\Database\Virtualization\MsSql\" />
     <Folder Include="BaseTypes\Database\Virtualization\Oracle\" />
+    <Folder Include="ConfigurationSkeletons\ModelTemplates\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
