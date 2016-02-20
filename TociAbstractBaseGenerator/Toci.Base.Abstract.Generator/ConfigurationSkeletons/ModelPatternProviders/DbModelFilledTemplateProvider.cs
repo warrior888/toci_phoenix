@@ -7,9 +7,6 @@ namespace Toci.Base.Abstract.Generator.ConfigurationSkeletons.ModelPatternProvid
     public abstract class DbModelFilledTemplateProvider : IDbModelFilledTemplateProvider
     {
         public abstract ModelProgrammingLanguage GetTemplateLanguage();
-        public string FillTemplate(IDatabaseTableConfiguration tableConfig, IModelTemplate template)
-        {
-            throw new System.NotImplementedException();
-        }
+        public abstract string FillTemplate(IDatabaseTableConfiguration tableConfig, IModelTemplate template);
     }
 }

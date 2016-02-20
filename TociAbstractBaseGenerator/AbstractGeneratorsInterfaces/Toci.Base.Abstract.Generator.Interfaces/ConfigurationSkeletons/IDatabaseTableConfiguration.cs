@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Toci.Base.Abstract.Generator.Interfaces.ConfigurationSkeletons.ModelTemplates;
 
 namespace Toci.Base.Abstract.Generator.Interfaces.ConfigurationSkeletons
 {
@@ -12,6 +13,11 @@ namespace Toci.Base.Abstract.Generator.Interfaces.ConfigurationSkeletons
         IDictionary<string, IDatabaseTableConfiguration> ReferencingTables { get; set; }
 
         // klasa do zapisu do pliku
-        string GenerateDbModel();
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="template"></param>
+        /// <returns></returns>
+        string GenerateDbModel(IModelTemplate template);
     }
 }

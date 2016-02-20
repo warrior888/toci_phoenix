@@ -1,7 +1,14 @@
-﻿namespace Toci.Generators.Test.Generators.Lotr
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+namespace Toci.Generators.Test.Generators.Lotr
 {
-	public class BlaszkowyTest
+	[TestClass]
+	public class Blaszkowy
 	{
-		 
+		[TestMethod]
+		void Test1()
+		{
+
+		}
 	}
 }

@@ -1,18 +1,21 @@
-﻿using Toci.Base.Abstract.Generator.ConfigurationSkeletons.ModelPatternProviders;
+﻿using Toci.Base.Abstract.Generator.Interfaces.ConfigurationSkeletons;
+using Toci.Base.Abstract.Generator.Interfaces.ConfigurationSkeletons.ModelPatternProviders;
+using Toci.Base.Abstract.Generator.Interfaces.ConfigurationSkeletons.ModelTemplates;
 
-namespace Toci.Base.Abstract.Generator.Interfaces.ConfigurationSkeletons.ModelPatternProviders
+namespace Toci.Base.Abstract.Generator.ConfigurationSkeletons.ModelPatternProviders
 {
     public class CSharpDbModelFilledTemplateProvider : DbModelFilledTemplateProvider
     {
-
         public override ModelProgrammingLanguage GetTemplateLanguage()
         {
-            throw new System.NotImplementedException();
+            return ModelProgrammingLanguage.CSharp;
         }
 
-        public virtual string FillTemplatePattern(IDatabaseTableConfiguration tableConfig)
+        public override string FillTemplate(IDatabaseTableConfiguration tableConfig, IModelTemplate template)
         {
-            throw new System.NotImplementedException();
+            // iterate tableConfig.TableColumns
+
+            return null;
         }
     }
 }

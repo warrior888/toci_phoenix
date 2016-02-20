@@ -51,6 +51,13 @@
     <Compile Include="ConfigurationSkeletons\Erd.cs" />
     <Compile Include="ConfigurationSkeletons\ModelPatternProviders\CSharpDbModelFilledTemplateProvider.cs" />
     <Compile Include="ConfigurationSkeletons\ModelPatternProviders\DbModelFilledTemplateProvider.cs" />
+    <Compile Include="ConfigurationSkeletons\ModelTemplates\AsmModelTemplate.cs" />
+    <Compile Include="ConfigurationSkeletons\ModelTemplates\CSharpModelTemplate.cs" />
+    <Compile Include="ConfigurationSkeletons\ModelTemplates\GoModelTemplate.cs" />
+    <Compile Include="ConfigurationSkeletons\ModelTemplates\JavaModelTemplate.cs" />
+    <Compile Include="ConfigurationSkeletons\ModelTemplates\JavaScriptModelTemplate.cs" />
+    <Compile Include="ConfigurationSkeletons\ModelTemplates\ModelTemplateBase.cs" />
+    <Compile Include="ConfigurationSkeletons\ModelTemplates\PhpModelTemplate.cs" />
     <Compile Include="ConfigurationSkeletons\RegresionTestConfiguration.cs" />
     <Compile Include="ConfigurationSkeletons\ViewConfiguration.cs" />
     <Compile Include="DesignPatternSkeletons\ChainResponsibility\AbstractChorHandler.cs" />
@@ -87,7 +94,6 @@
   <ItemGroup>
     <Folder Include="BaseTypes\Database\Virtualization\MsSql\" />
     <Folder Include="BaseTypes\Database\Virtualization\Oracle\" />
-    <Folder Include="ConfigurationSkeletons\ModelTemplates\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

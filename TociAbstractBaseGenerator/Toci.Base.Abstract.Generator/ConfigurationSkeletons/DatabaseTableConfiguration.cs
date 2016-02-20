@@ -1,10 +1,14 @@
 ﻿using System.Collections.Generic;
 using Toci.Base.Abstract.Generator.Interfaces.ConfigurationSkeletons;
+using Toci.Base.Abstract.Generator.Interfaces.ConfigurationSkeletons.ModelPatternProviders;
+using Toci.Base.Abstract.Generator.Interfaces.ConfigurationSkeletons.ModelTemplates;
 
 namespace Toci.Base.Abstract.Generator.ConfigurationSkeletons
 {
     public class DatabaseTableConfiguration : IDatabaseTableConfiguration
     {
+        protected IDbModelFilledTemplateProvider DbModelProvider;
+
         public DatabaseTableConfiguration()
         {
             TableColumns = new Dictionary<string, IDatabaseColumnConfiguration>();
@@ -18,9 +22,9 @@ namespace Toci.Base.Abstract.Generator.ConfigurationSkeletons
 
         public IDictionary<string, IDatabaseTableConfiguration> ReferencingTables { get; set; }
 
-        public string GenerateDbModel()
+        public string GenerateDbModel(IModelTemplate template)
         {
-            return string.Empty;
+            return DbModelProvider.FillTemplate(this, template);
         }
     }
 }

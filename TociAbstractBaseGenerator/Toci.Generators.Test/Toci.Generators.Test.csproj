@@ -96,6 +96,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Generators.Lotr\Blacha\" />
+    <Folder Include="Generators.Lotr\DeeJay\" />
+    <Folder Include="Generators.Lotr\Duch\" />
+    <Folder Include="Generators.Lotr\TAdam\" />
+    <Folder Include="Generators.Lotr\Witold45\" />
+    <Folder Include="Generators.Lotr\WojtekFolder\NewFolder1\" />
     <Folder Include="VSASUX\jest\" />
     <Folder Include="VSASUX\VSNOSUXTOOMUCH\" />
     <Folder Include="VSASUX\Wq888\" />

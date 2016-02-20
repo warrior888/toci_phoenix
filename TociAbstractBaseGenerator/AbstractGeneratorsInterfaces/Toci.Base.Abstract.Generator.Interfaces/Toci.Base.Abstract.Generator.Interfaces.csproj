@@ -50,6 +50,7 @@
     <Compile Include="ConfigurationSkeletons\ILogicConfiguration.cs" />
     <Compile Include="ConfigurationSkeletons\IRegresionTestConfiguration.cs" />
     <Compile Include="ConfigurationSkeletons\IViewConfiguration.cs" />
+    <Compile Include="ConfigurationSkeletons\ModelGenerationManagers\IGenerationManager.cs" />
     <Compile Include="ConfigurationSkeletons\ModelGenerationManagers\IModelGenerationManager.cs" />
     <Compile Include="ConfigurationSkeletons\ModelPatternProviders\IDbModelTemplateProvider.cs" />
     <Compile Include="ConfigurationSkeletons\ModelPatternProviders\ModelProgrammingLanguage.cs" />
