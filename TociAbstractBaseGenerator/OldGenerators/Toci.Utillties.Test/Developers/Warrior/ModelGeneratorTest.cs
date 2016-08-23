@@ -12,12 +12,12 @@ namespace Toci.Utilities.Test.Developers.Warrior
             TociDbModelGeneratorWrapper wrapper = new TociDbModelGeneratorWrapper();
             var wrapperModel = new WrapperModel();
 
-            wrapperModel.CsprojPath = @"C:\self\toci\software\sourcetree\phoenix\TociAbstractBaseGenerator\Toci.RoyalSchool.Dal";
-            wrapperModel.DestinationPath = @"C:\self\toci\software\sourcetree\phoenix\TociAbstractBaseGenerator\Toci.RoyalSchool.Dal";
-            wrapperModel.FolderPath = @"C:\self\toci\software\sourcetree\phoenix\TociAbstractBaseGenerator\Toci.RoyalSchool.Dal";
+            wrapperModel.CsprojPath = @"C:\Users\bzapa\github\TociAbstractBaseGenerator\Toci.RoyalSchool.Dal";
+            wrapperModel.DestinationPath = @"C:\Users\bzapa\github\TociAbstractBaseGenerator\Toci.RoyalSchool.Dal";
+            wrapperModel.FolderPath = @"C:\Users\bzapa\github\TociAbstractBaseGenerator\Toci.RoyalSchool.Dal";
             wrapperModel.NamespaceName = "Toci.RoyalSchool.Dal";
             wrapperModel.ParentName = "Model";
-            wrapperModel.TemplatePath = @"C:\self\toci\software\sourcetree\phoenix\TociAbstractBaseGenerator\OldGenerators\Toci.Utillties.Test\Developers\Warrior\data\ddlExample.txt";
+            wrapperModel.TemplatePath = @"C:\Users\bzapa\github\TociAbstractBaseGenerator\OldGenerators\Toci.Utillties.Test\Developers\Warrior\data\ddlExample.txt";
             //wrapperModel.UsingsList = "";
 
             wrapper.GenerateModel(wrapperModel, "Toci.RoyalSchool.Dal");

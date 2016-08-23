@@ -54,6 +54,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{A3AE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.Extensions", "Toci.Extensions\Toci.Extensions.csproj", "{6DB9D78A-436D-4C28-80B7-8576DB97AD0D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.RoyalSchool.Ui", "Toci.RoyalSchool.Ui\Toci.RoyalSchool.Ui.csproj", "{68CC2B12-FA38-4513-A060-B64BEE4B0DB5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -128,6 +130,10 @@ Global
 		{6DB9D78A-436D-4C28-80B7-8576DB97AD0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6DB9D78A-436D-4C28-80B7-8576DB97AD0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6DB9D78A-436D-4C28-80B7-8576DB97AD0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68CC2B12-FA38-4513-A060-B64BEE4B0DB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68CC2B12-FA38-4513-A060-B64BEE4B0DB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68CC2B12-FA38-4513-A060-B64BEE4B0DB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68CC2B12-FA38-4513-A060-B64BEE4B0DB5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -146,5 +152,6 @@ Global
 		{3427CA10-4614-4ED4-B78D-C00156BB9709} = {E8AF842A-3DAA-4745-A415-D320ADC71A58}
 		{8C4A3AE4-6E9E-4484-92C6-26A20152F1ED} = {E8AF842A-3DAA-4745-A415-D320ADC71A58}
 		{74CF09F8-1817-41BE-A34B-B873EAB03019} = {4CDE77D9-BD7E-4E23-B81C-6D5185B9039E}
+		{68CC2B12-FA38-4513-A060-B64BEE4B0DB5} = {C3A344FB-8FC4-4434-A558-9690126E06E0}
 	EndGlobalSection
 EndGlobal

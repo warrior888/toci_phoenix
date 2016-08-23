@@ -39,9 +39,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Lookup.cs" />
-    <Compile Include="LookupType.cs" />
-    <Compile Include="PersonalData.cs" />
+    <Compile Include="Bll\PersonalData.cs" />
+    <Compile Include="Models\Lookup.cs" />
+    <Compile Include="Models\LookupType.cs" />
+    <Compile Include="Models\PersonalData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -58,6 +59,7 @@
   <ItemGroup>
     <None Include="ddl\Przyklad_ROYAL.xls" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

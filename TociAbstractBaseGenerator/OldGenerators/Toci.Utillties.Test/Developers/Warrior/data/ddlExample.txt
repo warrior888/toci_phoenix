@@ -1,36 +1,76 @@
-﻿----https://github.com/warrior888/toci_phoenix/blob/5e180dd4490f04b35e6f36a86ffc6e0632ae50f8/toci_common/Toci.Libraries/Toci.Utillties.Test/Developers/Patryk/GeneratedModels/GenerateModelsTest.cs
-
-create table lookup_type (
-	id serial primary key,
-	name text
+﻿
+CREATE TABLE msc_odjazdu (
+    id integer NOT NULL,
+    nazwa character varying(25) NOT NULL,
+    panstwo_id integer DEFAULT 2 NOT NULL
 );
 
 
-create table lookup (
-	id serial primary key,
-	id_lookup_type int references lookup_type (id),
-	name text
+
+CREATE TABLE adres_biuro (
+    id integer NOT NULL,
+    id_miejscowosc integer,
+    nazwa character varying(60) NOT NULL
 );
 
-create table personal_data (
-	id serial primary key,
-	id_name int not null references lookup (id),
-	surname text not null,
-	pesel varchar(11),
-	birth_date date,
-	registration_date date,
-	address text
+
+CREATE TABLE dane_osobowe (
+    id integer NOT NULL,
+    id_imie integer NOT NULL,
+    nazwisko character varying(30) NOT NULL,
+    id_plec integer NOT NULL,
+    data_urodzenia date NOT NULL,
+    id_miejscowosc_ur integer NOT NULL,
+    id_miejscowosc integer NOT NULL,
+    ulica character varying(50),
+    kod character varying(6),
+    id_wyksztalcenie integer,
+    id_zawod integer,
+    id_konsultant integer,
+    data_zgloszenia date NOT NULL,
+    id_charakter integer,
+    data date,
+    ilosc_tyg character varying(2),
+    id_ankieta integer,
+    id_zrodlo integer,
+    nr_obuwia character varying(8),
+    imie character varying(20) NOT NULL,
+    plec character varying(10) NOT NULL,
+    miejscowosc character varying(30) NOT NULL,
+    isabfahrtsent boolean DEFAULT false
 );
 
-create table courses (
-	id serial primary key,
-	id_personal_data int references personal_data(id) not null,
-	id_personal_data_lector int references personal_data(id) not null,
-	id_status_lookup int references lookup(id),
-	id_classeskind_lookup int references lookup(id),
-	
+
+CREATE TABLE miejscowosc (
+    id integer NOT NULL,
+    nazwa character varying(30) NOT NULL
 );
 
-create table phone (
-	
+
+
+CREATE TABLE miejscowosc_biuro (
+    id integer NOT NULL,
+    id_firma integer NOT NULL,
+    id_msc_biuro integer NOT NULL
 );
+
+
+CREATE TABLE msc_biura (
+    id integer NOT NULL,
+    nazwa character varying(15) NOT NULL
+);
+
+
+
+CREATE TABLE oddzialy_klient (
+    id integer NOT NULL,
+    id_klient integer,
+    nazwa character varying(45) NOT NULL,
+    nazwa_alt character varying(25) NOT NULL,
+    stawka character varying(5) NOT NULL,
+    wiekowe character varying(1) NOT NULL,
+    stanowisko integer,
+    id_biuro integer,
+    adres_biuro integer
+);
+
