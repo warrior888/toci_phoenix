@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Toci.Basic.World.Interface
+namespace Toci
 {
     public class Class1
     {

@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Toci.Basic.World.Interface")]
+[assembly: AssemblyTitle("Toci.Basics.Elementary.Implementations")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Toci.Basic.World.Interface")]
+[assembly: AssemblyProduct("Toci.Basics.Elementary.Implementations")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("49f709db-33b3-4d2d-8573-20d005043287")]
+[assembly: Guid("85282198-6b4f-4fae-98c3-808901197842")]
 
 // Version information for an assembly consists of the following four values:
 //
