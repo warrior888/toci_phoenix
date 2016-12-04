@@ -53,10 +53,34 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Toci.Application.Behaviour\Toci.Application.Behaviour.csproj">
+      <Project>{14e7baa6-5a0f-4f7c-b709-42c7a3b2e18e}</Project>
+      <Name>Toci.Application.Behaviour</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Toci.Basics.Elementary.Implementations.Extensions\Toci.Basics.Elementary.Implementations.Extensions.csproj">
+      <Project>{d9d8b76b-7acb-4e54-9b52-66dbf664ad5b}</Project>
+      <Name>Toci.Basics.Elementary.Implementations.Extensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Toci.Basics.Elementary.Implementations\Toci.Basics.Elementary.Implementations.csproj">
+      <Project>{15effb06-6335-457d-93f6-a60e7bd59cdc}</Project>
+      <Name>Toci.Basics.Elementary.Implementations</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Toci.Basics.Interfaces\Toci.Basics.Interfaces.csproj">
       <Project>{63186722-e9eb-4c1c-b36e-eec6977b2631}</Project>
       <Name>Toci.Basics.Interfaces</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Toci.Haelthcare.Interfaces\Toci.Haelthcare.Interfaces.csproj">
+      <Project>{4a4e37c6-d091-40dc-b903-e09ab3cb45b3}</Project>
+      <Name>Toci.Haelthcare.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Toci.Telepathy.Inerfaces\Toci.Telepathy.Interfaces.csproj">
+      <Project>{a22c2625-2e74-45da-92bf-efc02a4ef271}</Project>
+      <Name>Toci.Telepathy.Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="GenericsTesting\Organs\Brain\Implementation\" />
+    <Folder Include="GenericsTesting\Organs\Brain\Poc\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

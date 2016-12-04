@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{63186722-E9EB-4C1C-B36E-EEC6977B2631}</ProjectGuid>
+    <ProjectGuid>{4A4E37C6-D091-40DC-B903-E09AB3CB45B3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Toci.Basics.Interfaces</RootNamespace>
-    <AssemblyName>Toci.Basics.Interfaces</AssemblyName>
+    <RootNamespace>Toci.Haelthcare.Interfaces</RootNamespace>
+    <AssemblyName>Toci.Haelthcare.Interfaces</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,21 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataStructures\IBTree.cs" />
-    <Compile Include="DataStructures\IFractal.cs" />
-    <Compile Include="DataStructures\IGraph.cs" />
-    <Compile Include="DesignPatterns\ChainOfResponsibility\IHandler.cs" />
-    <Compile Include="DesignPatterns\ChainOfResponsibility\IHandlersManager.cs" />
-    <Compile Include="DesignPatterns\Factory\IFactoryBase.cs" />
-    <Compile Include="IUniverse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="DesignPatterns\Strategy\IStrategy.cs" />
-    <Compile Include="DesignPatterns\Strategy\IStrategyEntity.cs" />
-    <Compile Include="DesignPatterns\Strategy\IStrategyLogic.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DesignPatterns\DependencyInjection\" />
-    <Folder Include="Logic\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
