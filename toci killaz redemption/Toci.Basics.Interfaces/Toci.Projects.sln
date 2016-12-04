@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.Telepathy.Interfaces",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.Haelthcare.Interfaces", "Toci.Haelthcare.Interfaces\Toci.Haelthcare.Interfaces.csproj", "{4A4E37C6-D091-40DC-B903-E09AB3CB45B3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toci.GhostRider.Base", "Toci.GhostRider.Base\Toci.GhostRider.Base.csproj", "{F8695540-2FBB-4D38-BD83-330EF0FDD883}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +69,10 @@ Global
 		{4A4E37C6-D091-40DC-B903-E09AB3CB45B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A4E37C6-D091-40DC-B903-E09AB3CB45B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A4E37C6-D091-40DC-B903-E09AB3CB45B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8695540-2FBB-4D38-BD83-330EF0FDD883}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8695540-2FBB-4D38-BD83-330EF0FDD883}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8695540-2FBB-4D38-BD83-330EF0FDD883}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8695540-2FBB-4D38-BD83-330EF0FDD883}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
