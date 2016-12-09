@@ -1,2 +1,0 @@
-<center><b>Vazco</b></center>
-<p>Dynamicznie rozwijaj¹ca siê firma, dzia³aj¹ca we Wroc³awiu od 2008 roku, zajmuj¹ca siê budow¹ customowych portali w technologii Meteor dla klientów z ca³ego œwiata.</p>

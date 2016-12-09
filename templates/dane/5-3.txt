@@ -1,2 +1,0 @@
-<p><b>Kurs jest prowadzony online</b>, nagrywany i udostêpniany do ponownego odtworzenia, dodatkowo uczestnicy bêd¹ pracowaæ na wspólnym repozytorium kodu i tworzyæ na nim zadania po ka¿dej sesji kursu a nawet symulowane mikro projekty przygotowuj¹ce uczestników do pracy programisty w rzeczywistych warunkach.</p>
-<p>Dodatkowo uczestnicy kursu zostan¹ zaproszeni na sesje wyk³adowe o bazach danych, jako bonus za uczestnictwo w szkoleniu.</p>

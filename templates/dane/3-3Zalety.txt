@@ -1,7 +1,0 @@
-<h1>Zalety:</h1>
-<ul>
-<li>zdob¹dŸ doœwiadczenie w szybko rozwijaj¹cej siê technologii</li>
-<li>twórz super-nowoczesne projekty i aplikacje mobilne</li>
-<li>u¿ywaj opcji niedostêpnych gdzie indziej - reaktywne kodowanie bez API</li>
-<li>do³¹cz do œwiatowej czo³ówki technologii</li>
-</ul>

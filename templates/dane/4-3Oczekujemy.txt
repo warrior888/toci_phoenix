@@ -1,6 +1,0 @@
-<h3>Oczekujemy:</h3>
-<ul>
-<li>determinacji, pracowitoœci, ambicji i sumiennoœci,</li>
-<li>podstawowej wiedzy z obszaru tworzenia aplikacji internetowych w zakresie technologii HTML, CSS, oraz dobrej znajomoœci jednego wybranego jêzyka programowania</li>
-<li>co najmniej podstawowej umiejêtnoœci komunikacji w jêzyku angielskim</li>
-</ul>

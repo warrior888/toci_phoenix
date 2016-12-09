@@ -1,2 +1,0 @@
-<center><h3>JavaScript</h3></center>
-<p>Etap pierwszy to poznanie lub utrwalenie wiedzy o technologii JavaScript. Wyk³ady bêd¹ rowadzone w cyklu co 4 dni w godzinach popo³udniowych po 5 godzin. Prelegentem tej czêœci kursu jest <b>Bart³omiej Zapart</b>.</p>
