@@ -21,7 +21,7 @@ require_once 'SendMail.php';
 			$signature=$this->CreateSignature($applicant['email']);
 			$confirmLink="http://www.toci.com.pl/server/confirm.php?signature=$signature";
 			$subject="Potwierdzenie udziału w szkoleniu TOCI";
-			$message="co tam mordo, łap linka <br>".$confirmLink;
+			$message="Prosze kliknąć link w celu potwierdzenia rejestracji i udziału w szkoleniu. <br>".$confirmLink;
 
 			$result=$this->mailer->SendMail($subject,$message,$applicant['email'],$applicant['name']);
 

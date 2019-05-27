@@ -15,7 +15,7 @@
             if (!isset($this->database))
 	    {
 		    //podane dane tylko dla testu czy bedzie w stanie sie polaczyc
-	            $this->database = pg_pconnect("host=46.101.236.160 user=toci password=aaa111 dbname=toci");
+	            $this->database = pg_pconnect("host=localhost user=postgres password=beatka dbname=toci");
                 if (!$this->dontUseEnc)
                     pg_set_client_encoding ($this->database, 'LATIN2');
             }
