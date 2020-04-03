@@ -202,9 +202,12 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="css\animate.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\embed-responsive.css" />
     <Content Include="css\faq-style.css" />
     <Content Include="css\font-awesome.min.css" />
     <Content Include="css\jquery.fancybox.css" />
+    <Content Include="css\loader.css" />
     <Content Include="css\magic-bootstrap.css" />
     <Content Include="css\owl.carousel.min.css" />
     <Content Include="css\owl.theme.default.min.css" />
@@ -218,6 +221,7 @@
     <Content Include="Global.asax" />
     <Content Include="images\.net logo.png" />
     <Content Include="images\3d_php-logo.jpg" />
+    <Content Include="images\Andrzej.jpg" />
     <Content Include="images\arrow-down.png" />
     <Content Include="images\arrow-left.png" />
     <Content Include="images\arrow-right.png" />
@@ -230,16 +234,19 @@
     <Content Include="images\contact.png" />
     <Content Include="images\dots-line-small.png" />
     <Content Include="images\dots-line.png" />
+    <Content Include="images\Erley.jpg" />
     <Content Include="images\fancybox_loading%402x.gif" />
     <Content Include="images\fancybox_loading.gif" />
     <Content Include="images\fancybox_overlay.png" />
     <Content Include="images\fancybox_sprite%402x.png" />
     <Content Include="images\fancybox_sprite.png" />
+    <Content Include="images\favicon.png" />
     <Content Include="images\gg-logo-small.png" />
     <Content Include="images\GG.png" />
     <Content Include="images\header.png" />
     <Content Include="images\javascript-logo-bez-napisu.jpg" />
     <Content Include="images\layout_propozycja\layoutpsd 960x3000.jpg" />
+    <Content Include="images\loading.gif" />
     <Content Include="images\logo%402x.png" />
     <Content Include="images\logo-c#-asp-net_0.jpg" />
     <Content Include="images\meteor-logo-small.jpg" />
@@ -269,6 +276,7 @@
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\contactValid.js" />
     <Content Include="js\DocumentReady.js" />
+    <Content Include="js\FormUtils.js" />
     <Content Include="js\html5shiv.js" />
     <Content Include="js\imagesloaded.pkgd.min.js" />
     <Content Include="js\jquery-1.11.1.min.js" />
@@ -278,6 +286,7 @@
     <Content Include="js\jquery.fancybox.js" />
     <Content Include="js\jquery.parallax-1.1.3.js" />
     <Content Include="js\jquery.superslides.js" />
+    <Content Include="js\loader-position.js" />
     <Content Include="js\magic.js" />
     <Content Include="js\masonry.pkgd.min.js" />
     <Content Include="js\modernizr.custom.97074.js" />
@@ -288,6 +297,7 @@
     <Content Include="js\scrollReveal.js" />
     <Content Include="js\settings.js" />
     <Content Include="js\utils.js" />
+    <Content Include="js\UtilsForAttrData.js" />
     <Content Include="Scripts\app\_run.js" />
     <Content Include="Scripts\app\app.datamodel.js" />
     <Content Include="Scripts\app\app.viewmodel.js" />

@@ -125,7 +125,7 @@ text-transform: none;
 }
 
 .brownColorTemplate{
-rgba(114,98,83,0.97);
+    color: rgba(114,98,83,0.97);
 }
 
 .greenTemplateColor{
@@ -135,7 +135,7 @@ rgba(114,98,83,0.97);
 
 .grayTemplateColor{
 
-color: rgba(137,144,154,0.97);
+    color: rgba(137,144,154,0.97);
 }
 
 .backgroundGreenTemplate {
@@ -144,7 +144,7 @@ color: rgba(137,144,154,0.97);
 }
 
 .yellowColorTemplate{
-	color:#fbcd53;
+	background-color:#fbcd53;
 }
 
 

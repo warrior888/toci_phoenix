@@ -1,7 +1,7 @@
 drop table Trainings;
 drop table ApplyFormPrivate;
 drop table ApplyFormCompany;
-drop table table ContactForm;
+drop table ContactForm;
 drop table ContactForm;
 drop table FAQ;
 drop table Students;
