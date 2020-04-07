@@ -5,5 +5,7 @@ namespace Toci.Bll.Nfs.Interfaces
     public interface IRegistrationLogic
     {
         ApplyForm Register(ApplyForm user);
+
+        bool EmailConfirm(string token);
     }
 }

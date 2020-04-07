@@ -9,12 +9,13 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ApplicantName" Type="text" />
           <Property Name="ApplicantSurname" Type="text" />
           <Property Name="PhoneNumber" Type="text" />
           <Property Name="ApplicantEmail" Type="text" />
           <Property Name="Token" Type="text" />
+          <Property Name="EmailConfirmed" Type="bit" />
           <Property Name="ButtonApply" Type="text" />
         </EntityType>
         <EntityType Name="Apps">
@@ -104,6 +105,7 @@
           <Property Name="ApplicantEmail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="ButtonApply" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Token" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="EmailConfirmed" Type="Boolean" />
         </EntityType>
         <EntityType Name="Apps">
           <Key>
@@ -190,6 +192,7 @@
           <EntitySetMapping Name="ApplyForm">
             <EntityTypeMapping TypeName="tociModel.ApplyForm">
               <MappingFragment StoreEntitySet="ApplyForm">
+                <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
                 <ScalarProperty Name="Token" ColumnName="Token" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="ApplicantName" ColumnName="ApplicantName" />

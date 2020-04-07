@@ -21,5 +21,6 @@ namespace Toci.Dal.Aoe.Interfaces
         public string ApplicantEmail { get; set; }
         public string ButtonApply { get; set; }
         public string Token { get; set; }
+        public Nullable<bool> EmailConfirmed { get; set; }
     }
 }

@@ -94,6 +94,7 @@ create table ApplyForm
 	PhoneNumber text,
 	ApplicantEmail text,
 	Token text,
+	EmailConfirmed bit,
 	ButtonApply text,
 );
 

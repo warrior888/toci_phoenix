@@ -11,6 +11,7 @@ namespace Toci.Front.Controllers
 {
     public class IndexController : Controller
     {
+        protected RegistrationLogicBase registrationBll = new RegistrationLogicBase(new Dal<ApplyForm>(new tociEntities()));
         // GET: Index
         public ActionResult Index()
         {
@@ -22,7 +23,7 @@ namespace Toci.Front.Controllers
         public void Create(ApplyForm model)
         {
             //todo save to db
-            RegistrationLogicBase registrationBll = new RegistrationLogicBase(new Dal<ApplyForm>(new tociEntities()));
+            
 
             registrationBll.Register(model);
             //RedirectToAction("Index");
@@ -31,7 +32,7 @@ namespace Toci.Front.Controllers
         [HttpGet]
         public void Email(string token)
         {
-
+            registrationBll.EmailConfirm(token);
         }
     }
 }

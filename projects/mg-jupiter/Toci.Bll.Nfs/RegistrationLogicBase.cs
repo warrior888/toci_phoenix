@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.Entity;
+using System.Linq;
 using Toci.Bll.Nfs.Interfaces;
 using Toci.Dal.Aoe.Interfaces;
 using MailKit.Net.Smtp;
@@ -60,7 +61,19 @@ Jeśli nie, zigoruj wiadomość
 
             return user;
         }
-        
+
+        public bool EmailConfirm(string token)
+        {
+            ApplyForm form = new ApplyForm() { Token = token };
+            form = Database.Select((model, id) => model.Token == token).First();
+
+            form.EmailConfirmed = true;
+
+            Database.Update(form);
+
+            return true;
+        }
+
         protected virtual ApplyForm ApplyFormDal(ApplyForm form)
         {
             return Database.Insert(form);
