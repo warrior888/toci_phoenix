@@ -74,6 +74,17 @@ Jeśli nie, zigoruj wiadomość
             return true;
         }
 
+        public ApplyForm AddToDataBase()  //string applicantName, string applicantSurname,string phoneNumber,string applicantEmail
+        {
+            //  ApplyForm form = new ApplyForm(){ ApplicantName= applicantName, ApplicantSurname=applicantSurname, PhoneNumber= phoneNumber, ApplicantEmail= applicantEmail};
+
+            ApplyForm form = new ApplyForm();
+
+
+
+            return form;
+    }
+
         protected virtual ApplyForm ApplyFormDal(ApplyForm form)
         {
             return Database.Insert(form);
