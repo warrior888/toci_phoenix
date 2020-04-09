@@ -7122,7 +7122,7 @@ button.bg-dark:focus {
   position: relative;
   display: block;
   width: 100%;
-  padding: 0;
+  padding: 197px; /*Andrzej zmiana z 0 na 197- dla video*/
   overflow: hidden;
 }
 
