@@ -59,8 +59,9 @@ a (hover):				#81a27b (darker green)
 
 
 body {
-    /*ukryte zanim strona siê za³aduje*/
+	/*ukryte zanim strona siê za³aduje*/
 	overflow-y: hidden;
+	text-align: justify;
 }
 
 #mapa{
@@ -155,7 +156,8 @@ text-transform: none;
 body {
 	overflow-x: hidden;
 	padding-top: 118px;
-    font-family: 'Exo', sans-serif;
+	font-family: 'Exo', sans-serif;
+	text-align: justify;
 }
 
 h1,h2,h3,h4,h5,h6 {
