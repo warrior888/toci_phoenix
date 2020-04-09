@@ -59,6 +59,9 @@
     <Compile Include="Apps.cs">
       <DependentUpon>TociModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ContactForm.cs">
+      <DependentUpon>TociModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Languages.cs">
       <DependentUpon>TociModel.tt</DependentUpon>
     </Compile>

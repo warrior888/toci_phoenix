@@ -12,6 +12,7 @@
         <EntityTypeShape EntityType="tociModel.Translations" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
         <AssociationConnector Association="tociModel.FK__Translati__IdLan__286302EC" ManuallyRouted="false" />
         <AssociationConnector Association="tociModel.FK__Translati__IdPhr__29572725" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="tociModel.ContactForm" Width="1.5" PointX="3.375" PointY="6.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -42,14 +42,13 @@ Description text,
 
 create table ContactForm
 (
-Id int primary key,
-ContactTitle text,
-Name text,
-Email text,
-Title text,
-Message text,
-ButtonSend text,
-
+	Id int primary key,
+	ContactTitle text,
+	Name text,
+	Email text,
+	Title text,
+	Message text,
+	ButtonSend text
 );
 create table ApplyFormCompany
 (

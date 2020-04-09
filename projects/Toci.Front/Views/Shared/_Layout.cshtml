@@ -1151,28 +1151,28 @@
                         
 				        <div class="row text-center" data-scroll-reveal>
 					        <div style=" margin:0 auto; max-width: 70%">
-						        <form role="form" name="contact-form" id="contact-form" action="server/contact.php">
+						        <form name="contact-form" id="contact-form" action="./index/contact" method="POST">
                                     <div class="row">
                                         <bodyContact>
                                         <div class="col-sm-6">
                                            
                                                 <div class="form-group" id="contact-name-group">
                                                     <label for="contact-input-name">Imię i Nazwisko</label>
-                                                    <input type="text" class="form-control" id="contact-input-name" name="contact-input-name" placeholder="Wprowadź Twoje imię i nazwisko" required pattern="^[A-za-ząćęłńóśźżĄĘŁŃÓŚŹŻ -]{6,}$">
+                                                    <input type="text" class="form-control" id="contact-input-name" name="name" placeholder="Wprowadź Twoje imię i nazwisko" required pattern="^[A-za-ząćęłńóśźżĄĘŁŃÓŚŹŻ -]{6,}$">
                                                 </div>
                                                 <div class="form-group" id="contact-email-group">
                                                     <label for="contact-input-email">Email</label>
-                                                    <input type="email" class="form-control" data-validate-other-field-if="CustomEmailPrompterForContactForm" data-other-field-id="contact-input-name" required id="contact-input-email" name="contact-input-email" placeholder="Wprowadź Twój email">
+                                                    <input type="email" class="form-control" data-validate-other-field-if="CustomEmailPrompterForContactForm" data-other-field-id="contact-input-name" required id="contact-input-email" name="email" placeholder="Wprowadź Twój email">
                                                 </div>
                                                 <div class="form-group" id="contact-subject-group">
                                                     <label for="contact-input-subject">Temat</label>
-                                                    <input type="text" class="form-control" id="contact-input-subject" name="contact-input-subject" placeholder="Wprowadź temat">
+                                                    <input type="text" class="form-control" id="contact-input-subject" name="title" placeholder="Wprowadź temat">
                                                 </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-group" id="contact-message-group">
                                                 <label for="contact-input-message">Wiadomość</label>
-                                                <textarea class="form-control" id="contact-input-message" name="contact-input-message" rows="8"></textarea>
+                                                <textarea class="form-control" id="contact-input-message" name="message" rows="8"></textarea>
                                             </div>
                                         </div>
                                         </bodyContact>

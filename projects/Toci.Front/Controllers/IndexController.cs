@@ -12,6 +12,7 @@ namespace Toci.Front.Controllers
     public class IndexController : Controller
     {
         protected RegistrationLogicBase registrationBll = new RegistrationLogicBase(new Dal<ApplyForm>(new tociEntities()));
+        protected ContactLogicBase contactBll = new ContactLogicBase();
         // GET: Index
         public ActionResult Index()
         {
@@ -34,5 +35,20 @@ namespace Toci.Front.Controllers
         {
             registrationBll.EmailConfirm(token);
         }
+
+        [HttpPost]
+        public JsonResult Contact(ContactForm form)
+        {
+            ContactForm result = contactBll.SaveContact(form);
+
+            if (result.Id > 0)
+            {
+                return new JsonResult() { Data = new { result = true, message = "Zapisano !" } };
+            }
+
+            return new JsonResult() { Data = new { result = true, message = "Nie zapisano !" } };
+
+        }
+
     }
 }

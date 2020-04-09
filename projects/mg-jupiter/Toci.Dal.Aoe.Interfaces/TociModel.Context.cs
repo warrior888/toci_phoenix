@@ -30,5 +30,6 @@ namespace Toci.Dal.Aoe.Interfaces
         public virtual DbSet<Languages> Languages { get; set; }
         public virtual DbSet<Phrases> Phrases { get; set; }
         public virtual DbSet<Translations> Translations { get; set; }
+        public virtual DbSet<ContactForm> ContactForm { get; set; }
     }
 }

@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
     $('#contact-form').submit(function(event) {
-        SubmitForm(FormDecorator(this.id, 'server/contact.php'), event);
+        SubmitForm(FormDecorator(this.id, 'index/contact'), event);
     });
 });
 
