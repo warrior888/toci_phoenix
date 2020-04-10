@@ -19,30 +19,30 @@ create table Banner
 Id int identity primary key,
 BannerElement text,
 ButtonExist int,
-BannerButton text,
+BannerButton text
 );
 
 create table Students
 (
-Id int primary key,
+Id int identity primary key,
 Name text,
 Description text,
 IsSourceLink int,
-SourceLink text,
+SourceLink text
 
 );
 
 create table FAQ
 (
-Id int primary key,
+Id int identity primary key,
 Title text,
-Description text,
+Description text
 
 );
 
 create table ContactForm
 (
-	Id int primary key,
+	Id int identity primary key,
 	ContactTitle text,
 	Name text,
 	Email text,
@@ -52,7 +52,7 @@ create table ContactForm
 );
 create table ApplyFormCompany
 (
-Id int primary key,
+Id int identity primary key,
 Company bool, --company or person
 QttyPeoples bool,--one person or group
 Name text, --name or names of group
@@ -79,7 +79,7 @@ approval text,
 Training text,
 facebook text,
 Captcha text,
-ButtonApply text,
+ButtonApply text
 
 );
 
@@ -94,14 +94,14 @@ create table ApplyForm
 	ApplicantEmail text,
 	Token text,
 	EmailConfirmed bit,
-	ButtonApply text,
+	ButtonApply text
 );
 
 select * from applyform;
 
 create table Trainings
 (
-Id int primary key,
+Id int identity primary key,
 TrainingName text,
 Description text,
 LessonLanguage text,
@@ -111,5 +111,5 @@ GroupQtty text,
 Place text,
 Price text,
 Feature text,
-Advantage text,
+Advantage text
 );
