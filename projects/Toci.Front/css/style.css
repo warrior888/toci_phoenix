@@ -1387,7 +1387,7 @@ footer {
 		}
 
 		.navbar-nav .dropdown-menu:before {
-			display: none;
+            display: none;
 		}
 
 		#masonry-2-columns .item,

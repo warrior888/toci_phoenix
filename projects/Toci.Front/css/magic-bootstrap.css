@@ -439,11 +439,14 @@ h1,
 }
 h2,
 .h2 {
-  font-size: 17px;
+    font-size: 17px;
+    padding-bottom: 30px;
 }
 h3,
 .h3 {
-  font-size: 15px;
+    font-size: 15px;
+    padding-top: 15px;
+    padding-bottom: 2px;
 }
 h4,
 .h4 {
@@ -2004,6 +2007,8 @@ select[multiple].input-lg {
   -ms-user-select: none;
   -o-user-select: none;
   user-select: none;
+    width: 100px;
+    height: 40px;
 }
 .btn:focus {
   outline: thin dotted;
@@ -2355,11 +2360,11 @@ input[type="button"].btn-block {
   opacity: 1;
 }
 .collapse {
-  display: none;
+    display: none;
 }
-.collapse.in {
-  display: block;
-}
+    .collapse.in {
+        display: block;
+    }
 .collapsing {
   position: relative;
   height: 0;
@@ -3350,6 +3355,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .input-group-btn,
 .input-group .form-control {
   display: table-cell;
+    width: 300px;
+    height: 40px;
 }
 .input-group-addon:not(:first-child):not(:last-child),
 .input-group-btn:not(:first-child):not(:last-child),
@@ -3358,13 +3365,13 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .input-group-addon,
 .input-group-btn {
-  width: 1%;
+  width: 15%;
   white-space: nowrap;
   vertical-align: middle;
 }
 .input-group-addon {
   padding: 6px 12px;
-  font-size: 13px;
+  font-size: 20px;
   font-weight: normal;
   line-height: 1;
   color: #777777;
@@ -4755,6 +4762,7 @@ a.list-group-item-danger.active:focus {
 }
 .panel-body {
   padding: 15px;
+
 }
 .panel-heading {
   padding: 10px 15px;

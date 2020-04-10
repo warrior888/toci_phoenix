@@ -96,6 +96,11 @@ font-size:20px;
 
 }
 
+.abitur h3{
+    padding-top: 15px;
+    padding-bottom: 25px;
+}
+
 .inline{
 
 	display:inline;
@@ -120,7 +125,10 @@ text-transform: none;
 	color:white;
 
 }
-
+.content {
+    content: none; 
+    overflow: hidden;
+}
 .blackColor { color:black;
 }
 
@@ -140,7 +148,7 @@ text-transform: none;
 
 .backgroundGreenTemplate {
 
-    background-color: rgba(0, 139, 139, 0.99);
+    background-color: rgba(3, 104, 140, 0.0);
 }
 
 .yellowColorTemplate{
@@ -160,15 +168,18 @@ h1,h2,h3,h4,h5,h6 {
 
 h2 {
 	font-size: 1.6153em;
+    
 }
 
-h1,h2 {
+h1, h2 {
 	font-weight: 900;
 	margin: 0 0 30px 0;
+    
 }
 
 h3 {
 	margin: 30px 0;
+    padding-bottom: 30px;
 }
 
 h2, h3, h4, h5, h6 {
