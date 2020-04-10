@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\bzapa\Documents\toci_phoenix\projects\mg-jupiter\Toci.Dal.Aoe.Interfaces\TociModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Lenovo\source\repos\toci_phoenix\projects\mg-jupiter\Toci.Dal.Aoe.Interfaces\TociModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

@@ -61,6 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplyLogicBase.cs" />
     <Compile Include="ContactLogicBase.cs" />
     <Compile Include="Dal.cs" />
     <Compile Include="LogicBase.cs" />
