@@ -50,6 +50,8 @@ create table ContactForm
 	Message text,
 	ButtonSend text
 );
+select * from ContactForm;
+
 create table ApplyFormCompany
 (
 Id int identity primary key,
