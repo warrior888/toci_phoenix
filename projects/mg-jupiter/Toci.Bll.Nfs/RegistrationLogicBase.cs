@@ -50,7 +50,7 @@ Jeśli nie, zigoruj wiadomość
 
             using (var client = new MailKit.Net.Smtp.SmtpClient())
             {
-                client.Connect("smtp.office365.com", 587, false);
+                client.Connect("smtp.office365.com", 587, true);
 
                 // Note: only needed if the SMTP server requires authentication
                 client.Authenticate("test.toci@outlook.com", "@@Toci1000@@");
