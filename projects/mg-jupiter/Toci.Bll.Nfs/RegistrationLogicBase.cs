@@ -71,7 +71,7 @@ Jeśli nie, zigoruj wiadomość
         {
             ApplyForm form = new ApplyForm() { Token = token };
 
-            form = Database.Select((model, id) => model.Token == token).First();
+            form = Database.Select((model) => model.Token == token).First();
         
             form.EmailConfirmed = true;
 
