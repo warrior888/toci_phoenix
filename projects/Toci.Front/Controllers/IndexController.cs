@@ -27,7 +27,7 @@ namespace Toci.Front.Controllers
             //todo save to db
 
 
-            registrationBll.Register(model);
+           // registrationBll.Register(model);  podwójny odbiór i zapis danych Andrzej
             //RedirectToAction("Index");
         }
 
