@@ -20,12 +20,13 @@ namespace Toci.Bll.Nfs
 
         public virtual ApplyForm Register(ApplyForm user)
         {
+            
             //Send(System.Net.Mail.MailMessage message);
             var message = new MimeMessage();
             // var html = CreateTextHtmlPart();
             var builder = new BodyBuilder();
             message.From.Add(new MailboxAddress("Zespół Toci", "test.toci@outlook.com"));
-            message.To.Add(new MailboxAddress("Szanowny kliencie", user.ApplicantEmail));
+            message.To.Add(new MailboxAddress(user.ApplicantName+" "+user.ApplicantSurname, user.ApplicantEmail));
             message.Subject = "Join to IT in Toci";
             
             var rand = new Random();
@@ -35,7 +36,7 @@ namespace Toci.Bll.Nfs
 
             ApplyFormDal(user);
 
-            string messangetext = "http://localhost/index/email?token=" + validationNumber;
+            string messangetext = "http://localhost:50391/index/email?token=" + validationNumber;
 
             message.Body = new TextPart("plain")
             {
@@ -68,7 +69,7 @@ Jeśli nie, zigoruj wiadomość
 
         public bool EmailConfirm(string token)
         {
-           ApplyForm form = new ApplyForm() { Token = token };
+            ApplyForm form = new ApplyForm() { Token = token };
 
             form = Database.Select((model, id) => model.Token == token).First();
 
