@@ -25,7 +25,7 @@ namespace Toci.Bll.Nfs
             var message = new MimeMessage();
             // var html = CreateTextHtmlPart();
             var builder = new BodyBuilder();
-            message.From.Add(new MailboxAddress("Zespół Toci", "test.toci@outlook.com"));
+            message.From.Add(new MailboxAddress("Zespół Toci", "test.toci@gmail.com"));
             message.To.Add(new MailboxAddress(user.ApplicantName+" "+user.ApplicantSurname, user.ApplicantEmail));
             message.Subject = "Join to IT in Toci";
             
@@ -56,7 +56,7 @@ Jeśli nie, zigoruj wiadomość
 
                 // Note: only needed if the SMTP server requires authentication
                 //client.Authenticate("test.toci@outlook.com", "@@Toci1000@@");
-                client.Authenticate("test.toci", "@@Toci1000@@");
+                client.Authenticate("test.toci@gmail.com", "@@Toci1000@@");
 
                 client.Send(message);
                 client.Disconnect(true);
@@ -72,7 +72,7 @@ Jeśli nie, zigoruj wiadomość
             ApplyForm form = new ApplyForm() { Token = token };
 
             form = Database.Select((model, id) => model.Token == token).First();
-
+        
             form.EmailConfirmed = true;
 
             Database.Update(form);
