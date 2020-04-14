@@ -25,7 +25,7 @@ namespace Toci.Bll.Nfs
             // var html = CreateTextHtmlPart();
             var builder = new BodyBuilder();
             message.From.Add(new MailboxAddress("Zespół Toci", "test.toci@outlook.com"));
-            message.To.Add(new MailboxAddress("Szanowny kliencie", "test.toci@outlook.com"));
+            message.To.Add(new MailboxAddress("Szanowny kliencie", user.ApplicantEmail));
             message.Subject = "Join to IT in Toci";
             
             var rand = new Random();
@@ -50,10 +50,12 @@ Jeśli nie, zigoruj wiadomość
 
             using (var client = new MailKit.Net.Smtp.SmtpClient())
             {
-                client.Connect("smtp.office365.com", 587, true);
+                client.Connect("smtp.gmail.com", 465, true);
+                //client.Connect("smtp.outlook.com", 465, true);
 
                 // Note: only needed if the SMTP server requires authentication
-                client.Authenticate("test.toci@outlook.com", "@@Toci1000@@");
+                //client.Authenticate("test.toci@outlook.com", "@@Toci1000@@");
+                client.Authenticate("test.toci", "@@Toci1000@@");
 
                 client.Send(message);
                 client.Disconnect(true);
@@ -66,7 +68,8 @@ Jeśli nie, zigoruj wiadomość
 
         public bool EmailConfirm(string token)
         {
-            ApplyForm form = new ApplyForm() { Token = token };
+           ApplyForm form = new ApplyForm() { Token = token };
+
             form = Database.Select((model, id) => model.Token == token).First();
 
             form.EmailConfirmed = true;

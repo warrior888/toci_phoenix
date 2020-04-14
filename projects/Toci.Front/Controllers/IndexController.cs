@@ -53,7 +53,7 @@ namespace Toci.Front.Controllers
         [HttpPost]
         public JsonResult Apply(ApplyForm form)
         {
-            //ApplyForm result = applyBll.SaveApply(form);
+           // ApplyForm result = applyBll.SaveApply(form);
             ApplyForm result = registrationBll.Register(form);
 
             if (result.Id > 0)
