@@ -20,21 +20,14 @@ namespace Toci.Front.Controllers
             return View();
         }
 
-        [HttpPost]
-        
-        public void Create(ApplyForm model)
-        {
-            //todo save to db
-
-
-          //  registrationBll.Register(model);//  podwójny odbiór i zapis danych Andrzej
-            //RedirectToAction("Index");
-        }
-
         [HttpGet]
-        public void Email(string token)
-        {
-            registrationBll.EmailConfirm(token);
+        public ActionResult Email(string token)
+        { 
+            if (registrationBll.EmailConfirm(token) == true);
+
+
+            return Redirect("http://localhost:50391");
+
         }
 
         [HttpPost]
