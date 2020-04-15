@@ -10,13 +10,12 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ApplicantName" Type="text" />
-          <Property Name="ApplicantSurname" Type="text" />
-          <Property Name="PhoneNumber" Type="text" />
-          <Property Name="ApplicantEmail" Type="text" />
-          <Property Name="Token" Type="text" />
+          <Property Name="ApplicantName" Type="varchar" MaxLength="100" />
+          <Property Name="ApplicantSurname" Type="varchar" MaxLength="100" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="100" />
+          <Property Name="ApplicantEmail" Type="varchar" MaxLength="100" />
+          <Property Name="Token" Type="varchar" MaxLength="100" />
           <Property Name="EmailConfirmed" Type="bit" />
-          <Property Name="ButtonApply" Type="text" />
         </EntityType>
         <EntityType Name="Apps">
           <Key>
@@ -32,12 +31,11 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ContactTitle" Type="text" />
-          <Property Name="Name" Type="text" />
-          <Property Name="Email" Type="text" />
-          <Property Name="Title" Type="text" />
-          <Property Name="Message" Type="text" />
-          <Property Name="ButtonSend" Type="text" />
+          <Property Name="ContactTitle" Type="varchar" MaxLength="100" />
+          <Property Name="Name" Type="varchar" MaxLength="100" />
+          <Property Name="Email" Type="varchar" MaxLength="100" />
+          <Property Name="Title" Type="varchar" MaxLength="100" />
+          <Property Name="Message" Type="varchar" MaxLength="1000" />
         </EntityType>
         <EntityType Name="Languages">
           <Key>
@@ -112,12 +110,11 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="ApplicantName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="ApplicantSurname" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="ApplicantEmail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="ButtonApply" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Token" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ApplicantName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ApplicantSurname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ApplicantEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Token" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="EmailConfirmed" Type="Boolean" />
         </EntityType>
         <EntityType Name="Apps">
@@ -202,12 +199,11 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="ContactTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="ButtonSend" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ContactTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Message" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -225,7 +221,6 @@
                 <ScalarProperty Name="ApplicantSurname" ColumnName="ApplicantSurname" />
                 <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
                 <ScalarProperty Name="ApplicantEmail" ColumnName="ApplicantEmail" />
-                <ScalarProperty Name="ButtonApply" ColumnName="ButtonApply" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -269,7 +264,6 @@
           <EntitySetMapping Name="ContactForm">
             <EntityTypeMapping TypeName="tociModel.ContactForm">
               <MappingFragment StoreEntitySet="ContactForm">
-                <ScalarProperty Name="ButtonSend" ColumnName="ButtonSend" />
                 <ScalarProperty Name="Message" ColumnName="Message" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="Email" ColumnName="Email" />

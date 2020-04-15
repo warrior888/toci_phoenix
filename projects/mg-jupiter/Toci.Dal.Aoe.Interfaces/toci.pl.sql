@@ -43,12 +43,11 @@ Description text
 create table ContactForm
 (
 	Id int identity primary key,
-	ContactTitle text,
-	Name text,
-	Email text,
-	Title text,
-	Message text,
-	ButtonSend text
+	ContactTitle varchar(100),
+	Name varchar(100),
+	Email varchar(100),
+	Title varchar(100),
+	Message varchar(1000)
 );
 select * from ContactForm;
 
@@ -90,13 +89,12 @@ drop table ApplyForm;
 create table ApplyForm
 (
 	Id int identity primary key,
-	ApplicantName text,
-	ApplicantSurname text,
-	PhoneNumber text,
-	ApplicantEmail text,
-	Token text,
-	EmailConfirmed bit,
-	ButtonApply text
+	ApplicantName varchar(100),
+	ApplicantSurname varchar(100),
+	PhoneNumber varchar(100),
+	ApplicantEmail varchar(100),
+	Token varchar(100),
+	EmailConfirmed bit
 );
 
 select * from applyform;

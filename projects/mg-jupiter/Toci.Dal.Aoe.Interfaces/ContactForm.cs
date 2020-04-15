@@ -20,6 +20,5 @@ namespace Toci.Dal.Aoe.Interfaces
         public string Email { get; set; }
         public string Title { get; set; }
         public string Message { get; set; }
-        public string ButtonSend { get; set; }
     }
 }
