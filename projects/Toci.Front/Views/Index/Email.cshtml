@@ -1,0 +1,14 @@
+﻿@model Toci.Front.Models.EmailConfirmModel
+
+@{
+    Layout = null;
+}
+
+@if (@Model.Found)
+{
+	<span>Potwierdzono adres email</span>
+}
+else
+{
+	<span>Nie znaleziono adresu email</span>
+}

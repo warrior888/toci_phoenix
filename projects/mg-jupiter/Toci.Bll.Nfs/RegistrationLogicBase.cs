@@ -65,19 +65,24 @@ Jeśli nie, zigoruj wiadomość
             return user;
         }
 
-        
+
 
         public bool EmailConfirm(string token)
         {
-            ApplyForm form = new ApplyForm() { Token = token };
+            ApplyForm form = new ApplyForm() {Token = token};
 
-            form = Database.Select((model) => model.Token == token).First();
-        
-            form.EmailConfirmed = true;
+            form = Database.Select((model) => model.Token == token).FirstOrDefault();
 
-            Database.Update(form);
+            if (form != null)
+            {
+                form.EmailConfirmed = true;
 
-            return true;
+                Database.Update(form);
+
+                return true;
+            }
+
+            return false;
         }
 
         protected virtual ApplyForm ApplyFormDal(ApplyForm form)

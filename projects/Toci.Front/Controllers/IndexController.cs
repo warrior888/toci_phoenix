@@ -22,11 +22,11 @@ namespace Toci.Front.Controllers
 
         [HttpGet]
         public ActionResult Email(string token)
-        { 
-            if (registrationBll.EmailConfirm(token) == true);
+        {
+            EmailConfirmModel model = new EmailConfirmModel();
+            model.Found = registrationBll.EmailConfirm(token);
 
-
-            return Redirect("http://localhost:50391");
+            return View(model);
 
         }
 
