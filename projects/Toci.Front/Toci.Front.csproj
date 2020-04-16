@@ -461,6 +461,19 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Index\Email.cshtml" />
+    <Content Include="Views\Shared\Header.cshtml" />
+    <Content Include="Views\Shared\HeaderNavigationCourse.cshtml" />
+    <Content Include="Views\Shared\HeaderNavigationBespokeSoftware.cshtml" />
+    <Content Include="Views\Shared\SlideShowCourse.cshtml" />
+    <Content Include="Views\Shared\AboutCourse.cshtml" />
+    <Content Include="Views\Shared\OfferBespokeSoftware.cshtml" />
+    <Content Include="Views\Shared\HowItWorksCourse.cshtml" />
+    <Content Include="Views\Shared\OrganisersCourse.cshtml" />
+    <Content Include="Views\Shared\StudentsCourse.cshtml" />
+    <Content Include="Views\Shared\OurTeam.cshtml" />
+    <Content Include="Views\Shared\VideoCourse.cshtml" />
+    <Content Include="Views\Shared\FaqCourse.cshtml" />
+    <Content Include="Views\Shared\ApplyCourse.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
