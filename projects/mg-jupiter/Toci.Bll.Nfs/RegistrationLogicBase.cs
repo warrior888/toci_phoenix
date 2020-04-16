@@ -36,7 +36,8 @@ namespace Toci.Bll.Nfs
 
             ApplyFormDal(user);
 
-            string messangetext = "http://toci.pl/index/email?token=" + validationNumber;
+            //       string messangetext = "http://toci.pl/index/email?token=" + validationNumber;
+            string messangetext = "http://localhost:50391/index/email?token=" + validationNumber;
 
             message.Body = new TextPart("plain")
             {
