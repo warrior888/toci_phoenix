@@ -476,6 +476,7 @@
     <Content Include="Views\Shared\ApplyCourse.cshtml" />
     <Content Include="Views\Index\Courses.cshtml" />
     <Content Include="Views\Shared\SlideShowOffer.cshtml" />
+    <Content Include="Views\Shared\HowWeWork.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
