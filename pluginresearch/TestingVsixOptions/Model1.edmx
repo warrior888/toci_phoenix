@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="tociModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ApplyForm">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ApplicantName" Type="varchar" MaxLength="100" />
+          <Property Name="ApplicantSurname" Type="varchar" MaxLength="100" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="100" />
+          <Property Name="ApplicantEmail" Type="varchar" MaxLength="100" />
+          <Property Name="Token" Type="varchar" MaxLength="100" />
+          <Property Name="EmailConfirmed" Type="bit" />
+        </EntityType>
+        <EntityType Name="Apps">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="text" />
+          <Property Name="Url" Type="text" />
+          <Property Name="Description" Type="text" />
+        </EntityType>
+        <EntityType Name="ContactForm">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ContactTitle" Type="varchar" MaxLength="100" />
+          <Property Name="Name" Type="varchar" MaxLength="100" />
+          <Property Name="Email" Type="varchar" MaxLength="100" />
+          <Property Name="Title" Type="varchar" MaxLength="100" />
+          <Property Name="Message" Type="varchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="Languages">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="text" />
+          <Property Name="Currency" Type="text" />
+        </EntityType>
+        <EntityType Name="Phrases">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Phrase" Type="text" />
+        </EntityType>
+        <EntityType Name="Translations">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdLanguages" Type="bigint" />
+          <Property Name="IdPhrases" Type="bigint" />
+          <Property Name="Translation" Type="text" />
+        </EntityType>
+        <Association Name="FK__Translati__IdLan__286302EC">
+          <End Role="Languages" Type="Self.Languages" Multiplicity="0..1" />
+          <End Role="Translations" Type="Self.Translations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Translations">
+              <PropertyRef Name="IdLanguages" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Translati__IdPhr__29572725">
+          <End Role="Phrases" Type="Self.Phrases" Multiplicity="0..1" />
+          <End Role="Translations" Type="Self.Translations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Phrases">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Translations">
+              <PropertyRef Name="IdPhrases" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="tociModelStoreContainer">
+          <EntitySet Name="ApplyForm" EntityType="Self.ApplyForm" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Apps" EntityType="Self.Apps" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ContactForm" EntityType="Self.ContactForm" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Languages" EntityType="Self.Languages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Phrases" EntityType="Self.Phrases" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Translations" EntityType="Self.Translations" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Translati__IdLan__286302EC" Association="Self.FK__Translati__IdLan__286302EC">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="Translations" EntitySet="Translations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Translati__IdPhr__29572725" Association="Self.FK__Translati__IdPhr__29572725">
+            <End Role="Phrases" EntitySet="Phrases" />
+            <End Role="Translations" EntitySet="Translations" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="tociModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ApplyForm">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ApplicantName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ApplicantSurname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ApplicantEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Token" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EmailConfirmed" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="App">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Url" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ContactForm">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ContactTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Message" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Language">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Currency" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Translations" Relationship="Self.FK__Translati__IdLan__286302EC" FromRole="Languages" ToRole="Translations" />
+        </EntityType>
+        <EntityType Name="Phras">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Phrase" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Translations" Relationship="Self.FK__Translati__IdPhr__29572725" FromRole="Phrases" ToRole="Translations" />
+        </EntityType>
+        <EntityType Name="Translation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdLanguages" Type="Int64" />
+          <Property Name="IdPhrases" Type="Int64" />
+          <Property Name="Translation1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Language" Relationship="Self.FK__Translati__IdLan__286302EC" FromRole="Translations" ToRole="Languages" />
+          <NavigationProperty Name="Phras" Relationship="Self.FK__Translati__IdPhr__29572725" FromRole="Translations" ToRole="Phrases" />
+        </EntityType>
+        <Association Name="FK__Translati__IdLan__286302EC">
+          <End Role="Languages" Type="Self.Language" Multiplicity="0..1" />
+          <End Role="Translations" Type="Self.Translation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Translations">
+              <PropertyRef Name="IdLanguages" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Translati__IdPhr__29572725">
+          <End Role="Phrases" Type="Self.Phras" Multiplicity="0..1" />
+          <End Role="Translations" Type="Self.Translation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Phrases">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Translations">
+              <PropertyRef Name="IdPhrases" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="tociEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ApplyForms" EntityType="Self.ApplyForm" />
+          <EntitySet Name="Apps" EntityType="Self.App" />
+          <EntitySet Name="ContactForms" EntityType="Self.ContactForm" />
+          <EntitySet Name="Languages" EntityType="Self.Language" />
+          <EntitySet Name="Phrases" EntityType="Self.Phras" />
+          <EntitySet Name="Translations" EntityType="Self.Translation" />
+          <AssociationSet Name="FK__Translati__IdLan__286302EC" Association="Self.FK__Translati__IdLan__286302EC">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="Translations" EntitySet="Translations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Translati__IdPhr__29572725" Association="Self.FK__Translati__IdPhr__29572725">
+            <End Role="Phrases" EntitySet="Phrases" />
+            <End Role="Translations" EntitySet="Translations" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="tociModelStoreContainer" CdmEntityContainer="tociEntities1">
+          <EntitySetMapping Name="ApplyForms">
+            <EntityTypeMapping TypeName="tociModel.ApplyForm">
+              <MappingFragment StoreEntitySet="ApplyForm">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ApplicantName" ColumnName="ApplicantName" />
+                <ScalarProperty Name="ApplicantSurname" ColumnName="ApplicantSurname" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="ApplicantEmail" ColumnName="ApplicantEmail" />
+                <ScalarProperty Name="Token" ColumnName="Token" />
+                <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Apps">
+            <EntityTypeMapping TypeName="tociModel.App">
+              <MappingFragment StoreEntitySet="Apps">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContactForms">
+            <EntityTypeMapping TypeName="tociModel.ContactForm">
+              <MappingFragment StoreEntitySet="ContactForm">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ContactTitle" ColumnName="ContactTitle" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Languages">
+            <EntityTypeMapping TypeName="tociModel.Language">
+              <MappingFragment StoreEntitySet="Languages">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Phrases">
+            <EntityTypeMapping TypeName="tociModel.Phras">
+              <MappingFragment StoreEntitySet="Phrases">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Phrase" ColumnName="Phrase" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Translations">
+            <EntityTypeMapping TypeName="tociModel.Translation">
+              <MappingFragment StoreEntitySet="Translations">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdLanguages" ColumnName="IdLanguages" />
+                <ScalarProperty Name="IdPhrases" ColumnName="IdPhrases" />
+                <ScalarProperty Name="Translation1" ColumnName="Translation" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
