@@ -563,7 +563,7 @@ a.bg-danger:hover {
   border-bottom: 1px solid #eeeeee;
 }
 ul,
-ol {
+ol{
   margin-top: 0;
   margin-bottom: 11px;
 }
@@ -572,6 +572,7 @@ ol ul,
 ul ol,
 ol ol {
   margin-bottom: 0;
+    
 }
 .list-unstyled {
   padding-left: 0;

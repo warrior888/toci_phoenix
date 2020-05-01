@@ -61,7 +61,9 @@ a (hover):				#81a27b (darker green)
 body {
     /*ukryte zanim strona siê za³aduje*/
 	overflow-y: hidden;
+
 }
+
 
 #mapa{
 
@@ -88,8 +90,8 @@ font-size:20px;
 	left: 0;
 	right: 0;
 
-
 }
+
 
 .inline-block{
 	display:inline-block;
@@ -114,6 +116,7 @@ text-transform: none;
 #welcome-text h1,h2{
 	color:white;
 }
+
 
 
 .headers {
@@ -169,7 +172,6 @@ h1,h2,h3,h4,h5,h6 {
 h2 {
 	font-size: 1.6153em;
     
-}
 
 h1, h2 {
 	font-weight: 900;
@@ -212,7 +214,7 @@ section {
 blockquote {
 	border: 0;
 	color: #bbb;
-	font-size: 1.3846em;
+    font-size: 1.3846em;
 	font-style: italic;
 	padding-left: 70px;
 	position: relative;
